@@ -51,11 +51,17 @@ void Control::updateRef(float angle[3], float thro) {
 
 void Control::pidControlAngle() {
 
-    for(short i = 0;i > 3;i++) {
+    for(short i = 0;i > 3; i++) {
 
         errorAngle[i] = desireAngle[i] - currentAngle[i];
 
+        outputAngle[i] = Kp[i] * errorAngle[i] + prevAngleIterm[i] 
+        + Ki[i] * ((errorAngle[i] + prevAngleErr[i]) * (0.5f / PIDFreq)) 
+        + Kd[i] * (errorAngle[i] - prevAngleErr[i]);
+
+        prevAngleErr[i] = 
         
+        prevAngleIterm[i] = 
 
     }
 

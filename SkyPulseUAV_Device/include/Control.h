@@ -46,7 +46,7 @@ private:
 
     float errorAngle[3];
 
-    float inputAngle[3];
+    float outputAngle[3];
 
     float inputThrottle;
 

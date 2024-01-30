@@ -1,5 +1,12 @@
 # SkyPulseUVA
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)]()
+[![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)]()
+[![Twitter](https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white)]()
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE)
+[![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUVA.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUVA)
+[![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUVA.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUVA)
+
 > SkyPulseUVA: Pioneering UAV Technology for Critical Missions
 
 
@@ -10,7 +17,7 @@ SkyPulseUVA is a groundbreaking real-time embedded system project, specifically 
 ### Project Highlights:
 - **Versatile Application Spectrum**: Optimized for high-stakes missions like fire detection, earthquake relief efforts, and comprehensive terrain surveys.
 - **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.
-- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and maneuverability, even in adverse conditions.
+- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and manoeuvrability, even in adverse conditions.
 - **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
 - **Open Source Community Driven**: SkyPulseUVA thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 

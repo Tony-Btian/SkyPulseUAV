@@ -1,6 +1,7 @@
 # SkyPulseUVA
 
-## SkyPulseUVA: Pioneering UAV Technology for Critical Missions
+> SkyPulseUVA: Pioneering UAV Technology for Critical Missions
+
 
 ### Welcome to SkyPulseUVA!
 

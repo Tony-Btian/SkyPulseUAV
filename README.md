@@ -21,3 +21,6 @@ We call on the global community to join us in advancing UAV technology for criti
 Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community.
 
 Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUVA!
+
+## License
+MIT License Copyright (c) 2024 Binhan Tian

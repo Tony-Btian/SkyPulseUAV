@@ -14,6 +14,14 @@
 
 SkyPulseUVA is a groundbreaking real-time embedded system project, specifically designed to enhance the capabilities of unmanned aerial vehicles (UAVs) in critical scenarios such as fire detection, earthquake rescue, and terrain exploration. Our mission is to empower UAVs with unparalleled stability and precision, making them indispensable tools in emergency response and environmental analysis.
 
+## Project Contributors
+| Name | Role |
+| ---- | ---- |
+| Binhan Tian |  |
+| Jianliang Wu |  |
+| Jiaxing Wang |  |
+| Zhiyan Tong |  |
+
 ### Project Highlights:
 - **Versatile Application Spectrum**: Optimized for high-stakes missions like fire detection, earthquake relief efforts, and comprehensive terrain surveys.
 - **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.

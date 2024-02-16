@@ -1,3 +1,5 @@
+build-SkyPulseUVA_GroundStation-Desktop_Qt_6_6_2_GCC_64bit-Debug/
+
 # Prerequisites
 *.d
 
@@ -30,6 +32,3 @@
 *.exe
 *.out
 *.app
-
-# Directory
-build-SkyPulseUVA_GroundStation-Desktop_Qt_6_6_2_GCC_64bit-Debug/

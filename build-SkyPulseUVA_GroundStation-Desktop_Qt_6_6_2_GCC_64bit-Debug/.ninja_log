@@ -1,0 +1,10 @@
+# ninja log v5
+1	10	0	/home/tony/Github/SkyPulseUVA/build-SkyPulseUVA_GroundStation-Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/cmake.verify_globs	7afa33f9ccb068ec
+1	689	1708084187868143167	SkyPulseUVA_GroundStation_autogen/timestamp	caead3f8f65cda45
+1	689	1708084187868143167	SkyPulseUVA_GroundStation_autogen/mocs_compilation.cpp	caead3f8f65cda45
+1	689	1708084187868143167	/home/tony/Github/SkyPulseUVA/build-SkyPulseUVA_GroundStation-Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUVA_GroundStation_autogen/timestamp	caead3f8f65cda45
+1	689	1708084187868143167	/home/tony/Github/SkyPulseUVA/build-SkyPulseUVA_GroundStation-Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUVA_GroundStation_autogen/mocs_compilation.cpp	caead3f8f65cda45
+689	13764	1708084200939896304	CMakeFiles/SkyPulseUVA_GroundStation.dir/SkyPulseUVA_GroundStation_autogen/mocs_compilation.cpp.o	212bd58d002711cf
+689	13798	1708084200979895556	CMakeFiles/SkyPulseUVA_GroundStation.dir/main.cpp.o	60a41d69f30e884b
+690	14133	1708084201315889287	CMakeFiles/SkyPulseUVA_GroundStation.dir/mainwindow.cpp.o	8b15d39e11eed73
+14134	14893	1708084202071875187	SkyPulseUVA_GroundStation	89c0bec38503bbad

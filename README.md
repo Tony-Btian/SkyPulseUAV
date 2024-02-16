@@ -23,6 +23,7 @@ SkyPulseUVA is a groundbreaking real-time embedded system project, specifically 
 | Jianliang Wu |  |
 | Jiaxing Wang |  |
 | Zhiyan Tong |  |
+| Shilin Zhang |  |
 
 
 ### Project Highlights

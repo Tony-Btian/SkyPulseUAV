@@ -6,26 +6,728 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>963</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget_PanelMain">
+      <property name="tabPosition">
+       <enum>QTabWidget::West</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab1_FlightControl">
+       <attribute name="title">
+        <string>Flight Control</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_AnimationDisplay">
+            <item>
+             <widget class="QWidget" name="widget" native="true">
+              <layout class="QGridLayout" name="gridLayout_4"/>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_2" native="true">
+              <layout class="QGridLayout" name="gridLayout_5"/>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
+            <item>
+             <widget class="QGroupBox" name="groupBox_FlightControlInfo">
+              <property name="title">
+               <string>Flight control information</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_SensorData">
+              <property name="title">
+               <string>Sensor Data</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_SensorData_Upper" stretch="1,0,1">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_ACC">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_ACC_X" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_ACC_X">
+                       <property name="text">
+                        <string>ACC-X</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_ACC_X"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_ACC_Y" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_ACC_Y">
+                       <property name="text">
+                        <string>ACC-Y</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_ACC_Y"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_ACC_Z" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_ACC_Z">
+                       <property name="text">
+                        <string>ACC-Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_ACC_Z"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_GYR">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_GYR_X" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_GYR_X">
+                       <property name="text">
+                        <string>GYR-X</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_GYR_X"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_GYR_Y" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_GYR_Y">
+                       <property name="text">
+                        <string>GYR-Y</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_GYR_Y"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_GYR_Z" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_GYR_Z">
+                       <property name="text">
+                        <string>GYR-Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_GYR_Z"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="Line" name="line_SensorData">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_SensorData_Bottom" stretch="1,0,1">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_MAG">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_MAG_X" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_MAG_X">
+                       <property name="text">
+                        <string>MAG-X</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_MAG_X"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_MAG_Y" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_MAG_Y">
+                       <property name="text">
+                        <string>MAG-Y</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_MAG_Y"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_MAG_Z" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_MAG_Z">
+                       <property name="text">
+                        <string>MAG-Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_MAG_Z"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_Altitude">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_Altitude" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_Altitude">
+                       <property name="text">
+                        <string>Altitude</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_Altitude"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_Ultrasound" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_Ultrasound">
+                       <property name="text">
+                        <string>Ultrasou</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_Ultrasound"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_Temp" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_Temp">
+                       <property name="text">
+                        <string>Temp</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_Temp"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_GPS">
+              <property name="title">
+               <string>GPS</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab2_ParameterSetting">
+       <attribute name="title">
+        <string>Parameter Setting</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_Calibration_Control">
+            <item>
+             <widget class="QToolButton" name="toolButton_Calib_Gyto">
+              <property name="text">
+               <string>陀螺仪校准</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/qrc/icon/gyroscope.png</normaloff>:/qrc/icon/gyroscope.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_Calib_Accelerate">
+              <property name="text">
+               <string>加速度校准</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/qrc/icon/accelerometer.png</normaloff>:/qrc/icon/accelerometer.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_Calib_Compass">
+              <property name="text">
+               <string>磁罗盘校准</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/qrc/icon/compass.png</normaloff>:/qrc/icon/compass.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_Calib_AirPressure">
+              <property name="text">
+               <string>气压计校准</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/qrc/icon/barometer.png</normaloff>:/qrc/icon/barometer.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_Calib_SixDirection">
+              <property name="text">
+               <string>360度校准</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resource.qrc">
+                <normaloff>:/qrc/icon/360direction.png</normaloff>:/qrc/icon/360direction.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="toolButtonStyle">
+               <enum>Qt::ToolButtonTextUnderIcon</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_PID_Control">
+            <property name="title">
+             <string>PID Control</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_Rate_Adjust" stretch="1,1,1">
+               <property name="spacing">
+                <number>1</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_PITRate" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_PITRate">
+                   <property name="text">
+                    <string>PIT速率</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITRate_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITRate_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITRate_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_PITRate_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_ROLRate" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_ROLRate">
+                   <property name="text">
+                    <string>ROL速率</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLRate_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLRate_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLRate_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_ROLRate_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_YAWRate" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_YAWRate">
+                   <property name="text">
+                    <string>YAW速率</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWRate_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWRate_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWRate_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_YAWRate_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_Self_Stabilization" stretch="1,1,1">
+               <property name="spacing">
+                <number>1</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_PIT_SelfStable" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_PITSelfStable">
+                   <property name="text">
+                    <string>自稳PIT</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITSelfStable_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITSelfStable_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_PITSelfStable_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_PITSelfStable_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_ROL_SelfStable" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_ROLSelfStable">
+                   <property name="text">
+                    <string>自稳ROL</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLSelfStable_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLSelfStable_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_ROLSelfStable_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_ROLSelfStable_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_YAW_SelfStable" stretch="1,1,1,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_YAWSelfStable">
+                   <property name="text">
+                    <string>自稳YAW</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWSelfStable_P_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWSelfStable_I_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_YAWSelfStable_D_Value"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_YAWSelfStable_Write">
+                   <property name="text">
+                    <string>Write</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_Connection">
+          <property name="title">
+           <string>Connection</string>
+          </property>
+          <widget class="QPushButton" name="pushButton_Network_Connect">
+           <property name="geometry">
+            <rect>
+             <x>300</x>
+             <y>40</y>
+             <width>89</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Connect</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_Network_Disconnect">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>300</x>
+             <y>70</y>
+             <width>89</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Disconnect</string>
+           </property>
+          </widget>
+          <widget class="QTextBrowser" name="textBrowser_test">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>110</y>
+             <width>371</width>
+             <height>191</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QWidget" name="">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>40</y>
+             <width>231</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
+            <item>
+             <widget class="QLabel" name="label_Network_IPAddr">
+              <property name="text">
+               <string>IP</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
+              <property name="text">
+               <string>192.168.31.213</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>70</y>
+             <width>231</width>
+             <height>27</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
+            <item>
+             <widget class="QLabel" name="label_Network_Port">
+              <property name="text">
+               <string>端口</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_Network_Port">
+              <property name="text">
+               <string>12345</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab3">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>963</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

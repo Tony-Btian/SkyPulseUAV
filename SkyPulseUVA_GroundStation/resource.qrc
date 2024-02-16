@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/qrc">
+        <file>icon/360direction.png</file>
+        <file>icon/barometer.png</file>
+        <file>icon/compass.png</file>
+        <file>icon/accelerometer.png</file>
+        <file>icon/gyroscope.png</file>
+    </qresource>
+</RCC>

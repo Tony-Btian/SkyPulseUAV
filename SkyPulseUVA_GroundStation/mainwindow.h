@@ -3,10 +3,12 @@
 
 #include <QMainWindow>
 #include <QThread>
+#include <QDebug>
 #include <QNetworkInterface>
 
-#include "TCP.h"
-#include "UDP.h"
+#include "COMM/TCP.h"
+#include "COMM/UDP.h"
+#include "COMM/Bluetooth.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,12 +29,15 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    TCP *TcpClient;
+    TCP *TcpServer;
     UDP *UdpServer;
+    Bluetooth *BluetoothServer;
     QThread *UdpThread;
+    QThread *BluetoothThread;
 
-    void initializeTCPService();
-    void initializeUDPService();
+    void initialTCPServer();
+    void initialUDPServer();
+    void initialBluetoothServer();
     QString getLocalIP();
 
 private slots:

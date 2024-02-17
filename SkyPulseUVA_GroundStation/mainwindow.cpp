@@ -1,42 +1,47 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->initializeTCPService();
-    this->initializeUDPService();
+    this->initialTCPServer();
+    this->initialUDPServer();
+    this->initialBluetoothServer();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+
     // 请求线程结束
-    UdpThread->quit();
-    // 等待线程安全结束
+    UdpThread->quit();  // 等待线程安全结束
     if (!UdpThread->wait(3000)) { // 等待最多3秒
-        // 如果线程在给定时间内没有结束，则强制结束（不推荐，可能导致资源泄露或不一致状态）
         UdpThread->terminate();
         UdpThread->wait(); // 再次等待确保线程已经结束
     }
     delete UdpThread; // 删除线程对象
+
+    // 请求线程结束
+    BluetoothThread->quit();  // 等待线程安全结束
+    if (!BluetoothThread->wait(3000)) { // 等待最多3秒
+        BluetoothThread->terminate();
+        BluetoothThread->wait(); // 再次等待确保线程已经结束
+    }
+    delete BluetoothThread; // 删除线程对象
 }
 
 
-void MainWindow::initializeTCPService()
+void MainWindow::initialTCPServer()
 {
-    TcpClient = new TCP(this);  // 实体化TCP服务
-    connect(TcpClient, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
-    connect(TcpClient, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
-    connect(TcpClient, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
-    connect(TcpClient, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
+    TcpServer = new TCP(this);  // 实体化TCP服务
+    connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
+    connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
+    connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
+    connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
 }
 
 
-void MainWindow::initializeUDPService()
+void MainWindow::initialUDPServer()
 {
     UdpThread = new QThread(this);
     UdpServer = new UDP();  // 实体化UDP服务
@@ -47,6 +52,15 @@ void MainWindow::initializeUDPService()
     connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
     connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
     UdpThread->start();
+}
+
+void MainWindow::initialBluetoothServer()
+{
+    BluetoothThread = new QThread(this);
+    BluetoothServer = new Bluetooth();
+    BluetoothServer->moveToThread(BluetoothThread);
+    connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
+    BluetoothThread->start();
 }
 
 
@@ -65,7 +79,7 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
     // 判断端口输入是否有效
     if(ok){
-        TcpClient->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
+        TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
         emit sig_StartUDPServer(NetworkPort);  // 开启UDP服务
     }
     else{
@@ -75,7 +89,7 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TcpClient->disconnectFromServer();
+    TcpServer->disconnectFromServer();
     emit sig_StopUDPServer();
 }
 
@@ -90,7 +104,6 @@ void MainWindow::onTCPConnectionSuccessful()
     ui->textBrowser_test->append("TCP连接成功");
 }
 
-
 void MainWindow::onTCPConnectionError()
 {
     // 处理连接失败事件，例如更新UI状态
@@ -99,7 +112,6 @@ void MainWindow::onTCPConnectionError()
     ui->pushButton_Network_Disconnect->setEnabled(false);
     ui->textBrowser_test->append("TCP连接失败");
 }
-
 
 void MainWindow::onTCPDisconnectionSuccessful()
 {
@@ -123,6 +135,8 @@ void MainWindow::onUDPServerStopSuccessful()
     qDebug() << "UDP关闭成功信号返回";
     ui->textBrowser_test->append("UDP关闭成功");
 }
+
+
 
 QString MainWindow::getLocalIP()
 {

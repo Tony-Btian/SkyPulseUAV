@@ -3,7 +3,10 @@
 
 #include <QMainWindow>
 #include <QThreadPool>
-#include <pigpio.h>
+
+#include "meg_compass.h"
+#include "i2c_manager.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,10 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private:
     Ui::MainWindow *ui;
     QThreadPool threadPool;
+    I2C_Manager *i2cManager;
+    MEG_Compass *hmc5883l;
 
-    void initialGPIO();
 };
 #endif // MAINWINDOW_H

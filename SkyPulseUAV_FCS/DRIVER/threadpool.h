@@ -14,11 +14,15 @@ public:
     explicit ThreadPool(std::function<void()> func);
     void run() override;
 
+
 signals:
     void isDone();
 
+
 private:
     std::function<void()> taskFunction;
+
+
 };
 
 #endif // THREADPOOL_H

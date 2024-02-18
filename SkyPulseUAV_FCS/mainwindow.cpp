@@ -13,25 +13,27 @@ MainWindow::MainWindow(QWidget *parent)
     // Initial Threadpool
     threadPool.setMaxThreadCount(5);
 
-    // Initial GPIO
-    initialGPIO();
+    i2cManager = new I2C_Manager(this);
+    int deviceAddress = 0x3D;
+    i2cManager->addDevice(deviceAddress);
+
+    // Get I2C device instance and initialize HMC5883L object
+    I2C_Device* device = i2cManager->getDevice(deviceAddress);
+    if (device) {
+        hmc5883l = new MEG_Compass(device, this);
+        connect(hmc5883l, &MEG_Compass::rawDataRead, this, [this](int x, int y, int z) {
+            ui->textBrowser_Main->append(QString("Raw data read from HMC5883L: X=%1, Y=%2, Z=%3").arg(x).arg(y).arg(z));
+        });
+
+        // Asynchronous reading of HMC5883L data
+        hmc5883l->readRawData();
+    } else {
+        ui->textBrowser_Main->append("Failed to initialize HMC5883L");
+    }
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    gpioTerminate();
 }
 
-void MainWindow::initialGPIO()
-{
-    // Initial GPIO
-    if(gpioInitialise() < 0){
-        ui->textBrowser_Main->append("Initial GPIO: Error!");
-        qDebug() << "GPIO Initial Error";
-        return;
-    }
-    ui->textBrowser_Main->append("Initial GPIO: Succeed!\n");
-    gpioSetMode(13, PI_OUTPUT);
-    gpioSetMode(23, PI_OUTPUT);
-}

@@ -9,20 +9,25 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent)
 
 # Try to find pigpio lib
 find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 
+# Add the DRIVER and SENSOR directories to the include path.
+include_directories(${CMAKE_SOURCE_DIR}/DRIVER)
+include_directories(${CMAKE_SOURCE_DIR}/SENSOR)
+
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        threadpool.h
-        threadpool.cpp
-        SENSOR/meg_compass.h SENSOR/meg_compass.cpp
+    main.cpp
+    mainwindow.cpp
+    mainwindow.h
+    mainwindow.ui
+    DRIVER/i2c_device.h DRIVER/i2c_device.cpp
+    DRIVER/threadpool.h DRIVER/threadpool.cpp
+    DRIVER/i2c_manager.h DRIVER/i2c_manager.cpp
+    SENSOR/meg_compass.h SENSOR/meg_compass.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -48,7 +53,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(SkyPulseUAV_FCS PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${PIGPIO_LIBRARY})
+target_link_libraries(SkyPulseUAV_FCS PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${PIGPIO_LIBRARY} Qt${QT_VERSION_MAJOR}::Concurrent ${PIGPIO_LIBRARY})
 
 set_target_properties(SkyPulseUAV_FCS PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

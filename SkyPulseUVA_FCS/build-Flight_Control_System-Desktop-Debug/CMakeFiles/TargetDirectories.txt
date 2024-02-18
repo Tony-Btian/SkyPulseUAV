@@ -1,0 +1,8 @@
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/Flight_Control_System.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/install.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/install/local.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/install/strip.dir
+/home/tony/Workspace/SkyPulseUVA/SkyPulseUVA_FCS/build-Flight_Control_System-Desktop-Debug/CMakeFiles/Flight_Control_System_autogen.dir

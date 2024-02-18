@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QThreadPool>
+#include <pigpio.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +19,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QThreadPool threadPool;
+
+    void initialGPIO();
 };
 #endif // MAINWINDOW_H

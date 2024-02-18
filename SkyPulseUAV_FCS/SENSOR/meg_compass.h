@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#define DEVICE_ADDR 0x3C
+
 class MEG_Compass
 {
 public:

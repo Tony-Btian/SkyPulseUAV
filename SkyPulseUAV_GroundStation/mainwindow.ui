@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>963</width>
-    <height>622</height>
+    <width>928</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -610,97 +610,64 @@
           <property name="title">
            <string>Connection</string>
           </property>
-          <widget class="QPushButton" name="pushButton_Network_Connect">
-           <property name="geometry">
-            <rect>
-             <x>300</x>
-             <y>40</y>
-             <width>89</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Connect</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_Network_Disconnect">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="geometry">
-            <rect>
-             <x>300</x>
-             <y>70</y>
-             <width>89</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Disconnect</string>
-           </property>
-          </widget>
-          <widget class="QTextBrowser" name="textBrowser_test">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>110</y>
-             <width>371</width>
-             <height>191</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QWidget" name="">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>40</y>
-             <width>231</width>
-             <height>27</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
-            <item>
-             <widget class="QLabel" name="label_Network_IPAddr">
-              <property name="text">
-               <string>IP</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
-              <property name="text">
-               <string>192.168.31.213</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>70</y>
-             <width>231</width>
-             <height>27</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
-            <item>
-             <widget class="QLabel" name="label_Network_Port">
-              <property name="text">
-               <string>端口</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_Network_Port">
-              <property name="text">
-               <string>12345</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
+             <item>
+              <widget class="QLabel" name="label_Network_IPAddr">
+               <property name="text">
+                <string>IP</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
+               <property name="text">
+                <string>192.168.31.213</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton_Network_Connect">
+             <property name="text">
+              <string>Connect</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
+             <item>
+              <widget class="QLabel" name="label_Network_Port">
+               <property name="text">
+                <string>端口</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_Network_Port">
+               <property name="text">
+                <string>12345</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="pushButton_Network_Disconnect">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Disconnect</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QTextBrowser" name="textBrowser_test"/>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -719,7 +686,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>963</width>
+     <width>928</width>
      <height>22</height>
     </rect>
    </property>

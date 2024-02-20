@@ -3,9 +3,12 @@
 
 #include <QMainWindow>
 #include <QThreadPool>
-
+#include <QThread>
+#include "i2c_device.h"
 #include "meg_compass.h"
-#include "i2c_manager.h"
+#include "barometer_bmp180.h"
+
+#define HMC5883l_DEVICE_ADDR 0x0D
 
 
 QT_BEGIN_NAMESPACE
@@ -21,11 +24,20 @@ public:
     ~MainWindow();
 
 
+private slots:
+    void on_pushButton_BMP_clicked();
+    void on_pushButton_HMC_clicked();
+
 private:
     Ui::MainWindow *ui;
     QThreadPool threadPool;
-    I2C_Manager *i2cManager;
-    MEG_Compass *hmc5883l;
+    QThread *BMP_Thread;
+    MEG_Compass *meg_compass;
+    Barometer_BMP180 *BaroMeter;
+
+signals:
+    void sig_readPressure();
+    void sig_readTemperature();
 
 };
 #endif // MAINWINDOW_H

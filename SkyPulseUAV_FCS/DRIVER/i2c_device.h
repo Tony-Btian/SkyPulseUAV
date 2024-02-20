@@ -14,7 +14,7 @@ public:
 
     bool initialize();
     QByteArray readBytes(quint8 reg, quint8 count);
-    bool writeBytes(quint8 reg, const QByteArray &data);
+    bool writeBytes(quint8 reg, QByteArray data);
 
 
 private:
@@ -22,7 +22,8 @@ private:
     int handle;
     static QMutex mutex; // Mutex locks for synchronized access
 
-
+signals:
+    void errorOccurred(QString);
 };
 
 #endif // I2C_DEVICE_H

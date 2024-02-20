@@ -4,23 +4,24 @@
 #include <QObject>
 #include "i2c_device.h"
 
-#define DEVICE_ADDR 0x3C
 
 class MEG_Compass : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit MEG_Compass(I2C_Device * device, QObject *parent = nullptr);
+    explicit MEG_Compass(I2C_Device *device, QObject *parent = nullptr);
     void readRawData();
 
-
 private:
-    I2C_Device* device;
-    int16_t convertToRawData(const QByteArray& bytes, int offset);
+    I2C_Device *device;
+
+    static int i2cHandle; // Handle for I2C communication
+
+    int16_t convertToRawData(const QByteArray &bytes, int offset);
 
 signals:
-    void rawDataRead(int x, int y, int z);
+    void sig_rawDataRead(int x, int y, int z);
 
 };
 

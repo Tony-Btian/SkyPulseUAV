@@ -1,14 +1,17 @@
 #include "i2c_device.h"
 #include <pigpio.h>
 #include <QDebug>
-#include <cstring>
+#include <QThread>
+#include <QByteArray>
 
 QMutex I2C_Device::mutex;
 
 I2C_Device::I2C_Device(int deviceAddress, QObject *parent)
     : QObject(parent), deviceAddress(deviceAddress), handle(-1)
 {
-
+    if (!initialize()) {
+        emit errorOccurred("Failed to open I2C device.");
+    }
 }
 
 I2C_Device::~I2C_Device()
@@ -20,13 +23,8 @@ I2C_Device::~I2C_Device()
 
 bool I2C_Device::initialize()
 {
-    if (gpioInitialise() < 0) {
-        qDebug() << "Failed to initialize pigpio.";
-        return false;
-    }
-    mutex.lock();
+    QMutexLocker locker(&mutex);
     handle = i2cOpen(1, deviceAddress, 0);
-    mutex.unlock();
     if (handle < 0) {
         qDebug() << "Failed to open I2C device.";
         return false;
@@ -36,30 +34,30 @@ bool I2C_Device::initialize()
 
 QByteArray I2C_Device::readBytes(quint8 reg, quint8 count)
 {
-    char* buf = new char[count];
-    QByteArray data;
+    qDebug() << "I2C Device Thread: " << QThread::currentThreadId();
+    QByteArray data(count, 0);  // Automating Memory Management with Qt Containers
     mutex.lock();
-    if (i2cReadI2CBlockData(handle, reg, buf, count) == count) {
-        data = QByteArray(buf, count);
-    } else {
-        qDebug() << "Failed to read from I2C device.";
+    if (i2cReadI2CBlockData(handle, reg, data.data(), count) == count) {
+        mutex.unlock();
+        return data;
     }
-    mutex.unlock();
-    delete[] buf;
-    return data;
+    else {
+        qDebug() << "Failed to read from I2C device.";
+        mutex.unlock();
+        emit errorOccurred("Failed to read from I2C device.");
+        return QByteArray();
+    }
 }
 
-bool I2C_Device::writeBytes(quint8 reg, const QByteArray &data)
+bool I2C_Device::writeBytes(quint8 reg, QByteArray data)
 {
-    mutex.lock();
-    char* tempData = new char[data.size()];  // Creating a non-const temporary array
-    memcpy(tempData, data.constData(), data.size());  // Copying the contents of a QByteArray to a temporary array
-    bool success = i2cWriteI2CBlockData(handle, reg, tempData, data.size()) == 0;  // Calling Functions with Temporary Arrays
-    mutex.unlock();
-
-    delete[] tempData;  // Release the memory occupied by the temporary array
-    if (!success) {
-        qDebug() << "Failed to write to I2C device.";
+    QMutexLocker locker(&mutex);
+    if(i2cWriteI2CBlockData(handle, reg, data.data(), data.size()) == 0){
+        return true;
     }
-    return success;
+    else{
+        qDebug() << "Failed to write to I2C device.";
+        emit errorOccurred("Failed to write to I2C device.");
+        return false;
+    }
 }

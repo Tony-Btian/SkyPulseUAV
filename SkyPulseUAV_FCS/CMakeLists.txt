@@ -18,6 +18,7 @@ find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(${CMAKE_SOURCE_DIR}/DRIVER)
 include_directories(${CMAKE_SOURCE_DIR}/SENSOR)
+include_directories(${CMAKE_SOURCE_DIR}/COMM)
 
 set(PROJECT_SOURCES
     main.cpp
@@ -26,8 +27,9 @@ set(PROJECT_SOURCES
     mainwindow.ui
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
     DRIVER/threadpool.h DRIVER/threadpool.cpp
-    DRIVER/i2c_manager.h DRIVER/i2c_manager.cpp
     SENSOR/meg_compass.h SENSOR/meg_compass.cpp
+    SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
+    COMM/tcp.h COMM/tcp.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -4,8 +4,8 @@
 [![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)]()
 [![Twitter](https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white)]()
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE)
-[![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUVA.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUVA)
-[![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUVA.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUVA)
+[![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUAV)
+[![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUAV)
 
 > SkyPulseUAV: Pioneering UAV Technology for Critical Missions
 
@@ -31,11 +31,11 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.
 - **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and manoeuvrability, even in adverse conditions.
 - **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
-- **Open Source Community Driven**: SkyPulseUVA thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
+- **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
 
 ### Be Part of the Change
-We call on the global community to join us in advancing UAV technology for critical missions. Your expertise and insights are invaluable in evolving SkyPulseUVA to meet the challenges of today and tomorrow.
+We call on the global community to join us in advancing UAV technology for critical missions. Your expertise and insights are invaluable in evolving SkyPulseUAV to meet the challenges of today and tomorrow.
 
 
 ### Connect and Collaborate

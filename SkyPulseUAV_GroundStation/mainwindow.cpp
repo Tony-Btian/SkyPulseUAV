@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     this->initialTCPServer();
     this->initialUDPServer();
-    this->initialBluetoothServer();
+    // this->initialBluetoothServer();
 }
 
 MainWindow::~MainWindow()
@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
         UdpThread->wait(); // 再次等待确保线程已经结束
     }
     delete UdpThread; // 删除线程对象
-
+/*
     // 请求线程结束
     BluetoothThread->quit();  // 等待线程安全结束
     if (!BluetoothThread->wait(3000)) { // 等待最多3秒
@@ -28,6 +28,7 @@ MainWindow::~MainWindow()
         BluetoothThread->wait(); // 再次等待确保线程已经结束
     }
     delete BluetoothThread; // 删除线程对象
+*/
 }
 
 

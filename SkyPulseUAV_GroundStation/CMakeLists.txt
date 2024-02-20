@@ -27,13 +27,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         resource.qrc
-        COMM/Bluetooth.cpp
-        COMM/Bluetooth.h
-        COMM/TCP.cpp
-        COMM/TCP.h
-        COMM/UDP.cpp
-        COMM/UDP.h
-
+        COMM/Bluetooth.cpp COMM/Bluetooth.h
+        COMM/TCP.cpp COMM/TCP.h
+        COMM/UDP.cpp COMM/UDP.h
+        SENSOR/MAG_HMC5883L.h
+        SENSOR/MAG_HMC5883L.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUVA_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

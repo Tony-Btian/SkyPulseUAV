@@ -1,4 +1,4 @@
-# SkyPulseUVA
+# SkyPulseUAV
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)]()
 [![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)]()
@@ -7,12 +7,12 @@
 [![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUVA.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUVA)
 [![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUVA.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUVA)
 
-> SkyPulseUVA: Pioneering UAV Technology for Critical Missions
+> SkyPulseUAV: Pioneering UAV Technology for Critical Missions
 
 
-## Welcome to the SkyPulseUVA Project
+## Welcome to the SkyPulseUAV Project
 
-SkyPulseUVA is a groundbreaking real-time embedded system project, specifically designed to enhance the capabilities of unmanned aerial vehicles (UAVs) in critical scenarios such as fire detection, earthquake rescue, and terrain exploration. Our mission is to empower UAVs with unparalleled stability and precision, making them indispensable tools in emergency response and environmental analysis.
+SkyPulseUAV is a groundbreaking real-time embedded system project, specifically designed to enhance the capabilities of unmanned aerial vehicles (UAVs) in critical scenarios such as fire detection, earthquake rescue, and terrain exploration. Our mission is to empower UAVs with unparalleled stability and precision, making them indispensable tools in emergency response and environmental analysis.
 
 
 ### Project Contributors
@@ -41,7 +41,7 @@ We call on the global community to join us in advancing UAV technology for criti
 ### Connect and Collaborate
 Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community.
 
-Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUVA!
+Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
 
 
 ## License

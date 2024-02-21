@@ -44,6 +44,8 @@ set(OLD_GLOB
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/Bluetooth.cpp"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/TCP.cpp"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/UDP.cpp"
+  "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/Mahony_Plot.cpp"
+  "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/qcustomplot.cpp"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/SENSOR/MAG_HMC5883L.cpp"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/main.cpp"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/mainwindow.cpp"
@@ -68,6 +70,8 @@ set(OLD_GLOB
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/Bluetooth.h"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/TCP.h"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/UDP.h"
+  "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/Mahony_Plot.h"
+  "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/qcustomplot.h"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/SENSOR/MAG_HMC5883L.h"
   "/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/mainwindow.h"
   )

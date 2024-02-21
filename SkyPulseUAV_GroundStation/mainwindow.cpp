@@ -4,6 +4,11 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    MahonyPlotObject = new Mahony_Plot();
+    connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
+    connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
+
     this->initialTCPServer();
     this->initialUDPServer();
     // this->initialBluetoothServer();
@@ -63,7 +68,6 @@ void MainWindow::initialBluetoothServer()
     connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
     BluetoothThread->start();
 }
-
 
 void MainWindow::displayReceivedMessage(const QString &message)
 {

@@ -9,10 +9,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport)
 
 set(TS_FILES SkyPulseUAV_GroundStation_zh_CN.ts)
+
+# Add the DRIVER and SENSOR directories to the include path.
+include_directories(${CMAKE_SOURCE_DIR}/COMM)
+include_directories(${CMAKE_SOURCE_DIR}/PLOTING)
+include_directories(${CMAKE_SOURCE_DIR}/SENSOR)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -35,6 +40,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         COMM/Bluetooth.h
         COMM/Bluetooth.cpp
         resource.qrc
+        PLOTING/qcustomplot.h PLOTING/qcustomplot.cpp
+        PLOTING/Mahony_Plot.h PLOTING/Mahony_Plot.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -61,7 +68,8 @@ endif()
 target_link_libraries(SkyPulseUAV_GroundStation PRIVATE
                       Qt${QT_VERSION_MAJOR}::Widgets
                       Qt${QT_VERSION_MAJOR}::Network
-                      Qt${QT_VERSION_MAJOR}::Bluetooth)
+                      Qt${QT_VERSION_MAJOR}::Bluetooth
+                      Qt${QT_VERSION_MAJOR}::PrintSupport)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

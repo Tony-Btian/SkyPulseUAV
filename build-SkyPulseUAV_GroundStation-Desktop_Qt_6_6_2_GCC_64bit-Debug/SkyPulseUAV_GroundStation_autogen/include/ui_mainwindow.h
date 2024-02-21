@@ -29,6 +29,7 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <qcustomplot.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -47,7 +48,9 @@ public:
     QWidget *widget_2;
     QGridLayout *gridLayout_5;
     QHBoxLayout *horizontalLayout;
-    QGroupBox *groupBox_FlightControlInfo;
+    QTabWidget *tabWidget_FlightControlInfo;
+    QWidget *FlightControlinfo_Status;
+    QWidget *FlightControlinfo_Graph;
     QGroupBox *groupBox_SensorData;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_SensorData_Upper;
@@ -97,14 +100,28 @@ public:
     QLineEdit *lineEdit_Temp;
     QGroupBox *groupBox_GPS;
     QWidget *tab2_ParameterSetting;
-    QHBoxLayout *horizontalLayout_2;
-    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_5;
+    QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_Calibration_Control;
     QToolButton *toolButton_Calib_Gyto;
     QToolButton *toolButton_Calib_Accelerate;
     QToolButton *toolButton_Calib_Compass;
     QToolButton *toolButton_Calib_AirPressure;
     QToolButton *toolButton_Calib_SixDirection;
+    QGroupBox *groupBox_Mahony_Adjuster;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_Mahony_Parameter;
+    QDoubleSpinBox *doubleSpinBox_Mahony_Parameter_1;
+    QDoubleSpinBox *doubleSpinBox_Mahony_Parameter_2;
+    QDoubleSpinBox *doubleSpinBox_Mahony_Parameter_3;
+    QPushButton *pushButton_Mahony_Parameter_Write;
+    QCustomPlot *PlotDisplay_Mahony;
+    QGridLayout *gridLayout_6;
+    QHBoxLayout *horizontalLayout_6;
+    QPushButton *pushButton_Mahony_Plot_Launch;
+    QPushButton *pushButton_Mahony_Plot_Stop;
+    QSpacerItem *horizontalSpacer_3;
     QGroupBox *groupBox_PID_Control;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_Rate_Adjust;
@@ -157,7 +174,6 @@ public:
     QLineEdit *lineEdit_Network_Port;
     QPushButton *pushButton_Network_Disconnect;
     QTextBrowser *textBrowser_test;
-    QWidget *tab3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -165,7 +181,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(928, 600);
+        MainWindow->resize(928, 634);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -200,10 +216,16 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        groupBox_FlightControlInfo = new QGroupBox(tab1_FlightControl);
-        groupBox_FlightControlInfo->setObjectName("groupBox_FlightControlInfo");
+        tabWidget_FlightControlInfo = new QTabWidget(tab1_FlightControl);
+        tabWidget_FlightControlInfo->setObjectName("tabWidget_FlightControlInfo");
+        FlightControlinfo_Status = new QWidget();
+        FlightControlinfo_Status->setObjectName("FlightControlinfo_Status");
+        tabWidget_FlightControlInfo->addTab(FlightControlinfo_Status, QString());
+        FlightControlinfo_Graph = new QWidget();
+        FlightControlinfo_Graph->setObjectName("FlightControlinfo_Graph");
+        tabWidget_FlightControlInfo->addTab(FlightControlinfo_Graph, QString());
 
-        horizontalLayout->addWidget(groupBox_FlightControlInfo);
+        horizontalLayout->addWidget(tabWidget_FlightControlInfo);
 
         groupBox_SensorData = new QGroupBox(tab1_FlightControl);
         groupBox_SensorData->setObjectName("groupBox_SensorData");
@@ -484,10 +506,10 @@ public:
         tabWidget_PanelMain->addTab(tab1_FlightControl, QString());
         tab2_ParameterSetting = new QWidget();
         tab2_ParameterSetting->setObjectName("tab2_ParameterSetting");
-        horizontalLayout_2 = new QHBoxLayout(tab2_ParameterSetting);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        verticalLayout_4 = new QVBoxLayout();
-        verticalLayout_4->setObjectName("verticalLayout_4");
+        horizontalLayout_5 = new QHBoxLayout(tab2_ParameterSetting);
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName("verticalLayout_5");
         horizontalLayout_Calibration_Control = new QHBoxLayout();
         horizontalLayout_Calibration_Control->setObjectName("horizontalLayout_Calibration_Control");
         toolButton_Calib_Gyto = new QToolButton(tab2_ParameterSetting);
@@ -541,7 +563,71 @@ public:
         horizontalLayout_Calibration_Control->addWidget(toolButton_Calib_SixDirection);
 
 
-        verticalLayout_4->addLayout(horizontalLayout_Calibration_Control);
+        verticalLayout_5->addLayout(horizontalLayout_Calibration_Control);
+
+        groupBox_Mahony_Adjuster = new QGroupBox(tab2_ParameterSetting);
+        groupBox_Mahony_Adjuster->setObjectName("groupBox_Mahony_Adjuster");
+        verticalLayout_4 = new QVBoxLayout(groupBox_Mahony_Adjuster);
+        verticalLayout_4->setObjectName("verticalLayout_4");
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        label_Mahony_Parameter = new QLabel(groupBox_Mahony_Adjuster);
+        label_Mahony_Parameter->setObjectName("label_Mahony_Parameter");
+
+        horizontalLayout_2->addWidget(label_Mahony_Parameter);
+
+        doubleSpinBox_Mahony_Parameter_1 = new QDoubleSpinBox(groupBox_Mahony_Adjuster);
+        doubleSpinBox_Mahony_Parameter_1->setObjectName("doubleSpinBox_Mahony_Parameter_1");
+
+        horizontalLayout_2->addWidget(doubleSpinBox_Mahony_Parameter_1);
+
+        doubleSpinBox_Mahony_Parameter_2 = new QDoubleSpinBox(groupBox_Mahony_Adjuster);
+        doubleSpinBox_Mahony_Parameter_2->setObjectName("doubleSpinBox_Mahony_Parameter_2");
+
+        horizontalLayout_2->addWidget(doubleSpinBox_Mahony_Parameter_2);
+
+        doubleSpinBox_Mahony_Parameter_3 = new QDoubleSpinBox(groupBox_Mahony_Adjuster);
+        doubleSpinBox_Mahony_Parameter_3->setObjectName("doubleSpinBox_Mahony_Parameter_3");
+
+        horizontalLayout_2->addWidget(doubleSpinBox_Mahony_Parameter_3);
+
+        pushButton_Mahony_Parameter_Write = new QPushButton(groupBox_Mahony_Adjuster);
+        pushButton_Mahony_Parameter_Write->setObjectName("pushButton_Mahony_Parameter_Write");
+
+        horizontalLayout_2->addWidget(pushButton_Mahony_Parameter_Write);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_2);
+
+        PlotDisplay_Mahony = new QCustomPlot(groupBox_Mahony_Adjuster);
+        PlotDisplay_Mahony->setObjectName("PlotDisplay_Mahony");
+        gridLayout_6 = new QGridLayout(PlotDisplay_Mahony);
+        gridLayout_6->setObjectName("gridLayout_6");
+
+        verticalLayout_4->addWidget(PlotDisplay_Mahony);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        pushButton_Mahony_Plot_Launch = new QPushButton(groupBox_Mahony_Adjuster);
+        pushButton_Mahony_Plot_Launch->setObjectName("pushButton_Mahony_Plot_Launch");
+
+        horizontalLayout_6->addWidget(pushButton_Mahony_Plot_Launch);
+
+        pushButton_Mahony_Plot_Stop = new QPushButton(groupBox_Mahony_Adjuster);
+        pushButton_Mahony_Plot_Stop->setObjectName("pushButton_Mahony_Plot_Stop");
+
+        horizontalLayout_6->addWidget(pushButton_Mahony_Plot_Stop);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_3);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_6);
+
+        verticalLayout_4->setStretch(1, 1);
+
+        verticalLayout_5->addWidget(groupBox_Mahony_Adjuster);
 
         groupBox_PID_Control = new QGroupBox(tab2_ParameterSetting);
         groupBox_PID_Control->setObjectName("groupBox_PID_Control");
@@ -783,10 +869,10 @@ public:
         verticalLayout_3->addLayout(verticalLayout_Self_Stabilization);
 
 
-        verticalLayout_4->addWidget(groupBox_PID_Control);
+        verticalLayout_5->addWidget(groupBox_PID_Control);
 
 
-        horizontalLayout_2->addLayout(verticalLayout_4);
+        horizontalLayout_5->addLayout(verticalLayout_5);
 
         groupBox_Connection = new QGroupBox(tab2_ParameterSetting);
         groupBox_Connection->setObjectName("groupBox_Connection");
@@ -843,14 +929,9 @@ public:
         gridLayout_3->addWidget(textBrowser_test, 2, 0, 1, 2);
 
 
-        horizontalLayout_2->addWidget(groupBox_Connection);
+        horizontalLayout_5->addWidget(groupBox_Connection);
 
-        horizontalLayout_2->setStretch(0, 1);
-        horizontalLayout_2->setStretch(1, 2);
         tabWidget_PanelMain->addTab(tab2_ParameterSetting, QString());
-        tab3 = new QWidget();
-        tab3->setObjectName("tab3");
-        tabWidget_PanelMain->addTab(tab3, QString());
 
         gridLayout->addWidget(tabWidget_PanelMain, 0, 0, 1, 1);
 
@@ -866,6 +947,7 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget_PanelMain->setCurrentIndex(1);
+        tabWidget_FlightControlInfo->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -874,7 +956,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        groupBox_FlightControlInfo->setTitle(QCoreApplication::translate("MainWindow", "Flight control information", nullptr));
+        tabWidget_FlightControlInfo->setTabText(tabWidget_FlightControlInfo->indexOf(FlightControlinfo_Status), QCoreApplication::translate("MainWindow", "Status Info", nullptr));
+        tabWidget_FlightControlInfo->setTabText(tabWidget_FlightControlInfo->indexOf(FlightControlinfo_Graph), QCoreApplication::translate("MainWindow", "Attitude Chart", nullptr));
         groupBox_SensorData->setTitle(QCoreApplication::translate("MainWindow", "Sensor Data", nullptr));
         label_ACC_X->setText(QCoreApplication::translate("MainWindow", "ACC-X", nullptr));
         label_ACC_Y->setText(QCoreApplication::translate("MainWindow", "ACC-Y", nullptr));
@@ -895,6 +978,11 @@ public:
         toolButton_Calib_Compass->setText(QCoreApplication::translate("MainWindow", "\347\243\201\347\275\227\347\233\230\346\240\241\345\207\206", nullptr));
         toolButton_Calib_AirPressure->setText(QCoreApplication::translate("MainWindow", "\346\260\224\345\216\213\350\256\241\346\240\241\345\207\206", nullptr));
         toolButton_Calib_SixDirection->setText(QCoreApplication::translate("MainWindow", "360\345\272\246\346\240\241\345\207\206", nullptr));
+        groupBox_Mahony_Adjuster->setTitle(QCoreApplication::translate("MainWindow", "Mahony \350\260\203\346\225\264\345\231\250", nullptr));
+        label_Mahony_Parameter->setText(QCoreApplication::translate("MainWindow", "\346\216\247\345\210\266\345\217\202\346\225\260", nullptr));
+        pushButton_Mahony_Parameter_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
+        pushButton_Mahony_Plot_Launch->setText(QCoreApplication::translate("MainWindow", "Launch", nullptr));
+        pushButton_Mahony_Plot_Stop->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         groupBox_PID_Control->setTitle(QCoreApplication::translate("MainWindow", "PID Control", nullptr));
         label_PITRate->setText(QCoreApplication::translate("MainWindow", "PIT\351\200\237\347\216\207", nullptr));
         pushButton_PITRate_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
@@ -916,7 +1004,6 @@ public:
         lineEdit_Network_Port->setText(QCoreApplication::translate("MainWindow", "12345", nullptr));
         pushButton_Network_Disconnect->setText(QCoreApplication::translate("MainWindow", "Disconnect", nullptr));
         tabWidget_PanelMain->setTabText(tabWidget_PanelMain->indexOf(tab2_ParameterSetting), QCoreApplication::translate("MainWindow", "Parameter Setting", nullptr));
-        tabWidget_PanelMain->setTabText(tabWidget_PanelMain->indexOf(tab3), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
     } // retranslateUi
 
 };

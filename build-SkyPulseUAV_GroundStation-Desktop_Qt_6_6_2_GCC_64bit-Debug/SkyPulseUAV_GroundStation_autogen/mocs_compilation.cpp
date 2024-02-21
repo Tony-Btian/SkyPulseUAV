@@ -2,4 +2,6 @@
 #include "UUTSVQ4LDU/moc_Bluetooth.cpp"
 #include "UUTSVQ4LDU/moc_TCP.cpp"
 #include "UUTSVQ4LDU/moc_UDP.cpp"
+#include "H7Q5XMJM4O/moc_Mahony_Plot.cpp"
+#include "H7Q5XMJM4O/moc_qcustomplot.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

@@ -6,9 +6,11 @@
 #include <QDebug>
 #include <QNetworkInterface>
 
-#include "COMM/TCP.h"
-#include "COMM/UDP.h"
-#include "COMM/Bluetooth.h"
+#include "TCP.h"
+#include "UDP.h"
+#include "Bluetooth.h"
+
+#include "Mahony_Plot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,11 +31,16 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    /*Network Protocol*/
     TCP *TcpServer;
     UDP *UdpServer;
     Bluetooth *BluetoothServer;
+    /*Ploting*/
+    Mahony_Plot *MahonyPlotObject;
+    /*Multi-threaded*/
     QThread *UdpThread;
     QThread *BluetoothThread;
+
 
     void initialTCPServer();
     void initialUDPServer();

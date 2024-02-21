@@ -439,6 +439,21 @@
 		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets-relwithdebinfo.cmake",
 		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6Bluetooth/Qt6BluetoothAdditionalTargetInfo.cmake",
 		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessTargets.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersion.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfigVersionImpl.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake",
+		"/home/tony/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-relwithdebinfo.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfig.cmake",
+		"/home/tony/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginTargets-relwithdebinfo.cmake",
+		"/home/tony/Qt/6.6.2/gcc_64/lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginAdditionalTargetInfo.cmake",
 		"/home/tony/Qt/Tools/CMake/share/cmake-3.27/Modules/GNUInstallDirs.cmake",
 		"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/resource.qrc"
 	],
@@ -466,6 +481,18 @@
 			null
 		],
 		[
+			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/Mahony_Plot.h",
+			"MU",
+			"H7Q5XMJM4O/moc_Mahony_Plot.cpp",
+			null
+		],
+		[
+			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/qcustomplot.h",
+			"MU",
+			"H7Q5XMJM4O/moc_qcustomplot.cpp",
+			null
+		],
+		[
 			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/SENSOR/MAG_HMC5883L.h",
 			"MU",
 			"ZJUB4U75TV/moc_MAG_HMC5883L.cpp",
@@ -488,6 +515,7 @@
 		"QT_DBUS_LIB",
 		"QT_GUI_LIB",
 		"QT_NETWORK_LIB",
+		"QT_PRINTSUPPORT_LIB",
 		"QT_WIDGETS_LIB"
 	],
 	"MOC_DEPEND_FILTERS" : 
@@ -499,6 +527,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM",
+		"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING",
+		"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/SENSOR",
 		"/home/tony/Qt/6.6.2/gcc_64/include/QtCore",
 		"/home/tony/Qt/6.6.2/gcc_64/include",
 		"/home/tony/Qt/6.6.2/gcc_64/mkspecs/linux-g++",
@@ -507,6 +538,7 @@
 		"/home/tony/Qt/6.6.2/gcc_64/include/QtNetwork",
 		"/home/tony/Qt/6.6.2/gcc_64/include/QtBluetooth",
 		"/home/tony/Qt/6.6.2/gcc_64/include/QtDBus",
+		"/home/tony/Qt/6.6.2/gcc_64/include/QtPrintSupport",
 		"/usr/include",
 		"/usr/include/c++/11",
 		"/usr/include/x86_64-linux-gnu/c++/11",
@@ -559,6 +591,16 @@
 		],
 		[
 			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/COMM/UDP.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/Mahony_Plot.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/tony/Github/SkyPulseUVA/SkyPulseUAV_GroundStation/PLOTING/qcustomplot.cpp",
 			"MU",
 			null
 		],

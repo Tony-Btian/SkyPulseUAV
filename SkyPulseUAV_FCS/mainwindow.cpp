@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
         break; // Successful initialization, jump out of the loop
     }
 
+    // BaroMeter BMP180
     BaroMeter = new Barometer_BMP180();
     BMP_Thread = new QThread();
     BaroMeter->moveToThread(BMP_Thread);
@@ -35,8 +36,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(this, &MainWindow::sig_readTemperature, BaroMeter, &Barometer_BMP180::readTemperatureData);
     connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
 
+    // Magnetometer HMC5883L
 //    meg_compass = new MEG_Compass();
 
+
+    // TCP Server
+    TCPServer = new TCP(this);
+    TCPServer->startServer(12345);  // Listening on port 12345
 }
 
 MainWindow::~MainWindow()
@@ -49,8 +55,8 @@ MainWindow::~MainWindow()
 
     // Release of dynamically allocated resources
     delete BaroMeter;
-    delete meg_compass;
-
+    delete MagnetoMeter;
+    delete TCPServer;
     gpioTerminate();
     delete ui;
 }
@@ -60,7 +66,8 @@ void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
 //    emit sig_readPressure();
-    emit sig_readTemperature();
+//    emit sig_readTemperature();
+    TCPServer->broadcastMessage("Hello from Raspberry Pi");
 }
 
 

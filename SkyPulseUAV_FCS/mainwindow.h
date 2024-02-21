@@ -4,9 +4,11 @@
 #include <QMainWindow>
 #include <QThreadPool>
 #include <QThread>
+
 #include "i2c_device.h"
 #include "meg_compass.h"
 #include "barometer_bmp180.h"
+#include "tcp.h"
 
 #define HMC5883l_DEVICE_ADDR 0x0D
 
@@ -30,9 +32,13 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    /* Thread */
     QThreadPool threadPool;
     QThread *BMP_Thread;
-    MEG_Compass *meg_compass;
+    /* Network Protocol */
+    TCP *TCPServer;
+    /* Sensors */
+    MEG_Compass *MagnetoMeter;
     Barometer_BMP180 *BaroMeter;
 
 signals:

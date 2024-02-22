@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>963</width>
-    <height>622</height>
+    <width>928</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,10 +47,20 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
             <item>
-             <widget class="QGroupBox" name="groupBox_FlightControlInfo">
-              <property name="title">
-               <string>Flight control information</string>
+             <widget class="QTabWidget" name="tabWidget_FlightControlInfo">
+              <property name="currentIndex">
+               <number>1</number>
               </property>
+              <widget class="QWidget" name="FlightControlinfo_Status" native="true">
+               <attribute name="title">
+                <string>Status Info</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="FlightControlinfo_Graph">
+               <attribute name="title">
+                <string>Attitude Chart</string>
+               </attribute>
+              </widget>
              </widget>
             </item>
             <item>
@@ -304,9 +314,9 @@
        <attribute name="title">
         <string>Parameter Setting</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_Calibration_Control">
             <item>
@@ -410,6 +420,78 @@
              </widget>
             </item>
            </layout>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_Mahony_Adjuster">
+            <property name="title">
+             <string>Mahony 调整器</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,0">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="label_Mahony_Parameter">
+                 <property name="text">
+                  <string>控制参数</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_Mahony_Parameter_1"/>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_Mahony_Parameter_2"/>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_Mahony_Parameter_3"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_Mahony_Parameter_Write">
+                 <property name="text">
+                  <string>Write</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QCustomPlot" name="PlotDisplay_Mahony" native="true">
+               <layout class="QGridLayout" name="gridLayout_6"/>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QPushButton" name="pushButton_Mahony_Plot_Launch">
+                 <property name="text">
+                  <string>Launch</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_Mahony_Plot_Stop">
+                 <property name="text">
+                  <string>Stop</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
           </item>
           <item>
            <widget class="QGroupBox" name="groupBox_PID_Control">
@@ -610,105 +692,67 @@
           <property name="title">
            <string>Connection</string>
           </property>
-          <widget class="QPushButton" name="pushButton_Network_Connect">
-           <property name="geometry">
-            <rect>
-             <x>300</x>
-             <y>40</y>
-             <width>89</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Connect</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pushButton_Network_Disconnect">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="geometry">
-            <rect>
-             <x>300</x>
-             <y>70</y>
-             <width>89</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Disconnect</string>
-           </property>
-          </widget>
-          <widget class="QTextBrowser" name="textBrowser_test">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>110</y>
-             <width>371</width>
-             <height>191</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QWidget" name="">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>40</y>
-             <width>231</width>
-             <height>27</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
-            <item>
-             <widget class="QLabel" name="label_Network_IPAddr">
-              <property name="text">
-               <string>IP</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
-              <property name="text">
-               <string>192.168.31.213</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>70</y>
-             <width>231</width>
-             <height>27</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
-            <item>
-             <widget class="QLabel" name="label_Network_Port">
-              <property name="text">
-               <string>端口</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_Network_Port">
-              <property name="text">
-               <string>12345</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
+             <item>
+              <widget class="QLabel" name="label_Network_IPAddr">
+               <property name="text">
+                <string>IP</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
+               <property name="text">
+                <string>192.168.31.213</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton_Network_Connect">
+             <property name="text">
+              <string>Connect</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
+             <item>
+              <widget class="QLabel" name="label_Network_Port">
+               <property name="text">
+                <string>端口</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_Network_Port">
+               <property name="text">
+                <string>12345</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="pushButton_Network_Disconnect">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Disconnect</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QTextBrowser" name="textBrowser_test"/>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
-      </widget>
-      <widget class="QWidget" name="tab3">
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
       </widget>
      </widget>
     </item>
@@ -719,13 +763,21 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>963</width>
+     <width>928</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resource.qrc"/>
  </resources>

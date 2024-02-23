@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     MahonyPlotObject = new Mahony_Plot();
+    qDebug() << "Main Thread ID: " << QThread::currentThreadId();
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
@@ -153,3 +154,15 @@ QString MainWindow::getLocalIP()
     }
     return NULL;
 }
+
+void MainWindow::on_pushButton_Mahony_Plot_Launch_clicked()
+{
+    emit sig_Mahony_PlottingStart();
+}
+
+
+void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
+{
+    emit sig_Mahony_PlottingStop();
+}
+

@@ -51,6 +51,8 @@ private slots:
     void on_pushButton_Network_Connect_clicked();
     void on_pushButton_Network_Disconnect_clicked();
 
+    void on_pushButton_Mahony_Plot_Launch_clicked();
+
     void onTCPConnectionSuccessful();
     void onTCPDisconnectionSuccessful();
     void onTCPConnectionError();
@@ -58,9 +60,15 @@ private slots:
     void onUDPServerStartSuccessful();
     void onUDPServerStopSuccessful();
 
+
+
+    void on_pushButton_Mahony_Plot_Stop_clicked();
+
 signals:
     void sig_StartUDPServer(const quint16 &port);
     void sig_StopUDPServer();
+    void sig_Mahony_PlottingStart();
+    void sig_Mahony_PlottingStop();
 
 };
 #endif // MAINWINDOW_H

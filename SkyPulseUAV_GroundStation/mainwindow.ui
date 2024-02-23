@@ -29,7 +29,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,1">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_AnimationDisplay">
             <item>
@@ -45,13 +45,20 @@
            </layout>
           </item>
           <item>
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
             <item>
              <widget class="QTabWidget" name="tabWidget_FlightControlInfo">
               <property name="currentIndex">
                <number>1</number>
               </property>
-              <widget class="QWidget" name="FlightControlinfo_Status" native="true">
+              <widget class="QWidget" name="FlightControlinfo_Status">
                <attribute name="title">
                 <string>Status Info</string>
                </attribute>

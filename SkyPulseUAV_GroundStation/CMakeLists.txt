@@ -15,9 +15,12 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Net
 set(TS_FILES SkyPulseUAV_GroundStation_zh_CN.ts)
 
 # Add the DRIVER and SENSOR directories to the include path.
-include_directories(${CMAKE_SOURCE_DIR}/COMM)
-include_directories(${CMAKE_SOURCE_DIR}/PLOTING)
-include_directories(${CMAKE_SOURCE_DIR}/SENSOR)
+include_directories(
+    ${CMAKE_SOURCE_DIR}/COMM
+    ${CMAKE_SOURCE_DIR}/PLOTING
+    ${CMAKE_SOURCE_DIR}/SENSOR
+    ${CMAKE_SOURCE_DIR}/SYSTEM
+)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -31,17 +34,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(SkyPulseUAV_GroundStation
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        SENSOR/MAG_HMC5883L.h
-        SENSOR/MAG_HMC5883L.cpp
-        COMM/UDP.h
-        COMM/UDP.cpp
-        COMM/TCP.h
-        COMM/TCP.cpp
-        COMM/Bluetooth.h
-        COMM/Bluetooth.cpp
-        resource.qrc
+        SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
+        COMM/UDP.h COMM/UDP.cpp
+        COMM/TCP.h COMM/TCP.cpp
+        COMM/Bluetooth.h COMM/Bluetooth.cpp
         PLOTING/qcustomplot.h PLOTING/qcustomplot.cpp
         PLOTING/Mahony_Plot.h PLOTING/Mahony_Plot.cpp
+
+        SYSTEM/pooltask.h SYSTEM/pooltask.cpp
+        resource.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

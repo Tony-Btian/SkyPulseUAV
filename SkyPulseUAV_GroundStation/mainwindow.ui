@@ -433,7 +433,7 @@
             <property name="title">
              <string>Mahony 调整器</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1,0">
+            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,2,0">
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item>
@@ -458,6 +458,44 @@
                   <string>Write</string>
                  </property>
                 </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QCheckBox" name="checkBox_3">
+                 <property name="text">
+                  <string>Rol</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox_2">
+                 <property name="text">
+                  <string>Yaw</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBox">
+                 <property name="text">
+                  <string>Pit</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </item>

@@ -1,4 +1,5 @@
 #include "TCP.h"
+#include <QThread>
 
 TCP::TCP(QObject *parent) : QObject(parent), TCPSocket(new QTcpSocket(this)) {
     connect(TCPSocket, &QTcpSocket::readyRead, this, &TCP::readMessage);
@@ -34,6 +35,7 @@ void TCP::sendMessage(const QString &message)
 void TCP::readMessage()
 {
     QByteArray data = TCPSocket->readAll();
+    qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
     emit sig_receivedMessage(QString::fromUtf8(data));
 }
 

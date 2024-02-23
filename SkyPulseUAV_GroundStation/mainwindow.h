@@ -38,19 +38,19 @@ private:
     /*Ploting*/
     Mahony_Plot *MahonyPlotObject;
     /*Multi-threaded*/
+    QThread *TcpThread;
     QThread *UdpThread;
     QThread *BluetoothThread;
-
 
     void initialTCPServer();
     void initialUDPServer();
     void initialBluetoothServer();
+
     QString getLocalIP();
 
 private slots:
     void on_pushButton_Network_Connect_clicked();
     void on_pushButton_Network_Disconnect_clicked();
-
     void on_pushButton_Mahony_Plot_Launch_clicked();
 
     void onTCPConnectionSuccessful();
@@ -65,6 +65,8 @@ private slots:
     void on_pushButton_Mahony_Plot_Stop_clicked();
 
 signals:
+    void sig_StartTCPServer(const QString &IPAddr, const quint16 &Port);
+    void sig_StopTCPServer();
     void sig_StartUDPServer(const quint16 &port);
     void sig_StopUDPServer();
     void sig_Mahony_PlottingStart();

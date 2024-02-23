@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
     this->initialTCPServer();
-    this->initialUDPServer();
+    // this->initialUDPServer();
     // this->initialBluetoothServer();
 }
 
@@ -19,13 +19,22 @@ MainWindow::~MainWindow()
 {
     delete ui;
 
-    // 请求线程结束
+    // 请求TCP线程结束
+    TcpThread->quit();  // 等待线程安全结束
+    if (!TcpThread->wait(3000)) { // 等待最多3秒
+        TcpThread->terminate();
+        TcpThread->wait(); // 再次等待确保线程已经结束
+    }
+    delete TcpThread; // 删除线程对象
+
+    // 请求UDP线程结束
     UdpThread->quit();  // 等待线程安全结束
     if (!UdpThread->wait(3000)) { // 等待最多3秒
         UdpThread->terminate();
         UdpThread->wait(); // 再次等待确保线程已经结束
     }
     delete UdpThread; // 删除线程对象
+
     /*
     // 请求线程结束
     BluetoothThread->quit();  // 等待线程安全结束
@@ -40,11 +49,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::initialTCPServer()
 {
-    TcpServer = new TCP(this);  // 实体化TCP服务
+    TcpThread = new QThread(this);
+    TcpServer = new TCP();  // 实体化TCP服务
+    TcpServer->moveToThread(TcpThread);
+    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
+    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectFromServer);
     connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
     connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
     connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
     connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
+    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
+    TcpThread->start();
 }
 
 
@@ -85,7 +100,8 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
     // 判断端口输入是否有效
     if(ok){
-        TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
+        emit sig_StartTCPServer(NetworkIPAddr, NetworkPort);  // 采用信号的方式进行连接
+        // TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
         emit sig_StartUDPServer(NetworkPort);  // 开启UDP服务
     }
     else{

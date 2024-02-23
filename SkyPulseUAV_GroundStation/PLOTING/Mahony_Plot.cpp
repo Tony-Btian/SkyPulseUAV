@@ -1,36 +1,37 @@
 #include "Mahony_Plot.h"
-// #include "pooltask.h"
 #include <QDebug>
+#include <QtConcurrent>
 
-Mahony_Plot::Mahony_Plot(QObject *parent) : QObject(parent)
+Mahony_Plot::Mahony_Plot(QObject *parent) : QObject(parent), _stop(0)
 {
-    pool.setMaxThreadCount(5);
+    connect(&watcher, &QFutureWatcher<void>::finished, this, &Mahony_Plot::plotThreadParameterInitial);
 }
 
 Mahony_Plot::~Mahony_Plot()
 {
-
-}
-
-void Mahony_Plot::run()
-{
-    for(int i = 0; i < 10; i++)
-    {
-        qDebug() << "plot:" << i << ", current ThreadID: " << QThread::currentThreadId();
-        // QThread::sleep(1);
+    if (watcher.isRunning()) {
+        watcher.waitForFinished();
     }
-    // qDebug() << "Mahony 线程: " << QThread::currentThreadId();
-    // connect(task, &PoolTask::isDone, task, &QObject::deleteLater, Qt::QueuedConnection);
 }
 
 void Mahony_Plot::startPlotting()
 {
-    run();
+    _stop.storeRelease(0); // 设置_stop为0，表示开始运行
+    auto future = QtConcurrent::run([this]() {
+        int i = 0;
+        while (_stop.loadAcquire() == 0) {
+            ++i;
+            QThread::msleep(100); // 模拟耗时操作
+            qDebug() << "Print: " << i << "Task running in thread" << QThread::currentThread();
+            // 适当的任务代码
+        }
+    });
+    watcher.setFuture(future);
 }
 
 void Mahony_Plot::stopPlotting()
 {
-
+    _stop.storeRelease(1);
 }
 
 void Mahony_Plot::plotThreadParameterInitial()

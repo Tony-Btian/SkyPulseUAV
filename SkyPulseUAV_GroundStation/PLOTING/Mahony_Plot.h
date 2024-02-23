@@ -2,21 +2,20 @@
 #define MAHONY_PLOT_H
 
 #include <QObject>
-#include <QThreadPool>
+#include <QFutureWatcher>
+#include <QMutex>
 #include "qcustomplot.h"
 
-class Mahony_Plot : public QObject, public QRunnable
+class Mahony_Plot : public QObject
 {
     Q_OBJECT
 
 public:
     explicit Mahony_Plot(QObject *parent = nullptr);
     ~Mahony_Plot();
-    void run() override;
-    void stop();
 
 private:
-    QThreadPool pool;
+    QFutureWatcher<void> watcher;
     QAtomicInt _stop;
     void plotThreadParameterInitial(); // 线程参数初始化
 
@@ -27,7 +26,6 @@ public slots:
 
 signals:
     void finishedPlotting();
-    void isDone();
     void requestData(uint x, uint y, uint z); // 修改信号，携带绘图数据
 
 };

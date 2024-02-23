@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport Concurrent)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Network Bluetooth PrintSupport Concurrent)
 
 set(TS_FILES SkyPulseUAV_GroundStation_zh_CN.ts)
 
@@ -40,7 +40,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         COMM/Bluetooth.h COMM/Bluetooth.cpp
         PLOTING/qcustomplot.h PLOTING/qcustomplot.cpp
         PLOTING/Mahony_Plot.h PLOTING/Mahony_Plot.cpp
-
         SYSTEM/pooltask.h SYSTEM/pooltask.cpp
         resource.qrc
     )
@@ -70,7 +69,9 @@ target_link_libraries(SkyPulseUAV_GroundStation PRIVATE
                       Qt${QT_VERSION_MAJOR}::Widgets
                       Qt${QT_VERSION_MAJOR}::Network
                       Qt${QT_VERSION_MAJOR}::Bluetooth
-                      Qt${QT_VERSION_MAJOR}::PrintSupport)
+                      Qt${QT_VERSION_MAJOR}::PrintSupport
+                      Qt${QT_VERSION_MAJOR}::Concurrent
+                      )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

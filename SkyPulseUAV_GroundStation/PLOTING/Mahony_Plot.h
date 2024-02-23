@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QFutureWatcher>
-#include <QMutex>
+// #include <QMutex>
 #include "qcustomplot.h"
 
 class Mahony_Plot : public QObject

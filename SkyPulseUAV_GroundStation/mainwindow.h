@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QDebug>
 #include <QNetworkInterface>
+#include <QCloseEvent>
 
 #include "TCP.h"
 #include "UDP.h"
@@ -60,9 +61,10 @@ private slots:
     void onUDPServerStartSuccessful();
     void onUDPServerStopSuccessful();
 
-
-
     void on_pushButton_Mahony_Plot_Stop_clicked();
+
+protected:
+    void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 
 signals:
     void sig_StartTCPServer(const QString &IPAddr, const quint16 &Port);

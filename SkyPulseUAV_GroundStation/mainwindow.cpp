@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
     this->initialTCPServer();
-    // this->initialUDPServer();
+    this->initialUDPServer();
     // this->initialBluetoothServer();
 }
 
@@ -182,3 +182,7 @@ void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
     emit sig_Mahony_PlottingStop();
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    QCoreApplication::quit();
+}

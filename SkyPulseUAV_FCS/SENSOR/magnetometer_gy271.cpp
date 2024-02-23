@@ -1,15 +1,15 @@
-#include "meg_compass.h"
+#include "magnetometer_gy271.h"
+
 #include <QtDebug>
 #include <QtConcurrent>
 
-
-MEG_Compass::MEG_Compass(I2C_Device *device, QObject *parent)
+Magnetometer_GY271::Magnetometer_GY271(I2C_Device *device, QObject *parent)
     : QObject(parent), device(device)
 {
 
 }
 
-void MEG_Compass::readRawData()
+void Magnetometer_GY271::readRawData()
 {
     QByteArray data = device->readBytes(0x03, 6);
     if (data.size() == 6) {
@@ -20,7 +20,7 @@ void MEG_Compass::readRawData()
     }
 }
 
-int16_t MEG_Compass::convertToRawData(const QByteArray& bytes, int offset)
+int16_t Magnetometer_GY271::convertToRawData(const QByteArray& bytes, int offset)
 {
     int16_t value = static_cast<int16_t>((bytes[offset] << 8) | (bytes[offset + 1] & 0xFF));
     return value;

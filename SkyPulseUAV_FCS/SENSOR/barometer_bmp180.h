@@ -2,7 +2,9 @@
 #define BAROMETER_BMP180_H
 
 #include <QObject>
-#include <atomic>
+#include <QFutureWatcher>
+//#include <atomic>
+
 #include "i2c_device.h"
 
 #define BMP180_DEVICE_ADDR 0x77
@@ -17,7 +19,9 @@ public:
 
 private:
     I2C_Device *i2cdevice;
-    std::atomic<bool> shouldStop{false};
+    QFutureWatcher<void> watcher;
+    QAtomicInt _stop;
+//    std::atomic<bool> shouldStop{false};
 
     static long B5;
 
@@ -28,6 +32,7 @@ public slots:
     void readTemperatureData();
     void readPressureData();
     void readingStop();
+    void waitForThreadCompletion();
 
 signals:
     void sig_temperatureRead(double temperature);

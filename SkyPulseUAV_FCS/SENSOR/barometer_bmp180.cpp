@@ -1,6 +1,7 @@
 #include "barometer_bmp180.h"
 #include <QDebug>
-#include <QThread>
+//#include <QThread>
+#include <QtConcurrent>
 
 long Barometer_BMP180::B5;
 
@@ -11,19 +12,24 @@ short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 
 
 Barometer_BMP180::Barometer_BMP180(QObject *parent)
-    : QObject(parent)
+    : QObject(parent), _stop(0)
 {
     i2cdevice = new I2C_Device(BMP180_DEVICE_ADDR, this);
+//    connect(&watcher, &QFutureWatcher<void>::finished, this, &Mahony_Plot::plotThreadParameterInitial);
 }
 
 Barometer_BMP180::~Barometer_BMP180()
 {
+    if (watcher.isRunning()) {
+        watcher.waitForFinished();
+    }
     delete i2cdevice;
 }
 
 void Barometer_BMP180::readingStop()
 {
-    shouldStop = true;
+//    shouldStop = true;
+    _stop.storeRelease(1);
 }
 
 void Barometer_BMP180::readTemperatureData()
@@ -32,21 +38,36 @@ void Barometer_BMP180::readTemperatureData()
         qDebug() << "I2C device is not initialized.";
         return;
     }
-    while(!shouldStop){
-        // Read raw temperature data
-        i2cdevice->writeBytes(0xF4, QByteArray(1, 0x2E)); // Write Temperature Measurement Command
-        QThread::msleep(500); // Waiting for conversion time
-        QByteArray tempRawData = i2cdevice->readBytes(0xF6, 2); // Reading temperature data
-        if (tempRawData.size() == 2) {
-            int UT = static_cast<unsigned char>(tempRawData[0]) << 8 | static_cast<unsigned char>(tempRawData[1]);
-            calculateTemperature(UT);
-        } else {
-            qDebug() << "Invalid temperature data received.";
+//    while(!shouldStop){
+//        // Read raw temperature data
+//        i2cdevice->writeBytes(0xF4, QByteArray(1, 0x2E)); // Write Temperature Measurement Command
+//        QThread::msleep(500); // Waiting for conversion time
+//        QByteArray tempRawData = i2cdevice->readBytes(0xF6, 2); // Reading temperature data
+//        if (tempRawData.size() == 2) {
+//            int UT = static_cast<unsigned char>(tempRawData[0]) << 8 | static_cast<unsigned char>(tempRawData[1]);
+//            calculateTemperature(UT);
+//        } else {
+//            qDebug() << "Invalid temperature data received.";
+//        }
+//        if (shouldStop.load()) { // If the external request stops, jump out of the loop
+//            break;
+//        }
+//    }
+    auto future = QtConcurrent::run([this]() {
+        int i = 0;
+        while (_stop.loadAcquire() == 0) {
+            i2cdevice->writeBytes(0xF4, QByteArray(1, 0x2E)); // Write Temperature Measurement Command
+            QThread::msleep(100); // Waiting for conversion time
+            QByteArray tempRawData = i2cdevice->readBytes(0xF6, 2); // Reading temperature data
+            if (tempRawData.size() == 2) {
+                int UT = static_cast<unsigned char>(tempRawData[0]) << 8 | static_cast<unsigned char>(tempRawData[1]);
+                calculateTemperature(UT);
+            } else {
+                qDebug() << "Invalid temperature data received.";
+            }
         }
-        if (shouldStop.load()) { // If the external request stops, jump out of the loop
-            break;
-        }
-    }
+    });
+    watcher.setFuture(future);
 }
 
 void Barometer_BMP180::readPressureData()
@@ -56,19 +77,22 @@ void Barometer_BMP180::readPressureData()
         return;
     }
 
-    qDebug() << "BMP Thread ID: " << QThread::currentThreadId();
-    // Read raw barometric pressure data
-    i2cdevice->writeBytes(0xF4, QByteArray(1, 0x34 + (3 << 6))); // Write barometric command
-    QThread::sleep(1); // Waiting for conversion time
-    QByteArray pressureRawData;
-    QThread::sleep(1); // Waiting for conversion time
-    pressureRawData = i2cdevice->readBytes(0xF6, 3); // Reading air pressure data
-    if (pressureRawData.size() == 3) {
-        int UP = (static_cast<unsigned char>(pressureRawData[0]) << 16 | static_cast<unsigned char>(pressureRawData[1]) << 8 | static_cast<unsigned char>(pressureRawData[2])) >> (8 - 3);
-        calculatePressure(UP);
-    } else {
-        qDebug() << "Invalid pressure data received.";
-    }
+    auto future = QtConcurrent::run([this]() {
+        while (_stop.loadAcquire() == 0) {
+            qDebug() << "BMP Thread ID: " << QThread::currentThreadId();
+            // Read raw barometric pressure data
+            i2cdevice->writeBytes(0xF4, QByteArray(1, 0x34 + (3 << 6))); // Write barometric command
+            QThread::msleep(100); // Waiting for conversion time
+            QByteArray pressureRawData = i2cdevice->readBytes(0xF6, 3); // Reading air pressure data
+            if (pressureRawData.size() == 3) {
+                int UP = (static_cast<unsigned char>(pressureRawData[0]) << 16 | static_cast<unsigned char>(pressureRawData[1]) << 8 | static_cast<unsigned char>(pressureRawData[2])) >> (8 - 3);
+                calculatePressure(UP);
+            } else {
+                qDebug() << "Invalid pressure data received.";
+            }
+        }
+    });
+    watcher.setFuture(future);
 }
 
 void Barometer_BMP180::calculateTemperature(int UT)
@@ -77,7 +101,7 @@ void Barometer_BMP180::calculateTemperature(int UT)
     long X2 = MC * 2048 / (X1 + MD);
     long B5 = X1 + X2;
     float temperature = (B5 + 8) / 16.0f / 10;
-    qDebug() << temperature;
+    qDebug() << temperature << " in Thread: " << QThread::currentThreadId();
     emit sig_temperatureRead(temperature);
 }
 
@@ -113,4 +137,10 @@ void Barometer_BMP180::calculatePressure(int UP)
     pressure = pressure + (X1 + X2 + 3791) / 16;
     qDebug() << pressure;
     emit sig_pressureRead(pressure);
+}
+
+void Barometer_BMP180::waitForThreadCompletion() {
+    if (watcher.isRunning()) {
+        watcher.waitForFinished();
+    }
 }

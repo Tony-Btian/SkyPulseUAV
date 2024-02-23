@@ -61,13 +61,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::prepareForQuit() {
+    if(BaroMeter) {
+        BaroMeter->readingStop();
+        BaroMeter->waitForThreadCompletion();
+    }
+}
 
 void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
-//    emit sig_readPressure();
+    emit sig_readPressure();
 //    emit sig_readTemperature();
-    TCPServer->broadcastMessage("Hello from Raspberry Pi");
+//    TCPServer->broadcastMessage("Hello from Raspberry Pi");
 }
 
 
@@ -76,3 +82,11 @@ void MainWindow::on_pushButton_HMC_clicked()
 
 }
 
+void MainWindow::closeEvent(QCloseEvent *event) {
+//    barometer->readingStop();
+//    barometer->waitForThreadCompletion();
+    prepareForQuit();
+//    BaroMeter->readingStop();
+//    BaroMeter->waitForThreadCompletion();
+    QMainWindow::closeEvent(event);
+}

@@ -27,8 +27,9 @@ set(PROJECT_SOURCES
     mainwindow.ui
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
     DRIVER/threadpool.h DRIVER/threadpool.cpp
-    SENSOR/meg_compass.h SENSOR/meg_compass.cpp
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
+    SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
+    SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
     COMM/tcp.h COMM/tcp.cpp
 )
 

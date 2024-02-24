@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "threadpool.h"
+#include "databasemanager.h"
 #include <QDebug>
 #include <pigpio.h>
 
@@ -11,6 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
+
+    DatabaseManager dbManager("config.db");
+    dbManager.addOrUpdateParam("height", 100.1);
+    double height = dbManager.getParam("height");
+    qDebug() << "Height parameter value is: " << height;
 
     // Initial GPIO
     while(true){

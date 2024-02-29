@@ -45,7 +45,9 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 ## Project Development Planning
 ### Global
--[ ] 
+- [ ] Build up the Github warehouse & README
+- [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [ ] 
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian

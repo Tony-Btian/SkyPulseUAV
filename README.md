@@ -10,7 +10,7 @@
 > SkyPulseUVA: Pioneering UAV Technology for Critical Missions
 
 
-## Welcome to the SkyPulseUVA Project
+### Welcome to the SkyPulseUVA Project
 
 SkyPulseUVA is a groundbreaking real-time embedded system project, specifically designed to enhance the capabilities of unmanned aerial vehicles (UAVs) in critical scenarios such as fire detection, earthquake rescue, and terrain exploration. Our mission is to empower UAVs with unparalleled stability and precision, making them indispensable tools in emergency response and environmental analysis.
 
@@ -42,6 +42,23 @@ We call on the global community to join us in advancing UAV technology for criti
 Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community.
 
 Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUVA!
+
+# Project Development Planning
+### Global
+- [ ] Build up the Github warehouse & README
+- [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [ ] Design the Hardware and Software
+- [ ] Buy electrical components for the project
+
+### Binhan Tian
+- [ ] 
+
+### Jianliang Wu
+- [ ]
+
+# Guide
+### System Deployment
+#### 
 
 
 ## License

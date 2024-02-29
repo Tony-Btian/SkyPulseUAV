@@ -50,14 +50,15 @@ Let's transform the landscape of emergency response and environmental analysis t
 - [ ] Design the Hardware and Software
 - [ ] Buy electrical components for the project
 
-#### Binhan Tian
+### Binhan Tian
 - [ ] 
 
-#### Jianliang Wu
+### Jianliang Wu
 - [ ]
 
 ## Guide
 ### System Deployment
+#### 
 
 
 ## License

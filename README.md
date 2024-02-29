@@ -47,7 +47,18 @@ Let's transform the landscape of emergency response and environmental analysis t
 ### Global
 - [ ] Build up the Github warehouse & README
 - [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [ ] Design the Hardware and Software
+- [ ] Buy electrical components for the project
+
+#### Binhan Tian
 - [ ] 
+
+#### Jianliang Wu
+- [ ]
+
+## Guide
+### System Deployment
+
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian

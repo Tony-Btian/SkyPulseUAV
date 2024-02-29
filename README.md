@@ -43,6 +43,9 @@ Stay updated with our progress, engage in discussions, and explore collaboration
 
 Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUVA!
 
+## Project Development Planning
+### Global
+-[] 
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian

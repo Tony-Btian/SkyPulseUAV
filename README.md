@@ -1,6 +1,6 @@
 # SkyPulseUVA
 
-![Cat](SkyPulseUAV/Image/Cat.jpg)
+![Cat](/Image/Cat.jpg)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)]()
 [![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)]()

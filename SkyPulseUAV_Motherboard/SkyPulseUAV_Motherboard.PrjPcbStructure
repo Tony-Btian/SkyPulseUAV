@@ -1,1 +1,4 @@
-Record=TopLevelDocument|FileName=Motherboard_Schematic.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=SkyPulseUAV_Motherboard.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=SkyPulseUAV_Motherboard.SchDoc|Designator=Main_Control_Unit|SchDesignator=Main_Control_Unit|FileName=SkyPulseUAV_MCU.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=SkyPulseUAV_MCU.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=SkyPulseUAV_Motherboard.SchDoc|Designator=Power_Module|SchDesignator=Power_Module|FileName=SkyPulseUAV_Connector.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=SkyPulseUAV_Connector.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=SkyPulseUAV_Motherboard.SchDoc|Designator=Power_Module|SchDesignator=Power_Module|FileName=SkyPulseUAV_PowerModule.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=SkyPulseUAV_PowerModule.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

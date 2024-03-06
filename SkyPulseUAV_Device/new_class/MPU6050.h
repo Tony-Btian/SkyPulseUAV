@@ -4,6 +4,7 @@
 #include <atomic>
 
 #include "Sensor.h"
+#include "IIC.h"
 
 #define MPU6050_ADDRESS 0x68
 #define GY_271_ADDRESS 0x0D
@@ -44,7 +45,10 @@ protected:
     friend void interruptHandler(int GPIO, int level, unsigned int tick);
 
 private:
-    
+
+    IIC iicMPU6050;
+    IIC iicGY271;
+
     static std::atomic<bool> mpu6050_newdata;
     //std::atomic<bool> mpu6050_reading;
     std::atomic<bool> calibrate_ready;
@@ -52,8 +56,6 @@ private:
     int offset_count;
 
     int calibrationCount;
-
-    int handle;
 
     char sampleRate;
 

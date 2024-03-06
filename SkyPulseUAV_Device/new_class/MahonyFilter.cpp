@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 
-#include "../include/pigpio.h"
-#include "../include/MahonyFilter.h"
+#include "include/pigpio.h"
+#include "MahonyFilter.h"
 
 MahonyFilter::MahonyFilter() : MahonyFilter(sampleFreq, twoKpDef, twoKiDef) {};
 

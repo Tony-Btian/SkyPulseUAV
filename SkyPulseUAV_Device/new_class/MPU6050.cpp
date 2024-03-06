@@ -1,8 +1,8 @@
 #include <iostream>
 #include <mutex>
 
-#include "../include/pigpio.h"
-#include "../include/MPU6050.h"
+#include "pigpio.h"
+#include "MPU6050.h"
 
 MPU6050* MPU6050::globalInstance = nullptr;
 // std::atomic<bool> mpu6050_newdata(false);
@@ -18,12 +18,12 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 	gz(0.0f),
 	mx(0.0f),
 	my(0.0f),
-	mz(0.0f)
- {
+	mz(0.0f), 
+	iicMPU6050(MPU6050_ADDRESS),
+	iicGY271(GY_271_ADDRESS) {
 
 	offset_count = 0;
 	needToExit = false;
-	handle = 0;
 	calibrationCount = calibrationTimes;
 	globalInstance = this;
 
@@ -37,68 +37,28 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
     sampleRate = (1000 / customSampleRate) - 1; 
     std::cout << "Sample rate has been set to " << customSampleRate << std::endl;
 
-    {
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		handle = i2cOpen(IIC_BUS, MPU6050_ADDRESS, 0);  //sudo i2cdetect -y 1 to check addr
-	}
-
-		if (handle < 0) {
-			std::cout << "I2C is not enabled!" << std::endl;
-			gpioTerminate();
-			needToExit = true;
-			return;
-	}
-
     // Wake MPU6050 up.
 	char dataString[2] = {0x6B, 0};
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		if (i2cWriteDevice(handle, dataString, sizeof(dataString)) != 0) {
-			std::cout << "Can't wake MPU6050 up!" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
+	if(iicMPU6050.write(dataString, 2) != 0) {
+		std::cerr << "Can't wake MPU6050 up." << std::endl;
 	}
 	
     // Real sample rate = 1000 / (1+ sampleRate ).
-	char setSampleRate[2] = { 0x19, sampleRate };  
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		if (i2cWriteDevice(handle, setSampleRate, sizeof(setSampleRate)) != 0) {
-			std::cout << "Can't set sample rate!" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
-	}
-
+	char setSampleRate[2] = { 0x19, sampleRate }; 
+	if(iicMPU6050.write(setSampleRate, 2) != 0) {
+		std::cerr << "Can't set sample rate of MPU6050." << std::endl;
+	} 
+	
 	// Enable interrupt.
 	char enableInt[2] = { 0x38, 0x01 };
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		if (i2cWriteDevice(handle, enableInt, sizeof(enableInt)) != 0) {
-			std::cout << "Can't enable interrupt!!" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
+	if(iicMPU6050.write(enableInt, 2) != 0) {
+		std::cerr << "Can't enable interrupt of MPU6050." << std::endl;
 	}
-    
+
     // Set DLPF.
 	char setDLPF[2] = {0x1A, 0x03};
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		if (i2cWriteDevice(handle, setDLPF, sizeof(setDLPF)) != 0) {
-			std::cout << "Can't set LPF." << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
+	if(iicMPU6050.write(setDLPF, 2) != 0) {
+		std::cerr << "Can't set DLPF of MPU6050." << std::endl;
 	}
 
     // set full scale range of accelerometer to +-2g
@@ -121,23 +81,9 @@ void MPU6050 :: checkNewData(bool newDataReady) {
 void MPU6050 :: MPU6050ReadData(char* data) {
 
 	char MPU6050StartAddr = 0x3B;
-    {
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		
-		if (i2cWriteByte(handle, MPU6050StartAddr) != 0) {
-			if(i2cWriteByte(handle, MPU6050StartAddr)!= 0) {
-				std::cout << "Can't get data of accelerometer." << std::endl;
-				i2cClose(handle);
-				gpioTerminate();
-			}
-		}
 
-		if (i2cReadDevice(handle, data, 14) <= 0) {
-			std::cout << "Can't read data from accelerometer" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			//return;
-		}
+	if(iicMPU6050.read(data, 14, MPU6050StartAddr) != 0) {
+		std::cerr << "Can't read data of MPU6050." << std::endl;
 	}
 }
 
@@ -145,56 +91,25 @@ void MPU6050 :: GY271ReadData(char* data) {
 
 	char GY271StartAddr = 0x00;
 
-    {
-		std::lock_guard<std::mutex> lock(i2cmtx);
-		if (i2cWriteByte(handle, GY271StartAddr) != 0) {
-			std::cout << "Can't write address to magnet sensor." << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			return;
-		}
-
-		if (i2cReadDevice(handle, data, 6) <= 0) {
-			std::cout << "Can't read data from magnet sensor" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			return;
-		}
+	if(iicMPU6050.read(data, 6, GY271StartAddr) != 0) {
+		std::cerr << "Can't read data of MPU6050." << std::endl;
 	}
 }
 
 void MPU6050 :: setRangeOfAcce(bool needToExit) {
 
-    char  dataAcce[2] = {0x1C, 0 << 3 };
+    char dataAcce[2] = {0x1C, 0 << 3 };
 
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
+	iicMPU6050.write(dataAcce, 2);
 
-		if (i2cWriteDevice(handle, dataAcce, sizeof(dataAcce)) != 0) {
-			std::cout << "Can't set full scale range of accelerometer to +-2g" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
-	}
 }
 
 void MPU6050 :: setRangeOfGyro(bool needToExit) {
 
-    char  dataGyro[2] = {0x1B, 0x18};
+    char dataGyro[2] = {0x1B, 0x18};
 
-	{
-		std::lock_guard<std::mutex> lock(i2cmtx);
+	iicMPU6050.write(dataGyro, 2);
 
-		if (i2cWriteDevice(handle, dataGyro, sizeof(dataGyro)) != 0) {
-			std::cout << "Can't set full scale range of Gyroscope to +-2g" << std::endl;
-			i2cClose(handle);
-			gpioTerminate();
-			needToExit = true;
-			return;
-		}
-	}
 }
 
 void MPU6050 :: getData(float a[3], float g[3], float m[3]) {

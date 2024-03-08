@@ -30,6 +30,10 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 	MPU6050RawData[14] = {};
 	GY271RawData[6] = {};
 
+	a_offset[3] = {0};
+	g_offset[3] = {0};
+	m_offset[3] = {0};
+
 	calibrate_ready.store(false);
 	mpu6050_newdata.store(false);
 
@@ -78,6 +82,12 @@ bool MPU6050 :: checkNewData() {
 
 }
 
+bool MPU6050 :: checkCalibration() {
+
+	return (calibrate_ready.load());
+
+}
+
 void MPU6050 :: MPU6050ReadData(char* data) {
 
 	char MPU6050StartAddr = 0x3B;
@@ -114,29 +124,20 @@ void MPU6050 :: setRangeOfGyro(bool needToExit) {
 
 void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
 
-	if(!calibrate_ready.load()) {
-
-		calibrateData();
-
-	}
-
-	else {
-
-		a[0] = ((ax.load() - a_offset[0]) / 16384.0f)*9.818f;
-		a[1] = ((ay.load() - a_offset[1]) / 16384.0f)*9.818f;
-		a[2] = ((az.load() - a_offset[2]) / 16384.0f)*9.818f;
-		a[2] = a[2] + 9.818f;
-
-		g[0] = (gx.load() - g_offset[0]) / (16.384f) * DEG_TO_RAD;
-		g[1] = (gy.load() - g_offset[1]) / (16.384f) * DEG_TO_RAD;
-		g[2] = (gz.load() - g_offset[2]) / (16.384f) * DEG_TO_RAD;
-
-		m[0] = (mx.load() - m_offset[0]) * 0.000122f;
-		m[1] = (my.load() - m_offset[1]) * 0.000122f;
-		m[2] = (mz.load() - m_offset[2]) * 0.000122f;
-	}
-
 	mpu6050_newdata.store(false);
+
+	a[0] = ((ax.load() - a_offset[0]) / 16384.0f)*9.818f;
+	a[1] = ((ay.load() - a_offset[1]) / 16384.0f)*9.818f;
+	a[2] = ((az.load() - a_offset[2]) / 16384.0f)*9.818f;
+	a[2] = a[2] + 9.818f;
+
+	g[0] = (gx.load() - g_offset[0]) / (16.384f) * DEG_TO_RAD;
+	g[1] = (gy.load() - g_offset[1]) / (16.384f) * DEG_TO_RAD;
+	g[2] = (gz.load() - g_offset[2]) / (16.384f) * DEG_TO_RAD;
+
+	m[0] = (mx.load() - m_offset[0]) * 0.000122f;
+	m[1] = (my.load() - m_offset[1]) * 0.000122f;
+	m[2] = (mz.load() - m_offset[2]) * 0.000122f;
 	
 }
 
@@ -156,7 +157,7 @@ void MPU6050 :: calibrateData() {
 
 	offset_count++;
 
-	if (offset_count > CALIBRATION_COUNT) {
+	if (offset_count > calibrationCount) {
 		g_offset[0] = g_offset[0] / offset_count;
 		g_offset[1] = g_offset[1] / offset_count;
 		g_offset[2] = g_offset[2] / offset_count;
@@ -178,6 +179,8 @@ void MPU6050 :: calibrateData() {
 
 void interruptHandler(int GPIO, int level, unsigned int tick) {
 
+	// std::cout << "Int trigger!" << std::endl;
+	
 	MPU6050::globalInstance -> MPU6050ReadData(&MPU6050::globalInstance -> MPU6050RawData[0]);
 	MPU6050::globalInstance -> GY271ReadData(&MPU6050::globalInstance -> GY271RawData[0]);
 
@@ -212,7 +215,12 @@ void interruptHandler(int GPIO, int level, unsigned int tick) {
     MPU6050::globalInstance -> my.store(tempmy);
     MPU6050::globalInstance -> mz.store(tempmz);
 
-	MPU6050::globalInstance -> mpu6050_newdata.store(true);
+	if(!MPU6050::globalInstance -> calibrate_ready.load()) {
+		MPU6050::globalInstance -> calibrateData();
+	}
+
+	else
+		MPU6050::globalInstance -> mpu6050_newdata.store(true);
 }
 
 // Trigger interrupt to read data from MPU6050.

@@ -54,13 +54,14 @@ int IIC::read(char* dataArray, int arrayLength, int regAddr) {
         return err;
         }
 
-        if ((err = i2cReadDevice(handle, dataArray, arrayLength)) <= 0) {
+        if (i2cReadDevice(handle, dataArray, arrayLength) <= 0) {
         std::cerr << "Can't read data from IIC device " << handle << "." << std::endl;
         i2cClose(handle);
         gpioTerminate();
         return err;
         }
     }
+
     return err;
 
 }

@@ -6,7 +6,8 @@
 
 MahonyFilter::MahonyFilter() : MahonyFilter(sampleFreq, twoKpDef, twoKiDef) {};
 
-MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGain) {
+MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGain) : 
+	q{1.0f, 0.0f, 0.0f, 0.0f}{
 
     setFrequency(filterFreq);
 
@@ -14,13 +15,18 @@ MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGai
 
     setKp(twoPropGain);
 
-    q[4] = {};
+	ax = ay = az = 0.0f;
+
+	gx = gy = gz = 0.0f;
+
+	mx = my = mz = 0.0f;
 
     float integralFBx = 0.0f, integralFBy = 0.0f, integralFBz = 0.0f;
 
 }
 
 void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
+	
 	ax = a[0];
 	ay = a[1];
 	az = a[2];
@@ -36,6 +42,8 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	mx = 0;
 	my = 0;
 	mz = 0;
+
+	std::cout << ax << "|" << gx << std::endl;
 }
 
 void MahonyFilter::setFrequency(float f) {
@@ -241,11 +249,14 @@ float MahonyFilter::invSqrt(float x) {
 	return y;
 }
 
-void MahonyFilter::getAngle(float* roll, float* pitch, float* yaw) {
+void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw) {
 
-	*roll = atan2f( (q[2]* q[3] + q[1]*q[0]) , ( 0.5f - (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
-	*pitch = asinf((q[1]*q[3] - q[2]*q[0])) * 57.29578f;
-	*yaw = atan2f( (q[1]*q[2] + q[3]*q[0]), ( 0.5f - (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
+	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
+	*_pitch = asinf((q[1]*q[3] - q[2]*q[0])) * 57.29578f;
+	*_yaw = atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
 
+	roll.store(*_roll);
+	pitch.store(*_pitch);
+	yaw.store(*_yaw);
 }
 

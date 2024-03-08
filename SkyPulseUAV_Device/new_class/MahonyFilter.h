@@ -1,6 +1,8 @@
 #ifndef __MAHONY_FILTER_H__
 #define __MAHONY_FILTER_H__
 
+#include <atomic>
+
 #define sampleFreq	200.0f			// sample frequency in Hz
 #define twoKpDef	(2.0f * 0.2f)	// 2 * proportional gain
 #define twoKiDef	(2.0f * 0.001f)	// 2 * integral gain
@@ -25,11 +27,11 @@ public:
 
     void readRawData(float a[3], float g[3], float m[3]);
 
-protected:
-
     void MahonyAHRSupdate();
 
     void MahonyAHRSupdateIMU();
+
+protected:
 
     float invSqrt(float x);
 
@@ -47,6 +49,10 @@ private:
     float integralFBx; 
     float integralFBy;
     float integralFBz;
+
+    std::atomic<float> roll;
+    std::atomic<float> pitch;
+    std::atomic<float> yaw;
 };
 
 

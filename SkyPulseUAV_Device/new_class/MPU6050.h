@@ -28,6 +28,10 @@ public:
 
     bool checkNewData();
 
+    bool checkCalibration();
+
+    void calibrateData();
+
     static MPU6050* globalInstance;
 
 protected:
@@ -39,8 +43,6 @@ protected:
     void setRangeOfAcce(bool needToExit);
 
     void setRangeOfGyro(bool needToExit);
-
-    void calibrateData();
 
     friend void interruptHandler(int GPIO, int level, unsigned int tick);
 

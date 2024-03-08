@@ -22,13 +22,11 @@ void MPU6050Thread::run() {
             
             mpu6050.getData(a, g, m);
             Mahonyfilter.readRawData(a, g, m);
+            Mahonyfilter.MahonyAHRSupdateIMU();
             Mahonyfilter.getAngle(&roll, &pitch, &yaw);
-            std::cout << roll << "|" << pitch << "|" << yaw << std::endl;
-            std::cout << gpioTick << std::endl;
-        }
 
-        else{
-            std::cout << "Program is running! MPU6050 is calibrating, please wait..." << std::endl;
+            std::cout << roll << "|" << pitch << "|" << yaw << std::endl;
+            std::cout << gpioTick() << std::endl;            
         }
 
     }

@@ -19,6 +19,7 @@ void MPU6050Thread::run() {
     for(;;) {
 
         if(mpu6050.checkNewData()) {
+            
             mpu6050.getData(a, g, m);
             Mahonyfilter.readRawData(a, g, m);
             Mahonyfilter.getAngle(&roll, &pitch, &yaw);

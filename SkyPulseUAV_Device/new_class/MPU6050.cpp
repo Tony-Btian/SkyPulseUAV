@@ -135,6 +135,8 @@ void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
 		m[1] = (my.load() - m_offset[1]) * 0.000122f;
 		m[2] = (mz.load() - m_offset[2]) * 0.000122f;
 	}
+
+	mpu6050_newdata.store(false);
 	
 }
 

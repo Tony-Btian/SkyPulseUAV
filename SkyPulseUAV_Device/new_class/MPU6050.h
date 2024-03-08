@@ -3,7 +3,7 @@
 
 #include <atomic>
 
-#include "Sensor.h"
+//#include "Sensor.h"
 #include "IIC.h"
 
 #define MPU6050_ADDRESS 0x68
@@ -16,7 +16,7 @@
 
 extern std::mutex i2cmtx;
 
-class MPU6050 : public Sensor {
+class MPU6050 {
 
 public:
 
@@ -26,7 +26,7 @@ public:
     
     void getData(float a[3], float g[3], float m[3]);
 
-    void checkNewData(bool newDataReady);
+    bool checkNewData();
 
     static MPU6050* globalInstance;
 
@@ -49,7 +49,7 @@ private:
     IIC iicMPU6050;
     IIC iicGY271;
 
-    static std::atomic<bool> mpu6050_newdata;
+    std::atomic<bool> mpu6050_newdata;
     //std::atomic<bool> mpu6050_reading;
     std::atomic<bool> calibrate_ready;
     bool needToExit;
@@ -89,6 +89,6 @@ private:
 
 void interruptHandler(int GPIO, int level, unsigned int tick);
 
-void initializeMPUISR(bool* needToExit);
+void initializeMPUISR();
 
 #endif

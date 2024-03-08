@@ -72,9 +72,9 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 	else { std::cout << "Scale range of gyroscope: +- 2000°/s." << std::endl; }
 }
 
-void MPU6050 :: checkNewData(bool newDataReady) {
+bool MPU6050 :: checkNewData() {
 
-	newDataReady = mpu6050_newdata.load();
+	return (mpu6050_newdata.load());
 
 }
 
@@ -213,14 +213,13 @@ void interruptHandler(int GPIO, int level, unsigned int tick) {
 	MPU6050::globalInstance -> mpu6050_newdata.store(true);
 }
 
-// Trigger interrupt to read data from MPu6050.
-void initializeMPUISR(bool* needToExit) {
+// Trigger interrupt to read data from MPU6050.
+void initializeMPUISR() {
     
     gpioSetMode(INT_PIN, PI_INPUT);
 
 	if (gpioSetISRFunc(INT_PIN, RISING_EDGE, 0, interruptHandler) != 0) {
 		std::cout << "mpu6050 int failed." << std::endl;
-		*needToExit = true;
 		return;
 	}
 }

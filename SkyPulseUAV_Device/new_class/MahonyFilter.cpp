@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <pigpio.h>
 
-#include "include/pigpio.h"
 #include "MahonyFilter.h"
 
 MahonyFilter::MahonyFilter() : MahonyFilter(sampleFreq, twoKpDef, twoKiDef) {};
@@ -18,6 +18,24 @@ MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGai
 
     float integralFBx = 0.0f, integralFBy = 0.0f, integralFBz = 0.0f;
 
+}
+
+void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
+	ax = a[0];
+	ay = a[1];
+	az = a[2];
+
+	gx = g[0];
+	gy = g[1];
+	gz = g[2];
+
+	// mx = m[0];
+	// my = m[1];
+	// mz = m[2];
+
+	mx = 0;
+	my = 0;
+	mz = 0;
 }
 
 void MahonyFilter::setFrequency(float f) {
@@ -38,7 +56,7 @@ void MahonyFilter::setKp(float twokpSet) {
 
 }
 
-void MahonyFilter::MahonyAHRSupdate(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz) {
+void MahonyFilter::MahonyAHRSupdate() {
 
     float recipNorm;
 	float q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
@@ -49,7 +67,7 @@ void MahonyFilter::MahonyAHRSupdate(float gx, float gy, float gz, float ax, floa
 
 	// Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
 	if ((mx == 0.0f) && (my == 0.0f) && (mz == 0.0f)) {
-		MahonyAHRSupdateIMU(gx, gy, gz, ax, ay, az);
+		MahonyAHRSupdateIMU();
 		return;
 	}
 
@@ -143,7 +161,7 @@ void MahonyFilter::MahonyAHRSupdate(float gx, float gy, float gz, float ax, floa
 	q[3] *= recipNorm;
 }
 
-void MahonyFilter::MahonyAHRSupdateIMU(float gx, float gy, float gz, float ax, float ay, float az) {
+void MahonyFilter::MahonyAHRSupdateIMU() {
     float recipNorm;
 	float halfvx, halfvy, halfvz;
 	float halfex, halfey, halfez;
@@ -223,5 +241,11 @@ float MahonyFilter::invSqrt(float x) {
 	return y;
 }
 
+void MahonyFilter::getAngle(float* roll, float* pitch, float* yaw) {
 
+	*roll = atan2f( (q[2]* q[3] + q[1]*q[0]) , ( 0.5f - (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
+	*pitch = asinf((q[1]*q[3] - q[2]*q[0])) * 57.29578f;
+	*yaw = atan2f( (q[1]*q[2] + q[3]*q[0]), ( 0.5f - (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
+
+}
 

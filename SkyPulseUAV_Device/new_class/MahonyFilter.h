@@ -13,11 +13,9 @@ public:
 
     MahonyFilter(float filterSample, float twoPropGain, float twoInteGain);
 
-    void MahonyAHRSupdate(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz);
+    void getAngle(float* roll, float* pitch, float* yaw);
 
-    void MahonyAHRSupdateIMU(float gx, float gy, float gz, float ax, float ay, float az);
-
-    void getQuaternion(float q_new[4]);
+    //void getQuaternion(float q_new[4]);
 
     void setKi(float twokiSet);
 
@@ -25,7 +23,13 @@ public:
 
     void setFrequency(float f);
 
+    void readRawData(float a[3], float g[3], float m[3]);
+
 protected:
+
+    void MahonyAHRSupdate();
+
+    void MahonyAHRSupdateIMU();
 
     float invSqrt(float x);
 
@@ -33,7 +37,12 @@ private:
 
     float twoKp;
     float twoKi;
+
     float q[4];
+    float ax, ay, az;
+    float gx, gy, gz;
+    float mx, my, mz;
+
     float frequency;
     float integralFBx; 
     float integralFBy;

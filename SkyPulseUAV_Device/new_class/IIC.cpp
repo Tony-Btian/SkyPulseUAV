@@ -1,5 +1,7 @@
 #include "IIC.h"
 
+std::mutex i2cmtx;
+
 IIC::IIC(int address) {
 
     {
@@ -37,6 +39,8 @@ int IIC::write(char* dataArray, int arrayLength) {
         return err;
 	    }
     }
+
+    return err;
 }
 
 int IIC::read(char* dataArray, int arrayLength, int regAddr) {
@@ -57,4 +61,6 @@ int IIC::read(char* dataArray, int arrayLength, int regAddr) {
         return err;
         }
     }
+    return err;
+
 }

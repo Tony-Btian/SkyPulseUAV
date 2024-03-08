@@ -24,6 +24,7 @@ public:
 private:
 
     int handle;
+    
     int err;
 
 };

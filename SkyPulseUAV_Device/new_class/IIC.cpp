@@ -27,7 +27,6 @@ IIC::~IIC() {
     }
 }
 
-
 int IIC::write(char* dataArray, int arrayLength) {
 
     {

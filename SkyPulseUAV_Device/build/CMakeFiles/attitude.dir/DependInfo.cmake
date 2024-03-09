@@ -8,17 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/kinsley/project/SkyPulseUAV_Device/AttiDemo.cpp" "CMakeFiles/attitude.dir/AttiDemo.cpp.o" "gcc" "CMakeFiles/attitude.dir/AttiDemo.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/AttiDataCollect.cpp" "CMakeFiles/attitude.dir/src/AttiDataCollect.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/AttiDataCollect.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/AttiFunc.cpp" "CMakeFiles/attitude.dir/src/AttiFunc.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/AttiFunc.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/BaroDataCollect.cpp" "CMakeFiles/attitude.dir/src/BaroDataCollect.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BaroDataCollect.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/BaroFunc.cpp" "CMakeFiles/attitude.dir/src/BaroFunc.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BaroFunc.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/SonicDataCollect.cpp" "CMakeFiles/attitude.dir/src/SonicDataCollect.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/SonicDataCollect.cpp.o.d"
-  "/home/kinsley/project/SkyPulseUAV_Device/src/SonicFunc.cpp" "CMakeFiles/attitude.dir/src/SonicFunc.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/SonicFunc.cpp.o.d"
+  "/home/kinsleyng/test/main.cpp" "CMakeFiles/attitude.dir/main.cpp.o" "gcc" "CMakeFiles/attitude.dir/main.cpp.o.d"
+  "/home/kinsleyng/test/src/BMP180Thread.cpp" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d"
+  "/home/kinsleyng/test/src/IIC.cpp" "CMakeFiles/attitude.dir/src/IIC.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/IIC.cpp.o.d"
+  "/home/kinsleyng/test/src/MPU6050.cpp" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o.d"
+  "/home/kinsleyng/test/src/MPU6050Thread.cpp" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d"
+  "/home/kinsleyng/test/src/MahonyFilter.cpp" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

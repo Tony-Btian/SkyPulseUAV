@@ -9,7 +9,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 # add_library(my_library STATIC ${CFILE})
-add_executable(${PROJECT_NAME} ${CFILE} main.cpp )
+add_executable(${PROJECT_NAME} ${CFILE} AttiDemo.cpp )
 
 target_link_libraries(${PROJECT_NAME} pigpio pthread)
 

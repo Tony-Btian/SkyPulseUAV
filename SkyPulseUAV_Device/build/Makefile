@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kinsleyng/test
+CMAKE_SOURCE_DIR = /home/kinsleyng/project/SkyPulseUAV_Device
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kinsleyng/test/build
+CMAKE_BINARY_DIR = /home/kinsleyng/project/SkyPulseUAV_Device/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kinsleyng/test/build/CMakeFiles /home/kinsleyng/test/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles /home/kinsleyng/project/SkyPulseUAV_Device/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kinsleyng/test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/BMP180.o: src/BMP180.cpp.o
+.PHONY : src/BMP180.o
+
+# target to build an object file
+src/BMP180.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/BMP180.cpp.o
+.PHONY : src/BMP180.cpp.o
+
+src/BMP180.i: src/BMP180.cpp.i
+.PHONY : src/BMP180.i
+
+# target to preprocess a source file
+src/BMP180.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/BMP180.cpp.i
+.PHONY : src/BMP180.cpp.i
+
+src/BMP180.s: src/BMP180.cpp.s
+.PHONY : src/BMP180.s
+
+# target to generate assembly for a file
+src/BMP180.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/BMP180.cpp.s
+.PHONY : src/BMP180.cpp.s
+
 src/BMP180Thread.o: src/BMP180Thread.cpp.o
 .PHONY : src/BMP180Thread.o
 
@@ -176,6 +200,30 @@ src/BMP180Thread.s: src/BMP180Thread.cpp.s
 src/BMP180Thread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/BMP180Thread.cpp.s
 .PHONY : src/BMP180Thread.cpp.s
+
+src/Control.o: src/Control.cpp.o
+.PHONY : src/Control.o
+
+# target to build an object file
+src/Control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/Control.cpp.o
+.PHONY : src/Control.cpp.o
+
+src/Control.i: src/Control.cpp.i
+.PHONY : src/Control.i
+
+# target to preprocess a source file
+src/Control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/Control.cpp.i
+.PHONY : src/Control.cpp.i
+
+src/Control.s: src/Control.cpp.s
+.PHONY : src/Control.s
+
+# target to generate assembly for a file
+src/Control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/attitude.dir/build.make CMakeFiles/attitude.dir/src/Control.cpp.s
+.PHONY : src/Control.cpp.s
 
 src/IIC.o: src/IIC.cpp.o
 .PHONY : src/IIC.o
@@ -285,9 +333,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/BMP180.o"
+	@echo "... src/BMP180.i"
+	@echo "... src/BMP180.s"
 	@echo "... src/BMP180Thread.o"
 	@echo "... src/BMP180Thread.i"
 	@echo "... src/BMP180Thread.s"
+	@echo "... src/Control.o"
+	@echo "... src/Control.i"
+	@echo "... src/Control.s"
 	@echo "... src/IIC.o"
 	@echo "... src/IIC.i"
 	@echo "... src/IIC.s"

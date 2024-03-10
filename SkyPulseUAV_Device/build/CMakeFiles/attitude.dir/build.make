@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kinsleyng/test
+CMAKE_SOURCE_DIR = /home/kinsleyng/project/SkyPulseUAV_Device
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kinsleyng/test/build
+CMAKE_BINARY_DIR = /home/kinsleyng/project/SkyPulseUAV_Device/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/attitude.dir/depend.make
@@ -69,93 +69,123 @@ include CMakeFiles/attitude.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/attitude.dir/flags.make
 
+CMakeFiles/attitude.dir/src/BMP180.cpp.o: CMakeFiles/attitude.dir/flags.make
+CMakeFiles/attitude.dir/src/BMP180.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180.cpp
+CMakeFiles/attitude.dir/src/BMP180.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/attitude.dir/src/BMP180.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/BMP180.cpp.o -MF CMakeFiles/attitude.dir/src/BMP180.cpp.o.d -o CMakeFiles/attitude.dir/src/BMP180.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180.cpp
+
+CMakeFiles/attitude.dir/src/BMP180.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/BMP180.cpp.i"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180.cpp > CMakeFiles/attitude.dir/src/BMP180.cpp.i
+
+CMakeFiles/attitude.dir/src/BMP180.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/BMP180.cpp.s"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180.cpp -o CMakeFiles/attitude.dir/src/BMP180.cpp.s
+
 CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o: /home/kinsleyng/test/src/BMP180Thread.cpp
+CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180Thread.cpp
 CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o -MF CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d -o CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o -c /home/kinsleyng/test/src/BMP180Thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o -MF CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d -o CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180Thread.cpp
 
 CMakeFiles/attitude.dir/src/BMP180Thread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/BMP180Thread.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/src/BMP180Thread.cpp > CMakeFiles/attitude.dir/src/BMP180Thread.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180Thread.cpp > CMakeFiles/attitude.dir/src/BMP180Thread.cpp.i
 
 CMakeFiles/attitude.dir/src/BMP180Thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/BMP180Thread.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/src/BMP180Thread.cpp -o CMakeFiles/attitude.dir/src/BMP180Thread.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180Thread.cpp -o CMakeFiles/attitude.dir/src/BMP180Thread.cpp.s
+
+CMakeFiles/attitude.dir/src/Control.cpp.o: CMakeFiles/attitude.dir/flags.make
+CMakeFiles/attitude.dir/src/Control.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/Control.cpp
+CMakeFiles/attitude.dir/src/Control.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/attitude.dir/src/Control.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/Control.cpp.o -MF CMakeFiles/attitude.dir/src/Control.cpp.o.d -o CMakeFiles/attitude.dir/src/Control.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/Control.cpp
+
+CMakeFiles/attitude.dir/src/Control.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/Control.cpp.i"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/Control.cpp > CMakeFiles/attitude.dir/src/Control.cpp.i
+
+CMakeFiles/attitude.dir/src/Control.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/Control.cpp.s"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/Control.cpp -o CMakeFiles/attitude.dir/src/Control.cpp.s
 
 CMakeFiles/attitude.dir/src/IIC.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/src/IIC.cpp.o: /home/kinsleyng/test/src/IIC.cpp
+CMakeFiles/attitude.dir/src/IIC.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/IIC.cpp
 CMakeFiles/attitude.dir/src/IIC.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/attitude.dir/src/IIC.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/IIC.cpp.o -MF CMakeFiles/attitude.dir/src/IIC.cpp.o.d -o CMakeFiles/attitude.dir/src/IIC.cpp.o -c /home/kinsleyng/test/src/IIC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/attitude.dir/src/IIC.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/IIC.cpp.o -MF CMakeFiles/attitude.dir/src/IIC.cpp.o.d -o CMakeFiles/attitude.dir/src/IIC.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/IIC.cpp
 
 CMakeFiles/attitude.dir/src/IIC.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/IIC.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/src/IIC.cpp > CMakeFiles/attitude.dir/src/IIC.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/IIC.cpp > CMakeFiles/attitude.dir/src/IIC.cpp.i
 
 CMakeFiles/attitude.dir/src/IIC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/IIC.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/src/IIC.cpp -o CMakeFiles/attitude.dir/src/IIC.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/IIC.cpp -o CMakeFiles/attitude.dir/src/IIC.cpp.s
 
 CMakeFiles/attitude.dir/src/MPU6050.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/src/MPU6050.cpp.o: /home/kinsleyng/test/src/MPU6050.cpp
+CMakeFiles/attitude.dir/src/MPU6050.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050.cpp
 CMakeFiles/attitude.dir/src/MPU6050.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/attitude.dir/src/MPU6050.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MPU6050.cpp.o -MF CMakeFiles/attitude.dir/src/MPU6050.cpp.o.d -o CMakeFiles/attitude.dir/src/MPU6050.cpp.o -c /home/kinsleyng/test/src/MPU6050.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/attitude.dir/src/MPU6050.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MPU6050.cpp.o -MF CMakeFiles/attitude.dir/src/MPU6050.cpp.o.d -o CMakeFiles/attitude.dir/src/MPU6050.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050.cpp
 
 CMakeFiles/attitude.dir/src/MPU6050.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/MPU6050.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/src/MPU6050.cpp > CMakeFiles/attitude.dir/src/MPU6050.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050.cpp > CMakeFiles/attitude.dir/src/MPU6050.cpp.i
 
 CMakeFiles/attitude.dir/src/MPU6050.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/MPU6050.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/src/MPU6050.cpp -o CMakeFiles/attitude.dir/src/MPU6050.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050.cpp -o CMakeFiles/attitude.dir/src/MPU6050.cpp.s
 
 CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o: /home/kinsleyng/test/src/MPU6050Thread.cpp
+CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050Thread.cpp
 CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o -MF CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d -o CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o -c /home/kinsleyng/test/src/MPU6050Thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o -MF CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d -o CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050Thread.cpp
 
 CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/src/MPU6050Thread.cpp > CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050Thread.cpp > CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.i
 
 CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/src/MPU6050Thread.cpp -o CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050Thread.cpp -o CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.s
 
 CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o: /home/kinsleyng/test/src/MahonyFilter.cpp
+CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/src/MahonyFilter.cpp
 CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o -MF CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d -o CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o -c /home/kinsleyng/test/src/MahonyFilter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o -MF CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d -o CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/src/MahonyFilter.cpp
 
 CMakeFiles/attitude.dir/src/MahonyFilter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/src/MahonyFilter.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/src/MahonyFilter.cpp > CMakeFiles/attitude.dir/src/MahonyFilter.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/src/MahonyFilter.cpp > CMakeFiles/attitude.dir/src/MahonyFilter.cpp.i
 
 CMakeFiles/attitude.dir/src/MahonyFilter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/src/MahonyFilter.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/src/MahonyFilter.cpp -o CMakeFiles/attitude.dir/src/MahonyFilter.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/src/MahonyFilter.cpp -o CMakeFiles/attitude.dir/src/MahonyFilter.cpp.s
 
 CMakeFiles/attitude.dir/main.cpp.o: CMakeFiles/attitude.dir/flags.make
-CMakeFiles/attitude.dir/main.cpp.o: /home/kinsleyng/test/main.cpp
+CMakeFiles/attitude.dir/main.cpp.o: /home/kinsleyng/project/SkyPulseUAV_Device/main.cpp
 CMakeFiles/attitude.dir/main.cpp.o: CMakeFiles/attitude.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/attitude.dir/main.cpp.o"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/main.cpp.o -MF CMakeFiles/attitude.dir/main.cpp.o.d -o CMakeFiles/attitude.dir/main.cpp.o -c /home/kinsleyng/test/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/attitude.dir/main.cpp.o"
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/attitude.dir/main.cpp.o -MF CMakeFiles/attitude.dir/main.cpp.o.d -o CMakeFiles/attitude.dir/main.cpp.o -c /home/kinsleyng/project/SkyPulseUAV_Device/main.cpp
 
 CMakeFiles/attitude.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/attitude.dir/main.cpp.i"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/test/main.cpp > CMakeFiles/attitude.dir/main.cpp.i
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kinsleyng/project/SkyPulseUAV_Device/main.cpp > CMakeFiles/attitude.dir/main.cpp.i
 
 CMakeFiles/attitude.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/attitude.dir/main.cpp.s"
-	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/test/main.cpp -o CMakeFiles/attitude.dir/main.cpp.s
+	/home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kinsleyng/project/SkyPulseUAV_Device/main.cpp -o CMakeFiles/attitude.dir/main.cpp.s
 
 # Object files for target attitude
 attitude_OBJECTS = \
+"CMakeFiles/attitude.dir/src/BMP180.cpp.o" \
 "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o" \
+"CMakeFiles/attitude.dir/src/Control.cpp.o" \
 "CMakeFiles/attitude.dir/src/IIC.cpp.o" \
 "CMakeFiles/attitude.dir/src/MPU6050.cpp.o" \
 "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o" \
@@ -165,7 +195,9 @@ attitude_OBJECTS = \
 # External object files for target attitude
 attitude_EXTERNAL_OBJECTS =
 
+attitude: CMakeFiles/attitude.dir/src/BMP180.cpp.o
 attitude: CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o
+attitude: CMakeFiles/attitude.dir/src/Control.cpp.o
 attitude: CMakeFiles/attitude.dir/src/IIC.cpp.o
 attitude: CMakeFiles/attitude.dir/src/MPU6050.cpp.o
 attitude: CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o
@@ -173,7 +205,7 @@ attitude: CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o
 attitude: CMakeFiles/attitude.dir/main.cpp.o
 attitude: CMakeFiles/attitude.dir/build.make
 attitude: CMakeFiles/attitude.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kinsleyng/test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable attitude"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable attitude"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/attitude.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +217,6 @@ CMakeFiles/attitude.dir/clean:
 .PHONY : CMakeFiles/attitude.dir/clean
 
 CMakeFiles/attitude.dir/depend:
-	cd /home/kinsleyng/test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kinsleyng/test /home/kinsleyng/test /home/kinsleyng/test/build /home/kinsleyng/test/build /home/kinsleyng/test/build/CMakeFiles/attitude.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/kinsleyng/project/SkyPulseUAV_Device/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kinsleyng/project/SkyPulseUAV_Device /home/kinsleyng/project/SkyPulseUAV_Device /home/kinsleyng/project/SkyPulseUAV_Device/build /home/kinsleyng/project/SkyPulseUAV_Device/build /home/kinsleyng/project/SkyPulseUAV_Device/build/CMakeFiles/attitude.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/attitude.dir/depend
 

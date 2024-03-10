@@ -7,7 +7,15 @@
 MahonyFilter::MahonyFilter() : MahonyFilter(sampleFreq, twoKpDef, twoKiDef) {};
 
 MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGain) : 
-	q{1.0f, 0.0f, 0.0f, 0.0f}{
+	q{1.0f, 0.0f, 0.0f, 0.0f},
+	filter_done(0),
+	gx_out(0.0f),
+	gy_out(0.0f),
+	gz_out(0.0f),
+	roll(0.0f),
+	pitch(0.0f),
+	yaw(0.0f)
+	{
 
     setFrequency(filterFreq);
 
@@ -35,6 +43,10 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	gy = g[1];
 	gz = g[2];
 
+	gx_out.store(gx);
+	gy_out.store(gy);
+	gz_out.store(gz);
+
 	// mx = m[0];
 	// my = m[1];
 	// mz = m[2];
@@ -61,6 +73,12 @@ void MahonyFilter::setKi(float twokiSet) {
 void MahonyFilter::setKp(float twokpSet) {
 
     twoKp = twokpSet;
+
+}
+
+short MahonyFilter::checkFilterReady() {
+
+	return (filter_done.load());
 
 }
 
@@ -167,6 +185,8 @@ void MahonyFilter::MahonyAHRSupdate() {
 	q[1] *= recipNorm;
 	q[2] *= recipNorm;
 	q[3] *= recipNorm;
+
+	filter_done.store(1);
 }
 
 void MahonyFilter::MahonyAHRSupdateIMU() {
@@ -237,6 +257,8 @@ void MahonyFilter::MahonyAHRSupdateIMU() {
 	q[1] *= recipNorm;
 	q[2] *= recipNorm;
 	q[3] *= recipNorm;
+
+	filter_done.store(1);
 }
 
 float MahonyFilter::invSqrt(float x) {
@@ -249,7 +271,7 @@ float MahonyFilter::invSqrt(float x) {
 	return y;
 }
 
-void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw) {
+void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float g[3]) {
 
 	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
 	*_pitch = asinf((q[1]*q[3] - q[2]*q[0])) * 57.29578f;
@@ -258,5 +280,10 @@ void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw) {
 	roll.store(*_roll);
 	pitch.store(*_pitch);
 	yaw.store(*_yaw);
-}
 
+	g[0] = gx_out.load();
+	g[1] = gy_out.load();
+	g[2] = gz_out.load();
+
+	filter_done.store(0);
+}

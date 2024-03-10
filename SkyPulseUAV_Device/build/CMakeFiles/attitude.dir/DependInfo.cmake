@@ -8,12 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/kinsleyng/test/main.cpp" "CMakeFiles/attitude.dir/main.cpp.o" "gcc" "CMakeFiles/attitude.dir/main.cpp.o.d"
-  "/home/kinsleyng/test/src/BMP180Thread.cpp" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d"
-  "/home/kinsleyng/test/src/IIC.cpp" "CMakeFiles/attitude.dir/src/IIC.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/IIC.cpp.o.d"
-  "/home/kinsleyng/test/src/MPU6050.cpp" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o.d"
-  "/home/kinsleyng/test/src/MPU6050Thread.cpp" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d"
-  "/home/kinsleyng/test/src/MahonyFilter.cpp" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/main.cpp" "CMakeFiles/attitude.dir/main.cpp.o" "gcc" "CMakeFiles/attitude.dir/main.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180.cpp" "CMakeFiles/attitude.dir/src/BMP180.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BMP180.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/BMP180Thread.cpp" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/Control.cpp" "CMakeFiles/attitude.dir/src/Control.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/Control.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/IIC.cpp" "CMakeFiles/attitude.dir/src/IIC.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/IIC.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050.cpp" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/MPU6050Thread.cpp" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d"
+  "/home/kinsleyng/project/SkyPulseUAV_Device/src/MahonyFilter.cpp" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

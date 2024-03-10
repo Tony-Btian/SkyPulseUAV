@@ -4,7 +4,7 @@
 # compile CXX with /home/kinsleyng/crosscompiletool/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/kinsleyng/test/include
+CXX_INCLUDES = -I/home/kinsleyng/project/SkyPulseUAV_Device/include
 
 CXX_FLAGS = -std=gnu++17
 

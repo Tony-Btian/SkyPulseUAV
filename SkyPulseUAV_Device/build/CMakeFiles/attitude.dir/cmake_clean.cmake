@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/attitude.dir/main.cpp.o"
   "CMakeFiles/attitude.dir/main.cpp.o.d"
+  "CMakeFiles/attitude.dir/src/BMP180.cpp.o"
+  "CMakeFiles/attitude.dir/src/BMP180.cpp.o.d"
   "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o"
   "CMakeFiles/attitude.dir/src/BMP180Thread.cpp.o.d"
+  "CMakeFiles/attitude.dir/src/Control.cpp.o"
+  "CMakeFiles/attitude.dir/src/Control.cpp.o.d"
   "CMakeFiles/attitude.dir/src/IIC.cpp.o"
   "CMakeFiles/attitude.dir/src/IIC.cpp.o.d"
   "CMakeFiles/attitude.dir/src/MPU6050.cpp.o"

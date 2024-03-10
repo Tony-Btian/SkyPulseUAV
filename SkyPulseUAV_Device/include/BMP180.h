@@ -3,7 +3,6 @@
 
 #include <atomic>
 
-#include "Sensor.h"
 #include "IIC.h"
 
 
@@ -12,14 +11,14 @@
 #define MY_ALTITUDE 10.0f  // Before calibration, set the altitude of your location here!
 /**************************************************************************************/
 
-class BMP180 : public Sensor {
+class BMP180  {
 
 public:
     BMP180();
 
     BMP180(float loaclAltitude);
 
-    void getData(float droneAltitude);
+    float getData();
 
 protected:
 
@@ -40,6 +39,8 @@ private:
 
     float myLocalAltitude;
     float sealevelPressure;
+
+    std::atomic<float> droneAltitude;
 
     char eeprom;
 

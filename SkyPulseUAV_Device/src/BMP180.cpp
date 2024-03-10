@@ -3,12 +3,14 @@
 #include <cmath>
 #include <thread>
 
-#include "BMP180.h"
+#include "../include/BMP180.h"
 
 
-BMP180::BMP180() : iicBMP180(BMP180_ADDRESS) {}
+BMP180::BMP180() : BMP180(MY_ALTITUDE){}
 
-BMP180::BMP180(float loaclAltitude) : iicBMP180(BMP180_ADDRESS) {
+BMP180::BMP180(float loaclAltitude) : 
+    iicBMP180(BMP180_ADDRESS),
+    droneAltitude(0.0f) {
 
     myLocalAltitude = loaclAltitude;
 
@@ -33,9 +35,13 @@ void BMP180::sealevelPresCorrect(float sealevelPressure) {
 
 }
 
-void BMP180::getData(float altitude) {
+float BMP180::getData() {
 
-	altitude = 44330.0 * (1.0 - std::pow((p / sealevelPressure), 1.0f / 5.255f));
+    BMP180ReadTempAndPres();
+    
+    droneAltitude.store(44330.0 * (1.0 - std::pow((p / sealevelPressure), 1.0f / 5.255f)));
+
+	return droneAltitude.load();
 
 }
 

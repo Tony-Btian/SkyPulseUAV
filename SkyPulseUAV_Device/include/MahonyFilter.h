@@ -15,13 +15,9 @@ public:
 
     MahonyFilter(float filterSample, float twoPropGain, float twoInteGain);
 
-    void getAngle(float* roll, float* pitch, float* yaw);
+    void getAngle(float* roll, float* pitch, float* yaw, float g[3]);
 
     //void getQuaternion(float q_new[4]);
-
-    void setKi(float twokiSet);
-
-    void setKp(float twokpSet);
 
     void setFrequency(float f);
 
@@ -31,9 +27,15 @@ public:
 
     void MahonyAHRSupdateIMU();
 
+    short checkFilterReady();
+
 protected:
 
     float invSqrt(float x);
+
+    void setKi(float twokiSet);
+
+    void setKp(float twokpSet);
 
 private:
 
@@ -45,6 +47,10 @@ private:
     float gx, gy, gz;
     float mx, my, mz;
 
+    std::atomic<float> gx_out;
+    std::atomic<float> gy_out;
+    std::atomic<float> gz_out;
+
     float frequency;
     float integralFBx; 
     float integralFBy;
@@ -53,6 +59,8 @@ private:
     std::atomic<float> roll;
     std::atomic<float> pitch;
     std::atomic<float> yaw;
+
+    std::atomic<short> filter_done; 
 };
 
 

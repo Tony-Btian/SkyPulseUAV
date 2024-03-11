@@ -14,7 +14,10 @@ MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGai
 	gz_out(0.0f),
 	roll(0.0f),
 	pitch(0.0f),
-	yaw(0.0f)
+	yaw(0.0f),
+	integralFBx(0.0f),
+	integralFBy(0.0f),
+	integralFBz(0.0f)
 	{
 
     setFrequency(filterFreq);
@@ -28,8 +31,6 @@ MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGai
 	gx = gy = gz = 0.0f;
 
 	mx = my = mz = 0.0f;
-
-    float integralFBx = 0.0f, integralFBy = 0.0f, integralFBz = 0.0f;
 
 }
 
@@ -55,7 +56,7 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	my = 0;
 	mz = 0;
 
-	std::cout << ax << "|" << gx << std::endl;
+	//std::cout << a[0] << "|" << a[1] << "|" << a[2] << std::endl;
 }
 
 void MahonyFilter::setFrequency(float f) {
@@ -217,10 +218,10 @@ void MahonyFilter::MahonyAHRSupdateIMU() {
 		// Compute and apply integral feedback if enabled
 		if(twoKi > 0.0f) {
             // integral error scaled by Ki
-			integralFBx += twoKi * halfex * (1.0f / sampleFreq);	
-			integralFBy += twoKi * halfey * (1.0f / sampleFreq);
-			integralFBz += twoKi * halfez * (1.0f / sampleFreq);
-            
+			integralFBx += twoKi * halfex * (1.0f / frequency);	
+			integralFBy += twoKi * halfey * (1.0f / frequency);
+			integralFBz += twoKi * halfez * (1.0f / frequency);
+
             // apply integral feedback
 			gx += integralFBx;	
 			gy += integralFBy;
@@ -238,11 +239,13 @@ void MahonyFilter::MahonyAHRSupdateIMU() {
 		gy += twoKp * halfey;
 		gz += twoKp * halfez;
 	}
-	
+
+	//std::cout << q[0] << "|" << q[1] << "|" << q[2] << "|" << q[3] << std::endl;
+
 	// Integrate rate of change of quaternion
-	gx *= (0.5f * (1.0f / sampleFreq));		// pre-multiply common factors
-	gy *= (0.5f * (1.0f / sampleFreq));
-	gz *= (0.5f * (1.0f / sampleFreq));
+	gx *= (0.5f * (1.0f / frequency));		// pre-multiply common factors
+	gy *= (0.5f * (1.0f / frequency));
+	gz *= (0.5f * (1.0f / frequency));
 	qa = q[0];
 	qb = q[1];
 	qc = q[2];
@@ -251,12 +254,15 @@ void MahonyFilter::MahonyAHRSupdateIMU() {
 	q[2] += (qa * gy - qb * gz + q[3] * gx);
 	q[3] += (qa * gz + qb * gy - qc * gx); 
 	
+	//std::cout << gx << "|" << gy << "|" << gz << std::endl;
 	// Normalise quaternion
 	recipNorm = invSqrt(q[0] * q[0] + q[1] * q[1] + q[2] * q[2] + q[3] * q[3]);
 	q[0] *= recipNorm;
 	q[1] *= recipNorm;
 	q[2] *= recipNorm;
 	q[3] *= recipNorm;
+
+	//std::cout << recipNorm << std::endl;
 
 	filter_done.store(1);
 }

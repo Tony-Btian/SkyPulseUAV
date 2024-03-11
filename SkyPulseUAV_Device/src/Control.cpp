@@ -15,11 +15,19 @@ Control::Control(float sampleFreq) :
     prevAngleErr{0.0f, 0.0f, 0.0f},
     prevAngleIterm{0.0f, 0.0f, 0.0f},
 
-    desireRate{0.0f, 0.0f, 0.0f},
     desireAngle{0.0f, 0.0f, 0.0f},
     errorRate{0.0f, 0.0f, 0.0f},
     errorAngle{0.0f, 0.0f, 0.0f},
     outputAngle{0.0f, 0.0f, 0.0f},
+
+    Kp_out{0.0f, 0.0f, 0.0f},
+    Kp_in{0.0f, 0.0f, 0.0f},
+
+    Ki_out{0.0f, 0.0f, 0.0f},
+    Ki_in{0.0f, 0.0f, 0.0f},
+    
+    Kd{0.0f, 0.0f, 0.0f},
+
     inputThrottle(0.0f),
     PIDFreq(sampleFreq)
     {}
@@ -41,14 +49,14 @@ void Control::updateRef(float refAngle[3], float thro) {
     for(short i = 0;i < 3;i++) {
     
         desireAngle[i] = refAngle[i];
-
+        
     }
 
     inputThrottle = thro;
 
 }
 
-void Control::pidControlAngle() {
+void Control::doublepidControl() {
 
     for(short i = 0; i < 3; i++) {
 
@@ -66,6 +74,8 @@ void Control::pidControlAngle() {
         errorRate[i] = outputAngle[i] - currentRate[i];
 
         prevRateIterm[i] += errorRate[i] * (0.5f / PIDFreq);
+        if(prevRateIterm[i] > ITERM_MAX) prevRateIterm[i] = ITERM_MAX;
+        else if(prevRateIterm[i] < -ITERM_MAX) prevRateIterm[i] = -ITERM_MAX;
 
         outputRate[i] = Kp_in[i] * errorRate[i] + Ki_in[i] * prevRateIterm[i]
         + Kd[i] * (errorRate[i] - prevRateErr[i]) * (1.0f / PIDFreq);
@@ -92,10 +102,13 @@ void Control::pidControlAngle() {
 
 void Control::getControlOuput(int motorDutyCycle[4]) {
 
-    pidControlAngle();
+    doublepidControl();
     //pidControlRate();
 
+    // + or - depends on your motor rotation and position.
     motorDutyCycle[0] = inputThrottle + outputRate[ROLL] - outputRate[PITCH] + outputRate[YAW];
-
+    motorDutyCycle[1] = inputThrottle - outputRate[ROLL] - outputRate[PITCH] - outputRate[YAW];
+    motorDutyCycle[2] = inputThrottle - outputRate[ROLL] + outputRate[PITCH] + outputRate[YAW];
+    motorDutyCycle[3] = inputThrottle + outputRate[ROLL] + outputRate[PITCH] - outputRate[YAW];
 }
 

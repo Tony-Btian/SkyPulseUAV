@@ -24,11 +24,11 @@ public:
 
 protected:
 
-    void pidControlAngle();
+    void doublepidControl();
 
-    void pidControlRate();
+    // void pidControlRate();
 
-    void cascadedPID();
+    // void cascadedPID();
 
 
 private:

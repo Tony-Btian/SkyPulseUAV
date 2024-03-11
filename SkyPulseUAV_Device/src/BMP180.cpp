@@ -13,7 +13,7 @@ BMP180::BMP180(float loaclAltitude) :
     droneAltitude(0.0f) {
 
     myLocalAltitude = loaclAltitude;
-
+	
     BMP180ReadTempAndPres();
 
     sealevelPresCorrect(myLocalAltitude);

@@ -10,8 +10,9 @@ void MPU6050Thread::run() {
 
     float a[3] = {0}, g[3] = {0}, m[3] = {0};
     float roll, pitch, yaw;
+    float g_out[3];
 
-    MPU6050 mpu6050;
+    MPU6050 mpu6050(200, 1000);
     MahonyFilter Mahonyfilter;
 
     initializeMPUISR();
@@ -23,10 +24,11 @@ void MPU6050Thread::run() {
             mpu6050.getData(a, g, m);
             Mahonyfilter.readRawData(a, g, m);
             Mahonyfilter.MahonyAHRSupdateIMU();
-            Mahonyfilter.getAngle(&roll, &pitch, &yaw);
+            Mahonyfilter.getAngle(&roll, &pitch, &yaw, g_out);
 
-            std::cout << roll << "|" << pitch << "|" << yaw << std::endl;
-            std::cout << gpioTick() << std::endl;            
+            // std::cout << g[0] << "|" << g[2] << "|" << g[1] << std::endl;
+
+            std::cout << roll << "|" << pitch << "|" << yaw << std::endl;          
         }
 
     }

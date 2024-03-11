@@ -20,7 +20,10 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 	my(0.0f),
 	mz(0.0f), 
 	iicMPU6050(MPU6050_ADDRESS),
-	iicGY271(GY_271_ADDRESS) {
+	iicGY271(GY_271_ADDRESS),
+	a_offset{0.0f, 0.0f, 0.0f}, 
+	g_offset{0.0f, 0.0f, 0.0f},
+	m_offset{0.0f, 0.0f, 0.0f} {
 
 	offset_count = 0;
 	needToExit = false;
@@ -29,10 +32,6 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 
 	MPU6050RawData[14] = {};
 	GY271RawData[6] = {};
-
-	a_offset[3] = {0};
-	g_offset[3] = {0};
-	m_offset[3] = {0};
 
 	calibrate_ready.store(false);
 	mpu6050_newdata.store(false);
@@ -137,8 +136,9 @@ void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
 
 	m[0] = (mx.load() - m_offset[0]) * 0.000122f;
 	m[1] = (my.load() - m_offset[1]) * 0.000122f;
-	m[2] = (mz.load() - m_offset[2]) * 0.000122f;
-	
+	m[2] = (mz.load() - m_offset[2]) * 0.000122f;	
+
+	// std::cout << g[0] << "|" << g[1] << "|" << g[2] << std::endl;
 }
 
 void MPU6050 :: calibrateData() {
@@ -154,6 +154,8 @@ void MPU6050 :: calibrateData() {
 	m_offset[0] += mx.load();
 	m_offset[1] += my.load();
 	m_offset[2] += mz.load();
+
+	std::cout << "Calibrating! " << (calibrationCount - offset_count) << " times left." << std::endl;
 
 	offset_count++;
 
@@ -214,6 +216,9 @@ void interruptHandler(int GPIO, int level, unsigned int tick) {
     MPU6050::globalInstance -> mx.store(tempmx);
     MPU6050::globalInstance -> my.store(tempmy);
     MPU6050::globalInstance -> mz.store(tempmz);
+
+	//std::cout << MPU6050::globalInstance -> gx.load() << "|" << MPU6050::globalInstance -> gy.load() << std::endl;
+
 
 	if(!MPU6050::globalInstance -> calibrate_ready.load()) {
 		MPU6050::globalInstance -> calibrateData();

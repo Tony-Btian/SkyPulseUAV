@@ -16,6 +16,4 @@ void BMP180Thread::run() {
         std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(1000)));
 
     }
-
-
 }

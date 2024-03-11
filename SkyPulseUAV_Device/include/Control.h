@@ -6,6 +6,8 @@
 #define PITCH 1
 #define YAW 2
 
+#define ITERM_MAX 1500.0f
+
 class Control {
 
 public:
@@ -14,7 +16,7 @@ public:
 
     Control(float sampleFreq);
 
-    void getControlOuput(int* motorDutyCycle[4]);
+    void getControlOuput(int motorDutyCycle[4]);
 
     void updateRef(float angle[3], float thro);
 
@@ -23,6 +25,11 @@ public:
 protected:
 
     void pidControlAngle();
+
+    void pidControlRate();
+
+    void cascadedPID();
+
 
 private:
 
@@ -38,7 +45,7 @@ private:
 
     float prevAngleIterm[3];
 
-    float desireRate[3];
+    //float desireRate[3];
 
     float desireAngle[3];
 
@@ -48,15 +55,21 @@ private:
 
     float outputAngle[3];
 
+    float outputRate[3];
+
     float inputThrottle;
 
     float PIDFreq;
 
     int motorOutput[4];
 
-    float Kp[3];
+    float Kp_out[3];
 
-    float Ki[3];
+    float Kp_in[3];
+
+    float Ki_out[3];
+
+    float Ki_in[3];
 
     float Kd[3];
 };

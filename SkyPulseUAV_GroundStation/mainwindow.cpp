@@ -53,7 +53,7 @@ void MainWindow::initialTCPServer()
     TcpServer = new TCP();  // 实体化TCP服务
     TcpServer->moveToThread(TcpThread);
     connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
-    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectFromServer);
+    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
     connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
     connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
     connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
@@ -111,7 +111,7 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TcpServer->disconnectFromServer();
+    TcpServer->disconnectToServer();
     emit sig_StopUDPServer();
 }
 

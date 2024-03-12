@@ -5,6 +5,7 @@
 
 //#include "Sensor.h"
 #include "IIC.h"
+#include "CppThread.hpp"
 
 #define MPU6050_ADDRESS 0x68
 #define GY_271_ADDRESS 0x0D
@@ -15,6 +16,14 @@
 #define CALIBRATION_COUNT 5000  
 
 extern std::mutex i2cmtx;
+
+class MPU6050Thread : public CppThread {
+
+protected:
+
+    void run() override;
+
+};
 
 class MPU6050 {
 

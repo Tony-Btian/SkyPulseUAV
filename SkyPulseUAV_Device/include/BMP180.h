@@ -5,11 +5,20 @@
 
 #include "IIC.h"
 
+#include "CppThread.hpp"
 
 #define BMP180_ADDRESS 0x77
 /**************************************************************************************/
 #define MY_ALTITUDE 10.0f  // Before calibration, set the altitude of your location here!
 /**************************************************************************************/
+
+class BMP180Thread : public CppThread {
+
+protected:
+
+    void run() override;
+
+};
 
 class BMP180  {
     

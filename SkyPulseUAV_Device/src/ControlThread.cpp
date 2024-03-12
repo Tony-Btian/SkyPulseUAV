@@ -1,4 +1,4 @@
-#include "ControlThread.h"
+#include "Control.h"
 
 void ControlThread::run() {
 

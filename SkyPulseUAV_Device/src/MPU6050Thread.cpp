@@ -4,7 +4,6 @@
 
 #include "MPU6050.h"
 #include "MahonyFilter.h"
-#include "MPU6050Thread.h"
 
 void MPU6050Thread::run() {
 

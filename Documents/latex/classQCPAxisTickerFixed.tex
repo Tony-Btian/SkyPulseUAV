@@ -1,0 +1,195 @@
+\doxysection{QCPAxis\+Ticker\+Fixed Class Reference}
+\hypertarget{classQCPAxisTickerFixed}{}\label{classQCPAxisTickerFixed}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+
+
+Specialized axis ticker with a fixed tick step.  
+
+
+Inheritance diagram for QCPAxis\+Ticker\+Fixed\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQCPAxisTickerFixed}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy}} \{ \mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f}{ss\+None}}
+, \mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104}{ss\+Multiples}}
+, \mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439ac39d5813e9165ebd494307ae61ce5dce}{ss\+Powers}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} \{ \mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8}{tss\+Readability}}
+, \mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2}{tss\+Meet\+Tick\+Count}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAxisTickerFixed_a96d2b053a15f9b8e94550c3efeff6a34}{QCPAxis\+Ticker\+Fixed}} ()
+\item 
+\Hypertarget{classQCPAxisTickerFixed_a33d1324c8666b4d5df975dea32ed5a28}\label{classQCPAxisTickerFixed_a33d1324c8666b4d5df975dea32ed5a28} 
+double {\bfseries tick\+Step} () const
+\item 
+\Hypertarget{classQCPAxisTickerFixed_a20fd8fcb257f63449f8913335ad57e45}\label{classQCPAxisTickerFixed_a20fd8fcb257f63449f8913335ad57e45} 
+\mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy}} {\bfseries scale\+Strategy} () const
+\item 
+void \mbox{\hyperlink{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833}{set\+Tick\+Step}} (double step)
+\item 
+void \mbox{\hyperlink{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy}} (\mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy}} strategy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAxisTicker_a8fcf23c79ebd72202fe79253f9f01ea8}{QCPAxis\+Ticker}} ()
+\item 
+\mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} {\bfseries tick\+Step\+Strategy} () const
+\item 
+int {\bfseries tick\+Count} () const
+\item 
+double {\bfseries tick\+Origin} () const
+\item 
+void \mbox{\hyperlink{classQCPAxisTicker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}} (\mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} strategy)
+\item 
+void \mbox{\hyperlink{classQCPAxisTicker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}} (int count)
+\item 
+void \mbox{\hyperlink{classQCPAxisTicker_ab509c7e500293bf66a8409f0d7c23943}{set\+Tick\+Origin}} (double origin)
+\item 
+virtual void \mbox{\hyperlink{classQCPAxisTicker_aefbd11725678ca824add8cf926cbc856}{generate}} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&range, const QLocale \&locale, QChar format\+Char, int precision, QVector$<$ double $>$ \&ticks, QVector$<$ double $>$ \texorpdfstring{$\ast$}{*}sub\+Ticks, QVector$<$ QString $>$ \texorpdfstring{$\ast$}{*}tick\+Labels)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{classQCPAxisTickerFixed_a9e99da01ab92a86aed415eef32fed13a}{get\+Tick\+Step}} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&range) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classQCPAxisTicker_a4ccc403ced7a1457ce6ba293509933c8}{get\+Sub\+Tick\+Count}} (double tick\+Step)
+\item 
+virtual QString \mbox{\hyperlink{classQCPAxisTicker_a8201eb4aa8be192bf786b126eb5ee089}{get\+Tick\+Label}} (double tick, const QLocale \&locale, QChar format\+Char, int precision)
+\item 
+virtual QVector$<$ double $>$ \mbox{\hyperlink{classQCPAxisTicker_af4645a824c7bd2ca8fc7e86ebf9055bd}{create\+Tick\+Vector}} (double tick\+Step, const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&range)
+\item 
+virtual QVector$<$ double $>$ {\bfseries create\+Sub\+Tick\+Vector} (int sub\+Tick\+Count, const QVector$<$ double $>$ \&ticks)
+\item 
+virtual QVector$<$ QString $>$ {\bfseries create\+Label\+Vector} (const QVector$<$ double $>$ \&ticks, const QLocale \&locale, QChar format\+Char, int precision)
+\item 
+void {\bfseries trim\+Ticks} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&range, QVector$<$ double $>$ \&ticks, bool keep\+One\+Outlier) const
+\item 
+double {\bfseries pick\+Closest} (double target, const QVector$<$ double $>$ \&candidates) const
+\item 
+double {\bfseries get\+Mantissa} (double input, double \texorpdfstring{$\ast$}{*}magnitude=nullptr) const
+\item 
+double {\bfseries clean\+Mantissa} (double input) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPAxisTickerFixed_a4aeef2d3eaa57ec56f422ab1f82175d2}\label{classQCPAxisTickerFixed_a4aeef2d3eaa57ec56f422ab1f82175d2} 
+double {\bfseries m\+Tick\+Step}
+\item 
+\Hypertarget{classQCPAxisTickerFixed_a61ead1590161769b0d36e09419e67b10}\label{classQCPAxisTickerFixed_a61ead1590161769b0d36e09419e67b10} 
+\mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy}} {\bfseries m\+Scale\+Strategy}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAxisTicker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} {\bfseries m\+Tick\+Step\+Strategy}
+\item 
+int {\bfseries m\+Tick\+Count}
+\item 
+double {\bfseries m\+Tick\+Origin}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specialized axis ticker with a fixed tick step. 
+
+
+
+This \doxylink{classQCPAxisTicker}{QCPAxis\+Ticker} subclass generates ticks with a fixed tick step set with \doxylink{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833}{set\+Tick\+Step}. It is also possible to allow integer multiples and integer powers of the specified tick step with \doxylink{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy}.
+
+A typical application of this ticker is to make an axis only display integers, by setting the tick step of the ticker to 1.\+0 and the scale strategy to \doxylink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104}{ss\+Multiples}.
+
+Another case is when a certain number has a special meaning and axis ticks should only appear at multiples of that value. In this case you might also want to consider \doxylink{classQCPAxisTickerPi}{QCPAxis\+Ticker\+Pi} because despite the name it is not limited to only pi symbols/values.
+
+The ticker can be created and assigned to an axis like this\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}\label{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439} 
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ScaleStrategy@{ScaleStrategy}}
+\index{ScaleStrategy@{ScaleStrategy}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\doxysubsubsection{\texorpdfstring{ScaleStrategy}{ScaleStrategy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{QCPAxis\+Ticker\+Fixed\+::\+Scale\+Strategy}}}
+
+Defines how the axis ticker may modify the specified tick step (\doxylink{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833}{set\+Tick\+Step}) in order to control the number of ticks in the axis range.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ssNone@{ssNone}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ssNone@{ssNone}}}\Hypertarget{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f}\label{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f} 
+ss\+None&Modifications are not allowed, the specified tick step is absolutely fixed. This might cause a high tick density and overlapping labels if the axis range is zoomed out. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ssMultiples@{ssMultiples}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ssMultiples@{ssMultiples}}}\Hypertarget{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104}\label{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104} 
+ss\+Multiples&An integer multiple of the specified tick step is allowed. The used factor follows the base class properties of \doxylink{classQCPAxisTicker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy} and \doxylink{classQCPAxisTicker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ssPowers@{ssPowers}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ssPowers@{ssPowers}}}\Hypertarget{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439ac39d5813e9165ebd494307ae61ce5dce}\label{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439ac39d5813e9165ebd494307ae61ce5dce} 
+ss\+Powers&An integer power of the specified tick step is allowed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPAxisTickerFixed_a96d2b053a15f9b8e94550c3efeff6a34}\label{classQCPAxisTickerFixed_a96d2b053a15f9b8e94550c3efeff6a34} 
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\doxysubsubsection{\texorpdfstring{QCPAxisTickerFixed()}{QCPAxisTickerFixed()}}
+{\footnotesize\ttfamily QCPAxis\+Ticker\+Fixed\+::\+QCPAxis\+Ticker\+Fixed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QShared\+Pointer, which then can be passed to \doxylink{classQCPAxis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPAxisTickerFixed_a9e99da01ab92a86aed415eef32fed13a}\label{classQCPAxisTickerFixed_a9e99da01ab92a86aed415eef32fed13a} 
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!getTickStep@{getTickStep}}
+\index{getTickStep@{getTickStep}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\doxysubsubsection{\texorpdfstring{getTickStep()}{getTickStep()}}
+{\footnotesize\ttfamily double QCPAxis\+Ticker\+Fixed\+::get\+Tick\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&}]{range}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}}.
+
+\Hypertarget{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6}\label{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6} 
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!setScaleStrategy@{setScaleStrategy}}
+\index{setScaleStrategy@{setScaleStrategy}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\doxysubsubsection{\texorpdfstring{setScaleStrategy()}{setScaleStrategy()}}
+{\footnotesize\ttfamily void QCPAxis\+Ticker\+Fixed\+::set\+Scale\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{QCPAxis\+Ticker\+Fixed\+::\+Scale\+Strategy}}}]{strategy}{}\end{DoxyParamCaption})}
+
+Sets whether the specified tick step (\doxylink{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833}{set\+Tick\+Step}) is absolutely fixed or whether modifications may be applied to it before calculating the finally used tick step, such as permitting multiples or powers. See \doxylink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy} for details.
+
+The default strategy is \doxylink{classQCPAxisTickerFixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f}{ss\+None}, which means the tick step is absolutely fixed. \Hypertarget{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833}\label{classQCPAxisTickerFixed_a4bc83d85a4f81d4abdd3fa5042d7b833} 
+\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!setTickStep@{setTickStep}}
+\index{setTickStep@{setTickStep}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
+\doxysubsubsection{\texorpdfstring{setTickStep()}{setTickStep()}}
+{\footnotesize\ttfamily void QCPAxis\+Ticker\+Fixed\+::set\+Tick\+Step (\begin{DoxyParamCaption}\item[{double}]{step}{}\end{DoxyParamCaption})}
+
+Sets the fixed tick interval to {\itshape step}.
+
+The axis ticker will only use this tick step when generating axis ticks. This might cause a very high tick density and overlapping labels if the axis range is zoomed out. Using \doxylink{classQCPAxisTickerFixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy} it is possible to relax the fixed step and also allow multiples or powers of {\itshape step}. This will enable the ticker to reduce the number of ticks to a reasonable amount (see \doxylink{classQCPAxisTicker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

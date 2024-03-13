@@ -1,0 +1,166 @@
+\doxysection{TCP Class Reference}
+\hypertarget{classTCP}{}\label{classTCP}\index{TCP@{TCP}}
+
+
+{\ttfamily \#include $<$tcp.\+h$>$}
+
+Inheritance diagram for TCP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCP}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTCP_a3623b3d671ae5569d43fc6f7bdeca094}{send\+Message}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{classTCP_a4b8a2380b6d8d533a15445dd0c2c905c}{send\+Message\+QByte}} (const QByte\+Array \&message)
+\item 
+void \mbox{\hyperlink{classTCP_aa29d12fe403a0451c6bf216fd9738246}{read\+Message}} ()
+\item 
+void \mbox{\hyperlink{classTCP_a137fe49eb387c18e89478a7cd9a73a88}{PWM\+\_\+\+Controler}} (const int \&code, const int \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTCP_a156fe404386a2de397446185d12879f2}{sig\+\_\+received\+Message}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{classTCP_a413ba663a9c86aca92415d295ab517ca}{sig\+\_\+connection\+Successful}} ()
+\item 
+void \mbox{\hyperlink{classTCP_a236c135881f1eb11c52b02150dd3f8c7}{sig\+\_\+disconnection\+Successful}} ()
+\item 
+void \mbox{\hyperlink{classTCP_ad4787d95a6343b653f01f01882a9b7bd}{sig\+\_\+connection\+Error}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTCP_a95136e35624063a4718e1a3cca9fb374}{TCP}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{classTCP_aa1f196d19ae2f0b69e21e52dce7a3b88}{start\+Server}} (quint16 port)
+\item 
+void \mbox{\hyperlink{classTCP_aa90bfdfba719cee53225960e1a6828ed}{broadcast\+Message}} (const QByte\+Array \&message)
+\item 
+\mbox{\hyperlink{classTCP_a95136e35624063a4718e1a3cca9fb374}{TCP}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{classTCP_afc14750652987cc8cd5c2bc407e44f48}{connect\+To\+Server}} (const QString \&host, quint16 port)
+\item 
+void \mbox{\hyperlink{classTCP_a076d416dfd66285ed5bb58e88b694e88}{disconnect\+To\+Server}} ()
+\item 
+void \mbox{\hyperlink{classTCP_ad6a9e2a8002a8679457fc25085d3d895}{data\+Trasnlate}} (const QByte\+Array \&data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTCP_adf9c14388b6dcda52a5af07fb88b2a66}{incoming\+Connection}} (qintptr socket\+Descriptor) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTCP_a95136e35624063a4718e1a3cca9fb374}\label{classTCP_a95136e35624063a4718e1a3cca9fb374} 
+\index{TCP@{TCP}!TCP@{TCP}}
+\index{TCP@{TCP}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{TCP()}{TCP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TCP\+::\+TCP (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{classTCP_a95136e35624063a4718e1a3cca9fb374}\label{classTCP_a95136e35624063a4718e1a3cca9fb374} 
+\index{TCP@{TCP}!TCP@{TCP}}
+\index{TCP@{TCP}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{TCP()}{TCP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TCP\+::\+TCP (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTCP_aa90bfdfba719cee53225960e1a6828ed}\label{classTCP_aa90bfdfba719cee53225960e1a6828ed} 
+\index{TCP@{TCP}!broadcastMessage@{broadcastMessage}}
+\index{broadcastMessage@{broadcastMessage}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{broadcastMessage()}{broadcastMessage()}}
+{\footnotesize\ttfamily void TCP\+::broadcast\+Message (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classTCP_afc14750652987cc8cd5c2bc407e44f48}\label{classTCP_afc14750652987cc8cd5c2bc407e44f48} 
+\index{TCP@{TCP}!connectToServer@{connectToServer}}
+\index{connectToServer@{connectToServer}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{connectToServer()}{connectToServer()}}
+{\footnotesize\ttfamily void TCP\+::connect\+To\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{quint16}]{port}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classTCP_ad6a9e2a8002a8679457fc25085d3d895}\label{classTCP_ad6a9e2a8002a8679457fc25085d3d895} 
+\index{TCP@{TCP}!dataTrasnlate@{dataTrasnlate}}
+\index{dataTrasnlate@{dataTrasnlate}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{dataTrasnlate()}{dataTrasnlate()}}
+{\footnotesize\ttfamily void TCP\+::data\+Trasnlate (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classTCP_a076d416dfd66285ed5bb58e88b694e88}\label{classTCP_a076d416dfd66285ed5bb58e88b694e88} 
+\index{TCP@{TCP}!disconnectToServer@{disconnectToServer}}
+\index{disconnectToServer@{disconnectToServer}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{disconnectToServer()}{disconnectToServer()}}
+{\footnotesize\ttfamily void TCP\+::disconnect\+To\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classTCP_adf9c14388b6dcda52a5af07fb88b2a66}\label{classTCP_adf9c14388b6dcda52a5af07fb88b2a66} 
+\index{TCP@{TCP}!incomingConnection@{incomingConnection}}
+\index{incomingConnection@{incomingConnection}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{incomingConnection()}{incomingConnection()}}
+{\footnotesize\ttfamily void TCP\+::incoming\+Connection (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classTCP_a137fe49eb387c18e89478a7cd9a73a88}\label{classTCP_a137fe49eb387c18e89478a7cd9a73a88} 
+\index{TCP@{TCP}!PWM\_Controler@{PWM\_Controler}}
+\index{PWM\_Controler@{PWM\_Controler}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{PWM\_Controler}{PWM\_Controler}}
+{\footnotesize\ttfamily void TCP\+::\+PWM\+\_\+\+Controler (\begin{DoxyParamCaption}\item[{const int \&}]{code}{, }\item[{const int \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classTCP_aa29d12fe403a0451c6bf216fd9738246}\label{classTCP_aa29d12fe403a0451c6bf216fd9738246} 
+\index{TCP@{TCP}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{readMessage}{readMessage}}
+{\footnotesize\ttfamily void TCP\+::read\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classTCP_a3623b3d671ae5569d43fc6f7bdeca094}\label{classTCP_a3623b3d671ae5569d43fc6f7bdeca094} 
+\index{TCP@{TCP}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sendMessage}{sendMessage}}
+{\footnotesize\ttfamily void TCP\+::send\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classTCP_a4b8a2380b6d8d533a15445dd0c2c905c}\label{classTCP_a4b8a2380b6d8d533a15445dd0c2c905c} 
+\index{TCP@{TCP}!sendMessageQByte@{sendMessageQByte}}
+\index{sendMessageQByte@{sendMessageQByte}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sendMessageQByte}{sendMessageQByte}}
+{\footnotesize\ttfamily void TCP\+::send\+Message\+QByte (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classTCP_ad4787d95a6343b653f01f01882a9b7bd}\label{classTCP_ad4787d95a6343b653f01f01882a9b7bd} 
+\index{TCP@{TCP}!sig\_connectionError@{sig\_connectionError}}
+\index{sig\_connectionError@{sig\_connectionError}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sig\_connectionError}{sig\_connectionError}}
+{\footnotesize\ttfamily void TCP\+::sig\+\_\+connection\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classTCP_a413ba663a9c86aca92415d295ab517ca}\label{classTCP_a413ba663a9c86aca92415d295ab517ca} 
+\index{TCP@{TCP}!sig\_connectionSuccessful@{sig\_connectionSuccessful}}
+\index{sig\_connectionSuccessful@{sig\_connectionSuccessful}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sig\_connectionSuccessful}{sig\_connectionSuccessful}}
+{\footnotesize\ttfamily void TCP\+::sig\+\_\+connection\+Successful (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classTCP_a236c135881f1eb11c52b02150dd3f8c7}\label{classTCP_a236c135881f1eb11c52b02150dd3f8c7} 
+\index{TCP@{TCP}!sig\_disconnectionSuccessful@{sig\_disconnectionSuccessful}}
+\index{sig\_disconnectionSuccessful@{sig\_disconnectionSuccessful}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sig\_disconnectionSuccessful}{sig\_disconnectionSuccessful}}
+{\footnotesize\ttfamily void TCP\+::sig\+\_\+disconnection\+Successful (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classTCP_a156fe404386a2de397446185d12879f2}\label{classTCP_a156fe404386a2de397446185d12879f2} 
+\index{TCP@{TCP}!sig\_receivedMessage@{sig\_receivedMessage}}
+\index{sig\_receivedMessage@{sig\_receivedMessage}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sig\_receivedMessage}{sig\_receivedMessage}}
+{\footnotesize\ttfamily void TCP\+::sig\+\_\+received\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classTCP_aa1f196d19ae2f0b69e21e52dce7a3b88}\label{classTCP_aa1f196d19ae2f0b69e21e52dce7a3b88} 
+\index{TCP@{TCP}!startServer@{startServer}}
+\index{startServer@{startServer}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{startServer()}{startServer()}}
+{\footnotesize\ttfamily void TCP\+::start\+Server (\begin{DoxyParamCaption}\item[{quint16}]{port}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+MIDDLEWARES/\mbox{\hyperlink{tcp_8h}{tcp.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+COMM/\mbox{\hyperlink{TCP_8h}{TCP.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+MIDDLEWARES/\mbox{\hyperlink{tcp_8cpp}{tcp.\+cpp}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+COMM/\mbox{\hyperlink{TCP_8cpp}{TCP.\+cpp}}\end{DoxyCompactItemize}

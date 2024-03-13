@@ -43,6 +43,7 @@ private:
     QThread *UdpThread;
     QThread *BluetoothThread;
 
+    //! Initial the TCP Server
     void initialTCPServer();
     void initialUDPServer();
     void initialBluetoothServer();
@@ -63,6 +64,11 @@ private slots:
 
     void on_pushButton_Mahony_Plot_Stop_clicked();
 
+    void on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle);
+    void on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle);
+    void on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle);
+    void on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle);
+
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 
@@ -73,6 +79,7 @@ signals:
     void sig_StopUDPServer();
     void sig_Mahony_PlottingStart();
     void sig_Mahony_PlottingStop();
+    void sig_sendMessageToTCP(const int &code, const int &value);
 
 };
 #endif // MAINWINDOW_H

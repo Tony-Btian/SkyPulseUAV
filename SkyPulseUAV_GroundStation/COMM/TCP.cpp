@@ -71,7 +71,26 @@ void TCP::dataTrasnlate(const QByteArray &data)
 }
 
 /*TCP数据有效性检查*/
-QString dataCheckOut(const QByteArray &data)
+QString TCP::dataCheckOut(const QByteArray &data)
 {
 
+}
+
+void TCP::PWM_Controler(const int &code, const int &value)
+{
+    QByteArray data;
+    data.append(reinterpret_cast<const char*>(&code),sizeof(code));
+    data.append(reinterpret_cast<const char*>(&value),sizeof(value));
+    qDebug() << "Code: " << code << ", " << "Value: " << value ;
+    qDebug() << data.constData();
+    sendMessageQByte(data);
+}
+
+/*TCP数据发送函数*/
+void TCP::sendMessageQByte(const QByteArray &message)
+{
+    if(TCPSocket->state() == QTcpSocket::ConnectedState)
+    {
+        TCPSocket->write(message);
+    }
 }

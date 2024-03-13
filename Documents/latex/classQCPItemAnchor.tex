@@ -1,0 +1,120 @@
+\doxysection{QCPItem\+Anchor Class Reference}
+\hypertarget{classQCPItemAnchor}{}\label{classQCPItemAnchor}\index{QCPItemAnchor@{QCPItemAnchor}}
+
+
+An anchor of an item to which positions can be attached to.  
+
+
+Inheritance diagram for QCPItem\+Anchor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQCPItemAnchor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPItemAnchor_a32573023c6fa65b4496f1f995e5bfa5f}{QCPItem\+Anchor}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, \mbox{\hyperlink{classQCPAbstractItem}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*}parent\+Item, const QString \&name, int anchor\+Id=-\/1)
+\item 
+\Hypertarget{classQCPItemAnchor_aad37cdf5a3f63428f61be739014e212e}\label{classQCPItemAnchor_aad37cdf5a3f63428f61be739014e212e} 
+QString {\bfseries name} () const
+\item 
+virtual QPointF \mbox{\hyperlink{classQCPItemAnchor_a06dcfb7220d26eee93eef56ae66582cb}{pixel\+Position}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPItemAnchor_ac54b20120669950255a63587193dbb86}{to\+QCPItem\+Position}} ()
+\item 
+\Hypertarget{classQCPItemAnchor_aef15daa640debfb11b0aeaa2116c6fbc}\label{classQCPItemAnchor_aef15daa640debfb11b0aeaa2116c6fbc} 
+void {\bfseries add\+ChildX} (\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+\Hypertarget{classQCPItemAnchor_a230b1d494cda63458e289bbe1b642599}\label{classQCPItemAnchor_a230b1d494cda63458e289bbe1b642599} 
+void {\bfseries remove\+ChildX} (\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+\Hypertarget{classQCPItemAnchor_af05dc56f24536f0c7a9a0f57b58cea67}\label{classQCPItemAnchor_af05dc56f24536f0c7a9a0f57b58cea67} 
+void {\bfseries add\+ChildY} (\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+\Hypertarget{classQCPItemAnchor_aa2394911d8fff3bd958b9f4f1994b64d}\label{classQCPItemAnchor_aa2394911d8fff3bd958b9f4f1994b64d} 
+void {\bfseries remove\+ChildY} (\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPItemAnchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec}\label{classQCPItemAnchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec} 
+QString {\bfseries m\+Name}
+\item 
+\Hypertarget{classQCPItemAnchor_a59b968410831ba91a25cc75a77dde6f5}\label{classQCPItemAnchor_a59b968410831ba91a25cc75a77dde6f5} 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+\Hypertarget{classQCPItemAnchor_a80fad480ad3bb980446ed6ebc00818ae}\label{classQCPItemAnchor_a80fad480ad3bb980446ed6ebc00818ae} 
+\mbox{\hyperlink{classQCPAbstractItem}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Item}
+\item 
+\Hypertarget{classQCPItemAnchor_a00c62070333e8345976b579676ad3997}\label{classQCPItemAnchor_a00c62070333e8345976b579676ad3997} 
+int {\bfseries m\+Anchor\+Id}
+\item 
+\Hypertarget{classQCPItemAnchor_a3c0bfd6e50f3b48e2a9b3824695b20f7}\label{classQCPItemAnchor_a3c0bfd6e50f3b48e2a9b3824695b20f7} 
+QSet$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+ChildrenX}
+\item 
+\Hypertarget{classQCPItemAnchor_a3abe4eebd0683454d81c8341df6f7115}\label{classQCPItemAnchor_a3abe4eebd0683454d81c8341df6f7115} 
+QSet$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+ChildrenY}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPItemAnchor_aa9b8ddc062778e202a0be06a57d18d17}\label{classQCPItemAnchor_aa9b8ddc062778e202a0be06a57d18d17} 
+class {\bfseries QCPItem\+Position}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An anchor of an item to which positions can be attached to. 
+
+An item (\doxylink{classQCPAbstractItem}{QCPAbstract\+Item}) may have one or more anchors. Unlike \doxylink{classQCPItemPosition}{QCPItem\+Position}, an anchor doesn\textquotesingle{}t control anything on its item, but provides a way to tie other items via their positions to the anchor.
+
+For example, a \doxylink{classQCPItemRect}{QCPItem\+Rect} is defined by its positions {\itshape top\+Left} and {\itshape bottom\+Right}. Additionally it has various anchors like {\itshape top}, {\itshape top\+Right} or {\itshape bottom\+Left} etc. So you can attach the {\itshape start} (which is a \doxylink{classQCPItemPosition}{QCPItem\+Position}) of a \doxylink{classQCPItemLine}{QCPItem\+Line} to one of the anchors by calling \doxylink{classQCPItemPosition_ac094d67a95d2dceafa0d50b9db3a7e51}{QCPItem\+Position\+::set\+Parent\+Anchor} on {\itshape start}, passing the wanted anchor of the \doxylink{classQCPItemRect}{QCPItem\+Rect}. This way the start of the line will now always follow the respective anchor location on the rect item.
+
+Note that \doxylink{classQCPItemPosition}{QCPItem\+Position} derives from \doxylink{classQCPItemAnchor}{QCPItem\+Anchor}, so every position can also serve as an anchor to other positions.
+
+To learn how to provide anchors in your own item subclasses, see the subclassing section of the \doxylink{classQCPAbstractItem}{QCPAbstract\+Item} documentation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPItemAnchor_a32573023c6fa65b4496f1f995e5bfa5f}\label{classQCPItemAnchor_a32573023c6fa65b4496f1f995e5bfa5f} 
+\index{QCPItemAnchor@{QCPItemAnchor}!QCPItemAnchor@{QCPItemAnchor}}
+\index{QCPItemAnchor@{QCPItemAnchor}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{QCPItemAnchor()}{QCPItemAnchor()}}
+{\footnotesize\ttfamily QCPItem\+Anchor\+::\+QCPItem\+Anchor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{\mbox{\hyperlink{classQCPAbstractItem}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*}}]{parent\+Item}{, }\item[{const QString \&}]{name}{, }\item[{int}]{anchor\+Id}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Creates a new \doxylink{classQCPItemAnchor}{QCPItem\+Anchor}. You shouldn\textquotesingle{}t create \doxylink{classQCPItemAnchor}{QCPItem\+Anchor} instances directly, even if you want to make a new item subclass. Use QCPAbstract\+Item\+::create\+Anchor instead, as explained in the subclassing section of the \doxylink{classQCPAbstractItem}{QCPAbstract\+Item} documentation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPItemAnchor_a06dcfb7220d26eee93eef56ae66582cb}\label{classQCPItemAnchor_a06dcfb7220d26eee93eef56ae66582cb} 
+\index{QCPItemAnchor@{QCPItemAnchor}!pixelPosition@{pixelPosition}}
+\index{pixelPosition@{pixelPosition}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{pixelPosition()}{pixelPosition()}}
+{\footnotesize\ttfamily QPointF QCPItem\+Anchor\+::pixel\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the final absolute pixel position of the \doxylink{classQCPItemAnchor}{QCPItem\+Anchor} on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface.
+
+The pixel information is internally retrieved via QCPAbstract\+Item\+::anchor\+Pixel\+Position of the parent item, \doxylink{classQCPItemAnchor}{QCPItem\+Anchor} is just an intermediary. 
+
+Reimplemented in \mbox{\hyperlink{classQCPItemPosition_a8be9a4787635433edecc75164beb748d}{QCPItem\+Position}}.
+
+\Hypertarget{classQCPItemAnchor_ac54b20120669950255a63587193dbb86}\label{classQCPItemAnchor_ac54b20120669950255a63587193dbb86} 
+\index{QCPItemAnchor@{QCPItemAnchor}!toQCPItemPosition@{toQCPItemPosition}}
+\index{toQCPItemPosition@{toQCPItemPosition}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{toQCPItemPosition()}{toQCPItemPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} QCPItem\+Anchor\+::to\+QCPItem\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns {\ttfamily nullptr} if this instance is merely a \doxylink{classQCPItemAnchor}{QCPItem\+Anchor}, and a valid pointer of type QCPItem\+Position\texorpdfstring{$\ast$}{*} if it actually is a \doxylink{classQCPItemPosition}{QCPItem\+Position} (which is a subclass of \doxylink{classQCPItemAnchor}{QCPItem\+Anchor}).
+
+This safe downcast functionality could also be achieved with a dynamic\+\_\+cast. However, \doxylink{classQCustomPlot}{QCustom\+Plot} avoids dynamic\+\_\+cast to work with projects that don\textquotesingle{}t have RTTI support enabled (e.\+g. -\/fno-\/rtti flag with gcc compiler). 
+
+Reimplemented in \mbox{\hyperlink{classQCPItemPosition_a0d2c5b823c99207eda710a37a4bb1dbf}{QCPItem\+Position}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

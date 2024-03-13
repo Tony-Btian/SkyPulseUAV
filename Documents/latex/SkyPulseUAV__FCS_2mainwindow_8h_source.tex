@@ -1,0 +1,61 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{SkyPulseUAV__FCS_2mainwindow_8h_source}{}\label{SkyPulseUAV__FCS_2mainwindow_8h_source}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/mainwindow.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/mainwindow.h}}
+\mbox{\hyperlink{SkyPulseUAV__FCS_2mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QThreadPool>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QCloseEvent>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c__device_8h}{i2c\_device.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tcp_8h}{tcp.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{barometer__bmp180_8h}{barometer\_bmp180.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{magnetometer__gy271_8h}{magnetometer\_gy271.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gyroacelemeter__gy521_8h}{gyroacelemeter\_gy521.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ HMC5883l\_DEVICE\_ADDR\ 0x0D}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};\ \}}
+\DoxyCodeLine{00020\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_aad3711707fbf57a59e4769c8cea08bf7}{prepareForQuit}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_BMP\_clicked();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_HMC\_clicked();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*\ Thread\ */}}
+\DoxyCodeLine{00039\ \ \ \ \ QThreadPool\ threadPool;}
+\DoxyCodeLine{00040\ \ \ \ \ QThread\ *BMP\_Thread;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*\ Network\ Protocol\ */}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classTCP}{TCP}}\ *TCPServer;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{/*\ Sensors\ */}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classMagnetometer__GY271}{Magnetometer\_GY271}}\ *MagnetoMeter;}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classBarometer__BMP180}{Barometer\_BMP180}}\ *BaroMeter;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}{closeEvent}}(QCloseEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ signals:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a5484dfbc36da08880cc48331bc67b0cb}{sig\_readPressure}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a9d7a7049c1b3e2898d2e5b67e954d925}{sig\_readTemperature}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

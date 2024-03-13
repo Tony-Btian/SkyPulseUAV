@@ -20,7 +20,9 @@ private:
 
 public slots:
     void sendMessage(const QString &message);
+    void sendMessageQByte(const QByteArray &message);
     void readMessage();
+    void PWM_Controler(const int &code, const int &value);
 
 private slots:
     void onConnected();

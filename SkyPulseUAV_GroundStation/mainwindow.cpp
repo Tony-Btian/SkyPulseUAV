@@ -46,19 +46,21 @@ MainWindow::~MainWindow()
 */
 }
 
-
 void MainWindow::initialTCPServer()
 {
     TcpThread = new QThread(this);
     TcpServer = new TCP();  // 实体化TCP服务
     TcpServer->moveToThread(TcpThread);
+
     connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
     connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
     connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
     connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
     connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
     connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
     connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
+
     TcpThread->start();
 }
 
@@ -68,11 +70,13 @@ void MainWindow::initialUDPServer()
     UdpThread = new QThread(this);
     UdpServer = new UDP();  // 实体化UDP服务
     UdpServer->moveToThread(UdpThread);
+
     connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
     connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
     connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
     connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
     connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
+
     UdpThread->start();
 }
 
@@ -158,8 +162,6 @@ void MainWindow::onUDPServerStopSuccessful()
     ui->textBrowser_test->append("UDP关闭成功");
 }
 
-
-
 QString MainWindow::getLocalIP()
 {
     const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
@@ -176,7 +178,6 @@ void MainWindow::on_pushButton_Mahony_Plot_Launch_clicked()
     emit sig_Mahony_PlottingStart();
 }
 
-
 void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
 {
     emit sig_Mahony_PlottingStop();
@@ -186,3 +187,30 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     QCoreApplication::quit();
 }
+
+
+/* GPIO Controler*/
+void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(12, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(13, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(19, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(18, duty_cycle);
+}
+

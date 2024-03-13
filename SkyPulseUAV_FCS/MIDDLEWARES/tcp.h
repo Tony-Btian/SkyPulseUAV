@@ -23,7 +23,10 @@ private slots:
 
 private:
     QList<QTcpSocket*> clients;
+    void dataTranslator(const QByteArray &data);
 
+signals:
+    void sig_sendPWMSignal(const int &gpio_pin, const int &duty_cycle);
 };
 
 #endif // TCP_H

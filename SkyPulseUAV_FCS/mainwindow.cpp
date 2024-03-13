@@ -1,9 +1,5 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "threadpool.h"
-#include "databasemanager.h"
-#include <QDebug>
-#include <pigpio.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Initial GPIO
     while(true){
-
         if (gpioInitialise() < 0) {
             qDebug() << "Failed to initialize pigpio. Retrying in 1 second...";
             ui->textBrowser_Main->append("Failed to initialize pigpio. Retrying in 1 second...");
@@ -43,12 +38,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
 
     // Magnetometer HMC5883L
-//    meg_compass = new MEG_Compass();
+    // meg_compass = new MEG_Compass();
 
 
     // TCP Server
     TCPServer = new TCP(this);
     TCPServer->startServer(12345);  // Listening on port 12345
+
+    // PWM Driver
+    PWMDriver = new ESC_PWM_Driver(this);
+    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
 }
 
 MainWindow::~MainWindow()
@@ -64,6 +63,7 @@ MainWindow::~MainWindow()
     delete MagnetoMeter;
     delete TCPServer;
     gpioTerminate();
+
     delete ui;
 }
 
@@ -77,9 +77,9 @@ void MainWindow::prepareForQuit() {
 void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
-    emit sig_readPressure();
+//    emit sig_readPressure();
 //    emit sig_readTemperature();
-//    TCPServer->broadcastMessage("Hello from Raspberry Pi");
+    TCPServer->broadcastMessage("Hello from Raspberry Pi");
 }
 
 

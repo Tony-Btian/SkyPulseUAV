@@ -1,5 +1,7 @@
 #include "tcp.h"
 #include <QHostAddress>
+#include <QThread>
+#include <QDataStream>
 
 TCP::TCP(QObject *parent) : QTcpServer(parent)
 {
@@ -31,6 +33,7 @@ void TCP::incomingConnection(qintptr socketDescriptor)
 
 void TCP::broadcastMessage(const QByteArray &message)
 {
+    qDebug() << "The TCP Thread ID is: " << QThread::currentThreadId();
     for(QTcpSocket *client : qAsConst(clients)){
         if(client->state() == QTcpSocket::ConnectedState){
             client->write(message);
@@ -51,4 +54,36 @@ void TCP::onClientDisconnected()
 void TCP::onReadyRead()
 {
     // Any function here
+    QTcpSocket *clients = qobject_cast<QTcpSocket*>(sender());
+    if(!clients) return;
+
+    QByteArray data = clients->readAll();
+//    qDebug() << "Received data from" << clients->peerAddress().toString() << ": " << data;
+    dataTranslator(data);
+
 }
+
+void TCP::dataTranslator(const QByteArray &data)
+{
+    QDataStream stream(data);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    int firstInt, secondInt;
+
+    // Make sure there is enough data in the stream to read two integers.
+    if (stream.atEnd()) {
+        qDebug() << "Error: Not enough data to read the first integer.";
+        return;
+    }
+    stream >> firstInt; // Read the first integer from the data stream
+
+    if (stream.atEnd()) {
+        qDebug() << "Error: Not enough data to read the second integer.";
+        return;
+    }
+    stream >> secondInt; // Read the second integer from the stream
+
+    qDebug() << "First integer: " << firstInt;
+    qDebug() << "Second integer: " << secondInt;
+    emit sig_sendPWMSignal(firstInt, secondInt);
+}
+

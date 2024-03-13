@@ -5,12 +5,18 @@
 #include <QThreadPool>
 #include <QThread>
 #include <QCloseEvent>
+#include <QDebug>
+#include <pigpio.h>
 
 #include "i2c_device.h"
 #include "tcp.h"
 #include "barometer_bmp180.h"
 #include "magnetometer_gy271.h"
 #include "gyroacelemeter_gy521.h"
+#include "esc_pwm_driver.h"
+#include "threadpool.h"
+#include "databasemanager.h"
+
 
 #define HMC5883l_DEVICE_ADDR 0x0D
 
@@ -35,14 +41,20 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
     /* Thread */
     QThreadPool threadPool;
     QThread *BMP_Thread;
+
     /* Network Protocol */
     TCP *TCPServer;
+
     /* Sensors */
     Magnetometer_GY271 *MagnetoMeter;
     Barometer_BMP180 *BaroMeter;
+
+    /* Driver */
+    ESC_PWM_Driver *PWMDriver;
 
 protected:
     void closeEvent(QCloseEvent *event) override;

@@ -33,6 +33,7 @@ set(PROJECT_SOURCES
     DRIVER/magnetometer_gy271.h DRIVER/magnetometer_gy271.cpp
     DRIVER/gyroacelemeter_gy521.h DRIVER/gyroacelemeter_gy521.cpp
     MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
+    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

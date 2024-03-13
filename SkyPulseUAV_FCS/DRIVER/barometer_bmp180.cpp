@@ -12,7 +12,8 @@ short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 
 
 Barometer_BMP180::Barometer_BMP180(QObject *parent)
-    : QObject(parent), _stop(0)
+    : QObject(parent),
+      _stop(0)
 {
     i2cdevice = new I2C_Device(BMP180_DEVICE_ADDR, this);
 //    connect(&watcher, &QFutureWatcher<void>::finished, this, &Mahony_Plot::plotThreadParameterInitial);

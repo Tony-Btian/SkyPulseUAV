@@ -24,6 +24,8 @@ void \mbox{\hyperlink{classTCP_a137fe49eb387c18e89478a7cd9a73a88}{PWM\+\_\+\+Con
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classTCP_af408638652bef9ff68bf8b3eef2cea9c}{sig\+\_\+send\+PWMSignal}} (const int \&gpio\+\_\+pin, const int \&duty\+\_\+cycle)
+\item 
 void \mbox{\hyperlink{classTCP_a156fe404386a2de397446185d12879f2}{sig\+\_\+received\+Message}} (const QString \&message)
 \item 
 void \mbox{\hyperlink{classTCP_a413ba663a9c86aca92415d295ab517ca}{sig\+\_\+connection\+Successful}} ()
@@ -149,6 +151,12 @@ void \mbox{\hyperlink{classTCP_adf9c14388b6dcda52a5af07fb88b2a66}{incoming\+Conn
 \index{sig\_receivedMessage@{sig\_receivedMessage}!TCP@{TCP}}
 \doxysubsubsection{\texorpdfstring{sig\_receivedMessage}{sig\_receivedMessage}}
 {\footnotesize\ttfamily void TCP\+::sig\+\_\+received\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classTCP_af408638652bef9ff68bf8b3eef2cea9c}\label{classTCP_af408638652bef9ff68bf8b3eef2cea9c} 
+\index{TCP@{TCP}!sig\_sendPWMSignal@{sig\_sendPWMSignal}}
+\index{sig\_sendPWMSignal@{sig\_sendPWMSignal}!TCP@{TCP}}
+\doxysubsubsection{\texorpdfstring{sig\_sendPWMSignal}{sig\_sendPWMSignal}}
+{\footnotesize\ttfamily void TCP\+::sig\+\_\+send\+PWMSignal (\begin{DoxyParamCaption}\item[{const int \&}]{gpio\+\_\+pin}{, }\item[{const int \&}]{duty\+\_\+cycle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 \Hypertarget{classTCP_aa1f196d19ae2f0b69e21e52dce7a3b88}\label{classTCP_aa1f196d19ae2f0b69e21e52dce7a3b88} 
 \index{TCP@{TCP}!startServer@{startServer}}

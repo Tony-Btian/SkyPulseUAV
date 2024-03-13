@@ -117,16 +117,20 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    QList&lt;QTcpSocket*&gt; clients;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> dataTranslator(<span class="keyword">const</span> QByteArray &amp;data);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>signals:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classTCP.html#af408638652bef9ff68bf8b3eef2cea9c">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classTCP.html#af408638652bef9ff68bf8b3eef2cea9c">sig_sendPWMSignal</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;gpio_pin, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;duty_cycle);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// TCP_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">// TCP_H</span></div>
 <div class="ttc" id="aclassTCP_html"><div class="ttname"><a href="classTCP.html">TCP</a></div><div class="ttdef"><b>Definition</b> tcp.h:9</div></div>
-<div class="ttc" id="aclassTCP_html_a95136e35624063a4718e1a3cca9fb374"><div class="ttname"><a href="classTCP.html#a95136e35624063a4718e1a3cca9fb374">TCP::TCP</a></div><div class="ttdeci">TCP(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> tcp.cpp:4</div></div>
-<div class="ttc" id="aclassTCP_html_aa1f196d19ae2f0b69e21e52dce7a3b88"><div class="ttname"><a href="classTCP.html#aa1f196d19ae2f0b69e21e52dce7a3b88">TCP::startServer</a></div><div class="ttdeci">void startServer(quint16 port)</div><div class="ttdef"><b>Definition</b> tcp.cpp:9</div></div>
-<div class="ttc" id="aclassTCP_html_aa90bfdfba719cee53225960e1a6828ed"><div class="ttname"><a href="classTCP.html#aa90bfdfba719cee53225960e1a6828ed">TCP::broadcastMessage</a></div><div class="ttdeci">void broadcastMessage(const QByteArray &amp;message)</div><div class="ttdef"><b>Definition</b> tcp.cpp:32</div></div>
-<div class="ttc" id="aclassTCP_html_adf9c14388b6dcda52a5af07fb88b2a66"><div class="ttname"><a href="classTCP.html#adf9c14388b6dcda52a5af07fb88b2a66">TCP::incomingConnection</a></div><div class="ttdeci">void incomingConnection(qintptr socketDescriptor) override</div><div class="ttdef"><b>Definition</b> tcp.cpp:20</div></div>
+<div class="ttc" id="aclassTCP_html_a95136e35624063a4718e1a3cca9fb374"><div class="ttname"><a href="classTCP.html#a95136e35624063a4718e1a3cca9fb374">TCP::TCP</a></div><div class="ttdeci">TCP(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> tcp.cpp:6</div></div>
+<div class="ttc" id="aclassTCP_html_aa1f196d19ae2f0b69e21e52dce7a3b88"><div class="ttname"><a href="classTCP.html#aa1f196d19ae2f0b69e21e52dce7a3b88">TCP::startServer</a></div><div class="ttdeci">void startServer(quint16 port)</div><div class="ttdef"><b>Definition</b> tcp.cpp:11</div></div>
+<div class="ttc" id="aclassTCP_html_aa90bfdfba719cee53225960e1a6828ed"><div class="ttname"><a href="classTCP.html#aa90bfdfba719cee53225960e1a6828ed">TCP::broadcastMessage</a></div><div class="ttdeci">void broadcastMessage(const QByteArray &amp;message)</div><div class="ttdef"><b>Definition</b> tcp.cpp:34</div></div>
+<div class="ttc" id="aclassTCP_html_adf9c14388b6dcda52a5af07fb88b2a66"><div class="ttname"><a href="classTCP.html#adf9c14388b6dcda52a5af07fb88b2a66">TCP::incomingConnection</a></div><div class="ttdeci">void incomingConnection(qintptr socketDescriptor) override</div><div class="ttdef"><b>Definition</b> tcp.cpp:22</div></div>
+<div class="ttc" id="aclassTCP_html_af408638652bef9ff68bf8b3eef2cea9c"><div class="ttname"><a href="classTCP.html#af408638652bef9ff68bf8b3eef2cea9c">TCP::sig_sendPWMSignal</a></div><div class="ttdeci">void sig_sendPWMSignal(const int &amp;gpio_pin, const int &amp;duty_cycle)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

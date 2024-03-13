@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SkyPulse UAV: /home/tony/Github/SkyPulseUVA/SkyPulseUAV_FCS/mainwindow.h File Reference</title>
+<title>SkyPulse UAV: /home/tony/Github/SkyPulseUVA/SkyPulseUAV_FCS/DRIVER/esc_pwm_driver.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,59 +83,88 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6dea037ea022f7b76454dda2f4609a04.html">SkyPulseUAV_FCS</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_6dea037ea022f7b76454dda2f4609a04.html">SkyPulseUAV_FCS</a></li><li class="navelem"><a class="el" href="dir_2637c9bfe9d90799de6f3b96bb7f4c8c.html">DRIVER</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">mainwindow.h File Reference</div></div>
+  <div class="headertitle"><div class="title">esc_pwm_driver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QMainWindow&gt;</code><br />
-<code>#include &lt;QThreadPool&gt;</code><br />
-<code>#include &lt;QThread&gt;</code><br />
-<code>#include &lt;QCloseEvent&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &lt;pigpio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="i2c__device_8h_source.html">i2c_device.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="tcp_8h_source.html">tcp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="barometer__bmp180_8h_source.html">barometer_bmp180.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="magnetometer__gy271_8h_source.html">magnetometer_gy271.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="gyroacelemeter__gy521_8h_source.html">gyroacelemeter_gy521.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="esc__pwm__driver_8h_source.html">esc_pwm_driver.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="threadpool_8h_source.html">threadpool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="databasemanager_8h_source.html">databasemanager.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;QObject&gt;</code><br />
 </div>
-<p><a href="SkyPulseUAV__FCS_2mainwindow_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="esc__pwm__driver_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainWindow.html">MainWindow</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUi.html">Ui</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classESC__PWM__Driver.html">ESC_PWM_Driver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a391b8ff1476b7964fa4643167301b19d" id="r_a391b8ff1476b7964fa4643167301b19d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391b8ff1476b7964fa4643167301b19d">HMC5883l_DEVICE_ADDR</a>&#160;&#160;&#160;0x0D</td></tr>
-<tr class="separator:a391b8ff1476b7964fa4643167301b19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a4ad06a2bcb1065209a117ea09bbfbf" id="r_a7a4ad06a2bcb1065209a117ea09bbfbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a4ad06a2bcb1065209a117ea09bbfbf">PWM0</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:a7a4ad06a2bcb1065209a117ea09bbfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1c370cc3193ef37474f000a2b982bb" id="r_add1c370cc3193ef37474f000a2b982bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add1c370cc3193ef37474f000a2b982bb">PWM1</a>&#160;&#160;&#160;13</td></tr>
+<tr class="separator:add1c370cc3193ef37474f000a2b982bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c197a7808240f8f825237f4bf97a987" id="r_a8c197a7808240f8f825237f4bf97a987"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c197a7808240f8f825237f4bf97a987">PWM2</a>&#160;&#160;&#160;19</td></tr>
+<tr class="separator:a8c197a7808240f8f825237f4bf97a987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac4f78c2ea8acea2ef0ec02c191f3d2" id="r_aeac4f78c2ea8acea2ef0ec02c191f3d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeac4f78c2ea8acea2ef0ec02c191f3d2">PWM3</a>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:aeac4f78c2ea8acea2ef0ec02c191f3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a391b8ff1476b7964fa4643167301b19d" name="a391b8ff1476b7964fa4643167301b19d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a391b8ff1476b7964fa4643167301b19d">&#9670;&#160;</a></span>HMC5883l_DEVICE_ADDR</h2>
+<a id="a7a4ad06a2bcb1065209a117ea09bbfbf" name="a7a4ad06a2bcb1065209a117ea09bbfbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a4ad06a2bcb1065209a117ea09bbfbf">&#9670;&#160;</a></span>PWM0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define HMC5883l_DEVICE_ADDR&#160;&#160;&#160;0x0D</td>
+          <td class="memname">#define PWM0&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add1c370cc3193ef37474f000a2b982bb" name="add1c370cc3193ef37474f000a2b982bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1c370cc3193ef37474f000a2b982bb">&#9670;&#160;</a></span>PWM1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWM1&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c197a7808240f8f825237f4bf97a987" name="a8c197a7808240f8f825237f4bf97a987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c197a7808240f8f825237f4bf97a987">&#9670;&#160;</a></span>PWM2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWM2&#160;&#160;&#160;19</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeac4f78c2ea8acea2ef0ec02c191f3d2" name="aeac4f78c2ea8acea2ef0ec02c191f3d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac4f78c2ea8acea2ef0ec02c191f3d2">&#9670;&#160;</a></span>PWM3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWM3&#160;&#160;&#160;18</td>
         </tr>
       </table>
 </div><div class="memdoc">

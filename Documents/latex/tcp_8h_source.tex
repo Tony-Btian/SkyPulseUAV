@@ -27,9 +27,12 @@
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00025\ \ \ \ \ QList<QTcpSocket*>\ clients;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TCP\_H}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ dataTranslator(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ signals:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_af408638652bef9ff68bf8b3eef2cea9c}{sig\_sendPWMSignal}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&gpio\_pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&duty\_cycle);}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TCP\_H}}
 
 \end{DoxyCode}

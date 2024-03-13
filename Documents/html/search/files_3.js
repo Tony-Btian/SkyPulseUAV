@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['i2c_5fdevice_2ecpp_0',['i2c_device.cpp',['../i2c__device_8cpp.html',1,'']]],
-  ['i2c_5fdevice_2eh_1',['i2c_device.h',['../i2c__device_8h.html',1,'']]]
+  ['gyroacelemeter_5fgy521_2ecpp_0',['gyroacelemeter_gy521.cpp',['../gyroacelemeter__gy521_8cpp.html',1,'']]],
+  ['gyroacelemeter_5fgy521_2eh_1',['gyroacelemeter_gy521.h',['../gyroacelemeter__gy521_8h.html',1,'']]]
 ];

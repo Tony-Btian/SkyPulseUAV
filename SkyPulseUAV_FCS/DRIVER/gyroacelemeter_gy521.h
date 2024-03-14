@@ -17,19 +17,6 @@
 #define ACCEL_CONFIG 0x1C
 #define GYRO_CONFIG  0x1B
 
-//class GyroAcelemeter_GY521 : public QObject
-//{
-//    Q_OBJECT
-
-//public:
-//    explicit GyroAcelemeter_GY521(QObject *parent = nullptr);
-//    ~GyroAcelemeter_GY521();
-
-//private:
-//    I2C_Device *i2cdevice;
-//    QFutureWatcher<void> watcher;
-//    QAtomicInt _stop;
-//};
 
 // MPU6050Data Struct Definition
 struct MPU6050Data{

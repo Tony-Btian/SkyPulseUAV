@@ -9,12 +9,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
-    DatabaseManager dbManager("config.db");
-    dbManager.addOrUpdateParam("height", 100.1);
-    double height = dbManager.getParam("height");
-    qDebug() << "Height parameter value is: " << height;
+//    DatabaseManager dbManager("config.db");
+//    dbManager.addOrUpdateParam("height", 100.1);
+//    double height = dbManager.getParam("height");
+//    qDebug() << "Height parameter value is: " << height;
 
     // Initial GPIO
+
     while(true){
         if (gpioInitialise() < 0) {
             qDebug() << "Failed to initialize pigpio. Retrying in 1 second...";

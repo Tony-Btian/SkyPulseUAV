@@ -21,9 +21,6 @@ private:
     I2C_Device *i2cdevice;
     QFutureWatcher<void> watcher;
     QAtomicInt _stop;
-//    std::atomic<bool> shouldStop{false};
-
-    static long B5;
 
     void calculateTemperature(int UT);
     void calculatePressure(int UP);

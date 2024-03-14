@@ -1,15 +1,12 @@
 #include "barometer_bmp180.h"
 #include <QDebug>
-//#include <QThread>
 #include <QtConcurrent>
 
-long Barometer_BMP180::B5;
 
 // Adjustable via TCP communication
 short AC1 = 408, AC2 = -72, AC3 = -14383;
 unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
 short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
-
 
 Barometer_BMP180::Barometer_BMP180(QObject *parent)
     : QObject(parent),
@@ -27,6 +24,9 @@ Barometer_BMP180::~Barometer_BMP180()
     delete i2cdevice;
 }
 
+//!
+//! \brief Barometer_BMP180::readingStop
+//!
 void Barometer_BMP180::readingStop()
 {
 //    shouldStop = true;
@@ -39,21 +39,7 @@ void Barometer_BMP180::readTemperatureData()
         qDebug() << "I2C device is not initialized.";
         return;
     }
-//    while(!shouldStop){
-//        // Read raw temperature data
-//        i2cdevice->writeBytes(0xF4, QByteArray(1, 0x2E)); // Write Temperature Measurement Command
-//        QThread::msleep(500); // Waiting for conversion time
-//        QByteArray tempRawData = i2cdevice->readBytes(0xF6, 2); // Reading temperature data
-//        if (tempRawData.size() == 2) {
-//            int UT = static_cast<unsigned char>(tempRawData[0]) << 8 | static_cast<unsigned char>(tempRawData[1]);
-//            calculateTemperature(UT);
-//        } else {
-//            qDebug() << "Invalid temperature data received.";
-//        }
-//        if (shouldStop.load()) { // If the external request stops, jump out of the loop
-//            break;
-//        }
-//    }
+
     auto future = QtConcurrent::run([this]() {
         int i = 0;
         while (_stop.loadAcquire() == 0) {

@@ -85,21 +85,6 @@ void Control::doublepidControl() {
     }
 }
 
-// void Control::pidControlRate() {
-
-//     for(short i = 0; i < 3; i++) {
-
-//         errorRate[i] = outputAngle[i] - currentRate[i];
-
-//         prevRateIterm[i] += errorRate[i] * (0.5f / PIDFreq);
-
-//         outputRate[i] = Kp_in[i] * errorRate[i] + Ki_in[i] * prevRateIterm[i]
-//         + Kd[i] * (errorRate[i] - prevRateErr[i]) * (1.0f / PIDFreq);
-
-//         prevRateErr[i] = errorRate[i];
-//     }
-// }
-
 void Control::getControlOuput(int motorDutyCycle[4]) {
 
     doublepidControl();

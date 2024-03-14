@@ -1,5 +1,4 @@
 #include "BMP180.h"
-#include "BMP180Thread.h"
 
 void BMP180Thread::run() {
 

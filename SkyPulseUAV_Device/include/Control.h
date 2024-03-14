@@ -1,12 +1,22 @@
 #ifndef __CONTROL_H__
 #define __CONTROL_H__
 
+#include "CppThread.hpp"
+
 #define defaultSampleFreq 100.0f
 #define ROLL 0
 #define PITCH 1
 #define YAW 2
 
 #define ITERM_MAX 1500.0f
+
+class ControlThread : public CppThread {
+
+protected:
+
+    void run() override;
+
+};
 
 class Control {
 

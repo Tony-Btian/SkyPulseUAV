@@ -19,6 +19,7 @@ Control::Control(float sampleFreq) :
     errorRate{0.0f, 0.0f, 0.0f},
     errorAngle{0.0f, 0.0f, 0.0f},
     outputAngle{0.0f, 0.0f, 0.0f},
+    outputRate{0.0f, 0.0f, 0.0f},
 
     Kp_out{0.0f, 0.0f, 0.0f},
     Kp_in{0.0f, 0.0f, 0.0f},
@@ -29,7 +30,8 @@ Control::Control(float sampleFreq) :
     Kd{0.0f, 0.0f, 0.0f},
 
     inputThrottle(0.0f),
-    PIDFreq(sampleFreq)
+    PIDFreq(sampleFreq),
+    motorOutput{0.0f, 0.0f, 0.0f, 0.0f}
     {}
 
 

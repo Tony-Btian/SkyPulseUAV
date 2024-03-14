@@ -6,10 +6,6 @@ IIC::IIC(int address) {
 
     {
         std::lock_guard<std::mutex> lock(i2cmtx);
-        if (gpioInitialise() < 0) {
-        std::cerr << "Failed to initialize pigpio" << std::endl;
-        exit(1);
-        }
         handle = i2cOpen(IIC_BUS, address, 0); 
     }
     

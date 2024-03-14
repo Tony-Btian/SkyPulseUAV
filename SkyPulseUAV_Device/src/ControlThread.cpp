@@ -2,6 +2,4 @@
 
 void ControlThread::run() {
 
-    
-
 }

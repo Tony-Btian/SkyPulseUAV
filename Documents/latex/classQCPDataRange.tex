@@ -1,0 +1,226 @@
+\doxysection{QCPData\+Range Class Reference}
+\hypertarget{classQCPDataRange}{}\label{classQCPDataRange}\index{QCPDataRange@{QCPDataRange}}
+
+
+Describes a data range given by begin and end index.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPDataRange_a49e72fd9bace1da9d875136dcc04c986}{QCPData\+Range}} ()
+\item 
+\mbox{\hyperlink{classQCPDataRange_a6c7f4a3684210423270515403060e9cf}{QCPData\+Range}} (int begin, int end)
+\item 
+\Hypertarget{classQCPDataRange_a8bfd79a282f6ebd766d60caa683242d3}\label{classQCPDataRange_a8bfd79a282f6ebd766d60caa683242d3} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+\Hypertarget{classQCPDataRange_a5bcc9597731a7455407853ed0585f6ab}\label{classQCPDataRange_a5bcc9597731a7455407853ed0585f6ab} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+\Hypertarget{classQCPDataRange_ae76d7eba9defdfafcd0fc41096793129}\label{classQCPDataRange_ae76d7eba9defdfafcd0fc41096793129} 
+int {\bfseries begin} () const
+\item 
+\Hypertarget{classQCPDataRange_aee1b20fb045929c3753ee2ce14af7630}\label{classQCPDataRange_aee1b20fb045929c3753ee2ce14af7630} 
+int {\bfseries end} () const
+\item 
+int \mbox{\hyperlink{classQCPDataRange_ac6af055e509d1b691c244954ff1c5887}{size}} () const
+\item 
+int \mbox{\hyperlink{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150}{length}} () const
+\item 
+void \mbox{\hyperlink{classQCPDataRange_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin}} (int begin)
+\item 
+void \mbox{\hyperlink{classQCPDataRange_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End}} (int end)
+\item 
+bool \mbox{\hyperlink{classQCPDataRange_aae53a37472212dca0a7939963e20dba0}{is\+Valid}} () const
+\item 
+bool \mbox{\hyperlink{classQCPDataRange_ac32e53fc05d6cd2eac96b96a7265d3b8}{is\+Empty}} () const
+\item 
+\mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \mbox{\hyperlink{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352}{bounded}} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+\mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \mbox{\hyperlink{classQCPDataRange_a36c8ad8acf177ffeb0a72c8d73030844}{expanded}} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+\mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \mbox{\hyperlink{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}{intersection}} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+\mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \mbox{\hyperlink{classQCPDataRange_a279ed36602b39607699dc5652bcaf813}{adjusted}} (int change\+Begin, int change\+End) const
+\item 
+bool \mbox{\hyperlink{classQCPDataRange_a8a1c437f9beffd55621f48f961d7f679}{intersects}} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\item 
+bool \mbox{\hyperlink{classQCPDataRange_a13ca398776374a3160aa85433718b812}{contains}} (const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Related Symbols}
+(Note that these are not member symbols.) \begin{DoxyCompactItemize}
+\item 
+QDebug \mbox{\hyperlink{classQCPDataRange_a486dd7af8a090ed069672e3510e6a082}{operator$<$$<$}} (QDebug d, const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&data\+Range)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes a data range given by begin and end index. 
+
+\doxylink{classQCPDataRange}{QCPData\+Range} holds two integers describing the begin (\doxylink{classQCPDataRange_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin}) and end (\doxylink{classQCPDataRange_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End}) index of a contiguous set of data points. The {\itshape end} index corresponds to the data point just after the last data point of the data range, like in standard iterators.
+
+Data Ranges are not bound to a certain plottable, thus they can be freely exchanged, created and modified. If a non-\/contiguous data set shall be described, the class \doxylink{classQCPDataSelection}{QCPData\+Selection} is used, which holds and manages multiple instances of \doxylink{classQCPDataRange}{QCPData\+Range}. In most situations, \doxylink{classQCPDataSelection}{QCPData\+Selection} is thus used.
+
+Both \doxylink{classQCPDataRange}{QCPData\+Range} and \doxylink{classQCPDataSelection}{QCPData\+Selection} offer convenience methods to work with them, e.\+g. \doxylink{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352}{bounded}, \doxylink{classQCPDataRange_a36c8ad8acf177ffeb0a72c8d73030844}{expanded}, \doxylink{classQCPDataRange_a8a1c437f9beffd55621f48f961d7f679}{intersects}, \doxylink{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}{intersection}, \doxylink{classQCPDataRange_a279ed36602b39607699dc5652bcaf813}{adjusted}, \doxylink{classQCPDataRange_a13ca398776374a3160aa85433718b812}{contains}. Further, addition and subtraction operators (defined in \doxylink{classQCPDataSelection}{QCPData\+Selection}) can be used to join/subtract data ranges and data selections (or mixtures), to retrieve a corresponding \doxylink{classQCPDataSelection}{QCPData\+Selection}.
+
+QCustom\+Plot\textquotesingle{}s data selection mechanism is based on \doxylink{classQCPDataSelection}{QCPData\+Selection} and \doxylink{classQCPDataRange}{QCPData\+Range}.
+
+\begin{DoxyNote}{Note}
+Do not confuse \doxylink{classQCPDataRange}{QCPData\+Range} with \doxylink{classQCPRange}{QCPRange}. A \doxylink{classQCPRange}{QCPRange} describes an interval in floating point plot coordinates, e.\+g. the current axis range. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPDataRange_a49e72fd9bace1da9d875136dcc04c986}\label{classQCPDataRange_a49e72fd9bace1da9d875136dcc04c986} 
+\index{QCPDataRange@{QCPDataRange}!QCPDataRange@{QCPDataRange}}
+\index{QCPDataRange@{QCPDataRange}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{QCPDataRange()}{QCPDataRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QCPData\+Range\+::\+QCPData\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Creates an empty \doxylink{classQCPDataRange}{QCPData\+Range}, with begin and end set to 0. \Hypertarget{classQCPDataRange_a6c7f4a3684210423270515403060e9cf}\label{classQCPDataRange_a6c7f4a3684210423270515403060e9cf} 
+\index{QCPDataRange@{QCPDataRange}!QCPDataRange@{QCPDataRange}}
+\index{QCPDataRange@{QCPDataRange}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{QCPDataRange()}{QCPDataRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QCPData\+Range\+::\+QCPData\+Range (\begin{DoxyParamCaption}\item[{int}]{begin}{, }\item[{int}]{end}{}\end{DoxyParamCaption})}
+
+Creates a \doxylink{classQCPDataRange}{QCPData\+Range}, initialized with the specified {\itshape begin} and {\itshape end}.
+
+No checks or corrections are made to ensure the resulting range is valid (\doxylink{classQCPDataRange_aae53a37472212dca0a7939963e20dba0}{is\+Valid}). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPDataRange_a279ed36602b39607699dc5652bcaf813}\label{classQCPDataRange_a279ed36602b39607699dc5652bcaf813} 
+\index{QCPDataRange@{QCPDataRange}!adjusted@{adjusted}}
+\index{adjusted@{adjusted}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{adjusted()}{adjusted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} QCPData\+Range\+::adjusted (\begin{DoxyParamCaption}\item[{int}]{change\+Begin}{, }\item[{int}]{change\+End}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a data range where {\itshape change\+Begin} and {\itshape change\+End} were added to the begin and end indices, respectively. \Hypertarget{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352}\label{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352} 
+\index{QCPDataRange@{QCPDataRange}!bounded@{bounded}}
+\index{bounded@{bounded}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{bounded()}{bounded()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} QCPData\+Range\+::bounded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+Returns a data range that matches this data range, except that parts exceeding {\itshape other} are excluded.
+
+This method is very similar to \doxylink{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}{intersection}, with one distinction\+: If this range and the {\itshape other} range share no intersection, the returned data range will be empty with begin and end set to the respective boundary side of {\itshape other}, at which this range is residing. (\doxylink{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}{intersection} would just return a range with begin and end set to 0.) \Hypertarget{classQCPDataRange_a13ca398776374a3160aa85433718b812}\label{classQCPDataRange_a13ca398776374a3160aa85433718b812} 
+\index{QCPDataRange@{QCPDataRange}!contains@{contains}}
+\index{contains@{contains}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool QCPData\+Range\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+Returns whether all data points of {\itshape other} are also contained inside this data range.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_a8a1c437f9beffd55621f48f961d7f679}{intersects} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_a36c8ad8acf177ffeb0a72c8d73030844}\label{classQCPDataRange_a36c8ad8acf177ffeb0a72c8d73030844} 
+\index{QCPDataRange@{QCPDataRange}!expanded@{expanded}}
+\index{expanded@{expanded}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{expanded()}{expanded()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} QCPData\+Range\+::expanded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+Returns a data range that contains both this data range as well as {\itshape other}. \Hypertarget{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}\label{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183} 
+\index{QCPDataRange@{QCPDataRange}!intersection@{intersection}}
+\index{intersection@{intersection}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} QCPData\+Range\+::intersection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+Returns the data range which is contained in both this data range and {\itshape other}.
+
+This method is very similar to \doxylink{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352}{bounded}, with one distinction\+: If this range and the {\itshape other} range share no intersection, the returned data range will be empty with begin and end set to 0. (\doxylink{classQCPDataRange_a93529421d12fdd3a8bdb2b8061936352}{bounded} would return a range with begin and end set to one of the boundaries of {\itshape other}, depending on which side this range is on.)
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataSelection_af5267ced53687561367105ee77b874ab}{QCPData\+Selection\+::intersection} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_a8a1c437f9beffd55621f48f961d7f679}\label{classQCPDataRange_a8a1c437f9beffd55621f48f961d7f679} 
+\index{QCPDataRange@{QCPDataRange}!intersects@{intersects}}
+\index{intersects@{intersects}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool QCPData\+Range\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+Returns whether this data range and {\itshape other} share common data points.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_a84e1e03129dd52528efb4bac18d30183}{intersection}, \doxylink{classQCPDataRange_a13ca398776374a3160aa85433718b812}{contains} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_ac32e53fc05d6cd2eac96b96a7265d3b8}\label{classQCPDataRange_ac32e53fc05d6cd2eac96b96a7265d3b8} 
+\index{QCPDataRange@{QCPDataRange}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool QCPData\+Range\+::is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether this range is empty, i.\+e. whether its begin index equals its end index.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_ac6af055e509d1b691c244954ff1c5887}{size}, \doxylink{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150}{length} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_aae53a37472212dca0a7939963e20dba0}\label{classQCPDataRange_aae53a37472212dca0a7939963e20dba0} 
+\index{QCPDataRange@{QCPDataRange}!isValid@{isValid}}
+\index{isValid@{isValid}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool QCPData\+Range\+::is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether this range is valid. A valid range has a begin index greater or equal to 0, and an end index greater or equal to the begin index.
+
+\begin{DoxyNote}{Note}
+Invalid ranges should be avoided and are never the result of any of \doxylink{classQCustomPlot}{QCustom\+Plot}\textquotesingle{}s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to \doxylink{classQCustomPlot}{QCustom\+Plot}\textquotesingle{}s methods. The invalid range is not inherently prevented in \doxylink{classQCPDataRange}{QCPData\+Range}, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (\doxylink{classQCPDataRange_ac32e53fc05d6cd2eac96b96a7265d3b8}{is\+Empty}), since its \doxylink{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150}{length} can be negative and thus non-\/zero. 
+\end{DoxyNote}
+\Hypertarget{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150}\label{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150} 
+\index{QCPDataRange@{QCPDataRange}!length@{length}}
+\index{length@{length}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily int QCPData\+Range\+::length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of data points described by this data range. Equivalent to \doxylink{classQCPDataRange_ac6af055e509d1b691c244954ff1c5887}{size}. \Hypertarget{classQCPDataRange_a54ff59048e01e46ac4aefafc844626c6}\label{classQCPDataRange_a54ff59048e01e46ac4aefafc844626c6} 
+\index{QCPDataRange@{QCPDataRange}!setBegin@{setBegin}}
+\index{setBegin@{setBegin}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{setBegin()}{setBegin()}}
+{\footnotesize\ttfamily void QCPData\+Range\+::set\+Begin (\begin{DoxyParamCaption}\item[{int}]{begin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the begin of this data range. The {\itshape begin} index points to the first data point that is part of the data range.
+
+No checks or corrections are made to ensure the resulting range is valid (\doxylink{classQCPDataRange_aae53a37472212dca0a7939963e20dba0}{is\+Valid}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_a277f1a9eafe70b9184d9c00b641ae5de}\label{classQCPDataRange_a277f1a9eafe70b9184d9c00b641ae5de} 
+\index{QCPDataRange@{QCPDataRange}!setEnd@{setEnd}}
+\index{setEnd@{setEnd}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{setEnd()}{setEnd()}}
+{\footnotesize\ttfamily void QCPData\+Range\+::set\+End (\begin{DoxyParamCaption}\item[{int}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the end of this data range. The {\itshape end} index points to the data point just after the last data point that is part of the data range.
+
+No checks or corrections are made to ensure the resulting range is valid (\doxylink{classQCPDataRange_aae53a37472212dca0a7939963e20dba0}{is\+Valid}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPDataRange_ac6af055e509d1b691c244954ff1c5887}\label{classQCPDataRange_ac6af055e509d1b691c244954ff1c5887} 
+\index{QCPDataRange@{QCPDataRange}!size@{size}}
+\index{size@{size}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int QCPData\+Range\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of data points described by this data range. This is equal to the end index minus the begin index.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPDataRange_a1e7836058f755c6ab9f11996477b7150}{length} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classQCPDataRange_a486dd7af8a090ed069672e3510e6a082}\label{classQCPDataRange_a486dd7af8a090ed069672e3510e6a082} 
+\index{QCPDataRange@{QCPDataRange}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!QCPDataRange@{QCPDataRange}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily QDebug operator$<$$<$ (\begin{DoxyParamCaption}\item[{QDebug}]{d}{, }\item[{const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&}]{data\+Range}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+Prints {\itshape data\+Range} in a human readable format to the q\+Debug output. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

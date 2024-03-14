@@ -1,0 +1,514 @@
+\doxysection{QCPColor\+Scale\+Axis\+Rect\+Private Class Reference}
+\hypertarget{classQCPColorScaleAxisRectPrivate}{}\label{classQCPColorScaleAxisRectPrivate}\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+Inheritance diagram for QCPColor\+Scale\+Axis\+Rect\+Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classQCPColorScaleAxisRectPrivate}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_ad3b242f75dd2b33581364a4e668a80db}{QCPColor\+Scale\+Axis\+Rect\+Private}} (\mbox{\hyperlink{classQCPColorScale}{QCPColor\+Scale}} \texorpdfstring{$\ast$}{*}parent\+Color\+Scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAxisRect_a60b31dece805462c1b82eea2e69ba042}{QCPAxis\+Rect}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, bool setup\+Default\+Axes=true)
+\item 
+QPixmap {\bfseries background} () const
+\item 
+QBrush {\bfseries background\+Brush} () const
+\item 
+bool {\bfseries background\+Scaled} () const
+\item 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries background\+Scaled\+Mode} () const
+\item 
+Qt\+::\+Orientations {\bfseries range\+Drag} () const
+\item 
+Qt\+::\+Orientations {\bfseries range\+Zoom} () const
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAxisRect_a6d7c22cfc54fac7a3d6ef80b133a8574}{range\+Drag\+Axis}} (Qt\+::\+Orientation orientation)
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAxisRect_a679c63f2b8daccfe6ec5110dce3dd3b6}{range\+Zoom\+Axis}} (Qt\+::\+Orientation orientation)
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_aae5f99a044ca911685a306f01b7ff941}{range\+Drag\+Axes}} (Qt\+::\+Orientation orientation)
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a86aac0f435f209d60dacd22cda10c104}{range\+Zoom\+Axes}} (Qt\+::\+Orientation orientation)
+\item 
+double \mbox{\hyperlink{classQCPAxisRect_ae4e6c4d143aacc88d2d3c56f117c2fe1}{range\+Zoom\+Factor}} (Qt\+::\+Orientation orientation)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_af615ab5e52b8e0a9a0eff415b6559db5}{set\+Background}} (const QPixmap \&pm)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ac48a2d5d9b7732e73b86605c69c5e4c1}{set\+Background}} (const QPixmap \&pm, bool scaled, Qt\+::\+Aspect\+Ratio\+Mode mode=Qt\+::\+Keep\+Aspect\+Ratio\+By\+Expanding)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a22a22b8668735438dc06f9a55fe46b33}{set\+Background}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ae6d36c3e0e968ffb991170a018e7b503}{set\+Background\+Scaled}} (bool scaled)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a5ef77ea829c9de7ba248e473f48f7305}{set\+Background\+Scaled\+Mode}} (Qt\+::\+Aspect\+Ratio\+Mode mode)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ae6aef2f7211ba6097c925dcd26008418}{set\+Range\+Drag}} (Qt\+::\+Orientations orientations)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a7960a9d222f1c31d558b064b60f86a31}{set\+Range\+Zoom}} (Qt\+::\+Orientations orientations)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a648cce336bd99daac4a5ca3e5743775d}{set\+Range\+Drag\+Axes}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}horizontal, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}vertical)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_af0fbc510147a2a54b9c8cd296e6df8ac}{set\+Range\+Drag\+Axes}} (QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a8db4722cb93e9c4a6f0d91150c200867}{axes}})
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a8366903edcb3bb703a8b0be783a85746}{set\+Range\+Drag\+Axes}} (QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ horizontal, QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ vertical)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a9442cca2aa358405f39a64d51eca13d2}{set\+Range\+Zoom\+Axes}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}horizontal, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}vertical)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a89c1ab7ee6d2a14b56c57c9a796ba623}{set\+Range\+Zoom\+Axes}} (QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a8db4722cb93e9c4a6f0d91150c200867}{axes}})
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ae29d6e9e54ebd981769c986e498ae118}{set\+Range\+Zoom\+Axes}} (QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ horizontal, QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ vertical)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a895d7ac745ea614e04056244b3c138ac}{set\+Range\+Zoom\+Factor}} (double horizontal\+Factor, double vertical\+Factor)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ae83d187b03fc6fa4f00765ad50cd3fc3}{set\+Range\+Zoom\+Factor}} (double factor)
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_a85b321acec0f694d8b5fdeafdbff3133}{axis\+Count}} (\mbox{\hyperlink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type) const
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAxisRect_a583ae4f6d78b601b732183f6cabecbe1}{axis}} (\mbox{\hyperlink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type, int index=0) const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a8db4722cb93e9c4a6f0d91150c200867}{axes}} (QCPAxis\+::\+Axis\+Types types) const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a11657b8faebe9677180860e8057ede26}{axes}} () const
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAxisRect_a2a845ee60eac7a8d5e71718c5e77c274}{add\+Axis}} (\mbox{\hyperlink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPAxisRect_a583ae4f6d78b601b732183f6cabecbe1}{axis}}=nullptr)
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a792e1f3d9cb1591fca135bb0de9b81fc}{add\+Axes}} (QCPAxis\+::\+Axis\+Types types)
+\item 
+bool \mbox{\hyperlink{classQCPAxisRect_a03c39cd9704f0d36fb6cf980cdddcbaa}{remove\+Axis}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPAxisRect_a583ae4f6d78b601b732183f6cabecbe1}{axis}})
+\item 
+\mbox{\hyperlink{classQCPLayoutInset}{QCPLayout\+Inset}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAxisRect_a949f803466619924c7018df4b511ae10}{inset\+Layout}} () const
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a5fc8460564e81dcc2a9343dc8bc1fe67}{zoom}} (const QRectF \&pixel\+Rect)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_ae481c28b50e10cfbbec59fde45e77367}{zoom}} (const QRectF \&pixel\+Rect, const QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ \&affected\+Axes)
+\item 
+void \mbox{\hyperlink{classQCPAxisRect_a5fa906175447b14206954f77fc7f1ef4}{setup\+Full\+Axes\+Box}} (bool connect\+Ranges=false)
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a587d073a97b27bc7293fab4b2774ad59}{plottables}} () const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPGraph}{QCPGraph}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a2d9ded3eca97be1fcb5867949391bb88}{graphs}} () const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPAbstractItem}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a03c113a2175448300ee8f944e24776ba}{items}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_afb4a3de02046b20b9310bdb8fca781c3}{left}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_a3f819d4a1b2193723d1fdafc573eea10}{right}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_a45dbad181cbb9f09d068dbb76c817c95}{top}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_acefdf1abaa8a8ab681e906cc2be9581e}{bottom}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_a204645398a4f9d0b0189385c7c2cfb91}{width}} () const
+\item 
+int \mbox{\hyperlink{classQCPAxisRect_acc4377809e79d9a089ab790f39429b0d}{height}} () const
+\item 
+QSize \mbox{\hyperlink{classQCPAxisRect_a7a8289346eb612f422c704f8b75cf479}{size}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPAxisRect_a5a847b3ddeca3abec38d3838fefb0dbd}{top\+Left}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPAxisRect_a7aa221967549ba71b98c465bf8234758}{top\+Right}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPAxisRect_ab15d4311d6535ccd7af504dc0e2b98c6}{bottom\+Left}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPAxisRect_a36dac884ec8fa3a3a2f3842ca7b7d32d}{bottom\+Right}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPAxisRect_ade3aef874bafcec6dd16174fba44c0b1}{center}} () const
+\item 
+virtual QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAxisRect_a3aee067fd105f2fa8de9eb8024435ac5}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a2c25c7bf27eaa1fad66807af855d8d81}{QCPLayout\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot=nullptr)
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
+\item 
+QMargins {\bfseries margins} () const
+\item 
+QMargins {\bfseries minimum\+Margins} () const
+\item 
+QCP\+::\+Margin\+Sides {\bfseries auto\+Margins} () const
+\item 
+QSize {\bfseries minimum\+Size} () const
+\item 
+QSize {\bfseries maximum\+Size} () const
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries size\+Constraint\+Rect} () const
+\item 
+\mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} {\bfseries margin\+Group} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries margin\+Groups} () const
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*}group)
+\item 
+virtual QSize \mbox{\hyperlink{classQCPLayoutElement_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
+\item 
+virtual QSize \mbox{\hyperlink{classQCPLayoutElement_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
+\item 
+virtual double \mbox{\hyperlink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_a52a21c7cbe086cd587c955cfe6e25e3b}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a73754cab312aeaddea1bfcc67cc079ac}\label{classQCPColorScaleAxisRectPrivate_a73754cab312aeaddea1bfcc67cc079ac} 
+void {\bfseries update\+Gradient\+Image} ()
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a6112ad4291ac1695d37659cb049d598d}\label{classQCPColorScaleAxisRectPrivate_a6112ad4291ac1695d37659cb049d598d} 
+Q\+\_\+\+SLOT void {\bfseries axis\+Selection\+Changed} (QCPAxis\+::\+Selectable\+Parts selected\+Parts)
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a66d2baed86966bb03a6d7c32dc7d59f7}\label{classQCPColorScaleAxisRectPrivate_a66d2baed86966bb03a6d7c32dc7d59f7} 
+Q\+\_\+\+SLOT void {\bfseries axis\+Selectable\+Changed} (QCPAxis\+::\+Selectable\+Parts selectable\+Parts)
+\item 
+virtual int \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_ac51055d83f5f414b6d013d3a24b0a941}{calculate\+Auto\+Margin}} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPColorScaleAxisRectPrivate_add049d464b9ef2ccdc638adc4ccb4aca}{update}} (\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPAxisRect_a4a318008e2b7f881a14c3d97186b31f9}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAxisRect_a575e38ac71a21906dc2d7b3364db2d62}{layout\+Changed}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void {\bfseries draw\+Background} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter)
+\item 
+void {\bfseries update\+Axes\+Offset} (\mbox{\hyperlink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+\item 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+virtual void {\bfseries select\+Event} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void {\bfseries deselect\+Event} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a311c73f51a4cb0b556388197833cf099}\label{classQCPColorScaleAxisRectPrivate_a311c73f51a4cb0b556388197833cf099} 
+\mbox{\hyperlink{classQCPColorScale}{QCPColor\+Scale}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Color\+Scale}
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_ad4f7c8ee1c6012d9950870811773119c}\label{classQCPColorScaleAxisRectPrivate_ad4f7c8ee1c6012d9950870811773119c} 
+QImage {\bfseries m\+Gradient\+Image}
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a2c0b15b071e1f93006b48b5be022a631}\label{classQCPColorScaleAxisRectPrivate_a2c0b15b071e1f93006b48b5be022a631} 
+bool {\bfseries m\+Gradient\+Image\+Invalidated}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+QBrush {\bfseries m\+Background\+Brush}
+\item 
+QPixmap {\bfseries m\+Background\+Pixmap}
+\item 
+QPixmap {\bfseries m\+Scaled\+Background\+Pixmap}
+\item 
+bool {\bfseries m\+Background\+Scaled}
+\item 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries m\+Background\+Scaled\+Mode}
+\item 
+\mbox{\hyperlink{classQCPLayoutInset}{QCPLayout\+Inset}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Inset\+Layout}
+\item 
+Qt\+::\+Orientations {\bfseries m\+Range\+Drag}
+\item 
+Qt\+::\+Orientations {\bfseries m\+Range\+Zoom}
+\item 
+QList$<$ QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ $>$ {\bfseries m\+Range\+Drag\+Horz\+Axis}
+\item 
+QList$<$ QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ $>$ {\bfseries m\+Range\+Drag\+Vert\+Axis}
+\item 
+QList$<$ QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ $>$ {\bfseries m\+Range\+Zoom\+Horz\+Axis}
+\item 
+QList$<$ QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ $>$ {\bfseries m\+Range\+Zoom\+Vert\+Axis}
+\item 
+double {\bfseries m\+Range\+Zoom\+Factor\+Horz}
+\item 
+double {\bfseries m\+Range\+Zoom\+Factor\+Vert}
+\item 
+QList$<$ \mbox{\hyperlink{classQCPRange}{QCPRange}} $>$ {\bfseries m\+Drag\+Start\+Horz\+Range}
+\item 
+QList$<$ \mbox{\hyperlink{classQCPRange}{QCPRange}} $>$ {\bfseries m\+Drag\+Start\+Vert\+Range}
+\item 
+QCP\+::\+Antialiased\+Elements {\bfseries m\+AADrag\+Backup}
+\item 
+QCP\+::\+Antialiased\+Elements {\bfseries m\+Not\+AADrag\+Backup}
+\item 
+bool {\bfseries m\+Dragging}
+\item 
+QHash$<$ \mbox{\hyperlink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}}, QList$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} $>$ $>$ {\bfseries m\+Axes}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Layout}
+\item 
+QSize {\bfseries m\+Minimum\+Size}
+\item 
+QSize {\bfseries m\+Maximum\+Size}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries m\+Size\+Constraint\+Rect}
+\item 
+QRect {\bfseries m\+Rect}
+\item 
+QRect {\bfseries m\+Outer\+Rect}
+\item 
+QMargins {\bfseries m\+Margins}
+\item 
+QMargins {\bfseries m\+Minimum\+Margins}
+\item 
+QCP\+::\+Margin\+Sides {\bfseries m\+Auto\+Margins}
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Margin\+Groups}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a60f6031408a325ebd1bbbad1ccf9b897}\label{classQCPColorScaleAxisRectPrivate_a60f6031408a325ebd1bbbad1ccf9b897} 
+class {\bfseries QCPColor\+Scale}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}{up\+Preparation}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPColorScaleAxisRectPrivate_ad3b242f75dd2b33581364a4e668a80db}\label{classQCPColorScaleAxisRectPrivate_ad3b242f75dd2b33581364a4e668a80db} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{QCPColorScaleAxisRectPrivate()}{QCPColorScaleAxisRectPrivate()}}
+{\footnotesize\ttfamily QCPColor\+Scale\+Axis\+Rect\+Private\+::\+QCPColor\+Scale\+Axis\+Rect\+Private (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPColorScale}{QCPColor\+Scale}} \texorpdfstring{$\ast$}{*}}]{parent\+Color\+Scale}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new instance, as a child of {\itshape parent\+Color\+Scale}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPColorScaleAxisRectPrivate_ac51055d83f5f414b6d013d3a24b0a941}\label{classQCPColorScaleAxisRectPrivate_ac51055d83f5f414b6d013d3a24b0a941} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!calculateAutoMargin@{calculateAutoMargin}}
+\index{calculateAutoMargin@{calculateAutoMargin}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{calculateAutoMargin()}{calculateAutoMargin()}}
+{\footnotesize\ttfamily int QCPAxis\+Rect\+::calculate\+Auto\+Margin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}]{side}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a52a21c7cbe086cd587c955cfe6e25e3b}\label{classQCPColorScaleAxisRectPrivate_a52a21c7cbe086cd587c955cfe6e25e3b} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!draw@{draw}}
+\index{draw@{draw}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPColor\+Scale\+Axis\+Rect\+Private\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}\label{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event} occurred, that started the mouse interaction.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect_a9cd27ad8c5cfb49aefd9dbb30def4beb}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}\label{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QVariant \&}]{details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \doxylink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{select\+Test}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \doxylink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{select\+Test}. For example, One-\/dimensional plottables like \doxylink{classQCPGraph}{QCPGraph} or \doxylink{classQCPBars}{QCPBars} convey the clicked data point in the {\itshape details} parameter, as \doxylink{classQCPDataSelection}{QCPData\+Selection} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \doxylink{classQCPAxis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part} in the case of axes).
+
+\doxylink{classQCustomPlot}{QCustom\+Plot} uses an event propagation system that works the same as Qt\textquotesingle{}s system. If your layerable doesn\textquotesingle{}t reimplement the \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event} or explicitly calls {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()} in its reimplementation, the event will be propagated to the next layerable in the stacking order.
+
+Once a layerable has accepted the \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}, it is considered the mouse grabber and will receive all following calls to \doxylink{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event} or \doxylink{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event} for this mouse interaction (a "{}mouse interaction"{} in this context ends with the release).
+
+The default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect_aa9a7c807eaa4666870ac94aa6abc4dde}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}\label{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event} occurred, that started the mouse interaction.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect_a6c89b988d3a0b93c0878f0ebdb5037f4}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_add049d464b9ef2ccdc638adc4ccb4aca}\label{classQCPColorScaleAxisRectPrivate_add049d464b9ef2ccdc638adc4ccb4aca} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!update@{update}}
+\index{update@{update}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void QCPAxis\+Rect\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}}]{phase}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \doxylink{classQCPAxisRect}{QCPAxis\+Rect}.
+
+Calls the base class implementation to update the margins (see \doxylink{classQCPLayoutElement_a929c2ec62e0e0e1d8418eaa802e2af9b}{QCPLayout\+Element\+::update}), and finally passes the \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect} to the inset layout (\doxylink{classQCPAxisRect_a949f803466619924c7018df4b511ae10}{inset\+Layout}) and calls its QCPInset\+Layout\+::update function.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect_add049d464b9ef2ccdc638adc4ccb4aca}{QCPAxis\+Rect}}.
+
+\Hypertarget{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262}\label{classQCPColorScaleAxisRectPrivate_a93eeaa0c127d6d6fe8171b2455080262} 
+\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
+\doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
+{\footnotesize\ttfamily void QCPAxis\+Rect\+::wheel\+Event (\begin{DoxyParamCaption}\item[{QWheel\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \doxylink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{select\+Test}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
+
+The {\ttfamily event-\/\texorpdfstring{$>$}{>}angle\+Delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making the delta larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPColorScaleAxisRectPrivate_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}, \doxylink{classQCPColorScaleAxisRectPrivate_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPAxisRect_a93eeaa0c127d6d6fe8171b2455080262}{QCPAxis\+Rect}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,13 +1,14 @@
 # SkyPulseUAV
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)]()
-[![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)]()
-[![Twitter](https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white)]()
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE)
+![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)
+![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)
+![Twitter](https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white)
+![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUAV)
 [![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUAV)
 
 > SkyPulseUAV: Pioneering UAV Technology for Critical Missions
+
 
 
 ## Welcome to the SkyPulseUAV Project
@@ -42,6 +43,23 @@ We call on the global community to join us in advancing UAV technology for criti
 Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community.
 
 Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
+
+# Project Development Planning
+### Global
+- [ ] Build up the Github warehouse & README
+- [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [ ] Design the Hardware and Software
+- [ ] Buy electrical components for the project
+
+### Binhan Tian
+- [ ] 
+
+### Jianliang Wu
+- [ ]
+
+# Guide
+### System Deployment
+#### 
 
 
 ## License

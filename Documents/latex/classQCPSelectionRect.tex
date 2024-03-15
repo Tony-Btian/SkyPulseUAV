@@ -1,0 +1,293 @@
+\doxysection{QCPSelection\+Rect Class Reference}
+\hypertarget{classQCPSelectionRect}{}\label{classQCPSelectionRect}\index{QCPSelectionRect@{QCPSelectionRect}}
+
+
+Provides rect/rubber-\/band data selection and range zoom interaction.  
+
+
+Inheritance diagram for QCPSelection\+Rect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classQCPSelectionRect}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_a7b7162d19f4f2174d3644ff1a5d335aa}{started}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_a1bab11026bca52740c2e6682623e6964}{changed}} (const QRect \&rect, QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_aeb82009393c90130102dccf36477b906}{canceled}} (const QRect \&rect, QInput\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c}{accepted}} (const QRect \&rect, QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPSelectionRect_ade6ee59fabcc585a1e281eb527b01867}{QCPSelection\+Rect}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+\Hypertarget{classQCPSelectionRect_a3812115ae4dfe2855bf1e58331c14805}\label{classQCPSelectionRect_a3812115ae4dfe2855bf1e58331c14805} 
+QRect {\bfseries rect} () const
+\item 
+\mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPSelectionRect_a23ab082ffa04be1dbf9afb9e633ab815}{range}} (const \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}axis) const
+\item 
+\Hypertarget{classQCPSelectionRect_ab4229f8faeaffba9617d2e6c4779b765}\label{classQCPSelectionRect_ab4229f8faeaffba9617d2e6c4779b765} 
+QPen {\bfseries pen} () const
+\item 
+\Hypertarget{classQCPSelectionRect_a9669c77c5796dea9dc089a088d50ebfb}\label{classQCPSelectionRect_a9669c77c5796dea9dc089a088d50ebfb} 
+QBrush {\bfseries brush} () const
+\item 
+bool \mbox{\hyperlink{classQCPSelectionRect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}} () const
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPSelectionRect_ab0c66f1484418782efa01f4153611080}{set\+Brush}} (const QBrush \&brush)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+virtual double \mbox{\hyperlink{classQCPLayerable_a272989087fc8c4357b4ba614f9922336}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPSelectionRect_a271f24cfca8bc50a0e2b4310ff90e227}\label{classQCPSelectionRect_a271f24cfca8bc50a0e2b4310ff90e227} 
+virtual void {\bfseries start\+Selection} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+\Hypertarget{classQCPSelectionRect_a95c3f1700be2a6d7bba0fe56ece5fbb1}\label{classQCPSelectionRect_a95c3f1700be2a6d7bba0fe56ece5fbb1} 
+virtual void {\bfseries move\+Selection} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+\Hypertarget{classQCPSelectionRect_a625bcffd73987f6de6c6559aaf29ab9d}\label{classQCPSelectionRect_a625bcffd73987f6de6c6559aaf29ab9d} 
+virtual void {\bfseries end\+Selection} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+\Hypertarget{classQCPSelectionRect_a1affe764316d6122a26fdb2e9583feb1}\label{classQCPSelectionRect_a1affe764316d6122a26fdb2e9583feb1} 
+virtual void {\bfseries key\+Press\+Event} (QKey\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+virtual void \mbox{\hyperlink{classQCPSelectionRect_aa854697618e16037ba9c73056abfb9bf}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPSelectionRect_ab0e50ae796508bdcd97ab8c335c593bf}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+\item 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+virtual void {\bfseries select\+Event} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void {\bfseries deselect\+Event} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPSelectionRect_a45a2600ef19c8f7b5ec6134beab036cf}\label{classQCPSelectionRect_a45a2600ef19c8f7b5ec6134beab036cf} 
+QRect {\bfseries m\+Rect}
+\item 
+\Hypertarget{classQCPSelectionRect_ae255dec12cd531071115bd667f0fd815}\label{classQCPSelectionRect_ae255dec12cd531071115bd667f0fd815} 
+QPen {\bfseries m\+Pen}
+\item 
+\Hypertarget{classQCPSelectionRect_a1bda3f02c2e4da58c856d19695028cbe}\label{classQCPSelectionRect_a1bda3f02c2e4da58c856d19695028cbe} 
+QBrush {\bfseries m\+Brush}
+\item 
+\Hypertarget{classQCPSelectionRect_a1c167356b0bc59e62691bff8c90f5851}\label{classQCPSelectionRect_a1c167356b0bc59e62691bff8c90f5851} 
+bool {\bfseries m\+Active}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPSelectionRect_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPSelectionRect_a1cdf9df76adcfae45261690aa0ca2198} 
+class {\bfseries QCustom\+Plot}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides rect/rubber-\/band data selection and range zoom interaction. 
+
+\doxylink{classQCPSelectionRect}{QCPSelection\+Rect} is used by \doxylink{classQCustomPlot}{QCustom\+Plot} when the \doxylink{classQCustomPlot_a810ef958ebe84db661c7288b526c0deb}{QCustom\+Plot\+::set\+Selection\+Rect\+Mode} is not \doxylink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1}{QCP\+::srm\+None}. When the user drags the mouse across the plot, the current selection rect instance (\doxylink{classQCustomPlot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}) is forwarded these events and makes sure an according rect shape is drawn. At the begin, during, and after completion of the interaction, it emits the corresponding signals \doxylink{classQCPSelectionRect_a7b7162d19f4f2174d3644ff1a5d335aa}{started}, \doxylink{classQCPSelectionRect_a1bab11026bca52740c2e6682623e6964}{changed}, \doxylink{classQCPSelectionRect_aeb82009393c90130102dccf36477b906}{canceled}, and \doxylink{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c}{accepted}.
+
+The \doxylink{classQCustomPlot}{QCustom\+Plot} instance connects own slots to the current selection rect instance, in order to react to an accepted selection rect interaction accordingly.
+
+\doxylink{classQCPSelectionRect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active} can be used to check whether the selection rect is currently active. An ongoing selection interaction can be cancelled programmatically via calling \doxylink{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel} at any time.
+
+The appearance of the selection rect can be controlled via \doxylink{classQCPSelectionRect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen} and \doxylink{classQCPSelectionRect_ab0c66f1484418782efa01f4153611080}{set\+Brush}.
+
+If you wish to provide custom behaviour, e.\+g. a different visual representation of the selection rect (QCPSelection\+Rect\+::draw), you can subclass \doxylink{classQCPSelectionRect}{QCPSelection\+Rect} and pass an instance of your subclass to \doxylink{classQCustomPlot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPSelectionRect_ade6ee59fabcc585a1e281eb527b01867}\label{classQCPSelectionRect_ade6ee59fabcc585a1e281eb527b01867} 
+\index{QCPSelectionRect@{QCPSelectionRect}!QCPSelectionRect@{QCPSelectionRect}}
+\index{QCPSelectionRect@{QCPSelectionRect}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{QCPSelectionRect()}{QCPSelectionRect()}}
+{\footnotesize\ttfamily QCPSelection\+Rect\+::\+QCPSelection\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new \doxylink{classQCPSelectionRect}{QCPSelection\+Rect} instance. To make \doxylink{classQCustomPlot}{QCustom\+Plot} use the selection rect instance, pass it to \doxylink{classQCustomPlot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}. {\itshape parent\+Plot} should be set to the same \doxylink{classQCustomPlot}{QCustom\+Plot} widget. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c}\label{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c} 
+\index{QCPSelectionRect@{QCPSelectionRect}!accepted@{accepted}}
+\index{accepted@{accepted}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{accepted}{accepted}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::accepted (\begin{DoxyParamCaption}\item[{const QRect \&}]{rect}{, }\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection interaction was completed by the user releasing the mouse button.
+
+Note that {\itshape rect} may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin. \Hypertarget{classQCPSelectionRect_aa854697618e16037ba9c73056abfb9bf}\label{classQCPSelectionRect_aa854697618e16037ba9c73056abfb9bf} 
+\index{QCPSelectionRect@{QCPSelectionRect}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a}\label{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a} 
+\index{QCPSelectionRect@{QCPSelectionRect}!cancel@{cancel}}
+\index{cancel@{cancel}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::cancel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+If there is currently a selection interaction going on (\doxylink{classQCPSelectionRect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}), the interaction is canceled. The selection rect will emit the \doxylink{classQCPSelectionRect_aeb82009393c90130102dccf36477b906}{canceled} signal. \Hypertarget{classQCPSelectionRect_aeb82009393c90130102dccf36477b906}\label{classQCPSelectionRect_aeb82009393c90130102dccf36477b906} 
+\index{QCPSelectionRect@{QCPSelectionRect}!canceled@{canceled}}
+\index{canceled@{canceled}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{canceled}{canceled}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::canceled (\begin{DoxyParamCaption}\item[{const QRect \&}]{rect}{, }\item[{QInput\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection interaction was cancelled. Note that {\itshape event} is {\ttfamily nullptr} if the selection interaction was cancelled programmatically, by a call to \doxylink{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}.
+
+The user may cancel the selection interaction by pressing the escape key. In this case, {\itshape event} holds the respective input event.
+
+Note that {\itshape rect} may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin. \Hypertarget{classQCPSelectionRect_a1bab11026bca52740c2e6682623e6964}\label{classQCPSelectionRect_a1bab11026bca52740c2e6682623e6964} 
+\index{QCPSelectionRect@{QCPSelectionRect}!changed@{changed}}
+\index{changed@{changed}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{changed}{changed}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::changed (\begin{DoxyParamCaption}\item[{const QRect \&}]{rect}{, }\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted while the selection rect interaction is ongoing and the {\itshape rect} has changed its size due to the user moving the mouse.
+
+Note that {\itshape rect} may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin. \Hypertarget{classQCPSelectionRect_ab0e50ae796508bdcd97ab8c335c593bf}\label{classQCPSelectionRect_ab0e50ae796508bdcd97ab8c335c593bf} 
+\index{QCPSelectionRect@{QCPSelectionRect}!draw@{draw}}
+\index{draw@{draw}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPSelectionRect_ad27c1569c6ea8fa48e24b81e2a302df3}\label{classQCPSelectionRect_ad27c1569c6ea8fa48e24b81e2a302df3} 
+\index{QCPSelectionRect@{QCPSelectionRect}!isActive@{isActive}}
+\index{isActive@{isActive}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool QCPSelection\+Rect\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if there is currently a selection going on, i.\+e. the user has started dragging a selection rect, but hasn\textquotesingle{}t released the mouse button yet.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPSelectionRect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPSelectionRect_a23ab082ffa04be1dbf9afb9e633ab815}\label{classQCPSelectionRect_a23ab082ffa04be1dbf9afb9e633ab815} 
+\index{QCPSelectionRect@{QCPSelectionRect}!range@{range}}
+\index{range@{range}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{range()}{range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPSelection\+Rect\+::range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{axis}{}\end{DoxyParamCaption}) const}
+
+A convenience function which returns the coordinate range of the provided {\itshape axis}, that this selection rect currently encompasses. \Hypertarget{classQCPSelectionRect_ab0c66f1484418782efa01f4153611080}\label{classQCPSelectionRect_ab0c66f1484418782efa01f4153611080} 
+\index{QCPSelectionRect@{QCPSelectionRect}!setBrush@{setBrush}}
+\index{setBrush@{setBrush}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::set\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush}{}\end{DoxyParamCaption})}
+
+Sets the brush that will be used to fill the selection rect. By default the selection rect is not filled, i.\+e. {\itshape brush} is {\ttfamily Qt\+::\+No\+Brush}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPSelectionRect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPSelectionRect_ada20b7fb1b2dcbe50523262636b06963}\label{classQCPSelectionRect_ada20b7fb1b2dcbe50523262636b06963} 
+\index{QCPSelectionRect@{QCPSelectionRect}!setPen@{setPen}}
+\index{setPen@{setPen}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::set\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that will be used to draw the selection rect outline.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPSelectionRect_ab0c66f1484418782efa01f4153611080}{set\+Brush} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPSelectionRect_a7b7162d19f4f2174d3644ff1a5d335aa}\label{classQCPSelectionRect_a7b7162d19f4f2174d3644ff1a5d335aa} 
+\index{QCPSelectionRect@{QCPSelectionRect}!started@{started}}
+\index{started@{started}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{started}{started}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::started (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when a selection rect interaction was initiated, i.\+e. the user just started dragging the selection rect with the mouse. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/build-\/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station-\/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+2\+\_\+\+GCC\+\_\+64bit-\/\+Debug/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station\+\_\+autogen/\+H7\+Q5\+XMJM4\+O/moc\+\_\+qcustomplot.\+cpp\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

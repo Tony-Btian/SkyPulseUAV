@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     MahonyPlotObject = new Mahony_Plot();
+    qDebug() << "Main Thread ID: " << QThread::currentThreadId();
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
@@ -18,13 +19,22 @@ MainWindow::~MainWindow()
 {
     delete ui;
 
-    // 请求线程结束
+    // 请求TCP线程结束
+    TcpThread->quit();  // 等待线程安全结束
+    if (!TcpThread->wait(3000)) { // 等待最多3秒
+        TcpThread->terminate();
+        TcpThread->wait(); // 再次等待确保线程已经结束
+    }
+    delete TcpThread; // 删除线程对象
+
+    // 请求UDP线程结束
     UdpThread->quit();  // 等待线程安全结束
     if (!UdpThread->wait(3000)) { // 等待最多3秒
         UdpThread->terminate();
         UdpThread->wait(); // 再次等待确保线程已经结束
     }
     delete UdpThread; // 删除线程对象
+
     /*
     // 请求线程结束
     BluetoothThread->quit();  // 等待线程安全结束
@@ -36,14 +46,22 @@ MainWindow::~MainWindow()
 */
 }
 
-
 void MainWindow::initialTCPServer()
 {
-    TcpServer = new TCP(this);  // 实体化TCP服务
+    TcpThread = new QThread(this);
+    TcpServer = new TCP();  // 实体化TCP服务
+    TcpServer->moveToThread(TcpThread);
+
+    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
+    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
     connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
     connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
     connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
     connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
+    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
+
+    TcpThread->start();
 }
 
 
@@ -52,11 +70,13 @@ void MainWindow::initialUDPServer()
     UdpThread = new QThread(this);
     UdpServer = new UDP();  // 实体化UDP服务
     UdpServer->moveToThread(UdpThread);
+
     connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
     connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
     connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
     connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
     connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
+
     UdpThread->start();
 }
 
@@ -84,7 +104,8 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
     // 判断端口输入是否有效
     if(ok){
-        TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
+        emit sig_StartTCPServer(NetworkIPAddr, NetworkPort);  // 采用信号的方式进行连接
+        // TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
         emit sig_StartUDPServer(NetworkPort);  // 开启UDP服务
     }
     else{
@@ -94,7 +115,7 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TcpServer->disconnectFromServer();
+    TcpServer->disconnectToServer();
     emit sig_StopUDPServer();
 }
 
@@ -141,8 +162,6 @@ void MainWindow::onUDPServerStopSuccessful()
     ui->textBrowser_test->append("UDP关闭成功");
 }
 
-
-
 QString MainWindow::getLocalIP()
 {
     const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
@@ -153,3 +172,45 @@ QString MainWindow::getLocalIP()
     }
     return NULL;
 }
+
+void MainWindow::on_pushButton_Mahony_Plot_Launch_clicked()
+{
+    emit sig_Mahony_PlottingStart();
+}
+
+void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
+{
+    emit sig_Mahony_PlottingStop();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    QCoreApplication::quit();
+}
+
+
+/* GPIO Controler*/
+void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(12, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(13, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(19, duty_cycle);
+}
+
+void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
+{
+    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle/255.0);
+    emit sig_sendMessageToTCP(18, duty_cycle);
+}
+

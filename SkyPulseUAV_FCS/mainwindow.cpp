@@ -1,8 +1,5 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "threadpool.h"
-#include <QDebug>
-#include <pigpio.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,9 +9,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
+    DatabaseManager dbManager("config.db");
+    dbManager.addOrUpdateParam("height", 100.1);
+    double height = dbManager.getParam("height");
+    qDebug() << "Height parameter value is: " << height;
+
     // Initial GPIO
     while(true){
-
         if (gpioInitialise() < 0) {
             qDebug() << "Failed to initialize pigpio. Retrying in 1 second...";
             ui->textBrowser_Main->append("Failed to initialize pigpio. Retrying in 1 second...");
@@ -37,12 +38,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
 
     // Magnetometer HMC5883L
-//    meg_compass = new MEG_Compass();
+    // meg_compass = new MEG_Compass();
 
 
     // TCP Server
     TCPServer = new TCP(this);
     TCPServer->startServer(12345);  // Listening on port 12345
+
+    // PWM Driver
+    PWMDriver = new ESC_PWM_Driver(this);
+    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
 }
 
 MainWindow::~MainWindow()
@@ -58,9 +63,16 @@ MainWindow::~MainWindow()
     delete MagnetoMeter;
     delete TCPServer;
     gpioTerminate();
+
     delete ui;
 }
 
+void MainWindow::prepareForQuit() {
+    if(BaroMeter) {
+        BaroMeter->readingStop();
+        BaroMeter->waitForThreadCompletion();
+    }
+}
 
 void MainWindow::on_pushButton_BMP_clicked()
 {
@@ -76,3 +88,11 @@ void MainWindow::on_pushButton_HMC_clicked()
 
 }
 
+void MainWindow::closeEvent(QCloseEvent *event) {
+//    barometer->readingStop();
+//    barometer->waitForThreadCompletion();
+    prepareForQuit();
+//    BaroMeter->readingStop();
+//    BaroMeter->waitForThreadCompletion();
+    QMainWindow::closeEvent(event);
+}

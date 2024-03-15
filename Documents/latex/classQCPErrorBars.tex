@@ -1,0 +1,762 @@
+\doxysection{QCPError\+Bars Class Reference}
+\hypertarget{classQCPErrorBars}{}\label{classQCPErrorBars}\index{QCPErrorBars@{QCPErrorBars}}
+
+
+A plottable that adds a set of error bars to other plottables.  
+
+
+Inheritance diagram for QCPError\+Bars\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classQCPErrorBars}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} \{ \mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a9fca24d20d5376e41be216fc9b08cd21}{et\+Key\+Error}}
+, \mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a5f760fc9c0a98c7f1e93e33bf54e9d83}{et\+Value\+Error}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPErrorBars_a5cdcc33e5f173780c3d657e96216e5c1}{QCPError\+Bars}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}key\+Axis, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}value\+Axis)
+\item 
+QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ \mbox{\hyperlink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}} () const
+\item 
+\Hypertarget{classQCPErrorBars_a0bc7c198cd8da3e92033433d7d2a42f1}\label{classQCPErrorBars_a0bc7c198cd8da3e92033433d7d2a42f1} 
+\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*} {\bfseries data\+Plottable} () const
+\item 
+\Hypertarget{classQCPErrorBars_a527e7df83c98709cef22a8447fee4f13}\label{classQCPErrorBars_a527e7df83c98709cef22a8447fee4f13} 
+\mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} {\bfseries error\+Type} () const
+\item 
+\Hypertarget{classQCPErrorBars_ae5a292470366ec92b248753f83b8646e}\label{classQCPErrorBars_ae5a292470366ec92b248753f83b8646e} 
+double {\bfseries whisker\+Width} () const
+\item 
+\Hypertarget{classQCPErrorBars_a2c969749fa0db565a42b80db9da5f388}\label{classQCPErrorBars_a2c969749fa0db565a42b80db9da5f388} 
+double {\bfseries symbol\+Gap} () const
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} (QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ \mbox{\hyperlink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}})
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a2f33d68a7ec163b09017dce3d9d3abcc}{set\+Data}} (const QVector$<$ double $>$ \&error)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_aac0cf070b957c11177e91b02bcb433c8}{set\+Data}} (const QVector$<$ double $>$ \&error\+Minus, const QVector$<$ double $>$ \&error\+Plus)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}} (\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*}plottable)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_af0af493d454a8f3a0908830160680d2b}{set\+Error\+Type}} (\mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} type)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_ad05f6ff9e46c6047f1cd2459744b7b59}{set\+Whisker\+Width}} (double pixels)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a280ee8d863d8a2630c309701d019b3de}{set\+Symbol\+Gap}} (double pixels)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8}{add\+Data}} (const QVector$<$ double $>$ \&error)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a2135cf41d7925a3dcdadd4eb03fd3eb6}{add\+Data}} (const QVector$<$ double $>$ \&error\+Minus, const QVector$<$ double $>$ \&error\+Plus)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a39ef73b0e61941fc4064fd3a5224c72a}{add\+Data}} (double error)
+\item 
+void \mbox{\hyperlink{classQCPErrorBars_a1833c5de9c2fe2952b977505d9f27cd1}{add\+Data}} (double error\+Minus, double error\+Plus)
+\item 
+virtual int \mbox{\hyperlink{classQCPErrorBars_a18b797c62f2af000b926e52eb46d97c7}{data\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual double \mbox{\hyperlink{classQCPErrorBars_a7cba420078adc523efa59fb8c6ca23e0}{data\+Main\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual double \mbox{\hyperlink{classQCPErrorBars_a3000a036124880a90c629d124c1cd1e2}{data\+Sort\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual double \mbox{\hyperlink{classQCPErrorBars_ae9f6c79c03147efb1a67742c55386dc8}{data\+Main\+Value}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPErrorBars_af71af55d929d832daf32e283b21e1f3e}{data\+Value\+Range}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPointF \mbox{\hyperlink{classQCPErrorBars_ae79fed6566f1912a97344b20b35faac1}{data\+Pixel\+Position}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classQCPErrorBars_af75958b95d9b9c7edfd9851c1d123850}{sort\+Key\+Is\+Main\+Key}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \mbox{\hyperlink{classQCPErrorBars_ad7c727736599dfb173f0952082e1a5b6}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classQCPErrorBars_a74c57d6abb8eda3c4c31b72d1df9f568}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual double \mbox{\hyperlink{classQCPErrorBars_a35d48d6b283898e725cc9f3fb38c2769}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPErrorBars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}{interface1D}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}key\+Axis, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}value\+Axis)
+\item 
+QString {\bfseries name} () const
+\item 
+bool {\bfseries antialiased\+Fill} () const
+\item 
+bool {\bfseries antialiased\+Scatters} () const
+\item 
+QPen {\bfseries pen} () const
+\item 
+QBrush {\bfseries brush} () const
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} {\bfseries key\+Axis} () const
+\item 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} {\bfseries value\+Axis} () const
+\item 
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries selectable} () const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}{selected}} () const
+\item 
+\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}} () const
+\item 
+\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}axis)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}axis)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a20e266ad646f8c4a7e4631040510e5d9}{set\+Selection\+Decorator}} (\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*}decorator)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93}{coords\+To\+Pixels}} (double key, double value, double \&x, double \&y) const
+\item 
+const QPointF \mbox{\hyperlink{classQCPAbstractPlottable_a5acb50ae984eef09a7ab92315d2ad708}{coords\+To\+Pixels}} (double key, double value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a3903c1120ab5c27e7fa46b597ef267bd}{pixels\+To\+Coords}} (double x, double y, double \&key, double \&value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a28d32c0062b9450847851ffdee1c5f69}{pixels\+To\+Coords}} (const QPointF \&pixel\+Pos, double \&key, double \&value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a714eaf36b12434cd71846215504db82e}{rescale\+Value\+Axis}} (bool only\+Enlarge=false, bool in\+Key\+Range=false) const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}{add\+To\+Legend}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}legend)
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5}{add\+To\+Legend}} ()
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{remove\+From\+Legend}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}legend) const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_ac95fb2604d9106d0852ad9ceb326fe8c}{remove\+From\+Legend}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPErrorBars_a801e85931372abf2a1034bfb2eac5cd2}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPErrorBars_a20f5d292e66103f26bca00b11ce417b4}{draw\+Legend\+Icon}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPErrorBars_a6cac828a430d66ac77a167549d01d212}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPErrorBars_ab76215a186ae4862235821e028685f26}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{classQCPRange}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPErrorBars_abeea5ff0d66732bbfc9b74869d8c552e}\label{classQCPErrorBars_abeea5ff0d66732bbfc9b74869d8c552e} 
+void {\bfseries get\+Error\+Bar\+Lines} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator it, QVector$<$ QLineF $>$ \&backbones, QVector$<$ QLineF $>$ \&whiskers) const
+\item 
+\Hypertarget{classQCPErrorBars_aac9ffa98815035d300b2e9a67495ba4c}\label{classQCPErrorBars_aac9ffa98815035d300b2e9a67495ba4c} 
+void {\bfseries get\+Visible\+Data\+Bounds} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&begin, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&end, const \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} \&range\+Restriction) const
+\item 
+\Hypertarget{classQCPErrorBars_a8e904076bad643f43af28b95f21c1b88}\label{classQCPErrorBars_a8e904076bad643f43af28b95f21c1b88} 
+double {\bfseries point\+Distance} (const QPointF \&pixel\+Point, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&closest\+Data) const
+\item 
+\Hypertarget{classQCPErrorBars_a243e0bb2563fc2e9f08efd77e7175abf}\label{classQCPErrorBars_a243e0bb2563fc2e9f08efd77e7175abf} 
+void {\bfseries get\+Data\+Segments} (QList$<$ \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} $>$ \&selected\+Segments, QList$<$ \mbox{\hyperlink{classQCPDataRange}{QCPData\+Range}} $>$ \&unselected\+Segments) const
+\item 
+\Hypertarget{classQCPErrorBars_a5ad9abccb1be3df25485ad7dc21b3b89}\label{classQCPErrorBars_a5ad9abccb1be3df25485ad7dc21b3b89} 
+bool {\bfseries error\+Bar\+Visible} (int index) const
+\item 
+\Hypertarget{classQCPErrorBars_aa9b1642567a0aff8a2f6e0556c563633}\label{classQCPErrorBars_aa9b1642567a0aff8a2f6e0556c563633} 
+bool {\bfseries rect\+Intersects\+Line} (const QRectF \&pixel\+Rect, const QLineF \&line) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual QRect \mbox{\hyperlink{classQCPAbstractPlottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPAbstractPlottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractPlottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractPlottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void {\bfseries apply\+Fill\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\item 
+void {\bfseries apply\+Scatters\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPErrorBars_a83c7f452d0eebd302a7e4fb3a1957634}\label{classQCPErrorBars_a83c7f452d0eebd302a7e4fb3a1957634} 
+QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ {\bfseries m\+Data\+Container}
+\item 
+\Hypertarget{classQCPErrorBars_a14b6a5b49295990da84a05a3a89026bb}\label{classQCPErrorBars_a14b6a5b49295990da84a05a3a89026bb} 
+QPointer$<$ \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} $>$ {\bfseries m\+Data\+Plottable}
+\item 
+\Hypertarget{classQCPErrorBars_af9fd3117b86aac728c9e8e87c406ed9a}\label{classQCPErrorBars_af9fd3117b86aac728c9e8e87c406ed9a} 
+\mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} {\bfseries m\+Error\+Type}
+\item 
+\Hypertarget{classQCPErrorBars_a3873724f7ac3392bdf9d46a47076a1d2}\label{classQCPErrorBars_a3873724f7ac3392bdf9d46a47076a1d2} 
+double {\bfseries m\+Whisker\+Width}
+\item 
+\Hypertarget{classQCPErrorBars_a5cb5628b75e5aff0875710705666ec57}\label{classQCPErrorBars_a5cb5628b75e5aff0875710705666ec57} 
+double {\bfseries m\+Symbol\+Gap}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}}
+\begin{DoxyCompactItemize}
+\item 
+QString {\bfseries m\+Name}
+\item 
+bool {\bfseries m\+Antialiased\+Fill}
+\item 
+bool {\bfseries m\+Antialiased\+Scatters}
+\item 
+QPen {\bfseries m\+Pen}
+\item 
+QBrush {\bfseries m\+Brush}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ {\bfseries m\+Key\+Axis}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ {\bfseries m\+Value\+Axis}
+\item 
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries m\+Selectable}
+\item 
+\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} {\bfseries m\+Selection}
+\item 
+\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Selection\+Decorator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPErrorBars_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPErrorBars_a1cdf9df76adcfae45261690aa0ca2198} 
+class {\bfseries QCustom\+Plot}
+\item 
+\Hypertarget{classQCPErrorBars_a8429035e7adfbd7f05805a6530ad5e3b}\label{classQCPErrorBars_a8429035e7adfbd7f05805a6530ad5e3b} 
+class {\bfseries QCPLegend}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed}} (bool \mbox{\hyperlink{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}{selected}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \&\mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A plottable that adds a set of error bars to other plottables. 
+
+
+
+The \doxylink{classQCPErrorBars}{QCPError\+Bars} plottable can be attached to other one-\/dimensional plottables (e.\+g. \doxylink{classQCPGraph}{QCPGraph}, \doxylink{classQCPCurve}{QCPCurve}, \doxylink{classQCPBars}{QCPBars}, etc.) and equips them with error bars.
+
+Use \doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable} to define for which plottable the \doxylink{classQCPErrorBars}{QCPError\+Bars} shall display the error bars. The orientation of the error bars can be controlled with \doxylink{classQCPErrorBars_af0af493d454a8f3a0908830160680d2b}{set\+Error\+Type}.
+
+By using \doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}, you can supply the actual error data, either as symmetric error or plus/minus asymmetric errors. \doxylink{classQCPErrorBars}{QCPError\+Bars} only stores the error data. The absolute key/value position of each error bar will be adopted from the configured data plottable. The error data of the \doxylink{classQCPErrorBars}{QCPError\+Bars} are associated one-\/to-\/one via their index to the data points of the data plottable. You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+Set either of the plus/minus errors to NaN ({\ttfamily q\+QNa\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) to not show the respective error bar on the data point at that index.\hypertarget{classQCPErrorBars_qcperrorbars-appearance}{}\doxysubsection{\texorpdfstring{Changing the appearance}{Changing the appearance}}\label{classQCPErrorBars_qcperrorbars-appearance}
+The appearance of the error bars is defined by the pen (\doxylink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}), and the width of the whiskers (\doxylink{classQCPErrorBars_ad05f6ff9e46c6047f1cd2459744b7b59}{set\+Whisker\+Width}). Further, the error bar backbones may leave a gap around the data point center to prevent that error bars are drawn too close to or even through scatter points. This gap size can be controlled via \doxylink{classQCPErrorBars_a280ee8d863d8a2630c309701d019b3de}{set\+Symbol\+Gap}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}\label{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474} 
+\index{QCPErrorBars@{QCPErrorBars}!ErrorType@{ErrorType}}
+\index{ErrorType@{ErrorType}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{ErrorType}{ErrorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{QCPError\+Bars\+::\+Error\+Type}}}
+
+Defines in which orientation the error bars shall appear. If your data needs both error dimensions, create two \doxylink{classQCPErrorBars}{QCPError\+Bars} with different \doxylink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_af0af493d454a8f3a0908830160680d2b}{set\+Error\+Type} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etKeyError@{etKeyError}!QCPErrorBars@{QCPErrorBars}}\index{QCPErrorBars@{QCPErrorBars}!etKeyError@{etKeyError}}}\Hypertarget{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a9fca24d20d5376e41be216fc9b08cd21}\label{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a9fca24d20d5376e41be216fc9b08cd21} 
+et\+Key\+Error&The errors are for the key dimension (bars appear parallel to the key axis) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{etValueError@{etValueError}!QCPErrorBars@{QCPErrorBars}}\index{QCPErrorBars@{QCPErrorBars}!etValueError@{etValueError}}}\Hypertarget{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a5f760fc9c0a98c7f1e93e33bf54e9d83}\label{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474a5f760fc9c0a98c7f1e93e33bf54e9d83} 
+et\+Value\+Error&The errors are for the value dimension (bars appear parallel to the value axis) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPErrorBars_a5cdcc33e5f173780c3d657e96216e5c1}\label{classQCPErrorBars_a5cdcc33e5f173780c3d657e96216e5c1} 
+\index{QCPErrorBars@{QCPErrorBars}!QCPErrorBars@{QCPErrorBars}}
+\index{QCPErrorBars@{QCPErrorBars}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{QCPErrorBars()}{QCPErrorBars()}}
+{\footnotesize\ttfamily QCPError\+Bars\+::\+QCPError\+Bars (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{key\+Axis}{, }\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{value\+Axis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs an error bars plottable which uses {\itshape key\+Axis} as its key axis ("{}x"{}) and {\itshape value\+Axis} as its value axis ("{}y"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \doxylink{classQCustomPlot}{QCustom\+Plot} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+It is also important that the {\itshape key\+Axis} and {\itshape value\+Axis} are the same for the error bars plottable and the data plottable that the error bars shall be drawn on (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+The created \doxylink{classQCPErrorBars}{QCPError\+Bars} is automatically registered with the \doxylink{classQCustomPlot}{QCustom\+Plot} instance inferred from {\itshape key\+Axis}. This \doxylink{classQCustomPlot}{QCustom\+Plot} instance takes ownership of the \doxylink{classQCPErrorBars}{QCPError\+Bars}, so do not delete it manually but use \doxylink{classQCustomPlot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()} instead. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8}\label{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8} 
+\index{QCPErrorBars@{QCPErrorBars}!addData@{addData}}
+\index{addData@{addData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::add\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{error}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds symmetrical error values as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_a2135cf41d7925a3dcdadd4eb03fd3eb6}\label{classQCPErrorBars_a2135cf41d7925a3dcdadd4eb03fd3eb6} 
+\index{QCPErrorBars@{QCPErrorBars}!addData@{addData}}
+\index{addData@{addData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::add\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{error\+Minus}{, }\item[{const QVector$<$ double $>$ \&}]{error\+Plus}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_a39ef73b0e61941fc4064fd3a5224c72a}\label{classQCPErrorBars_a39ef73b0e61941fc4064fd3a5224c72a} 
+\index{QCPErrorBars@{QCPErrorBars}!addData@{addData}}
+\index{addData@{addData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{error}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds a single symmetrical error bar as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_a1833c5de9c2fe2952b977505d9f27cd1}\label{classQCPErrorBars_a1833c5de9c2fe2952b977505d9f27cd1} 
+\index{QCPErrorBars@{QCPErrorBars}!addData@{addData}}
+\index{addData@{addData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{error\+Minus}{, }\item[{double}]{error\+Plus}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds a single asymmetrical error bar as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}\label{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813} 
+\index{QCPErrorBars@{QCPErrorBars}!data@{data}}
+\index{data@{data}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ QCPError\+Bars\+::data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a shared pointer to the internal data storage of type QCPError\+Bars\+Data\+Container. You may use it to directly manipulate the error values, which may be more convenient and faster than using the regular \doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} methods. \Hypertarget{classQCPErrorBars_a18b797c62f2af000b926e52eb46d97c7}\label{classQCPErrorBars_a18b797c62f2af000b926e52eb46d97c7} 
+\index{QCPErrorBars@{QCPErrorBars}!dataCount@{dataCount}}
+\index{dataCount@{dataCount}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataCount()}{dataCount()}}
+{\footnotesize\ttfamily int QCPError\+Bars\+::data\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the number of data points of the plottable. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a058a22c770ef4d5a0e878a7f02183da9}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_a7cba420078adc523efa59fb8c6ca23e0}\label{classQCPErrorBars_a7cba420078adc523efa59fb8c6ca23e0} 
+\index{QCPErrorBars@{QCPErrorBars}!dataMainKey@{dataMainKey}}
+\index{dataMainKey@{dataMainKey}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataMainKey()}{dataMainKey()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::data\+Main\+Key (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the main key of the data point at the given {\itshape index}.
+
+What the main key is, is defined by the plottable\textquotesingle{}s data type. See the \doxysectlink{classQCPDataContainer_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}{1} documentation for details about this naming convention. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a2bd60daaac046945fead558cbd83cf73}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_ae9f6c79c03147efb1a67742c55386dc8}\label{classQCPErrorBars_ae9f6c79c03147efb1a67742c55386dc8} 
+\index{QCPErrorBars@{QCPErrorBars}!dataMainValue@{dataMainValue}}
+\index{dataMainValue@{dataMainValue}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataMainValue()}{dataMainValue()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::data\+Main\+Value (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the main value of the data point at the given {\itshape index}.
+
+What the main value is, is defined by the plottable\textquotesingle{}s data type. See the \doxysectlink{classQCPDataContainer_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}{1} documentation for details about this naming convention. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_af6330919e8023277d08c958a6074fc76}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_ae79fed6566f1912a97344b20b35faac1}\label{classQCPErrorBars_ae79fed6566f1912a97344b20b35faac1} 
+\index{QCPErrorBars@{QCPErrorBars}!dataPixelPosition@{dataPixelPosition}}
+\index{dataPixelPosition@{dataPixelPosition}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataPixelPosition()}{dataPixelPosition()}}
+{\footnotesize\ttfamily QPointF QCPError\+Bars\+::data\+Pixel\+Position (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears.
+
+Usually this corresponds to the point of data\+Main\+Key/ data\+Main\+Value, in pixel coordinates. However, depending on the plottable, this might be a different apparent position than just a coord-\/to-\/pixel transform of those values. For example, \doxylink{classQCPBars}{QCPBars} apparent data values can be shifted depending on their stacking, bar grouping or configured base value. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a78911838cfbcfd2d8df9ad2fdbfb8e93}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_a3000a036124880a90c629d124c1cd1e2}\label{classQCPErrorBars_a3000a036124880a90c629d124c1cd1e2} 
+\index{QCPErrorBars@{QCPErrorBars}!dataSortKey@{dataSortKey}}
+\index{dataSortKey@{dataSortKey}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataSortKey()}{dataSortKey()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::data\+Sort\+Key (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the sort key of the data point at the given {\itshape index}.
+
+What the sort key is, is defined by the plottable\textquotesingle{}s data type. See the \doxysectlink{classQCPDataContainer_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}{1} documentation for details about this naming convention. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_af71af55d929d832daf32e283b21e1f3e}\label{classQCPErrorBars_af71af55d929d832daf32e283b21e1f3e} 
+\index{QCPErrorBars@{QCPErrorBars}!dataValueRange@{dataValueRange}}
+\index{dataValueRange@{dataValueRange}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataValueRange()}{dataValueRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPError\+Bars\+::data\+Value\+Range (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the value range of the data point at the given {\itshape index}.
+
+What the value range is, is defined by the plottable\textquotesingle{}s data type. See the \doxysectlink{classQCPDataContainer_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}{1} documentation for details about this naming convention. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a9ca7fcf14d885a200879768679b19be9}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_a801e85931372abf2a1034bfb2eac5cd2}\label{classQCPErrorBars_a801e85931372abf2a1034bfb2eac5cd2} 
+\index{QCPErrorBars@{QCPErrorBars}!draw@{draw}}
+\index{draw@{draw}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_a20f5d292e66103f26bca00b11ce417b4}\label{classQCPErrorBars_a20f5d292e66103f26bca00b11ce417b4} 
+\index{QCPErrorBars@{QCPErrorBars}!drawLegendIcon@{drawLegendIcon}}
+\index{drawLegendIcon@{drawLegendIcon}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{drawLegendIcon()}{drawLegendIcon()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::draw\+Legend\+Icon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_a74c57d6abb8eda3c4c31b72d1df9f568}\label{classQCPErrorBars_a74c57d6abb8eda3c4c31b72d1df9f568} 
+\index{QCPErrorBars@{QCPErrorBars}!findBegin@{findBegin}}
+\index{findBegin@{findBegin}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{findBegin()}{findBegin()}}
+{\footnotesize\ttfamily int QCPError\+Bars\+::find\+Begin (\begin{DoxyParamCaption}\item[{double}]{sort\+Key}{, }\item[{bool}]{expanded\+Range}{ = {\ttfamily true}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}. If {\itshape expanded\+Range} is true, the data point just below {\itshape sort\+Key} will be considered, otherwise the one just above.
+
+This can be used in conjunction with \doxylink{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End} to iterate over data points within a given key range, including or excluding the bounding data points that are just beyond the specified range.
+
+If {\itshape expanded\+Range} is true but there are no data points below {\itshape sort\+Key}, 0 is returned.
+
+If the container is empty, returns 0 (in that case, \doxylink{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End} will also return 0, so a loop using these methods will not iterate over the index 0).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End}, \doxylink{classQCPDataContainer_a2ad8a5399072d99a242d3a6d2d7e278a}{QCPData\+Container\+::find\+Begin} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a5b95783271306a4de97be54eac1e7d13}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0}\label{classQCPErrorBars_ad22dd8499c6d45176ad0651751a0b0b0} 
+\index{QCPErrorBars@{QCPErrorBars}!findEnd@{findEnd}}
+\index{findEnd@{findEnd}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{findEnd()}{findEnd()}}
+{\footnotesize\ttfamily int QCPError\+Bars\+::find\+End (\begin{DoxyParamCaption}\item[{double}]{sort\+Key}{, }\item[{bool}]{expanded\+Range}{ = {\ttfamily true}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}. If {\itshape expanded\+Range} is true, the data point just above {\itshape sort\+Key} will be considered, otherwise the one just below.
+
+This can be used in conjunction with \doxylink{classQCPErrorBars_a74c57d6abb8eda3c4c31b72d1df9f568}{find\+Begin} to iterate over data points within a given key range, including the bounding data points that are just below and above the specified range.
+
+If {\itshape expanded\+Range} is true but there are no data points above {\itshape sort\+Key}, the index just above the highest data point is returned.
+
+If the container is empty, returns 0.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_a74c57d6abb8eda3c4c31b72d1df9f568}{find\+Begin}, \doxylink{classQCPDataContainer_afb8b8f23cc2b7234a793a25ce79fe48f}{QCPData\+Container\+::find\+End} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a5deced1016bc55a41a2339619045b295}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_a6cac828a430d66ac77a167549d01d212}\label{classQCPErrorBars_a6cac828a430d66ac77a167549d01d212} 
+\index{QCPErrorBars@{QCPErrorBars}!getKeyRange@{getKeyRange}}
+\index{getKeyRange@{getKeyRange}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{getKeyRange()}{getKeyRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPError\+Bars\+::get\+Key\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range}{, }\item[{\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain}{ = {\ttfamily \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the coordinate range that all data in this plottable span in the key axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} or \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+Note that {\itshape found\+Range} is not the same as \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}, since the range returned by this function may have size zero (e.\+g. when there is only one data point). In this case {\itshape found\+Range} would return true, but the returned range is not a valid range in terms of \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}, \doxylink{classQCPErrorBars_ab76215a186ae4862235821e028685f26}{get\+Value\+Range} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_ab76215a186ae4862235821e028685f26}\label{classQCPErrorBars_ab76215a186ae4862235821e028685f26} 
+\index{QCPErrorBars@{QCPErrorBars}!getValueRange@{getValueRange}}
+\index{getValueRange@{getValueRange}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{getValueRange()}{getValueRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPError\+Bars\+::get\+Value\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range}{, }\item[{\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain}{ = {\ttfamily \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}}, }\item[{const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&}]{in\+Key\+Range}{ = {\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}}()}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} or \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+If {\itshape in\+Key\+Range} has both lower and upper bound set to zero (is equal to {\ttfamily \doxylink{classQCPRange}{QCPRange()}}), all data points are considered, without any restriction on the keys.
+
+Note that {\itshape found\+Range} is not the same as \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}, since the range returned by this function may have size zero (e.\+g. when there is only one data point). In this case {\itshape found\+Range} would return true, but the returned range is not a valid range in terms of \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}, \doxylink{classQCPErrorBars_a6cac828a430d66ac77a167549d01d212}{get\+Key\+Range} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}\label{classQCPErrorBars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf} 
+\index{QCPErrorBars@{QCPErrorBars}!interface1D@{interface1D}}
+\index{interface1D@{interface1D}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{interface1D()}{interface1D()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*} QCPError\+Bars\+::interface1D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+If this plottable is a one-\/dimensional plottable, i.\+e. it implements the \doxylink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}, returns the {\itshape this} pointer with that type. Otherwise (e.\+g. in the case of a \doxylink{classQCPColorMap}{QCPColor\+Map}) returns zero.
+
+You can use this method to gain read access to data coordinates while holding a pointer to the abstract base class only. 
+
+Reimplemented from \mbox{\hyperlink{classQCPAbstractPlottable_a81fd9fd5c4f429c074785e2eb238a8e7}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_a35d48d6b283898e725cc9f3fb38c2769}\label{classQCPErrorBars_a35d48d6b283898e725cc9f3fb38c2769} 
+\index{QCPErrorBars@{QCPErrorBars}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily nullptr}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implements a select\+Test specific to this plottable\textquotesingle{}s point geometry.
+
+If {\itshape details} is not 0, it will be set to a \doxylink{classQCPDataSelection}{QCPData\+Selection}, describing the closest data point to {\itshape pos}.
+
+\textbackslash{}seebaseclassmethod \doxylink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{QCPAbstract\+Plottable\+::select\+Test} 
+
+Implements \mbox{\hyperlink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{QCPAbstract\+Plottable}}.
+
+\Hypertarget{classQCPErrorBars_ad7c727736599dfb173f0952082e1a5b6}\label{classQCPErrorBars_ad7c727736599dfb173f0952082e1a5b6} 
+\index{QCPErrorBars@{QCPErrorBars}!selectTestRect@{selectTestRect}}
+\index{selectTestRect@{selectTestRect}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{selectTestRect()}{selectTestRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} QCPError\+Bars\+::select\+Test\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect}{, }\item[{bool}]{only\+Selectable}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. This is used mainly in the selection rect interaction for data selection (data selection mechanism).
+
+If {\itshape only\+Selectable} is true, an empty \doxylink{classQCPDataSelection}{QCPData\+Selection} is returned if this plottable is not selectable (i.\+e. if \doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable} is \doxylink{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}{QCP\+::st\+None}).
+
+\begin{DoxyNote}{Note}
+{\itshape rect} must be a normalized rect (positive or zero width and height). This is especially important when using the rect of \doxylink{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c}{QCPSelection\+Rect\+::accepted}, which is not necessarily normalized. Use {\ttfamily QRect\+::normalized()} when passing a rect which might not be normalized.    
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a67093e4ccf490ff5f7750640941ff34c}{QCPPlottable\+Interface1D}}.
+
+\Hypertarget{classQCPErrorBars_a2f33d68a7ec163b09017dce3d9d3abcc}\label{classQCPErrorBars_a2f33d68a7ec163b09017dce3d9d3abcc} 
+\index{QCPErrorBars@{QCPErrorBars}!setData@{setData}}
+\index{setData@{setData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{error}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets symmetrical error values as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8}{add\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_aac0cf070b957c11177e91b02bcb433c8}\label{classQCPErrorBars_aac0cf070b957c11177e91b02bcb433c8} 
+\index{QCPErrorBars@{QCPErrorBars}!setData@{setData}}
+\index{setData@{setData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{error\+Minus}{, }\item[{const QVector$<$ double $>$ \&}]{error\+Plus}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\doxylink{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}).
+
+You can directly access and manipulate the error bar data via \doxylink{classQCPErrorBars_aeebd1b14f4c3573565efafd514988813}{data}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8}{add\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}\label{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc} 
+\index{QCPErrorBars@{QCPErrorBars}!setData@{setData}}
+\index{setData@{setData}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$}]{data}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data container with the provided {\itshape data} container.
+
+Since a QShared\+Pointer is used, multiple \doxylink{classQCPErrorBars}{QCPError\+Bars} instances may share the same data container safely. Modifying the data in the container will then affect all \doxylink{classQCPErrorBars}{QCPError\+Bars} instances that share the container. Sharing can be achieved by simply exchanging the data containers wrapped in shared pointers\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+If you do not wish to share containers, but create a copy from an existing container, assign the data containers directly\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ (This uses different notation compared with other plottables, because the \doxylink{classQCPErrorBars}{QCPError\+Bars} uses a {\ttfamily QVector$<$\+QCPError\+Bars\+Data$>$} as its data container, instead of a \doxylink{classQCPDataContainer}{QCPData\+Container}.)
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPErrorBars_aae296ad9817b3fa418db284af81cecf8}{add\+Data} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989}\label{classQCPErrorBars_aabb42a964cfbf780cd1c79850c7cd989} 
+\index{QCPErrorBars@{QCPErrorBars}!setDataPlottable@{setDataPlottable}}
+\index{setDataPlottable@{setDataPlottable}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setDataPlottable()}{setDataPlottable()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data\+Plottable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*}}]{plottable}{}\end{DoxyParamCaption})}
+
+Sets the data plottable to which the error bars will be applied. The error values specified e.\+g. via \doxylink{classQCPErrorBars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data} will be associated one-\/to-\/one by the data point index to the data points of {\itshape plottable}. This means that the error bars will adopt the key/value coordinates of the data point with the same index.
+
+The passed {\itshape plottable} must be a one-\/dimensional plottable, i.\+e. it must implement the \doxylink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}. Further, it must not be a \doxylink{classQCPErrorBars}{QCPError\+Bars} instance itself. If either of these restrictions is violated, a corresponding q\+Debug output is generated, and the data plottable of this \doxylink{classQCPErrorBars}{QCPError\+Bars} instance is set to zero.
+
+For proper display, care must also be taken that the key and value axes of the {\itshape plottable} match those configured for this \doxylink{classQCPErrorBars}{QCPError\+Bars} instance. \Hypertarget{classQCPErrorBars_af0af493d454a8f3a0908830160680d2b}\label{classQCPErrorBars_af0af493d454a8f3a0908830160680d2b} 
+\index{QCPErrorBars@{QCPErrorBars}!setErrorType@{setErrorType}}
+\index{setErrorType@{setErrorType}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setErrorType()}{setErrorType()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Error\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPErrorBars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+Sets in which orientation the error bars shall appear on the data points. If your data needs both error dimensions, create two \doxylink{classQCPErrorBars}{QCPError\+Bars} with different {\itshape type}. \Hypertarget{classQCPErrorBars_a280ee8d863d8a2630c309701d019b3de}\label{classQCPErrorBars_a280ee8d863d8a2630c309701d019b3de} 
+\index{QCPErrorBars@{QCPErrorBars}!setSymbolGap@{setSymbolGap}}
+\index{setSymbolGap@{setSymbolGap}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setSymbolGap()}{setSymbolGap()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Symbol\+Gap (\begin{DoxyParamCaption}\item[{double}]{pixels}{}\end{DoxyParamCaption})}
+
+Sets the gap diameter around the data points that will be left out when drawing the error bar backbones. This gap prevents that error bars are drawn too close to or even through scatter points. \Hypertarget{classQCPErrorBars_ad05f6ff9e46c6047f1cd2459744b7b59}\label{classQCPErrorBars_ad05f6ff9e46c6047f1cd2459744b7b59} 
+\index{QCPErrorBars@{QCPErrorBars}!setWhiskerWidth@{setWhiskerWidth}}
+\index{setWhiskerWidth@{setWhiskerWidth}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{setWhiskerWidth()}{setWhiskerWidth()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Whisker\+Width (\begin{DoxyParamCaption}\item[{double}]{pixels}{}\end{DoxyParamCaption})}
+
+Sets the width of the whiskers (the short bars at the end of the actual error bar backbones) to {\itshape pixels}. \Hypertarget{classQCPErrorBars_af75958b95d9b9c7edfd9851c1d123850}\label{classQCPErrorBars_af75958b95d9b9c7edfd9851c1d123850} 
+\index{QCPErrorBars@{QCPErrorBars}!sortKeyIsMainKey@{sortKeyIsMainKey}}
+\index{sortKeyIsMainKey@{sortKeyIsMainKey}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
+{\footnotesize\ttfamily bool QCPError\+Bars\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns whether the sort key (\doxylink{classQCPErrorBars_a3000a036124880a90c629d124c1cd1e2}{data\+Sort\+Key}) is identical to the main key (\doxylink{classQCPErrorBars_a7cba420078adc523efa59fb8c6ca23e0}{data\+Main\+Key}).
+
+What the sort and main keys are, is defined by the plottable\textquotesingle{}s data type. See the \doxysectlink{classQCPDataContainer_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}{1} documentation for details about this naming convention. 
+
+Implements \mbox{\hyperlink{classQCPPlottableInterface1D_a229e65e7ab968dd6cd0e259fa504b79d}{QCPPlottable\+Interface1D}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

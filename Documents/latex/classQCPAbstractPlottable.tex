@@ -1,0 +1,739 @@
+\doxysection{QCPAbstract\+Plottable Class Reference}
+\hypertarget{classQCPAbstractPlottable}{}\label{classQCPAbstractPlottable}\index{QCPAbstractPlottable@{QCPAbstractPlottable}}
+
+
+The abstract base class for all data representing objects in a plot.  
+
+
+Inheritance diagram for QCPAbstract\+Plottable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.967637cm]{classQCPAbstractPlottable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed}} (bool \mbox{\hyperlink{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}{selected}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \&\mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}key\+Axis, \mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}value\+Axis)
+\item 
+\Hypertarget{classQCPAbstractPlottable_a52c226eefcb1920240eeabae574d28c0}\label{classQCPAbstractPlottable_a52c226eefcb1920240eeabae574d28c0} 
+QString {\bfseries name} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_a022717896dc57b638a7b5a7be7212ba9}\label{classQCPAbstractPlottable_a022717896dc57b638a7b5a7be7212ba9} 
+bool {\bfseries antialiased\+Fill} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_a795370db6b1309de0ab60b633efb5ec2}\label{classQCPAbstractPlottable_a795370db6b1309de0ab60b633efb5ec2} 
+bool {\bfseries antialiased\+Scatters} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_ad5972efc31344e5a7a78ab4f8864b2d3}\label{classQCPAbstractPlottable_ad5972efc31344e5a7a78ab4f8864b2d3} 
+QPen {\bfseries pen} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_a893b4896dfd92b68b05b2600b80f5826}\label{classQCPAbstractPlottable_a893b4896dfd92b68b05b2600b80f5826} 
+QBrush {\bfseries brush} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_aa6f25b97ee99988fe352f17cb9ed962b}\label{classQCPAbstractPlottable_aa6f25b97ee99988fe352f17cb9ed962b} 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} {\bfseries key\+Axis} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_a842b3831660d3e33b73863fd133889dd}\label{classQCPAbstractPlottable_a842b3831660d3e33b73863fd133889dd} 
+\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*} {\bfseries value\+Axis} () const
+\item 
+\Hypertarget{classQCPAbstractPlottable_a016653741033bd332d1d4c3c725cc284}\label{classQCPAbstractPlottable_a016653741033bd332d1d4c3c725cc284} 
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries selectable} () const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}{selected}} () const
+\item 
+\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}} () const
+\item 
+\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}axis)
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}axis)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \mbox{\hyperlink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a20e266ad646f8c4a7e4631040510e5d9}{set\+Selection\+Decorator}} (\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*}decorator)
+\item 
+virtual double \mbox{\hyperlink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+virtual \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAbstractPlottable_a81fd9fd5c4f429c074785e2eb238a8e7}{interface1D}} ()
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const =0
+\item 
+virtual \mbox{\hyperlink{classQCPRange}{QCPRange}} \mbox{\hyperlink{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{classQCPRange}{QCPRange}}()) const =0
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93}{coords\+To\+Pixels}} (double key, double value, double \&x, double \&y) const
+\item 
+const QPointF \mbox{\hyperlink{classQCPAbstractPlottable_a5acb50ae984eef09a7ab92315d2ad708}{coords\+To\+Pixels}} (double key, double value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a3903c1120ab5c27e7fa46b597ef267bd}{pixels\+To\+Coords}} (double x, double y, double \&key, double \&value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a28d32c0062b9450847851ffdee1c5f69}{pixels\+To\+Coords}} (const QPointF \&pixel\+Pos, double \&key, double \&value) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}} (bool only\+Enlarge=false) const
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_a714eaf36b12434cd71846215504db82e}{rescale\+Value\+Axis}} (bool only\+Enlarge=false, bool in\+Key\+Range=false) const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}{add\+To\+Legend}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}legend)
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5}{add\+To\+Legend}} ()
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{remove\+From\+Legend}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}legend) const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractPlottable_ac95fb2604d9106d0852ad9ceb326fe8c}{remove\+From\+Legend}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual QRect \mbox{\hyperlink{classQCPAbstractPlottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractPlottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPAbstractPlottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classQCPAbstractPlottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractPlottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractPlottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPAbstractPlottable_a9a450783fd9ed539e589999fd390cdf7}\label{classQCPAbstractPlottable_a9a450783fd9ed539e589999fd390cdf7} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect) const =0
+\item 
+\Hypertarget{classQCPAbstractPlottable_a8d06a59ea23324cce6330ebf2262c0ed}\label{classQCPAbstractPlottable_a8d06a59ea23324cce6330ebf2262c0ed} 
+void {\bfseries apply\+Fill\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\item 
+\Hypertarget{classQCPAbstractPlottable_ac95f26b15a1e5d9c7bd2c0a46d760fc9}\label{classQCPAbstractPlottable_ac95f26b15a1e5d9c7bd2c0a46d760fc9} 
+void {\bfseries apply\+Scatters\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPAbstractPlottable_ac29ffef424e2488675930de18cde612a}\label{classQCPAbstractPlottable_ac29ffef424e2488675930de18cde612a} 
+QString {\bfseries m\+Name}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a152ac765bedf927fb240545d11d453ea}\label{classQCPAbstractPlottable_a152ac765bedf927fb240545d11d453ea} 
+bool {\bfseries m\+Antialiased\+Fill}
+\item 
+\Hypertarget{classQCPAbstractPlottable_aa115755e525a8e3a86dc683f9cab755b}\label{classQCPAbstractPlottable_aa115755e525a8e3a86dc683f9cab755b} 
+bool {\bfseries m\+Antialiased\+Scatters}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a67bc0622fd1b9fa14e54c14922dcec66}\label{classQCPAbstractPlottable_a67bc0622fd1b9fa14e54c14922dcec66} 
+QPen {\bfseries m\+Pen}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a33f00674c0161c13315ab9da0895418e}\label{classQCPAbstractPlottable_a33f00674c0161c13315ab9da0895418e} 
+QBrush {\bfseries m\+Brush}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a426f42e254d0f8ce5436a868c61a6827}\label{classQCPAbstractPlottable_a426f42e254d0f8ce5436a868c61a6827} 
+QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ {\bfseries m\+Key\+Axis}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a2901452ca4aea911a1827717934a4bda}\label{classQCPAbstractPlottable_a2901452ca4aea911a1827717934a4bda} 
+QPointer$<$ \mbox{\hyperlink{classQCPAxis}{QCPAxis}} $>$ {\bfseries m\+Value\+Axis}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a3944521f7bec90974737c9d192fc57ba}\label{classQCPAbstractPlottable_a3944521f7bec90974737c9d192fc57ba} 
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries m\+Selectable}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a206aa62c9eba32c82e892b29cdbf6314}\label{classQCPAbstractPlottable_a206aa62c9eba32c82e892b29cdbf6314} 
+\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} {\bfseries m\+Selection}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a0dbc731cab717f4ff67b4ca100c74046}\label{classQCPAbstractPlottable_a0dbc731cab717f4ff67b4ca100c74046} 
+\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Selection\+Decorator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPAbstractPlottable_a1cdf9df76adcfae45261690aa0ca2198} 
+class {\bfseries QCustom\+Plot}
+\item 
+\Hypertarget{classQCPAbstractPlottable_af123edeca169ec7a31958a1d714e1a8a}\label{classQCPAbstractPlottable_af123edeca169ec7a31958a1d714e1a8a} 
+class {\bfseries QCPAxis}
+\item 
+\Hypertarget{classQCPAbstractPlottable_a104c78e91302afd6842a903e472f552f}\label{classQCPAbstractPlottable_a104c78e91302afd6842a903e472f552f} 
+class {\bfseries QCPPlottable\+Legend\+Item}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The abstract base class for all data representing objects in a plot. 
+
+It defines a very basic interface like name, pen, brush, visibility etc. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new ways of displaying data (see "{}\+Creating own plottables"{} below). Plottables that display one-\/dimensional data (i.\+e. data points have a single key dimension and one or multiple values at each key) are based off of the template subclass \doxylink{classQCPAbstractPlottable1D}{QCPAbstract\+Plottable1D}, see details there.
+
+All further specifics are in the subclasses, for example\+: \begin{DoxyItemize}
+\item A normal graph with possibly a line and/or scatter points \doxylink{classQCPGraph}{QCPGraph} (typically created with \doxylink{classQCustomPlot_a2836a46e31d5aee174ae054c0aa6580b}{QCustom\+Plot\+::add\+Graph}) \item A parametric curve\+: \doxylink{classQCPCurve}{QCPCurve} \item A bar chart\+: \doxylink{classQCPBars}{QCPBars} \item A statistical box plot\+: \doxylink{classQCPStatisticalBox}{QCPStatistical\+Box} \item A color encoded two-\/dimensional map\+: \doxylink{classQCPColorMap}{QCPColor\+Map} \item An OHLC/\+Candlestick chart\+: \doxylink{classQCPFinancial}{QCPFinancial}\end{DoxyItemize}
+\hypertarget{classQCPAbstractPlottable_plottables-subclassing}{}\doxysubsection{\texorpdfstring{Creating own plottables}{Creating own plottables}}\label{classQCPAbstractPlottable_plottables-subclassing}
+Subclassing directly from \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable} is only recommended if you wish to display two-\/dimensional data like \doxylink{classQCPColorMap}{QCPColor\+Map}, i.\+e. two logical key dimensions and one (or more) data dimensions. If you want to display data with only one logical key dimension, you should rather derive from \doxylink{classQCPAbstractPlottable1D}{QCPAbstract\+Plottable1D}.
+
+If subclassing \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable} directly, these are the pure virtual functions you must implement\+: \begin{DoxyItemize}
+\item \doxylink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{select\+Test} \item draw \item draw\+Legend\+Icon \item \doxylink{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}{get\+Key\+Range} \item \doxylink{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}{get\+Value\+Range}\end{DoxyItemize}
+See the documentation of those functions for what they need to do.
+
+For drawing your plot, you can use the \doxylink{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93}{coords\+To\+Pixels} functions to translate a point in plot coordinates to pixel coordinates. This function is quite convenient, because it takes the orientation of the key and value axes into account for you (x and y are swapped when the key axis is vertical and the value axis horizontal). If you are worried about performance (i.\+e. you need to translate many points in a loop like \doxylink{classQCPGraph}{QCPGraph}), you can directly use \doxylink{classQCPAxis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel}. However, you must then take care about the orientation of the axis yourself.
+
+Here are some important members you inherit from \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\doxylink{classQCustomPlot}{QCustom\+Plot} \texorpdfstring{$\ast$}{*}{\bfseries{m\+Parent\+Plot}}  &A pointer to the parent \doxylink{classQCustomPlot}{QCustom\+Plot} instance. The parent plot is inferred from the axes that are passed in the constructor. \\\cline{1-2}
+QString {\bfseries{m\+Name}}  &The name of the plottable. \\\cline{1-2}
+QPen {\bfseries{m\+Pen}}  &The generic pen of the plottable. You should use this pen for the most prominent data representing lines in the plottable (e.\+g \doxylink{classQCPGraph}{QCPGraph} uses this pen for its graph lines and scatters) \\\cline{1-2}
+QBrush {\bfseries{m\+Brush}}  &The generic brush of the plottable. You should use this brush for the most prominent fillable structures in the plottable (e.\+g. \doxylink{classQCPGraph}{QCPGraph} uses this brush to control filling under the graph) \\\cline{1-2}
+QPointer\texorpdfstring{$<$}{<}\doxylink{classQCPAxis}{QCPAxis}\texorpdfstring{$>$}{>} {\bfseries{m\+Key\+Axis}}, {\bfseries{m\+Value\+Axis}}  &The key and value axes this plottable is attached to. Call their \doxylink{classQCPAxis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel} functions to translate coordinates to pixels in either the key or value dimension. Make sure to check whether the pointer is {\ttfamily nullptr} before using it. If one of the axes is null, don\textquotesingle{}t draw the plottable. \\\cline{1-2}
+\doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator} {\bfseries{m\+Selection\+Decorator}}  &The currently set selection decorator which specifies how selected data of the plottable shall be drawn and decorated. When drawing your data, you must consult this decorator for the appropriate pen/brush before drawing unselected/selected data segments. Finally, you should call its \doxylink{classQCPSelectionDecorator_a4f8eb49e277063845391e803ae23054a}{QCPSelection\+Decorator\+::draw\+Decoration} method at the end of your draw implementation. \\\cline{1-2}
+\doxylink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type} {\bfseries{m\+Selectable}}  &In which composition, if at all, this plottable\textquotesingle{}s data may be selected. Enforcing this setting on the data selection is done by \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable} automatically. \\\cline{1-2}
+\doxylink{classQCPDataSelection}{QCPData\+Selection} {\bfseries{m\+Selection}}  &Holds the current selection state of the plottable\textquotesingle{}s data, i.\+e. the selected data ranges (\doxylink{classQCPDataRange}{QCPData\+Range}).  \\\cline{1-2}
+\end{longtabu}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a}\label{classQCPAbstractPlottable_af78a036e40db6f53a31abadc5323715a} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{QCPAbstractPlottable()}{QCPAbstractPlottable()}}
+{\footnotesize\ttfamily QCPAbstract\+Plottable\+::\+QCPAbstract\+Plottable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{key\+Axis}{, }\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{value\+Axis}{}\end{DoxyParamCaption})}
+
+Constructs an abstract plottable which uses {\itshape key\+Axis} as its key axis ("{}x"{}) and {\itshape value\+Axis} as its value axis ("{}y"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \doxylink{classQCustomPlot}{QCustom\+Plot} instance and have perpendicular orientations. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+Since \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable} is an abstract class that defines the basic interface to plottables, it can\textquotesingle{}t be directly instantiated.
+
+You probably want one of the subclasses like \doxylink{classQCPGraph}{QCPGraph} or \doxylink{classQCPCurve}{QCPCurve} instead. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5}\label{classQCPAbstractPlottable_a70f8cabfd808f7d5204b9f18c45c13f5} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!addToLegend@{addToLegend}}
+\index{addToLegend@{addToLegend}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{addToLegend()}{addToLegend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool QCPAbstract\+Plottable\+::add\+To\+Legend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds this plottable to the legend of the parent \doxylink{classQCustomPlot}{QCustom\+Plot} (\doxylink{classQCustomPlot_a4eadcd237dc6a09938b68b16877fa6af}{QCustom\+Plot\+::legend}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{remove\+From\+Legend} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}\label{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!addToLegend@{addToLegend}}
+\index{addToLegend@{addToLegend}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{addToLegend()}{addToLegend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool QCPAbstract\+Plottable\+::add\+To\+Legend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}}]{legend}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds this plottable to the specified {\itshape legend}.
+
+Creates a \doxylink{classQCPPlottableLegendItem}{QCPPlottable\+Legend\+Item} which is inserted into the legend. Returns true on success, i.\+e. when the legend exists and a legend item associated with this plottable isn\textquotesingle{}t already in the legend.
+
+If the plottable needs a more specialized representation in the legend, you can create a corresponding subclass of \doxylink{classQCPPlottableLegendItem}{QCPPlottable\+Legend\+Item} and add it to the legend manually instead of calling this method.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{remove\+From\+Legend}, \doxylink{classQCPLegend_a3ab274de52d2951faea45a6d975e6b3f}{QCPLegend\+::add\+Item} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_ac032077fb0db93d6faa3273d02363398}\label{classQCPAbstractPlottable_ac032077fb0db93d6faa3273d02363398} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a635cee3effc07ad421414c76fd83548c}\label{classQCPAbstractPlottable_a635cee3effc07ad421414c76fd83548c} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!clipRect@{clipRect}}
+\index{clipRect@{clipRect}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{clipRect()}{clipRect()}}
+{\footnotesize\ttfamily QRect QCPAbstract\+Plottable\+::clip\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a5acb50ae984eef09a7ab92315d2ad708}\label{classQCPAbstractPlottable_a5acb50ae984eef09a7ab92315d2ad708} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!coordsToPixels@{coordsToPixels}}
+\index{coordsToPixels@{coordsToPixels}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{coordsToPixels()}{coordsToPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const QPointF QCPAbstract\+Plottable\+::coords\+To\+Pixels (\begin{DoxyParamCaption}\item[{double}]{key}{, }\item[{double}]{value}{}\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Transforms the given {\itshape key} and {\itshape value} to pixel coordinates and returns them in a QPointF. \Hypertarget{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93}\label{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!coordsToPixels@{coordsToPixels}}
+\index{coordsToPixels@{coordsToPixels}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{coordsToPixels()}{coordsToPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::coords\+To\+Pixels (\begin{DoxyParamCaption}\item[{double}]{key}{, }\item[{double}]{value}{, }\item[{double \&}]{x}{, }\item[{double \&}]{y}{}\end{DoxyParamCaption}) const}
+
+Convenience function for transforming a key/value pair to pixels on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface, taking the orientations of the axes associated with this plottable into account (e.\+g. whether key represents x or y).
+
+{\itshape key} and {\itshape value} are transformed to the coodinates in pixels and are written to {\itshape x} and {\itshape y}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a3903c1120ab5c27e7fa46b597ef267bd}{pixels\+To\+Coords}, \doxylink{classQCPAxis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a9b104d9da4f38f934363945c313bf82e}\label{classQCPAbstractPlottable_a9b104d9da4f38f934363945c313bf82e} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!deselectEvent@{deselectEvent}}
+\index{deselectEvent@{deselectEvent}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::deselect\+Event (\begin{DoxyParamCaption}\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a453f676a5cee7bf846c5f0fa05ea84b3}\label{classQCPAbstractPlottable_a453f676a5cee7bf846c5f0fa05ea84b3} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!draw@{draw}}
+\index{draw@{draw}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void QCPAbstract\+Plottable\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}\label{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!getKeyRange@{getKeyRange}}
+\index{getKeyRange@{getKeyRange}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{getKeyRange()}{getKeyRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPAbstract\+Plottable\+::get\+Key\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range}{, }\item[{\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain}{ = {\ttfamily \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the coordinate range that all data in this plottable span in the key axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} or \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+Note that {\itshape found\+Range} is not the same as \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}, since the range returned by this function may have size zero (e.\+g. when there is only one data point). In this case {\itshape found\+Range} would return true, but the returned range is not a valid range in terms of \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}, \doxylink{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}{get\+Value\+Range} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classQCPGraph_aac47c6189e3aea46ea46939e5d14796c}{QCPGraph}}, \mbox{\hyperlink{classQCPCurve_a22d09087f78f254731197cc0b8783299}{QCPCurve}}, \mbox{\hyperlink{classQCPBars_ac5a3854774d9d9cd129b1eae1426de2d}{QCPBars}}, \mbox{\hyperlink{classQCPStatisticalBox_a77d2d13301dfe60c13adfaa17fc1802f}{QCPStatistical\+Box}}, \mbox{\hyperlink{classQCPColorMap_a985861974560f950af6cb7fae8c46267}{QCPColor\+Map}}, \mbox{\hyperlink{classQCPFinancial_a15d68fb257113fef697356d65fa76559}{QCPFinancial}}, and \mbox{\hyperlink{classQCPErrorBars_a6cac828a430d66ac77a167549d01d212}{QCPError\+Bars}}.
+
+\Hypertarget{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}\label{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!getValueRange@{getValueRange}}
+\index{getValueRange@{getValueRange}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{getValueRange()}{getValueRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}} QCPAbstract\+Plottable\+::get\+Value\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range}{, }\item[{\mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain}{ = {\ttfamily \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}}, }\item[{const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&}]{in\+Key\+Range}{ = {\ttfamily \mbox{\hyperlink{classQCPRange}{QCPRange}}()}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} or \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \doxylink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+If {\itshape in\+Key\+Range} has both lower and upper bound set to zero (is equal to {\ttfamily \doxylink{classQCPRange}{QCPRange()}}), all data points are considered, without any restriction on the keys.
+
+Note that {\itshape found\+Range} is not the same as \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}, since the range returned by this function may have size zero (e.\+g. when there is only one data point). In this case {\itshape found\+Range} would return true, but the returned range is not a valid range in terms of \doxylink{classQCPRange_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}, \doxylink{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}{get\+Key\+Range} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classQCPGraph_a8f773e56f191a61c06e129e90a604d77}{QCPGraph}}, \mbox{\hyperlink{classQCPCurve_a8bb8e3b9085f15921dc40483fb025ab2}{QCPCurve}}, \mbox{\hyperlink{classQCPBars_a02cee4bf94d48a1e5f6fc185d9a10477}{QCPBars}}, \mbox{\hyperlink{classQCPStatisticalBox_ab3388a21d0c2e86fbc0cba9c06ceb49b}{QCPStatistical\+Box}}, \mbox{\hyperlink{classQCPColorMap_a88134493aaf6b297af34eaab65264fff}{QCPColor\+Map}}, \mbox{\hyperlink{classQCPFinancial_a82d862aa134d78853f98f8c57a03415b}{QCPFinancial}}, and \mbox{\hyperlink{classQCPErrorBars_ab76215a186ae4862235821e028685f26}{QCPError\+Bars}}.
+
+\Hypertarget{classQCPAbstractPlottable_a81fd9fd5c4f429c074785e2eb238a8e7}\label{classQCPAbstractPlottable_a81fd9fd5c4f429c074785e2eb238a8e7} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!interface1D@{interface1D}}
+\index{interface1D@{interface1D}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{interface1D()}{interface1D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*} QCPAbstract\+Plottable\+::interface1D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+If this plottable is a one-\/dimensional plottable, i.\+e. it implements the \doxylink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}, returns the {\itshape this} pointer with that type. Otherwise (e.\+g. in the case of a \doxylink{classQCPColorMap}{QCPColor\+Map}) returns zero.
+
+You can use this method to gain read access to data coordinates while holding a pointer to the abstract base class only. 
+
+Reimplemented in \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ Data\+Type $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ QCPBars\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ QCPFinancial\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ QCPGraph\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_ac58fb47bfe330f6931ed8e64326387d7}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}, and \mbox{\hyperlink{classQCPErrorBars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}{QCPError\+Bars}}.
+
+\Hypertarget{classQCPAbstractPlottable_a28d32c0062b9450847851ffdee1c5f69}\label{classQCPAbstractPlottable_a28d32c0062b9450847851ffdee1c5f69} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!pixelsToCoords@{pixelsToCoords}}
+\index{pixelsToCoords@{pixelsToCoords}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{pixelsToCoords()}{pixelsToCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::pixels\+To\+Coords (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pixel\+Pos}{, }\item[{double \&}]{key}{, }\item[{double \&}]{value}{}\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns the pixel input {\itshape pixel\+Pos} as plot coordinates {\itshape key} and {\itshape value}. \Hypertarget{classQCPAbstractPlottable_a3903c1120ab5c27e7fa46b597ef267bd}\label{classQCPAbstractPlottable_a3903c1120ab5c27e7fa46b597ef267bd} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!pixelsToCoords@{pixelsToCoords}}
+\index{pixelsToCoords@{pixelsToCoords}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{pixelsToCoords()}{pixelsToCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::pixels\+To\+Coords (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double \&}]{key}{, }\item[{double \&}]{value}{}\end{DoxyParamCaption}) const}
+
+Convenience function for transforming a x/y pixel pair on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface to plot coordinates, taking the orientations of the axes associated with this plottable into account (e.\+g. whether key represents x or y).
+
+{\itshape x} and {\itshape y} are transformed to the plot coodinates and are written to {\itshape key} and {\itshape value}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a7ad84a36472441cf1f555c5683d0da93}{coords\+To\+Pixels}, \doxylink{classQCPAxis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_ac95fb2604d9106d0852ad9ceb326fe8c}\label{classQCPAbstractPlottable_ac95fb2604d9106d0852ad9ceb326fe8c} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!removeFromLegend@{removeFromLegend}}
+\index{removeFromLegend@{removeFromLegend}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{removeFromLegend()}{removeFromLegend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool QCPAbstract\+Plottable\+::remove\+From\+Legend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes the plottable from the legend of the parent \doxylink{classQCustomPlot}{QCustom\+Plot}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}{add\+To\+Legend} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}\label{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!removeFromLegend@{removeFromLegend}}
+\index{removeFromLegend@{removeFromLegend}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{removeFromLegend()}{removeFromLegend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool QCPAbstract\+Plottable\+::remove\+From\+Legend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}}]{legend}{}\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes the plottable from the specifed {\itshape legend}. This means the \doxylink{classQCPPlottableLegendItem}{QCPPlottable\+Legend\+Item} that is associated with this plottable is removed.
+
+Returns true on success, i.\+e. if the legend exists and a legend item associated with this plottable was found and removed.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}{add\+To\+Legend}, \doxylink{classQCPLegend_ac91595c3eaa746fe6321d2eb952c63bb}{QCPLegend\+::remove\+Item} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}\label{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!rescaleAxes@{rescaleAxes}}
+\index{rescaleAxes@{rescaleAxes}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{rescaleAxes()}{rescaleAxes()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::rescale\+Axes (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+Rescales the key and value axes associated with this plottable to contain all displayed data, so the whole plottable is visible. If the scaling of an axis is logarithmic, rescale\+Axes will make sure not to rescale to an illegal range i.\+e. a range containing different signs and/or zero. Instead it will stay in the current sign domain and ignore all parts of the plottable that lie outside of that domain.
+
+{\itshape only\+Enlarge} makes sure the ranges are only expanded, never reduced. So it\textquotesingle{}s possible to show multiple plottables in their entirety by multiple calls to rescale\+Axes where the first call has {\itshape only\+Enlarge} set to false (the default), and all subsequent set to true.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}, \doxylink{classQCPAbstractPlottable_a714eaf36b12434cd71846215504db82e}{rescale\+Value\+Axis}, \doxylink{classQCustomPlot_ad86528f2cee6c7e446dea4a6e8839935}{QCustom\+Plot\+::rescale\+Axes}, \doxylink{classQCPAxis_a499345f02ebce4b23d8ccec96e58daa9}{QCPAxis\+::rescale} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308}\label{classQCPAbstractPlottable_ae96b83c961e257da116c6acf9c7da308} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!rescaleKeyAxis@{rescaleKeyAxis}}
+\index{rescaleKeyAxis@{rescaleKeyAxis}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{rescaleKeyAxis()}{rescaleKeyAxis()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::rescale\+Key\+Axis (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+Rescales the key axis of the plottable so the whole plottable is visible.
+
+See \doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes} for detailed behaviour. \Hypertarget{classQCPAbstractPlottable_a714eaf36b12434cd71846215504db82e}\label{classQCPAbstractPlottable_a714eaf36b12434cd71846215504db82e} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!rescaleValueAxis@{rescaleValueAxis}}
+\index{rescaleValueAxis@{rescaleValueAxis}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{rescaleValueAxis()}{rescaleValueAxis()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::rescale\+Value\+Axis (\begin{DoxyParamCaption}\item[{bool}]{only\+Enlarge}{ = {\ttfamily false}, }\item[{bool}]{in\+Key\+Range}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+Rescales the value axis of the plottable so the whole plottable is visible. If {\itshape in\+Key\+Range} is set to true, only the data points which are in the currently visible key axis range are considered.
+
+Returns true if the axis was actually scaled. This might not be the case if this plottable has an invalid range, e.\+g. because it has no data points.
+
+See \doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes} for detailed behaviour. \Hypertarget{classQCPAbstractPlottable_a663b1a44123c8340ac041a29d1e2c973}\label{classQCPAbstractPlottable_a663b1a44123c8340ac041a29d1e2c973} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectableChanged@{selectableChanged}}
+\index{selectableChanged@{selectableChanged}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectableChanged}{selectableChanged}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::selectable\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}}}]{selectable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selectability of this plottable has changed.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}\label{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selected@{selected}}
+\index{selected@{selected}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selected()}{selected()}}
+{\footnotesize\ttfamily bool QCPAbstract\+Plottable\+::selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if there are any data points of the plottable currently selected. Use \doxylink{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}{selection} to retrieve the current \doxylink{classQCPDataSelection}{QCPData\+Selection}. \Hypertarget{classQCPAbstractPlottable_a2d488568cf16600dd81fa23d7d439829}\label{classQCPAbstractPlottable_a2d488568cf16600dd81fa23d7d439829} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectEvent@{selectEvent}}
+\index{selectEvent@{selectEvent}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectEvent()}{selectEvent()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::select\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{bool}]{additive}{, }\item[{const QVariant \&}]{details}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f}\label{classQCPAbstractPlottable_a040bf09f41d456284cfd39cc37aa068f} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selection@{selection}}
+\index{selection@{selection}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selection()}{selection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} QCPAbstract\+Plottable\+::selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a \doxylink{classQCPDataSelection}{QCPData\+Selection} encompassing all the data points that are currently selected on this plottable.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a0b3b514474fe93354fc74cfc144184b4}{selected}, \doxylink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}, \doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_af80ad8531642e786b6f4fad551c203c4}\label{classQCPAbstractPlottable_af80ad8531642e786b6f4fad551c203c4} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectionCategory@{selectionCategory}}
+\index{selectionCategory@{selectionCategory}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectionCategory()}{selectionCategory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} QCPAbstract\+Plottable\+::selection\+Category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9}\label{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectionChanged@{selectionChanged}}
+\index{selectionChanged@{selectionChanged}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \doxylink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}. The parameter {\itshape selected} indicates whether there are any points selected or not.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a787a9c39421059006891744b731fa473}{selection\+Changed(const QCPData\+Selection \&selection)} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a787a9c39421059006891744b731fa473}\label{classQCPAbstractPlottable_a787a9c39421059006891744b731fa473} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectionChanged@{selectionChanged}}
+\index{selectionChanged@{selectionChanged}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::selection\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} \&}]{selection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \doxylink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}. The parameter {\itshape selection} holds the currently selected data ranges.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed(bool selected)} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e}\label{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectionDecorator@{selectionDecorator}}
+\index{selectionDecorator@{selectionDecorator}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectionDecorator()}{selectionDecorator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*} QCPAbstract\+Plottable\+::selection\+Decorator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Provides access to the selection decorator of this plottable. The selection decorator controls how selected data ranges are drawn (e.\+g. their pen color and fill), see \doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator} for details.
+
+If you wish to use an own \doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator} subclass, pass an instance of it to \doxylink{classQCPAbstractPlottable_a20e266ad646f8c4a7e4631040510e5d9}{set\+Selection\+Decorator}. \Hypertarget{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}\label{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily virtual double QCPAbstract\+Plottable\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily nullptr}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxylink{classQCPItemText}{QCPItem\+Text} or the bars of a \doxylink{classQCPBars}{QCPBars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99\texorpdfstring{$\ast$}{*}selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxylink{classQCustomPlot}{QCustom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxylink{classQCustomPlot}{QCustom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxylink{classQCPAxis}{QCPAxis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxylink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+In the case of 1D Plottables (\doxylink{classQCPAbstractPlottable1D}{QCPAbstract\+Plottable1D}, like \doxylink{classQCPGraph}{QCPGraph} or \doxylink{classQCPBars}{QCPBars}) {\itshape details} will be set to a \doxylink{classQCPDataSelection}{QCPData\+Selection}, describing the closest data point to {\itshape pos}.
+
+You may pass {\ttfamily nullptr} as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxylink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}, \doxylink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}, \doxylink{classQCPAbstractPlottable1D_a22377bf6e57ab7eedbc9e489250c6ded}{QCPAbstract\+Plottable1\+D\+::select\+Test\+Rect} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_a272989087fc8c4357b4ba614f9922336}{QCPLayerable}}.
+
+
+
+Implemented in \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ Data\+Type $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ QCPBars\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ QCPFinancial\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ QCPGraph\+Data $>$}}, \mbox{\hyperlink{classQCPAbstractPlottable1D_a2f169c3c2989e5d08ec7a9e3eb56a261}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}, \mbox{\hyperlink{classQCPGraph_af524307eacb919827b88233ef7449ce3}{QCPGraph}}, \mbox{\hyperlink{classQCPCurve_a6717367381d420607fae5c98b4eba022}{QCPCurve}}, \mbox{\hyperlink{classQCPBars_ae490d8589b7e5f5d7e2e5ee88ce3e6c2}{QCPBars}}, \mbox{\hyperlink{classQCPStatisticalBox_abefd8d3e0adf21c198cfc9615ddc8df1}{QCPStatistical\+Box}}, \mbox{\hyperlink{classQCPColorMap_af0a8ef6c421bd387bbbc8e5f5cb2a602}{QCPColor\+Map}}, \mbox{\hyperlink{classQCPFinancial_a8114a6d3ab6bea0a93d4b85401f29b52}{QCPFinancial}}, and \mbox{\hyperlink{classQCPErrorBars_a35d48d6b283898e725cc9f3fb38c2769}{QCPError\+Bars}}.
+
+\Hypertarget{classQCPAbstractPlottable_a089d6b5577120239b55c39ed27c39536}\label{classQCPAbstractPlottable_a089d6b5577120239b55c39ed27c39536} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setAntialiasedFill@{setAntialiasedFill}}
+\index{setAntialiasedFill@{setAntialiasedFill}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setAntialiasedFill()}{setAntialiasedFill()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Antialiased\+Fill (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Sets whether fills of this plottable are drawn antialiased or not.
+
+Note that this setting may be overridden by \doxylink{classQCustomPlot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements} and \doxylink{classQCustomPlot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}. \Hypertarget{classQCPAbstractPlottable_a2f03f067ede2ed4da6f7d0e4777a3f02}\label{classQCPAbstractPlottable_a2f03f067ede2ed4da6f7d0e4777a3f02} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setAntialiasedScatters@{setAntialiasedScatters}}
+\index{setAntialiasedScatters@{setAntialiasedScatters}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setAntialiasedScatters()}{setAntialiasedScatters()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Antialiased\+Scatters (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Sets whether the scatter symbols of this plottable are drawn antialiased or not.
+
+Note that this setting may be overridden by \doxylink{classQCustomPlot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements} and \doxylink{classQCustomPlot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}. \Hypertarget{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}\label{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setBrush@{setBrush}}
+\index{setBrush@{setBrush}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush}{}\end{DoxyParamCaption})}
+
+The brush is used to draw basic fills of the plottable representation in the plot. The Fill can be a color, gradient or texture, see the usage of QBrush.
+
+For example, the \doxylink{classQCPGraph}{QCPGraph} subclass draws the fill under the graph with this brush, when it\textquotesingle{}s not set to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a8524fa2994c63c0913ebd9bb2ffa3920}\label{classQCPAbstractPlottable_a8524fa2994c63c0913ebd9bb2ffa3920} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setKeyAxis@{setKeyAxis}}
+\index{setKeyAxis@{setKeyAxis}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setKeyAxis()}{setKeyAxis()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Key\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{axis}{}\end{DoxyParamCaption})}
+
+The key axis of a plottable can be set to any axis of a \doxylink{classQCustomPlot}{QCustom\+Plot}, as long as it is orthogonal to the plottable\textquotesingle{}s value axis. This function performs no checks to make sure this is the case. The typical mathematical choice is to use the x-\/axis (\doxylink{classQCustomPlot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}) as key axis and the y-\/axis (\doxylink{classQCustomPlot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}) as value axis.
+
+Normally, the key and value axes are set in the constructor of the plottable (or \doxylink{classQCustomPlot_a2836a46e31d5aee174ae054c0aa6580b}{QCustom\+Plot\+::add\+Graph} when working with QCPGraphs through the dedicated graph interface).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_ab79c7ba76bc7fa89a4b3580e12149f1f}\label{classQCPAbstractPlottable_ab79c7ba76bc7fa89a4b3580e12149f1f} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setName@{setName}}
+\index{setName@{setName}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption})}
+
+The name is the textual representation of this plottable as it is displayed in the legend (\doxylink{classQCPLegend}{QCPLegend}). It may contain any UTF-\/8 characters, including newlines. \Hypertarget{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}\label{classQCPAbstractPlottable_ab74b09ae4c0e7e13142fe4b5bf46cac7} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setPen@{setPen}}
+\index{setPen@{setPen}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+The pen is used to draw basic lines that make up the plottable representation in the plot.
+
+For example, the \doxylink{classQCPGraph}{QCPGraph} subclass draws its graph lines with this pen.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}\label{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setSelectable@{setSelectable}}
+\index{setSelectable@{setSelectable}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setSelectable()}{setSelectable()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Selectable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}}}]{selectable}{}\end{DoxyParamCaption})}
+
+Sets whether and to which granularity this plottable can be selected.
+
+A selection can happen by clicking on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface (When \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains \doxylink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec}{QCP\+::i\+Select\+Plottables}), by dragging a selection rect (When \doxylink{classQCustomPlot_a810ef958ebe84db661c7288b526c0deb}{QCustom\+Plot\+::set\+Selection\+Rect\+Mode} is \doxylink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa62c286e8da283a0cbb88ecac2f3f7506}{QCP\+::srm\+Select}), or programmatically by calling \doxylink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}, \doxylink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436}\label{classQCPAbstractPlottable_a219bc5403a9d85d3129165ec3f5ae436} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setSelection@{setSelection}}
+\index{setSelection@{setSelection}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setSelection()}{setSelection()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}}}]{selection}{}\end{DoxyParamCaption})}
+
+Sets which data ranges of this plottable are selected. Selected data ranges are drawn differently (e.\+g. color) in the plot. This can be controlled via the selection decorator (see \doxylink{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}).
+
+The entire selection mechanism for plottables is handled automatically when \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains i\+Select\+Plottables. You only need to call this function when you wish to change the selection state programmatically.
+
+Using \doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable} you can further specify for each plottable whether and to which granularity it is selectable. If {\itshape selection} is not compatible with the current \doxylink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type} set via \doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}, the resulting selection will be adjusted accordingly (see \doxylink{classQCPDataSelection_a17b84d852911531d229f4a76aa239a75}{QCPData\+Selection\+::enforce\+Type}).
+
+emits the \doxylink{classQCPAbstractPlottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed} signal when {\itshape selected} is different from the previous selection state.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}, \doxylink{classQCPAbstractPlottable_a8e4964b629802ce50e1427c7fb21d35b}{select\+Test} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractPlottable_a20e266ad646f8c4a7e4631040510e5d9}\label{classQCPAbstractPlottable_a20e266ad646f8c4a7e4631040510e5d9} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setSelectionDecorator@{setSelectionDecorator}}
+\index{setSelectionDecorator@{setSelectionDecorator}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setSelectionDecorator()}{setSelectionDecorator()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Selection\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*}}]{decorator}{}\end{DoxyParamCaption})}
+
+Use this method to set an own \doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator} (subclass) instance. This allows you to customize the visual representation of selected data ranges further than by using the default \doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator}.
+
+The plottable takes ownership of the {\itshape decorator}.
+
+The currently set decorator can be accessed via \doxylink{classQCPAbstractPlottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}. \Hypertarget{classQCPAbstractPlottable_a71626a07367e241ec62ad2c34baf21cb}\label{classQCPAbstractPlottable_a71626a07367e241ec62ad2c34baf21cb} 
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!setValueAxis@{setValueAxis}}
+\index{setValueAxis@{setValueAxis}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\doxysubsubsection{\texorpdfstring{setValueAxis()}{setValueAxis()}}
+{\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Value\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{axis}{}\end{DoxyParamCaption})}
+
+The value axis of a plottable can be set to any axis of a \doxylink{classQCustomPlot}{QCustom\+Plot}, as long as it is orthogonal to the plottable\textquotesingle{}s key axis. This function performs no checks to make sure this is the case. The typical mathematical choice is to use the x-\/axis (\doxylink{classQCustomPlot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}) as key axis and the y-\/axis (\doxylink{classQCustomPlot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}) as value axis.
+
+Normally, the key and value axes are set in the constructor of the plottable (or \doxylink{classQCustomPlot_a2836a46e31d5aee174ae054c0aa6580b}{QCustom\+Plot\+::add\+Graph} when working with QCPGraphs through the dedicated graph interface).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/build-\/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station-\/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+2\+\_\+\+GCC\+\_\+64bit-\/\+Debug/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station\+\_\+autogen/\+H7\+Q5\+XMJM4\+O/moc\+\_\+qcustomplot.\+cpp\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

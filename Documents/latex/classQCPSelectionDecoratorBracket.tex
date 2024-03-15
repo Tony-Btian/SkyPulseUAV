@@ -1,0 +1,284 @@
+\doxysection{QCPSelection\+Decorator\+Bracket Class Reference}
+\hypertarget{classQCPSelectionDecoratorBracket}{}\label{classQCPSelectionDecoratorBracket}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+
+
+A selection decorator which draws brackets around each selected data segment.  
+
+
+Inheritance diagram for QCPSelection\+Decorator\+Bracket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQCPSelectionDecoratorBracket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{Bracket\+Style}} \{ \newline
+\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eaa10a8d25d409b09256a13220a4d74f81}{bs\+Square\+Bracket}}
+, \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eafa8ad19b1822c9c03fbe5e9ff8eeeea2}{bs\+Half\+Ellipse}}
+, \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea7cab0f2f406e293094a7a1e4903f6e8c}{bs\+Ellipse}}
+, \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea86eb6ae27e6296576fdc46d13c840530}{bs\+Plus}}
+, \newline
+\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea5a627cacdaa30ce434371d6a034b991d}{bs\+User\+Style}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPSelectionDecoratorBracket_ad2cfbff98cc055311810ba357f6eef1b}{QCPSelection\+Decorator\+Bracket}} ()
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a841c56a37380f2e8af6126881b5f0fb9}\label{classQCPSelectionDecoratorBracket_a841c56a37380f2e8af6126881b5f0fb9} 
+QPen {\bfseries bracket\+Pen} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ac5e409d6b62f0b71143fb8a526fe59a9}\label{classQCPSelectionDecoratorBracket_ac5e409d6b62f0b71143fb8a526fe59a9} 
+QBrush {\bfseries bracket\+Brush} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ae268c621b808d8660d38fc6c69fc40ae}\label{classQCPSelectionDecoratorBracket_ae268c621b808d8660d38fc6c69fc40ae} 
+int {\bfseries bracket\+Width} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a531d9c953a7279db93611248e115edab}\label{classQCPSelectionDecoratorBracket_a531d9c953a7279db93611248e115edab} 
+int {\bfseries bracket\+Height} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a1c3d65e560555caf9b31123008491ac6}\label{classQCPSelectionDecoratorBracket_a1c3d65e560555caf9b31123008491ac6} 
+\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{Bracket\+Style}} {\bfseries bracket\+Style} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a257cb5f8b822edc839c1510ed0f23f13}\label{classQCPSelectionDecoratorBracket_a257cb5f8b822edc839c1510ed0f23f13} 
+bool {\bfseries tangent\+To\+Data} () const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a4e21ee2db0f43c1208d2e30879ec6a3c}\label{classQCPSelectionDecoratorBracket_a4e21ee2db0f43c1208d2e30879ec6a3c} 
+int {\bfseries tangent\+Average} () const
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_ac0e392a6097990f8aa978932a8fa05d6}{set\+Bracket\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a2f4ea0bfb0ea980252b76dd349dd53aa}{set\+Bracket\+Brush}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e}{set\+Bracket\+Width}} (int width)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8}{set\+Bracket\+Height}} (int height)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a04507697438f6ad8cc2aeea5422dcbe5}{set\+Bracket\+Style}} (\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{Bracket\+Style}} style)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}{set\+Tangent\+To\+Data}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_adb2d0876f25a77c88042b70818f1d6e4}{set\+Tangent\+Average}} (int point\+Count)
+\item 
+virtual void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be}{draw\+Bracket}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, int direction) const
+\item 
+virtual void \mbox{\hyperlink{classQCPSelectionDecoratorBracket_a9ebe2e729b5012c0a995d788f87fac22}{draw\+Decoration}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, \mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}} selection) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPSelectionDecorator_aa145480d9a062cd176fe30900bb7bca8}{QCPSelection\+Decorator}} ()
+\item 
+QPen {\bfseries pen} () const
+\item 
+QBrush {\bfseries brush} () const
+\item 
+\mbox{\hyperlink{classQCPScatterStyle}{QCPScatter\+Style}} {\bfseries scatter\+Style} () const
+\item 
+QCPScatter\+Style\+::\+Scatter\+Properties {\bfseries used\+Scatter\+Properties} () const
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_ac2c8192e1e294aa3a4a7f32a859e3d76}{set\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_aa74b626be518ea17055f918d423c8c2d}{set\+Brush}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_ab403a613289714ff4fd4a0c0371ab116}{set\+Scatter\+Style}} (const \mbox{\hyperlink{classQCPScatterStyle}{QCPScatter\+Style}} \&scatter\+Style, QCPScatter\+Style\+::\+Scatter\+Properties used\+Properties=\mbox{\hyperlink{classQCPScatterStyle_a8974f6a20f8f6eea7781f0e6af9deb46aa04d012e7c03e455db2b68fdd55c2a04}{QCPScatter\+Style\+::sp\+Pen}})
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_a808c1607cd4e83869c04986e332455c0}{set\+Used\+Scatter\+Properties}} (const QCPScatter\+Style\+::\+Scatter\+Properties \&properties)
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_a75098893f7d08660ea449206810679d7}{apply\+Pen}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\item 
+void \mbox{\hyperlink{classQCPSelectionDecorator_a225544527d51b49546b70d0e6d655a34}{apply\+Brush}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\item 
+\mbox{\hyperlink{classQCPScatterStyle}{QCPScatter\+Style}} \mbox{\hyperlink{classQCPSelectionDecorator_a1277b373248896bc70e8cc1de96da9fa}{get\+Final\+Scatter\+Style}} (const \mbox{\hyperlink{classQCPScatterStyle}{QCPScatter\+Style}} \&unselected\+Style) const
+\item 
+virtual void \mbox{\hyperlink{classQCPSelectionDecorator_a467a8d5cfcab27e862a17c797ac27b8a}{copy\+From}} (const \mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}} \texorpdfstring{$\ast$}{*}other)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ac002e20586950bf5c91a399863769c61}\label{classQCPSelectionDecoratorBracket_ac002e20586950bf5c91a399863769c61} 
+double {\bfseries get\+Tangent\+Angle} (const \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*}interface1d, int data\+Index, int direction) const
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a9925ed667e8a645fcb9949bd02ee4a19}\label{classQCPSelectionDecoratorBracket_a9925ed667e8a645fcb9949bd02ee4a19} 
+QPointF {\bfseries get\+Pixel\+Coordinates} (const \mbox{\hyperlink{classQCPPlottableInterface1D}{QCPPlottable\+Interface1D}} \texorpdfstring{$\ast$}{*}interface1d, int data\+Index) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries register\+With\+Plottable} (\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*}plottable)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ac7da5610713e67e92d0a882ef743a453}\label{classQCPSelectionDecoratorBracket_ac7da5610713e67e92d0a882ef743a453} 
+QPen {\bfseries m\+Bracket\+Pen}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ae905dd458b85ac529fb9c6ec879e5680}\label{classQCPSelectionDecoratorBracket_ae905dd458b85ac529fb9c6ec879e5680} 
+QBrush {\bfseries m\+Bracket\+Brush}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a333983308322d10968c35bf2af4b392d}\label{classQCPSelectionDecoratorBracket_a333983308322d10968c35bf2af4b392d} 
+int {\bfseries m\+Bracket\+Width}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a3887d29b82f4dec3bf2ddf97d5475b16}\label{classQCPSelectionDecoratorBracket_a3887d29b82f4dec3bf2ddf97d5475b16} 
+int {\bfseries m\+Bracket\+Height}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a5ed4965200caa115da1a49f2f860e23c}\label{classQCPSelectionDecoratorBracket_a5ed4965200caa115da1a49f2f860e23c} 
+\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{Bracket\+Style}} {\bfseries m\+Bracket\+Style}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_ac08c7de0fd81b64b0f3fe31739688081}\label{classQCPSelectionDecoratorBracket_ac08c7de0fd81b64b0f3fe31739688081} 
+bool {\bfseries m\+Tangent\+To\+Data}
+\item 
+\Hypertarget{classQCPSelectionDecoratorBracket_a810900616f17964cab140cbc13f40203}\label{classQCPSelectionDecoratorBracket_a810900616f17964cab140cbc13f40203} 
+int {\bfseries m\+Tangent\+Average}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPSelectionDecorator}{QCPSelection\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+QPen {\bfseries m\+Pen}
+\item 
+QBrush {\bfseries m\+Brush}
+\item 
+\mbox{\hyperlink{classQCPScatterStyle}{QCPScatter\+Style}} {\bfseries m\+Scatter\+Style}
+\item 
+QCPScatter\+Style\+::\+Scatter\+Properties {\bfseries m\+Used\+Scatter\+Properties}
+\item 
+\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Plottable}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A selection decorator which draws brackets around each selected data segment. 
+
+Additionally to the regular highlighting of selected segments via color, fill and scatter style, this \doxylink{classQCPSelectionDecorator}{QCPSelection\+Decorator} subclass draws markers at the begin and end of each selected data segment of the plottable.
+
+The shape of the markers can be controlled with \doxylink{classQCPSelectionDecoratorBracket_a04507697438f6ad8cc2aeea5422dcbe5}{set\+Bracket\+Style}, \doxylink{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e}{set\+Bracket\+Width} and \doxylink{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8}{set\+Bracket\+Height}. The color/fill can be controlled with \doxylink{classQCPSelectionDecoratorBracket_ac0e392a6097990f8aa978932a8fa05d6}{set\+Bracket\+Pen} and \doxylink{classQCPSelectionDecoratorBracket_a2f4ea0bfb0ea980252b76dd349dd53aa}{set\+Bracket\+Brush}.
+
+To introduce custom bracket styles, it is only necessary to sublcass \doxylink{classQCPSelectionDecoratorBracket}{QCPSelection\+Decorator\+Bracket} and reimplement \doxylink{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be}{draw\+Bracket}. The rest will be managed by the base class. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!BracketStyle@{BracketStyle}}
+\index{BracketStyle@{BracketStyle}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{BracketStyle}{BracketStyle}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{QCPSelection\+Decorator\+Bracket\+::\+Bracket\+Style}}}
+
+Defines which shape is drawn at the boundaries of selected data ranges.
+
+Some of the bracket styles further allow specifying a height and/or width, see \doxylink{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8}{set\+Bracket\+Height} and \doxylink{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e}{set\+Bracket\+Width}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bsSquareBracket@{bsSquareBracket}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!bsSquareBracket@{bsSquareBracket}}}\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eaa10a8d25d409b09256a13220a4d74f81}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eaa10a8d25d409b09256a13220a4d74f81} 
+bs\+Square\+Bracket&A square bracket is drawn. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bsHalfEllipse@{bsHalfEllipse}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!bsHalfEllipse@{bsHalfEllipse}}}\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eafa8ad19b1822c9c03fbe5e9ff8eeeea2}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336eafa8ad19b1822c9c03fbe5e9ff8eeeea2} 
+bs\+Half\+Ellipse&A half ellipse is drawn. The size of the ellipse is given by the bracket width/height properties. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bsEllipse@{bsEllipse}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!bsEllipse@{bsEllipse}}}\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea7cab0f2f406e293094a7a1e4903f6e8c}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea7cab0f2f406e293094a7a1e4903f6e8c} 
+bs\+Ellipse&An ellipse is drawn. The size of the ellipse is given by the bracket width/height properties. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bsPlus@{bsPlus}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!bsPlus@{bsPlus}}}\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea86eb6ae27e6296576fdc46d13c840530}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea86eb6ae27e6296576fdc46d13c840530} 
+bs\+Plus&A plus is drawn. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bsUserStyle@{bsUserStyle}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!bsUserStyle@{bsUserStyle}}}\Hypertarget{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea5a627cacdaa30ce434371d6a034b991d}\label{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea5a627cacdaa30ce434371d6a034b991d} 
+bs\+User\+Style&Start custom bracket styles at this index when subclassing and reimplementing \doxylink{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be}{draw\+Bracket}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPSelectionDecoratorBracket_ad2cfbff98cc055311810ba357f6eef1b}\label{classQCPSelectionDecoratorBracket_ad2cfbff98cc055311810ba357f6eef1b} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{QCPSelectionDecoratorBracket()}{QCPSelectionDecoratorBracket()}}
+{\footnotesize\ttfamily QCPSelection\+Decorator\+Bracket\+::\+QCPSelection\+Decorator\+Bracket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Creates a new \doxylink{classQCPSelectionDecoratorBracket}{QCPSelection\+Decorator\+Bracket} instance with default values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be}\label{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!drawBracket@{drawBracket}}
+\index{drawBracket@{drawBracket}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{drawBracket()}{drawBracket()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::draw\+Bracket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{int}]{direction}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draws the bracket shape with {\itshape painter}. The parameter {\itshape direction} is either -\/1 or 1 and indicates whether the bracket shall point to the left or the right (i.\+e. is a closing or opening bracket, respectively).
+
+The passed {\itshape painter} already contains all transformations that are necessary to position and rotate the bracket appropriately. Painting operations can be performed as if drawing upright brackets on flat data with horizontal key axis, with (0, 0) being the center of the bracket.
+
+If you wish to sublcass \doxylink{classQCPSelectionDecoratorBracket}{QCPSelection\+Decorator\+Bracket} in order to provide custom bracket shapes (see \doxylink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336ea5a627cacdaa30ce434371d6a034b991d}{QCPSelection\+Decorator\+Bracket\+::bs\+User\+Style}), this is the method you should reimplement. \Hypertarget{classQCPSelectionDecoratorBracket_a9ebe2e729b5012c0a995d788f87fac22}\label{classQCPSelectionDecoratorBracket_a9ebe2e729b5012c0a995d788f87fac22} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!drawDecoration@{drawDecoration}}
+\index{drawDecoration@{drawDecoration}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{drawDecoration()}{drawDecoration()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::draw\+Decoration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{\mbox{\hyperlink{classQCPDataSelection}{QCPData\+Selection}}}]{selection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draws the bracket decoration on the data points at the begin and end of each selected data segment given in {\itshape seletion}.
+
+It uses the method \doxylink{classQCPSelectionDecoratorBracket_a57b65b5508d5bd0f27c9318f3d4646be}{draw\+Bracket} to actually draw the shapes.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPSelectionDecorator_a4f8eb49e277063845391e803ae23054a}{QCPSelection\+Decorator}}.
+
+\Hypertarget{classQCPSelectionDecoratorBracket_a2f4ea0bfb0ea980252b76dd349dd53aa}\label{classQCPSelectionDecoratorBracket_a2f4ea0bfb0ea980252b76dd349dd53aa} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setBracketBrush@{setBracketBrush}}
+\index{setBracketBrush@{setBracketBrush}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setBracketBrush()}{setBracketBrush()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Bracket\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush}{}\end{DoxyParamCaption})}
+
+Sets the brush that will be used to draw the brackets at the beginning and end of each selected data segment. \Hypertarget{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8}\label{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setBracketHeight@{setBracketHeight}}
+\index{setBracketHeight@{setBracketHeight}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setBracketHeight()}{setBracketHeight()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Bracket\+Height (\begin{DoxyParamCaption}\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+Sets the height of the drawn bracket. The height dimension is always perpendicular to the key axis of the data, or the tangent direction of the current data slope, if \doxylink{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}{set\+Tangent\+To\+Data} is enabled. \Hypertarget{classQCPSelectionDecoratorBracket_ac0e392a6097990f8aa978932a8fa05d6}\label{classQCPSelectionDecoratorBracket_ac0e392a6097990f8aa978932a8fa05d6} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setBracketPen@{setBracketPen}}
+\index{setBracketPen@{setBracketPen}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setBracketPen()}{setBracketPen()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Bracket\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that will be used to draw the brackets at the beginning and end of each selected data segment. \Hypertarget{classQCPSelectionDecoratorBracket_a04507697438f6ad8cc2aeea5422dcbe5}\label{classQCPSelectionDecoratorBracket_a04507697438f6ad8cc2aeea5422dcbe5} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setBracketStyle@{setBracketStyle}}
+\index{setBracketStyle@{setBracketStyle}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setBracketStyle()}{setBracketStyle()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Bracket\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPSelectionDecoratorBracket_aa6d18517ec0553575bbef0de4252336e}{QCPSelection\+Decorator\+Bracket\+::\+Bracket\+Style}}}]{style}{}\end{DoxyParamCaption})}
+
+Sets the shape that the bracket/marker will have.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e}{set\+Bracket\+Width}, \doxylink{classQCPSelectionDecoratorBracket_aed773ad737201cca40efc6fe451acad8}{set\+Bracket\+Height} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e}\label{classQCPSelectionDecoratorBracket_a291b59cab98ce93a0a3c85963fe10f5e} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setBracketWidth@{setBracketWidth}}
+\index{setBracketWidth@{setBracketWidth}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setBracketWidth()}{setBracketWidth()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Bracket\+Width (\begin{DoxyParamCaption}\item[{int}]{width}{}\end{DoxyParamCaption})}
+
+Sets the width of the drawn bracket. The width dimension is always parallel to the key axis of the data, or the tangent direction of the current data slope, if \doxylink{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}{set\+Tangent\+To\+Data} is enabled. \Hypertarget{classQCPSelectionDecoratorBracket_adb2d0876f25a77c88042b70818f1d6e4}\label{classQCPSelectionDecoratorBracket_adb2d0876f25a77c88042b70818f1d6e4} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setTangentAverage@{setTangentAverage}}
+\index{setTangentAverage@{setTangentAverage}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setTangentAverage()}{setTangentAverage()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Tangent\+Average (\begin{DoxyParamCaption}\item[{int}]{point\+Count}{}\end{DoxyParamCaption})}
+
+Controls over how many data points the slope shall be averaged, when brackets shall be aligned with the data (if \doxylink{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}{set\+Tangent\+To\+Data} is true).
+
+From the position of the bracket, {\itshape point\+Count} points towards the selected data range will be taken into account. The smallest value of {\itshape point\+Count} is 1, which is effectively equivalent to disabling \doxylink{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}{set\+Tangent\+To\+Data}. \Hypertarget{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5}\label{classQCPSelectionDecoratorBracket_a93bc6086e53a5e40a08641a7b2e2cdd5} 
+\index{QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}!setTangentToData@{setTangentToData}}
+\index{setTangentToData@{setTangentToData}!QCPSelectionDecoratorBracket@{QCPSelectionDecoratorBracket}}
+\doxysubsubsection{\texorpdfstring{setTangentToData()}{setTangentToData()}}
+{\footnotesize\ttfamily void QCPSelection\+Decorator\+Bracket\+::set\+Tangent\+To\+Data (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Sets whether the brackets will be rotated such that they align with the slope of the data at the position that they appear in.
+
+For noisy data, it might be more visually appealing to average the slope over multiple data points. This can be configured via \doxylink{classQCPSelectionDecoratorBracket_adb2d0876f25a77c88042b70818f1d6e4}{set\+Tangent\+Average}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

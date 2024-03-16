@@ -1,0 +1,110 @@
+\doxysection{/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+DRIVER/gyroacelemeter\+\_\+gy521.h File Reference}
+\hypertarget{gyroacelemeter__gy521_8h}{}\label{gyroacelemeter__gy521_8h}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/gyroacelemeter\_gy521.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/gyroacelemeter\_gy521.h}}
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QFuture\+Watcher$>$}\newline
+{\ttfamily \#include "{}i2c\+\_\+device.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMPU6050Data}{MPU6050\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508}{MPU6050\+\_\+\+ADDR}}~0x68
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_a96169eb207e721c1546cea9ffd8a35e4}{PWR\+\_\+\+MGMT\+\_\+1}}~0x6B
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_a94b93aa4aabbe7caec7884ddb46b531b}{ACCEL\+\_\+\+XOUT\+\_\+H}}~0x3B
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_a0016198ccf5ca2b7f41d7a23e6554373}{GYRO\+\_\+\+XOUT\+\_\+H}}~0x43
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508}{MPU6050\+\_\+\+ADDR}}~0x68
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_ab7336e26f8947086e41a375f1e1e74d4}{ACCEL\+\_\+\+CONFIG}}~0x1C
+\item 
+\#define \mbox{\hyperlink{gyroacelemeter__gy521_8h_ac57e8c3192c859321b447c07089f20f0}{GYRO\+\_\+\+CONFIG}}~0x1B
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{gyroacelemeter__gy521_8h_abca31bac71ee56073027a4e48cadeeb5}{init\+MPU6050}} (int handle)
+\item 
+\mbox{\hyperlink{structMPU6050Data}{MPU6050\+Data}} \mbox{\hyperlink{gyroacelemeter__gy521_8h_a16f2a4ceac175e17926adfdd3ccb9d36}{read\+MPU6050\+Data}} (int handle)
+\item 
+int \mbox{\hyperlink{gyroacelemeter__gy521_8h_aa475421f1d86c2806e807289b1cf748f}{read\+Accel\+Range}} (int handle)
+\item 
+int \mbox{\hyperlink{gyroacelemeter__gy521_8h_a2d77344d34a0b19d591a8f9902e38897}{read\+Gyro\+Range}} (int handle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gyroacelemeter__gy521_8h_ab7336e26f8947086e41a375f1e1e74d4}\label{gyroacelemeter__gy521_8h_ab7336e26f8947086e41a375f1e1e74d4} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!ACCEL\_CONFIG@{ACCEL\_CONFIG}}
+\index{ACCEL\_CONFIG@{ACCEL\_CONFIG}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_CONFIG}{ACCEL\_CONFIG}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+CONFIG~0x1C}
+
+\Hypertarget{gyroacelemeter__gy521_8h_a94b93aa4aabbe7caec7884ddb46b531b}\label{gyroacelemeter__gy521_8h_a94b93aa4aabbe7caec7884ddb46b531b} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!ACCEL\_XOUT\_H@{ACCEL\_XOUT\_H}}
+\index{ACCEL\_XOUT\_H@{ACCEL\_XOUT\_H}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_XOUT\_H}{ACCEL\_XOUT\_H}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+XOUT\+\_\+H~0x3B}
+
+\Hypertarget{gyroacelemeter__gy521_8h_ac57e8c3192c859321b447c07089f20f0}\label{gyroacelemeter__gy521_8h_ac57e8c3192c859321b447c07089f20f0} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!GYRO\_CONFIG@{GYRO\_CONFIG}}
+\index{GYRO\_CONFIG@{GYRO\_CONFIG}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{GYRO\_CONFIG}{GYRO\_CONFIG}}
+{\footnotesize\ttfamily \#define GYRO\+\_\+\+CONFIG~0x1B}
+
+\Hypertarget{gyroacelemeter__gy521_8h_a0016198ccf5ca2b7f41d7a23e6554373}\label{gyroacelemeter__gy521_8h_a0016198ccf5ca2b7f41d7a23e6554373} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!GYRO\_XOUT\_H@{GYRO\_XOUT\_H}}
+\index{GYRO\_XOUT\_H@{GYRO\_XOUT\_H}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{GYRO\_XOUT\_H}{GYRO\_XOUT\_H}}
+{\footnotesize\ttfamily \#define GYRO\+\_\+\+XOUT\+\_\+H~0x43}
+
+\Hypertarget{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508}\label{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!MPU6050\_ADDR@{MPU6050\_ADDR}}
+\index{MPU6050\_ADDR@{MPU6050\_ADDR}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_ADDR}{MPU6050\_ADDR}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+ADDR~0x68}
+
+\Hypertarget{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508}\label{gyroacelemeter__gy521_8h_ad4d6255d8f7e5dc770e773b787977508} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!MPU6050\_ADDR@{MPU6050\_ADDR}}
+\index{MPU6050\_ADDR@{MPU6050\_ADDR}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_ADDR}{MPU6050\_ADDR}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+ADDR~0x68}
+
+\Hypertarget{gyroacelemeter__gy521_8h_a96169eb207e721c1546cea9ffd8a35e4}\label{gyroacelemeter__gy521_8h_a96169eb207e721c1546cea9ffd8a35e4} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!PWR\_MGMT\_1@{PWR\_MGMT\_1}}
+\index{PWR\_MGMT\_1@{PWR\_MGMT\_1}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{PWR\_MGMT\_1}{PWR\_MGMT\_1}}
+{\footnotesize\ttfamily \#define PWR\+\_\+\+MGMT\+\_\+1~0x6B}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gyroacelemeter__gy521_8h_abca31bac71ee56073027a4e48cadeeb5}\label{gyroacelemeter__gy521_8h_abca31bac71ee56073027a4e48cadeeb5} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!initMPU6050@{initMPU6050}}
+\index{initMPU6050@{initMPU6050}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{initMPU6050()}{initMPU6050()}}
+{\footnotesize\ttfamily bool init\+MPU6050 (\begin{DoxyParamCaption}\item[{int}]{handle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gyroacelemeter__gy521_8h_aa475421f1d86c2806e807289b1cf748f}\label{gyroacelemeter__gy521_8h_aa475421f1d86c2806e807289b1cf748f} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!readAccelRange@{readAccelRange}}
+\index{readAccelRange@{readAccelRange}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{readAccelRange()}{readAccelRange()}}
+{\footnotesize\ttfamily int read\+Accel\+Range (\begin{DoxyParamCaption}\item[{int}]{handle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gyroacelemeter__gy521_8h_a2d77344d34a0b19d591a8f9902e38897}\label{gyroacelemeter__gy521_8h_a2d77344d34a0b19d591a8f9902e38897} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!readGyroRange@{readGyroRange}}
+\index{readGyroRange@{readGyroRange}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{readGyroRange()}{readGyroRange()}}
+{\footnotesize\ttfamily int read\+Gyro\+Range (\begin{DoxyParamCaption}\item[{int}]{handle}{}\end{DoxyParamCaption})}
+
+\Hypertarget{gyroacelemeter__gy521_8h_a16f2a4ceac175e17926adfdd3ccb9d36}\label{gyroacelemeter__gy521_8h_a16f2a4ceac175e17926adfdd3ccb9d36} 
+\index{gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}!readMPU6050Data@{readMPU6050Data}}
+\index{readMPU6050Data@{readMPU6050Data}!gyroacelemeter\_gy521.h@{gyroacelemeter\_gy521.h}}
+\doxysubsubsection{\texorpdfstring{readMPU6050Data()}{readMPU6050Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMPU6050Data}{MPU6050\+Data}} read\+MPU6050\+Data (\begin{DoxyParamCaption}\item[{int}]{handle}{}\end{DoxyParamCaption})}
+

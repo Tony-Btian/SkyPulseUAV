@@ -2,7 +2,8 @@
 #define MAHONY_PLOT_H
 
 #include <QObject>
-#include <QThread>
+#include <QFutureWatcher>
+// #include <QMutex>
 #include "qcustomplot.h"
 
 class Mahony_Plot : public QObject
@@ -14,8 +15,8 @@ public:
     ~Mahony_Plot();
 
 private:
-    QThread *MahonyPlotThread = nullptr;
-    void createThread(); // 创建新线程的方法
+    QFutureWatcher<void> watcher;
+    QAtomicInt _stop;
     void plotThreadParameterInitial(); // 线程参数初始化
 
 public slots:

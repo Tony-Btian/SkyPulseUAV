@@ -1,0 +1,50 @@
+\doxysection{barometer\+\_\+bmp180.\+h}
+\hypertarget{barometer__bmp180_8h_source}{}\label{barometer__bmp180_8h_source}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/barometer\_bmp180.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/barometer\_bmp180.h}}
+\mbox{\hyperlink{barometer__bmp180_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BAROMETER\_BMP180\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BAROMETER\_BMP180\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QFutureWatcher>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\#include\ <atomic>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c__device_8h}{i2c\_device.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ BMP180\_DEVICE\_ADDR\ 0x77}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBarometer__BMP180}{Barometer\_BMP180}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classBarometer__BMP180_aa385104a4752a2e14b363f6c4ebc42a1}{Barometer\_BMP180}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classBarometer__BMP180_a8a656864119b2097386ceedfaccf5668}{\string~Barometer\_BMP180}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classI2C__Device}{I2C\_Device}}\ *i2cdevice;}
+\DoxyCodeLine{00022\ \ \ \ \ QFutureWatcher<void>\ watcher;}
+\DoxyCodeLine{00023\ \ \ \ \ QAtomicInt\ \_stop;}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ \ \ \ std::atomic<bool>\ shouldStop\{false\};}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{long}\ B5;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ calculateTemperature(\textcolor{keywordtype}{int}\ UT);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ calculatePressure(\textcolor{keywordtype}{int}\ UP);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_a738b67ba25f8771d4b4fda9c232699bc}{readTemperatureData}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_a88a7e1496940786110c866b912a70946}{readPressureData}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_ab893bf14828dc7d0df15a6244d2038c7}{readingStop}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_afb0e8c24e96690efe25542f7a6ebd81f}{waitForThreadCompletion}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ signals:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_ab56157be59f6b424c172d59dc66f2dc1}{sig\_temperatureRead}}(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_a15ea8840cbcf67b792953a46fb533da1}{sig\_pressureRead}}(\textcolor{keywordtype}{double}\ pressure);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBarometer__BMP180_a3e29f678e380a9d30471c9ca379be596}{error}}(QString\ err);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BAROMETER\_BMP180\_H}}
+
+\end{DoxyCode}

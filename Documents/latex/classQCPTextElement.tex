@@ -1,0 +1,617 @@
+\doxysection{QCPText\+Element Class Reference}
+\hypertarget{classQCPTextElement}{}\label{classQCPTextElement}\index{QCPTextElement@{QCPTextElement}}
+
+
+A layout element displaying a text.  
+
+
+Inheritance diagram for QCPText\+Element\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classQCPTextElement}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPTextElement_a49f45b87ee9c1fe866c2cdd12af17a9a}{selection\+Changed}} (bool selected)
+\item 
+\Hypertarget{classQCPTextElement_ac4567260b52d02bfbad63357d13986c5}\label{classQCPTextElement_ac4567260b52d02bfbad63357d13986c5} 
+void {\bfseries selectable\+Changed} (bool selectable)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_ad2246a0e701c0655623f048737298334}{clicked}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_a9c6fd27ae8a7c3a02df7a6bbd3509e40}{double\+Clicked}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPTextElement_ae1de18bdb1e7ba959f132018dd9a0258}{QCPText\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+\mbox{\hyperlink{classQCPTextElement_a00f08a8a3363ad8d7d12ca0db4922b6b}{QCPText\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, const QString \&text)
+\item 
+\mbox{\hyperlink{classQCPTextElement_a2684e65def4a5daf80be9f5f149ca9b2}{QCPText\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, const QString \&text, double point\+Size)
+\item 
+\mbox{\hyperlink{classQCPTextElement_adb4bcd3743dbfabfedee4fe9c2ee93da}{QCPText\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, const QString \&text, const QString \&font\+Family, double point\+Size)
+\item 
+\mbox{\hyperlink{classQCPTextElement_a00b75787b77b39bbd083813c2a7b2520}{QCPText\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, const QString \&text, const QFont \&font)
+\item 
+\Hypertarget{classQCPTextElement_a453c24723b76fdcae405a8a7b0d02614}\label{classQCPTextElement_a453c24723b76fdcae405a8a7b0d02614} 
+QString {\bfseries text} () const
+\item 
+\Hypertarget{classQCPTextElement_a1937ed3b7454d7e815f6027895a7d480}\label{classQCPTextElement_a1937ed3b7454d7e815f6027895a7d480} 
+int {\bfseries text\+Flags} () const
+\item 
+\Hypertarget{classQCPTextElement_a9247189a1c2b2bf5604645a7396b2ddc}\label{classQCPTextElement_a9247189a1c2b2bf5604645a7396b2ddc} 
+QFont {\bfseries font} () const
+\item 
+\Hypertarget{classQCPTextElement_a4b906c81abb94517500dbdb2fe9c22b9}\label{classQCPTextElement_a4b906c81abb94517500dbdb2fe9c22b9} 
+QColor {\bfseries text\+Color} () const
+\item 
+\Hypertarget{classQCPTextElement_a7119d960bdf57df74f9bcc748d2a0b43}\label{classQCPTextElement_a7119d960bdf57df74f9bcc748d2a0b43} 
+QFont {\bfseries selected\+Font} () const
+\item 
+\Hypertarget{classQCPTextElement_a98616fa5c33f1eaee0428191ece39686}\label{classQCPTextElement_a98616fa5c33f1eaee0428191ece39686} 
+QColor {\bfseries selected\+Text\+Color} () const
+\item 
+\Hypertarget{classQCPTextElement_a96e2a712fca40324a8489f75833b4096}\label{classQCPTextElement_a96e2a712fca40324a8489f75833b4096} 
+bool {\bfseries selectable} () const
+\item 
+\Hypertarget{classQCPTextElement_a135d1ad0aa97a245b4247c3292ff551c}\label{classQCPTextElement_a135d1ad0aa97a245b4247c3292ff551c} 
+bool {\bfseries selected} () const
+\item 
+void \mbox{\hyperlink{classQCPTextElement_ac44b81e69e719b879eb2feecb33557e2}{set\+Text}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_ab908f437f552020888a3ad8cf8242605}{set\+Text\+Flags}} (int flags)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}{set\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}{set\+Text\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_a0a2397a3c4ede519e16ab3e991904065}{set\+Selected\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPTextElement_abaec200cae70a0eade53583defc0476d}{set\+Selected\+Text\+Color}} (const QColor \&color)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55}{set\+Selectable}} (bool selectable)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}} (bool selected)
+\item 
+virtual double \mbox{\hyperlink{classQCPTextElement_a29e95d6cfd9e28772ce6a8890a2c8889}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_ad7b2c98355e3d2f912574b74fcee0574}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_acfcbaf9b1da18745e72726aafb39c855}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_a2272ff775ab385f612e9fd39773de7c0}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a2c25c7bf27eaa1fad66807af855d8d81}{QCPLayout\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot=nullptr)
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
+\item 
+QMargins {\bfseries margins} () const
+\item 
+QMargins {\bfseries minimum\+Margins} () const
+\item 
+QCP\+::\+Margin\+Sides {\bfseries auto\+Margins} () const
+\item 
+QSize {\bfseries minimum\+Size} () const
+\item 
+QSize {\bfseries maximum\+Size} () const
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries size\+Constraint\+Rect} () const
+\item 
+\mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} {\bfseries margin\+Group} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries margin\+Groups} () const
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*}group)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
+\item 
+virtual QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPLayoutElement_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_a91f2e4b4a639d9079e89a0030c7ed352}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_ad1dae61ea77ae74841f3c2fb765fc88e}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QSize \mbox{\hyperlink{classQCPTextElement_a47b8541f55ff520c557e0f27461f109e}{minimum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QSize \mbox{\hyperlink{classQCPTextElement_ae82475b50c10a5b3314d996d50ae536b}{maximum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_a8d696ea82fa7bf743e01858039c03525}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPTextElement_a9a631a9deb9d82089a9d52de1744accf}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPTextElement_ae236bd398e52939f2de2b70e5e2ba611}\label{classQCPTextElement_ae236bd398e52939f2de2b70e5e2ba611} 
+QFont {\bfseries main\+Font} () const
+\item 
+\Hypertarget{classQCPTextElement_a63510789e31db34362de97d78e9e7866}\label{classQCPTextElement_a63510789e31db34362de97d78e9e7866} 
+QColor {\bfseries main\+Text\+Color} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries calculate\+Auto\+Margin} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side)
+\item 
+virtual void {\bfseries layout\+Changed} ()
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+\item 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPTextElement_a2ef3d8f044b2a0520c90561b3b533028}\label{classQCPTextElement_a2ef3d8f044b2a0520c90561b3b533028} 
+QString {\bfseries m\+Text}
+\item 
+\Hypertarget{classQCPTextElement_a221eb95ecda1056eb79d56f1230f45d5}\label{classQCPTextElement_a221eb95ecda1056eb79d56f1230f45d5} 
+int {\bfseries m\+Text\+Flags}
+\item 
+\Hypertarget{classQCPTextElement_a2fef52fa1ec006799102b2956133ba29}\label{classQCPTextElement_a2fef52fa1ec006799102b2956133ba29} 
+QFont {\bfseries m\+Font}
+\item 
+\Hypertarget{classQCPTextElement_a3685263a99eacd98b180d29adc8e8830}\label{classQCPTextElement_a3685263a99eacd98b180d29adc8e8830} 
+QColor {\bfseries m\+Text\+Color}
+\item 
+\Hypertarget{classQCPTextElement_a5d242628c9c4beb361b82676c4851c38}\label{classQCPTextElement_a5d242628c9c4beb361b82676c4851c38} 
+QFont {\bfseries m\+Selected\+Font}
+\item 
+\Hypertarget{classQCPTextElement_ad523a852d47bc97b1af62a4d0dedf2ad}\label{classQCPTextElement_ad523a852d47bc97b1af62a4d0dedf2ad} 
+QColor {\bfseries m\+Selected\+Text\+Color}
+\item 
+\Hypertarget{classQCPTextElement_a226bb09aae41b1d106f6b00d52def0cb}\label{classQCPTextElement_a226bb09aae41b1d106f6b00d52def0cb} 
+QRect {\bfseries m\+Text\+Bounding\+Rect}
+\item 
+\Hypertarget{classQCPTextElement_a112e8f9898991fe54f94fcb7effddc2f}\label{classQCPTextElement_a112e8f9898991fe54f94fcb7effddc2f} 
+bool {\bfseries m\+Selectable}
+\item 
+\Hypertarget{classQCPTextElement_a7a46eb67459a3c8c80d19aa28b8ae791}\label{classQCPTextElement_a7a46eb67459a3c8c80d19aa28b8ae791} 
+bool {\bfseries m\+Selected}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Layout}
+\item 
+QSize {\bfseries m\+Minimum\+Size}
+\item 
+QSize {\bfseries m\+Maximum\+Size}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries m\+Size\+Constraint\+Rect}
+\item 
+QRect {\bfseries m\+Rect}
+\item 
+QRect {\bfseries m\+Outer\+Rect}
+\item 
+QMargins {\bfseries m\+Margins}
+\item 
+QMargins {\bfseries m\+Minimum\+Margins}
+\item 
+QCP\+::\+Margin\+Sides {\bfseries m\+Auto\+Margins}
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Margin\+Groups}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}{up\+Preparation}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A layout element displaying a text. 
+
+The text may be specified with \doxylink{classQCPTextElement_ac44b81e69e719b879eb2feecb33557e2}{set\+Text}, the formatting can be controlled with \doxylink{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}{set\+Font}, \doxylink{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}{set\+Text\+Color}, and \doxylink{classQCPTextElement_ab908f437f552020888a3ad8cf8242605}{set\+Text\+Flags}.
+
+A text element can be added as follows\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPTextElement_ae1de18bdb1e7ba959f132018dd9a0258}\label{classQCPTextElement_ae1de18bdb1e7ba959f132018dd9a0258} 
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{QCPTextElement()}{QCPTextElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily QCPText\+Element\+::\+QCPText\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxylink{classQCPTextElement}{QCPText\+Element} instance and sets default values. The initial text is empty (\doxylink{classQCPTextElement_ac44b81e69e719b879eb2feecb33557e2}{set\+Text}). \Hypertarget{classQCPTextElement_a00f08a8a3363ad8d7d12ca0db4922b6b}\label{classQCPTextElement_a00f08a8a3363ad8d7d12ca0db4922b6b} 
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{QCPTextElement()}{QCPTextElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily QCPText\+Element\+::\+QCPText\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{const QString \&}]{text}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxylink{classQCPTextElement}{QCPText\+Element} instance and sets default values.
+
+The initial text is set to {\itshape text}. \Hypertarget{classQCPTextElement_a2684e65def4a5daf80be9f5f149ca9b2}\label{classQCPTextElement_a2684e65def4a5daf80be9f5f149ca9b2} 
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{QCPTextElement()}{QCPTextElement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily QCPText\+Element\+::\+QCPText\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{const QString \&}]{text}{, }\item[{double}]{point\+Size}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxylink{classQCPTextElement}{QCPText\+Element} instance and sets default values.
+
+The initial text is set to {\itshape text} with {\itshape point\+Size}. \Hypertarget{classQCPTextElement_adb4bcd3743dbfabfedee4fe9c2ee93da}\label{classQCPTextElement_adb4bcd3743dbfabfedee4fe9c2ee93da} 
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{QCPTextElement()}{QCPTextElement()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily QCPText\+Element\+::\+QCPText\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{const QString \&}]{text}{, }\item[{const QString \&}]{font\+Family}{, }\item[{double}]{point\+Size}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxylink{classQCPTextElement}{QCPText\+Element} instance and sets default values.
+
+The initial text is set to {\itshape text} with {\itshape point\+Size} and the specified {\itshape font\+Family}. \Hypertarget{classQCPTextElement_a00b75787b77b39bbd083813c2a7b2520}\label{classQCPTextElement_a00b75787b77b39bbd083813c2a7b2520} 
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\index{QCPTextElement@{QCPTextElement}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{QCPTextElement()}{QCPTextElement()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily QCPText\+Element\+::\+QCPText\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{const QString \&}]{text}{, }\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \doxylink{classQCPTextElement}{QCPText\+Element} instance and sets default values.
+
+The initial text is set to {\itshape text} with the specified {\itshape font}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPTextElement_a91f2e4b4a639d9079e89a0030c7ed352}\label{classQCPTextElement_a91f2e4b4a639d9079e89a0030c7ed352} 
+\index{QCPTextElement@{QCPTextElement}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPTextElement_ad2246a0e701c0655623f048737298334}\label{classQCPTextElement_ad2246a0e701c0655623f048737298334} 
+\index{QCPTextElement@{QCPTextElement}!clicked@{clicked}}
+\index{clicked@{clicked}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{clicked}{clicked}}
+{\footnotesize\ttfamily void QCPText\+Element\+::clicked (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the text element is clicked.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a9c6fd27ae8a7c3a02df7a6bbd3509e40}{double\+Clicked}, \doxylink{classQCPTextElement_a29e95d6cfd9e28772ce6a8890a2c8889}{select\+Test} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_a9a631a9deb9d82089a9d52de1744accf}\label{classQCPTextElement_a9a631a9deb9d82089a9d52de1744accf} 
+\index{QCPTextElement@{QCPTextElement}!deselectEvent@{deselectEvent}}
+\index{deselectEvent@{deselectEvent}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::deselect\+Event (\begin{DoxyParamCaption}\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPTextElement_a9c6fd27ae8a7c3a02df7a6bbd3509e40}\label{classQCPTextElement_a9c6fd27ae8a7c3a02df7a6bbd3509e40} 
+\index{QCPTextElement@{QCPTextElement}!doubleClicked@{doubleClicked}}
+\index{doubleClicked@{doubleClicked}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{doubleClicked}{doubleClicked}}
+{\footnotesize\ttfamily void QCPText\+Element\+::double\+Clicked (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the text element is double clicked.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_ad2246a0e701c0655623f048737298334}{clicked}, \doxylink{classQCPTextElement_a29e95d6cfd9e28772ce6a8890a2c8889}{select\+Test} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_ad1dae61ea77ae74841f3c2fb765fc88e}\label{classQCPTextElement_ad1dae61ea77ae74841f3c2fb765fc88e} 
+\index{QCPTextElement@{QCPTextElement}!draw@{draw}}
+\index{draw@{draw}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPTextElement_ae82475b50c10a5b3314d996d50ae536b}\label{classQCPTextElement_ae82475b50c10a5b3314d996d50ae536b} 
+\index{QCPTextElement@{QCPTextElement}!maximumOuterSizeHint@{maximumOuterSizeHint}}
+\index{maximumOuterSizeHint@{maximumOuterSizeHint}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{maximumOuterSizeHint()}{maximumOuterSizeHint()}}
+{\footnotesize\ttfamily QSize QCPText\+Element\+::maximum\+Outer\+Size\+Hint (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the suggested maximum size this layout element (the \doxylink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}) may be expanded to, if no manual maximum size is set.
+
+if a maximum size (\doxylink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Maximum\+Outer\+Size) to determine the maximum allowed size of this layout element.
+
+A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s {\ttfamily QWIDGETSIZE\+\_\+\+MAX}.
+
+The default implementation simply returns {\ttfamily QWIDGETSIZE\+\_\+\+MAX} for both width and height, implying no suggested maximum size. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_ad96efb977a26e360e8a64a4c1e56456d}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPTextElement_a47b8541f55ff520c557e0f27461f109e}\label{classQCPTextElement_a47b8541f55ff520c557e0f27461f109e} 
+\index{QCPTextElement@{QCPTextElement}!minimumOuterSizeHint@{minimumOuterSizeHint}}
+\index{minimumOuterSizeHint@{minimumOuterSizeHint}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{minimumOuterSizeHint()}{minimumOuterSizeHint()}}
+{\footnotesize\ttfamily QSize QCPText\+Element\+::minimum\+Outer\+Size\+Hint (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the suggested minimum size this layout element (the \doxylink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}) may be compressed to, if no manual minimum size is set.
+
+if a minimum size (\doxylink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Minimum\+Outer\+Size) to determine the minimum allowed size of this layout element.
+
+A manual minimum size is considered set if it is non-\/zero.
+
+The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a46789036c4fcb190fa374f91321d7c09}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPTextElement_a2272ff775ab385f612e9fd39773de7c0}\label{classQCPTextElement_a2272ff775ab385f612e9fd39773de7c0} 
+\index{QCPTextElement@{QCPTextElement}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
+\index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{mouseDoubleClickEvent()}{mouseDoubleClickEvent()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QVariant \&}]{details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Emits the \doxylink{classQCPTextElement_a9c6fd27ae8a7c3a02df7a6bbd3509e40}{double\+Clicked} signal.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{QCPLayerable}}.
+
+\Hypertarget{classQCPTextElement_ad7b2c98355e3d2f912574b74fcee0574}\label{classQCPTextElement_ad7b2c98355e3d2f912574b74fcee0574} 
+\index{QCPTextElement@{QCPTextElement}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QVariant \&}]{details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Accepts the mouse event in order to emit the according click signal in the \doxylink{classQCPTextElement_acfcbaf9b1da18745e72726aafb39c855}{mouse\+Release\+Event}.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{QCPLayerable}}.
+
+\Hypertarget{classQCPTextElement_acfcbaf9b1da18745e72726aafb39c855}\label{classQCPTextElement_acfcbaf9b1da18745e72726aafb39c855} 
+\index{QCPTextElement@{QCPTextElement}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Emits the \doxylink{classQCPTextElement_ad2246a0e701c0655623f048737298334}{clicked} signal if the cursor hasn\textquotesingle{}t moved by more than a few pixels since the \doxylink{classQCPTextElement_ad7b2c98355e3d2f912574b74fcee0574}{mouse\+Press\+Event}.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{QCPLayerable}}.
+
+\Hypertarget{classQCPTextElement_a8d696ea82fa7bf743e01858039c03525}\label{classQCPTextElement_a8d696ea82fa7bf743e01858039c03525} 
+\index{QCPTextElement@{QCPTextElement}!selectEvent@{selectEvent}}
+\index{selectEvent@{selectEvent}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{selectEvent()}{selectEvent()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::select\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{bool}]{additive}{, }\item[{const QVariant \&}]{details}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPTextElement_a49f45b87ee9c1fe866c2cdd12af17a9a}\label{classQCPTextElement_a49f45b87ee9c1fe866c2cdd12af17a9a} 
+\index{QCPTextElement@{QCPTextElement}!selectionChanged@{selectionChanged}}
+\index{selectionChanged@{selectionChanged}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
+{\footnotesize\ttfamily void QCPText\+Element\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection state has changed to {\itshape selected}, either by user interaction or by a direct call to \doxylink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}, \doxylink{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55}{set\+Selectable} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_a29e95d6cfd9e28772ce6a8890a2c8889}\label{classQCPTextElement_a29e95d6cfd9e28772ce6a8890a2c8889} 
+\index{QCPTextElement@{QCPTextElement}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily double QCPText\+Element\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily nullptr}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns 0.\+99\texorpdfstring{$\ast$}{*}selection\+Tolerance (see \doxylink{classQCustomPlot_a4dc31241d7b09680950e19e5f971ed93}{QCustom\+Plot\+::set\+Selection\+Tolerance}) when {\itshape pos} is within the bounding box of the text element\textquotesingle{}s text. Note that this bounding box is updated in the draw call.
+
+If {\itshape pos} is outside the text\textquotesingle{}s bounding box or if {\itshape only\+Selectable} is true and this text element is not selectable (\doxylink{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55}{set\+Selectable}), returns -\/1.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}\label{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad} 
+\index{QCPTextElement@{QCPTextElement}!setFont@{setFont}}
+\index{setFont@{setFont}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the {\itshape font} of the text.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}{set\+Text\+Color}, \doxylink{classQCPTextElement_a0a2397a3c4ede519e16ab3e991904065}{set\+Selected\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55}\label{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55} 
+\index{QCPTextElement@{QCPTextElement}!setSelectable@{setSelectable}}
+\index{setSelectable@{setSelectable}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setSelectable()}{setSelectable()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{selectable}{}\end{DoxyParamCaption})}
+
+Sets whether the user may select this text element.
+
+Note that even when {\itshape selectable} is set to {\ttfamily false}, the selection state may be changed programmatically via \doxylink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}. \Hypertarget{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}\label{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751} 
+\index{QCPTextElement@{QCPTextElement}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+Sets the selection state of this text element to {\itshape selected}. If the selection has changed, \doxylink{classQCPTextElement_a49f45b87ee9c1fe866c2cdd12af17a9a}{selection\+Changed} is emitted.
+
+Note that this function can change the selection state independently of the current \doxylink{classQCPTextElement_a3c5f9b1897a036b16495ed3fb8371c55}{set\+Selectable} state. \Hypertarget{classQCPTextElement_a0a2397a3c4ede519e16ab3e991904065}\label{classQCPTextElement_a0a2397a3c4ede519e16ab3e991904065} 
+\index{QCPTextElement@{QCPTextElement}!setSelectedFont@{setSelectedFont}}
+\index{setSelectedFont@{setSelectedFont}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setSelectedFont()}{setSelectedFont()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Selected\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the {\itshape font} of the text that will be used if the text element is selected (\doxylink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}{set\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_abaec200cae70a0eade53583defc0476d}\label{classQCPTextElement_abaec200cae70a0eade53583defc0476d} 
+\index{QCPTextElement@{QCPTextElement}!setSelectedTextColor@{setSelectedTextColor}}
+\index{setSelectedTextColor@{setSelectedTextColor}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setSelectedTextColor()}{setSelectedTextColor()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Selected\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the {\itshape color} of the text that will be used if the text element is selected (\doxylink{classQCPTextElement_aba5521f9fb22a5f3d2f09ab37d4a1751}{set\+Selected}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}{set\+Text\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_ac44b81e69e719b879eb2feecb33557e2}\label{classQCPTextElement_ac44b81e69e719b879eb2feecb33557e2} 
+\index{QCPTextElement@{QCPTextElement}!setText@{setText}}
+\index{setText@{setText}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{text}{}\end{DoxyParamCaption})}
+
+Sets the text that will be displayed to {\itshape text}. Multiple lines can be created by insertion of "{}\textbackslash{}n"{}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}{set\+Font}, \doxylink{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}{set\+Text\+Color}, \doxylink{classQCPTextElement_ab908f437f552020888a3ad8cf8242605}{set\+Text\+Flags} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba}\label{classQCPTextElement_a4f3b8361c3ffb3f84346954929ce93ba} 
+\index{QCPTextElement@{QCPTextElement}!setTextColor@{setTextColor}}
+\index{setTextColor@{setTextColor}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setTextColor()}{setTextColor()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the {\itshape color} of the text.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPTextElement_a09b3241769528fa87cb4bf35c97defad}{set\+Font}, \doxylink{classQCPTextElement_abaec200cae70a0eade53583defc0476d}{set\+Selected\+Text\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPTextElement_ab908f437f552020888a3ad8cf8242605}\label{classQCPTextElement_ab908f437f552020888a3ad8cf8242605} 
+\index{QCPTextElement@{QCPTextElement}!setTextFlags@{setTextFlags}}
+\index{setTextFlags@{setTextFlags}!QCPTextElement@{QCPTextElement}}
+\doxysubsubsection{\texorpdfstring{setTextFlags()}{setTextFlags()}}
+{\footnotesize\ttfamily void QCPText\+Element\+::set\+Text\+Flags (\begin{DoxyParamCaption}\item[{int}]{flags}{}\end{DoxyParamCaption})}
+
+Sets options for text alignment and wrapping behaviour. {\itshape flags} is a bitwise OR-\/combination of {\ttfamily Qt\+::\+Alignment\+Flag} and {\ttfamily Qt\+::\+Text\+Flag} enums.
+
+Possible enums are\+:
+\begin{DoxyItemize}
+\item Qt\+::\+Align\+Left
+\item Qt\+::\+Align\+Right
+\item Qt\+::\+Align\+HCenter
+\item Qt\+::\+Align\+Justify
+\item Qt\+::\+Align\+Top
+\item Qt\+::\+Align\+Bottom
+\item Qt\+::\+Align\+VCenter
+\item Qt\+::\+Align\+Center
+\item Qt\+::\+Text\+Dont\+Clip
+\item Qt\+::\+Text\+Single\+Line
+\item Qt\+::\+Text\+Expand\+Tabs
+\item Qt\+::\+Text\+Show\+Mnemonic
+\item Qt\+::\+Text\+Word\+Wrap
+\item Qt\+::\+Text\+Include\+Trailing\+Spaces 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/build-\/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station-\/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+2\+\_\+\+GCC\+\_\+64bit-\/\+Debug/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station\+\_\+autogen/\+H7\+Q5\+XMJM4\+O/moc\+\_\+qcustomplot.\+cpp\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,334 @@
+\doxysection{QCPPlottable\+Legend\+Item Class Reference}
+\hypertarget{classQCPPlottableLegendItem}{}\label{classQCPPlottableLegendItem}\index{QCPPlottableLegendItem@{QCPPlottableLegendItem}}
+
+
+A legend item representing a plottable with an icon and the plottable name.  
+
+
+Inheritance diagram for QCPPlottable\+Legend\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classQCPPlottableLegendItem}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5}{QCPPlottable\+Legend\+Item}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}parent, \mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*}plottable)
+\item 
+\Hypertarget{classQCPPlottableLegendItem_abeaabdcfd9de2e0020c94321716e36ab}\label{classQCPPlottableLegendItem_abeaabdcfd9de2e0020c94321716e36ab} 
+\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*} {\bfseries plottable} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPAbstractLegendItem}{QCPAbstract\+Legend\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAbstractLegendItem_afaff87610e8da0fa238ecf552872d774}{QCPAbstract\+Legend\+Item}} (\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Legend} () const
+\item 
+QFont {\bfseries font} () const
+\item 
+QColor {\bfseries text\+Color} () const
+\item 
+QFont {\bfseries selected\+Font} () const
+\item 
+QColor {\bfseries selected\+Text\+Color} () const
+\item 
+bool {\bfseries selectable} () const
+\item 
+bool {\bfseries selected} () const
+\item 
+void \mbox{\hyperlink{classQCPAbstractLegendItem_a409c53455d8112f71d70c0c43eb10265}{set\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPAbstractLegendItem_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPAbstractLegendItem_a91db5aee48617a9d3206e61376807365}{set\+Selected\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPAbstractLegendItem_a4d01d008ee1a5bfe9905b0397a421936}{set\+Selected\+Text\+Color}} (const QColor \&color)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractLegendItem_a9913ef48730551b696e7f98a2391c599}{set\+Selectable}} (bool selectable)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractLegendItem_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}} (bool selected)
+\item 
+virtual double \mbox{\hyperlink{classQCPAbstractLegendItem_a206879d493749c3fb1494850bff40e7e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a2c25c7bf27eaa1fad66807af855d8d81}{QCPLayout\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot=nullptr)
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
+\item 
+QMargins {\bfseries margins} () const
+\item 
+QMargins {\bfseries minimum\+Margins} () const
+\item 
+QCP\+::\+Margin\+Sides {\bfseries auto\+Margins} () const
+\item 
+QSize {\bfseries minimum\+Size} () const
+\item 
+QSize {\bfseries maximum\+Size} () const
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries size\+Constraint\+Rect} () const
+\item 
+\mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} {\bfseries margin\+Group} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries margin\+Groups} () const
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*}group)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
+\item 
+virtual QSize \mbox{\hyperlink{classQCPLayoutElement_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
+\item 
+virtual QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPLayoutElement_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPPlottableLegendItem_a5838366619200e99680afa6d355d13fa}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QSize \mbox{\hyperlink{classQCPPlottableLegendItem_a8b543f3ac32b2fe59326e01c1101b3b8}{minimum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPPlottableLegendItem_afa81a8bd4434ec249efbbfc2a030a752}\label{classQCPPlottableLegendItem_afa81a8bd4434ec249efbbfc2a030a752} 
+QPen {\bfseries get\+Icon\+Border\+Pen} () const
+\item 
+\Hypertarget{classQCPPlottableLegendItem_a55daaffee35326765deebf8271efe210}\label{classQCPPlottableLegendItem_a55daaffee35326765deebf8271efe210} 
+QColor {\bfseries get\+Text\+Color} () const
+\item 
+\Hypertarget{classQCPPlottableLegendItem_a77d980f594046226f9ac075fa07244b3}\label{classQCPPlottableLegendItem_a77d980f594046226f9ac075fa07244b3} 
+QFont {\bfseries get\+Font} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPAbstractLegendItem}{QCPAbstract\+Legend\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPAbstractLegendItem_af8eb0fda0e11b0a23e1051b0102c8c6a}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractLegendItem_a6bfbcb9ace779f4f6fe22241c32a67c9}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QRect \mbox{\hyperlink{classQCPAbstractLegendItem_a806fa4d0104bdfc141aa8a36fcc9d51c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractLegendItem_a0081acfd8c4bb8ac4e9dcfe0f6c49b74}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractLegendItem_aa1c0620558cc8e2a2e6fb7ab558f6097}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries calculate\+Auto\+Margin} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side)
+\item 
+virtual void {\bfseries layout\+Changed} ()
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPPlottableLegendItem_ada647fb4b22971a1a424e15b4f6af0d9}\label{classQCPPlottableLegendItem_ada647fb4b22971a1a424e15b4f6af0d9} 
+\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Plottable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPAbstractLegendItem}{QCPAbstract\+Legend\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Legend}
+\item 
+QFont {\bfseries m\+Font}
+\item 
+QColor {\bfseries m\+Text\+Color}
+\item 
+QFont {\bfseries m\+Selected\+Font}
+\item 
+QColor {\bfseries m\+Selected\+Text\+Color}
+\item 
+bool {\bfseries m\+Selectable}
+\item 
+bool {\bfseries m\+Selected}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Layout}
+\item 
+QSize {\bfseries m\+Minimum\+Size}
+\item 
+QSize {\bfseries m\+Maximum\+Size}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries m\+Size\+Constraint\+Rect}
+\item 
+QRect {\bfseries m\+Rect}
+\item 
+QRect {\bfseries m\+Outer\+Rect}
+\item 
+QMargins {\bfseries m\+Margins}
+\item 
+QMargins {\bfseries m\+Minimum\+Margins}
+\item 
+QCP\+::\+Margin\+Sides {\bfseries m\+Auto\+Margins}
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Margin\+Groups}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}{up\+Preparation}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPAbstractLegendItem}{QCPAbstract\+Legend\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPAbstractLegendItem_a7cb61fdfbaf69c590bacb8f9e7099d9e}{selection\+Changed}} (bool selected)
+\item 
+void {\bfseries selectable\+Changed} (bool selectable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A legend item representing a plottable with an icon and the plottable name. 
+
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (QCPAbstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \doxylink{classQCPGraph}{QCPGraph} draws a centered horizontal line and/or a single scatter point in the middle.
+
+Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor). You may change the font of the plottable name with \doxylink{classQCPAbstractLegendItem_a409c53455d8112f71d70c0c43eb10265}{set\+Font}. Icon padding and border pen is taken from the parent \doxylink{classQCPLegend}{QCPLegend}, see \doxylink{classQCPLegend_a2f2c93d18a651f4ff294bb3f026f49b8}{QCPLegend\+::set\+Icon\+Border\+Pen} and \doxylink{classQCPLegend_a62973bd69d5155e8ea3141366e8968f6}{QCPLegend\+::set\+Icon\+Text\+Padding}.
+
+The function QCPAbstract\+Plottable\+::add\+To\+Legend/ \doxylink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend} creates/removes legend items of this type.
+
+Since \doxylink{classQCPLegend}{QCPLegend} is based on \doxylink{classQCPLayoutGrid}{QCPLayout\+Grid}, a legend item itself is just a subclass of \doxylink{classQCPLayoutElement}{QCPLayout\+Element}. While it could be added to a legend (or any other layout) via the normal layout interface, \doxylink{classQCPLegend}{QCPLegend} has specialized functions for handling legend items conveniently, see the documentation of \doxylink{classQCPLegend}{QCPLegend}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5}\label{classQCPPlottableLegendItem_ac1072591fe409d3dabad51b23ee4d6c5} 
+\index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
+\index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
+\doxysubsubsection{\texorpdfstring{QCPPlottableLegendItem()}{QCPPlottableLegendItem()}}
+{\footnotesize\ttfamily QCPPlottable\+Legend\+Item\+::\+QCPPlottable\+Legend\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLegend}{QCPLegend}} \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{\mbox{\hyperlink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}} \texorpdfstring{$\ast$}{*}}]{plottable}{}\end{DoxyParamCaption})}
+
+Creates a new legend item associated with {\itshape plottable}.
+
+Once it\textquotesingle{}s created, it can be added to the legend via \doxylink{classQCPLegend_a3ab274de52d2951faea45a6d975e6b3f}{QCPLegend\+::add\+Item}.
+
+A more convenient way of adding/removing a plottable to/from the legend is via the functions \doxylink{classQCPAbstractPlottable_aa64e93cb5b606d8110d2cc0a349bb30f}{QCPAbstract\+Plottable\+::add\+To\+Legend} and \doxylink{classQCPAbstractPlottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPPlottableLegendItem_a5838366619200e99680afa6d355d13fa}\label{classQCPPlottableLegendItem_a5838366619200e99680afa6d355d13fa} 
+\index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!draw@{draw}}
+\index{draw@{draw}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPPlottable\+Legend\+Item\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPAbstractLegendItem}{QCPAbstract\+Legend\+Item}}.
+
+\Hypertarget{classQCPPlottableLegendItem_a8b543f3ac32b2fe59326e01c1101b3b8}\label{classQCPPlottableLegendItem_a8b543f3ac32b2fe59326e01c1101b3b8} 
+\index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!minimumOuterSizeHint@{minimumOuterSizeHint}}
+\index{minimumOuterSizeHint@{minimumOuterSizeHint}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
+\doxysubsubsection{\texorpdfstring{minimumOuterSizeHint()}{minimumOuterSizeHint()}}
+{\footnotesize\ttfamily QSize QCPPlottable\+Legend\+Item\+::minimum\+Outer\+Size\+Hint (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the suggested minimum size this layout element (the \doxylink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}) may be compressed to, if no manual minimum size is set.
+
+if a minimum size (\doxylink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Minimum\+Outer\+Size) to determine the minimum allowed size of this layout element.
+
+A manual minimum size is considered set if it is non-\/zero.
+
+The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a46789036c4fcb190fa374f91321d7c09}{QCPLayout\+Element}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

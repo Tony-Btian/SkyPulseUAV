@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/attitude.dir/src/TCP.cpp.o.d"
   "CMakeFiles/attitude.dir/src/TCPThread.cpp.o"
   "CMakeFiles/attitude.dir/src/TCPThread.cpp.o.d"
+  "CMakeFiles/attitude.dir/src/UART.cpp.o"
+  "CMakeFiles/attitude.dir/src/UART.cpp.o.d"
   "attitude"
   "attitude.pdb"
 )

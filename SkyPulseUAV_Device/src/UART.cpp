@@ -1,20 +1,36 @@
 #include <pigpio.h>
+#include <iostream>
+#include <unistd.h>
 
 #include "UART.h"
 
-UART::UART (uint16_t baudRate) {
 
-    handle = serOpen("/dev/ttyS0", baudRate , 0);
+UART::UART (uint32_t baudRate) {
 
+    const char* device = "/dev/ttyS0";
+    handle = serOpen(const_cast<char*>(device), baudRate , 0);
+    if (handle < 0) {
+        std::cerr << "Unable to open UART\n";
+    }
 }
 
 UART::~UART() {
 
-    serClose(handle);
+    if (serClose(handle) != 0) {
+        std::cerr << "Unable to close UART\n";
+    }
 
 }
 
-int UART::serialInit() {
+void UART::writeUART(char* buf, unsigned size) {
+
+    if(serWrite(handle, buf, size) != 0) {
+        std::cerr << "Unable to write UART\n";
+    }
+}
+
+void UART::readUART() {
 
 
 }
+

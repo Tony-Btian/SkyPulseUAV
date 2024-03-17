@@ -20,14 +20,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kinsley/project/SkyPulseUAV_Device/src/Motor.cpp" "CMakeFiles/attitude.dir/src/Motor.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/Motor.cpp.o.d"
   "/home/kinsley/project/SkyPulseUAV_Device/src/TCP.cpp" "CMakeFiles/attitude.dir/src/TCP.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/TCP.cpp.o.d"
   "/home/kinsley/project/SkyPulseUAV_Device/src/TCPThread.cpp" "CMakeFiles/attitude.dir/src/TCPThread.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/TCPThread.cpp.o.d"
+  "/home/kinsley/project/SkyPulseUAV_Device/src/UART.cpp" "CMakeFiles/attitude.dir/src/UART.cpp.o" "gcc" "CMakeFiles/attitude.dir/src/UART.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

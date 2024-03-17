@@ -31,7 +31,7 @@ Control::Control(float sampleFreq) :
 
     inputThrottle(0.0f),
     PIDFreq(sampleFreq),
-    motorOutput{0.0f, 0.0f, 0.0f, 0.0f}
+    motorOutput{0, 0, 0, 0}
     {}
 
 

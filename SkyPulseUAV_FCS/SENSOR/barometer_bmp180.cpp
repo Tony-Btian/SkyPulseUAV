@@ -8,9 +8,8 @@ short AC1 = 408, AC2 = -72, AC3 = -14383;
 unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
 short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 
-Barometer_BMP180::Barometer_BMP180(QObject *parent)
-    : QObject(parent),
-      _stop(0)
+Barometer_BMP180::Barometer_BMP180(I2CDevice *i2cDevice, QObject *parent)
+    : QObject(parent), i2cdevice(i2cDevice)
 {
     i2cdevice = new I2C_Device(BMP180_DEVICE_ADDR, this);
 //    connect(&watcher, &QFutureWatcher<void>::finished, this, &Mahony_Plot::plotThreadParameterInitial);
@@ -32,6 +31,7 @@ void Barometer_BMP180::readingStop()
 //    shouldStop = true;
     _stop.storeRelease(1);
 }
+
 
 void Barometer_BMP180::readTemperatureData()
 {

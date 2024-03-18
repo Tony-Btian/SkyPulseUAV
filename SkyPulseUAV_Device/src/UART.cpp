@@ -7,7 +7,7 @@
 
 UART::UART (uint32_t baudRate) {
 
-    const char* device = "/dev/ttyS0";
+    const char* device = "/dev/ttyAMA0";
     handle = serOpen(const_cast<char*>(device), baudRate , 0);
     if (handle < 0) {
         std::cerr << "Unable to open UART\n";

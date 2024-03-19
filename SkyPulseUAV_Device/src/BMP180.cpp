@@ -3,7 +3,7 @@
 #include <cmath>
 #include <thread>
 
-#include "../include/BMP180.h"
+#include "BMP180.h"
 
 
 BMP180::BMP180() : BMP180(MY_ALTITUDE){}

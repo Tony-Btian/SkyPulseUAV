@@ -48,13 +48,14 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	gy_out.store(gy);
 	gz_out.store(gz);
 
-	// mx = m[0];
-	// my = m[1];
-	// mz = m[2];
+	// Correct for my personal magnet sensor placement, you can edit it accordingly.
+	mx = m[1];
+	my = -m[0];
+	mz = m[2];
 
-	mx = 0;
-	my = 0;
-	mz = 0;
+	// mx = 0;
+	// my = 0;
+	// mz = 0;
 
 	//std::cout << a[0] << "|" << a[1] << "|" << a[2] << std::endl;
 }
@@ -280,7 +281,7 @@ float MahonyFilter::invSqrt(float x) {
 void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float g[3]) {
 
 	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
-	*_pitch = asinf((q[1]*q[3] - q[2]*q[0])) * 57.29578f;
+	*_pitch = asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f;
 	*_yaw = atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
 
 	roll.store(*_roll);

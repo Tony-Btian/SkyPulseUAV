@@ -21,6 +21,11 @@ Control::Control(float sampleFreq) :
     outputAngle{0.0f, 0.0f, 0.0f},
     outputRate{0.0f, 0.0f, 0.0f},
 
+    desireAlt(0.0f),
+    altVelocity(0.0f),
+    errorAlt(0.0f),
+    currentAlt(0.0f),
+
     Kp_out{0.0f, 0.0f, 0.0f},
     Kp_in{0.0f, 0.0f, 0.0f},
 
@@ -35,18 +40,22 @@ Control::Control(float sampleFreq) :
     {}
 
 
-void Control::readRateAndAngle(float rate[3], float angle[3]) {
+void Control::readRateAndAngle(float rate[3], float angle[3], float alt) {
     
     for(short i = 0;i < 3;i++) {
 
         currentAngle[i] = angle[i];
 
+        // The data of gyroscope can be used here. 
         currentRate[i] = rate[i];
     }
 
+    currentAlt = alt;
+
 }
 
-void Control::updateRef(float refAngle[3], float thro) {
+// Reference update (roll, pitch, yaw and altitude).
+void Control::updateRef(float refAngle[3], float alt) {
 
     for(short i = 0;i < 3;i++) {
     
@@ -54,11 +63,21 @@ void Control::updateRef(float refAngle[3], float thro) {
         
     }
 
-    inputThrottle = thro;
+    desireAlt = alt;
 
 }
 
-void Control::doublepidControl() {
+// Control function of altitude.
+void Control::altControl() {
+
+    errorAlt = desireAlt - currentAlt;
+
+    
+
+}
+
+// Control function of three Euler angles.
+void Control::doublePIDControl() {
 
     for(short i = 0; i < 3; i++) {
 
@@ -89,7 +108,7 @@ void Control::doublepidControl() {
 
 void Control::getControlOuput(int motorDutyCycle[4]) {
 
-    doublepidControl();
+    doublePIDControl();
     //pidControlRate();
 
     // + or - depends on your motor rotation and position.

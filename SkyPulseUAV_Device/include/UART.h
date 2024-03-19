@@ -11,7 +11,7 @@ public:
 
     ~UART();
 
-    void writeUART(char* buf, unsigned size);
+    void writeUART(char* buf, unsigned int size);
 
     void readUART();
 

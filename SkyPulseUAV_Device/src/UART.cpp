@@ -12,6 +12,11 @@ UART::UART (uint32_t baudRate) {
     if (handle < 0) {
         std::cerr << "Unable to open UART\n";
     }
+
+    char data[] = "Initialization of UART done.";
+    unsigned int data_len = sizeof(data) - 1;
+
+    writeUART(data, data_len);
 }
 
 UART::~UART() {
@@ -22,7 +27,7 @@ UART::~UART() {
 
 }
 
-void UART::writeUART(char* buf, unsigned size) {
+void UART::writeUART(char* buf, unsigned int size) {
 
     if(serWrite(handle, buf, size) != 0) {
         std::cerr << "Unable to write UART\n";

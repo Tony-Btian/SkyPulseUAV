@@ -59,7 +59,7 @@ MPU6050 :: MPU6050(int customSampleRate, int calibrationTimes) :
 	}
 
     // Set DLPF.
-	char setDLPF[2] = {0x1A, 0x03};
+	char setDLPF[2] = {0x1A, 0x06};
 	if(iicMPU6050.write(setDLPF, 2) != 0) {
 		std::cerr << "Can't set DLPF of MPU6050." << std::endl;
 	}
@@ -100,8 +100,8 @@ void MPU6050 :: GY271ReadData(char* data) {
 
 	char GY271StartAddr = 0x00;
 
-	if(iicMPU6050.read(data, 6, GY271StartAddr) != 0) {
-		std::cerr << "Can't read data of MPU6050." << std::endl;
+	if(iicGY271.read(data, 6, GY271StartAddr) != 0) {
+		std::cerr << "Can't read data of GY271." << std::endl;
 	}
 }
 
@@ -129,6 +129,10 @@ void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
 	a[1] = ((ay.load() - a_offset[1]) / 16384.0f)*9.818f;
 	a[2] = ((az.load() - a_offset[2]) / 16384.0f)*9.818f;
 	a[2] = a[2] + 9.818f;
+
+	// a[0] = (ax.load() / 16384.0f)*9.818f;
+	// a[1] = (ay.load() / 16384.0f)*9.818f;
+	// a[2] = (az.load() / 16384.0f)*9.818f;
 
 	g[0] = (gx.load() - g_offset[0]) / (16.384f) * DEG_TO_RAD;
 	g[1] = (gy.load() - g_offset[1]) / (16.384f) * DEG_TO_RAD;
@@ -171,7 +175,6 @@ void MPU6050 :: calibrateData() {
 		m_offset[0] = m_offset[0] / offset_count;
 		m_offset[1] = m_offset[1] / offset_count;
 		m_offset[2] = m_offset[2] / offset_count;
-		// a_offset[2] -= 9.81f; // 去除重力加速度常量
 
 		offset_count = 0;
 
@@ -238,3 +241,4 @@ void initializeMPUISR() {
 		return;
 	}
 }
+

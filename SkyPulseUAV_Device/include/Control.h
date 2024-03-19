@@ -28,13 +28,16 @@ public:
 
     void getControlOuput(int motorDutyCycle[4]);
 
-    void updateRef(float angle[3], float thro);
+    void updateRef(float angle[3], float alt);
 
-    void readRateAndAngle(float rate[3], float angle[3]);
+    void readRateAndAngle(float rate[3], float angle[3], float alt);
+
 
 protected:
 
-    void doublepidControl();
+    void doublePIDControl();
+
+    void altControl();
 
     // void pidControlRate();
 
@@ -42,6 +45,14 @@ protected:
 
 
 private:
+
+    float desireAlt;
+
+    float altVelocity;
+
+    float errorAlt;
+
+    float currentAlt;
 
     float currentRate[3];
 

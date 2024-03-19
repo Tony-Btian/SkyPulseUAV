@@ -197,8 +197,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/home/kinsley/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-strip
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=../raspberrypi.cmake
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/kinsley/project/SkyPulseUAV_Device/raspberrypi.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -214,9 +214,6 @@ attitude_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 attitude_SOURCE_DIR:STATIC=/home/kinsley/project/SkyPulseUAV_Device
-
-//The directory containing a CMake configuration file for sockpp.
-sockpp_DIR:PATH=sockpp_DIR-NOTFOUND
 
 
 ########################

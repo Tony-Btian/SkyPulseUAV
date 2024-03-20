@@ -2,9 +2,9 @@
 #define __BMP180_H__
 
 #include <atomic>
+#include <functional>
 
 #include "IIC.h"
-
 #include "CppThread.hpp"
 
 #define BMP180_ADDRESS 0x77
@@ -18,11 +18,18 @@ using namespace std::chrono;
 class BMP180  {
     
 public:
+
+    using CallbackFunction = function<void(float)>;
+
     BMP180();
 
     BMP180(float loaclAltitude);
 
     float getData();
+
+    void setCallbackA(CallbackFunction callback);
+
+    void setCallbackB(CallbackFunction callback);
 
 protected:
 
@@ -35,6 +42,10 @@ protected:
     void BMP180ReadTempAndPres();
 
 private:
+
+    CallbackFunction callbackA_;
+
+    CallbackFunction callbackB_;
 
     IIC iicBMP180;
 

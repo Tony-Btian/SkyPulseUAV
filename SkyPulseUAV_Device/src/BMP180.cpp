@@ -7,21 +7,21 @@
 
 BMP180::BMP180() : BMP180(MY_ALTITUDE) {}
 
-BMP180::BMP180(float loaclAltitude) : 
+BMP180::BMP180(float localAltitude) : 
     iicBMP180(BMP180_ADDRESS),
     droneAltitude(0.0f),
-	myLocalAltitude(loaclAltitude),
+	myLocalAltitude(localAltitude),
 	p(0),
 	t(0.0f),
 	sealevelPressure(0.0f),
 	eeprom(0)
 	{
 	
-    //BMP180ReadTempAndPres();
+    BMP180ReadTempAndPres();
 
     sealevelPresCorrect(myLocalAltitude);
 
-    //std::cout << "BMP 180 calibrating successfully!" << std::endl;
+    std::cout << "BMP 180 calibrating successfully!" << std::endl;
     
 }
 
@@ -34,7 +34,7 @@ void BMP180::BMP180ReadEEPROM(char* eeprom) {
 
 void BMP180::sealevelPresCorrect(float sealevelPressure) {
     
-    sealevelPressure = p / std::pow((1.0 - (myLocalAltitude / 44330.0)), 5.255);
+    this -> sealevelPressure = p / std::pow((1.0 - (myLocalAltitude / 44330.0)), 5.255);
 
 }
 
@@ -44,11 +44,25 @@ float BMP180::getData() {
     
     droneAltitude.store(44330.0 * (1.0 - std::pow((p / sealevelPressure), 1.0f / 5.255f)));
 
+	if(callbackA_) {
+
+		callbackA_(droneAltitude.load());
+
+	}
+
+	if(callbackB_) {
+
+		callbackB_(droneAltitude.load());
+
+	}
+
 	return droneAltitude.load();
 
 }
 
 void BMP180::BMP180ReadTempAndPres() {
+
+	//cout << "running" << endl;
 
     char err;
 	char regAddr = 0xF6;  // Multiplex reg for both temperature and pressure.
@@ -60,7 +74,7 @@ void BMP180::BMP180ReadTempAndPres() {
     char selectTempReg[2] = {0xF4, 0x2E};
     if(iicBMP180.write(selectTempReg, 2)) cerr << "Can't write data to temp reg." << endl;
 
-	std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(5000)));
+	this_thread::sleep_for(microseconds(static_cast < long long>(5000)));
 
     iicBMP180.read(rawTemp, dataSize, regAddr);
 
@@ -71,7 +85,7 @@ void BMP180::BMP180ReadTempAndPres() {
     char selectPresReg[2] = {0xF4, 0x34};
     if(iicBMP180.write(selectPresReg, 2)) cerr << "Can't write data to temp reg." << endl;
 
-	std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(5000)));
+	this_thread::sleep_for(microseconds(static_cast < long long>(5000)));
 
     iicBMP180.read(rawPres, dataSize, regAddr);
 
@@ -125,9 +139,19 @@ void BMP180::BMP180ReadTempAndPres() {
 	p = p + ((x1 + x2 + 3791) >> 4);
 
 	cout << "p:" << p << endl;
+}
+
+void BMP180::setCallbackA(CallbackFunction callback) {
+
+	callbackA_ = callback;
 
 }
 
+void BMP180::setCallbackB(CallbackFunction callback) {
+
+	callbackB_ = callback;
+
+}
 // Garbage:
 
 // {

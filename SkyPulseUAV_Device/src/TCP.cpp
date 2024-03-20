@@ -69,4 +69,18 @@ bool TCP::read() {
     return true;
 }
 
+void TCP::readDataFromFilter(float roll, float pitch, float yaw) {
+
+    this -> roll = roll;
+    this -> pitch = pitch;
+    this -> yaw = yaw;
+}
+
+void TCP::readDataFromBMP180(float altitude) {
+
+    this -> altitude = altitude;
+
+}
+
+
 

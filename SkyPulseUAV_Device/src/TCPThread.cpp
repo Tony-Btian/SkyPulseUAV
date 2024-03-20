@@ -19,6 +19,10 @@ using namespace std::chrono;
 
 void TCPThread::run() {
 
+    MahonyFilterIns.setCallbackA([this](float roll, float pitch, float yaw){
+        
+    });
+
     for(;;) {
 
         

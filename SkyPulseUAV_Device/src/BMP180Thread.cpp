@@ -10,7 +10,7 @@ void BMP180Thread::run() {
 
         cout << "Altitude:" << altitude << endl;
 
-        this_thread::sleep_for(seconds(2));
+        this_thread::sleep_for(milliseconds(20));
 
     }
 }

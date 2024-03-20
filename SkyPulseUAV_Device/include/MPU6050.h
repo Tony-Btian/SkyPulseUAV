@@ -2,6 +2,7 @@
 #define __MPU6050_H__
 
 #include <atomic>
+#include <functional>
 
 //#include "Sensor.h"
 #include "IIC.h"
@@ -17,35 +18,29 @@
 
 extern std::mutex i2cmtx;
 
-class MPU6050Thread : public CppThread {
-
-protected:
-
-    void run() override;
-
-};
-
 class MPU6050 {
 
 public:
+
+    using CallbackFunction = std::function<void(float[], float[], float[])>;
 
     MPU6050();
 
     MPU6050(int customSampleRate, int calibrationTimes);
     
-    void getData(float a[3], float g[3], float m[3]);
+    void getData();
 
     bool checkNewData();
 
-    bool checkCalibration();
-
-    void calibrateData();
+    void setCallback(CallbackFunction callback);
 
     static MPU6050* globalInstance;
 
 protected:
 
     void MPU6050ReadData(char* data);
+
+    void calibrateData();
 
     void GY271ReadData(char* data);
 
@@ -56,6 +51,8 @@ protected:
     friend void interruptHandler(int GPIO, int level, unsigned int tick);
 
 private:
+
+    CallbackFunction callback_;
 
     IIC iicMPU6050;
     IIC iicGY271;
@@ -96,6 +93,22 @@ private:
     float g_offset[3];
     float a_offset[3];
     float m_offset[3];
+};
+
+class MPU6050Thread : public CppThread {
+
+public:
+
+    MPU6050Thread(MPU6050& MPU6050Ins_) : MPU6050Ins(MPU6050Ins_) {};
+
+protected:
+
+    void run() override;
+
+private:
+
+    MPU6050& MPU6050Ins;
+
 };
 
 void interruptHandler(int GPIO, int level, unsigned int tick);

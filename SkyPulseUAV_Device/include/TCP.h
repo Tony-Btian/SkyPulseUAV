@@ -4,19 +4,11 @@
 // Head file of Sockpp library -> https://github.com/fpagliughi/sockpp.git
 #include "sockpp/tcp_connector.h"
 #include "sockpp/version.h"
-
 #include "CppThread.hpp"
+#include "MahonyFilter.h"
 
 using namespace std;
 using namespace std::chrono;
-
-class TCPThread : public CppThread {
-
-protected:
-
-    void run() override;
-
-};
 
 class TCP {
 
@@ -47,5 +39,25 @@ private:
     size_t receiveStringLength;
 
 };
+
+class TCPThread : public CppThread {
+
+public:
+
+    TCPThread(MahonyFilter& MahonyFilterIns_, TCP& TCPIns_) : 
+    MahonyFilterIns(MahonyFilterIns_),
+    TCPIns(TCPIns_) {};
+
+protected:
+
+    void run() override;
+
+private:
+
+    MahonyFilter& MahonyFilterIns;
+    TCP& TCPIns;
+
+};
+
 
 #endif

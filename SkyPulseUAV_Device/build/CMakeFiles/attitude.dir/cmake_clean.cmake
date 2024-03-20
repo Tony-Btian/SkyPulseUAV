@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/attitude.dir/src/MPU6050Thread.cpp.o.d"
   "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o"
   "CMakeFiles/attitude.dir/src/MahonyFilter.cpp.o.d"
+  "CMakeFiles/attitude.dir/src/MahonyFilterThread.cpp.o"
+  "CMakeFiles/attitude.dir/src/MahonyFilterThread.cpp.o.d"
   "CMakeFiles/attitude.dir/src/Motor.cpp.o"
   "CMakeFiles/attitude.dir/src/Motor.cpp.o.d"
   "CMakeFiles/attitude.dir/src/TCP.cpp.o"

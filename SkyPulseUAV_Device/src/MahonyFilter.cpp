@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <pigpio.h>
+#include <array>
 
 #include "MahonyFilter.h"
 
@@ -8,7 +9,9 @@ MahonyFilter::MahonyFilter() : MahonyFilter(sampleFreq, twoKpDef, twoKiDef) {};
 
 MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGain) : 
 	q{1.0f, 0.0f, 0.0f, 0.0f},
-	filter_done(0),
+	mpu_data_ready(0),
+	filter_ready_A(0),
+	filter_ready_B(0),
 	gx_out(0.0f),
 	gy_out(0.0f),
 	gz_out(0.0f),
@@ -36,6 +39,8 @@ MahonyFilter::MahonyFilter(float filterFreq, float twoPropGain, float twoInteGai
 
 void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	
+	mpu_data_ready = true;
+
 	ax = a[0];
 	ay = a[1];
 	az = a[2];
@@ -56,10 +61,9 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	// mx = 0;
 	// my = 0;
 	// mz = 0;
-
-	//std::cout << a[0] << "|" << a[1] << "|" << a[2] << std::endl;
 }
 
+// Set parameter of filter.
 void MahonyFilter::setFrequency(float f) {
 
     frequency = f;
@@ -78,13 +82,52 @@ void MahonyFilter::setKp(float twokpSet) {
 
 }
 
-short MahonyFilter::checkFilterReady() {
+// Check if the filter thread has received the data from IMU.
+bool MahonyFilter::isDataReady() {
 
-	return (filter_done.load());
+	return mpu_data_ready;
 
 }
 
+// Register callback functions 
+void MahonyFilter::setCallbackA(CallbackFunction callback) {
+
+	callbackA_ = callback;
+	
+}
+
+void MahonyFilter::setCallbackB(CallbackFunction callback) {
+
+	callbackB_ = callback;
+	
+}
+
+// When new angles are ready, triggering callback functions.
+std::array<float, 3> MahonyFilter::getAngleTest() {
+
+	roll.store(atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f);
+	pitch.store(asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f);
+	yaw.store(atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f);
+
+	if(callbackA_) {
+
+		callbackA_(roll.load(), pitch.load(), yaw.load());
+
+	}
+
+	if(callbackB_) {
+
+		callbackB_(roll.load(), pitch.load(), yaw.load());
+
+	}
+
+	return{roll.load(), pitch.load(), yaw.load()};
+}
+
+// Do filtering.
 void MahonyFilter::MahonyAHRSupdate() {
+
+	mpu_data_ready = false;
 
     float recipNorm;
 	float q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
@@ -188,10 +231,12 @@ void MahonyFilter::MahonyAHRSupdate() {
 	q[2] *= recipNorm;
 	q[3] *= recipNorm;
 
-	filter_done.store(1);
 }
 
 void MahonyFilter::MahonyAHRSupdateIMU() {
+
+	mpu_data_ready = false;
+
     float recipNorm;
 	float halfvx, halfvy, halfvz;
 	float halfex, halfey, halfez;
@@ -264,8 +309,6 @@ void MahonyFilter::MahonyAHRSupdateIMU() {
 	q[3] *= recipNorm;
 
 	//std::cout << recipNorm << std::endl;
-
-	filter_done.store(1);
 }
 
 float MahonyFilter::invSqrt(float x) {
@@ -278,19 +321,28 @@ float MahonyFilter::invSqrt(float x) {
 	return y;
 }
 
-void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float g[3]) {
+// Get data from filter. If dont't want to read angle rate, put NULL there.
+void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float angleRate[3]) {
 
 	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
 	*_pitch = asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f;
 	*_yaw = atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
 
-	roll.store(*_roll);
-	pitch.store(*_pitch);
-	yaw.store(*_yaw);
+	// If angle rate parameter is found.
+	if(angleRate != NULL) {
 
-	g[0] = gx_out.load();
-	g[1] = gy_out.load();
-	g[2] = gz_out.load();
+		angleRate[0] = gx_out.load();
+		angleRate[1] = gy_out.load();
+		angleRate[2] = gz_out.load();
 
-	filter_done.store(0);
+	}
+	
+	// roll.store(*_roll);
+	// pitch.store(*_pitch);
+	// yaw.store(*_yaw);
+	
+	filter_ready_A = 0;
+	filter_ready_B = 0;
+
 }
+

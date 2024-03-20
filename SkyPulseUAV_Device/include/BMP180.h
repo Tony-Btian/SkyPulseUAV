@@ -12,13 +12,8 @@
 #define MY_ALTITUDE 10.0f  // Before calibration, set the altitude of your location here!
 /**************************************************************************************/
 
-class BMP180Thread : public CppThread {
-
-protected:
-
-    void run() override;
-
-};
+using namespace std;
+using namespace std::chrono;
 
 class BMP180  {
     
@@ -55,5 +50,20 @@ private:
 
 };
 
+class BMP180Thread : public CppThread {
+
+public:
+
+    BMP180Thread(BMP180& BMP180Ins_) : BMP180Ins(BMP180Ins_) {};
+
+protected:
+
+    void run() override;
+
+private:
+
+    BMP180& BMP180Ins;
+
+};
 
 #endif

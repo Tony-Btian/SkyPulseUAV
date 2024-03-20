@@ -5,20 +5,23 @@
 
 #include "BMP180.h"
 
-
-BMP180::BMP180() : BMP180(MY_ALTITUDE){}
+BMP180::BMP180() : BMP180(MY_ALTITUDE) {}
 
 BMP180::BMP180(float loaclAltitude) : 
     iicBMP180(BMP180_ADDRESS),
-    droneAltitude(0.0f) {
-
-    myLocalAltitude = loaclAltitude;
+    droneAltitude(0.0f),
+	myLocalAltitude(loaclAltitude),
+	p(0),
+	t(0.0f),
+	sealevelPressure(0.0f),
+	eeprom(0)
+	{
 	
-    BMP180ReadTempAndPres();
+    //BMP180ReadTempAndPres();
 
     sealevelPresCorrect(myLocalAltitude);
 
-    std::cout << "BMP 180 calibrating successfully!" << std::endl;
+    //std::cout << "BMP 180 calibrating successfully!" << std::endl;
     
 }
 
@@ -55,87 +58,22 @@ void BMP180::BMP180ReadTempAndPres() {
 	int dataSize = 2;
 	
     char selectTempReg[2] = {0xF4, 0x2E};
-    iicBMP180.write(selectTempReg, 2);
-
-	// {
-	// 	std::lock_guard<std::mutex> lock(i2cmtx);
-
-	// 	// Wake temperature reg up.
-	// 	if ((err = i2cWriteByteData(handle, 0xF4, 0x2E) != 0)) {
-	// 		std::cout << "Can't write start data to temperature reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-	// }
+    if(iicBMP180.write(selectTempReg, 2)) cerr << "Can't write data to temp reg." << endl;
 
 	std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(5000)));
 
     iicBMP180.read(rawTemp, dataSize, regAddr);
-	// {
-	// 	std::lock_guard<std::mutex> lock(i2cmtx);
-
-	// 	// Read raw temperature data.
-	// 	if ((err = i2cWriteByte(handle, regAddr)) != 0) {
-	// 		std::cout << "Can't write address to temperature reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-
-	// 	if ((err = i2cReadDevice(handle, &rawTemp[0], dataSize)) <= 0) {
-	// 		std::cout << "Can't read temperature reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-	// }
 
 	long ut = (rawTemp[0] << 8) | rawTemp[1];
 
+
+
     char selectPresReg[2] = {0xF4, 0x34};
-    iicBMP180.write(selectPresReg, 2);
-
-	// {
-	// 	std::lock_guard<std::mutex> lock(i2cmtx);
-
-	// 	// Switch to preesure data here.
-	// 	if ((err = i2cWriteByteData(handle, 0xF4, 0x34) != 0)) {
-	// 		std::cout << "Can't write start data to preesure reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-	// }
+    if(iicBMP180.write(selectPresReg, 2)) cerr << "Can't write data to temp reg." << endl;
 
 	std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(5000)));
 
     iicBMP180.read(rawPres, dataSize, regAddr);
-
-	// {
-	// 	std::lock_guard<std::mutex> lock(i2cmtx);
-
-	// 	// Read raw pressure data.
-	// 	if ((err = i2cWriteByte(handle, regAddr)) != 0) {
-	// 		std::cout << "Can't write address to temperature reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-
-	// 	if ((err = i2cReadDevice(handle, &rawPres[0], dataSize)) <= 0) {
-	// 		std::cout << "Can't read temperature reg, error code：" << err << std::endl;
-	// 		i2cClose(handle);
-	// 		gpioTerminate();
-	// 		*needToExit = true;
-	// 		return;
-	// 	}
-	// }
 
 	long up = (rawPres[0] << 8) | rawPres[1];
 
@@ -163,6 +101,8 @@ void BMP180::BMP180ReadTempAndPres() {
 	b5 = x1 + x2;
 	t = ((b5 + 8) >> 4) / 10.0;
 
+	cout << "t:" << t << endl;
+
 	b6 = b5 - 4000;
 	x1 = (b2 * (b6 * b6) >> 12) >> 11;
 	x2 = (ac2 * b6) >> 11;
@@ -184,5 +124,79 @@ void BMP180::BMP180ReadTempAndPres() {
 	x2 = (-7357 * p) >> 16;
 	p = p + ((x1 + x2 + 3791) >> 4);
 
+	cout << "p:" << p << endl;
+
 }
 
+// Garbage:
+
+// {
+	// 	std::lock_guard<std::mutex> lock(i2cmtx);
+
+	// 	// Wake temperature reg up.
+	// 	if ((err = i2cWriteByteData(handle, 0xF4, 0x2E) != 0)) {
+	// 		std::cout << "Can't write start data to temperature reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+	// }
+
+	// {
+	// 	std::lock_guard<std::mutex> lock(i2cmtx);
+
+	// 	// Read raw temperature data.
+	// 	if ((err = i2cWriteByte(handle, regAddr)) != 0) {
+	// 		std::cout << "Can't write address to temperature reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+
+	// 	if ((err = i2cReadDevice(handle, &rawTemp[0], dataSize)) <= 0) {
+	// 		std::cout << "Can't read temperature reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+	// }
+
+
+	// {
+	// 	std::lock_guard<std::mutex> lock(i2cmtx);
+
+	// 	// Switch to preesure data here.
+	// 	if ((err = i2cWriteByteData(handle, 0xF4, 0x34) != 0)) {
+	// 		std::cout << "Can't write start data to preesure reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+	// }
+
+
+
+	// {
+	// 	std::lock_guard<std::mutex> lock(i2cmtx);
+
+	// 	// Read raw pressure data.
+	// 	if ((err = i2cWriteByte(handle, regAddr)) != 0) {
+	// 		std::cout << "Can't write address to temperature reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+
+	// 	if ((err = i2cReadDevice(handle, &rawPres[0], dataSize)) <= 0) {
+	// 		std::cout << "Can't read temperature reg, error code：" << err << std::endl;
+	// 		i2cClose(handle);
+	// 		gpioTerminate();
+	// 		*needToExit = true;
+	// 		return;
+	// 	}
+	// }

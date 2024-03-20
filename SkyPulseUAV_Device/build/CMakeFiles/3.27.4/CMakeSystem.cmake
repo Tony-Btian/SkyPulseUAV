@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.15.146.1-microsoft-standard-WSL2")
+set(CMAKE_HOST_SYSTEM "Linux-6.5.0-26-generic")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.15.146.1-microsoft-standard-WSL2")
+set(CMAKE_HOST_SYSTEM_VERSION "6.5.0-26-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/kinsley/project/SkyPulseUAV_Device/raspberrypi.cmake")
+include("/home/kinsley/SkyPulseUAV/SkyPulseUAV_Device/raspberrypi.cmake")
 
 set(CMAKE_SYSTEM "Linux")
 set(CMAKE_SYSTEM_NAME "Linux")

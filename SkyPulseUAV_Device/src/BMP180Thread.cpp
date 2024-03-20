@@ -2,17 +2,15 @@
 
 void BMP180Thread::run() {
 
-    BMP180 bmp180;
-
     float altitude;
 
     for(;;){
 
-        altitude = bmp180.getData();
+        altitude = BMP180Ins.getData();
 
-        std::cout << "Altitude:" << altitude << std::endl;
+        cout << "Altitude:" << altitude << endl;
 
-        std::this_thread::sleep_for(std::chrono::microseconds(static_cast < long long>(1000)));
+        this_thread::sleep_for(seconds(2));
 
     }
 }

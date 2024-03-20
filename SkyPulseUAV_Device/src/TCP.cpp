@@ -35,31 +35,38 @@ void TCP::waitForConnection(seconds timeout) {
 
 bool TCP::write(string message_sent) {
 
-    const size_t sendStringLenght = s.length();
+    auto sendStringLenght = message_sent.length();
 
-    if (auto res = conn.write(message_sent); res != sendStringLenght) {
+    auto res = conn.write(message_sent);
+
+    if (res != sendStringLenght) {
         
         cerr << "Error writing to the TCP stream: " << res.error_message() << endl;
 
-        return 1;
+        return false;
     }
 
-    return 0;
+    return true;
 }
 
 bool TCP::read() {
 
-    sret.resize(receiveStringLength);
+    if (sret.size() != receiveStringLength) {
 
-    if (auto res = conn.read_n(&sret[0], receiveStringLength); res != receiveStringLength) {
+        sret.resize(receiveStringLength);
+
+    }
+
+    auto res = conn.read_n(&sret[0], receiveStringLength); 
+
+    if (res != receiveStringLength) {
 
         cerr << "Error reading from TCP stream: " << res.error_message() << endl;
 
-        return 1;
+        return false;
     }
 
-    return 0;
-
+    return true;
 }
 
 

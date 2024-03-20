@@ -23,6 +23,8 @@ public:
 
 private:
 
+    static std::mutex i2cmtx;
+    
     int handle;
     int err;
 

@@ -67,7 +67,9 @@ void Control::updateRef(float refAngle[3], float alt) {
 
 }
 
-// Control function of altitude.
+// PID Control function of altitude.
+// Outter loop - altitude control
+// Inner loop - rate control
 void Control::altControl() {
 
     errorAlt = desireAlt - currentAlt;
@@ -76,7 +78,9 @@ void Control::altControl() {
 
 }
 
-// Control function of three Euler angles.
+// PID double loop control function of three Euler angles.
+// Outter loop - angle control
+// Inner loop - rate control
 void Control::doublePIDControl() {
 
     for(short i = 0; i < 3; i++) {

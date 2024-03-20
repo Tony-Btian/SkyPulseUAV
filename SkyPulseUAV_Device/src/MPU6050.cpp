@@ -81,12 +81,6 @@ bool MPU6050 :: checkNewData() {
 
 }
 
-bool MPU6050 :: checkCalibration() {
-
-	return (calibrate_ready.load());
-
-}
-
 void MPU6050 :: MPU6050ReadData(char* data) {
 
 	char MPU6050StartAddr = 0x3B;
@@ -121,7 +115,41 @@ void MPU6050 :: setRangeOfGyro(bool needToExit) {
 
 }
 
-void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
+// void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
+
+// 	mpu6050_newdata.store(false);
+
+// 	a[0] = ((ax.load() - a_offset[0]) / 16384.0f)*9.818f;
+// 	a[1] = ((ay.load() - a_offset[1]) / 16384.0f)*9.818f;
+// 	a[2] = ((az.load() - a_offset[2]) / 16384.0f)*9.818f;
+// 	a[2] = a[2] + 9.818f;
+
+// 	// a[0] = (ax.load() / 16384.0f)*9.818f;
+// 	// a[1] = (ay.load() / 16384.0f)*9.818f;
+// 	// a[2] = (az.load() / 16384.0f)*9.818f;
+
+// 	g[0] = (gx.load() - g_offset[0]) / (16.384f) * DEG_TO_RAD;
+// 	g[1] = (gy.load() - g_offset[1]) / (16.384f) * DEG_TO_RAD;
+// 	g[2] = (gz.load() - g_offset[2]) / (16.384f) * DEG_TO_RAD;
+
+// 	m[0] = (mx.load() - m_offset[0]) * 0.000122f;
+// 	m[1] = (my.load() - m_offset[1]) * 0.000122f;
+// 	m[2] = (mz.load() - m_offset[2]) * 0.000122f;	
+
+// 	// std::cout << g[0] << "|" << g[1] << "|" << g[2] << std::endl;
+// }
+
+void MPU6050::setCallback(CallbackFunction callback) {
+
+    callback_ = callback;
+
+}
+
+void MPU6050 :: getData() {
+
+	float a[3] = {};
+	float g[3] = {};
+	float m[3] = {};
 
 	mpu6050_newdata.store(false);
 
@@ -141,6 +169,12 @@ void MPU6050 :: getData(float a[3], float g[3], float m[3]) {
 	m[0] = (mx.load() - m_offset[0]) * 0.000122f;
 	m[1] = (my.load() - m_offset[1]) * 0.000122f;
 	m[2] = (mz.load() - m_offset[2]) * 0.000122f;	
+
+	if(callback_) {
+
+		callback_(a, g, m);
+
+	}
 
 	// std::cout << g[0] << "|" << g[1] << "|" << g[2] << std::endl;
 }
@@ -241,4 +275,3 @@ void initializeMPUISR() {
 		return;
 	}
 }
-

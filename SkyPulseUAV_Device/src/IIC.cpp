@@ -1,6 +1,6 @@
 #include "IIC.h"
 
-std::mutex i2cmtx;
+std::mutex IIC::i2cmtx;
 
 IIC::IIC(int address) {
 

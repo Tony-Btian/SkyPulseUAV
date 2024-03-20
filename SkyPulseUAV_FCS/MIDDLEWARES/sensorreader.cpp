@@ -15,7 +15,7 @@ void SensorReader::run()
 
     QByteArray data = readFunc();
     if(isActive.load()) {
-        emit dataReady(sensorIdm, data);
+        emit dataReady(sensorId, data);
     }
 }
 

@@ -16,7 +16,7 @@ class SensorReader : public QObject, public QRunnable
 public:
     explicit SensorReader(I2C_Device* device,
                           int sensorId,
-                          std::function<QByteArry> readFunc,
+                          std::function<QByteArray()> readFunc,
                           QObject *parent = nullptr
                           /*std::function<void(const QByteArray&)> callback*/);
 
@@ -26,11 +26,12 @@ public:
     void stop();
 
 private:
-    std::function<QByteArray()> readFunc;
-    std::function<void(const QByteArray&)> callback;
-    QAtomicInt isActive;
     I2C_Device* device;
     QThreadPool threadPool;
+
+    std::function<QByteArray()> readFunc;
+//    std::function<void(const QByteArray&)> callback;
+    QAtomicInt isActive;
 
     int sensorId;
 

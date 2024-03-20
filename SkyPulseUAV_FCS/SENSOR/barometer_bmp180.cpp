@@ -1,133 +1,65 @@
 #include "barometer_bmp180.h"
 #include <QDebug>
-#include <QtConcurrent>
 
-
-// Adjustable via TCP communication
-short AC1 = 408, AC2 = -72, AC3 = -14383;
-unsigned short AC4 = 32741, AC5 = 32757, AC6 = 23153;
-short B1 = 6190, B2 = 4, MB = -32768, MC = -8711, MD = 2868;
 
 Barometer_BMP180::Barometer_BMP180(I2CDevice *i2cDevice, QObject *parent)
     : QObject(parent), i2cdevice(i2cDevice)
 {
-    i2cdevice = new I2C_Device(BMP180_DEVICE_ADDR, this);
-//    connect(&watcher, &QFutureWatcher<void>::finished, this, &Mahony_Plot::plotThreadParameterInitial);
+    if(!readCalibrationData()){
+        emit errorOccurred("Failed to read calibration data from BMP180.");
+    }
 }
 
 Barometer_BMP180::~Barometer_BMP180()
 {
-    if (watcher.isRunning()) {
-        watcher.waitForFinished();
+
+}
+
+bool Barometer_BMP180::readCalibrationData()
+{
+    if(!i2cDevice){
+        return false;
     }
-    delete i2cdevice;
+    QByteArray data;
+
+    data = i2cDevice->readBytes(0xAA, 2);
+    if(data.size() != 2){
+        return false;
+    }
+    ac1 = static_cast<short>(data[0] << 8 | data[1]);
+
+    return true;
 }
 
-//!
-//! \brief Barometer_BMP180::readingStop
-//!
-void Barometer_BMP180::readingStop()
+void Barometer_BMP180::readPressure()
 {
-//    shouldStop = true;
-    _stop.storeRelease(1);
-}
-
-
-void Barometer_BMP180::readTemperatureData()
-{
-    if (!i2cdevice) {
-        qDebug() << "I2C device is not initialized.";
+    if (!i2cDevice) {
+        emit errorOccurred("I2C device is not initialized.");
         return;
     }
 
-    auto future = QtConcurrent::run([this]() {
-        int i = 0;
-        while (_stop.loadAcquire() == 0) {
-            i2cdevice->writeBytes(0xF4, QByteArray(1, 0x2E)); // Write Temperature Measurement Command
-            QThread::msleep(100); // Waiting for conversion time
-            QByteArray tempRawData = i2cdevice->readBytes(0xF6, 2); // Reading temperature data
-            if (tempRawData.size() == 2) {
-                int UT = static_cast<unsigned char>(tempRawData[0]) << 8 | static_cast<unsigned char>(tempRawData[1]);
-                calculateTemperature(UT);
-            } else {
-                qDebug() << "Invalid temperature data received.";
-            }
-        }
-    });
-    watcher.setFuture(future);
-}
+    quint8 reg = 0xF6;
+    quint8 count = 3;
+    QByteArray rawData = i2cDevice->readBytes(reg, count);
 
-void Barometer_BMP180::readPressureData()
-{
-    if (!i2cdevice) {
-        qDebug() << "I2C i2cdevice is not initialized.";
-        return;
-    }
-
-    auto future = QtConcurrent::run([this]() {
-        while (_stop.loadAcquire() == 0) {
-            qDebug() << "BMP Thread ID: " << QThread::currentThreadId();
-            // Read raw barometric pressure data
-            i2cdevice->writeBytes(0xF4, QByteArray(1, 0x34 + (3 << 6))); // Write barometric command
-            QThread::msleep(100); // Waiting for conversion time
-            QByteArray pressureRawData = i2cdevice->readBytes(0xF6, 3); // Reading air pressure data
-            if (pressureRawData.size() == 3) {
-                int UP = (static_cast<unsigned char>(pressureRawData[0]) << 16 | static_cast<unsigned char>(pressureRawData[1]) << 8 | static_cast<unsigned char>(pressureRawData[2])) >> (8 - 3);
-                calculatePressure(UP);
-            } else {
-                qDebug() << "Invalid pressure data received.";
-            }
-        }
-    });
-    watcher.setFuture(future);
-}
-
-void Barometer_BMP180::calculateTemperature(int UT)
-{
-    long X1 = (UT - AC6) * AC5 / 32768;
-    long X2 = MC * 2048 / (X1 + MD);
-    long B5 = X1 + X2;
-    float temperature = (B5 + 8) / 16.0f / 10;
-    qDebug() << temperature << " in Thread: " << QThread::currentThreadId();
-    emit sig_temperatureRead(temperature);
-}
-
-void Barometer_BMP180::calculatePressure(int UP)
-{
-    // Here you need to use the B5 value obtained from the calculateTemperature calculation,
-    // so you may need to save B5 as a member variable
-
-    long X1, X2, X3, B3, B6, pressure;
-    unsigned long B4, B7;
-
-    B6 = B5 - 4000;
-    X1 = (B2 * (B6 * B6 / 4096)) / 2048;
-    X2 = AC2 * B6 / 2048;
-    X3 = X1 + X2;
-    B3 = (((AC1 * 4 + X3) << 3) + 2) / 4;
-
-    X1 = AC3 * B6 / 8192;
-    X2 = (B1 * (B6 * B6 / 4096)) / 65536;
-    X3 = ((X1 + X2) + 2) / 4;
-    B4 = AC4 * (unsigned long)(X3 + 32768) / 32768;
-    B7 = ((unsigned long)UP - B3) * (50000 >> 3);
-
-    if (B7 < 0x80000000) {
-        pressure = (B7 * 2) / B4;
+    if (rawData.size() == count) {
+        int rawPressure = (static_cast<unsigned char>(rawData[0]) << 16 |
+                           static_cast<unsigned char>(rawData[1]) << 8 |
+                           static_cast<unsigned char>(rawData[2])) >> (8 /* oversampling_setting */);
+        double pressure = calculatePressure(rawPressure);
+        emit pressureRead(pressure);
     } else {
-        pressure = (B7 / B4) * 2;
+        emit errorOccurred("Failed to read pressure data from BMP180.");
     }
-
-    X1 = (pressure / 256) * (pressure / 256);
-    X1 = (X1 * 3038) / 65536;
-    X2 = (-7357 * pressure) / 65536;
-    pressure = pressure + (X1 + X2 + 3791) / 16;
-    qDebug() << pressure;
-    emit sig_pressureRead(pressure);
 }
 
-void Barometer_BMP180::waitForThreadCompletion() {
-    if (watcher.isRunning()) {
-        watcher.waitForFinished();
-    }
+void BMP180_Sensor::readCalibrationData()
+{
+
+}
+
+double BMP180_Sensor::calculatePressure(int rawPressure) const
+{
+
+    return static_cast<double>(rawPressure);
 }

@@ -14,26 +14,18 @@ public:
     explicit Barometer_BMP180(I2C_Device *i2cDevice, QObject *parent = nullptr);
     ~Barometer_BMP180();
 
-    double readTemperature(); //
-    double readPressure(); //
+public slots:
+    void readPressure();
 
 private:
-    I2C_Device *i2cdevice;
+    I2C_Device* i2cDevice;
 
-    void calculateTemperature(int UT);
-    void calculatePressure(int UP);
-
-public slots:
-    void readTemperatureData();
-    void readPressureData();
-    void readingStop();
-    void waitForThreadCompletion();
+    bool readCalibrationData();
+    double calculatePressure(int rawPressure) const;
 
 signals:
-    void sig_temperatureRead(double temperature);
-    void sig_pressureRead(double pressure);
-    void error(QString err);
-
+    void pressureRead(double pressure);
+    void errorOccurred(const QString& message);
 };
 
 #endif // BAROMETER_BMP180_H

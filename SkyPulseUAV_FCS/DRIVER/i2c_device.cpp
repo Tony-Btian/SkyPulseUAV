@@ -26,37 +26,37 @@ bool I2C_Device::initialize()
     QMutexLocker locker(&mutex);
     handle = i2cOpen(1, deviceAddress, 0);
     if (handle < 0) {
-        qDebug() << "Failed to open I2C device.";
+        qDebug() << "Failed to open I2C device." << deviceAddress;
         return false;
     }
     return true;
 }
 
-QByteArray I2C_Device::readBytes(quint8 reg, quint8 count)
+QByteArray I2C_Device::readBytes(quint8 registerAddress, quint8 count)
 {
-    qDebug() << "I2C Device Thread: " << QThread::currentThreadId();
+    qDebug() << "I2C Running Thread: " << QThread::currentThreadId();
     QByteArray data(count, 0);  // Automating Memory Management with Qt Containers
-    mutex.lock();
-    if (i2cReadI2CBlockData(handle, reg, data.data(), count) == count) {
-        mutex.unlock();
-        return data;
-    }
-    else {
-        qDebug() << "Failed to read from I2C device.";
-        mutex.unlock();
-        emit errorOccurred("Failed to read from I2C device.");
-        return QByteArray();
+    {
+        QMutexLocker locker(&mutex);
+        if (i2cReadI2CBlockData(handle, registerAddress, data.data(), count) == count) {
+            return data;
+        }
+        else {
+            qDebug() << "Failed to read from I2C device at register:" << registerAddress;
+            emit errorOccurred("Failed to read from I2C device.");
+            return QByteArray();
+        }
     }
 }
 
-bool I2C_Device::writeBytes(quint8 reg, QByteArray data)
+bool I2C_Device::writeBytes(quint8 registerAddress, const QByteArray &data)
 {
     QMutexLocker locker(&mutex);
-    if(i2cWriteI2CBlockData(handle, reg, data.data(), data.size()) == 0){
+    if(i2cWriteI2CBlockData(handle, registerAddress, data.data(), data.size()) == 0){
         return true;
     }
     else{
-        qDebug() << "Failed to write to I2C device.";
+        qDebug() << "Failed to write to I2C device." << registerAddress;
         emit errorOccurred("Failed to write to I2C device.");
         return false;
     }

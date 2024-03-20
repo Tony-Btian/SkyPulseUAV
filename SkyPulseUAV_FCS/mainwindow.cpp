@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
 //    double height = dbManager.getParam("height");
 //    qDebug() << "Height parameter value is: " << height;
 
-    // Initial GPIO
 
+    // Initial GPIO
     while(true){
         if (gpioInitialise() < 0) {
             qDebug() << "Failed to initialize pigpio. Retrying in 1 second...";

@@ -52,7 +52,7 @@ QByteArray I2C_Device::readBytes(quint8 registerAddress, quint8 count)
 bool I2C_Device::writeBytes(quint8 registerAddress, const QByteArray &data)
 {
     QMutexLocker locker(&mutex);
-    if(i2cWriteI2CBlockData(handle, registerAddress, data.data(), data.size()) == 0){
+    if(i2cWriteI2CBlockData(handle, registerAddress, const_cast<char*>(data.data()), data.size()) == 0){
         return true;
     }
     else{

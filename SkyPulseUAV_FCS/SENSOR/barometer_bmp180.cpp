@@ -1,9 +1,8 @@
 #include "barometer_bmp180.h"
 #include <QDebug>
 
-
-Barometer_BMP180::Barometer_BMP180(I2CDevice *i2cDevice, QObject *parent)
-    : QObject(parent), i2cdevice(i2cDevice)
+Barometer_BMP180::Barometer_BMP180(I2C_Device *i2cDevice, QObject *parent)
+    : QObject(parent), i2cDevice(i2cDevice)
 {
     if(!readCalibrationData()){
         emit errorOccurred("Failed to read calibration data from BMP180.");
@@ -17,16 +16,16 @@ Barometer_BMP180::~Barometer_BMP180()
 
 bool Barometer_BMP180::readCalibrationData()
 {
-    if(!i2cDevice){
-        return false;
-    }
-    QByteArray data;
+//    if(!i2cDevice){
+//        return false;
+//    }
+//    QByteArray data;
 
-    data = i2cDevice->readBytes(0xAA, 2);
-    if(data.size() != 2){
-        return false;
-    }
-    ac1 = static_cast<short>(data[0] << 8 | data[1]);
+//    data = i2cDevice->readBytes(0xAA, 2);
+//    if(data.size() != 2){
+//        return false;
+//    }
+//    ac1 = static_cast<short>(data[0] << 8 | data[1]);
 
     return true;
 }
@@ -53,13 +52,7 @@ void Barometer_BMP180::readPressure()
     }
 }
 
-void BMP180_Sensor::readCalibrationData()
+double Barometer_BMP180::calculatePressure(int rawPressure) const
 {
 
-}
-
-double BMP180_Sensor::calculatePressure(int rawPressure) const
-{
-
-    return static_cast<double>(rawPressure);
 }

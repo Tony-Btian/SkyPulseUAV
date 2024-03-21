@@ -2,11 +2,17 @@
 
 SensorReader::SensorReader(I2C_Device *device,
                            int sensorId,
-                           std::function<QByteArry> readFunc,
+                           std::function<QByteArray()> readFunc,
                            QObject *parent)
-    : QObject(parent), device(device), sensorId(sensorId), readFunc(readFunc), shouldRun(0)
+    : QObject(parent), device(device), sensorId(sensorId), readFunc(std::move(readFunc)), isActive(0)
 {
-    threadPool.setMaxThreadCount(3); // Adjust the thread pool size as needed
+
+}
+
+SensorReader::~SensorReader()
+{
+    stop();
+    QThreadPool::globalInstance()->waitForDone();
 }
 
 void SensorReader::run()
@@ -19,16 +25,10 @@ void SensorReader::run()
     }
 }
 
-void SensorReader::startRead()
-{
-    isActive.store(1);
-    QRunnable *task = new SensorReader(*this);
-    threadPool.start(task);
-}
-
 void SensorReader::start()
 {
     isActive.store(1);
+    QThreadPool::globalInstance()->start(this);
 }
 
 void SensorReader::stop()

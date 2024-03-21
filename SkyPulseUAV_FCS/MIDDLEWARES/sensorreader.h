@@ -19,19 +19,17 @@ public:
                           std::function<QByteArray()> readFunc,
                           QObject *parent = nullptr
                           /*std::function<void(const QByteArray&)> callback*/);
+    ~SensorReader();
 
     void run() override;
-    void startRead();
     void start();
     void stop();
 
 private:
     I2C_Device* device;
     QThreadPool threadPool;
-
-    std::function<QByteArray()> readFunc;
-//    std::function<void(const QByteArray&)> callback;
     QAtomicInt isActive;
+    std::function<QByteArray()> readFunc;
 
     int sensorId;
 

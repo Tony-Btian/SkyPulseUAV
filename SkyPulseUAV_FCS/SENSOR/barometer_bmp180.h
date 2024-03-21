@@ -14,13 +14,13 @@ public:
     explicit Barometer_BMP180(I2C_Device *i2cDevice, QObject *parent = nullptr);
     ~Barometer_BMP180();
 
+    bool readCalibrationData();
+
 public slots:
     void readPressure();
 
 private:
     I2C_Device* i2cDevice;
-
-    bool readCalibrationData();
     double calculatePressure(int rawPressure) const;
 
 signals:

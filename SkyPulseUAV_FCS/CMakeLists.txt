@@ -36,6 +36,7 @@ set(PROJECT_SOURCES
     MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
     DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
     MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
+    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

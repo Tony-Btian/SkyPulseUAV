@@ -4,6 +4,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QTimer>
+#include <QThread>
 
 class TCP : public QTcpServer
 {
@@ -11,6 +12,9 @@ class TCP : public QTcpServer
 
 public:
     explicit TCP(QObject *parent = nullptr);
+    ~TCP();
+
+public slots:
     void startServer(quint16 port);
     void broadcastMessage(const QByteArray &message);
 
@@ -23,6 +27,8 @@ private slots:
 
 private:
     QList<QTcpSocket*> clients;
+    QThread *TCPThread;
+
     void dataTranslator(const QByteArray &data);
 
 signals:

@@ -10,12 +10,15 @@
 
 #include "i2c_device.h"
 #include "tcp.h"
+
 #include "barometer_bmp180.h"
 #include "magnetometer_gy271.h"
 #include "gyroacelemeter_gy521.h"
 #include "esc_pwm_driver.h"
 #include "threadpool.h"
 #include "databasemanager.h"
+#include "sensorreader.h"
+#include "gpiointerrupthandler.h"
 
 
 #define HMC5883l_DEVICE_ADDR 0x0D
@@ -33,7 +36,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void prepareForQuit();
-
+    QByteArray readMPU6050Data();
 
 private slots:
     void on_pushButton_BMP_clicked();
@@ -54,12 +57,19 @@ private:
     Barometer_BMP180 *BaroMeter;
 
     /* Driver */
+    I2C_Device *device;
     ESC_PWM_Driver *PWMDriver;
+
+    void Initial_GPIO();
+    void TCP_ServerStart();
+    void PWMInitial();
 
 protected:
     void closeEvent(QCloseEvent *event) override;
 
 signals:
+    void sig_TCPStartServer(quint16 port_numb);
+    void sig_TCPBroadCastMessage(const QByteArray &message);
     void sig_readPressure();
     void sig_readTemperature();
 

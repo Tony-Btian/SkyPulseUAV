@@ -9,12 +9,48 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
-//    DatabaseManager dbManager("config.db");
-//    dbManager.addOrUpdateParam("height", 100.1);
-//    double height = dbManager.getParam("height");
-//    qDebug() << "Height parameter value is: " << height;
+    this->Initial_GPIO();
+    this->TCP_ServerStart();
+    this->PWMInitial();
+
+    GpioInterruptHandler interruptHandler(17);
+    QObject::connect(&interruptHandler, &GpioInterruptHandler::interruptOccurred, []() {
+        qDebug() << "MPU6050 interrupt occurs and data can be read";
+
+    });
+}
+
+MainWindow::~MainWindow()
+{
+    // Release of dynamically allocated resources
+    delete TCPServer;
+    gpioTerminate();
+    delete ui;
+}
+
+QByteArray MainWindow::readMPU6050Data()
+{
+
+}
+
+void MainWindow::on_pushButton_BMP_clicked()
+{
+    qDebug() << "Main Window Thread: " << QThread::currentThreadId();
+    emit sig_TCPBroadCastMessage("Hello from Raspberry Pi");
+}
 
 
+void MainWindow::on_pushButton_HMC_clicked()
+{
+
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+    QMainWindow::closeEvent(event);
+}
+
+void MainWindow::Initial_GPIO()
+{
     // Initial GPIO
     while(true){
         if (gpioInitialise() < 0) {
@@ -28,72 +64,24 @@ MainWindow::MainWindow(QWidget *parent)
         break; // Successful initialization, jump out of the loop
     }
 
-//    BaroMeter BMP180
-//    BaroMeter = new Barometer_BMP180();
-//    BMP_Thread = new QThread();
-//    BaroMeter->moveToThread(BMP_Thread);
-//    BMP_Thread->start();
+    gpioSetMode(17, PI_INPUT);
+    gpioSetPullUpDown(17, PI_PUD_UP);
 
-//    connect(this, &MainWindow::sig_readPressure, BaroMeter, &Barometer_BMP180::readPressureData);
-//    connect(this, &MainWindow::sig_readTemperature, BaroMeter, &Barometer_BMP180::readTemperatureData);
-//    connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
+}
 
-//    Magnetometer HMC5883L
-//    meg_compass = new MEG_Compass();
-
-
+void MainWindow::TCP_ServerStart()
+{
     // TCP Server
-    TCPServer = new TCP(this);
-    TCPServer->startServer(12345);  // Listening on port 12345
+    TCPServer = new TCP();
+    connect(this, &MainWindow::sig_TCPStartServer, TCPServer, &TCP::startServer);
+    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
+    emit sig_TCPStartServer(12345);
+//    TCPServer->startServer(12345);  // Listening on port 12345
+}
 
+void MainWindow::PWMInitial()
+{
     // PWM Driver
     PWMDriver = new ESC_PWM_Driver(this);
     connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
-}
-
-MainWindow::~MainWindow()
-{
-    if(BMP_Thread->isRunning()){
-        BMP_Thread->quit();
-        BMP_Thread->wait();
-    }
-    delete BMP_Thread;
-
-    // Release of dynamically allocated resources
-    delete BaroMeter;
-    delete MagnetoMeter;
-    delete TCPServer;
-    gpioTerminate();
-
-    delete ui;
-}
-
-void MainWindow::prepareForQuit() {
-//    if(BaroMeter) {
-//        BaroMeter->readingStop();
-//        BaroMeter->waitForThreadCompletion();
-//    }
-}
-
-void MainWindow::on_pushButton_BMP_clicked()
-{
-    qDebug() << "Main Window Thread: " << QThread::currentThreadId();
-//    emit sig_readPressure();
-//    emit sig_readTemperature();
-    TCPServer->broadcastMessage("Hello from Raspberry Pi");
-}
-
-
-void MainWindow::on_pushButton_HMC_clicked()
-{
-
-}
-
-void MainWindow::closeEvent(QCloseEvent *event) {
-//    barometer->readingStop();
-//    barometer->waitForThreadCompletion();
-    prepareForQuit();
-//    BaroMeter->readingStop();
-//    BaroMeter->waitForThreadCompletion();
-    QMainWindow::closeEvent(event);
 }

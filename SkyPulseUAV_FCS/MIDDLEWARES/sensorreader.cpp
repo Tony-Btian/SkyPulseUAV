@@ -17,21 +17,22 @@ SensorReader::~SensorReader()
 
 void SensorReader::run()
 {
-    if(!isActive.load()) return;
+    if(!isActive) return;
 
     QByteArray data = readFunc();
-    if(isActive.load()) {
+    if(isActive.loadRelaxed()) {
         emit dataReady(sensorId, data);
     }
 }
 
 void SensorReader::start()
 {
-    isActive.store(1);
+    isActive.storeRelaxed(1);
+    this->setAutoDelete(true);
     QThreadPool::globalInstance()->start(this);
 }
 
 void SensorReader::stop()
 {
-    isActive.store(0);
+    isActive.storeRelaxed(0);
 }

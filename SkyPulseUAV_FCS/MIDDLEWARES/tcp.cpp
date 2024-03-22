@@ -5,17 +5,26 @@
 
 TCP::TCP(QObject *parent) : QTcpServer(parent)
 {
+    TCPThread = new QThread(this);
+    this->moveToThread(TCPThread);
+    TCPThread->start();
+}
 
+TCP::~TCP()
+{
+    TCPThread->quit();
+    TCPThread->wait();
+    TCPThread->deleteLater();
 }
 
 void TCP::startServer(quint16 port)
 {
     if(this->listen(QHostAddress::Any, port)){
-        qDebug() << "Server started on port" << port;
+        qDebug() << "TCP Server started on port" << port << "!";
     }
     else
     {
-        qDebug() << "Server failed to start: " << this->errorString();
+        qDebug() << "TCP Server failed to start: " << this->errorString();
     }
 }
 
@@ -28,12 +37,12 @@ void TCP::incomingConnection(qintptr socketDescriptor)
     connect(client, &QTcpSocket::readyRead, this, &TCP::onReadyRead);
 
     clients.append(client);
-    qDebug() << "Client connected: " << client->peerAddress().toString();
+    qDebug() << "Client connected:" << client->peerAddress().toString();
 }
 
 void TCP::broadcastMessage(const QByteArray &message)
 {
-    qDebug() << "The TCP Thread ID is: " << QThread::currentThreadId();
+    qDebug() << "The TCP Thread ID is:" << QThread::currentThreadId();
     for(QTcpSocket *client : qAsConst(clients)){
         if(client->state() == QTcpSocket::ConnectedState){
             client->write(message);

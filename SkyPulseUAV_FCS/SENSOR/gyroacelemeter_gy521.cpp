@@ -1,60 +1,44 @@
 #include "gyroacelemeter_gy521.h"
-#include <pigpio.h>
 
-//GyroAcelemeter_GY521::GyroAcelemeter_GY521()
-//{
-
-//}
-
-// Init MPU6050
-bool initMPU6050(int handle) {
-    // Wakeup MPU6050
-    return i2cWriteByteData(handle, PWR_MGMT_1, 0) == 0;
+MPU6050::MPU6050(int deviceAddress, QObject *parent)
+    : I2C_Device(deviceAddress, parent), accelScaleFactor(ACCEL_FS_SEL_2G), gyroScaleFactor(GYRO_FS_SEL_250DEG) {
 }
 
-// Defining scale factor
-const float ACCEL_SCALE = 16384.0;
-const float GYRO_SCALE = 131.0;
-
-int readAccelRange(int handle) {
-    int range = i2cReadByteData(handle, ACCEL_CONFIG);
-    range = (range >> 3) & 0x03;
-    switch (range) {
-        case 0: return 2; // 2g
-        case 1: return 4; // 4g
-        case 2: return 8; // 8g
-        case 3: return 16; // 16g
-    }
-    return -1; // Error value
+bool MPU6050::initialize() {
+    // Wake the device up from sleep mode
+    return writeByte(PWR_MGMT_1, 0x00);
 }
 
-
-int readGyroRange(int handle) {
-    int range = i2cReadByteData(handle, GYRO_CONFIG);
-    range = (range >> 3) & 0x03;
-    switch (range) {
-        case 0: return 250; // 250
-        case 1: return 500; // 500
-        case 2: return 1000; // 1000
-        case 3: return 2000; // 2000
-    }
-    return -1; // Error value
+bool MPU6050::writeByte(uint8_t reg, uint8_t value) {
+//    return this->write(reg, &value, 1);
 }
 
-// Read MPU6050 Data
-MPU6050Data readMPU6050Data(int handle) {
-    char buffer[14];
-    MPU6050Data data = {};
+bool MPU6050::readBytes(uint8_t reg, uint8_t *buffer, size_t length) {
+//    return this->read(reg, buffer, length);
+}
 
-    if (i2cReadI2CBlockData(handle, ACCEL_XOUT_H, buffer, 14) == 14) {
-        data.ax = ((buffer[0] << 8) | buffer[1]) / ACCEL_SCALE;
-        data.ay = ((buffer[2] << 8) | buffer[3]) / ACCEL_SCALE;
-        data.az = ((buffer[4] << 8) | buffer[5]) / ACCEL_SCALE;
-
-        data.gx = ((buffer[8] << 8) | buffer[9]) / GYRO_SCALE;
-        data.gy = ((buffer[10] << 8) | buffer[11]) / GYRO_SCALE;
-        data.gz = ((buffer[12] << 8) | buffer[13]) / GYRO_SCALE;
+bool MPU6050::readAcceleration(float &ax, float &ay, float &az) {
+    uint8_t buffer[6];
+    if (!readBytes(ACCEL_XOUT_H, buffer, sizeof(buffer))) {
+        return false;
     }
 
-    return data;
+    ax = (float)((int16_t)(buffer[0] << 8 | buffer[1])) / accelScaleFactor;
+    ay = (float)((int16_t)(buffer[2] << 8 | buffer[3])) / accelScaleFactor;
+    az = (float)((int16_t)(buffer[4] << 8 | buffer[5])) / accelScaleFactor;
+
+    return true;
+}
+
+bool MPU6050::readGyroscope(float &gx, float &gy, float &gz) {
+    uint8_t buffer[6];
+    if (!readBytes(GYRO_XOUT_H, buffer, sizeof(buffer))) {
+        return false;
+    }
+
+    gx = (float)((int16_t)(buffer[0] << 8 | buffer[1])) / gyroScaleFactor;
+    gy = (float)((int16_t)(buffer[2] << 8 | buffer[3])) / gyroScaleFactor;
+    gz = (float)((int16_t)(buffer[4] << 8 | buffer[5])) / gyroScaleFactor;
+
+    return true;
 }

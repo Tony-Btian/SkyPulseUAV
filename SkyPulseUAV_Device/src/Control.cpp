@@ -39,8 +39,13 @@ Control::Control(float sampleFreq) :
     motorOutput{0, 0, 0, 0}
     {}
 
+void Control::setMode(bool mode) {
 
-void Control::readRateAndAngle(float rate[3], float angle[3], float alt) {
+    this->mode = mode;
+
+}
+
+void Control::readCur(float rate[3], float angle[3], float alt) {
     
     for(short i = 0;i < 3;i++) {
 
@@ -55,7 +60,7 @@ void Control::readRateAndAngle(float rate[3], float angle[3], float alt) {
 }
 
 // Reference update (roll, pitch, yaw and altitude).
-void Control::updateRef(float refAngle[3], float alt) {
+void Control::readRef(float refAngle[3], float alt) {
 
     for(short i = 0;i < 3;i++) {
     
@@ -67,21 +72,31 @@ void Control::updateRef(float refAngle[3], float alt) {
 
 }
 
-// PID Control function of altitude.
-// Outter loop - altitude control
-// Inner loop - rate control
+/* 
+PID Control function of altitude.
+Outter loop - altitude control
+Inner loop - altitude rate control 
+*/
 void Control::altControl() {
 
     errorAlt = desireAlt - currentAlt;
 
-    
-
 }
 
-// PID double loop control function of three Euler angles.
-// Outter loop - angle control
-// Inner loop - rate control
+/* 
+PID double loop control function of three Euler angles.
+Outter loop - angle control
+Inner loop - rate control 
+*/
 void Control::doublePIDControl() {
+
+    // Limit the roll and pitch angles.
+    if (desireAngle[0] > MAX_ROLL_ANGLE || desireAngle[1] > MAX_PITCH_ANGLE) {
+
+        desireAngle[0] = MAX_ROLL_ANGLE;
+        desireAngle[1] > MAX_PITCH_ANGLE;
+
+    }
 
     for(short i = 0; i < 3; i++) {
 
@@ -89,8 +104,8 @@ void Control::doublePIDControl() {
 
         prevAngleIterm[i] += errorAngle[i] * (0.5f / PIDFreq);
 
-        if(prevAngleIterm[i] > ITERM_MAX) prevAngleIterm[i] = ITERM_MAX;
-        else if(prevAngleIterm[i] < -ITERM_MAX) prevAngleIterm[i] = -ITERM_MAX;
+        if(prevAngleIterm[i] > ITERM_MAX) prevAngleIterm[i] = 0;
+        else if(prevAngleIterm[i] < -ITERM_MAX) prevAngleIterm[i] = 0;
 
         outputAngle[i] = Kp_out[i] * errorAngle[i] + Ki_out[i] * prevAngleIterm[i];
 
@@ -99,8 +114,8 @@ void Control::doublePIDControl() {
         errorRate[i] = outputAngle[i] - currentRate[i];
 
         prevRateIterm[i] += errorRate[i] * (0.5f / PIDFreq);
-        if(prevRateIterm[i] > ITERM_MAX) prevRateIterm[i] = ITERM_MAX;
-        else if(prevRateIterm[i] < -ITERM_MAX) prevRateIterm[i] = -ITERM_MAX;
+        if(prevRateIterm[i] > ITERM_MAX) prevRateIterm[i] = 0;
+        else if(prevRateIterm[i] < -ITERM_MAX) prevRateIterm[i] = 0;
 
         outputRate[i] = Kp_in[i] * errorRate[i] + Ki_in[i] * prevRateIterm[i]
         + Kd[i] * (errorRate[i] - prevRateErr[i]) * (1.0f / PIDFreq);

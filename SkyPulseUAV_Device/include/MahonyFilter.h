@@ -15,7 +15,7 @@ class MahonyFilter {
 
 public:
 
-    using CallbackFunction = std::function<void(float, float, float)>;
+    using CallbackFunction = std::function<void(float, float, float, float[3])>;
 
     MahonyFilter();
 

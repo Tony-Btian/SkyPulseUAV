@@ -21,11 +21,11 @@ public:
 
     bool read();
 
-    void readDataFromFilter(float roll, float pitch, float yaw);
+    void readDataFromFilter(float roll, float pitch, float yaw, float rate[3]);
 
     void readDataFromBMP180(float altitude);
 
-    void readDataFromControl(float Motor[4]);
+    void readDataFromMotor(float Motor[4]);
 
     // Merge all the data and flags into a string.
     string mergeData();
@@ -38,26 +38,49 @@ protected:
 
 private:
 
+    // TCP basic variables.
     string s, sret;
 
     string host;
-
     in_port_t port;
 
     sockpp::tcp_connector conn;
 
     size_t receiveStringLength;
 
-    // Get from other classes.
-    float roll;
+    // Flags.
+    bool isMannedMode;
+    bool isInTheAir;
 
-    float pitch;
-    
+    // Get from other classes.
+    // Eular angles data.
+    float roll;
+    float pitch; 
     float yaw;
 
-    float altitude;
+    // Throttle data.
+    float thro;
 
+    // Gyroscope rate date.
+    float rate[3];
+
+    // Altitude data.
+    float alt;
+
+    // Motor data
     float Motor[4];
+
+    // IR distance.
+    float IRDistance[3];
+
+    // Ultrasound distance.
+    float USDistance;
+
+    // Battery status.
+    float vol;
+    float cur;
+
+
 };
 
 class TCPThread : public CppThread {

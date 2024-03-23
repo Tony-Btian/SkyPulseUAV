@@ -12,12 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->Initial_GPIO();
     this->TCP_ServerStart();
     this->PWMInitial();
-
-    GpioInterruptHandler interruptHandler(17);
-    QObject::connect(&interruptHandler, &GpioInterruptHandler::interruptOccurred, []() {
-        qDebug() << "MPU6050 interrupt occurs and data can be read";
-
-    });
+    this->InitialMPU650();
 }
 
 MainWindow::~MainWindow()
@@ -28,15 +23,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QByteArray MainWindow::readMPU6050Data()
-{
-
-}
-
 void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
-    emit sig_TCPBroadCastMessage("Hello from Raspberry Pi");
+//    emit sig_TCPBroadCastMessage("Hello from Raspberry Pi");
+    readSensorData();
 }
 
 
@@ -67,6 +58,25 @@ void MainWindow::Initial_GPIO()
     gpioSetMode(17, PI_INPUT);
     gpioSetPullUpDown(17, PI_PUD_UP);
 
+}
+
+void MainWindow::InitialMPU650()
+{
+    device = new I2C_Device(0x68, this);
+    mpu = new MPU6050(this);
+    if(!mpu->initialize(device)){
+        qDebug() << "MPU6050 initialization failed!";
+    } else {
+        qDebug() << "MPU6050 initialized successfully.";
+    }
+}
+
+void MainWindow::readSensorData()
+{
+    float ax, ay, az, gx, gy, gz;
+    mpu->readAllSensors(ax, ay, az, gx, gy, gz);
+    qDebug() << "Acceleration:" << ax << ay << az;
+    qDebug() << "Gyroscope:" << gx << gy << gz;
 }
 
 void MainWindow::TCP_ServerStart()

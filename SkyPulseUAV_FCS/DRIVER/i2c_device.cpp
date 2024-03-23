@@ -29,6 +29,7 @@ bool I2C_Device::initialize()
         qDebug() << "Failed to open I2C device." << deviceAddress;
         return false;
     }
+    qDebug() << "I2C device opened " << deviceAddress;
     return true;
 }
 

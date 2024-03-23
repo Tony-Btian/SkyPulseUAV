@@ -18,7 +18,6 @@
 #include "threadpool.h"
 #include "databasemanager.h"
 #include "sensorreader.h"
-#include "gpiointerrupthandler.h"
 
 
 #define HMC5883l_DEVICE_ADDR 0x0D
@@ -36,7 +35,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void prepareForQuit();
-    QByteArray readMPU6050Data();
+    void readSensorData();
+
 
 private slots:
     void on_pushButton_BMP_clicked();
@@ -53,7 +53,7 @@ private:
     TCP *TCPServer;
 
     /* Sensors */
-    Magnetometer_GY271 *MagnetoMeter;
+    MPU6050 *mpu;
     Barometer_BMP180 *BaroMeter;
 
     /* Driver */
@@ -61,6 +61,7 @@ private:
     ESC_PWM_Driver *PWMDriver;
 
     void Initial_GPIO();
+    void InitialMPU650();
     void TCP_ServerStart();
     void PWMInitial();
 

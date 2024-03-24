@@ -13,11 +13,18 @@ MainWindow::MainWindow(QWidget *parent)
     this->TCP_ServerStart();
     this->PWMInitial();
     this->InitialMPU650();
+
+    GpioInterruptHandler gpioInterruptHandler;
+    connect(&gpioInterruptHandler, &GpioInterruptHandler::interruptOccurred, []() {
+        qDebug() << "MPU6050 data ready interrupt occurred!";
+    });
 }
 
 MainWindow::~MainWindow()
 {
     // Release of dynamically allocated resources
+    delete mpu;
+    delete device;
     delete TCPServer;
     gpioTerminate();
     delete ui;
@@ -54,10 +61,6 @@ void MainWindow::Initial_GPIO()
         ui->textBrowser_Main->append("Pigpio initialized successfully.");
         break; // Successful initialization, jump out of the loop
     }
-
-    gpioSetMode(17, PI_INPUT);
-    gpioSetPullUpDown(17, PI_PUD_UP);
-
 }
 
 void MainWindow::InitialMPU650()

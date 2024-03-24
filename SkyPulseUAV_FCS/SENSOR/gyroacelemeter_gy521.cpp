@@ -7,7 +7,7 @@ bool MPU6050::initialize(I2C_Device *i2cDevice) {
     this->i2cDevice = i2cDevice;
     if(!writeByte(PWR_MGMT_1, 0x00)) return false;   // Wake up the device by writing 0 to the power management register.
     if(!writeByte(INT_ENABLE, 0x01)) return false;   // Enable Data Ready interrupt
-    if(!writeByte(INT_PIN_CFG, 0x10)) return false;  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
+    if(!writeByte(INT_PIN_CFG, 0x30)) return false;  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
     return true;
 }
 

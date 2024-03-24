@@ -18,7 +18,7 @@
 #include "threadpool.h"
 #include "databasemanager.h"
 #include "sensorreader.h"
-
+#include "gpiointerrupthandler.h"
 
 #define HMC5883l_DEVICE_ADDR 0x0D
 

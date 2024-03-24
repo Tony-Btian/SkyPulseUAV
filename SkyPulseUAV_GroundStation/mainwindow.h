@@ -69,6 +69,8 @@ private slots:
     void on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle);
     void on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle);
 
+    void on_toolButton_REG_READ_ALL_clicked();
+
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 
@@ -79,7 +81,7 @@ signals:
     void sig_StopUDPServer();
     void sig_Mahony_PlottingStart();
     void sig_Mahony_PlottingStop();
-    void sig_sendMessageToTCP(const int &code, const int &value);
+    void sig_sendMessageToTCP(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
 
 };
 #endif // MAINWINDOW_H

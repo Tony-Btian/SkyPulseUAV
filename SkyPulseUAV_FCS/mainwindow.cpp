@@ -13,11 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->TCP_ServerStart();
     this->PWMInitial();
     this->InitialMPU650();
-
-    GpioInterruptHandler gpioInterruptHandler;
-    connect(&gpioInterruptHandler, &GpioInterruptHandler::interruptOccurred, []() {
-        qDebug() << "MPU6050 data ready interrupt occurred!";
-    });
 }
 
 MainWindow::~MainWindow()

@@ -4,7 +4,7 @@
 #include <QDebug>
 
 GpioInterruptHandler::GpioInterruptHandler(QObject *parent) : QObject(parent) {
-    startListening();
+
 }
 
 GpioInterruptHandler::~GpioInterruptHandler() {

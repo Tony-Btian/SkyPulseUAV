@@ -74,25 +74,27 @@ void TCP::onReadyRead()
 
 void TCP::dataTranslator(const QByteArray &data)
 {
-    QDataStream stream(data);
-    stream.setByteOrder(QDataStream::LittleEndian);
-    int firstInt, secondInt;
+    qDebug() << data.toHex();
 
-    // Make sure there is enough data in the stream to read two integers.
-    if (stream.atEnd()) {
-        qDebug() << "Error: Not enough data to read the first integer.";
-        return;
-    }
-    stream >> firstInt; // Read the first integer from the data stream
+//    QDataStream stream(data);
+//    stream.setByteOrder(QDataStream::LittleEndian);
+//    int firstInt, secondInt;
 
-    if (stream.atEnd()) {
-        qDebug() << "Error: Not enough data to read the second integer.";
-        return;
-    }
-    stream >> secondInt; // Read the second integer from the stream
+//    // Make sure there is enough data in the stream to read two integers.
+//    if (stream.atEnd()) {
+//        qDebug() << "Error: Not enough data to read the first integer.";
+//        return;
+//    }
+//    stream >> firstInt; // Read the first integer from the data stream
 
-    qDebug() << "First integer: " << firstInt;
-    qDebug() << "Second integer: " << secondInt;
-    emit sig_sendPWMSignal(firstInt, secondInt);
+//    if (stream.atEnd()) {
+//        qDebug() << "Error: Not enough data to read the second integer.";
+//        return;
+//    }
+//    stream >> secondInt; // Read the second integer from the stream
+
+//    qDebug() << "First integer: " << firstInt;
+//    qDebug() << "Second integer: " << secondInt;
+//    emit sig_sendPWMSignal(firstInt, secondInt);
 }
 

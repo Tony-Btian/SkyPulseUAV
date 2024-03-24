@@ -19,7 +19,7 @@ private:
     bool writeByte(uint8_t reg, uint8_t value);
     bool readBytes(uint8_t reg, uint8_t *buffer, size_t length);
 
-    static constexpr uint8_t PWR_MGMT_1 = 0x68;
+    static constexpr uint8_t PWR_MGMT_1 = 0x6B;
     static constexpr uint8_t ACCEL_XOUT_H = 0x3B;
     static constexpr uint8_t GYRO_XOUT_H = 0x43;
     static constexpr uint8_t INT_ENABLE = 0x38;  // Interrupt Enable Register

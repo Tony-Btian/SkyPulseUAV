@@ -28,6 +28,7 @@ BMP180::BMP180(float localAltitude) :
 void BMP180::BMP180ReadEEPROM(char* eeprom) {
 
     char eepromAddr = 0xAA;
+	
     iicBMP180.read(eeprom, 22, eepromAddr);
 
 }
@@ -61,8 +62,6 @@ float BMP180::getData() {
 }
 
 void BMP180::BMP180ReadTempAndPres() {
-
-	//cout << "running" << endl;
 
     char err;
 	char regAddr = 0xF6;  // Multiplex reg for both temperature and pressure.

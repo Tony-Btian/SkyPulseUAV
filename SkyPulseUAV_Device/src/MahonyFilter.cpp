@@ -105,19 +105,25 @@ void MahonyFilter::setCallbackB(CallbackFunction callback) {
 // When new angles are ready, triggering callback functions.
 std::array<float, 3> MahonyFilter::getAngleTest() {
 
+	float rate[3] = {0};
+
 	roll.store(atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f);
 	pitch.store(asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f);
 	yaw.store(atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f);
 
+	rate[0] = gx_out.load();
+	rate[1] = gy_out.load();
+	rate[2] = gz_out.load();
+
 	if(callbackA_) {
 
-		callbackA_(roll.load(), pitch.load(), yaw.load());
+		callbackA_(roll.load(), pitch.load(), yaw.load(), rate);
 
 	}
 
 	if(callbackB_) {
 
-		callbackB_(roll.load(), pitch.load(), yaw.load());
+		callbackB_(roll.load(), pitch.load(), yaw.load(), rate);
 
 	}
 

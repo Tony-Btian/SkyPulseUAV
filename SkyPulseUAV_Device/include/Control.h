@@ -1,6 +1,8 @@
 #ifndef __CONTROL_H__
 #define __CONTROL_H__
 
+#include <functional>
+
 #include "CppThread.hpp"
 
 #define defaultSampleFreq 100.0f
@@ -9,6 +11,12 @@
 #define YAW 2
 
 #define ITERM_MAX 1500.0f
+
+// Define maximum roll and pitch angles (in degrees)
+const float MAX_ROLL_ANGLE = 45.0f;
+const float MAX_PITCH_ANGLE = 45.0f;
+
+using namespace std;
 
 class ControlThread : public CppThread {
 
@@ -22,16 +30,22 @@ class Control {
 
 public:
 
+    using CallbackFunction = function<void(int[4])>;
+
     Control();
 
     Control(float sampleFreq);
 
     void getControlOuput(int motorDutyCycle[4]);
 
-    void updateRef(float angle[3], float alt);
+    void readRef(float angle[3], float alt);
 
-    void readRateAndAngle(float rate[3], float angle[3], float alt);
+    void readCur(float rate[3], float angle[3], float alt);
 
+    // If mode is true, manned mode is enabled. Else, automatic mode is enabled.
+    void setMode(bool mode);
+
+    void setCallback ();
 
 protected:
 
@@ -45,6 +59,10 @@ protected:
 
 
 private:
+
+    CallbackFunction callback_;
+
+    bool mode;
 
     float desireAlt;
 

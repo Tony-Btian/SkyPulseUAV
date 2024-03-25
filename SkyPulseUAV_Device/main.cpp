@@ -36,24 +36,27 @@ int main(int argc, const char* argv[]) {
     BMP180 bmp180;
 
     // Create threads.
+    // Data threads: MPU6050, BMP180.
     MPU6050Thread mpu6050Thread(mpu6050);
     BMP180Thread bmp180Thread(bmp180);
     
+    // Filter thread: Mahony filter.
     MahonyFilterThread filterThread(Mahonyfilter, mpu6050);
     
+    // Communication thread: TCP.
     TCPThread tcpThread(Mahonyfilter, tcp, bmp180);
 
     cout << "Initialize finished." << endl;
 
     mpu6050Thread.start();
     filterThread.start();
-    //tcpThread.start();
-    //bmp180Thread.start();
+    tcpThread.start();
+    bmp180Thread.start();
 
     mpu6050Thread.join();
-    //tcpThread.join();
+    tcpThread.join();
     filterThread.join();
-    //bmp180Thread.join();
+    bmp180Thread.join();
 
     return 0;
 }

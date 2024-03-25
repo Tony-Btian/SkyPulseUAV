@@ -1,9 +1,6 @@
 #include "TCP.h"
 #include "MahonyFilter.h"
 
-using namespace std;
-using namespace std::chrono;
-
 // test
 // void TCPThread::run() {
 
@@ -19,8 +16,16 @@ using namespace std::chrono;
 
 void TCPThread::run() {
 
-    MahonyFilterIns.setCallbackA([this](float roll, float pitch, float yaw){
+    MahonyFilterIns.setCallbackA([this](float roll, float pitch, float yaw, float rate[3]){
+
+        TCPIns.readDataFromFilter(roll, pitch, yaw, rate);
         
+    });
+
+    BMP180Ins.setCallbackA([this](float alt){
+
+        TCPIns.readDataFromBMP180(alt);
+
     });
 
     for(;;) {

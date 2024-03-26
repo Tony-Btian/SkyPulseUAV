@@ -9,16 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
-    // Class Materialisation
-    IMU = new MPU6050(this);  // MPU6050
-    TCPServer = new TCP();  // TCP Server
-    PWMDriver = new ESC_PWM_Driver(this);  // PWM Driver
-
-    connect(this,       &MainWindow::sig_TCPStartServer,        TCPServer,  &TCP::startServer);
-    connect(this,       &MainWindow::sig_TCPBroadCastMessage,   TCPServer,  &TCP::broadcastMessage);
-    connect(TCPServer,  &TCP::sig_sendPWMSignal,                PWMDriver,  &ESC_PWM_Driver::setPwmSignal);
-    connect(TCPServer,  &TCP::sig_MPU6050ReadAll,               IMU,        &MPU6050::readAllMPU6050Reg);
-
     // Initial GPIO
     while(true){
         if (gpioInitialise() < 0) {
@@ -32,24 +22,33 @@ MainWindow::MainWindow(QWidget *parent)
         break; // Successful initialization, jump out of the loop
     }
 
-    device = new I2C_Device(0x68, this);
-    if(!IMU->initialize(device)){
-        qDebug() << "MPU6050 initialization failed!";
-    } else {
-        qDebug() << "MPU6050 initialized successfully.";
-    }
+    // Class Materialisation
+    IMU = new MPU6050(0x68, this);  // MPU6050
+    TCPServer = new TCP();  // TCP Server
+    PWMDriver = new ESC_PWM_Driver(this);  // PWM Driver
+    GpioInterruptHandler *interruptHandler = new GpioInterruptHandler(17, this);
+
+    connect(interruptHandler,   &GpioInterruptHandler::interruptOccurred,   this,       &MainWindow::handleInterrupt);
+    connect(this,               &MainWindow::sig_TCPStartServer,            TCPServer,  &TCP::startServer);
+    connect(this,               &MainWindow::sig_TCPBroadCastMessage,       TCPServer,  &TCP::broadcastMessage);
+    connect(TCPServer,          &TCP::sig_sendPWMSignal,                    PWMDriver,  &ESC_PWM_Driver::setPwmSignal);
+    connect(TCPServer,          &TCP::sig_MPU6050ReadAll,                   IMU,        &MPU6050::readAllMPU6050Reg);
 
     emit sig_TCPStartServer(12345);  // Listening on port 12345
+
+    gpioSetMode(18, PI_OUTPUT);
+    gpioHardwarePWM(18, 800, 300000);
+
 }
 
 MainWindow::~MainWindow()
 {
     // Release of dynamically allocated resources
     delete IMU;
-    delete device;
     delete TCPServer;
-    gpioTerminate();
+    delete PWMDriver;
     delete ui;
+    gpioTerminate();
 }
 
 void MainWindow::on_pushButton_BMP_clicked()
@@ -75,4 +74,9 @@ void MainWindow::readSensorData()
     IMU->readAllSensors(ax, ay, az, gx, gy, gz);
     qDebug() << "Acceleration:" << ax << ay << az;
     qDebug() << "Gyroscope:" << gx << gy << gz;
+}
+
+void MainWindow::handleInterrupt()
+{
+    qDebug() << "Interrupt happend";
 }

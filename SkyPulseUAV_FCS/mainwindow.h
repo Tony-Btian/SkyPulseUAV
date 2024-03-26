@@ -37,6 +37,9 @@ public:
     void prepareForQuit();
     void readSensorData();
 
+public slots:
+    void handleInterrupt();
+
 
 private slots:
     void on_pushButton_BMP_clicked();

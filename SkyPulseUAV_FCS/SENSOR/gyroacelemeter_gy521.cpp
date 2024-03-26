@@ -1,17 +1,25 @@
 #include "gyroacelemeter_gy521.h"
 #include <QDebug>
 
-MPU6050::MPU6050(QObject *parent) : QObject(parent), i2cDevice(nullptr)
+MPU6050::MPU6050(uint8_t i2cAddress, QObject *parent)
+    : QObject(parent), i2cDevice(nullptr)
 {
+    this->i2cDevice = new I2C_Device(i2cAddress, this);  // Create an instance os I2C_Device using the provided I2C address
+    if(!this->i2cDevice){
+        qDebug() << "Failed to create I2C device for MPU6050";
+        return;
+    }
 
-}
-
-bool MPU6050::initialize(I2C_Device *i2cDevice) {
-    this->i2cDevice = i2cDevice;
-    if(!writeByte(PWR_MGMT_1, 0x00)) return false;   // Wake up the device by writing 0 to the power management register.
-    if(!writeByte(INT_ENABLE, 0x01)) return false;   // Enable Data Ready interrupt
-    if(!writeByte(INT_PIN_CFG, 0x30)) return false;  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
-    return true;
+    // Write to registers to initialise the sensor
+    if(!writeByte(PWR_MGMT_1, 0x00)){  // Wake up the device by writing 0 to the power management register.
+        qDebug() << "MPU6050 wake up failed.";
+    }
+    if(!writeByte(INT_ENABLE, 0x01)){  // Enable Data Ready interrupt
+        qDebug() << "MPU6050 enable interrupt failed";
+    }
+    if(!writeByte(INT_PIN_CFG, 0x30)){  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
+        qDebug() << "MPU6050 configure interrupt pin failed";
+    }
 }
 
 void MPU6050::readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz) {

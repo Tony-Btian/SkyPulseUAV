@@ -87,6 +87,7 @@ void TCP::dataTranslator(const QByteArray &data)
 
             break;
         case 0x03:
+            qDebug() << "TCP Thread ID :" << QThread::currentThreadId();
             emit sig_MPU6050ReadAll();
             break;
         default:
@@ -97,25 +98,25 @@ void TCP::dataTranslator(const QByteArray &data)
         qDebug() << "1" << data.toHex();
     }
 
-//    QDataStream stream(data);
-//    stream.setByteOrder(QDataStream::LittleEndian);
-//    int firstInt, secondInt;
+    QDataStream stream(data);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    int firstInt, secondInt;
 
-//    // Make sure there is enough data in the stream to read two integers.
-//    if (stream.atEnd()) {
-//        qDebug() << "Error: Not enough data to read the first integer.";
-//        return;
-//    }
-//    stream >> firstInt; // Read the first integer from the data stream
+    // Make sure there is enough data in the stream to read two integers.
+    if (stream.atEnd()) {
+        qDebug() << "Error: Not enough data to read the first integer.";
+        return;
+    }
+    stream >> firstInt; // Read the first integer from the data stream
 
-//    if (stream.atEnd()) {
-//        qDebug() << "Error: Not enough data to read the second integer.";
-//        return;
-//    }
-//    stream >> secondInt; // Read the second integer from the stream
+    if (stream.atEnd()) {
+        qDebug() << "Error: Not enough data to read the second integer.";
+        return;
+    }
+    stream >> secondInt; // Read the second integer from the stream
 
-//    qDebug() << "First integer: " << firstInt;
-//    qDebug() << "Second integer: " << secondInt;
-//    emit sig_sendPWMSignal(firstInt, secondInt);
+    qDebug() << "First integer: " << firstInt;
+    qDebug() << "Second integer: " << secondInt;
+    emit sig_sendPWMSignal(firstInt, secondInt);
 }
 

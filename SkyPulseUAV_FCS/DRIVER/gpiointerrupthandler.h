@@ -8,11 +8,16 @@
 
 class GpioInterruptHandler : public QObject {
     Q_OBJECT
+
 public:
-    explicit GpioInterruptHandler(QObject *parent = nullptr);
+    explicit GpioInterruptHandler(int pin, QObject *parent = nullptr);
     ~GpioInterruptHandler();
-    void startListening();
-    static void gpioInterruptCallback(int gpio, int level, uint32_t tick, void* userData);
+
+    void initializeGpio();
+
+private:
+    int gpioPin;
+    static void gpioCallback(int pin, int level, uint32_t tick, void *user);
 
 signals:
     void interruptOccurred();

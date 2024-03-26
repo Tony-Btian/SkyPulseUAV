@@ -10,8 +10,7 @@ class MPU6050 : public QObject
     Q_OBJECT
 
 public:
-    explicit MPU6050 (QObject *parent = nullptr);
-    bool initialize(I2C_Device *i2cDevice);
+    explicit MPU6050 (uint8_t i2cAddress = 0x68, QObject *parent = nullptr);
     void readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 
 public slots:
@@ -27,9 +26,8 @@ private:
     static constexpr uint8_t GYRO_XOUT_H = 0x43;
     static constexpr uint8_t INT_ENABLE = 0x38;  // Interrupt Enable Register
     static constexpr uint8_t INT_PIN_CFG = 0x37;  // Interrupt Pin/Bypass Enable Configuration Register
-    static constexpr float ACCEL_FS_SEL_2G = 16384.0;
-    static constexpr float GYRO_FS_SEL_250DEG = 131.0;
-
+    static constexpr float   ACCEL_FS_SEL_2G = 16384.0;
+    static constexpr float   GYRO_FS_SEL_250DEG = 131.0;
 };
 
 #endif // GYROACELEMETER_GY521_H

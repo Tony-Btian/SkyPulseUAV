@@ -14,6 +14,9 @@ public:
     bool initialize(I2C_Device *i2cDevice);
     void readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 
+public slots:
+    void readAllMPU6050Reg();
+
 private:
     I2C_Device *i2cDevice;
     bool writeByte(uint8_t reg, uint8_t value);

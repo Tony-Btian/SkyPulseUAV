@@ -74,7 +74,28 @@ void TCP::onReadyRead()
 
 void TCP::dataTranslator(const QByteArray &data)
 {
-    qDebug() << data.toHex();
+    if(data.at(0) == 0x00){
+        qDebug() << "0:" << data.toHex();
+        switch (data.at(1)) {
+        case 0x00:
+
+            break;
+        case 0x01:
+
+            break;
+        case 0x02:
+
+            break;
+        case 0x03:
+            emit sig_MPU6050ReadAll();
+            break;
+        default:
+            break;
+        }
+    }
+    else if(data.at(0) == 0x01){
+        qDebug() << "1" << data.toHex();
+    }
 
 //    QDataStream stream(data);
 //    stream.setByteOrder(QDataStream::LittleEndian);

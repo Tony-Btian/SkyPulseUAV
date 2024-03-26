@@ -53,17 +53,12 @@ private:
     TCP *TCPServer;
 
     /* Sensors */
-    MPU6050 *mpu;
+    MPU6050 *IMU;
     Barometer_BMP180 *BaroMeter;
 
     /* Driver */
     I2C_Device *device;
     ESC_PWM_Driver *PWMDriver;
-
-    void Initial_GPIO();
-    void InitialMPU650();
-    void TCP_ServerStart();
-    void PWMInitial();
 
 protected:
     void closeEvent(QCloseEvent *event) override;

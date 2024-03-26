@@ -33,6 +33,7 @@ private:
 
 signals:
     void sig_sendPWMSignal(const int &gpio_pin, const int &duty_cycle);
+    void sig_MPU6050ReadAll();
 };
 
 #endif // TCP_H

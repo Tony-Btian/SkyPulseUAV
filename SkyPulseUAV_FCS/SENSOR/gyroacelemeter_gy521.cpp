@@ -1,4 +1,5 @@
 #include "gyroacelemeter_gy521.h"
+#include <QDebug>
 
 MPU6050::MPU6050(QObject *parent) : QObject(parent), i2cDevice(nullptr)
 {
@@ -37,4 +38,9 @@ bool MPU6050::readBytes(uint8_t reg, uint8_t *buffer, size_t length) {
         return true;
     }
     return false;
+}
+
+void MPU6050::readAllMPU6050Reg()
+{
+    qDebug() << "Read all reg action!";
 }

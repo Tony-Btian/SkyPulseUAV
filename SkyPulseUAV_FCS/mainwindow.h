@@ -63,7 +63,8 @@ private:
 
     /* Sensors */
     MPU6050 *IMU;
-    Barometer_BMP180 *BaroMeter;
+    Barometer_BMP180 *BMP180;
+    Magnetometer_GY271 *GY271;
 
     /* Driver */
     I2C_Device *device;
@@ -78,6 +79,6 @@ signals:
     void sig_TCPBroadCastMessage(const QByteArray &message);
     void sig_readPressure();
     void sig_readTemperature();
-
+    void sig_readDirection();
 };
 #endif // MAINWINDOW_H

@@ -8,9 +8,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->textBrowser_Main->append("=============================");
 
     PWMDriver = new ESC_PWM_Driver(this);  // PWM Driver
-    gpiointerrupt = new GpioInterruptHandler();
+//    gpiointerrupt = new GpioInterruptHandler();
     addObserver(PWMDriver);  // Registered Observers
-    addObserver(gpiointerrupt);
+//    addObserver(gpiointerrupt);
 
     // Initial GPIO
     while(true){
@@ -25,14 +25,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
 
     // Class Materialisation
-    IMU = new MPU6050(0x68, this);  // MPU6050
+    IMU = new MPU6050(0x68, this);              // MPU6050
+    BMP180 = new Barometer_BMP180(0x77, this);  // BMP180
+    GY271 = new Magnetometer_GY271(0x0D, this); // GY271
     TCPServer = new TCP();  // TCP Server
 
     connect(this, &MainWindow::sig_TCPStartServer, TCPServer, &TCP::startServer);
     connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
+    connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
+    connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
     connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
     connect(TCPServer, &TCP::sig_MPU6050ReadAll, IMU, &MPU6050::readAllMPU6050Reg);
-    connect(gpiointerrupt, &GpioInterruptHandler::mpu6050Interrupt, this, &MainWindow::callBackTest);
 
     emit sig_TCPStartServer(12345);  // Listening on port 12345
 }
@@ -41,10 +44,12 @@ MainWindow::~MainWindow()
 {
     qDebug() << "End!";
     // Release of dynamically allocated resources
-    delete gpiointerrupt;
+//    delete gpiointerrupt;
     delete PWMDriver;
     delete TCPServer;
     delete IMU;
+    delete BMP180;
+    delete GY271;
     gpioTerminate();
     delete ui;
 }
@@ -54,7 +59,8 @@ void MainWindow::on_pushButton_BMP_clicked()
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
 //    emit sig_TCPBroadCastMessage("Hello from Raspberry Pi");
     readSensorData();
-
+    emit sig_readTemperature();
+    emit sig_readDirection();
 //    int level = gpioRead(17);
 //    if (level == PI_HIGH) {
 //        qDebug()<<"GPIO is HIGH\n";

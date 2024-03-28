@@ -52,11 +52,26 @@ void GpioInterruptHandler::deinitializeGpio()
 void GpioInterruptHandler::gpioInterruptCallback(int gpio, int level, uint32_t tick, void *user)
 {
     Q_UNUSED(gpio)
-    Q_UNUSED(level)
     Q_UNUSED(tick)
-    qDebug() << "Call Back Thread: " << QThread::currentThreadId();
+
     auto *handler = static_cast<GpioInterruptHandler *>(user);
-    if (handler) {
-        emit handler->mpu6050Interrupt(); // transmitting signal
+    if(!handler){
+        return;
     }
+
+    bool currentState = (level == 1);
+    if(currentState != handler->lastState){
+        // The de-jittering threshold is reached and is considered to be a valid state change
+        handler->debounceCounter++;
+        if(handler->debounceCounter >= handler->debounceThreshold){
+            qDebug() << "Debounced GPIO state change detected";
+            handler->debounceCounter = 0;  // Reset counter
+            emit handler->mpu6050Interrupt();  // Send signal
+        }
+    }
+    else{
+        handler->debounceCounter = 0;
+    }
+
+    handler->lastState = currentState;  // Update to last state
 }

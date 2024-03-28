@@ -14,8 +14,9 @@ public:
 
     bool initialize();
     QByteArray readBytes(quint8 registerAddress, quint8 count);
+    bool readByte(quint8 reg, quint8 &value);
     bool writeBytes(quint8 registerAddress, const QByteArray &data);
-
+    bool writeByte(quint8 reg, quint8 value);
 
 private:
     int deviceAddress;

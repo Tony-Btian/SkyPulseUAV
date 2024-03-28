@@ -62,3 +62,24 @@ bool I2C_Device::writeBytes(quint8 registerAddress, const QByteArray &data)
         return false;
     }
 }
+
+bool I2C_Device::writeByte(quint8 reg, quint8 value)
+{
+    QMutexLocker locker(&mutex);
+    int result = i2cWriteByteData(handle, reg, value);
+    if(result >= 0){
+        return true;
+    }
+    return false;
+}
+
+bool I2C_Device::readByte(quint8 reg, quint8 &value)
+{
+    QMutexLocker locker(&mutex);
+    int result = i2cReadByteData(handle, reg);
+    if(result >= 0){
+        value = result;
+        return true;
+    }
+    return false;
+}

@@ -8,17 +8,24 @@
 #include <QDebug>
 #include <pigpio.h>
 
+/*Driver Head Files*/
+#include "gpiointerrupthandler.h"
+#include "esc_pwm_driver.h"
 #include "i2c_device.h"
+
+/*Middlewares Head Files*/
+#include "sensorreader.h"
 #include "tcp.h"
 
-#include "barometer_bmp180.h"
-#include "magnetometer_gy271.h"
+/*Sensor Head Files*/
 #include "gyroacelemeter_gy521.h"
-#include "esc_pwm_driver.h"
-#include "threadpool.h"
+#include "magnetometer_gy271.h"
+#include "barometer_bmp180.h"
+
+/*Tools Head Files*/
 #include "databasemanager.h"
-#include "sensorreader.h"
-#include "gpiointerrupthandler.h"
+#include "threadpool.h"
+#include "observable.h"
 
 #define HMC5883l_DEVICE_ADDR 0x0D
 
@@ -38,7 +45,6 @@ public:
     void readSensorData();
 
 public slots:
-    void handleInterrupt();
 
 
 private slots:
@@ -62,6 +68,9 @@ private:
     /* Driver */
     I2C_Device *device;
     ESC_PWM_Driver *PWMDriver;
+    GpioInterruptHandler *gpiointerrupt;
+
+    static bool isInitialised;
 
 protected:
     void closeEvent(QCloseEvent *event) override;

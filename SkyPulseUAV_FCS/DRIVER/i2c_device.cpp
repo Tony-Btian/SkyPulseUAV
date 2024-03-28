@@ -26,10 +26,10 @@ bool I2C_Device::initialize()
     QMutexLocker locker(&mutex);
     handle = i2cOpen(1, deviceAddress, 0);
     if (handle < 0) {
-        qDebug() << "Failed to open I2C device." << deviceAddress;
+//        qDebug() << "Failed to open I2C device." << deviceAddress;
         return false;
     }
-    qDebug() << "I2C device opened " << deviceAddress;
+//    qDebug() << "I2C device opened " << deviceAddress;
     return true;
 }
 

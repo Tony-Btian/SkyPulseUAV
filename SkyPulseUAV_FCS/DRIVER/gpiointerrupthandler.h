@@ -13,14 +13,14 @@ public:
     explicit GpioInterruptHandler(int pin, QObject *parent = nullptr);
     ~GpioInterruptHandler();
 
-    void initializeGpio();
+    bool initializeGpio();
+    void deinitializeGpio();
 
 private:
-    int gpioPin;
-    static void gpioCallback(int pin, int level, uint32_t tick, void *user);
+    static void gpioInterruptCallback(int gpio, int level, uint32_t tick, void *user);
 
 signals:
-    void interruptOccurred();
+    void mpu6050Interrupt();
 };
 
 #endif // GPIOINTERRUPTHANDLER_H

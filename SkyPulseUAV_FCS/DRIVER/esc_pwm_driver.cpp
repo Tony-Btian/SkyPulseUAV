@@ -9,7 +9,7 @@ ESC_PWM_Driver::ESC_PWM_Driver(QObject *parent)
 
 void ESC_PWM_Driver::initial()
 {
-    qDebug() << "PWM Driver Working!";
+//    qDebug() << "PWM Driver Working!";
     if (gpioInitialise() < 0) {
         //
         qWarning("Failed to initialize pigpio library");

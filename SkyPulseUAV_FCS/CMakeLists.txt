@@ -37,6 +37,8 @@ set(PROJECT_SOURCES
     DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
     MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
     DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
+    TOOLS/Observer.h
+    TOOLS/observable.h TOOLS/observable.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

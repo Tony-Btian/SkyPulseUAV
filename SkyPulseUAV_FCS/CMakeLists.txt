@@ -27,17 +27,21 @@ set(PROJECT_SOURCES
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    TOOLS/threadpool.h TOOLS/threadpool.cpp
-    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
+
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
+    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
+    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
+
+    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
+    MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
+
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
     SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
     SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
-    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
-    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
-    MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
-    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
-    TOOLS/Observer.h
+
+    TOOLS/threadpool.h TOOLS/threadpool.cpp
+    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
+    TOOLS/observer.h
     TOOLS/observable.h TOOLS/observable.cpp
 )
 

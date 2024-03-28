@@ -34,7 +34,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public Observable
 {
     Q_OBJECT
 
@@ -45,7 +45,7 @@ public:
     void readSensorData();
 
 public slots:
-
+    void callBackTest();
 
 private slots:
     void on_pushButton_BMP_clicked();
@@ -69,8 +69,6 @@ private:
     I2C_Device *device;
     ESC_PWM_Driver *PWMDriver;
     GpioInterruptHandler *gpiointerrupt;
-
-    static bool isInitialised;
 
 protected:
     void closeEvent(QCloseEvent *event) override;

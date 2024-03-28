@@ -2,7 +2,7 @@
 #define OBSERVABLE_H
 
 #include <list>
-#include "Observer.h"
+#include "observer.h"
 
 class Observable
 {

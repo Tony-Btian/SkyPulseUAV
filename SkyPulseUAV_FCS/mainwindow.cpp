@@ -30,12 +30,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     GY271 = new Magnetometer_GY271(0x0D, this); // GY271
     TCPServer = new TCP();  // TCP Server
 
+    connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
     connect(this, &MainWindow::sig_TCPStartServer, TCPServer, &TCP::startServer);
     connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
     connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
     connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
+
     connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
-    connect(TCPServer, &TCP::sig_MPU6050ReadAll, IMU, &MPU6050::readAllMPU6050Reg);
+
+    /* Read All Register Signal */
+    connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
+
 
     emit sig_TCPStartServer(12345);  // Listening on port 12345
 }
@@ -73,11 +78,13 @@ void MainWindow::on_pushButton_BMP_clicked()
 
 void MainWindow::on_pushButton_HMC_clicked()
 {
-    gpioSetMode(18, PI_OUTPUT);
-    gpioHardwarePWM(18, 100, 300000);
+//    gpioSetMode(18, PI_OUTPUT);
+//    gpioHardwarePWM(18, 100, 300000);
+    emit sig_readAllRegisters_BMP180();
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     QMainWindow::closeEvent(event);
 }
 

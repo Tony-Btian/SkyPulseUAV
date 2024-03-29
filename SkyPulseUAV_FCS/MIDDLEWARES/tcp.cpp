@@ -40,16 +40,6 @@ void TCP::incomingConnection(qintptr socketDescriptor)
     qDebug() << "Client connected:" << client->peerAddress().toString();
 }
 
-void TCP::broadcastMessage(const QByteArray &message)
-{
-    qDebug() << "The TCP Thread ID is:" << QThread::currentThreadId();
-    for(QTcpSocket *client : qAsConst(clients)){
-        if(client->state() == QTcpSocket::ConnectedState){
-            client->write(message);
-        }
-    }
-}
-
 void TCP::onClientDisconnected()
 {
     QTcpSocket *client = qobject_cast<QTcpSocket*>(sender());
@@ -72,6 +62,28 @@ void TCP::onReadyRead()
 
 }
 
+void TCP::broadcastMessage(const QByteArray &message)
+{
+    QMutexLocker locker(&mutex);  // Lock the mutex at the start of a send operation
+    // BroadcastMessage
+    qDebug() << "The TCP Thread ID is:" << QThread::currentThreadId();
+    for(QTcpSocket *client : qAsConst(clients)){
+        if(client->state() == QTcpSocket::ConnectedState){
+            client->write(message);
+        }
+    }
+}
+
+void TCP::sendMessage64Bytes(const QByteArray &datapackage_u64)
+{
+    QByteArray messageToSend = datapackage_u64;
+    // Make sure the message is exactly 64 bytes
+    messageToSend.resize(64);  // If the message is shorter than 64 bytes,
+                               // it will be zero-padded; if it is longer
+                               // than 64 bytes, it will be truncated
+    broadcastMessage(messageToSend);
+}
+
 void TCP::dataTranslator(const QByteArray &data)
 {
     if(data.at(0) == 0x00){
@@ -88,7 +100,6 @@ void TCP::dataTranslator(const QByteArray &data)
             break;
         case 0x03:
             qDebug() << "TCP Thread ID :" << QThread::currentThreadId();
-            emit sig_MPU6050ReadAll();
             break;
         default:
             break;
@@ -119,4 +130,3 @@ void TCP::dataTranslator(const QByteArray &data)
     qDebug() << "Second integer: " << secondInt;
     emit sig_sendPWMSignal(firstInt, secondInt);
 }
-

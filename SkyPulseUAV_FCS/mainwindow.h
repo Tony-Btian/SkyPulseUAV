@@ -77,8 +77,13 @@ protected:
 signals:
     void sig_TCPStartServer(quint16 port_numb);
     void sig_TCPBroadCastMessage(const QByteArray &message);
+
     void sig_readPressure();
     void sig_readTemperature();
     void sig_readDirection();
+
+    // Read All Register to Ground Station.
+    void sig_readAllRegisters_BMP180();
+
 };
 #endif // MAINWINDOW_H

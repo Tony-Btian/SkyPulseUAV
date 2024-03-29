@@ -11,14 +11,14 @@ Barometer_BMP180::Barometer_BMP180(uint8_t i2cAddress, QObject *parent)
     }
 
     if(!readCalibrationData()){
-        emit errorOccurred("Failed to read calibration data from BMP180.");
+        emit sig_errorOccurred("Failed to read calibration data from BMP180.");
     }
 }
 
 void Barometer_BMP180::readPressure()
 {
     if (!i2cDevice) {
-        emit errorOccurred("I2C device is not initialized.");
+        emit sig_errorOccurred("I2C device is not initialized.");
         return;
     }
 
@@ -31,21 +31,21 @@ void Barometer_BMP180::readPressure()
                            static_cast<unsigned char>(rawData[1]) << 8 |
                            static_cast<unsigned char>(rawData[2])) >> (8 /* oversampling_setting */);
         double pressure = calculatePressure(rawPressure);
-        emit pressureRead(pressure);
+        emit sig_pressureRead(pressure);
     } else {
-        emit errorOccurred("Failed to read pressure data from BMP180.");
+        emit sig_errorOccurred("Failed to read pressure data from BMP180.");
     }
 }
 
 void Barometer_BMP180::readTemperature()
 {
     if (!i2cDevice) {
-        emit errorOccurred("I2C device is not initialized.");
+        emit sig_errorOccurred("I2C device is not initialized.");
         return;
     }
     // Write temperature measurement commands to the BMP180
     if(!i2cDevice->writeByte(0xF4, 0x2E)) {
-        emit errorOccurred("Failed to initiate temperature measurement.");
+        emit sig_errorOccurred("Failed to initiate temperature measurement.");
         return;
     }
     // Wait for the conversion to complete, the BMP180 datasheet suggests waiting for at least 4.5ms
@@ -53,7 +53,7 @@ void Barometer_BMP180::readTemperature()
     // Read raw temperature data
     short rawTemp;
     if (!readShortFromRegister(0xF6, rawTemp)) {
-        emit errorOccurred("Failed to read temperature data.");
+        emit sig_errorOccurred("Failed to read temperature data.");
         return;
     }
     // Calculate the actual temperature
@@ -62,7 +62,7 @@ void Barometer_BMP180::readTemperature()
     long b5 = x1 + x2;
     double temperature = (b5 + 8) / 16.0 / 10.0;
 
-    emit temperatureRead(temperature);
+    emit sig_temperatureRead(temperature);
     qDebug() << "BMP180 Temperature: " << temperature;
 }
 
@@ -79,7 +79,7 @@ bool Barometer_BMP180::readCalibrationData()
         !readShortFromRegister(0xB6, b1)  || !readShortFromRegister(0xB8, b2)  ||
         !readShortFromRegister(0xBA, mb)  || !readShortFromRegister(0xBC, mc)  ||
         !readShortFromRegister(0xBE, md)) {
-        emit errorOccurred("Error reading calibration data from BMP180.");
+        emit sig_errorOccurred("Error reading calibration data from BMP180.");
         return false;
     }
     return true;
@@ -97,5 +97,39 @@ bool Barometer_BMP180::readShortFromRegister(uint8_t registerAddress, short &val
 
 double Barometer_BMP180::calculatePressure(int rawPressure) const
 {
+    return 0.00;
+}
 
+void Barometer_BMP180::readAllRegisters()
+{
+    if (!i2cDevice) {
+        emit sig_errorOccurred("I2C device is not initialized.");
+        return;
+    }
+
+    QByteArray data_buffer;
+
+    // Read calibration coefficient register
+    quint8 startReg = 0xAA;
+    quint8 endReg = 0xBF;
+    quint8 count = endReg - startReg + 1;
+    QByteArray data_c = i2cDevice->readBytes(startReg, count);
+    if(!data_c.isEmpty()){
+        data_buffer.append(data_c);
+    }
+    else{
+        emit sig_errorOccurred("Failed to read calibration register");
+        return; // If the read fails, terminate
+    }
+
+    // Read pressure and temperature data registers
+    QByteArray data_d = i2cDevice->readBytes(0xF6, 3); // Read 3 consecutive bytes starting at 0xF6
+    if (!data_d.isEmpty()) {
+        data_buffer.append(data_d);
+        emit sig_allRegistersData(data_buffer);
+    }
+    else {
+        emit sig_errorOccurred("Failed to read measurement data.");
+        return; // If the read fails, terminate
+    }
 }

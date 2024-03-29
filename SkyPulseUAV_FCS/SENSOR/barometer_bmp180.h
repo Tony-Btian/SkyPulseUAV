@@ -16,6 +16,7 @@ public:
 public slots:
     void readPressure();
     void readTemperature();
+    void readAllRegisters();
 
 private:
     I2C_Device* i2cDevice;
@@ -38,9 +39,10 @@ private:
     double calculatePressure(int rawPressure) const;
 
 signals:
-    void temperatureRead(double temperature);
-    void pressureRead(double pressure);
-    void errorOccurred(const QString& message);
+    void sig_temperatureRead(double temperature);
+    void sig_pressureRead(double pressure);
+    void sig_allRegistersData(const QByteArray &data);
+    void sig_errorOccurred(const QString& message);
 };
 
 #endif // BAROMETER_BMP180_H

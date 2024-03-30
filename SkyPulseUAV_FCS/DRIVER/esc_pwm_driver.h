@@ -18,7 +18,7 @@ public:
     void onUpdate(bool isInitialised) override;
 
 public slots:
-    void setPwmSignal(int gpioPin, int dutyCycle);
+    void setPWMSignal(int gpioPin, int dutyCycle);
 
 private:
     void initialPWM();

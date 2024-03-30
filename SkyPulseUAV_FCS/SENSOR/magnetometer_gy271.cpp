@@ -1,43 +1,39 @@
 #include "magnetometer_gy271.h"
-
 #include <QtDebug>
-#include <QtConcurrent>
 
 Magnetometer_GY271::Magnetometer_GY271(uint8_t i2cAddress, QObject *parent)
     : QObject(parent), i2cDevice(nullptr)
 {
     this->i2cDevice = new I2C_Device(i2cAddress, this);
-    if(!this->i2cDevice){
-        qDebug() << "Failed to create I2C device for GY271";
+    if (!this->i2cDevice){
+        qWarning("Failed to create I2C device for GY271");
         return;
     }
-    if(this->initialize()){
-        qDebug() << "GY271 Initialize successful.";
+
+    if (this->initializeGY271()){
+//        qWarning("GY271 Initialize Successful");
     }
     else{
-        qDebug() << "GY271 Initialize failed.";
+        qWarning("GY271 Initialize Failed");
     }
-
 }
 
-bool Magnetometer_GY271::initialize()
+bool Magnetometer_GY271::initializeGY271()
 {
-    if(!i2cDevice) return false;  // Ensure that the device has been initialised
     connect(i2cDevice, &I2C_Device::errorOccurred, this, &Magnetometer_GY271::handleI2CError);
     /*Configuration register*/
     if (!writeByte(0x00, 0x70) // Configure register A for 8 average, 15Hz default, normal measurement
         || !writeByte(0x01, 0xA0) // Configuration Gain
         || !writeByte(0x02, 0x00)) { // Continuous measurement mode
-        emit sig_errorOccurred("Failed to write configuration to Magnetometer GY271.");
+        emit sig_errorOccurred("Failed to write configuration to Magnetometer GY271");
         return false;
     }
     return true;
 }
 
-void Magnetometer_GY271::handleI2CError(QString error)
+bool Magnetometer_GY271::writeByte(uint8_t reg, uint8_t value)
 {
-    qWarning() << "I2C error: " << error;
-    // Put another code her to deal with the handle I2C error
+    return i2cDevice->writeByte(reg, value);
 }
 
 void Magnetometer_GY271::readRawData()
@@ -56,16 +52,14 @@ void Magnetometer_GY271::readRawData()
     }
 }
 
-bool Magnetometer_GY271::writeByte(uint8_t reg, uint8_t value)
-{
-    return i2cDevice->writeByte(reg, value);
-}
-
 int16_t Magnetometer_GY271::convertToRawData(const QByteArray& bytes, int offset)
 {
     int16_t value = static_cast<int16_t>((bytes[offset] << 8) | (bytes[offset + 1] & 0xFF));
     return value;
 }
 
-
-
+void Magnetometer_GY271::handleI2CError(QString error)
+{
+    qWarning() << "I2C error: " << error;
+    // Put another code her to deal with the handle I2C error
+}

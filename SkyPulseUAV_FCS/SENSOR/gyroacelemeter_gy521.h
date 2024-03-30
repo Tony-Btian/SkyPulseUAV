@@ -35,7 +35,7 @@ private:
     static constexpr float   ACCEL_FS_SEL_2G = 16384.0;
     static constexpr float   GYRO_FS_SEL_250DEG = 131.0;
 
-    void configMPU6050();
+    bool initializeMPU6050();
     void applyCalibration(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 };
 

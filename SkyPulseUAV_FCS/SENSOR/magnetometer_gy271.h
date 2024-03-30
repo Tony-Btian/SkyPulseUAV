@@ -12,7 +12,7 @@ class Magnetometer_GY271 : public QObject
 
 public:
     explicit Magnetometer_GY271(uint8_t i2cAddress = 0x0D, QObject *parent = nullptr);
-    bool initialize();
+    bool initializeGY271();
 
 public slots:
     void readRawData();

@@ -35,7 +35,7 @@ bool I2C_Device::initialize()
 
 QByteArray I2C_Device::readBytes(quint8 registerAddress, quint8 count)
 {
-    qDebug() << "I2C Running Thread: " << QThread::currentThreadId();
+//    qDebug() << "I2C Running Thread: " << QThread::currentThreadId();
     QByteArray data(count, 0);  // Automating Memory Management with Qt Containers
     {
         QMutexLocker locker(&mutex);

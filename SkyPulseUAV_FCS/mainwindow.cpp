@@ -31,27 +31,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     TCPServer = new TCP();  // TCP Server
 
     connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
-    connect(this, &MainWindow::sig_TCPStartServer, TCPServer, &TCP::startServer);
-    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
     connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
     connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
 
-    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
+    /* TCP Server Signals */
+    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
+    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPWMSignal);
 
-    /* Read All Register Signal */
+    /* Read All Register Signals */
     connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
 
-
-    emit sig_TCPStartServer(12345);  // Listening on port 12345
 }
 
 MainWindow::~MainWindow()
 {
     qDebug() << "End!";
     // Release of dynamically allocated resources
-//    delete gpiointerrupt;
     delete PWMDriver;
-    delete TCPServer;
     delete IMU;
     delete BMP180;
     delete GY271;

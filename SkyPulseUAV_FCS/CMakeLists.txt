@@ -33,7 +33,8 @@ set(PROJECT_SOURCES
     DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
 
     MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
-    MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
+    MIDDLEWARES/datadecoder.h MIDDLEWARES/datadecoder.cpp
+    MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
 
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
     SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp

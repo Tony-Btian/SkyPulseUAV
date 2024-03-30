@@ -8,13 +8,10 @@ void ESC_PWM_Driver::onUpdate(bool isInitialised)
 {
     qDebug() << "PWM Driver Working!";
     if(isInitialised){
-        qDebug() << "SensorManager: GPIO initialized.";
+        qWarning("SensorManager: PWM GPIO initialized.");
     }
-    else{
-        if (gpioInitialise() < 0) {
-            //
-            qWarning("Failed to initialize pigpio library");
-        }
+    else if (gpioInitialise() < 0) {
+        qWarning("PWM: Failed to initialize pigpio library");
     }
     initialPWM();
 }
@@ -31,10 +28,10 @@ void ESC_PWM_Driver::initialPWM()
     gpioSetPWMfrequency(PWM3, 100);
 }
 
-void ESC_PWM_Driver::setPwmSignal(int gpioPin, int dutyCycle)
+void ESC_PWM_Driver::setPWMSignal(int gpioPin, int dutyCycle)
 {
     // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
-    if(dutyCycle < 0 || dutyCycle > 255) {
+    if((dutyCycle < 0) || (dutyCycle > 255)) {
         qWarning("Invalid duty cycle");
         return;
     }

@@ -14,7 +14,6 @@
 #include "i2c_device.h"
 
 /*Middlewares Head Files*/
-#include "sensorreader.h"
 #include "tcp.h"
 
 /*Sensor Head Files*/
@@ -75,9 +74,7 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 signals:
-    void sig_TCPStartServer(quint16 port_numb);
     void sig_TCPBroadCastMessage(const QByteArray &message);
-
     void sig_readPressure();
     void sig_readTemperature();
     void sig_readDirection();

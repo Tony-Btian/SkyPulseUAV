@@ -3,8 +3,6 @@
 
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QMutexLocker>
-#include <QMutex>
 #include <QTimer>
 #include <QThread>
 
@@ -25,7 +23,7 @@ public:
     ~TCP();
 
 public slots:
-    void startServer(quint16 port);
+    void startServer();
     void broadcastMessage(const QByteArray &message);
     void sendMessage64Bytes(const QByteArray &datapackage_u64);
 
@@ -39,7 +37,7 @@ private slots:
 private:
     QList<QTcpSocket*> clients;
     QThread *TCPThread;
-    QMutex mutex;
+    static constexpr quint16 PORT = 12345;
 
     void dataTranslator(const QByteArray &data);
 

@@ -1,26 +1,30 @@
 #include "tcp.h"
+#include "decodetask.h"
 #include <QHostAddress>
-#include <QThread>
+#include <QThreadPool>
 #include <QDataStream>
 
 TCP::TCP(QObject *parent) : QTcpServer(parent)
 {
     TCPThread = new QThread(this);
+    connect(TCPThread, &QThread::started, this, &TCP::startServer);
+    connect(TCPThread, &QThread::finished, TCPThread, &QObject::deleteLater);
     this->moveToThread(TCPThread);
     TCPThread->start();
 }
 
 TCP::~TCP()
 {
-    TCPThread->quit();
-    TCPThread->wait();
-    TCPThread->deleteLater();
+    if (TCPThread->isRunning()){
+        TCPThread->wait();
+        TCPThread->quit();
+    }
 }
 
-void TCP::startServer(quint16 port)
+void TCP::startServer()
 {
-    if(this->listen(QHostAddress::Any, port)){
-        qDebug() << "TCP Server started on port" << port << "!";
+    if(this->listen(QHostAddress::Any, PORT)){
+//        qDebug() << "TCP Server started on port" << PORT << "!";
     }
     else
     {
@@ -58,13 +62,15 @@ void TCP::onReadyRead()
 
     QByteArray data = clients->readAll();
 //    qDebug() << "Received data from" << clients->peerAddress().toString() << ": " << data;
-    dataTranslator(data);
+    DecodeTask *task = new DecodeTask(data);
+    task->setAutoDelete(true);
+    QThreadPool::globalInstance()->start(task);
 
+    dataTranslator(data);
 }
 
 void TCP::broadcastMessage(const QByteArray &message)
 {
-    QMutexLocker locker(&mutex);  // Lock the mutex at the start of a send operation
     // BroadcastMessage
     qDebug() << "The TCP Thread ID is:" << QThread::currentThreadId();
     for(QTcpSocket *client : qAsConst(clients)){
@@ -109,24 +115,24 @@ void TCP::dataTranslator(const QByteArray &data)
         qDebug() << "1" << data.toHex();
     }
 
-    QDataStream stream(data);
-    stream.setByteOrder(QDataStream::LittleEndian);
-    int firstInt, secondInt;
+//    QDataStream stream(data);
+//    stream.setByteOrder(QDataStream::LittleEndian);
+//    int firstInt, secondInt;
 
-    // Make sure there is enough data in the stream to read two integers.
-    if (stream.atEnd()) {
-        qDebug() << "Error: Not enough data to read the first integer.";
-        return;
-    }
-    stream >> firstInt; // Read the first integer from the data stream
+//    // Make sure there is enough data in the stream to read two integers.
+//    if (stream.atEnd()) {
+//        qDebug() << "Error: Not enough data to read the first integer.";
+//        return;
+//    }
+//    stream >> firstInt; // Read the first integer from the data stream
 
-    if (stream.atEnd()) {
-        qDebug() << "Error: Not enough data to read the second integer.";
-        return;
-    }
-    stream >> secondInt; // Read the second integer from the stream
+//    if (stream.atEnd()) {
+//        qDebug() << "Error: Not enough data to read the second integer.";
+//        return;
+//    }
+//    stream >> secondInt; // Read the second integer from the stream
 
-    qDebug() << "First integer: " << firstInt;
-    qDebug() << "Second integer: " << secondInt;
-    emit sig_sendPWMSignal(firstInt, secondInt);
+//    qDebug() << "First integer: " << firstInt;
+//    qDebug() << "Second integer: " << secondInt;
+//    emit sig_sendPWMSignal(firstInt, secondInt);
 }

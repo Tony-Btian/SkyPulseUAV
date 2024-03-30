@@ -6,7 +6,8 @@ ThreadPool::ThreadPool(std::function<void()> func)
 
 }
 
-void ThreadPool::run() {
+void ThreadPool::run()
+{
     if (taskFunction) {
         taskFunction();
     }

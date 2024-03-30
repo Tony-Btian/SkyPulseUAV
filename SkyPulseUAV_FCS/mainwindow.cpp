@@ -1,99 +1,98 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
-//    DatabaseManager dbManager("config.db");
-//    dbManager.addOrUpdateParam("height", 100.1);
-//    double height = dbManager.getParam("height");
-//    qDebug() << "Height parameter value is: " << height;
-
+    PWMDriver = new ESC_PWM_Driver(this);  // PWM Driver
+//    gpiointerrupt = new GpioInterruptHandler();
+    addObserver(PWMDriver);  // Registered Observers
+//    addObserver(gpiointerrupt);
 
     // Initial GPIO
     while(true){
         if (gpioInitialise() < 0) {
-            qDebug() << "Failed to initialize pigpio. Retrying in 1 second...";
             ui->textBrowser_Main->append("Failed to initialize pigpio. Retrying in 1 second...");
             QThread::sleep(1); // wait for 1 s
             continue; // continue loop
         }
-        qDebug() << "Pigpio initialized successfully.";
         ui->textBrowser_Main->append("Pigpio initialized successfully.");
+        notifyObservers(true);
         break; // Successful initialization, jump out of the loop
     }
 
-//    BaroMeter BMP180
-//    BaroMeter = new Barometer_BMP180();
-//    BMP_Thread = new QThread();
-//    BaroMeter->moveToThread(BMP_Thread);
-//    BMP_Thread->start();
+    // Class Materialisation
+    IMU = new MPU6050(0x68, this);              // MPU6050
+    BMP180 = new Barometer_BMP180(0x77, this);  // BMP180
+    GY271 = new Magnetometer_GY271(0x0D, this); // GY271
+    TCPServer = new TCP();  // TCP Server
 
-//    connect(this, &MainWindow::sig_readPressure, BaroMeter, &Barometer_BMP180::readPressureData);
-//    connect(this, &MainWindow::sig_readTemperature, BaroMeter, &Barometer_BMP180::readTemperatureData);
-//    connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
+    connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
+    connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
+    connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
 
-//    Magnetometer HMC5883L
-//    meg_compass = new MEG_Compass();
+    /* TCP Server Signals */
+    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
+    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPWMSignal);
 
+    /* Read All Register Signals */
+    connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
 
-    // TCP Server
-    TCPServer = new TCP(this);
-    TCPServer->startServer(12345);  // Listening on port 12345
-
-    // PWM Driver
-    PWMDriver = new ESC_PWM_Driver(this);
-    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPwmSignal);
 }
 
 MainWindow::~MainWindow()
 {
-    if(BMP_Thread->isRunning()){
-        BMP_Thread->quit();
-        BMP_Thread->wait();
-    }
-    delete BMP_Thread;
-
+    qDebug() << "End!";
     // Release of dynamically allocated resources
-    delete BaroMeter;
-    delete MagnetoMeter;
-    delete TCPServer;
+    delete PWMDriver;
+    delete IMU;
+    delete BMP180;
+    delete GY271;
     gpioTerminate();
-
     delete ui;
-}
-
-void MainWindow::prepareForQuit() {
-//    if(BaroMeter) {
-//        BaroMeter->readingStop();
-//        BaroMeter->waitForThreadCompletion();
-//    }
 }
 
 void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
-//    emit sig_readPressure();
-//    emit sig_readTemperature();
-    TCPServer->broadcastMessage("Hello from Raspberry Pi");
+//    emit sig_TCPBroadCastMessage("Hello from Raspberry Pi");
+    readSensorData();
+    emit sig_readTemperature();
+    emit sig_readDirection();
+//    int level = gpioRead(17);
+//    if (level == PI_HIGH) {
+//        qDebug()<<"GPIO is HIGH\n";
+//    } else if (level == PI_LOW) {
+//        qDebug()<< "GPIO is LOW\n";
+//    } else {
+//        qDebug()<<"Failed to read GPIO %d\n";
+//    }
 }
-
 
 void MainWindow::on_pushButton_HMC_clicked()
 {
-
+//    gpioSetMode(18, PI_OUTPUT);
+//    gpioHardwarePWM(18, 100, 300000);
+    emit sig_readAllRegisters_BMP180();
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
-//    barometer->readingStop();
-//    barometer->waitForThreadCompletion();
-    prepareForQuit();
-//    BaroMeter->readingStop();
-//    BaroMeter->waitForThreadCompletion();
+void MainWindow::closeEvent(QCloseEvent *event)
+{
     QMainWindow::closeEvent(event);
+}
+
+void MainWindow::readSensorData()
+{
+    float ax, ay, az, gx, gy, gz;
+    IMU->readAllSensors(ax, ay, az, gx, gy, gz);
+    qDebug() << "Acceleration:" << ax << ay << az;
+    qDebug() << "Gyroscope:" << gx << gy << gz;
+}
+
+void MainWindow::callBackTest()
+{
+    qDebug() << "Detected";
 }

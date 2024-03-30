@@ -2,31 +2,41 @@
 #define GYROACELEMETER_GY521_H
 
 #include <QObject>
-#include <QFutureWatcher>
+#include <QThread>
 #include "i2c_device.h"
 
-// MPU6050 I2C Device Address
-#define MPU6050_ADDR 0x68
+class MPU6050 : public QObject
+{
+    Q_OBJECT
 
-// MPU6050 Reg Address
-#define PWR_MGMT_1   0x6B
-#define ACCEL_XOUT_H 0x3B
-#define GYRO_XOUT_H  0x43
+public:
+    explicit MPU6050 (uint8_t i2cAddress = 0x68, QObject *parent = nullptr);
+    void readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
+    void calibrateGyro();
+    void calibrateAccel();
+    bool writeByte(uint8_t reg, uint8_t value);
+    bool readBytes(uint8_t reg, uint8_t *buffer, size_t length);
 
-#define MPU6050_ADDR 0x68
-#define ACCEL_CONFIG 0x1C
-#define GYRO_CONFIG  0x1B
+public slots:
+    void readAllMPU6050Reg();
 
+private:
+    I2C_Device *i2cDevice;
 
-// MPU6050Data Struct Definition
-struct MPU6050Data{
-    float ax, ay, az; // Accelerometer
-    float gx, gy, gz; // Gyroscope
+    // Calibration offsets
+    float gyroOffset[3] = {0, 0, 0};
+    float accelOffset[3] = {0, 0, 0};
+
+    static constexpr uint8_t PWR_MGMT_1 = 0x6B;
+    static constexpr uint8_t ACCEL_XOUT_H = 0x3B;
+    static constexpr uint8_t GYRO_XOUT_H = 0x43;
+    static constexpr uint8_t INT_ENABLE = 0x38;  // Interrupt Enable Register
+    static constexpr uint8_t INT_PIN_CFG = 0x37;  // Interrupt Pin/Bypass Enable Configuration Register
+    static constexpr float   ACCEL_FS_SEL_2G = 16384.0;
+    static constexpr float   GYRO_FS_SEL_250DEG = 131.0;
+
+    bool initializeMPU6050();
+    void applyCalibration(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 };
-
-bool initMPU6050(int handle);
-MPU6050Data readMPU6050Data(int handle);
-int readAccelRange(int handle);
-int readGyroRange(int handle);
 
 #endif // GYROACELEMETER_GY521_H

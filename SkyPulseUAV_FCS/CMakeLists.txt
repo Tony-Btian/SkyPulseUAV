@@ -27,15 +27,23 @@ set(PROJECT_SOURCES
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    TOOLS/threadpool.h TOOLS/threadpool.cpp
-    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
+
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
+    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
+    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
+
+    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
+    MIDDLEWARES/datadecoder.h MIDDLEWARES/datadecoder.cpp
+    MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
+
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
     SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
     SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
-    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
-    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
-    MIDDLEWARES/sensorreader.h MIDDLEWARES/sensorreader.cpp
+
+    TOOLS/threadpool.h TOOLS/threadpool.cpp
+    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
+    TOOLS/observer.h
+    TOOLS/observable.h TOOLS/observable.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

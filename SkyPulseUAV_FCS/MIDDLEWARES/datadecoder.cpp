@@ -7,5 +7,6 @@ DataDecoder::DataDecoder(QObject *parent) : QObject(parent)
 
 void DataDecoder::decodeData(const QByteArray &raw_data)
 {
-
+    QString decodedData;
+    emit dataDecoded(decodedData);
 }

@@ -59,14 +59,11 @@ void TCP::onReadyRead()
     // Any function here
     QTcpSocket *clients = qobject_cast<QTcpSocket*>(sender());
     if(!clients) return;
-
     QByteArray data = clients->readAll();
-//    qDebug() << "Received data from" << clients->peerAddress().toString() << ": " << data;
     DecodeTask *task = new DecodeTask(data);
     task->setAutoDelete(true);
     QThreadPool::globalInstance()->start(task);
-
-    dataTranslator(data);
+//    dataTranslator(data);
 }
 
 void TCP::broadcastMessage(const QByteArray &message)

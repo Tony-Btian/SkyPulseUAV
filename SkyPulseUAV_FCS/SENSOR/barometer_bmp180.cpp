@@ -108,7 +108,7 @@ void Barometer_BMP180::readAllRegisters()
     }
 
     QByteArray data_buffer;
-
+    data_buffer.append(0x15);
     // Read calibration coefficient register
     quint8 startReg = 0xAA;
     quint8 endReg = 0xBF;

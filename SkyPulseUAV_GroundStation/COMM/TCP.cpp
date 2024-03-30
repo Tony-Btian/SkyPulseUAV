@@ -82,8 +82,6 @@ void TCP::readMessage()
     QThreadPool::globalInstance()->start(task);
 }
 
-
-
 void TCP::PWM_Controler(const int &code, const int &value)
 {
     QByteArray data;
@@ -95,7 +93,7 @@ void TCP::PWM_Controler(const int &code, const int &value)
 }
 
 /*TCP 控制信息接收器*/
-void TCP::controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value)
+void TCP::controlMessageSender(const uint8_t &action, const uint8_t &data_length, const uint8_t &value)
 {
     QByteArray message;
     message.append(action);

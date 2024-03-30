@@ -1,9 +1,9 @@
 #include "decodetask.h"
-#include "datahandlerfactory.h"
 #include <QDebug>
 #include <QThread>
+#include "DataHandlerFactory.h"
 
-DecodeTask::DecodeTask(const QByteArray &data, MediatorInterface *mediator) : dataToDecode(data)
+DecodeTask::DecodeTask(const QByteArray &data, MediatorInterface *mediator) : dataToDecode(data), mediator(mediator)
 {
 
 }
@@ -19,11 +19,10 @@ void DecodeTask::run()
     }
     qDebug() << "Decoded data:" << result;
 
-    // 使用DataHandlerFactory根据接收到的数据创建一个DataHandler实例
-    auto handler = DataHandlerFactory::createHandler(dataToDecode, mediator);
+    DataHandler* handler = DataHandlerFactory::createHandler(dataToDecode, mediator);
     if (handler) {
-        // 使用创建的handler处理数据
         handler->handleData(dataToDecode);
+        delete handler; // 记得释放资源
     }
     // emit decodeDataReady(result);
 }

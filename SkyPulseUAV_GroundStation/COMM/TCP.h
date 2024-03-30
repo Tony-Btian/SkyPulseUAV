@@ -1,10 +1,10 @@
 #ifndef TCP_H
 #define TCP_H
 
-#include "MediatorInterface.h"
 #include <QThread>
 #include <QObject>
 #include <QTcpSocket>
+#include "MediatorInterface.h"
 
 #define WRITE 0x01
 #define READ  0x00
@@ -22,7 +22,7 @@ public:
 private:
     QTcpSocket *TCPSocket;
     QThread *TCPThread;
-    MediatorInterface *mediator;
+    MediatorInterface* mediator;
 
     QString dataCheckOut(const QByteArray &data);
 
@@ -31,7 +31,7 @@ public slots:
     void sendMessageQByte(const QByteArray &message);
     void readMessage();
     void PWM_Controler(const int &code, const int &value);
-    void controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
+    void controlMessageSender(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
 
 private slots:
     void tcpInitial();

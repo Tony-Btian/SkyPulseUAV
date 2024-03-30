@@ -1,10 +1,8 @@
 #ifndef CONCRETEMEDIATOR_H
 #define CONCRETEMEDIATOR_H
 
-
 #include "MediatorInterface.h"
 #include <QObject>
-#include <QMetaObject>
 
 class MainWindow; // 前向声明
 

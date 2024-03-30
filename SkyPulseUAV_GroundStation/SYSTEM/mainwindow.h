@@ -10,6 +10,7 @@
 #include "TCP.h"
 #include "UDP.h"
 #include "Mahony_Plot.h"
+#include "MediatorInterface.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,6 +39,8 @@ private:
 
     /*Ploting*/
     Mahony_Plot *MahonyPlotObject;
+
+    MediatorInterface* mediator;  // 中介者成员变量
 
     //! Initial the TCP Server
     void initialBluetoothServer();

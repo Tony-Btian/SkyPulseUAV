@@ -3,7 +3,7 @@
 
 #include <QByteArray>
 
-class DataHandler{
+class DataHandler {
 public:
     virtual ~DataHandler() {}
     virtual void handleData(const QByteArray &data) = 0;

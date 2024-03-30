@@ -2,12 +2,14 @@
 #include "./ui_mainwindow.h"
 #include "concretemediator.h"
 
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     qDebug() << "Main Thread ID: " << QThread::currentThreadId();
 
-    TCPServer = new TCP();
+    mediator = new ConcreteMediator(this);
+    TCPServer = new TCP(nullptr, mediator);
     UDPServer = new UDP();
     MahonyPlotObject = new Mahony_Plot();
 
@@ -26,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     connect(this, &MainWindow::sig_StartTCPServer, TCPServer, &TCP::connectToServer);
     connect(this, &MainWindow::sig_StopTCPServer, TCPServer, &TCP::disconnectToServer);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TCPServer, &TCP::controlMessageReceiver);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TCPServer, &TCP::controlMessageSender);
 
     /* UDP Server Connection Signals */
     connect(this, &MainWindow::sig_StartUDPServer, UDPServer, &UDP::startServer);
@@ -42,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 MainWindow::~MainWindow()
 {
     delete MahonyPlotObject;
+    delete mediator;  // 如果需要，清理中介者实例
     delete ui;
 }
 

@@ -52,8 +52,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         TOOLS/decodetask.h TOOLS/decodetask.cpp
         TOOLS/DataHandler.h
-        TOOLS/handlerbmp180.h TOOLS/handlerbmp180.cpp
-        TOOLS/datahandlerfactory.h TOOLS/datahandlerfactory.cpp
+        TOOLS/handler_bmp180.h TOOLS/handler_bmp180.cpp
+        TOOLS/DataHandlerFactory.h
         TOOLS/MediatorInterface.h
         TOOLS/concretemediator.h TOOLS/concretemediator.cpp
     )

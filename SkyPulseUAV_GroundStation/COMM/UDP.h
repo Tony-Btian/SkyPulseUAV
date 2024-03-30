@@ -1,6 +1,7 @@
 #ifndef UDP_H
 #define UDP_H
 
+#include <QThread>
 #include <QObject>
 #include <QUdpSocket>
 
@@ -9,6 +10,7 @@ class UDP : public QObject
     Q_OBJECT
 public:
     explicit UDP(QObject *parent = nullptr);
+    ~UDP();
 
 public slots:
     void startServer(quint16 port);
@@ -16,8 +18,10 @@ public slots:
 
 private:
     QUdpSocket *udpSocket;
+    QThread *UDPThread;
 
 private slots:
+    void udpInitial();
     void readPendingDatagrams();
 
 signals:

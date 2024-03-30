@@ -1,8 +1,24 @@
 #include "UDP.h"
 #include <QNetworkDatagram>
-#include <QThread>
 
 UDP::UDP(QObject *parent) : QObject(parent), udpSocket(new QUdpSocket(this))
+{
+    UDPThread = new QThread(this);
+    connect(UDPThread, &QThread::started, this, &UDP::udpInitial);
+    connect(UDPThread, &QThread::finished, this, &QObject::deleteLater);
+    this->moveToThread(UDPThread);
+    UDPThread->start();
+}
+
+UDP::~UDP()
+{
+    if (UDPThread->isRunning()){
+        UDPThread->wait();
+        UDPThread->quit();
+    }
+}
+
+void UDP::udpInitial()
 {
     connect(udpSocket, &QUdpSocket::readyRead, this, &UDP::readPendingDatagrams);
 }

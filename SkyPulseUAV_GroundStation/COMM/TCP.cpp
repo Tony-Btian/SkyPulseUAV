@@ -1,9 +1,22 @@
 #include "TCP.h"
 #include "decodetask.h"
-#include <QThread>
+#include <QThreadPool>
 
-TCP::TCP(QObject *parent) : QObject(parent), TCPSocket(new QTcpSocket(this)) {
-    tcpInitial();
+TCP::TCP(QObject *parent) : QObject(parent), TCPSocket(new QTcpSocket(this))
+{
+    TCPThread = new QThread(this);
+    connect(TCPThread, &QThread::started, this, &TCP::tcpInitial);
+    connect(TCPThread, &QThread::finished, TCPThread, &QObject::deleteLater);
+    this->moveToThread(TCPThread);
+    TCPThread->start();
+}
+
+TCP::~TCP()
+{
+    if (TCPThread->isRunning()){
+        TCPThread->wait();
+        TCPThread->quit();
+    }
 }
 
 /*TCP服务初始化*/
@@ -67,6 +80,8 @@ void TCP::readMessage()
     task->setAutoDelete(true);
     QThreadPool::globalInstance()->start(task);
 }
+
+
 
 void TCP::PWM_Controler(const int &code, const int &value)
 {

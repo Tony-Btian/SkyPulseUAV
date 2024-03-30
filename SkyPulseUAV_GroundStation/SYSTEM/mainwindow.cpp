@@ -4,46 +4,34 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    MahonyPlotObject = new Mahony_Plot();
     qDebug() << "Main Thread ID: " << QThread::currentThreadId();
-    TcpThread = new QThread(this);
-    TcpServer = new TCP();  // 实体化TCP服务
-    TcpServer->moveToThread(TcpThread);
 
-    TcpThread->start();
-
-    UdpThread = new QThread(this);
-    UdpServer = new UDP();  // 实体化UDP服务
-    UdpServer->moveToThread(UdpThread);
-
-    UdpThread->start();
+    TCPServer = new TCP();
+    UDPServer = new UDP();
+    MahonyPlotObject = new Mahony_Plot();
 
     // BluetoothThread = new QThread(this);
     // BluetoothServer = new Bluetooth();
     // BluetoothServer->moveToThread(BluetoothThread);
-
     // BluetoothThread->start();
 
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
     /* TCP Server Connection Signals */
-    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
-    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::controlMessageReceiver);
+    connect(TCPServer, &TCP::sig_connectionSuccessful,      this, &MainWindow::onTCPConnectionSuccessful);
+    connect(TCPServer, &TCP::sig_disconnectionSuccessful,   this, &MainWindow::onTCPDisconnectionSuccessful);
+    connect(TCPServer, &TCP::sig_connectionError,           this, &MainWindow::onTCPConnectionError);
 
-    connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
-    connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
-    connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
-    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
+    connect(this, &MainWindow::sig_StartTCPServer, TCPServer, &TCP::connectToServer);
+    connect(this, &MainWindow::sig_StopTCPServer, TCPServer, &TCP::disconnectToServer);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TCPServer, &TCP::controlMessageReceiver);
 
     /* UDP Server Connection Signals */
-    connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
-    connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
-    connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
-    connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
-    connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
+    connect(this, &MainWindow::sig_StartUDPServer, UDPServer, &UDP::startServer);
+    connect(this, &MainWindow::sig_StopUDPServer, UDPServer, &UDP::stopServer);
+    connect(UDPServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
+    connect(UDPServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
 
     /* Bluetooth Server Connection Signals */
     // connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
@@ -52,33 +40,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow()
 {
+    delete MahonyPlotObject;
     delete ui;
-
-    // 请求TCP线程结束
-    TcpThread->quit();  // 等待线程安全结束
-    if (!TcpThread->wait(3000)) { // 等待最多3秒
-        TcpThread->terminate();
-        TcpThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete TcpThread; // 删除线程对象
-
-    // 请求UDP线程结束
-    UdpThread->quit();  // 等待线程安全结束
-    if (!UdpThread->wait(3000)) { // 等待最多3秒
-        UdpThread->terminate();
-        UdpThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete UdpThread; // 删除线程对象
-
-    /*
-    // 请求线程结束
-    BluetoothThread->quit();  // 等待线程安全结束
-    if (!BluetoothThread->wait(3000)) { // 等待最多3秒
-        BluetoothThread->terminate();
-        BluetoothThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete BluetoothThread; // 删除线程对象
-*/
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -111,7 +74,7 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TcpServer->disconnectToServer();
+    TCPServer->disconnectToServer();
     emit sig_StopUDPServer();
 }
 
@@ -206,3 +169,7 @@ void MainWindow::on_toolButton_REG_READ_ALL_clicked()
     emit sig_sendMessageToTCP(READ, 0x03, 0x01);
 }
 
+void MainWindow::updateUI(const QString &message)
+{
+    qDebug() << "Update UI:" << message;
+}

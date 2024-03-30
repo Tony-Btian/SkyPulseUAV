@@ -25,9 +25,9 @@ include_directories(
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        SYSTEM/mainwindow.cpp  # Updated path
+        SYSTEM/mainwindow.h    # Updated path
+        SYSTEM/mainwindow.ui
         ${TS_FILES}
 )
 
@@ -47,11 +47,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
 
         SYSTEM/pooltask.h SYSTEM/pooltask.cpp
-
-        TOOLS/datadecoder.h TOOLS/datadecoder.cpp
-        TOOLS/decodetask.h TOOLS/decodetask.cpp
-        SYSTEM/observer.h
         SYSTEM/observable.h SYSTEM/observable.cpp
+        SYSTEM/mainwindow.cpp SYSTEM/mainwindow.h SYSTEM/mainwindow.ui
+
+        TOOLS/decodetask.h TOOLS/decodetask.cpp
+        TOOLS/DataHandler.h
+        TOOLS/handlerbmp180.h TOOLS/handlerbmp180.cpp
+        TOOLS/datahandlerfactory.h TOOLS/datahandlerfactory.cpp
+        TOOLS/MediatorInterface.h
+        TOOLS/concretemediator.h TOOLS/concretemediator.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

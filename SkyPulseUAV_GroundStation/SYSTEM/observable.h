@@ -1,20 +1,17 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
 
-#include <list>
-#include "observer.h"
+#include <QObject>
 
-class Observable
+class Observable : public QObject
 {
+    Q_OBJECT
+
 public:
-    void addObserver(Observer *observer);
-    void removeObserver(Observer *observer);
+    explicit Observable(QObject *parent = nullptr);
 
-protected:
-    void notifyObservers(bool isInitialised);
-
-private:
-    std::list<Observer*> observers;
+signals:
+    void notifyObservers(const QString &message);
 
 };
 

@@ -1,22 +1,31 @@
 #include "decodetask.h"
+#include "datahandlerfactory.h"
 #include <QDebug>
+#include <QThread>
 
-DecodeTask::DecodeTask(const QByteArray &data)
-    : dataToDecode{data}
+DecodeTask::DecodeTask(const QByteArray &data) : dataToDecode(data)
 {
 
 }
 
 void DecodeTask::run()
 {
+    qDebug() << "Decode Thread:" << QThread::currentThreadId();
     // Decode the data. This is a placeholder for your decoding logic.
     QString result;
     for(int i = 0; i < dataToDecode.size(); ++i) {
         QString byteString = QString::number(static_cast<unsigned char>(dataToDecode[i]), 16).rightJustified(2, '0');
         result.append(byteString + " ");
-        if ((i+1) % 16 == 0) result.append("\n"); // New line after every 16 bytes for readability
     }
-
     qDebug() << "Decoded data:" << result;
-    emit decodeDataReady(result);
+
+    // 使用DataHandlerFactory根据接收到的数据创建一个DataHandler实例
+    DataHandler* handler = DataHandlerFactory::createHandler(dataToDecode);
+    if (handler) {
+        // 使用创建的handler处理数据
+        handler->handleData(dataToDecode);
+        // 清理资源
+        delete handler;
+    }
+    // emit decodeDataReady(result);
 }

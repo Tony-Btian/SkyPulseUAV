@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QRunnable>
 #include <QByteArray>
-#include <QThreadPool>
 
 class DecodeTask : public QObject, public QRunnable
 {
@@ -16,6 +15,7 @@ public:
 
 private:
     QByteArray dataToDecode;
+    void decodeDataDistribution();
 
 signals:
     void decodeDataReady(const QString &result);

@@ -9,8 +9,6 @@
 
 #include "TCP.h"
 #include "UDP.h"
-#include "Bluetooth.h"
-
 #include "Mahony_Plot.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,20 +26,18 @@ public:
     ~MainWindow();
 
 public slots:
+    void updateUI(const QString &message);
     void displayReceivedMessage(const QString &message);
 
 private:
     Ui::MainWindow *ui;
+
     /*Network Protocol*/
-    TCP *TcpServer;
-    UDP *UdpServer;
-    Bluetooth *BluetoothServer;
+    TCP *TCPServer;
+    UDP *UDPServer;
+
     /*Ploting*/
     Mahony_Plot *MahonyPlotObject;
-    /*Multi-threaded*/
-    QThread *TcpThread;
-    QThread *UdpThread;
-    QThread *BluetoothThread;
 
     //! Initial the TCP Server
     void initialBluetoothServer();

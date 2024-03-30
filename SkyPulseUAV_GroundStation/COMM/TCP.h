@@ -1,6 +1,7 @@
 #ifndef TCP_H
 #define TCP_H
 
+#include <QThread>
 #include <QObject>
 #include <QTcpSocket>
 
@@ -12,12 +13,15 @@ class TCP : public QObject {
 
 public:
     explicit TCP(QObject *parent = nullptr);
+    ~TCP();
+
     void connectToServer(const QString &host, quint16 port);
     void disconnectToServer();
 
 private:
     QTcpSocket *TCPSocket;
-    void tcpInitial();
+    QThread *TCPThread;
+
     QString dataCheckOut(const QByteArray &data);
 
 public slots:
@@ -28,6 +32,8 @@ public slots:
     void controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
 
 private slots:
+    void tcpInitial();
+
     void onConnected();
     void onDisconnected();
     void onErrorOccurred();

@@ -9,10 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textBrowser_Main->append("SkyPulse UAV Startup");
     ui->textBrowser_Main->append("=============================");
 
-    DatabaseManager dbManager("config.db");
-    dbManager.addOrUpdateParam("height", 100.1);
-    double height = dbManager.getParam("height");
-    qDebug() << "Height parameter value is: " << height;
+//    DatabaseManager dbManager("config.db");
+//    dbManager.addOrUpdateParam("height", 100.1);
+//    double height = dbManager.getParam("height");
+//    qDebug() << "Height parameter value is: " << height;
+
 
     // Initial GPIO
     while(true){
@@ -27,18 +28,18 @@ MainWindow::MainWindow(QWidget *parent)
         break; // Successful initialization, jump out of the loop
     }
 
-    // BaroMeter BMP180
-    BaroMeter = new Barometer_BMP180();
-    BMP_Thread = new QThread();
-    BaroMeter->moveToThread(BMP_Thread);
-    BMP_Thread->start();
+//    BaroMeter BMP180
+//    BaroMeter = new Barometer_BMP180();
+//    BMP_Thread = new QThread();
+//    BaroMeter->moveToThread(BMP_Thread);
+//    BMP_Thread->start();
 
-    connect(this, &MainWindow::sig_readPressure, BaroMeter, &Barometer_BMP180::readPressureData);
-    connect(this, &MainWindow::sig_readTemperature, BaroMeter, &Barometer_BMP180::readTemperatureData);
-    connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
+//    connect(this, &MainWindow::sig_readPressure, BaroMeter, &Barometer_BMP180::readPressureData);
+//    connect(this, &MainWindow::sig_readTemperature, BaroMeter, &Barometer_BMP180::readTemperatureData);
+//    connect(BMP_Thread, &QThread::finished, BaroMeter, &QThread::deleteLater);
 
-    // Magnetometer HMC5883L
-    // meg_compass = new MEG_Compass();
+//    Magnetometer HMC5883L
+//    meg_compass = new MEG_Compass();
 
 
     // TCP Server
@@ -68,10 +69,10 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::prepareForQuit() {
-    if(BaroMeter) {
-        BaroMeter->readingStop();
-        BaroMeter->waitForThreadCompletion();
-    }
+//    if(BaroMeter) {
+//        BaroMeter->readingStop();
+//        BaroMeter->waitForThreadCompletion();
+//    }
 }
 
 void MainWindow::on_pushButton_BMP_clicked()

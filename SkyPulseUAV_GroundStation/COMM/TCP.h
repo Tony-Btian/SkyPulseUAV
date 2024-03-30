@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QTcpSocket>
 
+#define WRITE 0x01
+#define READ  0x00
+
 class TCP : public QObject {
     Q_OBJECT
 
@@ -23,6 +26,7 @@ public slots:
     void sendMessageQByte(const QByteArray &message);
     void readMessage();
     void PWM_Controler(const int &code, const int &value);
+    void controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
 
 private slots:
     void onConnected();

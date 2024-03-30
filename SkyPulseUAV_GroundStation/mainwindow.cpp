@@ -54,7 +54,9 @@ void MainWindow::initialTCPServer()
 
     connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
     connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
+    // connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::controlMessageReceiver);
+
     connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
     connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
     connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
@@ -193,24 +195,30 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
-    emit sig_sendMessageToTCP(12, duty_cycle);
+    // emit sig_sendMessageToTCP(12, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P13PWM1->setValue(duty_cycle/255.0);
-    emit sig_sendMessageToTCP(13, duty_cycle);
+    // emit sig_sendMessageToTCP(13, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P19PWM2->setValue(duty_cycle/255.0);
-    emit sig_sendMessageToTCP(19, duty_cycle);
+    // emit sig_sendMessageToTCP(19, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P18PWM3->setValue(duty_cycle/255.0);
-    emit sig_sendMessageToTCP(18, duty_cycle);
+    // emit sig_sendMessageToTCP(18, duty_cycle);
+}
+
+// Read MPU6050 Config Button
+void MainWindow::on_toolButton_REG_READ_ALL_clicked()
+{
+    emit sig_sendMessageToTCP(READ, 0x03, 0x01);
 }
 

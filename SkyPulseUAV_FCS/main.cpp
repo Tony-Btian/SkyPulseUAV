@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
     w.setWindowTitle("SkyPulse UAV Flight Control System");
     w.show();
 
-    QObject::connect(&a, &QApplication::aboutToQuit, [&w]() {
-        w.prepareForQuit();
-    });
+//    QObject::connect(&a, &QApplication::aboutToQuit, [&w]() {
+//        w.prepareForQuit();
+//    });
 
     return a.exec();
 }

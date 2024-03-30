@@ -70,11 +70,6 @@ void TCP::dataTrasnlate(const QByteArray &data)
 
 }
 
-/*TCP数据有效性检查*/
-QString TCP::dataCheckOut(const QByteArray &data)
-{
-
-}
 
 void TCP::PWM_Controler(const int &code, const int &value)
 {
@@ -86,6 +81,16 @@ void TCP::PWM_Controler(const int &code, const int &value)
     sendMessageQByte(data);
 }
 
+/*TCP 控制信息接收器*/
+void TCP::controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value)
+{
+    QByteArray message;
+    message.append(action);
+    message.append(data_length);
+    message.append(value);
+    sendMessage(message);
+}
+
 /*TCP数据发送函数*/
 void TCP::sendMessageQByte(const QByteArray &message)
 {
@@ -93,4 +98,10 @@ void TCP::sendMessageQByte(const QByteArray &message)
     {
         TCPSocket->write(message);
     }
+}
+
+/*TCP数据有效性检查*/
+QString TCP::dataCheckOut(const QByteArray &data)
+{
+
 }

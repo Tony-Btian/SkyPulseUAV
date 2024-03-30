@@ -7,12 +7,47 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     MahonyPlotObject = new Mahony_Plot();
     qDebug() << "Main Thread ID: " << QThread::currentThreadId();
+    TcpThread = new QThread(this);
+    TcpServer = new TCP();  // 实体化TCP服务
+    TcpServer->moveToThread(TcpThread);
+
+    TcpThread->start();
+
+    UdpThread = new QThread(this);
+    UdpServer = new UDP();  // 实体化UDP服务
+    UdpServer->moveToThread(UdpThread);
+
+    UdpThread->start();
+
+    // BluetoothThread = new QThread(this);
+    // BluetoothServer = new Bluetooth();
+    // BluetoothServer->moveToThread(BluetoothThread);
+
+    // BluetoothThread->start();
+
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
-    this->initialTCPServer();
-    this->initialUDPServer();
-    // this->initialBluetoothServer();
+    /* TCP Server Connection Signals */
+    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
+    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
+    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::controlMessageReceiver);
+
+    connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
+    connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
+    connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
+    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
+
+    /* UDP Server Connection Signals */
+    connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
+    connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
+    connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
+    connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
+    connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
+
+    /* Bluetooth Server Connection Signals */
+    // connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
+
 }
 
 MainWindow::~MainWindow()
@@ -46,56 +81,15 @@ MainWindow::~MainWindow()
 */
 }
 
-void MainWindow::initialTCPServer()
+void MainWindow::closeEvent(QCloseEvent *event)
 {
-    TcpThread = new QThread(this);
-    TcpServer = new TCP();  // 实体化TCP服务
-    TcpServer->moveToThread(TcpThread);
-
-    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
-    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
-    // connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::controlMessageReceiver);
-
-    connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
-    connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
-    connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
-    connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
-    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
-
-    TcpThread->start();
-}
-
-
-void MainWindow::initialUDPServer()
-{
-    UdpThread = new QThread(this);
-    UdpServer = new UDP();  // 实体化UDP服务
-    UdpServer->moveToThread(UdpThread);
-
-    connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
-    connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
-    connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
-    connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
-    connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
-
-    UdpThread->start();
-}
-
-void MainWindow::initialBluetoothServer()
-{
-    BluetoothThread = new QThread(this);
-    BluetoothServer = new Bluetooth();
-    BluetoothServer->moveToThread(BluetoothThread);
-    connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
-    BluetoothThread->start();
+    QCoreApplication::quit();
 }
 
 void MainWindow::displayReceivedMessage(const QString &message)
 {
     ui->textBrowser_test->append(message);
 }
-
 
 void MainWindow::on_pushButton_Network_Connect_clicked()
 {
@@ -120,8 +114,6 @@ void MainWindow::on_pushButton_Network_Disconnect_clicked()
     TcpServer->disconnectToServer();
     emit sig_StopUDPServer();
 }
-
-
 
 void MainWindow::onTCPConnectionSuccessful()
 {
@@ -149,8 +141,6 @@ void MainWindow::onTCPDisconnectionSuccessful()
     ui->pushButton_Network_Disconnect->setEnabled(false);
     ui->textBrowser_test->append("TCP断开成功");
 }
-
-
 
 void MainWindow::onUDPServerStartSuccessful()
 {
@@ -184,12 +174,6 @@ void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
 {
     emit sig_Mahony_PlottingStop();
 }
-
-void MainWindow::closeEvent(QCloseEvent *event)
-{
-    QCoreApplication::quit();
-}
-
 
 /* GPIO Controler*/
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)

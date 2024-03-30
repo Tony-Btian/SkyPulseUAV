@@ -44,8 +44,6 @@ private:
     QThread *BluetoothThread;
 
     //! Initial the TCP Server
-    void initialTCPServer();
-    void initialUDPServer();
     void initialBluetoothServer();
 
     QString getLocalIP();

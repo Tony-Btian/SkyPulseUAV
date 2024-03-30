@@ -14,7 +14,6 @@ public:
     explicit TCP(QObject *parent = nullptr);
     void connectToServer(const QString &host, quint16 port);
     void disconnectToServer();
-    void dataTrasnlate(const QByteArray &data);
 
 private:
     QTcpSocket *TCPSocket;
@@ -34,7 +33,6 @@ private slots:
     void onErrorOccurred();
 
 signals:
-    void sig_receivedMessage(const QString &message);
     void sig_connectionSuccessful();  // 判断是否连接成功的信号
     void sig_disconnectionSuccessful();  // 判断是否成功断开的信号
     void sig_connectionError();

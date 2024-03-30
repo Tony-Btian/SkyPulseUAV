@@ -20,6 +20,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/PLOTING
     ${CMAKE_SOURCE_DIR}/SENSOR
     ${CMAKE_SOURCE_DIR}/SYSTEM
+    ${CMAKE_SOURCE_DIR}/TOOLS
 )
 
 set(PROJECT_SOURCES
@@ -34,14 +35,23 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(SkyPulseUAV_GroundStation
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
+        resource.qrc
+
         COMM/UDP.h COMM/UDP.cpp
         COMM/TCP.h COMM/TCP.cpp
         COMM/Bluetooth.h COMM/Bluetooth.cpp
+
         PLOTING/qcustomplot.h PLOTING/qcustomplot.cpp
         PLOTING/Mahony_Plot.h PLOTING/Mahony_Plot.cpp
+
+        SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
+
         SYSTEM/pooltask.h SYSTEM/pooltask.cpp
-        resource.qrc
+
+        TOOLS/datadecoder.h TOOLS/datadecoder.cpp
+        TOOLS/decodetask.h TOOLS/decodetask.cpp
+        SYSTEM/observer.h
+        SYSTEM/observable.h SYSTEM/observable.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

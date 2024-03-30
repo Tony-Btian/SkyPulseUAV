@@ -1,4 +1,5 @@
 #include "TCP.h"
+#include "decodetask.h"
 #include <QThread>
 
 TCP::TCP(QObject *parent) : QObject(parent), TCPSocket(new QTcpSocket(this)) {
@@ -60,16 +61,12 @@ void TCP::readMessage()
 {
     QByteArray data = TCPSocket->readAll();
     qDebug() << "TCP Row Message: " << data;
-    // qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
-    emit sig_receivedMessage(QString::fromUtf8(data));
+    qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
+
+    DecodeTask *task = new DecodeTask(data);
+    task->setAutoDelete(true);
+    QThreadPool::globalInstance()->start(task);
 }
-
-/*TCP数据转译*/
-void TCP::dataTrasnlate(const QByteArray &data)
-{
-
-}
-
 
 void TCP::PWM_Controler(const int &code, const int &value)
 {

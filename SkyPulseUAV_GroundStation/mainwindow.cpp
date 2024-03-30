@@ -216,7 +216,7 @@ void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
     // emit sig_sendMessageToTCP(18, duty_cycle);
 }
 
-// Read MPU6050 Config Button
+// Read MPU6050 Config Button Slots
 void MainWindow::on_toolButton_REG_READ_ALL_clicked()
 {
     emit sig_sendMessageToTCP(READ, 0x03, 0x01);

@@ -13,7 +13,7 @@ class TCP : public QObject {
     Q_OBJECT
 
 public:
-    explicit TCP(QObject *parent = nullptr);
+    explicit TCP(QObject *parent = nullptr, MediatorInterface* mediator = nullptr);
     ~TCP();
 
     void connectToServer(const QString &host, quint16 port);

@@ -2,7 +2,8 @@
 #include "decodetask.h"
 #include <QThreadPool>
 
-TCP::TCP(QObject *parent) : QObject(parent), TCPSocket(new QTcpSocket(this))
+TCP::TCP(QObject *parent, MediatorInterface *mediator)
+    : QObject(parent), TCPSocket(new QTcpSocket(this)), mediator(mediator)
 {
     TCPThread = new QThread(this);
     connect(TCPThread, &QThread::started, this, &TCP::tcpInitial);

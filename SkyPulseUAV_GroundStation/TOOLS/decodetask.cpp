@@ -3,7 +3,7 @@
 #include <QDebug>
 #include <QThread>
 
-DecodeTask::DecodeTask(const QByteArray &data) : dataToDecode(data)
+DecodeTask::DecodeTask(const QByteArray &data, MediatorInterface *mediator) : dataToDecode(data)
 {
 
 }
@@ -20,12 +20,10 @@ void DecodeTask::run()
     qDebug() << "Decoded data:" << result;
 
     // 使用DataHandlerFactory根据接收到的数据创建一个DataHandler实例
-    DataHandler* handler = DataHandlerFactory::createHandler(dataToDecode);
+    auto handler = DataHandlerFactory::createHandler(dataToDecode, mediator);
     if (handler) {
         // 使用创建的handler处理数据
         handler->handleData(dataToDecode);
-        // 清理资源
-        delete handler;
     }
     // emit decodeDataReady(result);
 }

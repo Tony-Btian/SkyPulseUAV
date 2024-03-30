@@ -1,6 +1,7 @@
 #ifndef TCP_H
 #define TCP_H
 
+#include "MediatorInterface.h"
 #include <QThread>
 #include <QObject>
 #include <QTcpSocket>
@@ -21,6 +22,7 @@ public:
 private:
     QTcpSocket *TCPSocket;
     QThread *TCPThread;
+    MediatorInterface *mediator;
 
     QString dataCheckOut(const QByteArray &data);
 

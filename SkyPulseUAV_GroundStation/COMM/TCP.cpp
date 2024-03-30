@@ -76,7 +76,7 @@ void TCP::readMessage()
     qDebug() << "TCP Row Message: " << data;
     qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
 
-    DecodeTask *task = new DecodeTask(data);
+    DecodeTask *task = new DecodeTask(data, mediator);
     task->setAutoDelete(true);
     QThreadPool::globalInstance()->start(task);
 }
@@ -113,7 +113,7 @@ void TCP::sendMessageQByte(const QByteArray &message)
 }
 
 /*TCP数据有效性检查*/
-QString TCP::dataCheckOut(const QByteArray &data)
-{
+// QString TCP::dataCheckOut(const QByteArray &data)
+// {
 
-}
+// }

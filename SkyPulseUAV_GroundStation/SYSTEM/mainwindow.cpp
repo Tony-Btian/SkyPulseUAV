@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "concretemediator.h"
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -21,18 +21,25 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
-    /* TCP Server Connection Signals */
-    connect(TCPServer, &TCP::sig_connectionSuccessful,      this, &MainWindow::onTCPConnectionSuccessful);
-    connect(TCPServer, &TCP::sig_disconnectionSuccessful,   this, &MainWindow::onTCPDisconnectionSuccessful);
-    connect(TCPServer, &TCP::sig_connectionError,           this, &MainWindow::onTCPConnectionError);
 
-    connect(this, &MainWindow::sig_StartTCPServer, TCPServer, &TCP::connectToServer);
-    connect(this, &MainWindow::sig_StopTCPServer, TCPServer, &TCP::disconnectToServer);
+    /* TCP Server Connection Signals */
+    connect(this, &MainWindow::sig_StartTCPServer,  TCPServer, &TCP::startTCPServer);
+    connect(this, &MainWindow::sig_StartUDPServer,  UDPServer, &UDP::startUDPServer);
+    connect(this, &MainWindow::sig_StopTCPServer,   TCPServer, &TCP::stopTCPServer);
+    connect(this, &MainWindow::sig_StopUDPServer,   UDPServer, &UDP::stopUDPServer);
+
+    connect(TCPServer, &TCP::sig_startSuccessful,   this, &MainWindow::onTCPStartSuccessful);
+    connect(TCPServer, &TCP::sig_stopSuccessful,    this, &MainWindow::onTCPStopSuccessful);
+    connect(TCPServer, &TCP::sig_connectionError,   this, &MainWindow::onTCPConnectionError);
+
+
+
     connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
 
     /* UDP Server Connection Signals */
-    connect(this, &MainWindow::sig_StartUDPServer, UDPServer, &UDP::startServer);
-    connect(this, &MainWindow::sig_StopUDPServer, UDPServer, &UDP::stopServer);
+
+
+
     connect(UDPServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
     connect(UDPServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
 
@@ -53,11 +60,6 @@ void MainWindow::closeEvent(QCloseEvent *event)
     QCoreApplication::quit();
 }
 
-void MainWindow::displayReceivedMessage(const QString &message)
-{
-    ui->textBrowser_test->append(message);
-}
-
 void MainWindow::on_pushButton_Network_Connect_clicked()
 {
     bool ok;
@@ -68,70 +70,68 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
     // 判断端口输入是否有效
     if(ok){
         emit sig_StartTCPServer(NetworkIPAddr, NetworkPort);  // 采用信号的方式进行连接
-        // TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
         emit sig_StartUDPServer(NetworkPort);  // 开启UDP服务
     }
     else{
-        qDebug() << "端口输入有误";
+        QMessageBox::critical(this, "Error", "Error Port Input");
+        ui->lineEdit_Network_Port->clear();
     }
 }
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TCPServer->disconnectToServer();
+    emit sig_StopTCPServer();
     emit sig_StopUDPServer();
 }
 
-void MainWindow::onTCPConnectionSuccessful()
+void MainWindow::onTCPStartSuccessful()
 {
-    // 处理连接成功事件，例如更新UI状态
-    qDebug() << "Connection successful!";
+    // 处理连接成功事件，更新UI状态
     ui->pushButton_Network_Connect->setEnabled(false);
     ui->pushButton_Network_Disconnect->setEnabled(true);
-    ui->textBrowser_test->append("TCP连接成功");
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/yes.png"));
+}
+
+void MainWindow::onTCPStopSuccessful()
+{
+    // 处理连接失败事件，更新UI状态
+    ui->pushButton_Network_Connect->setEnabled(true);
+    ui->pushButton_Network_Disconnect->setEnabled(false);
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
 
 void MainWindow::onTCPConnectionError()
 {
     // 处理连接失败事件，例如更新UI状态
-    qDebug() << "Connection Error!";
     ui->pushButton_Network_Connect->setEnabled(true);
     ui->pushButton_Network_Disconnect->setEnabled(false);
-    ui->textBrowser_test->append("TCP连接失败");
-}
-
-void MainWindow::onTCPDisconnectionSuccessful()
-{
-    // 处理连接失败事件，例如更新UI状态
-    qDebug() << "Connection Disconnected!";
-    ui->pushButton_Network_Connect->setEnabled(true);
-    ui->pushButton_Network_Disconnect->setEnabled(false);
-    ui->textBrowser_test->append("TCP断开成功");
+    QMessageBox::critical(this, "Error", "TCP Connection Error. Please check the client device and try again.");
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
 
 void MainWindow::onUDPServerStartSuccessful()
 {
-    qDebug() << "UDP开启成功信号返回";
-    ui->textBrowser_test->append("UDP开启成功");
+    ui->icon_UDP_Connection->setPixmap(QPixmap(":/qrc/icon/yes.png"));
 }
 
 void MainWindow::onUDPServerStopSuccessful()
 {
-    qDebug() << "UDP关闭成功信号返回";
-    ui->textBrowser_test->append("UDP关闭成功");
+    ui->icon_UDP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
 
-QString MainWindow::getLocalIP()
+
+/*========================================================================
+* Fligth Control Panel
+*=========================================================================*/
+void MainWindow::on_pushButton_TAKE_OFF_clicked()
 {
-    const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
-    for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
-        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
-            return address.toString();
-        }
-    }
-    return NULL;
+
 }
 
+
+/*========================================================================
+* Parameter Setting Panel
+*=========================================================================*/
 void MainWindow::on_pushButton_Mahony_Plot_Launch_clicked()
 {
     emit sig_Mahony_PlottingStart();
@@ -142,7 +142,48 @@ void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
     emit sig_Mahony_PlottingStop();
 }
 
-/* GPIO Controler*/
+
+/*========================================================================
+* Sensor Register Setting Panel
+*=========================================================================*/
+/* Navigation Bar*/
+void MainWindow::on_toolButton_MPU6050_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_BMP180_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(1);
+}
+
+void MainWindow::on_toolButton_GY271_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(2);
+}
+
+/* MPU6050: Gyroscope&Accelerometer Sensor */
+void MainWindow::on_pushButton_REG_READ_ALL_MPU6050_clicked()
+{
+    emit sig_sendRequestToFCS(0x00);
+}
+
+/* BMP180: Barometer&temperature Sensor */
+void MainWindow::on_pushButton_REG_READ_ALL_BMP180_clicked()
+{
+    emit sig_sendRequestToFCS(0x01);
+}
+
+/* GY271: Magnetometer */
+void MainWindow::on_pushButton_REG_READ_ALL_GY271_clicked()
+{
+
+}
+
+
+
+
+/* PWM Controler*/
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
@@ -167,25 +208,21 @@ void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
     // emit sig_sendMessageToTCP(18, duty_cycle);
 }
 
-// Read MPU6050 Config Button Slots
-void MainWindow::on_toolButton_REG_READ_ALL_clicked()
-{
-    emit sig_sendRequestToFCS(0x00);
-}
 
 void MainWindow::updateUI(const QString &message)
 {
     qDebug() << "Update UI:" << message;
 }
 
-void MainWindow::on_toolButton_MPU6050_REG_CONFIG_clicked()
-{
-    ui->stackedWidget_REG_CONFIG->setCurrentIndex(0);
-}
 
 
-void MainWindow::on_toolButton_BMP180_REG_CONFIG_clicked()
-{
-    ui->stackedWidget_REG_CONFIG->setCurrentIndex(1);
-}
-
+// QString MainWindow::getLocalIP()
+// {
+//     const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+//     for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+//         if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
+//             return address.toString();
+//         }
+//     }
+//     return NULL;
+// }

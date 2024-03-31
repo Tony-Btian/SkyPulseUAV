@@ -15,9 +15,9 @@ class TCP : public QObject {
 public:
     explicit TCP(QObject *parent = nullptr, MediatorInterface* mediator = nullptr);
     ~TCP();
-
-    void connectToServer(const QString &host, quint16 port);
-    void disconnectToServer();
+    
+    void startTCPServer(const QString &host_ip, quint16 port);
+    void stopTCPServer();
 
 private:
     QTcpSocket *TCPSocket;
@@ -41,8 +41,8 @@ private slots:
     void onErrorOccurred();
 
 signals:
-    void sig_connectionSuccessful();  // 判断是否连接成功的信号
-    void sig_disconnectionSuccessful();  // 判断是否成功断开的信号
+    void sig_startSuccessful();  // 判断是否连接成功的信号
+    void sig_stopSuccessful();   // 判断是否成功断开的信号
     void sig_connectionError();
 };
 

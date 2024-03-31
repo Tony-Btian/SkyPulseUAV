@@ -25,24 +25,24 @@ void TCP::tcpInitial()
 {
     connect(TCPSocket, &QTcpSocket::connected, this, &TCP::onConnected);
     connect(TCPSocket, &QTcpSocket::disconnected, this, &TCP::onDisconnected);
-    connect(TCPSocket, &QTcpSocket::readyRead, this, &TCP::readMessage);
     connect(TCPSocket, &QTcpSocket::errorOccurred, this, &TCP::onErrorOccurred);
+    connect(TCPSocket, &QTcpSocket::readyRead, this, &TCP::readMessage);
 }
 
 /*TCP服务连接函数*/
-void TCP::connectToServer(const QString &host, quint16 port)
+void TCP::startTCPServer(const QString &host_ip, quint16 port)
 {
-    TCPSocket->connectToHost(host, port);
+    TCPSocket->connectToHost(host_ip, port);
 }
 
 /*TCP连接成功信号*/
 void TCP::onConnected()
 {
-    emit sig_connectionSuccessful(); // 当连接成功时发出信号
+    emit sig_startSuccessful(); // 当连接成功时发出信号
 }
 
 /*TCP服务断开连接函数*/
-void TCP::disconnectToServer()
+void TCP::stopTCPServer()
 {
     if(TCPSocket->state() == QTcpSocket::ConnectedState){  // 判断连接状态之后再断开连接
         TCPSocket->disconnectFromHost();
@@ -52,14 +52,15 @@ void TCP::disconnectToServer()
 /*TCP断开成功信号*/
 void TCP::onDisconnected()
 {
-    emit sig_disconnectionSuccessful(); // 当断开连接成功时发出信号
+    emit sig_stopSuccessful(); // 当断开连接成功时发出信号
 }
 
-/*TCP连接错误信号*/
+/*TCP错误信号*/
 void TCP::onErrorOccurred()
 {
     emit sig_connectionError(); // 当连接错误时发出信号
 }
+
 
 /*TCP数据发送函数*/
 void TCP::sendMessage(const QString &message)
@@ -108,9 +109,3 @@ void TCP::sendMessageQByte(const QByteArray &message)
         TCPSocket->write(message);
     }
 }
-
-/*TCP数据有效性检查*/
-// QString TCP::dataCheckOut(const QByteArray &data)
-// {
-
-// }

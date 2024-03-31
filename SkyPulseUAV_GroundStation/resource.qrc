@@ -5,5 +5,7 @@
         <file>icon/compass.png</file>
         <file>icon/accelerometer.png</file>
         <file>icon/gyroscope.png</file>
+        <file>icon/yes.png</file>
+        <file>icon/no.png</file>
     </qresource>
 </RCC>

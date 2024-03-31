@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>870</width>
-    <height>642</height>
+    <width>1007</width>
+    <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,128 +16,188 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_7">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,0,1,0,1,1,0,0,0,0,2">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
-        <item>
-         <widget class="QLabel" name="label_Network_IPAddr">
-          <property name="text">
-           <string>IP</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
-          <property name="text">
-           <string>192.168.31.213</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="Line" name="line_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1">
-        <item>
-         <widget class="QLabel" name="label_Network_Port">
-          <property name="text">
-           <string>端口</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_Network_Port">
-          <property name="text">
-           <string>12345</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="Line" name="line_4">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_Network_Connect">
-        <property name="text">
-         <string>Connect</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_Network_Disconnect">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Disconnect</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="Line" name="line_5">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>TCP</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>27</width>
-          <height>27</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>27</width>
-          <height>27</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="Line" name="line_6">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
+     <widget class="QGroupBox" name="groupbox_Connection_Control">
+      <property name="title">
+       <string>Connection Control</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,0,1,0,1,1,0,0,0,0,0,0">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
+         <item>
+          <widget class="QLabel" name="label_Network_IPAddr">
+           <property name="text">
+            <string>IP Address</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_Network_IPAddr">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>136</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>192.168.31.213</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
+         <item>
+          <widget class="QLabel" name="label_Network_Port">
+           <property name="text">
+            <string>Port</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_Network_Port">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>12345</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Network_Connect">
+         <property name="text">
+          <string>Connect</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_Network_Disconnect">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Disconnect</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_TCP_Connection">
+         <property name="text">
+          <string>TCP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="icon_TCP_Connection">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource.qrc">:/qrc/icon/no.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_UDP_Connection">
+         <property name="text">
+          <string>UDP</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="icon_UDP_Connection">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resource.qrc">:/qrc/icon/no.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
      <widget class="QTabWidget" name="tabWidget_PanelMain">
@@ -176,7 +236,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,1">
+           <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,2,2">
             <item>
              <widget class="QTabWidget" name="tabWidget_FlightControlInfo">
               <property name="currentIndex">
@@ -431,8 +491,21 @@
             <item>
              <widget class="QGroupBox" name="groupBox_GPS">
               <property name="title">
-               <string>GPS</string>
+               <string>Flight Control Panel</string>
               </property>
+              <widget class="QPushButton" name="pushButton_TAKE_OFF">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>50</y>
+                 <width>89</width>
+                 <height>25</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>TAKE OFF</string>
+               </property>
+              </widget>
              </widget>
             </item>
            </layout>
@@ -856,18 +929,6 @@
           </item>
          </layout>
         </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_Connection">
-          <property name="title">
-           <string>Connection</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0" colspan="2">
-            <widget class="QTextBrowser" name="textBrowser_test"/>
-           </item>
-          </layout>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab3_ParameterTesting">
@@ -1085,6 +1146,25 @@
            </widget>
           </item>
           <item>
+           <widget class="QToolButton" name="toolButton_GY271_REG_CONFIG">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>GY271</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer_6">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -1101,352 +1181,373 @@
         </item>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_REG_CONFIG">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="MPU6050_Page">
-           <widget class="QToolButton" name="toolButton_REG_READ_ALL">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>10</y>
-              <width>81</width>
-              <height>24</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Read All</string>
-            </property>
-           </widget>
-           <widget class="QWidget" name="layoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>41</y>
-              <width>491</width>
-              <height>415</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_20">
-               <item>
-                <widget class="QGroupBox" name="groupBox_GYRO_CONFIG">
-                 <property name="title">
-                  <string>GYRO CONFIG</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_8">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="3,1,1,1">
-                    <item>
-                     <widget class="QLabel" name="label_SelfTest_GYRO">
-                      <property name="text">
-                       <string>Self Test</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_XG_SelfTest">
-                      <property name="text">
-                       <string>XG</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_YG_SelfTest">
-                      <property name="text">
-                       <string>YG</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_ZG_SelfTest">
-                      <property name="text">
-                       <string>ZG</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,1">
-                    <item>
-                     <widget class="QLabel" name="label_FullScaleRange_GYRO">
-                      <property name="text">
-                       <string>Full Scale Range</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBox_FullScaleRange_GYRO">
-                      <item>
-                       <property name="text">
-                        <string>± 250 °/s</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 500 °/s</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 1000 °/s</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 2000 °/s</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QGroupBox" name="groupBox_ACCEL_CONFIG">
-                 <property name="title">
-                  <string>ACCEL CONFIG</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_9">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="3,1,1,1">
-                    <item>
-                     <widget class="QLabel" name="label_SelfTest_ACCEL">
-                      <property name="text">
-                       <string>Self Test</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_XA_SelfTest">
-                      <property name="text">
-                       <string>XA</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_YA_SelfTest">
-                      <property name="text">
-                       <string>YA</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QCheckBox" name="checkBox_ZA_SelfTest">
-                      <property name="text">
-                       <string>ZA</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,1">
-                    <item>
-                     <widget class="QLabel" name="label_FullScaleRange_ACCEL">
-                      <property name="text">
-                       <string>Full Scale Range</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBox_FullScaleRange_ACCEL">
-                      <item>
-                       <property name="text">
-                        <string>± 2g</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 4g</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 8g</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>± 16g</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="groupBox_FIFO_EN">
-               <property name="title">
-                <string>FIFO EN</string>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,1,1,1">
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <property name="spacing">
+               <number>20</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="pushButton_REG_READ_ALL_MPU6050">
+                <property name="text">
+                 <string>Read All</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Clean All</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_20">
                 <item>
-                 <widget class="QCheckBox" name="checkBox_TEMP_FIFO_EN">
-                  <property name="text">
-                   <string>TEMP FIFO EN</string>
+                 <widget class="QGroupBox" name="groupBox_GYRO_CONFIG">
+                  <property name="title">
+                   <string>GYRO CONFIG</string>
                   </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_8">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="3,1,1,1">
+                     <item>
+                      <widget class="QLabel" name="label_SelfTest_GYRO">
+                       <property name="text">
+                        <string>Self Test</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_XG_SelfTest">
+                       <property name="text">
+                        <string>XG</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_YG_SelfTest">
+                       <property name="text">
+                        <string>YG</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_ZG_SelfTest">
+                       <property name="text">
+                        <string>ZG</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_FullScaleRange_GYRO">
+                       <property name="text">
+                        <string>Full Scale Range</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboBox_FullScaleRange_GYRO">
+                       <item>
+                        <property name="text">
+                         <string>± 250 °/s</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 500 °/s</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 1000 °/s</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 2000 °/s</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,1,1">
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_XG_FIFO_EN">
-                    <property name="text">
-                     <string>XG FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_YG_FIFO_EN">
-                    <property name="text">
-                     <string>YG FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_ZG_FIFO_EN">
-                    <property name="text">
-                     <string>ZG FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QCheckBox" name="checkBox_ACCEL_FIFO_EN">
-                  <property name="text">
-                   <string>ACCEL FIFO EN</string>
+                 <widget class="QGroupBox" name="groupBox_ACCEL_CONFIG">
+                  <property name="title">
+                   <string>ACCEL CONFIG</string>
                   </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_9">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="3,1,1,1">
+                     <item>
+                      <widget class="QLabel" name="label_SelfTest_ACCEL">
+                       <property name="text">
+                        <string>Self Test</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_XA_SelfTest">
+                       <property name="text">
+                        <string>XA</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_YA_SelfTest">
+                       <property name="text">
+                        <string>YA</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_ZA_SelfTest">
+                       <property name="text">
+                        <string>ZA</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,1">
+                     <item>
+                      <widget class="QLabel" name="label_FullScaleRange_ACCEL">
+                       <property name="text">
+                        <string>Full Scale Range</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboBox_FullScaleRange_ACCEL">
+                       <item>
+                        <property name="text">
+                         <string>± 2g</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 4g</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 8g</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>± 16g</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="1,1,1">
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_SLV2_FIFO_EN">
-                    <property name="text">
-                     <string>SLV2 FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_SLV1_FIFO_EN">
-                    <property name="text">
-                     <string>SLV1 FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="checkBox_SLV0_FIFO_EN">
-                    <property name="text">
-                     <string>SLV0 FIFO EN</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
                </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="groupBox_2">
-               <property name="title">
-                <string>INT Pin Config</string>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_13">
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,2">
-                    <item>
-                     <widget class="QLabel" name="label_INT_LEVEL">
-                      <property name="text">
-                       <string>INT LEVEL</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBox_INT_LEVEL">
-                      <item>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_FIFO_EN">
+                <property name="title">
+                 <string>FIFO EN</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,1,1,1">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_TEMP_FIFO_EN">
+                   <property name="text">
+                    <string>TEMP FIFO EN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,1,1">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_XG_FIFO_EN">
+                     <property name="text">
+                      <string>XG FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_YG_FIFO_EN">
+                     <property name="text">
+                      <string>YG FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_ZG_FIFO_EN">
+                     <property name="text">
+                      <string>ZG FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_ACCEL_FIFO_EN">
+                   <property name="text">
+                    <string>ACCEL FIFO EN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="1,1,1">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_SLV2_FIFO_EN">
+                     <property name="text">
+                      <string>SLV2 FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_SLV1_FIFO_EN">
+                     <property name="text">
+                      <string>SLV1 FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_SLV0_FIFO_EN">
+                     <property name="text">
+                      <string>SLV0 FIFO EN</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_2">
+                <property name="title">
+                 <string>INT Pin Config</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,2">
+                     <item>
+                      <widget class="QLabel" name="label_INT_LEVEL">
                        <property name="text">
-                        <string>INT Pin active high</string>
+                        <string>INT LEVEL</string>
                        </property>
-                      </item>
-                      <item>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboBox_INT_LEVEL">
+                       <item>
+                        <property name="text">
+                         <string>INT Pin active high</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>INT Pin active low</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="1,2">
+                     <item>
+                      <widget class="QLabel" name="label_INT_OPEN">
                        <property name="text">
-                        <string>INT Pin active low</string>
+                        <string>INT OPEN</string>
                        </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="1,2">
-                    <item>
-                     <widget class="QLabel" name="label_INT_OPEN">
-                      <property name="text">
-                       <string>INT OPEN</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBox_INT_OPEN">
-                      <item>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboBox_INT_OPEN">
+                       <item>
+                        <property name="text">
+                         <string>INT push-pull</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>INT open drain</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,2">
+                     <item>
+                      <widget class="QLabel" name="label_LATCH_INT_EN">
                        <property name="text">
-                        <string>INT push-pull</string>
+                        <string>LATCH INT EN</string>
                        </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>INT open drain</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,2">
-                    <item>
-                     <widget class="QLabel" name="label_LATCH_INT_EN">
-                      <property name="text">
-                       <string>LATCH INT EN</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBox_LATCH_INT_EN">
-                      <item>
-                       <property name="text">
-                        <string>INT Pin emits 50us long pulse</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>INT Pin held high until the interrupt is cleared</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="comboBox_LATCH_INT_EN">
+                       <item>
+                        <property name="text">
+                         <string>INT Pin emits 50us long pulse</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>INT Pin held high until the interrupt is cleared</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="BMP180_Page">
            <widget class="QPushButton" name="pushButton_REG_READ_ALL_BMP180">
@@ -1454,6 +1555,21 @@
              <rect>
               <x>40</x>
               <y>30</y>
+              <width>89</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Read All</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="GY271_Page">
+           <widget class="QPushButton" name="pushButton_REG_READ_ALL_GY271">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>40</y>
               <width>89</width>
               <height>25</height>
              </rect>
@@ -1476,7 +1592,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>870</width>
+     <width>1007</width>
      <height>22</height>
     </rect>
    </property>

@@ -26,62 +26,75 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void updateUI(const QString &message);
-    void displayReceivedMessage(const QString &message);
-
 private:
     Ui::MainWindow *ui;
 
-    /*Network Protocol*/
+    /* Network Protocol Instance*/
     TCP *TCPServer;
     UDP *UDPServer;
 
-    /*Ploting*/
+    /* Ploting Instance*/
     Mahony_Plot *MahonyPlotObject;
 
+    /* Tools Instance*/
     MediatorInterface* mediator;  // 中介者成员变量
 
-    //! Initial the TCP Server
     void initialBluetoothServer();
 
-    QString getLocalIP();
+    // QString getLocalIP();
 
-private slots:
-    void on_pushButton_Network_Connect_clicked();
-    void on_pushButton_Network_Disconnect_clicked();
-    void on_pushButton_Mahony_Plot_Launch_clicked();
-
-    void onTCPConnectionSuccessful();
-    void onTCPDisconnectionSuccessful();
+public slots:
+    void onTCPStartSuccessful();
+    void onTCPStopSuccessful();
     void onTCPConnectionError();
-
     void onUDPServerStartSuccessful();
     void onUDPServerStopSuccessful();
 
+    void updateUI(const QString &message);
+
+private slots:
+    /* Connection & Disconnection Button Slots */
+    void on_pushButton_Network_Connect_clicked();
+    void on_pushButton_Network_Disconnect_clicked();
+
+    /* Flight Control Panel */
+    void on_pushButton_TAKE_OFF_clicked();
+
+    /* Parameter Setting Panel */
+    void on_pushButton_Mahony_Plot_Launch_clicked();
     void on_pushButton_Mahony_Plot_Stop_clicked();
+
+    /* Sensor Register Setting Navigation Bar Button Slots */
+    void on_toolButton_MPU6050_REG_CONFIG_clicked();
+    void on_toolButton_BMP180_REG_CONFIG_clicked();
+    void on_toolButton_GY271_REG_CONFIG_clicked();
+    // MPU6050: Gyroscope&Accelerometer Sensor
+    void on_pushButton_REG_READ_ALL_MPU6050_clicked();
+    // BMP180: Barometer&temperature Sensor
+    void on_pushButton_REG_READ_ALL_BMP180_clicked();
+    // GY271: Magnetometer
+    void on_pushButton_REG_READ_ALL_GY271_clicked();
+
+
 
     void on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle);
     void on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle);
     void on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle);
     void on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle);
 
-    void on_toolButton_REG_READ_ALL_clicked();
-
-    void on_toolButton_MPU6050_REG_CONFIG_clicked();
-
-    void on_toolButton_BMP180_REG_CONFIG_clicked();
-
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 
 signals:
-    void sig_StartTCPServer(const QString &IPAddr, const quint16 &Port);
-    void sig_StopTCPServer();
+    /* TCP&UDP Server Signals*/
+    void sig_StartTCPServer(const QString &ip_address, const quint16 &port);
     void sig_StartUDPServer(const quint16 &port);
+    void sig_StopTCPServer();
     void sig_StopUDPServer();
+
     void sig_Mahony_PlottingStart();
     void sig_Mahony_PlottingStop();
+
     void sig_sendRequestToFCS(const uint8_t &code);
 
 };

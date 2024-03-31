@@ -13,8 +13,8 @@ public:
     ~UDP();
 
 public slots:
-    void startServer(quint16 port);
-    void stopServer();
+    void startUDPServer(quint16 port);
+    void stopUDPServer();
 
 private:
     QUdpSocket *udpSocket;

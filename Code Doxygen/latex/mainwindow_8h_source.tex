@@ -1,0 +1,107 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_GroundStation/SYSTEM/mainwindow.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_GroundStation/SYSTEM/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QNetworkInterface>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QCloseEvent>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TCP_8h}{TCP.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UDP_8h}{UDP.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mahony__Plot_8h}{Mahony\_Plot.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MediatorInterface_8h}{MediatorInterface.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{/*\ Network\ Protocol\ Instance*/}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classTCP}{TCP}}\ *TCPServer;}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classUDP}{UDP}}\ *UDPServer;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{/*\ Ploting\ Instance*/}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classMahony__Plot}{Mahony\_Plot}}\ *MahonyPlotObject;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ Tools\ Instance*/}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classMediatorInterface}{MediatorInterface}}*\ mediator;\ \ \textcolor{comment}{//\ 中介者成员变量}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ initialBluetoothServer();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ QString\ getLocalIP();}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a844bfc9bb2cae2267d44a4ff8ea644d0}{onTCPStartSuccessful}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a208853b1c9f2c8a27514f8fdf2064a01}{onTCPStopSuccessful}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_acda182aeb3980a35e35c289b1ab11597}{onTCPConnectionError}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_ac3abc308d62e898da770b97b3dfa9273}{onUDPServerStartSuccessful}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a85b31a0978648dcb02ee6f1d3e613a28}{onUDPServerStopSuccessful}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_af82b0f8fe2f3d3bef8d4d29d4b324570}{updateUI}}(\textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*\ Connection\ \&\ Disconnection\ Button\ Slots\ */}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Network\_Connect\_clicked();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Network\_Disconnect\_clicked();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{/*\ Flight\ Control\ Panel\ */}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_TAKE\_OFF\_clicked();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{/*\ Parameter\ Setting\ Panel\ */}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Mahony\_Plot\_Launch\_clicked();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Mahony\_Plot\_Stop\_clicked();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{/*\ Sensor\ Register\ Setting\ Navigation\ Bar\ Button\ Slots\ */}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_toolButton\_MPU6050\_REG\_CONFIG\_clicked();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_toolButton\_BMP180\_REG\_CONFIG\_clicked();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_toolButton\_GY271\_REG\_CONFIG\_clicked();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ MPU6050:\ Gyroscope\&Accelerometer\ Sensor}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_REG\_READ\_ALL\_MPU6050\_clicked();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ BMP180:\ Barometer\&temperature\ Sensor}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_REG\_READ\_ALL\_BMP180\_clicked();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ GY271:\ Magnetometer}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_REG\_READ\_ALL\_GY271\_clicked();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_horizontalSlider\_P12PWM0\_valueChanged(\textcolor{keywordtype}{int}\ duty\_cycle);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_horizontalSlider\_P13PWM1\_valueChanged(\textcolor{keywordtype}{int}\ duty\_cycle);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_horizontalSlider\_P19PWM2\_valueChanged(\textcolor{keywordtype}{int}\ duty\_cycle);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_horizontalSlider\_P18PWM3\_valueChanged(\textcolor{keywordtype}{int}\ duty\_cycle);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}{closeEvent}}(QCloseEvent\ *event)\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Rewrite\ the\ close\ event}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ signals:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{/*\ TCP\&UDP\ Server\ Signals*/}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_af0c8ced6a719f1e498b9b4e152caae95}{sig\_StartTCPServer}}(\textcolor{keyword}{const}\ QString\ \&ip\_address,\ \textcolor{keyword}{const}\ quint16\ \&port);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a19a94a5b8cdca9a3f961309085c30868}{sig\_StartUDPServer}}(\textcolor{keyword}{const}\ quint16\ \&port);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a191de89566c03d5a0d70dc2c7786ba4e}{sig\_StopTCPServer}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a3db71489cac579f21b3da2972970552e}{sig\_StopUDPServer}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_ab694a4046471f43d54e662f2ee4eb55a}{sig\_Mahony\_PlottingStart}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a25a3cdb66a3e2bd9e513c44e1d2a162b}{sig\_Mahony\_PlottingStop}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a87e9b3b0b8c869a94401289ac1677b3c}{sig\_sendRequestToFCS}}(\textcolor{keyword}{const}\ uint8\_t\ \&code);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

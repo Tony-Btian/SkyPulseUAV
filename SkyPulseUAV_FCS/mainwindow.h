@@ -14,7 +14,6 @@
 #include "i2c_device.h"
 
 /*Middlewares Head Files*/
-#include "datadecoder.h"
 #include "tcp.h"
 
 /*Sensor Head Files*/

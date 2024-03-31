@@ -30,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     GY271 = new Magnetometer_GY271(0x0D, this); // GY271
     TCPServer = new TCP();  // TCP Server
 
+    connect(TCPServer, &TCP::sig_requestReadAllReg_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
+
     connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
     connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
     connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
@@ -96,3 +98,4 @@ void MainWindow::callBackTest()
 {
     qDebug() << "Detected";
 }
+

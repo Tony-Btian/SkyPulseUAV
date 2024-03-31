@@ -5,6 +5,8 @@
 #include <QThread>
 #include "i2c_device.h"
 
+#define BMP180_DATAHEAD 0x15
+
 class Barometer_BMP180 : public QObject
 {
     Q_OBJECT

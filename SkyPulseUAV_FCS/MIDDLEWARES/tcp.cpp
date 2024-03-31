@@ -60,10 +60,10 @@ void TCP::onReadyRead()
     QTcpSocket *clients = qobject_cast<QTcpSocket*>(sender());
     if(!clients) return;
     QByteArray data = clients->readAll();
-    DecodeTask *task = new DecodeTask(data);
-    task->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(task);
-//    dataTranslator(data);
+//    DecodeTask *task = new DecodeTask(data);
+//    task->setAutoDelete(true);
+//    QThreadPool::globalInstance()->start(task);
+    this->dataTranslator(data);
 }
 
 void TCP::broadcastMessage(const QByteArray &message)
@@ -89,28 +89,28 @@ void TCP::sendMessage64Bytes(const QByteArray &datapackage_u64)
 
 void TCP::dataTranslator(const QByteArray &data)
 {
-    if(data.at(0) == 0x00){
-        qDebug() << "0:" << data.toHex();
-        switch (data.at(1)) {
-        case 0x00:
+    if(data.isEmpty()) return;
+    switch (static_cast<unsigned char>(data[0])) {
+    case 0x00:
+        qDebug() << "Received Message 0x00";
+        emit sig_requestReadAllReg_BMP180();
+        break;
+    case 0x01:
 
-            break;
-        case 0x01:
+        break;
+    case 0x02:
 
-            break;
-        case 0x02:
+        break;
+    case 0x03:
 
-            break;
-        case 0x03:
-            qDebug() << "TCP Thread ID :" << QThread::currentThreadId();
-            break;
-        default:
-            break;
-        }
+        break;
+    case 0x04:
+
+        break;
+    default:
+        break;
     }
-    else if(data.at(0) == 0x01){
-        qDebug() << "1" << data.toHex();
-    }
+
 
 //    QDataStream stream(data);
 //    stream.setByteOrder(QDataStream::LittleEndian);

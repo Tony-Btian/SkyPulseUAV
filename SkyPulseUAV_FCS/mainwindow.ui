@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>381</width>
-    <height>299</height>
+    <width>341</width>
+    <height>195</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,46 +17,6 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTextBrowser" name="textBrowser_Main"/>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Temp:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="temperatureLabel">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Press: </string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="pressureLabel">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">

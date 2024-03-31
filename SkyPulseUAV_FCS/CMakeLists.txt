@@ -20,13 +20,16 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/DRIVER
     ${CMAKE_SOURCE_DIR}/MIDDLEWARES
     ${CMAKE_SOURCE_DIR}/TOOLS
-    ${CMAKE_SOURCE_DIR}/SENSOR)
+    ${CMAKE_SOURCE_DIR}/SENSOR
+    ${CMAKE_SOURCE_DIR}/ALGORITHM)
 
 set(PROJECT_SOURCES
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+
+    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
 
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
     DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp

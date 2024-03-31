@@ -42,7 +42,7 @@ private:
     void dataTranslator(const QByteArray &data);
 
 signals:
-    void sig_sendPWMSignal(const int &gpio_pin, const int &duty_cycle);
+    void sig_sendPWM0Signal(const int &duty_cycle);
     void sig_errorOccured_TCP(const QString &error_message);
     void sig_requestReadAllReg_BMP180();
 

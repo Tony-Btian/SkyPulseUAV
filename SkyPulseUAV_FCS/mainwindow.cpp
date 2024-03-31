@@ -30,18 +30,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     GY271 = new Magnetometer_GY271(0x0D, this); // GY271
     TCPServer = new TCP();  // TCP Server
 
-    connect(TCPServer, &TCP::sig_requestReadAllReg_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
 
-    connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
+    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
     connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
+    connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
     connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
 
     /* TCP Server Signals */
-    connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
-    connect(TCPServer, &TCP::sig_sendPWMSignal, PWMDriver, &ESC_PWM_Driver::setPWMSignal);
+    connect(TCPServer, &TCP::sig_requestReadAllReg_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
+    connect(TCPServer, &TCP::sig_sendPWM0Signal, PWMDriver, &ESC_PWM_Driver::setPWM0Signal);
 
     /* Read All Register Signals */
-    connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
+    connect(BMP180, &Barometer_BMP180::sig_allRegistersData, TCPServer, &TCP::sendMessage64Bytes);
 
 }
 
@@ -57,6 +57,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    QMainWindow::closeEvent(event);
+}
+
 void MainWindow::on_pushButton_BMP_clicked()
 {
     qDebug() << "Main Window Thread: " << QThread::currentThreadId();
@@ -64,6 +69,7 @@ void MainWindow::on_pushButton_BMP_clicked()
     readSensorData();
     emit sig_readTemperature();
     emit sig_readDirection();
+
 //    int level = gpioRead(17);
 //    if (level == PI_HIGH) {
 //        qDebug()<<"GPIO is HIGH\n";
@@ -81,10 +87,12 @@ void MainWindow::on_pushButton_HMC_clicked()
     emit sig_readAllRegisters_BMP180();
 }
 
-void MainWindow::closeEvent(QCloseEvent *event)
+void MainWindow::on_pushButton_Take_Off_clicked()
 {
-    QMainWindow::closeEvent(event);
+
 }
+
+
 
 void MainWindow::readSensorData()
 {
@@ -98,4 +106,7 @@ void MainWindow::callBackTest()
 {
     qDebug() << "Detected";
 }
+
+
+
 

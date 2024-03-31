@@ -28,14 +28,30 @@ void ESC_PWM_Driver::initialPWM()
     gpioSetPWMfrequency(PWM3, 100);
 }
 
-void ESC_PWM_Driver::setPWMSignal(int gpioPin, int dutyCycle)
+void ESC_PWM_Driver::setPWM0Signal(const int &dutyCycle)
 {
     // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
-    if((dutyCycle < 0) || (dutyCycle > 255)) {
-        qWarning("Invalid duty cycle");
-        return;
-    }
-    qDebug() << "Gpio Pin: " << gpioPin << "," << "Duty cycle: " << dutyCycle;
-    // Setting the PWM signal
-    gpioPWM(gpioPin, dutyCycle);
+    if((dutyCycle < 0) || (dutyCycle > 255)) return;
+    gpioPWM(PWM0, dutyCycle);
+}
+
+void ESC_PWM_Driver::setPWM1Signal(const int &dutyCycle)
+{
+    // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
+    if((dutyCycle < 0) || (dutyCycle > 255)) return;
+    gpioPWM(PWM1, dutyCycle);
+}
+
+void ESC_PWM_Driver::setPWM2Signal(const int &dutyCycle)
+{
+    // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
+    if((dutyCycle < 0) || (dutyCycle > 255)) return;
+    gpioPWM(PWM2, dutyCycle);
+}
+
+void ESC_PWM_Driver::setPWM3Signal(const int &dutyCycle)
+{
+    // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
+    if((dutyCycle < 0) || (dutyCycle > 255)) return;
+    gpioPWM(PWM3, dutyCycle);
 }

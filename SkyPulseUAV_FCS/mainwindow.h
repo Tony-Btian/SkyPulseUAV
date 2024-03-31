@@ -49,6 +49,7 @@ public slots:
 private slots:
     void on_pushButton_BMP_clicked();
     void on_pushButton_HMC_clicked();
+    void on_pushButton_Take_Off_clicked();
 
 private:
     Ui::MainWindow *ui;

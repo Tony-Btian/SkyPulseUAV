@@ -1,0 +1,34 @@
+\doxysection{Motor.\+h}
+\hypertarget{Motor_8h_source}{}\label{Motor_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/Motor.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/Motor.h}}
+\mbox{\hyperlink{Motor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_MOTOR\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_MOTOR\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ MOTOR1\_PIN\ 1}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MOTOR2\_PIN\ 2}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MOTOR3\_PIN\ 3}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MOTOR4\_PIN\ 4}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MOTOR\_FREQ\ 500.f}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MOTOR\_RANGE\ 10000}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MOTOR\_HALF\_RANGE\ 5000}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMotor}{Motor}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classMotor_af6106b4c506411265c5face762b6c004}{Motor}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMotor_a8451c20bb790d11f7c631c92be97a968}{updateMotor}}(\textcolor{keywordtype}{int}\ rateRequired[4]);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ motorDutyCycle[4];}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ beyondRange[4];}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

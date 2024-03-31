@@ -1,0 +1,69 @@
+\doxysection{STM32.\+h}
+\hypertarget{STM32_8h_source}{}\label{STM32_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/STM32.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/STM32.h}}
+\mbox{\hyperlink{STM32_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_TOSTM32\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_TOSTM32\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CppThread_8hpp}{CppThread.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SPI\_CHANNEL\_0\ 0}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SPI\_CHANNEL\_1\ 1}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ DATA\_SIZE\ 8}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSTM32}{STM32}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classSTM32_a2832e9a27e52a0b33cb1bf82ee8b6a91}{CallbackFunction}}\ =\ function<void(\textcolor{keywordtype}{float}[3],\ \textcolor{keywordtype}{float})>;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classSTM32_a32edab27fb14bdf772a42df50e6437c2}{STM32}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classSTM32_ad5d6ea388f4d36fb8249bcaaada9ade8}{\string~STM32}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSTM32_aeafe6cc3f61dc23d1d7de86aeaa428d5}{getData}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSTM32_a050e73158b66c18aedb22f45ef89412a}{setCallback}}(\mbox{\hyperlink{classSTM32_a2832e9a27e52a0b33cb1bf82ee8b6a91}{CallbackFunction}}\ callback);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classSTM32_a2832e9a27e52a0b33cb1bf82ee8b6a91}{CallbackFunction}}\ callback\_;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ handle;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ IRDistance[3];}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ USDistance;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSTM32Thread}{STM32Thread}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCppThread}{CppThread}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classSTM32Thread_abda52db1ac492a077453cce1d81948ab}{STM32Thread}}(\mbox{\hyperlink{classSTM32}{STM32}}\&\ STM32Ins\_)\ :\ }
+\DoxyCodeLine{00050\ \ \ \ \ STM32Ins(STM32Ins\_)\ \{\};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSTM32Thread_a1329d7f3854a097b509cfbaa5d650dba}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classSTM32}{STM32}}\&\ STM32Ins;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

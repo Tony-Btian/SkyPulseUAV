@@ -1,0 +1,48 @@
+\doxysection{tcp.\+h}
+\hypertarget{tcp_8h_source}{}\label{tcp_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/MIDDLEWARES/tcp.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/MIDDLEWARES/tcp.h}}
+\mbox{\hyperlink{tcp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TCP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TCP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTCP}{TCP}}\ :\ \textcolor{keyword}{public}\ QTcpServer}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classTCP_af96f618dc070f3fc607d4e7b97b51cc2}{TCP}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classTCP_aa60dfec4c3dfdc84a0a64322eed4ee5c}{\string~TCP}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a3df9433947e1caf056364bc95905a87d}{startServer}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_aa90bfdfba719cee53225960e1a6828ed}{broadcastMessage}}(\textcolor{keyword}{const}\ QByteArray\ \&message);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a962878e4abd158c37648d427f20173af}{sendMessage64Bytes}}(\textcolor{keyword}{const}\ QByteArray\ \&datapackage\_u64);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_adf9c14388b6dcda52a5af07fb88b2a66}{incomingConnection}}(qintptr\ socketDescriptor)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ onClientDisconnected();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ QList<QTcpSocket*>\ clients;}
+\DoxyCodeLine{00039\ \ \ \ \ QThread\ *\mbox{\hyperlink{classTCPThread}{TCPThread}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ quint16\ PORT\ =\ 12345;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ dataTranslator(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ signals:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_af408638652bef9ff68bf8b3eef2cea9c}{sig\_sendPWMSignal}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&gpio\_pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&duty\_cycle);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a94e5974402a7ef0dac223d68492d677c}{sig\_errorOccured\_TCP}}(\textcolor{keyword}{const}\ QString\ \&error\_message);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TCP\_H}}
+
+\end{DoxyCode}

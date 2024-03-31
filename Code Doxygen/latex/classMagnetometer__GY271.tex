@@ -1,0 +1,73 @@
+\doxysection{Magnetometer\+\_\+\+GY271 Class Reference}
+\hypertarget{classMagnetometer__GY271}{}\label{classMagnetometer__GY271}\index{Magnetometer\_GY271@{Magnetometer\_GY271}}
+
+
+{\ttfamily \#include $<$magnetometer\+\_\+gy271.\+h$>$}
+
+Inheritance diagram for Magnetometer\+\_\+\+GY271\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMagnetometer__GY271}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMagnetometer__GY271_a3f5b7445bd93fda8a9b87fa293035862}{read\+Raw\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMagnetometer__GY271_a2eb990ddaa6d57ebe747d693a87ed80c}{sig\+\_\+raw\+Data\+Read}} (int x, int y, int z)
+\item 
+void \mbox{\hyperlink{classMagnetometer__GY271_a28cf1b38012f6ddbcd0580fe84b3239c}{sig\+\_\+error\+Occurred}} (const QString \&error)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMagnetometer__GY271_ac8420d42af0842549c983f5a31d62919}{Magnetometer\+\_\+\+GY271}} (uint8\+\_\+t i2c\+Address=0x0D, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+bool \mbox{\hyperlink{classMagnetometer__GY271_a7febceaea22685478db53cce8957237a}{initialize\+GY271}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMagnetometer__GY271_ac8420d42af0842549c983f5a31d62919}\label{classMagnetometer__GY271_ac8420d42af0842549c983f5a31d62919} 
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\doxysubsubsection{\texorpdfstring{Magnetometer\_GY271()}{Magnetometer\_GY271()}}
+{\footnotesize\ttfamily Magnetometer\+\_\+\+GY271\+::\+Magnetometer\+\_\+\+GY271 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{i2c\+Address = {\ttfamily 0x0D},  }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMagnetometer__GY271_a7febceaea22685478db53cce8957237a}\label{classMagnetometer__GY271_a7febceaea22685478db53cce8957237a} 
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!initializeGY271@{initializeGY271}}
+\index{initializeGY271@{initializeGY271}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\doxysubsubsection{\texorpdfstring{initializeGY271()}{initializeGY271()}}
+{\footnotesize\ttfamily bool Magnetometer\+\_\+\+GY271\+::initialize\+GY271 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMagnetometer__GY271_a3f5b7445bd93fda8a9b87fa293035862}\label{classMagnetometer__GY271_a3f5b7445bd93fda8a9b87fa293035862} 
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!readRawData@{readRawData}}
+\index{readRawData@{readRawData}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\doxysubsubsection{\texorpdfstring{readRawData}{readRawData}}
+{\footnotesize\ttfamily void Magnetometer\+\_\+\+GY271\+::read\+Raw\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classMagnetometer__GY271_a28cf1b38012f6ddbcd0580fe84b3239c}\label{classMagnetometer__GY271_a28cf1b38012f6ddbcd0580fe84b3239c} 
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!sig\_errorOccurred@{sig\_errorOccurred}}
+\index{sig\_errorOccurred@{sig\_errorOccurred}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\doxysubsubsection{\texorpdfstring{sig\_errorOccurred}{sig\_errorOccurred}}
+{\footnotesize\ttfamily void Magnetometer\+\_\+\+GY271\+::sig\+\_\+error\+Occurred (\begin{DoxyParamCaption}\item[{const QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMagnetometer__GY271_a2eb990ddaa6d57ebe747d693a87ed80c}\label{classMagnetometer__GY271_a2eb990ddaa6d57ebe747d693a87ed80c} 
+\index{Magnetometer\_GY271@{Magnetometer\_GY271}!sig\_rawDataRead@{sig\_rawDataRead}}
+\index{sig\_rawDataRead@{sig\_rawDataRead}!Magnetometer\_GY271@{Magnetometer\_GY271}}
+\doxysubsubsection{\texorpdfstring{sig\_rawDataRead}{sig\_rawDataRead}}
+{\footnotesize\ttfamily void Magnetometer\+\_\+\+GY271\+::sig\+\_\+raw\+Data\+Read (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+SENSOR/\mbox{\hyperlink{magnetometer__gy271_8h}{magnetometer\+\_\+gy271.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+SENSOR/\mbox{\hyperlink{magnetometer__gy271_8cpp}{magnetometer\+\_\+gy271.\+cpp}}\end{DoxyCompactItemize}

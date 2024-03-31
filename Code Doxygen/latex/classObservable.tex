@@ -1,0 +1,75 @@
+\doxysection{Observable Class Reference}
+\hypertarget{classObservable}{}\label{classObservable}\index{Observable@{Observable}}
+
+
+{\ttfamily \#include $<$observable.\+h$>$}
+
+Inheritance diagram for Observable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classObservable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a45153a79bbdda4ad8a717244ca43a912}{notify\+Observers}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a41116955e42a9135cafed2536615576b}{add\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{classObservable_a01c4105c6a88640eaf2c32e38064e20e}{remove\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\mbox{\hyperlink{classObservable_a4808aed7a43b4a2f9751c1a2e434a352}{Observable}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a05797a838099ac6bf9705ff03bcc4d47}{notify\+Observers}} (bool is\+Initialised)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObservable_a4808aed7a43b4a2f9751c1a2e434a352}\label{classObservable_a4808aed7a43b4a2f9751c1a2e434a352} 
+\index{Observable@{Observable}!Observable@{Observable}}
+\index{Observable@{Observable}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{Observable()}{Observable()}}
+{\footnotesize\ttfamily Observable\+::\+Observable (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObservable_a41116955e42a9135cafed2536615576b}\label{classObservable_a41116955e42a9135cafed2536615576b} 
+\index{Observable@{Observable}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Observable\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})}
+
+\Hypertarget{classObservable_a05797a838099ac6bf9705ff03bcc4d47}\label{classObservable_a05797a838099ac6bf9705ff03bcc4d47} 
+\index{Observable@{Observable}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Observable\+::notify\+Observers (\begin{DoxyParamCaption}\item[{bool}]{is\+Initialised }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classObservable_a45153a79bbdda4ad8a717244ca43a912}\label{classObservable_a45153a79bbdda4ad8a717244ca43a912} 
+\index{Observable@{Observable}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{notifyObservers}{notifyObservers}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Observable\+::notify\+Observers (\begin{DoxyParamCaption}\item[{const QString \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classObservable_a01c4105c6a88640eaf2c32e38064e20e}\label{classObservable_a01c4105c6a88640eaf2c32e38064e20e} 
+\index{Observable@{Observable}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!Observable@{Observable}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Observable\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+TOOLS/\mbox{\hyperlink{SkyPulseUAV__FCS_2TOOLS_2observable_8h}{observable.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+SYSTEM/\mbox{\hyperlink{SkyPulseUAV__GroundStation_2SYSTEM_2observable_8h}{observable.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+TOOLS/\mbox{\hyperlink{SkyPulseUAV__FCS_2TOOLS_2observable_8cpp}{observable.\+cpp}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+SYSTEM/\mbox{\hyperlink{SkyPulseUAV__GroundStation_2SYSTEM_2observable_8cpp}{observable.\+cpp}}\end{DoxyCompactItemize}

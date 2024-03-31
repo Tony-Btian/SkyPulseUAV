@@ -1,0 +1,55 @@
+\doxysection{TCP.\+h}
+\hypertarget{SkyPulseUAV__GroundStation_2COMM_2TCP_8h_source}{}\label{SkyPulseUAV__GroundStation_2COMM_2TCP_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/COMM/TCP.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/COMM/TCP.h}}
+\mbox{\hyperlink{SkyPulseUAV__GroundStation_2COMM_2TCP_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TCP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TCP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MediatorInterface_8h}{MediatorInterface.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ WRITE\ 0x01}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ READ\ \ 0x00}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTCP}{TCP}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classTCP_af96f618dc070f3fc607d4e7b97b51cc2}{TCP}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{classMediatorInterface}{MediatorInterface}}*\ mediator\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classTCP_aa60dfec4c3dfdc84a0a64322eed4ee5c}{\string~TCP}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_afc14750652987cc8cd5c2bc407e44f48}{connectToServer}}(\textcolor{keyword}{const}\ QString\ \&host,\ quint16\ port);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a076d416dfd66285ed5bb58e88b694e88}{disconnectToServer}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ QTcpSocket\ *TCPSocket;}
+\DoxyCodeLine{00024\ \ \ \ \ QThread\ *\mbox{\hyperlink{classTCPThread}{TCPThread}};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classMediatorInterface}{MediatorInterface}}*\ mediator;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ QString\ dataCheckOut(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a3623b3d671ae5569d43fc6f7bdeca094}{sendMessage}}(\textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a4b8a2380b6d8d533a15445dd0c2c905c}{sendMessageQByte}}(\textcolor{keyword}{const}\ QByteArray\ \&message);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_aa29d12fe403a0451c6bf216fd9738246}{readMessage}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a137fe49eb387c18e89478a7cd9a73a88}{PWM\_Controler}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&code,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&value);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_afebbe42c88e68d7c37d9aaef0dc7bc46}{controlMessageSender}}(\textcolor{keyword}{const}\ uint8\_t\ \&action,\ \textcolor{keyword}{const}\ uint8\_t\ \&data\_length,\ \textcolor{keyword}{const}\ uint8\_t\ \&value);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ tcpInitial();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ onConnected();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ onDisconnected();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ onErrorOccurred();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ signals:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a413ba663a9c86aca92415d295ab517ca}{sig\_connectionSuccessful}}();\ \ \textcolor{comment}{//\ 判断是否连接成功的信号}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_a236c135881f1eb11c52b02150dd3f8c7}{sig\_disconnectionSuccessful}}();\ \ \textcolor{comment}{//\ 判断是否成功断开的信号}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCP_ad4787d95a6343b653f01f01882a9b7bd}{sig\_connectionError}}();}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TCP\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,32 @@
+\doxysection{Cpp\+Thread.\+hpp}
+\hypertarget{CppThread_8hpp_source}{}\label{CppThread_8hpp_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/CppThread.hpp@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/CppThread.hpp}}
+\mbox{\hyperlink{CppThread_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_CPP\_THREAD\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_CPP\_THREAD\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCppThread}{CppThread}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCppThread_a1be46d1be000f41a763289300623c609}{start}}()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ uthread\ =\ std::thread(\&\mbox{\hyperlink{classCppThread_a792b79e72250710147c452648def4a78}{CppThread::run}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}{join}}()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ uthread.join();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCppThread_a792b79e72250710147c452648def4a78}{run}}()\ =\ 0;\ \ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ pointer\ to\ the\ thread}}
+\DoxyCodeLine{00047\ \ \ \ \ std::thread\ uthread;}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

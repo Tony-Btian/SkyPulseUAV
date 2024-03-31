@@ -1,0 +1,241 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{classMainWindow}{}\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_ae1195b2352240d3d39f18a6e3892b1ab}{call\+Back\+Test}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_af82b0f8fe2f3d3bef8d4d29d4b324570}{update\+UI}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{classMainWindow_a546d70feffe8ef2f529f4b8bc4485f91}{display\+Received\+Message}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_ad137a7b5fc6fc887448ceb1c8890267c}{sig\+\_\+\+TCPBroad\+Cast\+Message}} (const QByte\+Array \&message)
+\item 
+void \mbox{\hyperlink{classMainWindow_a5484dfbc36da08880cc48331bc67b0cb}{sig\+\_\+read\+Pressure}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_a9d7a7049c1b3e2898d2e5b67e954d925}{sig\+\_\+read\+Temperature}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_aa4338a0d3e4d99fd707da37cb7c9f431}{sig\+\_\+read\+Direction}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_aeeef0fdfd5b1242d156f912d251a8f55}{sig\+\_\+read\+All\+Registers\+\_\+\+BMP180}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_a9ef0766d189ae8041a3b88b13dd01f11}{sig\+\_\+\+Start\+TCPServer}} (const QString \&IPAddr, const quint16 \&Port)
+\item 
+void \mbox{\hyperlink{classMainWindow_a191de89566c03d5a0d70dc2c7786ba4e}{sig\+\_\+\+Stop\+TCPServer}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_a19a94a5b8cdca9a3f961309085c30868}{sig\+\_\+\+Start\+UDPServer}} (const quint16 \&port)
+\item 
+void \mbox{\hyperlink{classMainWindow_a3db71489cac579f21b3da2972970552e}{sig\+\_\+\+Stop\+UDPServer}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_ab694a4046471f43d54e662f2ee4eb55a}{sig\+\_\+\+Mahony\+\_\+\+Plotting\+Start}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_a25a3cdb66a3e2bd9e513c44e1d2a162b}{sig\+\_\+\+Mahony\+\_\+\+Plotting\+Stop}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_af04cce95b8421d3e0ea3d11ea61aca1f}{sig\+\_\+send\+Message\+To\+TCP}} (const uint8\+\_\+t \&action, const uint8\+\_\+t \&data\+\_\+length, const uint8\+\_\+t \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classObservable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a45153a79bbdda4ad8a717244ca43a912}{notify\+Observers}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_aad3711707fbf57a59e4769c8cea08bf7}{prepare\+For\+Quit}} ()
+\item 
+void \mbox{\hyperlink{classMainWindow_ad09822fd8772b966e3de4931412d0269}{read\+Sensor\+Data}} ()
+\item 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObservable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a41116955e42a9135cafed2536615576b}{add\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{classObservable_a01c4105c6a88640eaf2c32e38064e20e}{remove\+Observer}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\mbox{\hyperlink{classObservable_a4808aed7a43b4a2f9751c1a2e434a352}{Observable}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}{close\+Event}} (QClose\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}{close\+Event}} (QClose\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classObservable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObservable_a05797a838099ac6bf9705ff03bcc4d47}{notify\+Observers}} (bool is\+Initialised)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMainWindow_ae1195b2352240d3d39f18a6e3892b1ab}\label{classMainWindow_ae1195b2352240d3d39f18a6e3892b1ab} 
+\index{MainWindow@{MainWindow}!callBackTest@{callBackTest}}
+\index{callBackTest@{callBackTest}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{callBackTest}{callBackTest}}
+{\footnotesize\ttfamily void Main\+Window\+::call\+Back\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}\label{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f} 
+\index{MainWindow@{MainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Main\+Window\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}\label{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f} 
+\index{MainWindow@{MainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Main\+Window\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event \texorpdfstring{$\ast$}{*}}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classMainWindow_a546d70feffe8ef2f529f4b8bc4485f91}\label{classMainWindow_a546d70feffe8ef2f529f4b8bc4485f91} 
+\index{MainWindow@{MainWindow}!displayReceivedMessage@{displayReceivedMessage}}
+\index{displayReceivedMessage@{displayReceivedMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{displayReceivedMessage}{displayReceivedMessage}}
+{\footnotesize\ttfamily void Main\+Window\+::display\+Received\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{classMainWindow_aad3711707fbf57a59e4769c8cea08bf7}\label{classMainWindow_aad3711707fbf57a59e4769c8cea08bf7} 
+\index{MainWindow@{MainWindow}!prepareForQuit@{prepareForQuit}}
+\index{prepareForQuit@{prepareForQuit}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{prepareForQuit()}{prepareForQuit()}}
+{\footnotesize\ttfamily void Main\+Window\+::prepare\+For\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMainWindow_ad09822fd8772b966e3de4931412d0269}\label{classMainWindow_ad09822fd8772b966e3de4931412d0269} 
+\index{MainWindow@{MainWindow}!readSensorData@{readSensorData}}
+\index{readSensorData@{readSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readSensorData()}{readSensorData()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Sensor\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMainWindow_ab694a4046471f43d54e662f2ee4eb55a}\label{classMainWindow_ab694a4046471f43d54e662f2ee4eb55a} 
+\index{MainWindow@{MainWindow}!sig\_Mahony\_PlottingStart@{sig\_Mahony\_PlottingStart}}
+\index{sig\_Mahony\_PlottingStart@{sig\_Mahony\_PlottingStart}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_Mahony\_PlottingStart}{sig\_Mahony\_PlottingStart}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Mahony\+\_\+\+Plotting\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a25a3cdb66a3e2bd9e513c44e1d2a162b}\label{classMainWindow_a25a3cdb66a3e2bd9e513c44e1d2a162b} 
+\index{MainWindow@{MainWindow}!sig\_Mahony\_PlottingStop@{sig\_Mahony\_PlottingStop}}
+\index{sig\_Mahony\_PlottingStop@{sig\_Mahony\_PlottingStop}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_Mahony\_PlottingStop}{sig\_Mahony\_PlottingStop}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Mahony\+\_\+\+Plotting\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_aeeef0fdfd5b1242d156f912d251a8f55}\label{classMainWindow_aeeef0fdfd5b1242d156f912d251a8f55} 
+\index{MainWindow@{MainWindow}!sig\_readAllRegisters\_BMP180@{sig\_readAllRegisters\_BMP180}}
+\index{sig\_readAllRegisters\_BMP180@{sig\_readAllRegisters\_BMP180}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_readAllRegisters\_BMP180}{sig\_readAllRegisters\_BMP180}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+read\+All\+Registers\+\_\+\+BMP180 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_aa4338a0d3e4d99fd707da37cb7c9f431}\label{classMainWindow_aa4338a0d3e4d99fd707da37cb7c9f431} 
+\index{MainWindow@{MainWindow}!sig\_readDirection@{sig\_readDirection}}
+\index{sig\_readDirection@{sig\_readDirection}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_readDirection}{sig\_readDirection}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+read\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a5484dfbc36da08880cc48331bc67b0cb}\label{classMainWindow_a5484dfbc36da08880cc48331bc67b0cb} 
+\index{MainWindow@{MainWindow}!sig\_readPressure@{sig\_readPressure}}
+\index{sig\_readPressure@{sig\_readPressure}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_readPressure}{sig\_readPressure}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+read\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a9d7a7049c1b3e2898d2e5b67e954d925}\label{classMainWindow_a9d7a7049c1b3e2898d2e5b67e954d925} 
+\index{MainWindow@{MainWindow}!sig\_readTemperature@{sig\_readTemperature}}
+\index{sig\_readTemperature@{sig\_readTemperature}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_readTemperature}{sig\_readTemperature}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+read\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_af04cce95b8421d3e0ea3d11ea61aca1f}\label{classMainWindow_af04cce95b8421d3e0ea3d11ea61aca1f} 
+\index{MainWindow@{MainWindow}!sig\_sendMessageToTCP@{sig\_sendMessageToTCP}}
+\index{sig\_sendMessageToTCP@{sig\_sendMessageToTCP}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_sendMessageToTCP}{sig\_sendMessageToTCP}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+send\+Message\+To\+TCP (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{action,  }\item[{const uint8\+\_\+t \&}]{data\+\_\+length,  }\item[{const uint8\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a9ef0766d189ae8041a3b88b13dd01f11}\label{classMainWindow_a9ef0766d189ae8041a3b88b13dd01f11} 
+\index{MainWindow@{MainWindow}!sig\_StartTCPServer@{sig\_StartTCPServer}}
+\index{sig\_StartTCPServer@{sig\_StartTCPServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_StartTCPServer}{sig\_StartTCPServer}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Start\+TCPServer (\begin{DoxyParamCaption}\item[{const QString \&}]{IPAddr,  }\item[{const quint16 \&}]{Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a19a94a5b8cdca9a3f961309085c30868}\label{classMainWindow_a19a94a5b8cdca9a3f961309085c30868} 
+\index{MainWindow@{MainWindow}!sig\_StartUDPServer@{sig\_StartUDPServer}}
+\index{sig\_StartUDPServer@{sig\_StartUDPServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_StartUDPServer}{sig\_StartUDPServer}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Start\+UDPServer (\begin{DoxyParamCaption}\item[{const quint16 \&}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a191de89566c03d5a0d70dc2c7786ba4e}\label{classMainWindow_a191de89566c03d5a0d70dc2c7786ba4e} 
+\index{MainWindow@{MainWindow}!sig\_StopTCPServer@{sig\_StopTCPServer}}
+\index{sig\_StopTCPServer@{sig\_StopTCPServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_StopTCPServer}{sig\_StopTCPServer}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Stop\+TCPServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_a3db71489cac579f21b3da2972970552e}\label{classMainWindow_a3db71489cac579f21b3da2972970552e} 
+\index{MainWindow@{MainWindow}!sig\_StopUDPServer@{sig\_StopUDPServer}}
+\index{sig\_StopUDPServer@{sig\_StopUDPServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_StopUDPServer}{sig\_StopUDPServer}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+Stop\+UDPServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_ad137a7b5fc6fc887448ceb1c8890267c}\label{classMainWindow_ad137a7b5fc6fc887448ceb1c8890267c} 
+\index{MainWindow@{MainWindow}!sig\_TCPBroadCastMessage@{sig\_TCPBroadCastMessage}}
+\index{sig\_TCPBroadCastMessage@{sig\_TCPBroadCastMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sig\_TCPBroadCastMessage}{sig\_TCPBroadCastMessage}}
+{\footnotesize\ttfamily void Main\+Window\+::sig\+\_\+\+TCPBroad\+Cast\+Message (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{classMainWindow_af82b0f8fe2f3d3bef8d4d29d4b324570}\label{classMainWindow_af82b0f8fe2f3d3bef8d4d29d4b324570} 
+\index{MainWindow@{MainWindow}!updateUI@{updateUI}}
+\index{updateUI@{updateUI}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateUI}{updateUI}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+UI (\begin{DoxyParamCaption}\item[{const QString \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\mbox{\hyperlink{SkyPulseUAV__FCS_2mainwindow_8h}{mainwindow.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+SYSTEM/\mbox{\hyperlink{SkyPulseUAV__GroundStation_2SYSTEM_2mainwindow_8h}{mainwindow.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\mbox{\hyperlink{SkyPulseUAV__FCS_2mainwindow_8cpp}{mainwindow.\+cpp}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+SYSTEM/\mbox{\hyperlink{SkyPulseUAV__GroundStation_2SYSTEM_2mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

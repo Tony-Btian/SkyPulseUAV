@@ -1,0 +1,39 @@
+\doxysection{Mahony\+\_\+\+Plot.\+h}
+\hypertarget{Mahony__Plot_8h_source}{}\label{Mahony__Plot_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/PLOTING/Mahony\_Plot.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/PLOTING/Mahony\_Plot.h}}
+\mbox{\hyperlink{Mahony__Plot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAHONY\_PLOT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAHONY\_PLOT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QFutureWatcher>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \#include\ <QMutex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}qcustomplot.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMahony__Plot}{Mahony\_Plot}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMahony__Plot_a0a5dac821d39042c9e8b53d4b7b0ee1f}{Mahony\_Plot}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classMahony__Plot_a33a477680727db6a8f7851ed13b2ac4f}{\string~Mahony\_Plot}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ QFutureWatcher<void>\ watcher;}
+\DoxyCodeLine{00019\ \ \ \ \ QAtomicInt\ \_stop;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ plotThreadParameterInitial();\ \textcolor{comment}{//\ 线程参数初始化}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMahony__Plot_a2be1043919ce8ae9e73058ef34e4c90b}{plotThreadDataReceiver}}(uint,\ uint,\ uint);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMahony__Plot_a6dfd77359e65d2e185feffe5a36e4c72}{startPlotting}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMahony__Plot_ab90d141ad9a50170587bd2d5eec433dd}{stopPlotting}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ signals:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMahony__Plot_a28aa85afe296824039fa6475b59e4dbd}{finishedPlotting}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMahony__Plot_ac96299498004ddd20744e0564b5fab24}{requestData}}(uint\ x,\ uint\ y,\ uint\ z);\ \textcolor{comment}{//\ 修改信号，携带绘图数据}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAHONY\_PLOT\_H}}
+
+\end{DoxyCode}

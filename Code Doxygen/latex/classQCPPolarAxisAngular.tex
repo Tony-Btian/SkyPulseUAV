@@ -1,0 +1,1657 @@
+\doxysection{QCPPolar\+Axis\+Angular Class Reference}
+\hypertarget{classQCPPolarAxisAngular}{}\label{classQCPPolarAxisAngular}\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+
+
+The main container for polar plots, representing the angular axis as a circle.  
+
+
+Inheritance diagram for QCPPolar\+Axis\+Angular\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classQCPPolarAxisAngular}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{Selectable\+Part}} \{ \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a4cde0e8357b4ed68dd516694a347b232}{sp\+None}} = 0
+, \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ab9b6df5346d143a9dca613dd392b4dc9}{sp\+Axis}} = 0x001
+, \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a1e3a22b6fbffd2b0c4e561b31cce97c5}{sp\+Tick\+Labels}} = 0x002
+, \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ad78c53954aaca5647d0ce10f843601f8}{sp\+Axis\+Label}} = 0x004
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397}{Label\+Mode}} \{ {\bfseries lm\+Upright}
+, {\bfseries lm\+Rotated}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}{up\+Preparation}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
+, \mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a70f1f41494d189693e0e12f8cdd103b4}\label{classQCPPolarAxisAngular_a70f1f41494d189693e0e12f8cdd103b4} 
+void {\bfseries range\+Changed} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&new\+Range)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af770dc3ea8fc17963439ee729725dca6}\label{classQCPPolarAxisAngular_af770dc3ea8fc17963439ee729725dca6} 
+void {\bfseries range\+Changed} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&new\+Range, const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&old\+Range)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aa20dfb49bdfae700a08c9280ccb0d2c9}\label{classQCPPolarAxisAngular_aa20dfb49bdfae700a08c9280ccb0d2c9} 
+void {\bfseries selection\+Changed} (const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&parts)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6131a9972658c62810fc0b646691a895}\label{classQCPPolarAxisAngular_a6131a9972658c62810fc0b646691a895} 
+void {\bfseries selectable\+Changed} (const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&parts)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPPolarAxisAngular_afd2ca3525663193c15bc876a293ceb24}{QCPPolar\+Axis\+Angular}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_acc9363fce1ca7bd40605e0f3c8cc54a4}\label{classQCPPolarAxisAngular_acc9363fce1ca7bd40605e0f3c8cc54a4} 
+QPixmap {\bfseries background} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a7bfb586f372b253f54ad0b3b90e538c4}\label{classQCPPolarAxisAngular_a7bfb586f372b253f54ad0b3b90e538c4} 
+QBrush {\bfseries background\+Brush} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a1cfc0497b2badb42f8dc041b79720471}\label{classQCPPolarAxisAngular_a1cfc0497b2badb42f8dc041b79720471} 
+bool {\bfseries background\+Scaled} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ac0cfb9c931d2c6b787e8a5542c1f39bb}\label{classQCPPolarAxisAngular_ac0cfb9c931d2c6b787e8a5542c1f39bb} 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries background\+Scaled\+Mode} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad64bc10bb5716c27da19ed6223b58ffd}\label{classQCPPolarAxisAngular_ad64bc10bb5716c27da19ed6223b58ffd} 
+bool {\bfseries range\+Drag} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a733f74365ca85af9481bc24de1909cdd}\label{classQCPPolarAxisAngular_a733f74365ca85af9481bc24de1909cdd} 
+bool {\bfseries range\+Zoom} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a1b47bcddf8a4ee2ca16849326a06837e}\label{classQCPPolarAxisAngular_a1b47bcddf8a4ee2ca16849326a06837e} 
+double {\bfseries range\+Zoom\+Factor} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6f9155eec81c0e3f9194a78dda3a70da}\label{classQCPPolarAxisAngular_a6f9155eec81c0e3f9194a78dda3a70da} 
+const \mbox{\hyperlink{classQCPRange}{QCPRange}} {\bfseries range} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a2ee9b8b1b57ac2a151625f80a52987d8}\label{classQCPPolarAxisAngular_a2ee9b8b1b57ac2a151625f80a52987d8} 
+bool {\bfseries range\+Reversed} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a015e61ecbab17615243b3006972fedd0}\label{classQCPPolarAxisAngular_a015e61ecbab17615243b3006972fedd0} 
+double {\bfseries angle} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a318206c22b5097ba6bb0f538200f345e}\label{classQCPPolarAxisAngular_a318206c22b5097ba6bb0f538200f345e} 
+QShared\+Pointer$<$ \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}} $>$ {\bfseries ticker} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a2b869595bba8e6b9ce606234d78efbeb}\label{classQCPPolarAxisAngular_a2b869595bba8e6b9ce606234d78efbeb} 
+bool {\bfseries ticks} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8407b0cd8cea76cce77545dffae23c9b}\label{classQCPPolarAxisAngular_a8407b0cd8cea76cce77545dffae23c9b} 
+bool {\bfseries tick\+Labels} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ab698c848ff49d02fd6e7bd36fa6cc7f0}\label{classQCPPolarAxisAngular_ab698c848ff49d02fd6e7bd36fa6cc7f0} 
+int {\bfseries tick\+Label\+Padding} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a9cc7f7da0047d41fa76199234b186336}\label{classQCPPolarAxisAngular_a9cc7f7da0047d41fa76199234b186336} 
+QFont {\bfseries tick\+Label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ae5d612b64054aba4b6d409c74dacc46f}\label{classQCPPolarAxisAngular_ae5d612b64054aba4b6d409c74dacc46f} 
+QColor {\bfseries tick\+Label\+Color} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a40b8bf39a6465ad8d088220350e7c8d4}\label{classQCPPolarAxisAngular_a40b8bf39a6465ad8d088220350e7c8d4} 
+double {\bfseries tick\+Label\+Rotation} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a84eb819f1754d6955a975377bb56c917}\label{classQCPPolarAxisAngular_a84eb819f1754d6955a975377bb56c917} 
+\mbox{\hyperlink{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397}{Label\+Mode}} {\bfseries tick\+Label\+Mode} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_adb591c3100c83a1ee8a3dbefa1101fa6}\label{classQCPPolarAxisAngular_adb591c3100c83a1ee8a3dbefa1101fa6} 
+QString {\bfseries number\+Format} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a39cc9d4e46111db83639f79b910d26c6}\label{classQCPPolarAxisAngular_a39cc9d4e46111db83639f79b910d26c6} 
+int {\bfseries number\+Precision} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3b85e896c572493f7c89b88c41237208}\label{classQCPPolarAxisAngular_a3b85e896c572493f7c89b88c41237208} 
+QVector$<$ double $>$ {\bfseries tick\+Vector} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ac74e89a5673b3d47251f0262a882d061}\label{classQCPPolarAxisAngular_ac74e89a5673b3d47251f0262a882d061} 
+QVector$<$ QString $>$ {\bfseries tick\+Vector\+Labels} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3f4cc96cd313767d9ce9e8a4d1f83d95}\label{classQCPPolarAxisAngular_a3f4cc96cd313767d9ce9e8a4d1f83d95} 
+int {\bfseries tick\+Length\+In} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_abdfca6f0950f8cc9864ad65456c7fc3a}\label{classQCPPolarAxisAngular_abdfca6f0950f8cc9864ad65456c7fc3a} 
+int {\bfseries tick\+Length\+Out} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a019fb5d634792be4e074dfa1c4b446be}\label{classQCPPolarAxisAngular_a019fb5d634792be4e074dfa1c4b446be} 
+bool {\bfseries sub\+Ticks} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aec477406ab0a045b606f2d790eab49f6}\label{classQCPPolarAxisAngular_aec477406ab0a045b606f2d790eab49f6} 
+int {\bfseries sub\+Tick\+Length\+In} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af7c59b01e930fdc95c8a0f29d7e7382d}\label{classQCPPolarAxisAngular_af7c59b01e930fdc95c8a0f29d7e7382d} 
+int {\bfseries sub\+Tick\+Length\+Out} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ac67ec83037c5c98cbb3c86a4ee262963}\label{classQCPPolarAxisAngular_ac67ec83037c5c98cbb3c86a4ee262963} 
+QPen {\bfseries base\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af0c17c53488ba9bcfd00e477891ae85e}\label{classQCPPolarAxisAngular_af0c17c53488ba9bcfd00e477891ae85e} 
+QPen {\bfseries tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8bd7d2273fb06c82123ce9557c0edf29}\label{classQCPPolarAxisAngular_a8bd7d2273fb06c82123ce9557c0edf29} 
+QPen {\bfseries sub\+Tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a10bad34d8422b37e3c53c78e38cfc59b}\label{classQCPPolarAxisAngular_a10bad34d8422b37e3c53c78e38cfc59b} 
+QFont {\bfseries label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af4da90b5add84c4882ee58f05770dced}\label{classQCPPolarAxisAngular_af4da90b5add84c4882ee58f05770dced} 
+QColor {\bfseries label\+Color} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a24039f3366a7be3f6312990db6786347}\label{classQCPPolarAxisAngular_a24039f3366a7be3f6312990db6786347} 
+QString {\bfseries label} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ab9df2e9291f16e8eb5a1679c226ce694}\label{classQCPPolarAxisAngular_ab9df2e9291f16e8eb5a1679c226ce694} 
+int {\bfseries label\+Padding} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad042ac4411d1d24383c6d255ed7b024e}\label{classQCPPolarAxisAngular_ad042ac4411d1d24383c6d255ed7b024e} 
+Selectable\+Parts {\bfseries selected\+Parts} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a2bfe67878cb7524438a4642ce13ec6b3}\label{classQCPPolarAxisAngular_a2bfe67878cb7524438a4642ce13ec6b3} 
+Selectable\+Parts {\bfseries selectable\+Parts} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3cbe50f9c3b6e21cfbc5454b9b30f865}\label{classQCPPolarAxisAngular_a3cbe50f9c3b6e21cfbc5454b9b30f865} 
+QFont {\bfseries selected\+Tick\+Label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_acc329bf844cc7dc8f36daadf4394388b}\label{classQCPPolarAxisAngular_acc329bf844cc7dc8f36daadf4394388b} 
+QFont {\bfseries selected\+Label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8b81fcd5c5228c87ce255240138da048}\label{classQCPPolarAxisAngular_a8b81fcd5c5228c87ce255240138da048} 
+QColor {\bfseries selected\+Tick\+Label\+Color} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a178731e34afbe01c0fc8e7a61a667119}\label{classQCPPolarAxisAngular_a178731e34afbe01c0fc8e7a61a667119} 
+QColor {\bfseries selected\+Label\+Color} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad7114bcb764190ddbc474bf631986143}\label{classQCPPolarAxisAngular_ad7114bcb764190ddbc474bf631986143} 
+QPen {\bfseries selected\+Base\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af29d95a0e1f3bd10049d69958a5f9334}\label{classQCPPolarAxisAngular_af29d95a0e1f3bd10049d69958a5f9334} 
+QPen {\bfseries selected\+Tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a30bf0fbfbb7f9283447ff27f4bdce7df}\label{classQCPPolarAxisAngular_a30bf0fbfbb7f9283447ff27f4bdce7df} 
+QPen {\bfseries selected\+Sub\+Tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ae93b4da6c4759412853e82558d094b99}\label{classQCPPolarAxisAngular_ae93b4da6c4759412853e82558d094b99} 
+\mbox{\hyperlink{classQCPPolarGrid}{QCPPolar\+Grid}} \texorpdfstring{$\ast$}{*} {\bfseries grid} () const
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background}} (const QPixmap \&pm)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_af456d4aaf5f71807d88d1b8919f79355}{set\+Background}} (const QPixmap \&pm, bool scaled, Qt\+::\+Aspect\+Ratio\+Mode mode=Qt\+::\+Keep\+Aspect\+Ratio\+By\+Expanding)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a7c0dd85939536498818b49a89c1e2433}{set\+Background}} (const QBrush \&brush)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled}} (bool scaled)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode}} (Qt\+::\+Aspect\+Ratio\+Mode mode)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8ccde7cbd3b0653bc4a36949cdc0f9b7}\label{classQCPPolarAxisAngular_a8ccde7cbd3b0653bc4a36949cdc0f9b7} 
+void {\bfseries set\+Range\+Drag} (bool enabled)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad396ede98a2bdfea4ad316f28bb8a326}\label{classQCPPolarAxisAngular_ad396ede98a2bdfea4ad316f28bb8a326} 
+void {\bfseries set\+Range\+Zoom} (bool enabled)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad8f3fba6de0616e105ce8a19748fd034}\label{classQCPPolarAxisAngular_ad8f3fba6de0616e105ce8a19748fd034} 
+void {\bfseries set\+Range\+Zoom\+Factor} (double factor)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}{set\+Range}} (const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&range)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a533759bbabbd9985e8ad4ecc11c044ef}{set\+Range}} (double lower, double upper)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a10d361152ed9ccf68ecf682ac82b4442}{set\+Range}} (double position, double \mbox{\hyperlink{classQCPPolarAxisAngular_a1513b98be721e6f8abb75aa49932cf20}{size}}, Qt\+::\+Alignment\+Flag alignment)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a8b82f5859601eb1e70b8220794058c38}{set\+Range\+Lower}} (double lower)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a4b395b3cd4d43caa506351d35b3f401d}{set\+Range\+Upper}} (double upper)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_adf584a9a77283842c8df20805b90b17f}{set\+Range\+Reversed}} (bool reversed)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a92c6afff78f7edf61714f592d611f682}\label{classQCPPolarAxisAngular_a92c6afff78f7edf61714f592d611f682} 
+void {\bfseries set\+Angle} (double degrees)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a343fafde7e44cf32b7d89e45c9154bc8}{set\+Ticker}} (QShared\+Pointer$<$ \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}} $>$ ticker)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_ad2e017970a91fd11a7d19bed81e2be59}{set\+Ticks}} (bool show)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da}{set\+Tick\+Labels}} (bool show)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_ad7bfedb138fedcdd19ce574baedd4f3f}{set\+Tick\+Label\+Padding}} (int padding)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a7a601994f36dc333aa5285d1c34ec55d}{set\+Tick\+Label\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a8fb8a8146883d77f39904cfea0d67d7c}{set\+Tick\+Label\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_af0922fd33a9589524f1600f316ea673c}{set\+Tick\+Label\+Rotation}} (double degrees)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a04f223e0320c4929ac0d70e019974171}\label{classQCPPolarAxisAngular_a04f223e0320c4929ac0d70e019974171} 
+void {\bfseries set\+Tick\+Label\+Mode} (\mbox{\hyperlink{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397}{Label\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3781860cc80b9a6d8be2a4f8179733dd}{set\+Number\+Format}} (const QString \&format\+Code)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a1c463fe5cbc8ddaead62b2278cfbfb35}{set\+Number\+Precision}} (int precision)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length}} (int inside, int outside=0)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_aa94320e22819cbc33f66412efc48aa89}{set\+Tick\+Length\+In}} (int inside)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_ac71eb7632a34f616cfbfe49000033485}{set\+Tick\+Length\+Out}} (int outside)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a4961b3541814e331c4cc29f66e709a45}{set\+Sub\+Ticks}} (bool show)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length}} (int inside, int outside=0)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a953513417d18c9380d0cee0870f35c45}{set\+Sub\+Tick\+Length\+In}} (int inside)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a9bb670f94f8402f8e1654fcc87d7fae1}{set\+Sub\+Tick\+Length\+Out}} (int outside)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331}{set\+Base\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a10c0f44c36985b5cc3b1e9cd34fbd7e2}{set\+Tick\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3349a6435c3c844051649226f7ae5bd5}{set\+Sub\+Tick\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_aa033e53edcfdc5a86bc178a72606148a}{set\+Label\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a757c74562718fcbc0b854be439e271b6}{set\+Label\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a71b78ba614fccb2f4742e7e75cf0652e}{set\+Label}} (const QString \&str)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a956564f6c44c95fbc794f5a820233a14}{set\+Label\+Padding}} (int padding)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a32e633bd3806a1ea7b522f251f1e4396}\label{classQCPPolarAxisAngular_a32e633bd3806a1ea7b522f251f1e4396} 
+void {\bfseries set\+Label\+Position} (Qt\+::\+Alignment\+Flag position)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3a671db3137ff4b7501216e65fd5738f}{set\+Selected\+Tick\+Label\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_abd612ae3bd32fe700e03a6e403eac3e8}{set\+Selected\+Label\+Font}} (const QFont \&font)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_aee32235a2ebd5492af2f632f179b8a0d}{set\+Selected\+Tick\+Label\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a9ddd53a24e6307384bf35dc38ffbe1d6}{set\+Selected\+Label\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a2b48d57dee01f1f8a5895d0f458c7fc8}{set\+Selected\+Base\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_aac8b0df8636b4e8222315c7ee444ac46}{set\+Selected\+Tick\+Pen}} (const QPen \&pen)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3778f58fde6ffe276207fcc32b498264}{set\+Selected\+Sub\+Tick\+Pen}} (const QPen \&pen)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}} (const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&selectable\+Parts)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}} (const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&selected\+Parts)
+\item 
+virtual double \mbox{\hyperlink{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_a9f2dfb377cdf3ce22a451fa9d3ab47e6}{update}} (\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPPolarAxisAngular_a95fa9af1bcb033be5c394ec2767b000e}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aeabd68d454543427b9b63614689a17fd}\label{classQCPPolarAxisAngular_aeabd68d454543427b9b63614689a17fd} 
+bool {\bfseries remove\+Graph} (\mbox{\hyperlink{classQCPPolarGraph}{QCPPolar\+Graph}} \texorpdfstring{$\ast$}{*}graph)
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_aec977a08ff4e0e433fd8df5c972b2919}{radial\+Axis\+Count}} () const
+\item 
+\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPPolarAxisAngular_aa911d67b990aa1413bb7b63d6d7e36fe}{radial\+Axis}} (int index=0) const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPPolarAxisAngular_ab3880298df8867253a535045d5a045a1}{radial\+Axes}} () const
+\item 
+\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPPolarAxisAngular_ac5333ac2429f6d6223c5890ab32fda38}{add\+Radial\+Axis}} (\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*}axis=0)
+\item 
+bool \mbox{\hyperlink{classQCPPolarAxisAngular_a4a621a38de7b6d3844b47dd243092958}{remove\+Radial\+Axis}} (\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*}axis)
+\item 
+\mbox{\hyperlink{classQCPLayoutInset}{QCPLayout\+Inset}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPPolarAxisAngular_aab81c173315a73725150010a1893a17d}{inset\+Layout}} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a31145f65370a730317d28e73e74b9ab9}\label{classQCPPolarAxisAngular_a31145f65370a730317d28e73e74b9ab9} 
+QRegion {\bfseries exact\+Clip\+Region} () const
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_af5d19f1b60eba481e735829c5e9ec433}{move\+Range}} (double diff)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_ae101a2ad79391909da0c0f1f08f9e872}{scale\+Range}} (double factor)
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a3f1783650404238080da4d5fd99dd81e}{scale\+Range}} (double factor, double \mbox{\hyperlink{classQCPPolarAxisAngular_a227fdd60af1fae73e02262539736e5f2}{center}})
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_aa8eace1f019b6c858473a192be088762}{rescale}} (bool only\+Visible\+Plottables=false)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_adcf5f87f947e7eed1cc76548911d9760}\label{classQCPPolarAxisAngular_adcf5f87f947e7eed1cc76548911d9760} 
+double {\bfseries coord\+To\+Angle\+Rad} (double coord) const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_adb335933e6d4428f75d39cea1c75b6fe}\label{classQCPPolarAxisAngular_adb335933e6d4428f75d39cea1c75b6fe} 
+double {\bfseries angle\+Rad\+To\+Coord} (double angle\+Rad) const
+\item 
+void \mbox{\hyperlink{classQCPPolarAxisAngular_a577c03df0af3a329f0c4a9a3006a7f4b}{pixel\+To\+Coord}} (QPointF pixel\+Pos, double \&angle\+Coord, double \&radius\+Coord) const
+\item 
+QPointF \mbox{\hyperlink{classQCPPolarAxisAngular_af339215e1af216daafb4ceaccd359fd9}{coord\+To\+Pixel}} (double angle\+Coord, double radius\+Coord) const
+\item 
+\mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{Selectable\+Part}} \mbox{\hyperlink{classQCPPolarAxisAngular_a7368a360c385cf4e3cb63e8a40795bab}{get\+Part\+At}} (const QPointF \&pos) const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_a277a8803e452cbfa100f27f37cae1b14}{left}} () const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_ab5d7d189cffd21294a23ece4f1cd9ca8}{right}} () const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_acda4f07fde44972d0f70e939b0224f6a}{top}} () const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_a99358487c1c025b9cf18dc22cc322c3b}{bottom}} () const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_abde756ec197666d7ee91eee11bc7c6d5}{width}} () const
+\item 
+int \mbox{\hyperlink{classQCPPolarAxisAngular_a1134ccb64704bf7b99ec99041a89ecf2}{height}} () const
+\item 
+QSize \mbox{\hyperlink{classQCPPolarAxisAngular_a1513b98be721e6f8abb75aa49932cf20}{size}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPPolarAxisAngular_a70a1d0d6bd2a8ba43eed9f5de2c67f1c}{top\+Left}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPPolarAxisAngular_a6c8996dd4ae16f1df9c7269ef970d40b}{top\+Right}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPPolarAxisAngular_a7342e0dd62b71f81b993c38db6fa4d5b}{bottom\+Left}} () const
+\item 
+QPoint \mbox{\hyperlink{classQCPPolarAxisAngular_af55ce49c9820e3057d220f51bc3504ab}{bottom\+Right}} () const
+\item 
+QPointF \mbox{\hyperlink{classQCPPolarAxisAngular_a227fdd60af1fae73e02262539736e5f2}{center}} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a4e3605d9d960977c46686825ec8cde83}\label{classQCPPolarAxisAngular_a4e3605d9d960977c46686825ec8cde83} 
+double {\bfseries radius} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a2c25c7bf27eaa1fad66807af855d8d81}{QCPLayout\+Element}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot=nullptr)
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayoutElement_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
+\item 
+QRect \mbox{\hyperlink{classQCPLayoutElement_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
+\item 
+QMargins {\bfseries margins} () const
+\item 
+QMargins {\bfseries minimum\+Margins} () const
+\item 
+QCP\+::\+Margin\+Sides {\bfseries auto\+Margins} () const
+\item 
+QSize {\bfseries minimum\+Size} () const
+\item 
+QSize {\bfseries maximum\+Size} () const
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries size\+Constraint\+Rect} () const
+\item 
+\mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} {\bfseries margin\+Group} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries margin\+Groups} () const
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
+\item 
+void \mbox{\hyperlink{classQCPLayoutElement_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*}group)
+\item 
+virtual QSize \mbox{\hyperlink{classQCPLayoutElement_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
+\item 
+virtual QSize \mbox{\hyperlink{classQCPLayoutElement_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_ae29231b68e311a3004a310b65b14ba5a}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_abc33754f6575a0ac2cdc597bbd11c6c7}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPPolarAxisAngular_a2fdb74ce12d5c5dfe45ba3a231d31e6f}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a05dabed291d5997541b87b64ceda2050}\label{classQCPPolarAxisAngular_a05dabed291d5997541b87b64ceda2050} 
+bool {\bfseries register\+Polar\+Graph} (\mbox{\hyperlink{classQCPPolarGraph}{QCPPolar\+Graph}} \texorpdfstring{$\ast$}{*}graph)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a453f671a8dbfd88c6e8552290963a413}\label{classQCPPolarAxisAngular_a453f671a8dbfd88c6e8552290963a413} 
+void {\bfseries draw\+Background} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, const QPointF \&\mbox{\hyperlink{classQCPPolarAxisAngular_a227fdd60af1fae73e02262539736e5f2}{center}}, double radius)
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a7c0b6a474a7d35f38e140c73bb8aa503}\label{classQCPPolarAxisAngular_a7c0b6a474a7d35f38e140c73bb8aa503} 
+void {\bfseries setup\+Tick\+Vectors} ()
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aa66785e0f49f618f71ce206c56fd50c0}\label{classQCPPolarAxisAngular_aa66785e0f49f618f71ce206c56fd50c0} 
+QPen {\bfseries get\+Base\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3140a5735e78a81e02d783c507686386}\label{classQCPPolarAxisAngular_a3140a5735e78a81e02d783c507686386} 
+QPen {\bfseries get\+Tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a548af1ddf317718ef9185c417dd2d9a5}\label{classQCPPolarAxisAngular_a548af1ddf317718ef9185c417dd2d9a5} 
+QPen {\bfseries get\+Sub\+Tick\+Pen} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3a352882e0a6488c7ca9fb41287eb992}\label{classQCPPolarAxisAngular_a3a352882e0a6488c7ca9fb41287eb992} 
+QFont {\bfseries get\+Tick\+Label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a0e3b6ab030b80d19cf8a7cd4490d4823}\label{classQCPPolarAxisAngular_a0e3b6ab030b80d19cf8a7cd4490d4823} 
+QFont {\bfseries get\+Label\+Font} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_abb2a0a47bfb799c35cab0506855da9bf}\label{classQCPPolarAxisAngular_abb2a0a47bfb799c35cab0506855da9bf} 
+QColor {\bfseries get\+Tick\+Label\+Color} () const
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3ba71718bf0217113846f7307d24df8d}\label{classQCPPolarAxisAngular_a3ba71718bf0217113846f7307d24df8d} 
+QColor {\bfseries get\+Label\+Color} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries calculate\+Auto\+Margin} (\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side)
+\item 
+virtual void {\bfseries layout\+Changed} ()
+\item 
+virtual void \mbox{\hyperlink{classQCPLayoutElement_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual QRect {\bfseries clip\+Rect} () const
+\item 
+virtual void {\bfseries select\+Event} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void {\bfseries deselect\+Event} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3f5410ae2e7eaf44d1ac0a100b589f80}\label{classQCPPolarAxisAngular_a3f5410ae2e7eaf44d1ac0a100b589f80} 
+QBrush {\bfseries m\+Background\+Brush}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a46084a9eb319dc5c8e88ca3ad01dcba6}\label{classQCPPolarAxisAngular_a46084a9eb319dc5c8e88ca3ad01dcba6} 
+QPixmap {\bfseries m\+Background\+Pixmap}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a02e286c769db5801c6d6b9f803f2cbdf}\label{classQCPPolarAxisAngular_a02e286c769db5801c6d6b9f803f2cbdf} 
+QPixmap {\bfseries m\+Scaled\+Background\+Pixmap}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ae677a27e5381a7aca0b808228979c6c1}\label{classQCPPolarAxisAngular_ae677a27e5381a7aca0b808228979c6c1} 
+bool {\bfseries m\+Background\+Scaled}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ab817ad6fecb2417c4b33edadf4916ba2}\label{classQCPPolarAxisAngular_ab817ad6fecb2417c4b33edadf4916ba2} 
+Qt\+::\+Aspect\+Ratio\+Mode {\bfseries m\+Background\+Scaled\+Mode}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aa41b6d3e32168b2004804bdb2b4bbb13}\label{classQCPPolarAxisAngular_aa41b6d3e32168b2004804bdb2b4bbb13} 
+\mbox{\hyperlink{classQCPLayoutInset}{QCPLayout\+Inset}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Inset\+Layout}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_afba70315f39ac7c5aeca3a9932e6cae2}\label{classQCPPolarAxisAngular_afba70315f39ac7c5aeca3a9932e6cae2} 
+bool {\bfseries m\+Range\+Drag}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_abc035f0e3ae30d869cde868a194c089b}\label{classQCPPolarAxisAngular_abc035f0e3ae30d869cde868a194c089b} 
+bool {\bfseries m\+Range\+Zoom}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8145e2741614f652bbe8c247495e1520}\label{classQCPPolarAxisAngular_a8145e2741614f652bbe8c247495e1520} 
+double {\bfseries m\+Range\+Zoom\+Factor}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a60ba468d32cdcb1ccf8974fd64d806de}\label{classQCPPolarAxisAngular_a60ba468d32cdcb1ccf8974fd64d806de} 
+double {\bfseries m\+Angle}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a19d4266a0498134ae8d6e670ec9a54fb}\label{classQCPPolarAxisAngular_a19d4266a0498134ae8d6e670ec9a54fb} 
+double {\bfseries m\+Angle\+Rad}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6e5deba9eb9786ed8e33862234f702b9}\label{classQCPPolarAxisAngular_a6e5deba9eb9786ed8e33862234f702b9} 
+Selectable\+Parts {\bfseries m\+Selectable\+Parts}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a585c75aaceb4f653c9aa312832ce583e}\label{classQCPPolarAxisAngular_a585c75aaceb4f653c9aa312832ce583e} 
+Selectable\+Parts {\bfseries m\+Selected\+Parts}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af689b90127a47989c93b6f8b35239ad6}\label{classQCPPolarAxisAngular_af689b90127a47989c93b6f8b35239ad6} 
+QPen {\bfseries m\+Base\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a7b9fa65b5157602368b40436d751b886}\label{classQCPPolarAxisAngular_a7b9fa65b5157602368b40436d751b886} 
+QPen {\bfseries m\+Selected\+Base\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a82a2ed4f3fdaf5438358976476a68dc5}\label{classQCPPolarAxisAngular_a82a2ed4f3fdaf5438358976476a68dc5} 
+int {\bfseries m\+Label\+Padding}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6389565458a25fe6ece7c647ab490313}\label{classQCPPolarAxisAngular_a6389565458a25fe6ece7c647ab490313} 
+QString {\bfseries m\+Label}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aab06a0467440beb6bfe30608aacc5fd4}\label{classQCPPolarAxisAngular_aab06a0467440beb6bfe30608aacc5fd4} 
+QFont {\bfseries m\+Label\+Font}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a27deaca4ccb608fdcf0c92e2136ee5a5}\label{classQCPPolarAxisAngular_a27deaca4ccb608fdcf0c92e2136ee5a5} 
+QFont {\bfseries m\+Selected\+Label\+Font}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a07f002df3552c8740cb0ccccac0d5b2c}\label{classQCPPolarAxisAngular_a07f002df3552c8740cb0ccccac0d5b2c} 
+QColor {\bfseries m\+Label\+Color}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_af4504c28a0c1540adba16696a0b2ec33}\label{classQCPPolarAxisAngular_af4504c28a0c1540adba16696a0b2ec33} 
+QColor {\bfseries m\+Selected\+Label\+Color}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ab8004354529255850cc7642bfe1679c1}\label{classQCPPolarAxisAngular_ab8004354529255850cc7642bfe1679c1} 
+bool {\bfseries m\+Tick\+Labels}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ab57289f30afcc9302cf18f42412560f7}\label{classQCPPolarAxisAngular_ab57289f30afcc9302cf18f42412560f7} 
+QFont {\bfseries m\+Tick\+Label\+Font}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aa5c0413a95cead043025b8c24118345e}\label{classQCPPolarAxisAngular_aa5c0413a95cead043025b8c24118345e} 
+QFont {\bfseries m\+Selected\+Tick\+Label\+Font}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a1b8124383d33e0b66b60bb6bb7b879cc}\label{classQCPPolarAxisAngular_a1b8124383d33e0b66b60bb6bb7b879cc} 
+QColor {\bfseries m\+Tick\+Label\+Color}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a40178f7db8b0f56c1a0d2797f6e66816}\label{classQCPPolarAxisAngular_a40178f7db8b0f56c1a0d2797f6e66816} 
+QColor {\bfseries m\+Selected\+Tick\+Label\+Color}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aa10f054b6dbead520d89487febc50fbf}\label{classQCPPolarAxisAngular_aa10f054b6dbead520d89487febc50fbf} 
+int {\bfseries m\+Number\+Precision}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ac7419c6d953e8be82fd2dddc72f417b3}\label{classQCPPolarAxisAngular_ac7419c6d953e8be82fd2dddc72f417b3} 
+QLatin1\+Char {\bfseries m\+Number\+Format\+Char}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aac55ca0d449c442567d59b0999ea509b}\label{classQCPPolarAxisAngular_aac55ca0d449c442567d59b0999ea509b} 
+bool {\bfseries m\+Number\+Beautiful\+Powers}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a0519f06bc4f599747361d050a3533933}\label{classQCPPolarAxisAngular_a0519f06bc4f599747361d050a3533933} 
+bool {\bfseries m\+Number\+Multiply\+Cross}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8183cc3b5048a6f519e3c6b3b90797b5}\label{classQCPPolarAxisAngular_a8183cc3b5048a6f519e3c6b3b90797b5} 
+bool {\bfseries m\+Ticks}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a4faa96cea04acfde25d2542af03b5f60}\label{classQCPPolarAxisAngular_a4faa96cea04acfde25d2542af03b5f60} 
+bool {\bfseries m\+Sub\+Ticks}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ac9cb6b0ec4594abe471239365ba92809}\label{classQCPPolarAxisAngular_ac9cb6b0ec4594abe471239365ba92809} 
+int {\bfseries m\+Tick\+Length\+In}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aaa5f7d37b51c14e300d4e0ab696a04a5}\label{classQCPPolarAxisAngular_aaa5f7d37b51c14e300d4e0ab696a04a5} 
+int {\bfseries m\+Tick\+Length\+Out}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a40135452a4cd39ba5439f1267e0e5232}\label{classQCPPolarAxisAngular_a40135452a4cd39ba5439f1267e0e5232} 
+int {\bfseries m\+Sub\+Tick\+Length\+In}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_afd8d1bc0ecbca2f6073f35d09c7a5728}\label{classQCPPolarAxisAngular_afd8d1bc0ecbca2f6073f35d09c7a5728} 
+int {\bfseries m\+Sub\+Tick\+Length\+Out}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a9337d09058b29fbbfd52d9abd193998c}\label{classQCPPolarAxisAngular_a9337d09058b29fbbfd52d9abd193998c} 
+QPen {\bfseries m\+Tick\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a351dd829b440142e28ba65ab232da63c}\label{classQCPPolarAxisAngular_a351dd829b440142e28ba65ab232da63c} 
+QPen {\bfseries m\+Selected\+Tick\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a8f11aa2e3e5b61f7982aa77ffd690a55}\label{classQCPPolarAxisAngular_a8f11aa2e3e5b61f7982aa77ffd690a55} 
+QPen {\bfseries m\+Sub\+Tick\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad86694151d2d431d11654b85790d2b51}\label{classQCPPolarAxisAngular_ad86694151d2d431d11654b85790d2b51} 
+QPen {\bfseries m\+Selected\+Sub\+Tick\+Pen}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a9c3e7b44a9fb83a2638aac003aea1a84}\label{classQCPPolarAxisAngular_a9c3e7b44a9fb83a2638aac003aea1a84} 
+\mbox{\hyperlink{classQCPRange}{QCPRange}} {\bfseries m\+Range}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ae93330885f57594a085188ab79c175df}\label{classQCPPolarAxisAngular_ae93330885f57594a085188ab79c175df} 
+bool {\bfseries m\+Range\+Reversed}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ad75c9ac740d24c0f0cebd782e0d208df}\label{classQCPPolarAxisAngular_ad75c9ac740d24c0f0cebd782e0d208df} 
+QPointF {\bfseries m\+Center}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a780444529ad6777d607689a8a737a4cf}\label{classQCPPolarAxisAngular_a780444529ad6777d607689a8a737a4cf} 
+double {\bfseries m\+Radius}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a048f96e18d3b99074ef565b45059e221}\label{classQCPPolarAxisAngular_a048f96e18d3b99074ef565b45059e221} 
+QList$<$ \mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Radial\+Axes}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a01765bb4c33da3fb44eed2ffe822f52a}\label{classQCPPolarAxisAngular_a01765bb4c33da3fb44eed2ffe822f52a} 
+\mbox{\hyperlink{classQCPPolarGrid}{QCPPolar\+Grid}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Grid}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a4cb61dcd0d96e35ff335e2312f802930}\label{classQCPPolarAxisAngular_a4cb61dcd0d96e35ff335e2312f802930} 
+QList$<$ \mbox{\hyperlink{classQCPPolarGraph}{QCPPolar\+Graph}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Graphs}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a431fe99c6f72ad2f0671a54fb5b4b457}\label{classQCPPolarAxisAngular_a431fe99c6f72ad2f0671a54fb5b4b457} 
+QShared\+Pointer$<$ \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}} $>$ {\bfseries m\+Ticker}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6650ba75f68b439528aabd4dcedcd720}\label{classQCPPolarAxisAngular_a6650ba75f68b439528aabd4dcedcd720} 
+QVector$<$ double $>$ {\bfseries m\+Tick\+Vector}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a66f5d71105c134e19dc527b704b32461}\label{classQCPPolarAxisAngular_a66f5d71105c134e19dc527b704b32461} 
+QVector$<$ QString $>$ {\bfseries m\+Tick\+Vector\+Labels}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a3577e475914e58d6d779b03d6faf383a}\label{classQCPPolarAxisAngular_a3577e475914e58d6d779b03d6faf383a} 
+QVector$<$ QPointF $>$ {\bfseries m\+Tick\+Vector\+Cos\+Sin}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_add3c2d5ada6121c904662130da5944cf}\label{classQCPPolarAxisAngular_add3c2d5ada6121c904662130da5944cf} 
+QVector$<$ double $>$ {\bfseries m\+Sub\+Tick\+Vector}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a4d189b91f9df020a5928826d103a844a}\label{classQCPPolarAxisAngular_a4d189b91f9df020a5928826d103a844a} 
+QVector$<$ QPointF $>$ {\bfseries m\+Sub\+Tick\+Vector\+Cos\+Sin}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_abad49e188fd7feb34e88349a53260cf9}\label{classQCPPolarAxisAngular_abad49e188fd7feb34e88349a53260cf9} 
+bool {\bfseries m\+Dragging}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_ae55d6bbf5f0b380e37bdba17a4d918a9}\label{classQCPPolarAxisAngular_ae55d6bbf5f0b380e37bdba17a4d918a9} 
+\mbox{\hyperlink{classQCPRange}{QCPRange}} {\bfseries m\+Drag\+Angular\+Start}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a45c98ce5b94cbf0ff6ff4d48eee6d405}\label{classQCPPolarAxisAngular_a45c98ce5b94cbf0ff6ff4d48eee6d405} 
+QList$<$ \mbox{\hyperlink{classQCPRange}{QCPRange}} $>$ {\bfseries m\+Drag\+Radial\+Start}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_aad6823e7692cbfe39477ca7af6209f04}\label{classQCPPolarAxisAngular_aad6823e7692cbfe39477ca7af6209f04} 
+QCP\+::\+Antialiased\+Elements {\bfseries m\+AADrag\+Backup}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a498b0307a9b836400649eb7874f69211}\label{classQCPPolarAxisAngular_a498b0307a9b836400649eb7874f69211} 
+QCP\+::\+Antialiased\+Elements {\bfseries m\+Not\+AADrag\+Backup}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6fdce30bafad6fbaaf84100a28518119}\label{classQCPPolarAxisAngular_a6fdce30bafad6fbaaf84100a28518119} 
+\mbox{\hyperlink{classQCPLabelPainterPrivate}{QCPLabel\+Painter\+Private}} {\bfseries m\+Label\+Painter}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayout}{QCPLayout}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Layout}
+\item 
+QSize {\bfseries m\+Minimum\+Size}
+\item 
+QSize {\bfseries m\+Maximum\+Size}
+\item 
+\mbox{\hyperlink{classQCPLayoutElement_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} {\bfseries m\+Size\+Constraint\+Rect}
+\item 
+QRect {\bfseries m\+Rect}
+\item 
+QRect {\bfseries m\+Outer\+Rect}
+\item 
+QMargins {\bfseries m\+Margins}
+\item 
+QMargins {\bfseries m\+Minimum\+Margins}
+\item 
+QCP\+::\+Margin\+Sides {\bfseries m\+Auto\+Margins}
+\item 
+QHash$<$ \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{classQCPMarginGroup}{QCPMargin\+Group}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Margin\+Groups}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPPolarAxisAngular_a1cdf9df76adcfae45261690aa0ca2198} 
+class {\bfseries QCustom\+Plot}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a2a278df7b98bfbeb3a209635e96647cb}\label{classQCPPolarAxisAngular_a2a278df7b98bfbeb3a209635e96647cb} 
+class {\bfseries QCPPolar\+Grid}
+\item 
+\Hypertarget{classQCPPolarAxisAngular_a6e100f125d9339f3310d2bcd91719e61}\label{classQCPPolarAxisAngular_a6e100f125d9339f3310d2bcd91719e61} 
+class {\bfseries QCPPolar\+Graph}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main container for polar plots, representing the angular axis as a circle. 
+
+\begin{DoxyWarning}{Warning}
+In this \doxylink{classQCustomPlot}{QCustom\+Plot} version, polar plots are a tech preview. Expect documentation and functionality to be incomplete, as well as changing public interfaces in the future. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397}\label{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!LabelMode@{LabelMode}}
+\index{LabelMode@{LabelMode}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{LabelMode}{LabelMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPPolarAxisAngular_ad9d85ec7a6b5febe6c27ab54fdd46397}{QCPPolar\+Axis\+Angular\+::\+Label\+Mode}}}
+
+TODO \Hypertarget{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}\label{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!SelectablePart@{SelectablePart}}
+\index{SelectablePart@{SelectablePart}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{SelectablePart}{SelectablePart}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{QCPPolar\+Axis\+Angular\+::\+Selectable\+Part}}}
+
+Defines the selectable parts of an axis. \begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spNone@{spNone}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!spNone@{spNone}}}\Hypertarget{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a4cde0e8357b4ed68dd516694a347b232}\label{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a4cde0e8357b4ed68dd516694a347b232} 
+sp\+None&None of the selectable parts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spAxis@{spAxis}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!spAxis@{spAxis}}}\Hypertarget{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ab9b6df5346d143a9dca613dd392b4dc9}\label{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ab9b6df5346d143a9dca613dd392b4dc9} 
+sp\+Axis&The axis backbone and tick marks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spTickLabels@{spTickLabels}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!spTickLabels@{spTickLabels}}}\Hypertarget{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a1e3a22b6fbffd2b0c4e561b31cce97c5}\label{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a1e3a22b6fbffd2b0c4e561b31cce97c5} 
+sp\+Tick\+Labels&Tick labels (numbers) of this axis (as a whole, not individually) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spAxisLabel@{spAxisLabel}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!spAxisLabel@{spAxisLabel}}}\Hypertarget{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ad78c53954aaca5647d0ce10f843601f8}\label{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416ad78c53954aaca5647d0ce10f843601f8} 
+sp\+Axis\+Label&The axis label. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPPolarAxisAngular_afd2ca3525663193c15bc876a293ceb24}\label{classQCPPolarAxisAngular_afd2ca3525663193c15bc876a293ceb24} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{QCPPolarAxisAngular()}{QCPPolarAxisAngular()}}
+{\footnotesize\ttfamily QCPPolar\+Axis\+Angular\+::\+QCPPolar\+Axis\+Angular (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a QCPPolar\+Axis instance and sets default values. An axis is added for each of the four sides, the top and right axes are set invisible initially. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPPolarAxisAngular_ac5333ac2429f6d6223c5890ab32fda38}\label{classQCPPolarAxisAngular_ac5333ac2429f6d6223c5890ab32fda38} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!addRadialAxis@{addRadialAxis}}
+\index{addRadialAxis@{addRadialAxis}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{addRadialAxis()}{addRadialAxis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} QCPPolar\+Axis\+Angular\+::add\+Radial\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*}}]{axis}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+Adds a new axis to the axis rect side specified with {\itshape type}, and returns it. If {\itshape axis} is 0, a new \doxylink{classQCPAxis}{QCPAxis} instance is created internally. \doxylink{classQCustomPlot}{QCustom\+Plot} owns the returned axis, so if you want to remove an axis, use remove\+Axis instead of deleting it manually.
+
+You may inject \doxylink{classQCPAxis}{QCPAxis} instances (or subclasses of \doxylink{classQCPAxis}{QCPAxis}) by setting {\itshape axis} to an axis that was previously created outside \doxylink{classQCustomPlot}{QCustom\+Plot}. It is important to note that \doxylink{classQCustomPlot}{QCustom\+Plot} takes ownership of the axis, so you may not delete it afterwards. Further, the {\itshape axis} must have been created with this axis rect as parent and with the same axis type as specified in {\itshape type}. If this is not the case, a debug output is generated, the axis is not added, and the method returns 0.
+
+This method can not be used to move {\itshape axis} between axis rects. The same {\itshape axis} instance must not be added multiple times to the same or different axis rects.
+
+If an axis rect side already contains one or more axes, the lower and upper endings of the new axis (\doxylink{classQCPAxis_a08af1c72db9ae4dc8cb8a973d44405ab}{QCPAxis\+::set\+Lower\+Ending}, \doxylink{classQCPAxis_a69119b892fc306f651763596685aa377}{QCPAxis\+::set\+Upper\+Ending}) are set to \doxylink{classQCPLineEnding_a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b}{QCPLine\+Ending\+::es\+Half\+Bar}.
+
+\begin{DoxySeeAlso}{See also}
+add\+Axes, setup\+Full\+Axes\+Box 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_ae29231b68e311a3004a310b65b14ba5a}\label{classQCPPolarAxisAngular_ae29231b68e311a3004a310b65b14ba5a} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a99358487c1c025b9cf18dc22cc322c3b}\label{classQCPPolarAxisAngular_a99358487c1c025b9cf18dc22cc322c3b} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!bottom@{bottom}}
+\index{bottom@{bottom}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{bottom()}{bottom()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::bottom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel position of the bottom border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a7342e0dd62b71f81b993c38db6fa4d5b}\label{classQCPPolarAxisAngular_a7342e0dd62b71f81b993c38db6fa4d5b} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!bottomLeft@{bottomLeft}}
+\index{bottomLeft@{bottomLeft}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{bottomLeft()}{bottomLeft()}}
+{\footnotesize\ttfamily QPoint QCPPolar\+Axis\+Angular\+::bottom\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the bottom left corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_af55ce49c9820e3057d220f51bc3504ab}\label{classQCPPolarAxisAngular_af55ce49c9820e3057d220f51bc3504ab} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!bottomRight@{bottomRight}}
+\index{bottomRight@{bottomRight}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{bottomRight()}{bottomRight()}}
+{\footnotesize\ttfamily QPoint QCPPolar\+Axis\+Angular\+::bottom\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the bottom right corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a227fdd60af1fae73e02262539736e5f2}\label{classQCPPolarAxisAngular_a227fdd60af1fae73e02262539736e5f2} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!center@{center}}
+\index{center@{center}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily QPoint QCPPolar\+Axis\+Angular\+::center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the center of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_af339215e1af216daafb4ceaccd359fd9}\label{classQCPPolarAxisAngular_af339215e1af216daafb4ceaccd359fd9} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!coordToPixel@{coordToPixel}}
+\index{coordToPixel@{coordToPixel}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{coordToPixel()}{coordToPixel()}}
+{\footnotesize\ttfamily QPointF QCPPolar\+Axis\+Angular\+::coord\+To\+Pixel (\begin{DoxyParamCaption}\item[{double}]{angle\+Coord}{, }\item[{double}]{radius\+Coord}{}\end{DoxyParamCaption}) const}
+
+Transforms {\itshape value}, in coordinates of the axis, to pixel coordinates of the \doxylink{classQCustomPlot}{QCustom\+Plot} widget. \Hypertarget{classQCPPolarAxisAngular_abc33754f6575a0ac2cdc597bbd11c6c7}\label{classQCPPolarAxisAngular_abc33754f6575a0ac2cdc597bbd11c6c7} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!draw@{draw}}
+\index{draw@{draw}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a95fa9af1bcb033be5c394ec2767b000e}\label{classQCPPolarAxisAngular_a95fa9af1bcb033be5c394ec2767b000e} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!elements@{elements}}
+\index{elements@{elements}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classQCPLayoutElement}{QCPLayout\+Element}} \texorpdfstring{$\ast$}{*} $>$ QCPPolar\+Axis\+Angular\+::elements (\begin{DoxyParamCaption}\item[{bool}]{recursive}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a list of all child elements in this layout element. If {\itshape recursive} is true, all sub-\/child elements are included in the list, too.
+
+\begin{DoxyWarning}{Warning}
+There may be {\ttfamily nullptr} entries in the returned list. For example, \doxylink{classQCPLayoutGrid}{QCPLayout\+Grid} may have empty cells which yield {\ttfamily nullptr} at the respective index. 
+\end{DoxyWarning}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a76dec8cb31e498994a944d7647a43309}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a7368a360c385cf4e3cb63e8a40795bab}\label{classQCPPolarAxisAngular_a7368a360c385cf4e3cb63e8a40795bab} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!getPartAt@{getPartAt}}
+\index{getPartAt@{getPartAt}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{getPartAt()}{getPartAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{QCPPolar\+Axis\+Angular\+::\+Selectable\+Part}} QCPPolar\+Axis\+Angular\+::get\+Part\+At (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+Returns the part of the axis that is hit by {\itshape pos} (in pixels). The return value of this function is independent of the user-\/selectable parts defined with \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}. Further, this function does not change the current selection state of the axis.
+
+If the axis is not visible (\doxylink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}), this function always returns \doxylink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416a4cde0e8357b4ed68dd516694a347b232}{sp\+None}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a1134ccb64704bf7b99ec99041a89ecf2}\label{classQCPPolarAxisAngular_a1134ccb64704bf7b99ec99041a89ecf2} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!height@{height}}
+\index{height@{height}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel height of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_aab81c173315a73725150010a1893a17d}\label{classQCPPolarAxisAngular_aab81c173315a73725150010a1893a17d} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!insetLayout@{insetLayout}}
+\index{insetLayout@{insetLayout}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{insetLayout()}{insetLayout()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPLayoutInset}{QCPLayout\+Inset}} \texorpdfstring{$\ast$}{*} QCPPolar\+Axis\+Angular\+::inset\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the inset layout of this axis rect. It can be used to place other layout elements (or even layouts with multiple other elements) inside/on top of an axis rect.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPLayoutInset}{QCPLayout\+Inset} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a277a8803e452cbfa100f27f37cae1b14}\label{classQCPPolarAxisAngular_a277a8803e452cbfa100f27f37cae1b14} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!left@{left}}
+\index{left@{left}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{left()}{left()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel position of the left border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}\label{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event} occurred, that started the mouse interaction.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}, \doxylink{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{QCPLayerable}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}\label{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QVariant \&}]{details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \doxylink{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}{select\+Test}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \doxylink{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}{select\+Test}. For example, One-\/dimensional plottables like \doxylink{classQCPGraph}{QCPGraph} or \doxylink{classQCPBars}{QCPBars} convey the clicked data point in the {\itshape details} parameter, as \doxylink{classQCPDataSelection}{QCPData\+Selection} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \doxylink{classQCPAxis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part} in the case of axes).
+
+\doxylink{classQCustomPlot}{QCustom\+Plot} uses an event propagation system that works the same as Qt\textquotesingle{}s system. If your layerable doesn\textquotesingle{}t reimplement the \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event} or explicitly calls {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()} in its reimplementation, the event will be propagated to the next layerable in the stacking order.
+
+Once a layerable has accepted the \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}, it is considered the mouse grabber and will receive all following calls to \doxylink{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}{mouse\+Move\+Event} or \doxylink{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}{mouse\+Release\+Event} for this mouse interaction (a "{}mouse interaction"{} in this context ends with the release).
+
+The default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}{mouse\+Move\+Event}, \doxylink{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{QCPLayerable}}.
+
+\Hypertarget{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}\label{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event} occurred, that started the mouse interaction.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}, \doxylink{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}{mouse\+Move\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}, \doxylink{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d}{wheel\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{QCPLayerable}}.
+
+\Hypertarget{classQCPPolarAxisAngular_af5d19f1b60eba481e735829c5e9ec433}\label{classQCPPolarAxisAngular_af5d19f1b60eba481e735829c5e9ec433} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!moveRange@{moveRange}}
+\index{moveRange@{moveRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{moveRange()}{moveRange()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::move\+Range (\begin{DoxyParamCaption}\item[{double}]{diff}{}\end{DoxyParamCaption})}
+
+If the scale type (set\+Scale\+Type) is st\+Linear, {\itshape diff} is added to the lower and upper bounds of the range. The range is simply moved by {\itshape diff}.
+
+If the scale type is st\+Logarithmic, the range bounds are multiplied by {\itshape diff}. This corresponds to an apparent "{}linear"{} move in logarithmic scaling by a distance of log(diff). \Hypertarget{classQCPPolarAxisAngular_a577c03df0af3a329f0c4a9a3006a7f4b}\label{classQCPPolarAxisAngular_a577c03df0af3a329f0c4a9a3006a7f4b} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!pixelToCoord@{pixelToCoord}}
+\index{pixelToCoord@{pixelToCoord}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{pixelToCoord()}{pixelToCoord()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::pixel\+To\+Coord (\begin{DoxyParamCaption}\item[{QPointF}]{pixel\+Pos}{, }\item[{double \&}]{angle\+Coord}{, }\item[{double \&}]{radius\+Coord}{}\end{DoxyParamCaption}) const}
+
+Transforms {\itshape value}, in pixel coordinates of the \doxylink{classQCustomPlot}{QCustom\+Plot} widget, to axis coordinates. \Hypertarget{classQCPPolarAxisAngular_ab3880298df8867253a535045d5a045a1}\label{classQCPPolarAxisAngular_ab3880298df8867253a535045d5a045a1} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!radialAxes@{radialAxes}}
+\index{radialAxes@{radialAxes}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{radialAxes()}{radialAxes()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} $>$ QCPPolar\+Axis\+Angular\+::radial\+Axes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns all axes on the axis rect sides specified with {\itshape types}.
+
+{\itshape types} may be a single \doxylink{classQCPAxis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type} or an {\ttfamily or}-\/combination, to get the axes of multiple sides.
+
+\begin{DoxySeeAlso}{See also}
+axis 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aa911d67b990aa1413bb7b63d6d7e36fe}\label{classQCPPolarAxisAngular_aa911d67b990aa1413bb7b63d6d7e36fe} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!radialAxis@{radialAxis}}
+\index{radialAxis@{radialAxis}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{radialAxis()}{radialAxis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*} QCPPolar\+Axis\+Angular\+::radial\+Axis (\begin{DoxyParamCaption}\item[{int}]{index}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+Returns the axis with the given {\itshape index} on the axis rect side specified with {\itshape type}.
+
+\begin{DoxySeeAlso}{See also}
+axis\+Count, axes 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aec977a08ff4e0e433fd8df5c972b2919}\label{classQCPPolarAxisAngular_aec977a08ff4e0e433fd8df5c972b2919} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!radialAxisCount@{radialAxisCount}}
+\index{radialAxisCount@{radialAxisCount}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{radialAxisCount()}{radialAxisCount()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::radial\+Axis\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the number of axes on the axis rect side specified with {\itshape type}.
+
+\begin{DoxySeeAlso}{See also}
+axis 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a4a621a38de7b6d3844b47dd243092958}\label{classQCPPolarAxisAngular_a4a621a38de7b6d3844b47dd243092958} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!removeRadialAxis@{removeRadialAxis}}
+\index{removeRadialAxis@{removeRadialAxis}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{removeRadialAxis()}{removeRadialAxis()}}
+{\footnotesize\ttfamily bool QCPPolar\+Axis\+Angular\+::remove\+Radial\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPolarAxisRadial}{QCPPolar\+Axis\+Radial}} \texorpdfstring{$\ast$}{*}}]{radial\+Axis}{}\end{DoxyParamCaption})}
+
+Removes the specified {\itshape axis} from the axis rect and deletes it.
+
+Returns true on success, i.\+e. if {\itshape axis} was a valid axis in this axis rect.
+
+\begin{DoxySeeAlso}{See also}
+add\+Axis 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aa8eace1f019b6c858473a192be088762}\label{classQCPPolarAxisAngular_aa8eace1f019b6c858473a192be088762} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!rescale@{rescale}}
+\index{rescale@{rescale}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{rescale()}{rescale()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::rescale (\begin{DoxyParamCaption}\item[{bool}]{only\+Visible\+Plottables}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+Changes the axis range such that all plottables associated with this axis are fully visible in that dimension.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_a1491c4a606bccd2d09e65e11b79eb882}{QCPAbstract\+Plottable\+::rescale\+Axes}, \doxylink{classQCustomPlot_ad86528f2cee6c7e446dea4a6e8839935}{QCustom\+Plot\+::rescale\+Axes} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_ab5d7d189cffd21294a23ece4f1cd9ca8}\label{classQCPPolarAxisAngular_ab5d7d189cffd21294a23ece4f1cd9ca8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!right@{right}}
+\index{right@{right}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{right()}{right()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel position of the right border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_ae101a2ad79391909da0c0f1f08f9e872}\label{classQCPPolarAxisAngular_ae101a2ad79391909da0c0f1f08f9e872} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!scaleRange@{scaleRange}}
+\index{scaleRange@{scaleRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{scaleRange()}{scaleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::scale\+Range (\begin{DoxyParamCaption}\item[{double}]{factor}{}\end{DoxyParamCaption})}
+
+Scales the range of this axis by {\itshape factor} around the center of the current axis range. For example, if {\itshape factor} is 2.\+0, then the axis range will double its size, and the point at the axis range center won\textquotesingle{}t have changed its position in the \doxylink{classQCustomPlot}{QCustom\+Plot} widget (i.\+e. coordinates around the center will have moved symmetrically closer).
+
+If you wish to scale around a different coordinate than the current axis range center, use the overload \doxylink{classQCPPolarAxisAngular_a3f1783650404238080da4d5fd99dd81e}{scale\+Range(double factor, double center)}. \Hypertarget{classQCPPolarAxisAngular_a3f1783650404238080da4d5fd99dd81e}\label{classQCPPolarAxisAngular_a3f1783650404238080da4d5fd99dd81e} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!scaleRange@{scaleRange}}
+\index{scaleRange@{scaleRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{scaleRange()}{scaleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::scale\+Range (\begin{DoxyParamCaption}\item[{double}]{factor}{, }\item[{double}]{center}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Scales the range of this axis by {\itshape factor} around the coordinate {\itshape center}. For example, if {\itshape factor} is 2.\+0, {\itshape center} is 1.\+0, then the axis range will double its size, and the point at coordinate 1.\+0 won\textquotesingle{}t have changed its position in the \doxylink{classQCustomPlot}{QCustom\+Plot} widget (i.\+e. coordinates around 1.\+0 will have moved symmetrically closer to 1.\+0).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_ae101a2ad79391909da0c0f1f08f9e872}{scale\+Range(double factor)} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a2fdb74ce12d5c5dfe45ba3a231d31e6f}\label{classQCPPolarAxisAngular_a2fdb74ce12d5c5dfe45ba3a231d31e6f} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!selectionCategory@{selectionCategory}}
+\index{selectionCategory@{selectionCategory}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{selectionCategory()}{selectionCategory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} QCPPolar\+Axis\+Angular\+::selection\+Category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}\label{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily double QCPPolar\+Axis\+Angular\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+See \doxylink{classQCPLayerable_a272989087fc8c4357b4ba614f9922336}{QCPLayerable\+::select\+Test} for a general explanation of this virtual method.
+
+\doxylink{classQCPLayoutElement}{QCPLayout\+Element} subclasses may reimplement this method to provide more specific selection test behaviour. 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a62d60f1b0ee9bb23e38811d71586d79c}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a7c0dd85939536498818b49a89c1e2433}\label{classQCPPolarAxisAngular_a7c0dd85939536498818b49a89c1e2433} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBackground@{setBackground}}
+\index{setBackground@{setBackground}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBackground()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Background (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets {\itshape brush} as the background brush. The axis rect background will be filled with this brush. Since axis rects place themselves on the "{}background"{} layer by default, the axis rect backgrounds are usually drawn below everything else.
+
+The brush will be drawn before (under) any background pixmap, which may be specified with \doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background(const QPixmap \&pm)}.
+
+To disable drawing of a background brush, set {\itshape brush} to Qt\+::\+No\+Brush.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background(const QPixmap \&pm)} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}\label{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBackground@{setBackground}}
+\index{setBackground@{setBackground}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBackground()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Background (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{pm}{}\end{DoxyParamCaption})}
+
+Sets {\itshape pm} as the axis background pixmap. The axis background pixmap will be drawn inside the axis rect. Since axis rects place themselves on the "{}background"{} layer by default, the axis rect backgrounds are usually drawn below everything else.
+
+For cases where the provided pixmap doesn\textquotesingle{}t have the same size as the axis rect, scaling can be enabled with \doxylink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled} and the scaling mode (i.\+e. whether and how the aspect ratio is preserved) can be set with \doxylink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode}. To set all these options in one call, consider using the overloaded version of this function.
+
+Below the pixmap, the axis rect may be optionally filled with a brush, if specified with \doxylink{classQCPPolarAxisAngular_a7c0dd85939536498818b49a89c1e2433}{set\+Background(const QBrush \&brush)}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled}, \doxylink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode}, \doxylink{classQCPPolarAxisAngular_a7c0dd85939536498818b49a89c1e2433}{set\+Background(const QBrush \&brush)} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_af456d4aaf5f71807d88d1b8919f79355}\label{classQCPPolarAxisAngular_af456d4aaf5f71807d88d1b8919f79355} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBackground@{setBackground}}
+\index{setBackground@{setBackground}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBackground()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Background (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{pm}{, }\item[{bool}]{scaled}{, }\item[{Qt\+::\+Aspect\+Ratio\+Mode}]{mode}{ = {\ttfamily Qt\+:\+:KeepAspectRatioByExpanding}}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows setting the background pixmap of the axis rect, whether it shall be scaled and how it shall be scaled in one call.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background(const QPixmap \&pm)}, \doxylink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled}, \doxylink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}\label{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBackgroundScaled@{setBackgroundScaled}}
+\index{setBackgroundScaled@{setBackgroundScaled}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBackgroundScaled()}{setBackgroundScaled()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Background\+Scaled (\begin{DoxyParamCaption}\item[{bool}]{scaled}{}\end{DoxyParamCaption})}
+
+Sets whether the axis background pixmap shall be scaled to fit the axis rect or not. If {\itshape scaled} is set to true, you may control whether and how the aspect ratio of the original pixmap is preserved with \doxylink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode}.
+
+Note that the scaled version of the original pixmap is buffered, so there is no performance penalty on replots. (Except when the axis rect dimensions are changed continuously.)
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background}, \doxylink{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}{set\+Background\+Scaled\+Mode} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8}\label{classQCPPolarAxisAngular_a57b0e1c12826f67cf6ce347628abcbd8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBackgroundScaledMode@{setBackgroundScaledMode}}
+\index{setBackgroundScaledMode@{setBackgroundScaledMode}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBackgroundScaledMode()}{setBackgroundScaledMode()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Background\+Scaled\+Mode (\begin{DoxyParamCaption}\item[{Qt\+::\+Aspect\+Ratio\+Mode}]{mode}{}\end{DoxyParamCaption})}
+
+If scaling of the axis background pixmap is enabled (\doxylink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled}), use this function to define whether and how the aspect ratio of the original pixmap passed to \doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background} is preserved. \begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a11e1e23ea1d52abded4b7fab42c10e60}{set\+Background}, \doxylink{classQCPPolarAxisAngular_af2a38b983f2ebe8fe10ca256b119a90c}{set\+Background\+Scaled} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331}\label{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setBasePen@{setBasePen}}
+\index{setBasePen@{setBasePen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setBasePen()}{setBasePen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Base\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen, the axis base line is drawn with.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a10c0f44c36985b5cc3b1e9cd34fbd7e2}{set\+Tick\+Pen}, \doxylink{classQCPPolarAxisAngular_a3349a6435c3c844051649226f7ae5bd5}{set\+Sub\+Tick\+Pen} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a71b78ba614fccb2f4742e7e75cf0652e}\label{classQCPPolarAxisAngular_a71b78ba614fccb2f4742e7e75cf0652e} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setLabel@{setLabel}}
+\index{setLabel@{setLabel}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setLabel()}{setLabel()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Label (\begin{DoxyParamCaption}\item[{const QString \&}]{str}{}\end{DoxyParamCaption})}
+
+Sets the text of the axis label that will be shown below/above or next to the axis, depending on its orientation. To disable axis labels, pass an empty string as {\itshape str}. \Hypertarget{classQCPPolarAxisAngular_a757c74562718fcbc0b854be439e271b6}\label{classQCPPolarAxisAngular_a757c74562718fcbc0b854be439e271b6} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setLabelColor@{setLabelColor}}
+\index{setLabelColor@{setLabelColor}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setLabelColor()}{setLabelColor()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Label\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the color of the axis label.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_aa033e53edcfdc5a86bc178a72606148a}{set\+Label\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aa033e53edcfdc5a86bc178a72606148a}\label{classQCPPolarAxisAngular_aa033e53edcfdc5a86bc178a72606148a} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setLabelFont@{setLabelFont}}
+\index{setLabelFont@{setLabelFont}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setLabelFont()}{setLabelFont()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Label\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the font of the axis label.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a757c74562718fcbc0b854be439e271b6}{set\+Label\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a956564f6c44c95fbc794f5a820233a14}\label{classQCPPolarAxisAngular_a956564f6c44c95fbc794f5a820233a14} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setLabelPadding@{setLabelPadding}}
+\index{setLabelPadding@{setLabelPadding}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setLabelPadding()}{setLabelPadding()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Label\+Padding (\begin{DoxyParamCaption}\item[{int}]{padding}{}\end{DoxyParamCaption})}
+
+Sets the distance between the tick labels and the axis label.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_ad7bfedb138fedcdd19ce574baedd4f3f}{set\+Tick\+Label\+Padding}, set\+Padding 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a3781860cc80b9a6d8be2a4f8179733dd}\label{classQCPPolarAxisAngular_a3781860cc80b9a6d8be2a4f8179733dd} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setNumberFormat@{setNumberFormat}}
+\index{setNumberFormat@{setNumberFormat}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setNumberFormat()}{setNumberFormat()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Number\+Format (\begin{DoxyParamCaption}\item[{const QString \&}]{format\+Code}{}\end{DoxyParamCaption})}
+
+Sets the number format for the numbers in tick labels. This {\itshape format\+Code} is an extended version of the format code used e.\+g. by QString\+::number() and QLocale\+::to\+String(). For reference about that, see the "{}\+Argument Formats"{} section in the detailed description of the QString class.
+
+{\itshape format\+Code} is a string of one, two or three characters. The first character is identical to the normal format code used by Qt. In short, this means\+: \textquotesingle{}e\textquotesingle{}/\textquotesingle{}E\textquotesingle{} scientific format, \textquotesingle{}f\textquotesingle{} fixed format, \textquotesingle{}g\textquotesingle{}/\textquotesingle{}G\textquotesingle{} scientific or fixed, whichever is shorter.
+
+The second and third characters are optional and specific to \doxylink{classQCustomPlot}{QCustom\+Plot}\+:~\newline
+ If the first char was \textquotesingle{}e\textquotesingle{} or \textquotesingle{}g\textquotesingle{}, numbers are/might be displayed in the scientific format, e.\+g. "{}5.\+5e9"{}, which might be visually unappealing in a plot. So when the second char of {\itshape format\+Code} is set to \textquotesingle{}b\textquotesingle{} (for "{}beautiful"{}), those exponential numbers are formatted in a more natural way, i.\+e. "{}5.\+5 \mbox{[}multiplication sign\mbox{]} 10 \mbox{[}superscript\mbox{]} 9"{}. By default, the multiplication sign is a centered dot. If instead a cross should be shown (as is usual in the USA), the third char of {\itshape format\+Code} can be set to \textquotesingle{}c\textquotesingle{}. The inserted multiplication signs are the UTF-\/8 characters 215 (0x\+D7) for the cross and 183 (0x\+B7) for the dot.
+
+Examples for {\itshape format\+Code\+:} \begin{DoxyItemize}
+\item {\ttfamily g} normal format code behaviour. If number is small, fixed format is used, if number is large, normal scientific format is used \item {\ttfamily gb} If number is small, fixed format is used, if number is large, scientific format is used with beautifully typeset decimal powers and a dot as multiplication sign \item {\ttfamily ebc} All numbers are in scientific format with beautifully typeset decimal power and a cross as multiplication sign \item {\ttfamily fb} illegal format code, since fixed format doesn\textquotesingle{}t support (or need) beautifully typeset decimal powers. Format code will be reduced to \textquotesingle{}f\textquotesingle{}. \item {\ttfamily hello} illegal format code, since first char is not \textquotesingle{}e\textquotesingle{}, \textquotesingle{}E\textquotesingle{}, \textquotesingle{}f\textquotesingle{}, \textquotesingle{}g\textquotesingle{} or \textquotesingle{}G\textquotesingle{}. Current format code will not be changed. \end{DoxyItemize}
+\Hypertarget{classQCPPolarAxisAngular_a1c463fe5cbc8ddaead62b2278cfbfb35}\label{classQCPPolarAxisAngular_a1c463fe5cbc8ddaead62b2278cfbfb35} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setNumberPrecision@{setNumberPrecision}}
+\index{setNumberPrecision@{setNumberPrecision}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setNumberPrecision()}{setNumberPrecision()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Number\+Precision (\begin{DoxyParamCaption}\item[{int}]{precision}{}\end{DoxyParamCaption})}
+
+Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i, char f, int prec) for details. The effect of precisions are most notably for number Formats starting with \textquotesingle{}e\textquotesingle{}, see \doxylink{classQCPPolarAxisAngular_a3781860cc80b9a6d8be2a4f8179733dd}{set\+Number\+Format} \Hypertarget{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}\label{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRange@{setRange}}
+\index{setRange@{setRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQCPRange}{QCPRange}} \&}]{range}{}\end{DoxyParamCaption})}
+
+Sets the range of the axis.
+
+This slot may be connected with the range\+Changed signal of another axis so this axis is always synchronized with the other axis range, when it changes.
+
+To invert the direction of an axis, use \doxylink{classQCPPolarAxisAngular_adf584a9a77283842c8df20805b90b17f}{set\+Range\+Reversed}. \Hypertarget{classQCPPolarAxisAngular_a533759bbabbd9985e8ad4ecc11c044ef}\label{classQCPPolarAxisAngular_a533759bbabbd9985e8ad4ecc11c044ef} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRange@{setRange}}
+\index{setRange@{setRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range (\begin{DoxyParamCaption}\item[{double}]{lower}{, }\item[{double}]{upper}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the lower and upper bound of the axis range.
+
+To invert the direction of an axis, use \doxylink{classQCPPolarAxisAngular_adf584a9a77283842c8df20805b90b17f}{set\+Range\+Reversed}.
+
+There is also a slot to set a range, see \doxylink{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}{set\+Range(const QCPRange \&range)}. \Hypertarget{classQCPPolarAxisAngular_a10d361152ed9ccf68ecf682ac82b4442}\label{classQCPPolarAxisAngular_a10d361152ed9ccf68ecf682ac82b4442} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRange@{setRange}}
+\index{setRange@{setRange}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range (\begin{DoxyParamCaption}\item[{double}]{position}{, }\item[{double}]{size}{, }\item[{Qt\+::\+Alignment\+Flag}]{alignment}{}\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the range of the axis.
+
+The {\itshape position} coordinate indicates together with the {\itshape alignment} parameter, where the new range will be positioned. {\itshape size} defines the size of the new axis range. {\itshape alignment} may be Qt\+::\+Align\+Left, Qt\+::\+Align\+Right or Qt\+::\+Align\+Center. This will cause the left border, right border, or center of the range to be aligned with {\itshape position}. Any other values of {\itshape alignment} will default to Qt\+::\+Align\+Center. \Hypertarget{classQCPPolarAxisAngular_a8b82f5859601eb1e70b8220794058c38}\label{classQCPPolarAxisAngular_a8b82f5859601eb1e70b8220794058c38} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRangeLower@{setRangeLower}}
+\index{setRangeLower@{setRangeLower}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRangeLower()}{setRangeLower()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range\+Lower (\begin{DoxyParamCaption}\item[{double}]{lower}{}\end{DoxyParamCaption})}
+
+Sets the lower bound of the axis range. The upper bound is not changed. \begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}{set\+Range} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_adf584a9a77283842c8df20805b90b17f}\label{classQCPPolarAxisAngular_adf584a9a77283842c8df20805b90b17f} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRangeReversed@{setRangeReversed}}
+\index{setRangeReversed@{setRangeReversed}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRangeReversed()}{setRangeReversed()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range\+Reversed (\begin{DoxyParamCaption}\item[{bool}]{reversed}{}\end{DoxyParamCaption})}
+
+Sets whether the axis range (direction) is displayed reversed. Normally, the values on horizontal axes increase left to right, on vertical axes bottom to top. When {\itshape reversed} is set to true, the direction of increasing values is inverted.
+
+Note that the range and data interface stays the same for reversed axes, e.\+g. the {\itshape lower} part of the \doxylink{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}{set\+Range} interface will still reference the mathematically smaller number than the {\itshape upper} part. \Hypertarget{classQCPPolarAxisAngular_a4b395b3cd4d43caa506351d35b3f401d}\label{classQCPPolarAxisAngular_a4b395b3cd4d43caa506351d35b3f401d} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setRangeUpper@{setRangeUpper}}
+\index{setRangeUpper@{setRangeUpper}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setRangeUpper()}{setRangeUpper()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Range\+Upper (\begin{DoxyParamCaption}\item[{double}]{upper}{}\end{DoxyParamCaption})}
+
+Sets the upper bound of the axis range. The lower bound is not changed. \begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_aff1a9a85cc7f5f3493b4aae8213f7cbe}{set\+Range} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}\label{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectableParts@{setSelectableParts}}
+\index{setSelectableParts@{setSelectableParts}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectableParts()}{setSelectableParts()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selectable\+Parts (\begin{DoxyParamCaption}\item[{const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&}]{selectable\+Parts}{}\end{DoxyParamCaption})}
+
+Sets whether the user can (de-\/)select the parts in {\itshape selectable} by clicking on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface. (When \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains i\+Select\+Axes.)
+
+However, even when {\itshape selectable} is set to a value not allowing the selection of a specific part, it is still possible to set the selection of this part manually, by calling \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts} directly.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{Selectable\+Part}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a2b48d57dee01f1f8a5895d0f458c7fc8}\label{classQCPPolarAxisAngular_a2b48d57dee01f1f8a5895d0f458c7fc8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedBasePen@{setSelectedBasePen}}
+\index{setSelectedBasePen@{setSelectedBasePen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedBasePen()}{setSelectedBasePen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Base\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that is used to draw the axis base line when selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331}{set\+Base\+Pen}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a9ddd53a24e6307384bf35dc38ffbe1d6}\label{classQCPPolarAxisAngular_a9ddd53a24e6307384bf35dc38ffbe1d6} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedLabelColor@{setSelectedLabelColor}}
+\index{setSelectedLabelColor@{setSelectedLabelColor}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedLabelColor()}{setSelectedLabelColor()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Label\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the color that is used for the axis label when it is selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a757c74562718fcbc0b854be439e271b6}{set\+Label\+Color}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_abd612ae3bd32fe700e03a6e403eac3e8}\label{classQCPPolarAxisAngular_abd612ae3bd32fe700e03a6e403eac3e8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedLabelFont@{setSelectedLabelFont}}
+\index{setSelectedLabelFont@{setSelectedLabelFont}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedLabelFont()}{setSelectedLabelFont()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Label\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the font that is used for the axis label when it is selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_aa033e53edcfdc5a86bc178a72606148a}{set\+Label\+Font}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}\label{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedParts@{setSelectedParts}}
+\index{setSelectedParts@{setSelectedParts}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedParts()}{setSelectedParts()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Parts (\begin{DoxyParamCaption}\item[{const QCPPolar\+Axis\+Angular\+::\+Selectable\+Parts \&}]{selected\+Parts}{}\end{DoxyParamCaption})}
+
+Sets the selected state of the respective axis parts described by \doxylink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{Selectable\+Part}. When a part is selected, it uses a different pen/font.
+
+The entire selection mechanism for axes is handled automatically when \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains i\+Select\+Axes. You only need to call this function when you wish to change the selection state manually.
+
+This function can change the selection state of a part, independent of the \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts} setting.
+
+emits the selection\+Changed signal when {\itshape selected} is different from the previous selection state.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a342afffd77fa1e8b30778b29a26eb416}{Selectable\+Part}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}{select\+Test}, \doxylink{classQCPPolarAxisAngular_a2b48d57dee01f1f8a5895d0f458c7fc8}{set\+Selected\+Base\+Pen}, \doxylink{classQCPPolarAxisAngular_aac8b0df8636b4e8222315c7ee444ac46}{set\+Selected\+Tick\+Pen}, \doxylink{classQCPPolarAxisAngular_a3778f58fde6ffe276207fcc32b498264}{set\+Selected\+Sub\+Tick\+Pen}, \doxylink{classQCPPolarAxisAngular_a3a671db3137ff4b7501216e65fd5738f}{set\+Selected\+Tick\+Label\+Font}, \doxylink{classQCPPolarAxisAngular_abd612ae3bd32fe700e03a6e403eac3e8}{set\+Selected\+Label\+Font}, \doxylink{classQCPPolarAxisAngular_aee32235a2ebd5492af2f632f179b8a0d}{set\+Selected\+Tick\+Label\+Color}, \doxylink{classQCPPolarAxisAngular_a9ddd53a24e6307384bf35dc38ffbe1d6}{set\+Selected\+Label\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a3778f58fde6ffe276207fcc32b498264}\label{classQCPPolarAxisAngular_a3778f58fde6ffe276207fcc32b498264} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedSubTickPen@{setSelectedSubTickPen}}
+\index{setSelectedSubTickPen@{setSelectedSubTickPen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedSubTickPen()}{setSelectedSubTickPen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Sub\+Tick\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that is used to draw the subticks when selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a3349a6435c3c844051649226f7ae5bd5}{set\+Sub\+Tick\+Pen}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aee32235a2ebd5492af2f632f179b8a0d}\label{classQCPPolarAxisAngular_aee32235a2ebd5492af2f632f179b8a0d} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedTickLabelColor@{setSelectedTickLabelColor}}
+\index{setSelectedTickLabelColor@{setSelectedTickLabelColor}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedTickLabelColor()}{setSelectedTickLabelColor()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Tick\+Label\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the color that is used for tick labels when they are selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a8fb8a8146883d77f39904cfea0d67d7c}{set\+Tick\+Label\+Color}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a3a671db3137ff4b7501216e65fd5738f}\label{classQCPPolarAxisAngular_a3a671db3137ff4b7501216e65fd5738f} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedTickLabelFont@{setSelectedTickLabelFont}}
+\index{setSelectedTickLabelFont@{setSelectedTickLabelFont}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedTickLabelFont()}{setSelectedTickLabelFont()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Tick\+Label\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the font that is used for tick labels when they are selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a7a601994f36dc333aa5285d1c34ec55d}{set\+Tick\+Label\+Font}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aac8b0df8636b4e8222315c7ee444ac46}\label{classQCPPolarAxisAngular_aac8b0df8636b4e8222315c7ee444ac46} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSelectedTickPen@{setSelectedTickPen}}
+\index{setSelectedTickPen@{setSelectedTickPen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSelectedTickPen()}{setSelectedTickPen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Selected\+Tick\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that is used to draw the (major) ticks when selected.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a10c0f44c36985b5cc3b1e9cd34fbd7e2}{set\+Tick\+Pen}, \doxylink{classQCPPolarAxisAngular_af475366740d070e622e291dd30e26026}{set\+Selectable\+Parts}, \doxylink{classQCPPolarAxisAngular_a42cfbfd3052682539ed239795ae1c4a8}{set\+Selected\+Parts}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}\label{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSubTickLength@{setSubTickLength}}
+\index{setSubTickLength@{setSubTickLength}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSubTickLength()}{setSubTickLength()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Sub\+Tick\+Length (\begin{DoxyParamCaption}\item[{int}]{inside}{, }\item[{int}]{outside}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+Sets the length of the subticks in pixels. {\itshape inside} is the length the subticks will reach inside the plot and {\itshape outside} is the length they will reach outside the plot. If {\itshape outside} is greater than zero, the tick labels and axis label will increase their distance to the axis accordingly, so they won\textquotesingle{}t collide with the ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a953513417d18c9380d0cee0870f35c45}{set\+Sub\+Tick\+Length\+In}, \doxylink{classQCPPolarAxisAngular_a9bb670f94f8402f8e1654fcc87d7fae1}{set\+Sub\+Tick\+Length\+Out} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a953513417d18c9380d0cee0870f35c45}\label{classQCPPolarAxisAngular_a953513417d18c9380d0cee0870f35c45} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSubTickLengthIn@{setSubTickLengthIn}}
+\index{setSubTickLengthIn@{setSubTickLengthIn}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSubTickLengthIn()}{setSubTickLengthIn()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Sub\+Tick\+Length\+In (\begin{DoxyParamCaption}\item[{int}]{inside}{}\end{DoxyParamCaption})}
+
+Sets the length of the inward subticks in pixels. {\itshape inside} is the length the subticks will reach inside the plot.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a9bb670f94f8402f8e1654fcc87d7fae1}{set\+Sub\+Tick\+Length\+Out}, \doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a9bb670f94f8402f8e1654fcc87d7fae1}\label{classQCPPolarAxisAngular_a9bb670f94f8402f8e1654fcc87d7fae1} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSubTickLengthOut@{setSubTickLengthOut}}
+\index{setSubTickLengthOut@{setSubTickLengthOut}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSubTickLengthOut()}{setSubTickLengthOut()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Sub\+Tick\+Length\+Out (\begin{DoxyParamCaption}\item[{int}]{outside}{}\end{DoxyParamCaption})}
+
+Sets the length of the outward subticks in pixels. {\itshape outside} is the length the subticks will reach outside the plot. If {\itshape outside} is greater than zero, the tick labels will increase their distance to the axis accordingly, so they won\textquotesingle{}t collide with the ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a953513417d18c9380d0cee0870f35c45}{set\+Sub\+Tick\+Length\+In}, \doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a3349a6435c3c844051649226f7ae5bd5}\label{classQCPPolarAxisAngular_a3349a6435c3c844051649226f7ae5bd5} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSubTickPen@{setSubTickPen}}
+\index{setSubTickPen@{setSubTickPen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSubTickPen()}{setSubTickPen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Sub\+Tick\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen, subtick marks will be drawn with.
+
+\begin{DoxySeeAlso}{See also}
+set\+Sub\+Tick\+Count, \doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331}{set\+Base\+Pen} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a4961b3541814e331c4cc29f66e709a45}\label{classQCPPolarAxisAngular_a4961b3541814e331c4cc29f66e709a45} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setSubTicks@{setSubTicks}}
+\index{setSubTicks@{setSubTicks}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setSubTicks()}{setSubTicks()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Sub\+Ticks (\begin{DoxyParamCaption}\item[{bool}]{show}{}\end{DoxyParamCaption})}
+
+Sets whether sub tick marks are displayed.
+
+Sub ticks are only potentially visible if (major) ticks are also visible (see \doxylink{classQCPPolarAxisAngular_ad2e017970a91fd11a7d19bed81e2be59}{set\+Ticks})
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_ad2e017970a91fd11a7d19bed81e2be59}{set\+Ticks} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a343fafde7e44cf32b7d89e45c9154bc8}\label{classQCPPolarAxisAngular_a343fafde7e44cf32b7d89e45c9154bc8} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTicker@{setTicker}}
+\index{setTicker@{setTicker}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTicker()}{setTicker()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Ticker (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{classQCPAxisTicker}{QCPAxis\+Ticker}} $>$}]{ticker}{}\end{DoxyParamCaption})}
+
+The axis ticker is responsible for generating the tick positions and tick labels. See the documentation of \doxylink{classQCPAxisTicker}{QCPAxis\+Ticker} for details on how to work with axis tickers.
+
+You can change the tick positioning/labeling behaviour of this axis by setting a different \doxylink{classQCPAxisTicker}{QCPAxis\+Ticker} subclass using this method. If you only wish to modify the currently installed axis ticker, access it via ticker.
+
+Since the ticker is stored in the axis as a shared pointer, multiple axes may share the same axis ticker simply by passing the same shared pointer to multiple axes.
+
+\begin{DoxySeeAlso}{See also}
+ticker 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a8fb8a8146883d77f39904cfea0d67d7c}\label{classQCPPolarAxisAngular_a8fb8a8146883d77f39904cfea0d67d7c} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLabelColor@{setTickLabelColor}}
+\index{setTickLabelColor@{setTickLabelColor}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLabelColor()}{setTickLabelColor()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Label\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+Sets the color of the tick labels.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da}{set\+Tick\+Labels}, \doxylink{classQCPPolarAxisAngular_a7a601994f36dc333aa5285d1c34ec55d}{set\+Tick\+Label\+Font} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a7a601994f36dc333aa5285d1c34ec55d}\label{classQCPPolarAxisAngular_a7a601994f36dc333aa5285d1c34ec55d} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLabelFont@{setTickLabelFont}}
+\index{setTickLabelFont@{setTickLabelFont}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLabelFont()}{setTickLabelFont()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Label\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font}{}\end{DoxyParamCaption})}
+
+Sets the font of the tick labels.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da}{set\+Tick\+Labels}, \doxylink{classQCPPolarAxisAngular_a8fb8a8146883d77f39904cfea0d67d7c}{set\+Tick\+Label\+Color} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_ad7bfedb138fedcdd19ce574baedd4f3f}\label{classQCPPolarAxisAngular_ad7bfedb138fedcdd19ce574baedd4f3f} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLabelPadding@{setTickLabelPadding}}
+\index{setTickLabelPadding@{setTickLabelPadding}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLabelPadding()}{setTickLabelPadding()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Label\+Padding (\begin{DoxyParamCaption}\item[{int}]{padding}{}\end{DoxyParamCaption})}
+
+Sets the distance between the axis base line (including any outward ticks) and the tick labels. \begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a956564f6c44c95fbc794f5a820233a14}{set\+Label\+Padding}, set\+Padding 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_af0922fd33a9589524f1600f316ea673c}\label{classQCPPolarAxisAngular_af0922fd33a9589524f1600f316ea673c} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLabelRotation@{setTickLabelRotation}}
+\index{setTickLabelRotation@{setTickLabelRotation}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLabelRotation()}{setTickLabelRotation()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Label\+Rotation (\begin{DoxyParamCaption}\item[{double}]{degrees}{}\end{DoxyParamCaption})}
+
+Sets the rotation of the tick labels. If {\itshape degrees} is zero, the labels are drawn normally. Else, the tick labels are drawn rotated by {\itshape degrees} clockwise. The specified angle is bound to values from -\/90 to 90 degrees.
+
+If {\itshape degrees} is exactly -\/90, 0 or 90, the tick labels are centered on the tick coordinate. For other angles, the label is drawn with an offset such that it seems to point toward or away from the tick mark. \Hypertarget{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da}\label{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLabels@{setTickLabels}}
+\index{setTickLabels@{setTickLabels}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLabels()}{setTickLabels()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Labels (\begin{DoxyParamCaption}\item[{bool}]{show}{}\end{DoxyParamCaption})}
+
+Sets whether tick labels are displayed. Tick labels are the numbers drawn next to tick marks. \Hypertarget{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}\label{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLength@{setTickLength}}
+\index{setTickLength@{setTickLength}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLength()}{setTickLength()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Length (\begin{DoxyParamCaption}\item[{int}]{inside}{, }\item[{int}]{outside}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+Sets the length of the ticks in pixels. {\itshape inside} is the length the ticks will reach inside the plot and {\itshape outside} is the length they will reach outside the plot. If {\itshape outside} is greater than zero, the tick labels and axis label will increase their distance to the axis accordingly, so they won\textquotesingle{}t collide with the ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_aa94320e22819cbc33f66412efc48aa89}{set\+Tick\+Length\+In}, \doxylink{classQCPPolarAxisAngular_ac71eb7632a34f616cfbfe49000033485}{set\+Tick\+Length\+Out} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_aa94320e22819cbc33f66412efc48aa89}\label{classQCPPolarAxisAngular_aa94320e22819cbc33f66412efc48aa89} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLengthIn@{setTickLengthIn}}
+\index{setTickLengthIn@{setTickLengthIn}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLengthIn()}{setTickLengthIn()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Length\+In (\begin{DoxyParamCaption}\item[{int}]{inside}{}\end{DoxyParamCaption})}
+
+Sets the length of the inward ticks in pixels. {\itshape inside} is the length the ticks will reach inside the plot.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_ac71eb7632a34f616cfbfe49000033485}{set\+Tick\+Length\+Out}, \doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_ac71eb7632a34f616cfbfe49000033485}\label{classQCPPolarAxisAngular_ac71eb7632a34f616cfbfe49000033485} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickLengthOut@{setTickLengthOut}}
+\index{setTickLengthOut@{setTickLengthOut}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickLengthOut()}{setTickLengthOut()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Length\+Out (\begin{DoxyParamCaption}\item[{int}]{outside}{}\end{DoxyParamCaption})}
+
+Sets the length of the outward ticks in pixels. {\itshape outside} is the length the ticks will reach outside the plot. If {\itshape outside} is greater than zero, the tick labels and axis label will increase their distance to the axis accordingly, so they won\textquotesingle{}t collide with the ticks.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_aa94320e22819cbc33f66412efc48aa89}{set\+Tick\+Length\+In}, \doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a460a6035eef606e5e23df175cd3eef08}{set\+Sub\+Tick\+Length} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a10c0f44c36985b5cc3b1e9cd34fbd7e2}\label{classQCPPolarAxisAngular_a10c0f44c36985b5cc3b1e9cd34fbd7e2} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTickPen@{setTickPen}}
+\index{setTickPen@{setTickPen}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTickPen()}{setTickPen()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Tick\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen, tick marks will be drawn with.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a3ac0147527231f74bc8a3c6311ad9d15}{set\+Tick\+Length}, \doxylink{classQCPPolarAxisAngular_a70cf79cc9e48b69d5d3ffed2a5e9e331}{set\+Base\+Pen} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_ad2e017970a91fd11a7d19bed81e2be59}\label{classQCPPolarAxisAngular_ad2e017970a91fd11a7d19bed81e2be59} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!setTicks@{setTicks}}
+\index{setTicks@{setTicks}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{setTicks()}{setTicks()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::set\+Ticks (\begin{DoxyParamCaption}\item[{bool}]{show}{}\end{DoxyParamCaption})}
+
+Sets whether tick marks are displayed.
+
+Note that setting {\itshape show} to false does not imply that tick labels are invisible, too. To achieve that, see \doxylink{classQCPPolarAxisAngular_a268cb4962d63494311de8b2ad800d8da}{set\+Tick\+Labels}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a4961b3541814e331c4cc29f66e709a45}{set\+Sub\+Ticks} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPPolarAxisAngular_a1513b98be721e6f8abb75aa49932cf20}\label{classQCPPolarAxisAngular_a1513b98be721e6f8abb75aa49932cf20} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!size@{size}}
+\index{size@{size}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily QSize QCPPolar\+Axis\+Angular\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel size of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_acda4f07fde44972d0f70e939b0224f6a}\label{classQCPPolarAxisAngular_acda4f07fde44972d0f70e939b0224f6a} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!top@{top}}
+\index{top@{top}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::top (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel position of the top border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a70a1d0d6bd2a8ba43eed9f5de2c67f1c}\label{classQCPPolarAxisAngular_a70a1d0d6bd2a8ba43eed9f5de2c67f1c} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!topLeft@{topLeft}}
+\index{topLeft@{topLeft}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{topLeft()}{topLeft()}}
+{\footnotesize\ttfamily QPoint QCPPolar\+Axis\+Angular\+::top\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the top left corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a6c8996dd4ae16f1df9c7269ef970d40b}\label{classQCPPolarAxisAngular_a6c8996dd4ae16f1df9c7269ef970d40b} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!topRight@{topRight}}
+\index{topRight@{topRight}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{topRight()}{topRight()}}
+{\footnotesize\ttfamily QPoint QCPPolar\+Axis\+Angular\+::top\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the top right corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. \Hypertarget{classQCPPolarAxisAngular_a9f2dfb377cdf3ce22a451fa9d3ab47e6}\label{classQCPPolarAxisAngular_a9f2dfb377cdf3ce22a451fa9d3ab47e6} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!update@{update}}
+\index{update@{update}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPLayoutElement_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}}]{phase}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \doxylink{classQCPPolarAxisAngular}{QCPPolar\+Axis\+Angular}.
+
+Calls the base class implementation to update the margins (see \doxylink{classQCPLayoutElement_a929c2ec62e0e0e1d8418eaa802e2af9b}{QCPLayout\+Element\+::update}), and finally passes the \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect} to the inset layout (\doxylink{classQCPPolarAxisAngular_aab81c173315a73725150010a1893a17d}{inset\+Layout}) and calls its QCPInset\+Layout\+::update function.
+
+\textbackslash{}seebaseclassmethod 
+
+Reimplemented from \mbox{\hyperlink{classQCPLayoutElement_a929c2ec62e0e0e1d8418eaa802e2af9b}{QCPLayout\+Element}}.
+
+\Hypertarget{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d}\label{classQCPPolarAxisAngular_a78f5d8c2c942fa1c47dcef5d96616e8d} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
+{\footnotesize\ttfamily void QCPPolar\+Axis\+Angular\+::wheel\+Event (\begin{DoxyParamCaption}\item[{QWheel\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \doxylink{classQCPPolarAxisAngular_abb390ae7656b7241acfe4ed9ea56f1ae}{select\+Test}.
+
+The current pixel position of the cursor on the \doxylink{classQCustomPlot}{QCustom\+Plot} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
+
+The {\ttfamily event-\/\texorpdfstring{$>$}{>}angle\+Delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making the delta larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
+
+The default implementation does nothing.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPPolarAxisAngular_a58b246497deae08694cfb40e0b4273eb}{mouse\+Press\+Event}, \doxylink{classQCPPolarAxisAngular_a5e2b49c56b57abc2ac2005e330ef1ee7}{mouse\+Move\+Event}, \doxylink{classQCPPolarAxisAngular_af1514482693091c40fbe802fce3c1db4}{mouse\+Release\+Event}, \doxylink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{QCPLayerable}}.
+
+\Hypertarget{classQCPPolarAxisAngular_abde756ec197666d7ee91eee11bc7c6d5}\label{classQCPPolarAxisAngular_abde756ec197666d7ee91eee11bc7c6d5} 
+\index{QCPPolarAxisAngular@{QCPPolarAxisAngular}!width@{width}}
+\index{width@{width}!QCPPolarAxisAngular@{QCPPolarAxisAngular}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily int QCPPolar\+Axis\+Angular\+::width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the pixel width of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner \doxylink{classQCPLayoutElement_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/build-\/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station-\/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+2\+\_\+\+GCC\+\_\+64bit-\/\+Debug/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station\+\_\+autogen/\+H7\+Q5\+XMJM4\+O/moc\+\_\+qcustomplot.\+cpp\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

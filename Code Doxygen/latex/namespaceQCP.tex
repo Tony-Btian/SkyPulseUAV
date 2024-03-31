@@ -1,0 +1,438 @@
+\doxysection{QCP Namespace Reference}
+\hypertarget{namespaceQCP}{}\label{namespaceQCP}\index{QCP@{QCP}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_a715d46153da230990aa887d0f0602452}{Resolution\+Unit}} \{ \mbox{\hyperlink{namespaceQCP_a715d46153da230990aa887d0f0602452a707d005dea5c4ab694e4270d9c6094e8}{ru\+Dots\+Per\+Meter}}
+, \mbox{\hyperlink{namespaceQCP_a715d46153da230990aa887d0f0602452a4224e01f49b331489ad8cb12b619b229}{ru\+Dots\+Per\+Centimeter}}
+, \mbox{\hyperlink{namespaceQCP_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{ru\+Dots\+Per\+Inch}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_a17844f19e1019693a953e1eb93536d2f}{Export\+Pen}} \{ \mbox{\hyperlink{namespaceQCP_a17844f19e1019693a953e1eb93536d2faae8fcfaafee234ce18558afef83f6a78}{ep\+No\+Cosmetic}}
+, \mbox{\hyperlink{namespaceQCP_a17844f19e1019693a953e1eb93536d2fa50d3657dba3fb90560b93a823cb0a6e8}{ep\+Allow\+Cosmetic}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{Sign\+Domain}} \{ \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{sd\+Negative}}
+, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{sd\+Both}}
+, \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{sd\+Positive}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{Margin\+Side}} \{ \newline
+\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{ms\+Left}} = 0x01
+, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{ms\+Right}} = 0x02
+, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5db8fb0d0b0ecf0d611c2602a348e8a0}{ms\+Top}} = 0x04
+, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5241d8eac2bab9524a38889f576179cc}{ms\+Bottom}} = 0x08
+, \newline
+\mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc}{ms\+All}} = 0x\+FF
+, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5}{ms\+None}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{Antialiased\+Element}} \{ \newline
+\mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caefa92e89cd37f8a081fd2075aa1af73f}{ae\+Axes}} = 0x0001
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4fbb37118d62288af0ca601ff2b07a2f}{ae\+Grid}} = 0x0002
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caaedf83369188a15a69f92bb1d85ca97b}{ae\+Sub\+Grid}} = 0x0004
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca9e0127a6361b5d0596b031a482c5cf97}{ae\+Legend}} = 0x0008
+, \newline
+\mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca1aca7a50c1b95403958733a4acafe773}{ae\+Legend\+Items}} = 0x0010
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4145e4251b0cf2dbedabeea0a38f84f6}{ae\+Plottables}} = 0x0020
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caf7712a85d6b0c75b24301d2fe9484db3}{ae\+Items}} = 0x0040
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0cae45ed8cd167bffe27d7f40da4bc17e9c}{ae\+Scatters}} = 0x0080
+, \newline
+\mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca788810f0aa930137de6ad6cc6d83d354}{ae\+Fills}} = 0x0100
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca261f8ea78cf3c9561726223ffa33dc12}{ae\+Zero\+Line}} = 0x0200
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca51dfdad36b2907277ae1221b09936441}{ae\+Other}} = 0x8000
+, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa897c232a0ffc8368e7c100ffc59ef31}{ae\+All}} = 0x\+FFFF
+, \newline
+\mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa9e90d81896358757d94275aeaa58f6a}{ae\+None}} = 0x0000
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4}{Plotting\+Hint}} \{ \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4ab7283c5bfc1ba9e597015389880bda42}{ph\+None}} = 0x000
+, \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d}{ph\+Fast\+Polylines}} = 0x001
+, \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a30840fba10eebfa519a92cf5c3d32870}{ph\+Immediate\+Refresh}} = 0x002
+, \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a8e9cfe5ee0c5cd36dd7accf9739aff65}{ph\+Cache\+Labels}} = 0x004
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{Interaction}} \{ \newline
+\mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a9acac96048a12b0d2b5396c9b4df768b}{i\+None}} = 0x000
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18}{i\+Range\+Drag}} = 0x001
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14}{i\+Range\+Zoom}} = 0x002
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aef673112c5067c3cf4cfddb62da7265d}{i\+Multi\+Select}} = 0x004
+, \newline
+\mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec}{i\+Select\+Plottables}} = 0x008
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}{i\+Select\+Axes}} = 0x010
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{i\+Select\+Legend}} = 0x020
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{i\+Select\+Items}} = 0x040
+, \newline
+\mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}{i\+Select\+Other}} = 0x080
+, \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ac8eec3d1e6c3eadf6af60968906db8db}{i\+Select\+Plottables\+Beyond\+Axis\+Rect}} = 0x100
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{Selection\+Rect\+Mode}} \{ \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1}{srm\+None}}
+, \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa739c260bf4d9a15f73423c91158b9428}{srm\+Zoom}}
+, \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa62c286e8da283a0cbb88ecac2f3f7506}{srm\+Select}}
+, \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa15e7a00c8e7e0673c7b31d75266888d4}{srm\+Custom}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{Selection\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}{st\+None}}
+, \mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d}{st\+Whole}}
+, \mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038ae5b11259c42962db355e7448f4a8633a}{st\+Single\+Data}}
+, \mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa05d2cba99c724df004d9c48971e4371}{st\+Data\+Range}}
+, \newline
+\mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038a7cf82676966ebf79cc371f65278e0e16}{st\+Multiple\+Data\+Ranges}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespaceQCP_a07ab701c05329089f933b9cae2638a63}\label{namespaceQCP_a07ab701c05329089f933b9cae2638a63} 
+bool {\bfseries is\+Invalid\+Data} (double value)
+\item 
+\Hypertarget{namespaceQCP_a728903e5c3dd17847bee280f4005496f}\label{namespaceQCP_a728903e5c3dd17847bee280f4005496f} 
+bool {\bfseries is\+Invalid\+Data} (double value1, double value2)
+\item 
+\Hypertarget{namespaceQCP_afbf6e3084c108f2bb4372107945ee82f}\label{namespaceQCP_afbf6e3084c108f2bb4372107945ee82f} 
+void {\bfseries set\+Margin\+Value} (QMargins \&margins, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side, int value)
+\item 
+\Hypertarget{namespaceQCP_a23a2679d3495c444acc26acc61e35b5b}\label{namespaceQCP_a23a2679d3495c444acc26acc61e35b5b} 
+int {\bfseries get\+Margin\+Value} (const QMargins \&margins, \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespaceQCP_a6de91ee30f2faa5e847a7be8b178b0f6}\label{namespaceQCP_a6de91ee30f2faa5e847a7be8b178b0f6} 
+const QMeta\+Object {\bfseries static\+Meta\+Object}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{namespaceQCP}{QCP} Namespace contains general enums, QFlags and functions used throughout the \doxylink{classQCustomPlot}{QCustom\+Plot} library.
+
+It provides QMeta\+Object-\/based reflection of its enums and flags via {\itshape QCP\+::static\+Meta\+Object}. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c} 
+\index{QCP@{QCP}!AntialiasedElement@{AntialiasedElement}}
+\index{AntialiasedElement@{AntialiasedElement}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{AntialiasedElement}{AntialiasedElement}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}}}
+
+Defines what objects of a plot can be forcibly drawn antialiased/not antialiased. If an object is neither forcibly drawn antialiased nor forcibly drawn not antialiased, it is up to the respective element how it is drawn. Typically it provides a {\itshape set\+Antialiased} function for this.
+
+{\ttfamily Antialiased\+Elements} is a flag of or-\/combined elements of this enum type.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}, \doxylink{classQCustomPlot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeAxes@{aeAxes}!QCP@{QCP}}\index{QCP@{QCP}!aeAxes@{aeAxes}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caefa92e89cd37f8a081fd2075aa1af73f}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caefa92e89cd37f8a081fd2075aa1af73f} 
+ae\+Axes&{\ttfamily 0x0001} Axis base line and tick marks \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeGrid@{aeGrid}!QCP@{QCP}}\index{QCP@{QCP}!aeGrid@{aeGrid}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4fbb37118d62288af0ca601ff2b07a2f}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4fbb37118d62288af0ca601ff2b07a2f} 
+ae\+Grid&{\ttfamily 0x0002} Grid lines \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeSubGrid@{aeSubGrid}!QCP@{QCP}}\index{QCP@{QCP}!aeSubGrid@{aeSubGrid}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caaedf83369188a15a69f92bb1d85ca97b}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caaedf83369188a15a69f92bb1d85ca97b} 
+ae\+Sub\+Grid&{\ttfamily 0x0004} Sub grid lines \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeLegend@{aeLegend}!QCP@{QCP}}\index{QCP@{QCP}!aeLegend@{aeLegend}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca9e0127a6361b5d0596b031a482c5cf97}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca9e0127a6361b5d0596b031a482c5cf97} 
+ae\+Legend&{\ttfamily 0x0008} Legend box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeLegendItems@{aeLegendItems}!QCP@{QCP}}\index{QCP@{QCP}!aeLegendItems@{aeLegendItems}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca1aca7a50c1b95403958733a4acafe773}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca1aca7a50c1b95403958733a4acafe773} 
+ae\+Legend\+Items&{\ttfamily 0x0010} Legend items \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aePlottables@{aePlottables}!QCP@{QCP}}\index{QCP@{QCP}!aePlottables@{aePlottables}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4145e4251b0cf2dbedabeea0a38f84f6}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca4145e4251b0cf2dbedabeea0a38f84f6} 
+ae\+Plottables&{\ttfamily 0x0020} Main lines of plottables \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeItems@{aeItems}!QCP@{QCP}}\index{QCP@{QCP}!aeItems@{aeItems}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caf7712a85d6b0c75b24301d2fe9484db3}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caf7712a85d6b0c75b24301d2fe9484db3} 
+ae\+Items&{\ttfamily 0x0040} Main lines of items \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeScatters@{aeScatters}!QCP@{QCP}}\index{QCP@{QCP}!aeScatters@{aeScatters}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0cae45ed8cd167bffe27d7f40da4bc17e9c}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0cae45ed8cd167bffe27d7f40da4bc17e9c} 
+ae\+Scatters&{\ttfamily 0x0080} Scatter symbols of plottables (excluding scatter symbols of type ss\+Pixmap) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeFills@{aeFills}!QCP@{QCP}}\index{QCP@{QCP}!aeFills@{aeFills}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca788810f0aa930137de6ad6cc6d83d354}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca788810f0aa930137de6ad6cc6d83d354} 
+ae\+Fills&{\ttfamily 0x0100} Borders of fills (e.\+g. under or between graphs) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeZeroLine@{aeZeroLine}!QCP@{QCP}}\index{QCP@{QCP}!aeZeroLine@{aeZeroLine}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca261f8ea78cf3c9561726223ffa33dc12}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca261f8ea78cf3c9561726223ffa33dc12} 
+ae\+Zero\+Line&{\ttfamily 0x0200} Zero-\/lines, see \doxylink{classQCPGrid_a209f40fdb252397b418b82d3494d8ea0}{QCPGrid\+::set\+Zero\+Line\+Pen} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeOther@{aeOther}!QCP@{QCP}}\index{QCP@{QCP}!aeOther@{aeOther}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca51dfdad36b2907277ae1221b09936441}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0ca51dfdad36b2907277ae1221b09936441} 
+ae\+Other&{\ttfamily 0x8000} Other elements that don\textquotesingle{}t fit into any of the existing categories \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeAll@{aeAll}!QCP@{QCP}}\index{QCP@{QCP}!aeAll@{aeAll}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa897c232a0ffc8368e7c100ffc59ef31}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa897c232a0ffc8368e7c100ffc59ef31} 
+ae\+All&{\ttfamily 0x\+FFFF} All elements \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aeNone@{aeNone}!QCP@{QCP}}\index{QCP@{QCP}!aeNone@{aeNone}}}\Hypertarget{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa9e90d81896358757d94275aeaa58f6a}\label{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0caa9e90d81896358757d94275aeaa58f6a} 
+ae\+None&{\ttfamily 0x0000} No elements \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_a17844f19e1019693a953e1eb93536d2f}\label{namespaceQCP_a17844f19e1019693a953e1eb93536d2f} 
+\index{QCP@{QCP}!ExportPen@{ExportPen}}
+\index{ExportPen@{ExportPen}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{ExportPen}{ExportPen}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_a17844f19e1019693a953e1eb93536d2f}{QCP\+::\+Export\+Pen}}}
+
+Defines how cosmetic pens (pens with numerical width 0) are handled during export.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_ad5acd34f6b39c3516887d7e54fec2412}{QCustom\+Plot\+::save\+Pdf} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{epNoCosmetic@{epNoCosmetic}!QCP@{QCP}}\index{QCP@{QCP}!epNoCosmetic@{epNoCosmetic}}}\Hypertarget{namespaceQCP_a17844f19e1019693a953e1eb93536d2faae8fcfaafee234ce18558afef83f6a78}\label{namespaceQCP_a17844f19e1019693a953e1eb93536d2faae8fcfaafee234ce18558afef83f6a78} 
+ep\+No\+Cosmetic&Cosmetic pens are converted to pens with pixel width 1 when exporting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{epAllowCosmetic@{epAllowCosmetic}!QCP@{QCP}}\index{QCP@{QCP}!epAllowCosmetic@{epAllowCosmetic}}}\Hypertarget{namespaceQCP_a17844f19e1019693a953e1eb93536d2fa50d3657dba3fb90560b93a823cb0a6e8}\label{namespaceQCP_a17844f19e1019693a953e1eb93536d2fa50d3657dba3fb90560b93a823cb0a6e8} 
+ep\+Allow\+Cosmetic&Cosmetic pens are exported normally (e.\+g. in PDF exports, cosmetic pens always appear as 1 pixel on screen, independent of viewer zoom level) \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037} 
+\index{QCP@{QCP}!Interaction@{Interaction}}
+\index{Interaction@{Interaction}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{Interaction}{Interaction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}}}
+
+Defines the mouse interactions possible with \doxylink{classQCustomPlot}{QCustom\+Plot}.
+
+{\ttfamily Interactions} is a flag of or-\/combined elements of this enum type.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iNone@{iNone}!QCP@{QCP}}\index{QCP@{QCP}!iNone@{iNone}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a9acac96048a12b0d2b5396c9b4df768b}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a9acac96048a12b0d2b5396c9b4df768b} 
+i\+None&{\ttfamily 0x000} None of the interactions are possible \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iRangeDrag@{iRangeDrag}!QCP@{QCP}}\index{QCP@{QCP}!iRangeDrag@{iRangeDrag}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18} 
+i\+Range\+Drag&{\ttfamily 0x001} Axis ranges are draggable (see \doxylink{classQCPAxisRect_ae6aef2f7211ba6097c925dcd26008418}{QCPAxis\+Rect\+::set\+Range\+Drag}, \doxylink{classQCPAxisRect_a648cce336bd99daac4a5ca3e5743775d}{QCPAxis\+Rect\+::set\+Range\+Drag\+Axes}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iRangeZoom@{iRangeZoom}!QCP@{QCP}}\index{QCP@{QCP}!iRangeZoom@{iRangeZoom}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14} 
+i\+Range\+Zoom&{\ttfamily 0x002} Axis ranges are zoomable with the mouse wheel (see \doxylink{classQCPAxisRect_a7960a9d222f1c31d558b064b60f86a31}{QCPAxis\+Rect\+::set\+Range\+Zoom}, \doxylink{classQCPAxisRect_a9442cca2aa358405f39a64d51eca13d2}{QCPAxis\+Rect\+::set\+Range\+Zoom\+Axes}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iMultiSelect@{iMultiSelect}!QCP@{QCP}}\index{QCP@{QCP}!iMultiSelect@{iMultiSelect}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aef673112c5067c3cf4cfddb62da7265d}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aef673112c5067c3cf4cfddb62da7265d} 
+i\+Multi\+Select&{\ttfamily 0x004} The user can select multiple objects by holding the modifier set by \doxylink{classQCustomPlot_a8fc96e3b5138a06759a2a90c166df516}{QCustom\+Plot\+::set\+Multi\+Select\+Modifier} while clicking \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectPlottables@{iSelectPlottables}!QCP@{QCP}}\index{QCP@{QCP}!iSelectPlottables@{iSelectPlottables}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec} 
+i\+Select\+Plottables&{\ttfamily 0x008} Plottables are selectable (e.\+g. graphs, curves, bars,... see \doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectAxes@{iSelectAxes}!QCP@{QCP}}\index{QCP@{QCP}!iSelectAxes@{iSelectAxes}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa} 
+i\+Select\+Axes&{\ttfamily 0x010} Axes are selectable (or parts of them, see \doxylink{classQCPAxis_a513f9b9e326c505d9bec54880031b085}{QCPAxis\+::set\+Selectable\+Parts}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectLegend@{iSelectLegend}!QCP@{QCP}}\index{QCP@{QCP}!iSelectLegend@{iSelectLegend}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513} 
+i\+Select\+Legend&{\ttfamily 0x020} Legends are selectable (or their child items, see \doxylink{classQCPLegend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{QCPLegend\+::set\+Selectable\+Parts}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectItems@{iSelectItems}!QCP@{QCP}}\index{QCP@{QCP}!iSelectItems@{iSelectItems}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260} 
+i\+Select\+Items&{\ttfamily 0x040} Items are selectable (Rectangles, Arrows, Textitems, etc. see \doxylink{classQCPAbstractItem}{QCPAbstract\+Item}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectOther@{iSelectOther}!QCP@{QCP}}\index{QCP@{QCP}!iSelectOther@{iSelectOther}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949} 
+i\+Select\+Other&{\ttfamily 0x080} All other objects are selectable (e.\+g. your own derived layerables, other layout elements,...) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{iSelectPlottablesBeyondAxisRect@{iSelectPlottablesBeyondAxisRect}!QCP@{QCP}}\index{QCP@{QCP}!iSelectPlottablesBeyondAxisRect@{iSelectPlottablesBeyondAxisRect}}}\Hypertarget{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ac8eec3d1e6c3eadf6af60968906db8db}\label{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037ac8eec3d1e6c3eadf6af60968906db8db} 
+i\+Select\+Plottables\+Beyond\+Axis\+Rect&{\ttfamily 0x100} When performing plottable selection/hit tests, this flag extends the sensitive area beyond the axis rect \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54} 
+\index{QCP@{QCP}!MarginSide@{MarginSide}}
+\index{MarginSide@{MarginSide}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{MarginSide}{MarginSide}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}
+
+Defines the sides of a rectangular entity to which margins can be applied.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{QCPLayout\+Element\+::set\+Auto\+Margins}, \doxylink{classQCPLayoutElement_accfda49994e3e6d51ed14504abf9d27d}{QCPAxis\+Rect\+::set\+Auto\+Margins} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msLeft@{msLeft}!QCP@{QCP}}\index{QCP@{QCP}!msLeft@{msLeft}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07} 
+ms\+Left&{\ttfamily 0x01} left margin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msRight@{msRight}!QCP@{QCP}}\index{QCP@{QCP}!msRight@{msRight}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65} 
+ms\+Right&{\ttfamily 0x02} right margin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msTop@{msTop}!QCP@{QCP}}\index{QCP@{QCP}!msTop@{msTop}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5db8fb0d0b0ecf0d611c2602a348e8a0}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5db8fb0d0b0ecf0d611c2602a348e8a0} 
+ms\+Top&{\ttfamily 0x04} top margin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msBottom@{msBottom}!QCP@{QCP}}\index{QCP@{QCP}!msBottom@{msBottom}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5241d8eac2bab9524a38889f576179cc}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a5241d8eac2bab9524a38889f576179cc} 
+ms\+Bottom&{\ttfamily 0x08} bottom margin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msAll@{msAll}!QCP@{QCP}}\index{QCP@{QCP}!msAll@{msAll}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc} 
+ms\+All&{\ttfamily 0x\+FF} all margins \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{msNone@{msNone}!QCP@{QCP}}\index{QCP@{QCP}!msNone@{msNone}}}\Hypertarget{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5}\label{namespaceQCP_a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5} 
+ms\+None&{\ttfamily 0x00} no margin \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4}\label{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4} 
+\index{QCP@{QCP}!PlottingHint@{PlottingHint}}
+\index{PlottingHint@{PlottingHint}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{PlottingHint}{PlottingHint}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4}{QCP\+::\+Plotting\+Hint}}}
+
+Defines plotting hints that control various aspects of the quality and speed of plotting.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_a94a33cbdadbbac5934843508bcfc210d}{QCustom\+Plot\+::set\+Plotting\+Hints} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{phNone@{phNone}!QCP@{QCP}}\index{QCP@{QCP}!phNone@{phNone}}}\Hypertarget{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4ab7283c5bfc1ba9e597015389880bda42}\label{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4ab7283c5bfc1ba9e597015389880bda42} 
+ph\+None&{\ttfamily 0x000} No hints are set \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{phFastPolylines@{phFastPolylines}!QCP@{QCP}}\index{QCP@{QCP}!phFastPolylines@{phFastPolylines}}}\Hypertarget{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d}\label{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d} 
+ph\+Fast\+Polylines&{\ttfamily 0x001} Graph/\+Curve lines are drawn with a faster method. This reduces the quality especially of the line segment joins, thus is most effective for pen sizes larger than 1. It is only used for solid line pens. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{phImmediateRefresh@{phImmediateRefresh}!QCP@{QCP}}\index{QCP@{QCP}!phImmediateRefresh@{phImmediateRefresh}}}\Hypertarget{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a30840fba10eebfa519a92cf5c3d32870}\label{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a30840fba10eebfa519a92cf5c3d32870} 
+ph\+Immediate\+Refresh&{\ttfamily 0x002} causes an immediate repaint() instead of a soft update() when \doxylink{classQCustomPlot_aa4bfe7d70dbe67e81d877819b75ab9af}{QCustom\+Plot\+::replot()} is called with parameter \doxylink{classQCustomPlot_a45d61392d13042e712a956d27762aa39a49666a5854a68dbcca8b277b03331260}{QCustom\+Plot\+::rp\+Refresh\+Hint}. This is set by default to prevent the plot from freezing on fast consecutive replots (e.\+g. user drags ranges with mouse). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{phCacheLabels@{phCacheLabels}!QCP@{QCP}}\index{QCP@{QCP}!phCacheLabels@{phCacheLabels}}}\Hypertarget{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a8e9cfe5ee0c5cd36dd7accf9739aff65}\label{namespaceQCP_a5400e5fcb9528d92002ddb938c1f4ef4a8e9cfe5ee0c5cd36dd7accf9739aff65} 
+ph\+Cache\+Labels&{\ttfamily 0x004} axis (tick) labels will be cached as pixmaps, increasing replot performance. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_a715d46153da230990aa887d0f0602452}\label{namespaceQCP_a715d46153da230990aa887d0f0602452} 
+\index{QCP@{QCP}!ResolutionUnit@{ResolutionUnit}}
+\index{ResolutionUnit@{ResolutionUnit}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{ResolutionUnit}{ResolutionUnit}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}
+
+Defines the different units in which the image resolution can be specified in the export functions.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_ac92cc9256d12f354b40a4be4600b5fb9}{QCustom\+Plot\+::save\+Png}, \doxylink{classQCustomPlot_a76f0d278e630a711fa6f48048cfd83e4}{QCustom\+Plot\+::save\+Jpg}, \doxylink{classQCustomPlot_ae3a86ed0795670e50afa21759d4fa13d}{QCustom\+Plot\+::save\+Bmp}, \doxylink{classQCustomPlot_ad7723ce2edfa270632ef42b03a444352}{QCustom\+Plot\+::save\+Rastered} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ruDotsPerMeter@{ruDotsPerMeter}!QCP@{QCP}}\index{QCP@{QCP}!ruDotsPerMeter@{ruDotsPerMeter}}}\Hypertarget{namespaceQCP_a715d46153da230990aa887d0f0602452a707d005dea5c4ab694e4270d9c6094e8}\label{namespaceQCP_a715d46153da230990aa887d0f0602452a707d005dea5c4ab694e4270d9c6094e8} 
+ru\+Dots\+Per\+Meter&Resolution is given in dots per meter (dpm) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ruDotsPerCentimeter@{ruDotsPerCentimeter}!QCP@{QCP}}\index{QCP@{QCP}!ruDotsPerCentimeter@{ruDotsPerCentimeter}}}\Hypertarget{namespaceQCP_a715d46153da230990aa887d0f0602452a4224e01f49b331489ad8cb12b619b229}\label{namespaceQCP_a715d46153da230990aa887d0f0602452a4224e01f49b331489ad8cb12b619b229} 
+ru\+Dots\+Per\+Centimeter&Resolution is given in dots per centimeter (dpcm) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ruDotsPerInch@{ruDotsPerInch}!QCP@{QCP}}\index{QCP@{QCP}!ruDotsPerInch@{ruDotsPerInch}}}\Hypertarget{namespaceQCP_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}\label{namespaceQCP_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc} 
+ru\+Dots\+Per\+Inch&Resolution is given in dots per inch (DPI/\+PPI) \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacf}\label{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacf} 
+\index{QCP@{QCP}!SelectionRectMode@{SelectionRectMode}}
+\index{SelectionRectMode@{SelectionRectMode}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{SelectionRectMode}{SelectionRectMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}}}
+
+Defines the behaviour of the selection rect.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_a810ef958ebe84db661c7288b526c0deb}{QCustom\+Plot\+::set\+Selection\+Rect\+Mode}, \doxylink{classQCustomPlot_ad7df2bcbba307e644db383b449e31efd}{QCustom\+Plot\+::selection\+Rect}, \doxylink{classQCPSelectionRect}{QCPSelection\+Rect} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{srmNone@{srmNone}!QCP@{QCP}}\index{QCP@{QCP}!srmNone@{srmNone}}}\Hypertarget{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1}\label{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1} 
+srm\+None&The selection rect is disabled, and all mouse events are forwarded to the underlying objects, e.\+g. for axis range dragging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{srmZoom@{srmZoom}!QCP@{QCP}}\index{QCP@{QCP}!srmZoom@{srmZoom}}}\Hypertarget{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa739c260bf4d9a15f73423c91158b9428}\label{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa739c260bf4d9a15f73423c91158b9428} 
+srm\+Zoom&When dragging the mouse, a selection rect becomes active. Upon releasing, the axes that are currently set as range zoom axes (\doxylink{classQCPAxisRect_a9442cca2aa358405f39a64d51eca13d2}{QCPAxis\+Rect\+::set\+Range\+Zoom\+Axes}) will have their ranges zoomed accordingly. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{srmSelect@{srmSelect}!QCP@{QCP}}\index{QCP@{QCP}!srmSelect@{srmSelect}}}\Hypertarget{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa62c286e8da283a0cbb88ecac2f3f7506}\label{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa62c286e8da283a0cbb88ecac2f3f7506} 
+srm\+Select&When dragging the mouse, a selection rect becomes active. Upon releasing, plottable data points that were within the selection rect are selected, if the plottable\textquotesingle{}s selectability setting permits. (See data selection mechanism for details.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{srmCustom@{srmCustom}!QCP@{QCP}}\index{QCP@{QCP}!srmCustom@{srmCustom}}}\Hypertarget{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa15e7a00c8e7e0673c7b31d75266888d4}\label{namespaceQCP_ac9aa4d6d81ac76b094f9af9ad2d3aacfa15e7a00c8e7e0673c7b31d75266888d4} 
+srm\+Custom&When dragging the mouse, a selection rect becomes active. It is the programmer\textquotesingle{}s responsibility to connect according slots to the selection rect\textquotesingle{}s signals (e.\+g. \doxylink{classQCPSelectionRect_a15a43542e1f7b953a44c260b419e6d2c}{QCPSelection\+Rect\+::accepted}) in order to process the user interaction. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038} 
+\index{QCP@{QCP}!SelectionType@{SelectionType}}
+\index{SelectionType@{SelectionType}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{SelectionType}{SelectionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}}}
+
+Defines the different ways a plottable can be selected. These images show the effect of the different selection types, when the indicated selection rect was dragged\+:
+
+\begin{center} \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+ & & & &  \\\cline{1-5}
+\end{longtabu}
+\end{center} 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractPlottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}, \doxylink{classQCPDataSelection_a17b84d852911531d229f4a76aa239a75}{QCPData\+Selection\+::enforce\+Type} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stNone@{stNone}!QCP@{QCP}}\index{QCP@{QCP}!stNone@{stNone}}}\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe} 
+st\+None&The plottable is not selectable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stWhole@{stWhole}!QCP@{QCP}}\index{QCP@{QCP}!stWhole@{stWhole}}}\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d} 
+st\+Whole&Selection behaves like \doxylink{namespaceQCP_ac6cb9db26a564b27feda362a438db038a7cf82676966ebf79cc371f65278e0e16}{st\+Multiple\+Data\+Ranges}, but if there are any data points selected, the entire plottable is drawn as selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stSingleData@{stSingleData}!QCP@{QCP}}\index{QCP@{QCP}!stSingleData@{stSingleData}}}\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038ae5b11259c42962db355e7448f4a8633a}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038ae5b11259c42962db355e7448f4a8633a} 
+st\+Single\+Data&One individual data point can be selected at a time. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stDataRange@{stDataRange}!QCP@{QCP}}\index{QCP@{QCP}!stDataRange@{stDataRange}}}\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa05d2cba99c724df004d9c48971e4371}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038aa05d2cba99c724df004d9c48971e4371} 
+st\+Data\+Range&Multiple contiguous data points (a data range) can be selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stMultipleDataRanges@{stMultipleDataRanges}!QCP@{QCP}}\index{QCP@{QCP}!stMultipleDataRanges@{stMultipleDataRanges}}}\Hypertarget{namespaceQCP_ac6cb9db26a564b27feda362a438db038a7cf82676966ebf79cc371f65278e0e16}\label{namespaceQCP_ac6cb9db26a564b27feda362a438db038a7cf82676966ebf79cc371f65278e0e16} 
+st\+Multiple\+Data\+Ranges&Any combination of data points/ranges can be selected. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}\label{namespaceQCP_afd50e7cf431af385614987d8553ff8a9} 
+\index{QCP@{QCP}!SignDomain@{SignDomain}}
+\index{SignDomain@{SignDomain}!QCP@{QCP}}
+\doxysubsubsection{\texorpdfstring{SignDomain}{SignDomain}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceQCP_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}
+
+Represents negative and positive sign domain, e.\+g. for passing to \doxylink{classQCPAbstractPlottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable\+::get\+Key\+Range} and \doxylink{classQCPAbstractPlottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable\+::get\+Value\+Range}.
+
+This is primarily needed when working with logarithmic axis scales, since only one of the sign domains can be visible at a time. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sdNegative@{sdNegative}!QCP@{QCP}}\index{QCP@{QCP}!sdNegative@{sdNegative}}}\Hypertarget{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}\label{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829} 
+sd\+Negative&The negative sign domain, i.\+e. numbers smaller than zero. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sdBoth@{sdBoth}!QCP@{QCP}}\index{QCP@{QCP}!sdBoth@{sdBoth}}}\Hypertarget{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}\label{namespaceQCP_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24} 
+sd\+Both&Both sign domains, including zero, i.\+e. all numbers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sdPositive@{sdPositive}!QCP@{QCP}}\index{QCP@{QCP}!sdPositive@{sdPositive}}}\Hypertarget{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}\label{namespaceQCP_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f} 
+sd\+Positive&The positive sign domain, i.\+e. numbers greater than zero. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,32 @@
+\doxysection{pooltask.\+h}
+\hypertarget{pooltask_8h_source}{}\label{pooltask_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/SYSTEM/pooltask.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/SYSTEM/pooltask.h}}
+\mbox{\hyperlink{pooltask_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POOLTASK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POOLTASK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QRunnable>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QAtomicInt>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPoolTask}{PoolTask}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QRunnable}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPoolTask_a0dc67d9dfcae9abd87d5cd170afde9e8}{PoolTask}}(std::function<\textcolor{keywordtype}{void}()>\ func);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPoolTask_ae73442f28c355b4f576aa517ec65dcab}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPoolTask_adfe35a84e9bb4ce66db5a68e3235e95f}{stop}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ signals:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPoolTask_aae7e6c29041e3d5ae48e15773157bb9a}{isDone}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::function<void()>\ taskFunction;}
+\DoxyCodeLine{00023\ \ \ \ \ QAtomicInt\ \_stop;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POOLTASK\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,34 @@
+\doxysection{esc\+\_\+pwm\+\_\+driver.\+h}
+\hypertarget{esc__pwm__driver_8h_source}{}\label{esc__pwm__driver_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/DRIVER/esc\_pwm\_driver.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/DRIVER/esc\_pwm\_driver.h}}
+\mbox{\hyperlink{esc__pwm__driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ESC\_PWM\_DRIVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ESC\_PWM\_DRIVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{observer_8h}{observer.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PWM0\ 12}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ PWM1\ 13}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PWM2\ 19}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PWM3\ 18}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classESC__PWM__Driver}{ESC\_PWM\_Driver}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classObserver}{Observer}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classESC__PWM__Driver_a1982530b47e758b9951c7a9bf76a00f6}{ESC\_PWM\_Driver}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classESC__PWM__Driver_a423067a5ef7afa385d1c1ed3ddb134d8}{onUpdate}}(\textcolor{keywordtype}{bool}\ isInitialised)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classESC__PWM__Driver_a793f9607fe7e84438b8bcf9ad98d0c75}{setPWMSignal}}(\textcolor{keywordtype}{int}\ gpioPin,\ \textcolor{keywordtype}{int}\ dutyCycle);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ initialPWM();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ESC\_PWM\_DRIVER\_H}}
+
+\end{DoxyCode}

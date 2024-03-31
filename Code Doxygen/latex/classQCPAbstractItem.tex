@@ -1,0 +1,501 @@
+\doxysection{QCPAbstract\+Item Class Reference}
+\hypertarget{classQCPAbstractItem}{}\label{classQCPAbstractItem}\index{QCPAbstractItem@{QCPAbstractItem}}
+
+
+The abstract base class for all items in a plot.  
+
+
+Inheritance diagram for QCPAbstract\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classQCPAbstractItem}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed}} (bool selected)
+\item 
+\Hypertarget{classQCPAbstractItem_a5b266c11aac61cb511901f3911dac2a3}\label{classQCPAbstractItem_a5b266c11aac61cb511901f3911dac2a3} 
+void {\bfseries selectable\+Changed} (bool selectable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQCPLayerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPAbstractItem_a9922507d8b4503a1fe1ed0b1030e23b6}{QCPAbstract\+Item}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+\Hypertarget{classQCPAbstractItem_a42715ad5f3d7fca6854025fa5636f436}\label{classQCPAbstractItem_a42715ad5f3d7fca6854025fa5636f436} 
+bool {\bfseries clip\+To\+Axis\+Rect} () const
+\item 
+\Hypertarget{classQCPAbstractItem_ae162314efd3fe1a6d4df11da1d275d52}\label{classQCPAbstractItem_ae162314efd3fe1a6d4df11da1d275d52} 
+\mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} \texorpdfstring{$\ast$}{*} {\bfseries clip\+Axis\+Rect} () const
+\item 
+\Hypertarget{classQCPAbstractItem_ae29aa489767352b40c4aaa7ea50c5582}\label{classQCPAbstractItem_ae29aa489767352b40c4aaa7ea50c5582} 
+bool {\bfseries selectable} () const
+\item 
+\Hypertarget{classQCPAbstractItem_aa069fba320a13639f119f82ad29ead96}\label{classQCPAbstractItem_aa069fba320a13639f119f82ad29ead96} 
+bool {\bfseries selected} () const
+\item 
+void \mbox{\hyperlink{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} (bool clip)
+\item 
+void \mbox{\hyperlink{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} (\mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} \texorpdfstring{$\ast$}{*}rect)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractItem_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} (bool selectable)
+\item 
+Q\+\_\+\+SLOT void \mbox{\hyperlink{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} (bool selected)
+\item 
+virtual double \mbox{\hyperlink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+QList$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}{positions}} () const
+\item 
+QList$<$ \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}{anchors}} () const
+\item 
+\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}{position}} (const QString \&name) const
+\item 
+\mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}{anchor}} (const QString \&name) const
+\item 
+bool \mbox{\hyperlink{classQCPAbstractItem_a84914f4516f9b38ef0bd89eafe3dbda7}{has\+Anchor}} (const QString \&name) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQCPLayerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=nullptr)
+\item 
+bool {\bfseries visible} () const
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries parent\+Plot} () const
+\item 
+\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries layer} () const
+\item 
+bool {\bfseries antialiased} () const
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{classQCPLayerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \mbox{\hyperlink{classQCPLayerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \mbox{\hyperlink{classQCPLayerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{classQCPAbstractItem_aceb5f99c361cf023c7cbe7339ea29571}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QRect \mbox{\hyperlink{classQCPAbstractItem_a6ad60000f29afe11035e1f791dcbd45a}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_a5579ce9ec7cad202499886b042448b10}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_a007fdab79c935a5da5aa04a21d268c18}{draw}} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classQCPAbstractItem_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\Hypertarget{classQCPAbstractItem_ada5bad4e1196c4fc0d0d12328e24b8f2}\label{classQCPAbstractItem_ada5bad4e1196c4fc0d0d12328e24b8f2} 
+virtual QPointF {\bfseries anchor\+Pixel\+Position} (int anchor\+Id) const
+\item 
+\Hypertarget{classQCPAbstractItem_a7dfc2007e36d09b8b5c988a9f06d6a7e}\label{classQCPAbstractItem_a7dfc2007e36d09b8b5c988a9f06d6a7e} 
+double {\bfseries rect\+Distance} (const QRectF \&rect, const QPointF \&pos, bool filled\+Rect) const
+\item 
+\Hypertarget{classQCPAbstractItem_a75036d39c4d4e2e1a7dd145fff915d32}\label{classQCPAbstractItem_a75036d39c4d4e2e1a7dd145fff915d32} 
+\mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Position} (const QString \&name)
+\item 
+\Hypertarget{classQCPAbstractItem_af3fc92527802078ca395138748b629a7}\label{classQCPAbstractItem_af3fc92527802078ca395138748b629a7} 
+\mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Anchor} (const QString \&name, int anchor\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \mbox{\hyperlink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classQCPLayerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+\item 
+bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \mbox{\hyperlink{namespaceQCP_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPAbstractItem_ad2a70ff6b658fcb84a9427f69d3f587d}\label{classQCPAbstractItem_ad2a70ff6b658fcb84a9427f69d3f587d} 
+bool {\bfseries m\+Clip\+To\+Axis\+Rect}
+\item 
+\Hypertarget{classQCPAbstractItem_a3e57cfe7da4b1ac3d6fa7281ea437361}\label{classQCPAbstractItem_a3e57cfe7da4b1ac3d6fa7281ea437361} 
+QPointer$<$ \mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} $>$ {\bfseries m\+Clip\+Axis\+Rect}
+\item 
+\Hypertarget{classQCPAbstractItem_af94ff71b6a15ea6d028ab8bd8eccd012}\label{classQCPAbstractItem_af94ff71b6a15ea6d028ab8bd8eccd012} 
+QList$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Positions}
+\item 
+\Hypertarget{classQCPAbstractItem_a909a3abab783de302ebf0a0e6f2bbc15}\label{classQCPAbstractItem_a909a3abab783de302ebf0a0e6f2bbc15} 
+QList$<$ \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+Anchors}
+\item 
+\Hypertarget{classQCPAbstractItem_ad81eb35c8726a0f458db9df9732e0e41}\label{classQCPAbstractItem_ad81eb35c8726a0f458db9df9732e0e41} 
+bool {\bfseries m\+Selectable}
+\item 
+\Hypertarget{classQCPAbstractItem_a4bdb3457dad1d268c0f78a44152b9645}\label{classQCPAbstractItem_a4bdb3457dad1d268c0f78a44152b9645} 
+bool {\bfseries m\+Selected}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Parent\+Plot}
+\item 
+QPointer$<$ \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+\item 
+\mbox{\hyperlink{classQCPLayer}{QCPLayer}} \texorpdfstring{$\ast$}{*} {\bfseries m\+Layer}
+\item 
+bool {\bfseries m\+Antialiased}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classQCPAbstractItem_a1cdf9df76adcfae45261690aa0ca2198}\label{classQCPAbstractItem_a1cdf9df76adcfae45261690aa0ca2198} 
+class {\bfseries QCustom\+Plot}
+\item 
+\Hypertarget{classQCPAbstractItem_a61767d414fd57af9eb1741b34268c7fc}\label{classQCPAbstractItem_a61767d414fd57af9eb1741b34268c7fc} 
+class {\bfseries QCPItem\+Anchor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The abstract base class for all items in a plot. 
+
+In \doxylink{classQCustomPlot}{QCustom\+Plot}, items are supplemental graphical elements that are neither plottables (\doxylink{classQCPAbstractPlottable}{QCPAbstract\+Plottable}) nor axes (\doxylink{classQCPAxis}{QCPAxis}). While plottables are always tied to two axes and thus plot coordinates, items can also be placed in absolute coordinates independent of any axes. Each specific item has at least one \doxylink{classQCPItemPosition}{QCPItem\+Position} member which controls the positioning. Some items are defined by more than one coordinate and thus have two or more \doxylink{classQCPItemPosition}{QCPItem\+Position} members (For example, \doxylink{classQCPItemRect}{QCPItem\+Rect} has {\itshape top\+Left} and {\itshape bottom\+Right}).
+
+This abstract base class defines a very basic interface like visibility and clipping. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new items.
+
+The built-\/in items are\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\doxylink{classQCPItemLine}{QCPItem\+Line}&A line defined by a start and an end point. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\doxylink{classQCPItemStraightLine}{QCPItem\+Straight\+Line}&A straight line defined by a start and a direction point. Unlike \doxylink{classQCPItemLine}{QCPItem\+Line}, the straight line is infinitely long and has no endings. \\\cline{1-2}
+\doxylink{classQCPItemCurve}{QCPItem\+Curve}&A curve defined by start, end and two intermediate control points. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\doxylink{classQCPItemRect}{QCPItem\+Rect}&A rectangle \\\cline{1-2}
+\doxylink{classQCPItemEllipse}{QCPItem\+Ellipse}&An ellipse \\\cline{1-2}
+\doxylink{classQCPItemPixmap}{QCPItem\+Pixmap}&An arbitrary pixmap \\\cline{1-2}
+\doxylink{classQCPItemText}{QCPItem\+Text}&A text label \\\cline{1-2}
+\doxylink{classQCPItemBracket}{QCPItem\+Bracket}&A bracket which may be used to reference/highlight certain parts in the plot. \\\cline{1-2}
+\doxylink{classQCPItemTracer}{QCPItem\+Tracer}&An item that can be attached to a \doxylink{classQCPGraph}{QCPGraph} and sticks to its data points, given a key coordinate. \\\cline{1-2}
+\end{longtabu}
+\hypertarget{classQCPAbstractItem_items-clipping}{}\doxysubsection{\texorpdfstring{Clipping}{Clipping}}\label{classQCPAbstractItem_items-clipping}
+Items are by default clipped to the main axis rect (they are only visible inside the axis rect). To make an item visible outside that axis rect, disable clipping via \doxylink{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect(false)}.
+
+On the other hand if you want the item to be clipped to a different axis rect, specify it via \doxylink{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}. This clip\+Axis\+Rect property of an item is only used for clipping behaviour, and in principle is independent of the coordinate axes the item might be tied to via its position members (\doxylink{classQCPItemPosition_a2185f45c75ac8cb9be89daeaaad50e37}{QCPItem\+Position\+::set\+Axes}). However, it is common that the axis rect for clipping also contains the axes used for the item positions.\hypertarget{classQCPAbstractItem_items-using}{}\doxysubsection{\texorpdfstring{Using items}{Using items}}\label{classQCPAbstractItem_items-using}
+First you instantiate the item you want to use and add it to the plot\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ by default, the positions of the item are bound to the x-\/ and y-\/\+Axis of the plot. So we can just set the plot coordinates where the line should start/end\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ If we don\textquotesingle{}t want the line to be positioned in plot coordinates but a different coordinate system, e.\+g. absolute pixel positions on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface, we need to change the position type like this\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ Then we can set the coordinates, this time in pixels\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ and make the line visible on the entire \doxylink{classQCustomPlot}{QCustom\+Plot}, by disabling clipping to the axis rect\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+
+
+For more advanced plots, it is even possible to set different types and parent anchors per X/Y coordinate of an item position, using for example \doxylink{classQCPItemPosition_a2113b2351d6d00457fb3559a4e20c3ea}{QCPItem\+Position\+::set\+TypeX} or \doxylink{classQCPItemPosition_add71461a973927c74e42179480916d9c}{QCPItem\+Position\+::set\+Parent\+AnchorX}. For details, see the documentation of \doxylink{classQCPItemPosition}{QCPItem\+Position}.\hypertarget{classQCPAbstractItem_items-subclassing}{}\doxysubsection{\texorpdfstring{Creating own items}{Creating own items}}\label{classQCPAbstractItem_items-subclassing}
+To create an own item, you implement a subclass of \doxylink{classQCPAbstractItem}{QCPAbstract\+Item}. These are the pure virtual functions, you must implement\+: \begin{DoxyItemize}
+\item \doxylink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test} \item draw\end{DoxyItemize}
+See the documentation of those functions for what they need to do.\hypertarget{classQCPAbstractItem_items-positioning}{}\doxysubsubsection{\texorpdfstring{Allowing the item to be positioned}{Allowing the item to be positioned}}\label{classQCPAbstractItem_items-positioning}
+As mentioned, item positions are represented by \doxylink{classQCPItemPosition}{QCPItem\+Position} members. Let\textquotesingle{}s assume the new item shall have only one point as its position (as opposed to two like a rect or multiple like a polygon). You then add a public member of type \doxylink{classQCPItemPosition}{QCPItem\+Position} like so\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classQCPItemPosition}{QCPItemPosition}}\ *\ \textcolor{keyword}{const}\ myPosition;}
+
+\end{DoxyCode}
+
+
+the const makes sure the pointer itself can\textquotesingle{}t be modified from the user of your new item (the \doxylink{classQCPItemPosition}{QCPItem\+Position} instance it points to, can be modified, of course). The initialization of this pointer is made easy with the create\+Position function. Just assign the return value of this function to each \doxylink{classQCPItemPosition}{QCPItem\+Position} in the constructor of your item. create\+Position takes a string which is the name of the position, typically this is identical to the variable name. For example, the constructor of QCPItem\+Example could look like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QCPItemExample::QCPItemExample(\mbox{\hyperlink{classQCustomPlot}{QCustomPlot}}\ *parentPlot)\ :}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{classQCPAbstractItem}{QCPAbstractItem}}(parentPlot),}
+\DoxyCodeLine{\ \ myPosition(createPosition(\textcolor{stringliteral}{"{}myPosition"{}}))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ other\ constructor\ code}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{classQCPAbstractItem_items-drawing}{}\doxysubsubsection{\texorpdfstring{The draw function}{The draw function}}\label{classQCPAbstractItem_items-drawing}
+To give your item a visual representation, reimplement the draw function and use the passed \doxylink{classQCPPainter}{QCPPainter} to draw the item. You can retrieve the item position in pixel coordinates from the position member(s) via \doxylink{classQCPItemPosition_a8be9a4787635433edecc75164beb748d}{QCPItem\+Position\+::pixel\+Position}.
+
+To optimize performance you should calculate a bounding rect first (don\textquotesingle{}t forget to take the pen width into account), check whether it intersects the clip\+Rect, and only draw the item at all if this is the case.\hypertarget{classQCPAbstractItem_items-selection}{}\doxysubsubsection{\texorpdfstring{The select\+Test function}{The select\+Test function}}\label{classQCPAbstractItem_items-selection}
+Your implementation of the \doxylink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test} function may use the helpers \doxylink{classQCPVector2D_a14840cd3da80cfee4eb3f8977cab89ab}{QCPVector2\+D\+::distance\+Squared\+To\+Line} and rect\+Distance. With these, the implementation of the selection test becomes significantly simpler for most items. See the documentation of \doxylink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test} for what the function parameters mean and what the function should return.\hypertarget{classQCPAbstractItem_anchors}{}\doxysubsubsection{\texorpdfstring{Providing anchors}{Providing anchors}}\label{classQCPAbstractItem_anchors}
+Providing anchors (\doxylink{classQCPItemAnchor}{QCPItem\+Anchor}) starts off like adding a position. First you create a public member, e.\+g.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classQCPItemAnchor}{QCPItemAnchor}}\ *\ \textcolor{keyword}{const}\ bottom;}
+
+\end{DoxyCode}
+
+
+and create it in the constructor with the create\+Anchor function, assigning it a name and an anchor id (an integer enumerating all anchors on the item, you may create an own enum for this). Since anchors can be placed anywhere, relative to the item\textquotesingle{}s position(s), your item needs to provide the position of every anchor with the reimplementation of the anchor\+Pixel\+Position(int anchor\+Id) function.
+
+In essence the \doxylink{classQCPItemAnchor}{QCPItem\+Anchor} is merely an intermediary that itself asks your item for the pixel position when anything attached to the anchor needs to know the coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQCPAbstractItem_a9922507d8b4503a1fe1ed0b1030e23b6}\label{classQCPAbstractItem_a9922507d8b4503a1fe1ed0b1030e23b6} 
+\index{QCPAbstractItem@{QCPAbstractItem}!QCPAbstractItem@{QCPAbstractItem}}
+\index{QCPAbstractItem@{QCPAbstractItem}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{QCPAbstractItem()}{QCPAbstractItem()}}
+{\footnotesize\ttfamily QCPAbstract\+Item\+::\+QCPAbstract\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCustomPlot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Base class constructor which initializes base class members. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}\label{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb} 
+\index{QCPAbstractItem@{QCPAbstractItem}!anchor@{anchor}}
+\index{anchor@{anchor}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{anchor()}{anchor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} QCPAbstract\+Item\+::anchor (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption}) const}
+
+Returns the \doxylink{classQCPItemAnchor}{QCPItem\+Anchor} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have an anchor by that name, returns {\ttfamily nullptr}.
+
+This function provides an alternative way to access item anchors. Normally, you access anchors direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}{anchors}, \doxylink{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}{position} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}\label{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659} 
+\index{QCPAbstractItem@{QCPAbstractItem}!anchors@{anchors}}
+\index{anchors@{anchors}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{anchors()}{anchors()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classQCPItemAnchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} $>$ QCPAbstract\+Item\+::anchors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns all anchors of the item in a list. Note that since a position (\doxylink{classQCPItemPosition}{QCPItem\+Position}) is always also an anchor, the list will also contain the positions of this item.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}{positions}, \doxylink{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}{anchor} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a5579ce9ec7cad202499886b042448b10}\label{classQCPAbstractItem_a5579ce9ec7cad202499886b042448b10} 
+\index{QCPAbstractItem@{QCPAbstractItem}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_a6ad60000f29afe11035e1f791dcbd45a}\label{classQCPAbstractItem_a6ad60000f29afe11035e1f791dcbd45a} 
+\index{QCPAbstractItem@{QCPAbstractItem}!clipRect@{clipRect}}
+\index{clipRect@{clipRect}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{clipRect()}{clipRect()}}
+{\footnotesize\ttfamily QRect QCPAbstract\+Item\+::clip\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_af9093798cb07a861dcc73f93ca16c0c1}\label{classQCPAbstractItem_af9093798cb07a861dcc73f93ca16c0c1} 
+\index{QCPAbstractItem@{QCPAbstractItem}!deselectEvent@{deselectEvent}}
+\index{deselectEvent@{deselectEvent}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::deselect\+Event (\begin{DoxyParamCaption}\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_a007fdab79c935a5da5aa04a21d268c18}\label{classQCPAbstractItem_a007fdab79c935a5da5aa04a21d268c18} 
+\index{QCPAbstractItem@{QCPAbstractItem}!draw@{draw}}
+\index{draw@{draw}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPPainter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_a84914f4516f9b38ef0bd89eafe3dbda7}\label{classQCPAbstractItem_a84914f4516f9b38ef0bd89eafe3dbda7} 
+\index{QCPAbstractItem@{QCPAbstractItem}!hasAnchor@{hasAnchor}}
+\index{hasAnchor@{hasAnchor}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{hasAnchor()}{hasAnchor()}}
+{\footnotesize\ttfamily bool QCPAbstract\+Item\+::has\+Anchor (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption}) const}
+
+Returns whether this item has an anchor with the specified {\itshape name}.
+
+Note that you can check for positions with this function, too. This is because every position is also an anchor (\doxylink{classQCPItemPosition}{QCPItem\+Position} inherits from \doxylink{classQCPItemAnchor}{QCPItem\+Anchor}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}{anchor}, \doxylink{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}{position} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}\label{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d} 
+\index{QCPAbstractItem@{QCPAbstractItem}!position@{position}}
+\index{position@{position}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} QCPAbstract\+Item\+::position (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption}) const}
+
+Returns the \doxylink{classQCPItemPosition}{QCPItem\+Position} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have a position by that name, returns {\ttfamily nullptr}.
+
+This function provides an alternative way to access item positions. Normally, you access positions direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}{positions}, \doxylink{classQCPAbstractItem_a139c255ea8831642fac91748e29a5adb}{anchor} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454}\label{classQCPAbstractItem_a709f655ac3f7f22d452714134662b454} 
+\index{QCPAbstractItem@{QCPAbstractItem}!positions@{positions}}
+\index{positions@{positions}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{positions()}{positions()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{classQCPItemPosition}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ QCPAbstract\+Item\+::positions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns all positions of the item in a list.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a81d1ecfea3368b836cf9675a0045e659}{anchors}, \doxylink{classQCPAbstractItem_a2589c3d298f9a576d77d9addb440a18d}{position} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_aa4b969c58797f39c9c0b6c07c7869d17}\label{classQCPAbstractItem_aa4b969c58797f39c9c0b6c07c7869d17} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectEvent@{selectEvent}}
+\index{selectEvent@{selectEvent}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectEvent()}{selectEvent()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::select\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{, }\item[{bool}]{additive}{, }\item[{const QVariant \&}]{details}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{selection\+State\+Changed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_aceb5f99c361cf023c7cbe7339ea29571}\label{classQCPAbstractItem_aceb5f99c361cf023c7cbe7339ea29571} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectionCategory@{selectionCategory}}
+\index{selectionCategory@{selectionCategory}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectionCategory()}{selectionCategory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceQCP_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} QCPAbstract\+Item\+::selection\+Category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable}{QCPLayerable}}.
+
+\Hypertarget{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251}\label{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectionChanged@{selectionChanged}}
+\index{selectionChanged@{selectionChanged}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the selection state of this item has changed, either by user interaction or by a direct call to \doxylink{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}. \Hypertarget{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}\label{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd} 
+\index{QCPAbstractItem@{QCPAbstractItem}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily virtual double QCPAbstract\+Item\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily nullptr}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxylink{classQCPItemText}{QCPItem\+Text} or the bars of a \doxylink{classQCPBars}{QCPBars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99\texorpdfstring{$\ast$}{*}selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxylink{classQCustomPlot}{QCustom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \doxylink{classQCustomPlot}{QCustom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxylink{classQCPAxis}{QCPAxis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxylink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+In the case of 1D Plottables (\doxylink{classQCPAbstractPlottable1D}{QCPAbstract\+Plottable1D}, like \doxylink{classQCPGraph}{QCPGraph} or \doxylink{classQCPBars}{QCPBars}) {\itshape details} will be set to a \doxylink{classQCPDataSelection}{QCPData\+Selection}, describing the closest data point to {\itshape pos}.
+
+You may pass {\ttfamily nullptr} as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+select\+Event, deselect\+Event, \doxylink{classQCPLayerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}, \doxylink{classQCPLayerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}, \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}, \doxylink{classQCPAbstractPlottable1D_a22377bf6e57ab7eedbc9e489250c6ded}{QCPAbstract\+Plottable1\+D\+::select\+Test\+Rect} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \mbox{\hyperlink{classQCPLayerable_a272989087fc8c4357b4ba614f9922336}{QCPLayerable}}.
+
+
+
+Implemented in \mbox{\hyperlink{classQCPItemStraightLine_a0b10bec4746760cc99d210ba040cb8f7}{QCPItem\+Straight\+Line}}, \mbox{\hyperlink{classQCPItemLine_aae15b3ca3fdad76e6aed9c4e01fd5e94}{QCPItem\+Line}}, \mbox{\hyperlink{classQCPItemCurve_ae5b09ad4ea7ec2d9f08190c73c39e9b9}{QCPItem\+Curve}}, \mbox{\hyperlink{classQCPItemRect_a40786d237a1f8f22a90627068940ec08}{QCPItem\+Rect}}, \mbox{\hyperlink{classQCPItemText_a9345ae04cb0e06b77c76381ca45c9717}{QCPItem\+Text}}, \mbox{\hyperlink{classQCPItemEllipse_a1037a6c39ad70aabcb1b552a8b4eff97}{QCPItem\+Ellipse}}, \mbox{\hyperlink{classQCPItemPixmap_a35f4da350e37f4d7ac8c837ad160967f}{QCPItem\+Pixmap}}, \mbox{\hyperlink{classQCPItemTracer_a01d8814404e3f0910b84029016ef73b2}{QCPItem\+Tracer}}, and \mbox{\hyperlink{classQCPItemBracket_a8c3bc895c9db93e97a291a1199f6f8c6}{QCPItem\+Bracket}}.
+
+\Hypertarget{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}\label{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347} 
+\index{QCPAbstractItem@{QCPAbstractItem}!setClipAxisRect@{setClipAxisRect}}
+\index{setClipAxisRect@{setClipAxisRect}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{setClipAxisRect()}{setClipAxisRect()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Clip\+Axis\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQCPAxisRect}{QCPAxis\+Rect}} \texorpdfstring{$\ast$}{*}}]{rect}{}\end{DoxyParamCaption})}
+
+Sets the clip axis rect. It defines the rect that will be used to clip the item when \doxylink{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect} is set to true.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06}\label{classQCPAbstractItem_a39e05b9d4176b9accafc746d16ca6a06} 
+\index{QCPAbstractItem@{QCPAbstractItem}!setClipToAxisRect@{setClipToAxisRect}}
+\index{setClipToAxisRect@{setClipToAxisRect}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{setClipToAxisRect()}{setClipToAxisRect()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Clip\+To\+Axis\+Rect (\begin{DoxyParamCaption}\item[{bool}]{clip}{}\end{DoxyParamCaption})}
+
+Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \doxylink{classQCustomPlot}{QCustom\+Plot}. The axis rect can be set with \doxylink{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a8a8e32a55bc478b849756a78c2d87fd2}\label{classQCPAbstractItem_a8a8e32a55bc478b849756a78c2d87fd2} 
+\index{QCPAbstractItem@{QCPAbstractItem}!setSelectable@{setSelectable}}
+\index{setSelectable@{setSelectable}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{setSelectable()}{setSelectable()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{selectable}{}\end{DoxyParamCaption})}
+
+Sets whether the user can (de-\/)select this item by clicking on the \doxylink{classQCustomPlot}{QCustom\+Plot} surface. (When \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains QCustom\+Plot\+::i\+Select\+Items.)
+
+However, even when {\itshape selectable} was set to false, it is possible to set the selection manually, by calling \doxylink{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}, \doxylink{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+\Hypertarget{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378}\label{classQCPAbstractItem_a203de94ad586cc44d16c9565f49d3378} 
+\index{QCPAbstractItem@{QCPAbstractItem}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!QCPAbstractItem@{QCPAbstractItem}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+Sets whether this item is selected or not. When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
+
+The entire selection mechanism for items is handled automatically when \doxylink{classQCustomPlot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions} contains QCustom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
+
+This function can change the selection state even when \doxylink{classQCPAbstractItem_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable} was set to false.
+
+emits the \doxylink{classQCPAbstractItem_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed} signal when {\itshape selected} is different from the previous selection state.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classQCPAbstractItem_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}, \doxylink{classQCPAbstractItem_ac75a4bdcba0ce51ae22eacebb16a9dcd}{select\+Test} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+h\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/build-\/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station-\/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+6\+\_\+2\+\_\+\+GCC\+\_\+64bit-\/\+Debug/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station\+\_\+autogen/\+H7\+Q5\+XMJM4\+O/moc\+\_\+qcustomplot.\+cpp\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+PLOTING/qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+\doxysection{Bluetooth.\+h}
+\hypertarget{Bluetooth_8h_source}{}\label{Bluetooth_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/COMM/Bluetooth.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/COMM/Bluetooth.h}}
+\mbox{\hyperlink{Bluetooth_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BLUETOOTH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BLUETOOTH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtBluetooth/QBluetoothDeviceDiscoveryAgent>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtBluetooth/QBluetoothSocket>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBluetooth}{Bluetooth}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classBluetooth_a4a2bba1ddd942971430b19b172300d97}{Bluetooth}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classBluetooth_aa1544a5f4cadcc689627a6c69031e583}{\string~Bluetooth}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_af1be2289b01ad86128d047f88668b591}{startDeviceDiscovery}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_aaa7a4e4f7d4a168c89ae5d0cfae4333f}{connectToDevice}}(\textcolor{keyword}{const}\ QBluetoothDeviceInfo\ \&deviceInfo);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_a8989438377ab99f844c2f746a2d73592}{send}}(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ signals:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_a6ac3db9fd8c77da9e8d88df8904c128a}{deviceDiscovered}}(\textcolor{keyword}{const}\ QBluetoothDeviceInfo\ \&deviceInfro);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_a350932103b0f6603007a4c2eeff9faae}{connected}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_a98616dbc551b02b5c0260c9535818101}{disconnected}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBluetooth_a3b93e0a2515b10302640f560c210f713}{dataReceived}}(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ onDeviceDiscovered(\textcolor{keyword}{const}\ QBluetoothDeviceInfo\ \&deviceInfo);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ onConnected();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ onDisconnected();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ QBluetoothDeviceDiscoveryAgent\ *discoveryAgent;}
+\DoxyCodeLine{00034\ \ \ \ \ QBluetoothSocket\ *socket;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BLUETOOTH\_H}}
+
+\end{DoxyCode}

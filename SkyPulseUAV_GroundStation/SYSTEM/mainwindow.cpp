@@ -177,3 +177,15 @@ void MainWindow::updateUI(const QString &message)
 {
     qDebug() << "Update UI:" << message;
 }
+
+void MainWindow::on_toolButton_MPU6050_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_toolButton_BMP180_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(1);
+}
+

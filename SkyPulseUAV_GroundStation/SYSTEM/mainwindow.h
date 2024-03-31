@@ -68,6 +68,10 @@ private slots:
 
     void on_toolButton_REG_READ_ALL_clicked();
 
+    void on_toolButton_MPU6050_REG_CONFIG_clicked();
+
+    void on_toolButton_BMP180_REG_CONFIG_clicked();
+
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 

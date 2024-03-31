@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1164</width>
-    <height>634</height>
+    <width>870</width>
+    <height>642</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_7">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,0,1,0,1,1,2">
+     <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,0,1,0,1,1,0,0,0,0,2">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
         <item>
@@ -85,6 +85,46 @@
        </widget>
       </item>
       <item>
+       <widget class="Line" name="line_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>TCP</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_6">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer_5">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -102,10 +142,10 @@
     <item>
      <widget class="QTabWidget" name="tabWidget_PanelMain">
       <property name="tabPosition">
-       <enum>QTabWidget::West</enum>
+       <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab1_FlightControl">
        <attribute name="title">
@@ -416,7 +456,7 @@
                <string>陀螺仪校准</string>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../resource.qrc">
                 <normaloff>:/qrc/icon/gyroscope.png</normaloff>:/qrc/icon/gyroscope.png</iconset>
               </property>
               <property name="iconSize">
@@ -436,7 +476,7 @@
                <string>加速度校准</string>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../resource.qrc">
                 <normaloff>:/qrc/icon/accelerometer.png</normaloff>:/qrc/icon/accelerometer.png</iconset>
               </property>
               <property name="iconSize">
@@ -456,7 +496,7 @@
                <string>磁罗盘校准</string>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../resource.qrc">
                 <normaloff>:/qrc/icon/compass.png</normaloff>:/qrc/icon/compass.png</iconset>
               </property>
               <property name="iconSize">
@@ -476,7 +516,7 @@
                <string>气压计校准</string>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../resource.qrc">
                 <normaloff>:/qrc/icon/barometer.png</normaloff>:/qrc/icon/barometer.png</iconset>
               </property>
               <property name="iconSize">
@@ -496,7 +536,7 @@
                <string>360度校准</string>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../resource.qrc">
                 <normaloff>:/qrc/icon/360direction.png</normaloff>:/qrc/icon/360direction.png</iconset>
               </property>
               <property name="iconSize">
@@ -830,7 +870,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_ParameterTesting">
+      <widget class="QWidget" name="tab3_ParameterTesting">
        <attribute name="title">
         <string>Parameter Testing</string>
        </attribute>
@@ -980,13 +1020,16 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab4_SensorRegistersSetting">
        <attribute name="title">
-        <string>Page</string>
+        <string>Sensor Reg Setting</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_10">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_17">
+          <property name="spacing">
+           <number>30</number>
+          </property>
           <item>
            <spacer name="horizontalSpacer_7">
             <property name="orientation">
@@ -1011,6 +1054,34 @@
             <property name="text">
              <string>MPU6050</string>
             </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_BMP180_REG_CONFIG">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>BMP180</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -1030,6 +1101,9 @@
         </item>
         <item>
          <widget class="QStackedWidget" name="stackedWidget_REG_CONFIG">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
           <widget class="QWidget" name="MPU6050_Page">
            <widget class="QToolButton" name="toolButton_REG_READ_ALL">
             <property name="geometry">
@@ -1044,7 +1118,7 @@
              <string>Read All</string>
             </property>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>10</x>
@@ -1374,7 +1448,21 @@
             </layout>
            </widget>
           </widget>
-          <widget class="QWidget" name="page_2"/>
+          <widget class="QWidget" name="BMP180_Page">
+           <widget class="QPushButton" name="pushButton_REG_READ_ALL_BMP180">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>30</y>
+              <width>89</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Read All</string>
+            </property>
+           </widget>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -1388,7 +1476,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1164</width>
+     <width>870</width>
      <height>22</height>
     </rect>
    </property>
@@ -1404,7 +1492,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="../resource.qrc"/>
  </resources>
  <connections/>
 </ui>

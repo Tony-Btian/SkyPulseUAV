@@ -1,0 +1,124 @@
+\doxysection{MPU6050.\+h}
+\hypertarget{MPU6050_8h_source}{}\label{MPU6050_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/MPU6050.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/MPU6050.h}}
+\mbox{\hyperlink{MPU6050_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_MPU6050\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_MPU6050\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\#include\ "{}Sensor.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IIC_8h}{IIC.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CppThread_8hpp}{CppThread.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MPU6050\_ADDRESS\ 0x68}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GY\_271\_ADDRESS\ 0x0D}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ IIC\_BUS\ 1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ INT\_PIN\ 16\ \ }\textcolor{comment}{//\ interrupt\ pin(BCM)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ RAD\_TO\_DEG\ 57.295779513082320876798154814105\ \ \ }\textcolor{comment}{//\ radium\ to\ degree}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ DEG\_TO\_RAD\ 0.01745329251994329576923690768489\ }\textcolor{comment}{//\ degree\ to\ radium}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ CALIBRATION\_COUNT\ 5000\ \ }}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ std::mutex\ \mbox{\hyperlink{MPU6050_8h_a37e93431b17955761c8bcc8732cfbe92}{i2cmtx}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMPU6050}{MPU6050}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classMPU6050_a66e45435b8111dab265825187729dcce}{CallbackFunction}}\ =\ std::function<void(\textcolor{keywordtype}{float}[],\ \textcolor{keywordtype}{float}[],\ \textcolor{keywordtype}{float}[])>;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classMPU6050_a7c0146d45537e4bd7a0d4c1c476fdab7}{MPU6050}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classMPU6050_a7c0146d45537e4bd7a0d4c1c476fdab7}{MPU6050}}(\textcolor{keywordtype}{int}\ customSampleRate,\ \textcolor{keywordtype}{int}\ calibrationTimes);}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a1953d57eeedaeb71dc54a1d1e24fe3cf}{getData}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMPU6050_a68dcba76f4cf91efad86826979409c3e}{checkNewData}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a52f6c7fd3a9b73e65edf49ac37c1c9f6}{setCallback}}(\mbox{\hyperlink{classMPU6050_a66e45435b8111dab265825187729dcce}{CallbackFunction}}\ callback);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMPU6050}{MPU6050}}*\ \mbox{\hyperlink{classMPU6050_a89cd8127c1453c37270701193fdc90fe}{globalInstance}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a3222382727b3f6d29d4b7bac907ee124}{MPU6050ReadData}}(\textcolor{keywordtype}{char}*\ data);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a9eabe7fe0e239f66e5104ca657653029}{calibrateData}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a1d18b55860063e64925f0fa50e01f7db}{GY271ReadData}}(\textcolor{keywordtype}{char}*\ data);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_adabee6f099be963259b7cf3697f859d3}{setRangeOfAcce}}(\textcolor{keywordtype}{bool}\ needToExit);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a7e99126e8a4153b031c8fd4f64befbc5}{setRangeOfGyro}}(\textcolor{keywordtype}{bool}\ needToExit);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a593202b405efedf72113276774c258cc}{interruptHandler}}(\textcolor{keywordtype}{int}\ GPIO,\ \textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ tick);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classMPU6050_a66e45435b8111dab265825187729dcce}{CallbackFunction}}\ callback\_;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classIIC}{IIC}}\ iicMPU6050;}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classIIC}{IIC}}\ iicGY271;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ std::atomic<bool>\ mpu6050\_newdata;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//std::atomic<bool>\ mpu6050\_reading;}}
+\DoxyCodeLine{00062\ \ \ \ \ std::atomic<bool>\ calibrate\_ready;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ needToExit;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ offset\_count;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ calibrationCount;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{char}\ sampleRate;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::atomic<float>\ ax;}
+\DoxyCodeLine{00071\ \ \ \ \ std::atomic<float>\ ay;}
+\DoxyCodeLine{00072\ \ \ \ \ std::atomic<float>\ az;}
+\DoxyCodeLine{00073\ \ \ \ \ std::atomic<float>\ gx;}
+\DoxyCodeLine{00074\ \ \ \ \ std::atomic<float>\ gy;}
+\DoxyCodeLine{00075\ \ \ \ \ std::atomic<float>\ gz;}
+\DoxyCodeLine{00076\ \ \ \ \ std::atomic<float>\ mx;}
+\DoxyCodeLine{00077\ \ \ \ \ std::atomic<float>\ my;}
+\DoxyCodeLine{00078\ \ \ \ \ std::atomic<float>\ mz;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ static\ float\ ax;}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ static\ float\ ay;}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ static\ float\ az;}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ static\ float\ gx;}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ static\ float\ gy;}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ static\ float\ gz;}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ static\ float\ mx;}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ static\ float\ my;}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ static\ float\ mz;}}
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{char}\ MPU6050RawData[14];}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{char}\ GY271RawData[6];}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ g\_offset[3];}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{float}\ a\_offset[3];}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_offset[3];}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMPU6050Thread}{MPU6050Thread}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCppThread}{CppThread}}\ \{}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{classMPU6050Thread_add0b410135b0fb9c9eb697d9ef7ad2c5}{MPU6050Thread}}(\mbox{\hyperlink{classMPU6050}{MPU6050}}\&\ MPU6050Ins\_)\ :\ MPU6050Ins(MPU6050Ins\_)\ \{\};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050Thread_a4affd37974c1a2a444f99c7eb150b780}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classMPU6050}{MPU6050}}\&\ MPU6050Ins;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MPU6050_8h_a593202b405efedf72113276774c258cc}{interruptHandler}}(\textcolor{keywordtype}{int}\ GPIO,\ \textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ tick);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MPU6050_8h_a7ffd45caa3e8a563722e8364fdcbb3d1}{initializeMPUISR}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['_7ebarometer_5fbmp180_0',['~Barometer_BMP180',['../classBarometer__BMP180.html#a8a656864119b2097386ceedfaccf5668',1,'Barometer_BMP180']]],
-  ['_7ebluetooth_1',['~Bluetooth',['../classBluetooth.html#aa1544a5f4cadcc689627a6c69031e583',1,'Bluetooth']]],
-  ['_7edatabasemanager_2',['~DatabaseManager',['../classDatabaseManager.html#ae9b3a5da1e04fbb00faf8a034da1d063',1,'DatabaseManager']]],
-  ['_7ei2c_5fdevice_3',['~I2C_Device',['../classI2C__Device.html#a1ffdb4c5d069a9418f652aea31cb2534',1,'I2C_Device']]],
-  ['_7emahony_5fplot_4',['~Mahony_Plot',['../classMahony__Plot.html#a33a477680727db6a8f7851ed13b2ac4f',1,'Mahony_Plot']]],
-  ['_7emainwindow_5',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow::~MainWindow()'],['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow::~MainWindow()']]]
+  ['tcp_0',['TCP',['../classTCP.html#af96f618dc070f3fc607d4e7b97b51cc2',1,'TCP::TCP(string host, in_port_t port)'],['../classTCP.html#a95136e35624063a4718e1a3cca9fb374',1,'TCP::TCP(QObject *parent=nullptr)'],['../classTCP.html#a7a4469c278c3b9a615236c8af6143301',1,'TCP::TCP(QObject *parent=nullptr, MediatorInterface *mediator=nullptr)']]],
+  ['tcpthread_1',['TCPThread',['../classTCPThread.html#a1205728cbe7e7c23104d4f374c5da22a',1,'TCPThread']]],
+  ['threadpool_2',['ThreadPool',['../classThreadPool.html#ad76dfefb1f8b3dbd3d9bdf3476f9af90',1,'ThreadPool']]],
+  ['time_5fsleep_3',['time_sleep',['../pigpio_8h.html#a290f3e25ac4439362fc13a7b01b4a6d9',1,'pigpio.h']]],
+  ['time_5ftime_4',['time_time',['../pigpio_8h.html#ae2a9e64607b245ea530aeb3f22b0970f',1,'pigpio.h']]]
 ];

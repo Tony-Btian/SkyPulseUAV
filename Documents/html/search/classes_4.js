@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['mag_5fhmc5883l_0',['MAG_HMC5883L',['../classMAG__HMC5883L.html',1,'']]],
-  ['magnetometer_5fgy271_1',['Magnetometer_GY271',['../classMagnetometer__GY271.html',1,'']]],
-  ['mahony_5fplot_2',['Mahony_Plot',['../classMahony__Plot.html',1,'']]],
-  ['mainwindow_3',['MainWindow',['../classMainWindow.html',1,'']]],
-  ['mpu6050data_4',['MPU6050Data',['../structMPU6050Data.html',1,'']]]
+  ['gpioextent_5ft_0',['gpioExtent_t',['../structgpioExtent__t.html',1,'']]],
+  ['gpioheader_5ft_1',['gpioHeader_t',['../structgpioHeader__t.html',1,'']]],
+  ['gpiointerrupthandler_2',['GpioInterruptHandler',['../classGpioInterruptHandler.html',1,'']]],
+  ['gpiopulse_5ft_3',['gpioPulse_t',['../structgpioPulse__t.html',1,'']]],
+  ['gpioreport_5ft_4',['gpioReport_t',['../structgpioReport__t.html',1,'']]],
+  ['gpiosample_5ft_5',['gpioSample_t',['../structgpioSample__t.html',1,'']]]
 ];

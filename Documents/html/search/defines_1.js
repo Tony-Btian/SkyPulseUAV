@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bmp180_5fdevice_5faddr_0',['BMP180_DEVICE_ADDR',['../barometer__bmp180_8h.html#a858aae6074ee494d7f76c8cc6bc30c46',1,'barometer_bmp180.h']]]
+  ['calibration_5fcount_0',['CALIBRATION_COUNT',['../MPU6050_8h.html#aa9d67c9cd494973a854e3c8e3a0e2b0a',1,'MPU6050.h']]]
 ];

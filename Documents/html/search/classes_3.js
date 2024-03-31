@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['i2c_5fdevice_0',['I2C_Device',['../classI2C__Device.html',1,'']]]
+  ['esc_5fpwm_5fdriver_0',['ESC_PWM_Driver',['../classESC__PWM__Driver.html',1,'']]]
 ];

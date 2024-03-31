@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hmc5883l_5fdevice_5faddr_0',['HMC5883l_DEVICE_ADDR',['../SkyPulseUAV__FCS_2mainwindow_8h.html#a391b8ff1476b7964fa4643167301b19d',1,'mainwindow.h']]]
+  ['either_5fedge_0',['EITHER_EDGE',['../pigpio_8h.html#aff4e22f0a6c14fdc9ca8e6ce97e803de',1,'pigpio.h']]]
 ];

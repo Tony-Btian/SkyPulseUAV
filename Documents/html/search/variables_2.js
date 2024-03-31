@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['gx_0',['gx',['../structMPU6050Data.html#ad72cb7231814dc49074985e0cbba2388',1,'MPU6050Data']]],
-  ['gy_1',['gy',['../structMPU6050Data.html#a9f0994cd33cc7ac228468b6e02bd0515',1,'MPU6050Data']]],
-  ['gyro_5fscale_2',['GYRO_SCALE',['../gyroacelemeter__gy521_8cpp.html#adf4598335385071309c75cfd3a036d36',1,'gyroacelemeter_gy521.cpp']]],
-  ['gz_3',['gz',['../structMPU6050Data.html#ab8924764dcd0435cd8798e01c71daa47',1,'MPU6050Data']]]
+  ['clk_0',['clk',['../structrawSPI__t.html#a67af7abad5070a248cc2e3af5b1af2e2',1,'rawSPI_t']]],
+  ['clk_5fpha_1',['clk_pha',['../structrawSPI__t.html#aca58dee3121ceebec8a93db66c3abfa2',1,'rawSPI_t']]],
+  ['clk_5fpol_2',['clk_pol',['../structrawSPI__t.html#ac4ee44e9a2bdc95316a8716240b086fd',1,'rawSPI_t']]],
+  ['clk_5fus_3',['clk_us',['../structrawSPI__t.html#a2f80881d703cb5aed3fb90c75eea2ab2',1,'rawSPI_t']]],
+  ['control_4',['control',['../structbsc__xfer__t.html#aa7cff97867fe36301a6775754410eb63',1,'bsc_xfer_t']]]
 ];

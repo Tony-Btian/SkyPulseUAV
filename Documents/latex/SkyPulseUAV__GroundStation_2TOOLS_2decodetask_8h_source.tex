@@ -1,0 +1,33 @@
+\doxysection{decodetask.\+h}
+\hypertarget{SkyPulseUAV__GroundStation_2TOOLS_2decodetask_8h_source}{}\label{SkyPulseUAV__GroundStation_2TOOLS_2decodetask_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/TOOLS/decodetask.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_GroundStation/TOOLS/decodetask.h}}
+\mbox{\hyperlink{SkyPulseUAV__GroundStation_2TOOLS_2decodetask_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DECODETASK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DECODETASK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QRunnable>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MediatorInterface_8h}{MediatorInterface.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDecodeTask}{DecodeTask}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QRunnable}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classDecodeTask_af9f7768f39d3ada8e5039fad7b55004f}{DecodeTask}}(\textcolor{keyword}{const}\ QByteArray\ \&data,\ \mbox{\hyperlink{classMediatorInterface}{MediatorInterface}}*\ mediator);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecodeTask_a08ab16fc48dace927d586b7a49f695c3}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ QByteArray\ dataToDecode;}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classMediatorInterface}{MediatorInterface}}*\ mediator;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ decodeDataDistribution();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ signals:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDecodeTask_a8ec9fa0f949fb22c6a6f9e2b65ce3525}{decodeDataReady}}(\textcolor{keyword}{const}\ QString\ \&result);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DECODETASK\_H}}
+
+\end{DoxyCode}

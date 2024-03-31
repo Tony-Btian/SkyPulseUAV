@@ -1,0 +1,158 @@
+\doxysection{Mahony\+Filter Class Reference}
+\hypertarget{classMahonyFilter}{}\label{classMahonyFilter}\index{MahonyFilter@{MahonyFilter}}
+
+
+{\ttfamily \#include $<$Mahony\+Filter.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Callback\+Function}} = std\+::function$<$void(float, float, float, float\mbox{[}3\mbox{]})$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMahonyFilter_a538ff4e224632f1c596032eb924e458a}{Mahony\+Filter}} ()
+\item 
+\mbox{\hyperlink{classMahonyFilter_abe34dfaa44641d9d516e4d92fa1b7bb1}{Mahony\+Filter}} (float filter\+Sample, float two\+Prop\+Gain, float two\+Inte\+Gain)
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a06075064f78d34b1e0dac58d3fde5b69}{get\+Angle}} (float \texorpdfstring{$\ast$}{*}roll, float \texorpdfstring{$\ast$}{*}pitch, float \texorpdfstring{$\ast$}{*}yaw, float g\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{classMahonyFilter_ae67f6e8e68825946017b5739b7a9d892}{get\+Angle\+Rate}} (float g\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a957ba96b767f0773570b96956c17990e}{set\+Frequency}} (float f)
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a53498fc7db9a8a4c1d4fa8a8e2c1c379}{read\+Raw\+Data}} (float a\mbox{[}3\mbox{]}, float g\mbox{[}3\mbox{]}, float m\mbox{[}3\mbox{]})
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a3aa55af4a747f73e816cc360b61da9a2}{Mahony\+AHRSupdate}} ()
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a114a0d4371008b619d0ffa0358e67386}{Mahony\+AHRSupdate\+IMU}} ()
+\item 
+bool \mbox{\hyperlink{classMahonyFilter_aa9b0fc66938f28ddc5e971c88963e7af}{is\+Data\+Ready}} ()
+\item 
+void \mbox{\hyperlink{classMahonyFilter_af3d9be453283a9c601eae221c39f12fe}{set\+CallbackA}} (\mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Callback\+Function}} callback)
+\item 
+void \mbox{\hyperlink{classMahonyFilter_ae5b7e27bed8b418bd49d177983cc4a7a}{set\+CallbackB}} (\mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Callback\+Function}} callback)
+\item 
+std\+::array$<$ float, 3 $>$ \mbox{\hyperlink{classMahonyFilter_a90e8fa9e947187ef9b37ac1525d6a32f}{get\+Angle\+Test}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classMahonyFilter_a820c22532887b315ebacfce778e45b54}{inv\+Sqrt}} (float x)
+\item 
+void \mbox{\hyperlink{classMahonyFilter_a783f9dbed3b3d47b14b91dcb44bfaddb}{set\+Ki}} (float twoki\+Set)
+\item 
+void \mbox{\hyperlink{classMahonyFilter_afeb3736941b1ebe1cc655ce52be8d071}{set\+Kp}} (float twokp\+Set)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classMahonyFilter_aa0328404826e67b40a05527200b30178}\label{classMahonyFilter_aa0328404826e67b40a05527200b30178} 
+\index{MahonyFilter@{MahonyFilter}!CallbackFunction@{CallbackFunction}}
+\index{CallbackFunction@{CallbackFunction}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{CallbackFunction}{CallbackFunction}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Mahony\+Filter\+::\+Callback\+Function}} = std\+::function$<$void(float, float, float, float\mbox{[}3\mbox{]})$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMahonyFilter_a538ff4e224632f1c596032eb924e458a}\label{classMahonyFilter_a538ff4e224632f1c596032eb924e458a} 
+\index{MahonyFilter@{MahonyFilter}!MahonyFilter@{MahonyFilter}}
+\index{MahonyFilter@{MahonyFilter}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{MahonyFilter()}{MahonyFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mahony\+Filter\+::\+Mahony\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_abe34dfaa44641d9d516e4d92fa1b7bb1}\label{classMahonyFilter_abe34dfaa44641d9d516e4d92fa1b7bb1} 
+\index{MahonyFilter@{MahonyFilter}!MahonyFilter@{MahonyFilter}}
+\index{MahonyFilter@{MahonyFilter}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{MahonyFilter()}{MahonyFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mahony\+Filter\+::\+Mahony\+Filter (\begin{DoxyParamCaption}\item[{float}]{filter\+Sample,  }\item[{float}]{two\+Prop\+Gain,  }\item[{float}]{two\+Inte\+Gain }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMahonyFilter_a06075064f78d34b1e0dac58d3fde5b69}\label{classMahonyFilter_a06075064f78d34b1e0dac58d3fde5b69} 
+\index{MahonyFilter@{MahonyFilter}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::get\+Angle (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{roll,  }\item[{float \texorpdfstring{$\ast$}{*}}]{pitch,  }\item[{float \texorpdfstring{$\ast$}{*}}]{yaw,  }\item[{float}]{g\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_ae67f6e8e68825946017b5739b7a9d892}\label{classMahonyFilter_ae67f6e8e68825946017b5739b7a9d892} 
+\index{MahonyFilter@{MahonyFilter}!getAngleRate@{getAngleRate}}
+\index{getAngleRate@{getAngleRate}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{getAngleRate()}{getAngleRate()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::get\+Angle\+Rate (\begin{DoxyParamCaption}\item[{float}]{g\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a90e8fa9e947187ef9b37ac1525d6a32f}\label{classMahonyFilter_a90e8fa9e947187ef9b37ac1525d6a32f} 
+\index{MahonyFilter@{MahonyFilter}!getAngleTest@{getAngleTest}}
+\index{getAngleTest@{getAngleTest}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{getAngleTest()}{getAngleTest()}}
+{\footnotesize\ttfamily std\+::array$<$ float, 3 $>$ Mahony\+Filter\+::get\+Angle\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a820c22532887b315ebacfce778e45b54}\label{classMahonyFilter_a820c22532887b315ebacfce778e45b54} 
+\index{MahonyFilter@{MahonyFilter}!invSqrt@{invSqrt}}
+\index{invSqrt@{invSqrt}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{invSqrt()}{invSqrt()}}
+{\footnotesize\ttfamily float Mahony\+Filter\+::inv\+Sqrt (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classMahonyFilter_aa9b0fc66938f28ddc5e971c88963e7af}\label{classMahonyFilter_aa9b0fc66938f28ddc5e971c88963e7af} 
+\index{MahonyFilter@{MahonyFilter}!isDataReady@{isDataReady}}
+\index{isDataReady@{isDataReady}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{isDataReady()}{isDataReady()}}
+{\footnotesize\ttfamily bool Mahony\+Filter\+::is\+Data\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a3aa55af4a747f73e816cc360b61da9a2}\label{classMahonyFilter_a3aa55af4a747f73e816cc360b61da9a2} 
+\index{MahonyFilter@{MahonyFilter}!MahonyAHRSupdate@{MahonyAHRSupdate}}
+\index{MahonyAHRSupdate@{MahonyAHRSupdate}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{MahonyAHRSupdate()}{MahonyAHRSupdate()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::\+Mahony\+AHRSupdate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a114a0d4371008b619d0ffa0358e67386}\label{classMahonyFilter_a114a0d4371008b619d0ffa0358e67386} 
+\index{MahonyFilter@{MahonyFilter}!MahonyAHRSupdateIMU@{MahonyAHRSupdateIMU}}
+\index{MahonyAHRSupdateIMU@{MahonyAHRSupdateIMU}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{MahonyAHRSupdateIMU()}{MahonyAHRSupdateIMU()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::\+Mahony\+AHRSupdate\+IMU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a53498fc7db9a8a4c1d4fa8a8e2c1c379}\label{classMahonyFilter_a53498fc7db9a8a4c1d4fa8a8e2c1c379} 
+\index{MahonyFilter@{MahonyFilter}!readRawData@{readRawData}}
+\index{readRawData@{readRawData}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{readRawData()}{readRawData()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::read\+Raw\+Data (\begin{DoxyParamCaption}\item[{float}]{a\mbox{[}3\mbox{]},  }\item[{float}]{g\mbox{[}3\mbox{]},  }\item[{float}]{m\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_af3d9be453283a9c601eae221c39f12fe}\label{classMahonyFilter_af3d9be453283a9c601eae221c39f12fe} 
+\index{MahonyFilter@{MahonyFilter}!setCallbackA@{setCallbackA}}
+\index{setCallbackA@{setCallbackA}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{setCallbackA()}{setCallbackA()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::set\+CallbackA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Callback\+Function}}}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_ae5b7e27bed8b418bd49d177983cc4a7a}\label{classMahonyFilter_ae5b7e27bed8b418bd49d177983cc4a7a} 
+\index{MahonyFilter@{MahonyFilter}!setCallbackB@{setCallbackB}}
+\index{setCallbackB@{setCallbackB}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{setCallbackB()}{setCallbackB()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::set\+CallbackB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMahonyFilter_aa0328404826e67b40a05527200b30178}{Callback\+Function}}}]{callback }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a957ba96b767f0773570b96956c17990e}\label{classMahonyFilter_a957ba96b767f0773570b96956c17990e} 
+\index{MahonyFilter@{MahonyFilter}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::set\+Frequency (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})}
+
+\Hypertarget{classMahonyFilter_a783f9dbed3b3d47b14b91dcb44bfaddb}\label{classMahonyFilter_a783f9dbed3b3d47b14b91dcb44bfaddb} 
+\index{MahonyFilter@{MahonyFilter}!setKi@{setKi}}
+\index{setKi@{setKi}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{setKi()}{setKi()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::set\+Ki (\begin{DoxyParamCaption}\item[{float}]{twoki\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classMahonyFilter_afeb3736941b1ebe1cc655ce52be8d071}\label{classMahonyFilter_afeb3736941b1ebe1cc655ce52be8d071} 
+\index{MahonyFilter@{MahonyFilter}!setKp@{setKp}}
+\index{setKp@{setKp}!MahonyFilter@{MahonyFilter}}
+\doxysubsubsection{\texorpdfstring{setKp()}{setKp()}}
+{\footnotesize\ttfamily void Mahony\+Filter\+::set\+Kp (\begin{DoxyParamCaption}\item[{float}]{twokp\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Device/include/\mbox{\hyperlink{MahonyFilter_8h}{Mahony\+Filter.\+h}}\item 
+/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Device/src/\mbox{\hyperlink{MahonyFilter_8cpp}{Mahony\+Filter.\+cpp}}\end{DoxyCompactItemize}

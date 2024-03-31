@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     connect(this, &MainWindow::sig_StartTCPServer, TCPServer, &TCP::connectToServer);
     connect(this, &MainWindow::sig_StopTCPServer, TCPServer, &TCP::disconnectToServer);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TCPServer, &TCP::controlMessageSender);
+    connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
 
     /* UDP Server Connection Signals */
     connect(this, &MainWindow::sig_StartUDPServer, UDPServer, &UDP::startServer);
@@ -170,7 +170,7 @@ void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
 // Read MPU6050 Config Button Slots
 void MainWindow::on_toolButton_REG_READ_ALL_clicked()
 {
-    emit sig_sendMessageToTCP(READ, 0x03, 0x01);
+    emit sig_sendRequestToFCS(0x00);
 }
 
 void MainWindow::updateUI(const QString &message)

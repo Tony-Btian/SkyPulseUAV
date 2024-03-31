@@ -31,7 +31,7 @@ public slots:
     void sendMessageQByte(const QByteArray &message);
     void readMessage();
     void PWM_Controler(const int &code, const int &value);
-    void controlMessageSender(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
+    void commendToFCS(const uint8_t &command_code);
 
 private slots:
     void tcpInitial();

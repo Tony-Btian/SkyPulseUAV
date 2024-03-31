@@ -1,51 +1,48 @@
 \doxysection{gyroacelemeter\+\_\+gy521.\+h}
-\hypertarget{gyroacelemeter__gy521_8h_source}{}\label{gyroacelemeter__gy521_8h_source}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/gyroacelemeter\_gy521.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_FCS/DRIVER/gyroacelemeter\_gy521.h}}
+\hypertarget{gyroacelemeter__gy521_8h_source}{}\label{gyroacelemeter__gy521_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/SENSOR/gyroacelemeter\_gy521.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/SENSOR/gyroacelemeter\_gy521.h}}
 \mbox{\hyperlink{gyroacelemeter__gy521_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GYROACELEMETER\_GY521\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GYROACELEMETER\_GY521\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QFutureWatcher>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QThread>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c__device_8h}{i2c\_device.h}}"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{comment}{//\ MPU6050\ I2C\ Device\ Address}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MPU6050\_ADDR\ 0x68}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ MPU6050\ Reg\ Address}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ PWR\_MGMT\_1\ \ \ 0x6B}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ACCEL\_XOUT\_H\ 0x3B}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ GYRO\_XOUT\_H\ \ 0x43}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MPU6050\_ADDR\ 0x68}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ ACCEL\_CONFIG\ 0x1C}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ GYRO\_CONFIG\ \ 0x1B}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMPU6050}{MPU6050}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classMPU6050_a7c0146d45537e4bd7a0d4c1c476fdab7}{MPU6050}}\ (uint8\_t\ i2cAddress\ =\ 0x68,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a489550fe4f249781321c75afec2e29ba}{readAllSensors}}(\textcolor{keywordtype}{float}\ \&ax,\ \textcolor{keywordtype}{float}\ \&ay,\ \textcolor{keywordtype}{float}\ \&az,\ \textcolor{keywordtype}{float}\ \&gx,\ \textcolor{keywordtype}{float}\ \&gy,\ \textcolor{keywordtype}{float}\ \&gz);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a43a8a4f96604e5b1935f62b6a515d545}{calibrateGyro}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_aa494e77b669b69c87e5aeb5c0a85045d}{calibrateAccel}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMPU6050_a1e0af254f66c327893e832e74cfb3a04}{writeByte}}(uint8\_t\ reg,\ uint8\_t\ value);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMPU6050_a3f07de86a97f6ab4f26735ba2a40c146}{readBytes}}(uint8\_t\ reg,\ uint8\_t\ *buffer,\ \textcolor{keywordtype}{size\_t}\ length);}
 \DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{comment}{//class\ GyroAcelemeter\_GY521\ :\ public\ QObject}}
-\DoxyCodeLine{00021\ \textcolor{comment}{//\{}}
-\DoxyCodeLine{00022\ \textcolor{comment}{//\ \ \ \ Q\_OBJECT}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{comment}{//public:}}
-\DoxyCodeLine{00025\ \textcolor{comment}{//\ \ \ \ explicit\ GyroAcelemeter\_GY521(QObject\ *parent\ =\ nullptr);}}
-\DoxyCodeLine{00026\ \textcolor{comment}{//\ \ \ \ \string~GyroAcelemeter\_GY521();}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{comment}{//private:}}
-\DoxyCodeLine{00029\ \textcolor{comment}{//\ \ \ \ I2C\_Device\ *i2cdevice;}}
-\DoxyCodeLine{00030\ \textcolor{comment}{//\ \ \ \ QFutureWatcher<void>\ watcher;}}
-\DoxyCodeLine{00031\ \textcolor{comment}{//\ \ \ \ QAtomicInt\ \_stop;}}
-\DoxyCodeLine{00032\ \textcolor{comment}{//\};}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{comment}{//\ MPU6050Data\ Struct\ Definition}}
-\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMPU6050Data}{MPU6050Data}}\{}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMPU6050Data_ab77aea284394141ebc004f57460bcb53}{ax}},\ \mbox{\hyperlink{structMPU6050Data_a60c8864f9b9f4e2a4bc6119f15af236c}{ay}},\ \mbox{\hyperlink{structMPU6050Data_aa9f59cc87b31707a95b3f7142cc792ac}{az}};\ \textcolor{comment}{//\ Accelerometer}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMPU6050Data_ad72cb7231814dc49074985e0cbba2388}{gx}},\ \mbox{\hyperlink{structMPU6050Data_a9f0994cd33cc7ac228468b6e02bd0515}{gy}},\ \mbox{\hyperlink{structMPU6050Data_ab8924764dcd0435cd8798e01c71daa47}{gz}};\ \textcolor{comment}{//\ Gyroscope}}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{gyroacelemeter__gy521_8h_abca31bac71ee56073027a4e48cadeeb5}{initMPU6050}}(\textcolor{keywordtype}{int}\ handle);}
-\DoxyCodeLine{00041\ \mbox{\hyperlink{structMPU6050Data}{MPU6050Data}}\ \mbox{\hyperlink{gyroacelemeter__gy521_8h_a16f2a4ceac175e17926adfdd3ccb9d36}{readMPU6050Data}}(\textcolor{keywordtype}{int}\ handle);}
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gyroacelemeter__gy521_8h_aa475421f1d86c2806e807289b1cf748f}{readAccelRange}}(\textcolor{keywordtype}{int}\ handle);}
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gyroacelemeter__gy521_8h_a2d77344d34a0b19d591a8f9902e38897}{readGyroRange}}(\textcolor{keywordtype}{int}\ handle);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GYROACELEMETER\_GY521\_H}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMPU6050_a8a6db856c9acb464c0b8e66c79b0605b}{readAllMPU6050Reg}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classI2C__Device}{I2C\_Device}}\ *i2cDevice;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Calibration\ offsets}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ gyroOffset[3]\ =\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ accelOffset[3]\ =\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ PWR\_MGMT\_1\ =\ 0x6B;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ ACCEL\_XOUT\_H\ =\ 0x3B;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ GYRO\_XOUT\_H\ =\ 0x43;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ INT\_ENABLE\ =\ 0x38;\ \ \textcolor{comment}{//\ Interrupt\ Enable\ Register}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint8\_t\ INT\_PIN\_CFG\ =\ 0x37;\ \ \textcolor{comment}{//\ Interrupt\ Pin/Bypass\ Enable\ Configuration\ Register}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \ \ ACCEL\_FS\_SEL\_2G\ =\ 16384.0;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \ \ GYRO\_FS\_SEL\_250DEG\ =\ 131.0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ initializeMPU6050();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ applyCalibration(\textcolor{keywordtype}{float}\ \&ax,\ \textcolor{keywordtype}{float}\ \&ay,\ \textcolor{keywordtype}{float}\ \&az,\ \textcolor{keywordtype}{float}\ \&gx,\ \textcolor{keywordtype}{float}\ \&gy,\ \textcolor{keywordtype}{float}\ \&gz);}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GYROACELEMETER\_GY521\_H}}
 
 \end{DoxyCode}

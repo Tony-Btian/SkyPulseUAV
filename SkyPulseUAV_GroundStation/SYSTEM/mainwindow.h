@@ -78,7 +78,7 @@ signals:
     void sig_StopUDPServer();
     void sig_Mahony_PlottingStart();
     void sig_Mahony_PlottingStop();
-    void sig_sendMessageToTCP(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
+    void sig_sendRequestToFCS(const uint8_t &code);
 
 };
 #endif // MAINWINDOW_H

@@ -93,12 +93,10 @@ void TCP::PWM_Controler(const int &code, const int &value)
 }
 
 /*TCP 控制信息接收器*/
-void TCP::controlMessageSender(const uint8_t &action, const uint8_t &data_length, const uint8_t &value)
+void TCP::commendToFCS(const uint8_t &command_code)
 {
     QByteArray message;
-    message.append(action);
-    message.append(data_length);
-    message.append(value);
+    message.append(command_code);
     sendMessage(message);
 }
 

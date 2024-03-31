@@ -1,0 +1,41 @@
+\doxysection{IIC.\+h}
+\hypertarget{IIC_8h_source}{}\label{IIC_8h_source}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/IIC.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/IIC.h}}
+\mbox{\hyperlink{IIC_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_IIC\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_IIC\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pigpio_8h}{pigpio.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ IIC\_BUS\ 1}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ std::mutex\ \mbox{\hyperlink{IIC_8h_a37e93431b17955761c8bcc8732cfbe92}{i2cmtx}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIIC}{IIC}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classIIC_a6c32eb54e402e4784e2b53660b317c11}{IIC}}(\textcolor{keywordtype}{int}\ address);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classIIC_a7c488f53612aac8176b13d6a6b7211a5}{\string~IIC}}();}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIIC_ad90027b402b37318c4b8bb4eae198605}{write}}(\textcolor{keywordtype}{char}*\ dataArray,\ \textcolor{keywordtype}{int}\ arrayLength);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIIC_a9b422986eb61122ce204fef1ee91f1bf}{read}}(\textcolor{keywordtype}{char}*\ dataArray,\ \textcolor{keywordtype}{int}\ arrayLength,\ \textcolor{keywordtype}{int}\ regAddr);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ i2cmtx;}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ handle;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ err;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

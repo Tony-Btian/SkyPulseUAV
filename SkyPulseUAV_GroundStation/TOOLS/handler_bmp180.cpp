@@ -10,5 +10,4 @@ void Handler_BMP180::handleData(const QByteArray &data) {
     qDebug() << "Handler_BMP180DataHandlerFactory is processing data: " << data;
     QString result = "处理结果"; // 假设这是处理的结果
     mediator->notify(result); // 通过中介者通知MainWindow
-    emit dataProcessed(result);
 }

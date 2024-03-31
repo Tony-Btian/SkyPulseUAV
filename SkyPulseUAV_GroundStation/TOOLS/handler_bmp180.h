@@ -17,7 +17,7 @@ private:
     MediatorInterface *mediator;
 
 signals:
-    void dataProcessed(const QString &result);
+    // void dataProcessed(const QString &result);
 
 };
 

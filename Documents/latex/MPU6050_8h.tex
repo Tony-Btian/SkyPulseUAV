@@ -1,0 +1,111 @@
+\doxysection{/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+Device/include/\+MPU6050.h File Reference}
+\hypertarget{MPU6050_8h}{}\label{MPU6050_8h}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/MPU6050.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_Device/include/MPU6050.h}}
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include "{}IIC.\+h"{}}\newline
+{\ttfamily \#include "{}Cpp\+Thread.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMPU6050}{MPU6050}}
+\item 
+class \mbox{\hyperlink{classMPU6050Thread}{MPU6050\+Thread}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_a6a26d06d2f863deedd849612a6c2a4e4}{MPU6050\+\_\+\+ADDRESS}}~0x68
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_a4d4c35b220dad121a23f0db59ea4b7c9}{GY\+\_\+271\+\_\+\+ADDRESS}}~0x0D
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_aab447176eb0e61b0f69c19d0e5aa5e08}{IIC\+\_\+\+BUS}}~1
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_a9596fe8c9439e98e0e091eafc60bc412}{INT\+\_\+\+PIN}}~16
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_a89e47af0449640d4f15191aba5ca24c6}{RAD\+\_\+\+TO\+\_\+\+DEG}}~57.\+295779513082320876798154814105
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_a212460e743fecb084d717bb2180c5a56}{DEG\+\_\+\+TO\+\_\+\+RAD}}~0.\+01745329251994329576923690768489
+\item 
+\#define \mbox{\hyperlink{MPU6050_8h_aa9d67c9cd494973a854e3c8e3a0e2b0a}{CALIBRATION\+\_\+\+COUNT}}~5000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MPU6050_8h_a593202b405efedf72113276774c258cc}{interrupt\+Handler}} (int GPIO, int level, unsigned int tick)
+\item 
+void \mbox{\hyperlink{MPU6050_8h_a7ffd45caa3e8a563722e8364fdcbb3d1}{initialize\+MPUISR}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{MPU6050_8h_a37e93431b17955761c8bcc8732cfbe92}{i2cmtx}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{MPU6050_8h_aa9d67c9cd494973a854e3c8e3a0e2b0a}\label{MPU6050_8h_aa9d67c9cd494973a854e3c8e3a0e2b0a} 
+\index{MPU6050.h@{MPU6050.h}!CALIBRATION\_COUNT@{CALIBRATION\_COUNT}}
+\index{CALIBRATION\_COUNT@{CALIBRATION\_COUNT}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{CALIBRATION\_COUNT}{CALIBRATION\_COUNT}}
+{\footnotesize\ttfamily \#define CALIBRATION\+\_\+\+COUNT~5000}
+
+\Hypertarget{MPU6050_8h_a212460e743fecb084d717bb2180c5a56}\label{MPU6050_8h_a212460e743fecb084d717bb2180c5a56} 
+\index{MPU6050.h@{MPU6050.h}!DEG\_TO\_RAD@{DEG\_TO\_RAD}}
+\index{DEG\_TO\_RAD@{DEG\_TO\_RAD}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{DEG\_TO\_RAD}{DEG\_TO\_RAD}}
+{\footnotesize\ttfamily \#define DEG\+\_\+\+TO\+\_\+\+RAD~0.\+01745329251994329576923690768489}
+
+\Hypertarget{MPU6050_8h_a4d4c35b220dad121a23f0db59ea4b7c9}\label{MPU6050_8h_a4d4c35b220dad121a23f0db59ea4b7c9} 
+\index{MPU6050.h@{MPU6050.h}!GY\_271\_ADDRESS@{GY\_271\_ADDRESS}}
+\index{GY\_271\_ADDRESS@{GY\_271\_ADDRESS}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{GY\_271\_ADDRESS}{GY\_271\_ADDRESS}}
+{\footnotesize\ttfamily \#define GY\+\_\+271\+\_\+\+ADDRESS~0x0D}
+
+\Hypertarget{MPU6050_8h_aab447176eb0e61b0f69c19d0e5aa5e08}\label{MPU6050_8h_aab447176eb0e61b0f69c19d0e5aa5e08} 
+\index{MPU6050.h@{MPU6050.h}!IIC\_BUS@{IIC\_BUS}}
+\index{IIC\_BUS@{IIC\_BUS}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{IIC\_BUS}{IIC\_BUS}}
+{\footnotesize\ttfamily \#define IIC\+\_\+\+BUS~1}
+
+\Hypertarget{MPU6050_8h_a9596fe8c9439e98e0e091eafc60bc412}\label{MPU6050_8h_a9596fe8c9439e98e0e091eafc60bc412} 
+\index{MPU6050.h@{MPU6050.h}!INT\_PIN@{INT\_PIN}}
+\index{INT\_PIN@{INT\_PIN}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{INT\_PIN}{INT\_PIN}}
+{\footnotesize\ttfamily \#define INT\+\_\+\+PIN~16}
+
+\Hypertarget{MPU6050_8h_a6a26d06d2f863deedd849612a6c2a4e4}\label{MPU6050_8h_a6a26d06d2f863deedd849612a6c2a4e4} 
+\index{MPU6050.h@{MPU6050.h}!MPU6050\_ADDRESS@{MPU6050\_ADDRESS}}
+\index{MPU6050\_ADDRESS@{MPU6050\_ADDRESS}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_ADDRESS}{MPU6050\_ADDRESS}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+ADDRESS~0x68}
+
+\Hypertarget{MPU6050_8h_a89e47af0449640d4f15191aba5ca24c6}\label{MPU6050_8h_a89e47af0449640d4f15191aba5ca24c6} 
+\index{MPU6050.h@{MPU6050.h}!RAD\_TO\_DEG@{RAD\_TO\_DEG}}
+\index{RAD\_TO\_DEG@{RAD\_TO\_DEG}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{RAD\_TO\_DEG}{RAD\_TO\_DEG}}
+{\footnotesize\ttfamily \#define RAD\+\_\+\+TO\+\_\+\+DEG~57.\+295779513082320876798154814105}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MPU6050_8h_a7ffd45caa3e8a563722e8364fdcbb3d1}\label{MPU6050_8h_a7ffd45caa3e8a563722e8364fdcbb3d1} 
+\index{MPU6050.h@{MPU6050.h}!initializeMPUISR@{initializeMPUISR}}
+\index{initializeMPUISR@{initializeMPUISR}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{initializeMPUISR()}{initializeMPUISR()}}
+{\footnotesize\ttfamily void initialize\+MPUISR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{MPU6050_8h_a593202b405efedf72113276774c258cc}\label{MPU6050_8h_a593202b405efedf72113276774c258cc} 
+\index{MPU6050.h@{MPU6050.h}!interruptHandler@{interruptHandler}}
+\index{interruptHandler@{interruptHandler}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{interruptHandler()}{interruptHandler()}}
+{\footnotesize\ttfamily void interrupt\+Handler (\begin{DoxyParamCaption}\item[{int}]{GPIO,  }\item[{int}]{level,  }\item[{unsigned int}]{tick }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{MPU6050_8h_a37e93431b17955761c8bcc8732cfbe92}\label{MPU6050_8h_a37e93431b17955761c8bcc8732cfbe92} 
+\index{MPU6050.h@{MPU6050.h}!i2cmtx@{i2cmtx}}
+\index{i2cmtx@{i2cmtx}!MPU6050.h@{MPU6050.h}}
+\doxysubsubsection{\texorpdfstring{i2cmtx}{i2cmtx}}
+{\footnotesize\ttfamily std\+::mutex i2cmtx\hspace{0.3cm}{\ttfamily [extern]}}
+

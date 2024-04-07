@@ -83,7 +83,7 @@ void TCP::readMessage()
     QThreadPool::globalInstance()->start(task);
 }
 
-void TCP::PWM_Controler(const int &code, const int &value)
+void TCP::PWM_Controler(const int &code, const int &pin, const int &value)
 {
     QByteArray data;
     data.append(reinterpret_cast<const char*>(&code),sizeof(code));

@@ -82,6 +82,8 @@ private slots:
     void on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle);
     void on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle);
 
+    void on_spinBox_MinThrottle_valueChanged(int arg1);
+
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 
@@ -96,6 +98,8 @@ signals:
     void sig_Mahony_PlottingStop();
 
     void sig_sendRequestToFCS(const uint8_t &code);
+
+    void sig_sendMessageToTCP()
 
 };
 #endif // MAINWINDOW_H

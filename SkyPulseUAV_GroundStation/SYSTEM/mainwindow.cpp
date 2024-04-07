@@ -24,17 +24,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     /* TCP Server Connection Signals */
     connect(this, &MainWindow::sig_StartTCPServer,  TCPServer, &TCP::startTCPServer);
-    connect(this, &MainWindow::sig_StartUDPServer,  UDPServer, &UDP::startUDPServer);
     connect(this, &MainWindow::sig_StopTCPServer,   TCPServer, &TCP::stopTCPServer);
+    connect(this, &MainWindow::sig_StartUDPServer,  UDPServer, &UDP::startUDPServer);
     connect(this, &MainWindow::sig_StopUDPServer,   UDPServer, &UDP::stopUDPServer);
+
+    connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
 
     connect(TCPServer, &TCP::sig_startSuccessful,   this, &MainWindow::onTCPStartSuccessful);
     connect(TCPServer, &TCP::sig_stopSuccessful,    this, &MainWindow::onTCPStopSuccessful);
     connect(TCPServer, &TCP::sig_connectionError,   this, &MainWindow::onTCPConnectionError);
 
-
-
-    connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
 
     /* UDP Server Connection Signals */
 
@@ -177,7 +176,7 @@ void MainWindow::on_pushButton_REG_READ_ALL_BMP180_clicked()
 /* GY271: Magnetometer */
 void MainWindow::on_pushButton_REG_READ_ALL_GY271_clicked()
 {
-
+    emit sig_sendRequestToFCS(0x02);
 }
 
 
@@ -187,7 +186,7 @@ void MainWindow::on_pushButton_REG_READ_ALL_GY271_clicked()
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
 {
     ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(12, duty_cycle);
+    emit sig_sendMessageToTCP(12, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
@@ -226,3 +225,9 @@ void MainWindow::updateUI(const QString &message)
 //     }
 //     return NULL;
 // }
+
+void MainWindow::on_spinBox_MinThrottle_valueChanged(int arg1)
+{
+
+}
+

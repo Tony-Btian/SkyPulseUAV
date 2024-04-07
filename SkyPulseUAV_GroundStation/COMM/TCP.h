@@ -30,7 +30,7 @@ public slots:
     void sendMessage(const QString &message);
     void sendMessageQByte(const QByteArray &message);
     void readMessage();
-    void PWM_Controler(const int &code, const int &value);
+    void PWM_Controler(const int &code, const int &pin, const int &value);
     void commendToFCS(const uint8_t &command_code);
 
 private slots:

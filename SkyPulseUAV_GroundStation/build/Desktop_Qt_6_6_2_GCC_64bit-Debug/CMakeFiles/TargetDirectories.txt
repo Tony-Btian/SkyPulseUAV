@@ -1,0 +1,9 @@
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/SkyPulseUAV_GroundStation.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/install/strip.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/SkyPulseUAV_GroundStation_autogen_timestamp_deps.dir
+/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/build/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/SkyPulseUAV_GroundStation_autogen.dir

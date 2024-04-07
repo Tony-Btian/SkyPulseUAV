@@ -12,7 +12,7 @@
 class MahonyFilter;
 
 // Define callback function type for data update notification
-using CallbackFunction = void (*)(MahonyFilterQt*, float roll, float pitch, float yaw, const QVector3D &rate);
+using CallbackFunction = void (*)(MahonyFilter*, float roll, float pitch, float yaw, const QVector3D &rate);
 
 class MahonyFilter : public QObject
 {

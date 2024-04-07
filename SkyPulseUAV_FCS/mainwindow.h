@@ -15,6 +15,7 @@
 
 /*Middlewares Head Files*/
 #include "tcp.h"
+#include "Mediatorinterface.h"
 
 /*Sensor Head Files*/
 #include "gyroacelemeter_gy521.h"
@@ -45,6 +46,7 @@ public:
 
 public slots:
     void callBackTest();
+    void updateUI(const QString &message);
 
 private slots:
     void on_pushButton_BMP_clicked();
@@ -60,6 +62,7 @@ private:
 
     /* Network Protocol */
     TCP *TCPServer;
+    MediatorInterface* mediator;
 
     /* Sensors */
     MPU6050 *IMU;

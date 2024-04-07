@@ -5,6 +5,11 @@ MahonyFilter::MahonyFilter(float sampleFrequency, float twoKpDef, float twoKiDef
 
 }
 
+MahonyFilter::~MahonyFilter()
+{
+
+}
+
 void MahonyFilter::updateData(const QVector3D &accel, const QVector3D &gyro, const QVector3D &magneto)
 {
     QMutexLocker locker(&dataMutex); // Ensuring thread safety

@@ -1,26 +1,29 @@
 #include "decodetask.h"
 #include <QDebug>
+#include <QThread>
+#include "DataHandlerFactory.h"
 
-DecodeTask::DecodeTask(const QByteArray &data) : data(data)
+DecodeTask::DecodeTask(const QByteArray &data, MediatorInterface *mediator) : dataToDecode(data), mediator(mediator)
 {
 
 }
 
 void DecodeTask::run()
 {
-//    QString decodeData = decode(data);
-//    qDebug() << "Decoded data: " << decodeData;
-    if (data.isEmpty()) return;
-    switch (static_cast<unsigned char>(data[0])) {
-    case 0x00:
-        qDebug() << "0x00 data reveived";
-        break;
-    default:
-        break;
+    qDebug() << "Decode Thread:" << QThread::currentThreadId();
+    // Decode the data. This is a placeholder for your decoding logic.
+    QString result;
+    for(int i = 0; i < dataToDecode.size(); ++i) {
+        QString byteString = QString::number(static_cast<unsigned char>(dataToDecode[i]), 16).rightJustified(2, '0');
+        result.append(byteString + " ");
     }
-}
+    qDebug() << "Decoded data:" << result;
 
-QString DecodeTask::decodeFunction(const QByteArray &data)
-{
-    return nullptr;
+    DataHandler* handler = DataHandlerFactory::createHandler(dataToDecode, mediator);
+    if (handler) {
+        handler->handleData(dataToDecode);
+        delete handler;  // Release resources
+    }
+
+    // emit decodeDataReady(result);
 }

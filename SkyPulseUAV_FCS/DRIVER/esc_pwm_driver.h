@@ -19,6 +19,9 @@ public:
 
 public slots:
     void setPWM0Signal(const int &dutyCycle);
+    void setPWM1Signal(const int &dutyCycle);
+    void setPWM2Signal(const int &dutyCycle);
+    void setPWM3Signal(const int &dutyCycle);
 
 private:
     void initialPWM();

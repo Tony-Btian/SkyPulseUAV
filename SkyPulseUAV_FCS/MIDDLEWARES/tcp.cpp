@@ -4,7 +4,7 @@
 #include <QThreadPool>
 #include <QDataStream>
 
-TCP::TCP(QObject *parent) : QTcpServer(parent)
+TCP::TCP(QObject *parent, MediatorInterface *mediator) : QTcpServer(parent), mediator(mediator)
 {
     TCPThread = new QThread(this);
     connect(TCPThread, &QThread::started, this, &TCP::startServer);
@@ -60,9 +60,11 @@ void TCP::onReadyRead()
     QTcpSocket *clients = qobject_cast<QTcpSocket*>(sender());
     if(!clients) return;
     QByteArray data = clients->readAll();
-//    DecodeTask *task = new DecodeTask(data);
+
+//    DecodeTask *task = new DecodeTask(data, mediator);
 //    task->setAutoDelete(true);
 //    QThreadPool::globalInstance()->start(task);
+
     this->dataTranslator(data);
 }
 
@@ -93,13 +95,15 @@ void TCP::dataTranslator(const QByteArray &data)
     switch (static_cast<unsigned char>(data[0])) {
     case 0x00:
         qDebug() << "Received Message 0x00";
-        emit sig_requestReadAllReg_BMP180();
+        emit sig_requestReadAllReg_MPU6050();
         break;
     case 0x01:
-
+        qDebug() << "Received Message 0x01";
+        emit sig_requestReadAllReg_BMP180();
         break;
     case 0x02:
-
+        qDebug() << "Received Message 0x02";
+        emit sig_requestReadAllReg_GY271();
         break;
     case 0x03:
 

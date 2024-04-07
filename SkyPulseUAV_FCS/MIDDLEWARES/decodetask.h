@@ -4,21 +4,23 @@
 #include <QObject>
 #include <QRunnable>
 #include <QByteArray>
+#include "Mediatorinterface.h"
 
 class DecodeTask : public QObject, public QRunnable
 {
     Q_OBJECT
 
 public:
-    explicit DecodeTask(const QByteArray &data);
+    explicit DecodeTask(const QByteArray &data, MediatorInterface* mediator);
     void run() override;
 
 private:
-    QByteArray data;
-    QString decodeFunction(const QByteArray &data);
+    QByteArray dataToDecode;
+    MediatorInterface *mediator;
+    void decodeDataDistribution();
 
 signals:
-    void sig_ReadBMP180Registers_All();
+    void decodeDataReady(const QString &result);
 };
 
 #endif // DECODETASK_H

@@ -17,6 +17,7 @@ find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/DRIVER
     ${CMAKE_SOURCE_DIR}/MIDDLEWARES
     ${CMAKE_SOURCE_DIR}/TOOLS
@@ -34,9 +35,13 @@ set(PROJECT_SOURCES
     DRIVER/i2c_device.h DRIVER/i2c_device.cpp
     DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
     DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
+    DRIVER/fligthcontrol.h DRIVER/fligthcontrol.cpp
 
     MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
     MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
+    MIDDLEWARES/Mediatorinterface.h MIDDLEWARES/DataHandlerFactory.h MIDDLEWARES/DataHandler.h
+    MIDDLEWARES/handler_bmp180.h MIDDLEWARES/handler_bmp180.cpp
+    MIDDLEWARES/concretemediator.h MIDDLEWARES/concretemediator.cpp
 
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
     SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp

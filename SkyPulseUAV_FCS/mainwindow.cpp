@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "concretemediator.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -28,7 +29,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     IMU = new MPU6050(0x68, this);              // MPU6050
     BMP180 = new Barometer_BMP180(0x77, this);  // BMP180
     GY271 = new Magnetometer_GY271(0x0D, this); // GY271
-    TCPServer = new TCP();  // TCP Server
+    mediator = new ConcreteMediator(this);
+    TCPServer = new TCP(nullptr, mediator);  // TCP Server
 
 
     connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
@@ -53,6 +55,7 @@ MainWindow::~MainWindow()
     delete IMU;
     delete BMP180;
     delete GY271;
+    delete mediator;
     gpioTerminate();
     delete ui;
 }
@@ -107,6 +110,10 @@ void MainWindow::callBackTest()
     qDebug() << "Detected";
 }
 
+void MainWindow::updateUI(const QString &message)
+{
+    qDebug() << "Update UI:" << message;
+}
 
 
 

@@ -5,6 +5,7 @@
 #include <QTcpSocket>
 #include <QTimer>
 #include <QThread>
+#include "Mediatorinterface.h"
 
 /**
  * @class TCP Server
@@ -19,7 +20,7 @@ class TCP : public QTcpServer
     Q_OBJECT
 
 public:
-    explicit TCP(QObject *parent = nullptr);
+    explicit TCP(QObject *parent = nullptr, MediatorInterface *mediator = nullptr);
     ~TCP();
 
 public slots:
@@ -37,6 +38,7 @@ private slots:
 private:
     QList<QTcpSocket*> clients;
     QThread *TCPThread;
+    MediatorInterface* mediator;
     static constexpr quint16 PORT = 12345;
 
     void dataTranslator(const QByteArray &data);
@@ -45,7 +47,8 @@ signals:
     void sig_sendPWM0Signal(const int &duty_cycle);
     void sig_errorOccured_TCP(const QString &error_message);
     void sig_requestReadAllReg_BMP180();
-
+    void sig_requestReadAllReg_MPU6050();
+    void sig_requestReadAllReg_GY271();
 };
 
 #endif // TCP_H

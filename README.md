@@ -75,8 +75,8 @@ The list of used sensors is shown in Table 2.1.
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
 Datasheet link:  
-The subsequent section provides a comprehensive description of the sensor.
 
+The subsequent section provides a comprehensive description of the sensor.
 - BMP180 Barometer
 This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
 - MPU6050 IMU Module

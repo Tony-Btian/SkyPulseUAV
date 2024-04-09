@@ -64,7 +64,6 @@ Let's transform the landscape of emergency response and environmental analysis t
 ## 2. Sensors & Actuators
 ### 2.1 Sensors
 The list of used sensors is shown in Table 2.1.
-<p style="text-align: center;">Table 2.1 Sensors Bill of Materials (BOM)</p>
 Table 2.1 Sensors Bill of Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |:----:|----------------|-------------|---------------------------------------------|----------|-------------------|---------------------|

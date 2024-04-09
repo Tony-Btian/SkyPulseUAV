@@ -18,7 +18,7 @@ void ESC_PWM_Driver::onUpdate(bool isInitialised)
 
 void ESC_PWM_Driver::initialPWM()
 {
-    gpioSetMode(PWM0, PI_OUTPUT);
+    gpioSetMode(PWM0, PI_OUTPUT);  // The perpose of the code
     gpioSetMode(PWM1, PI_OUTPUT);
     gpioSetMode(PWM2, PI_OUTPUT);
     gpioSetMode(PWM3, PI_OUTPUT);
@@ -31,7 +31,7 @@ void ESC_PWM_Driver::initialPWM()
 void ESC_PWM_Driver::setPWMSignal(int gpioPin, int dutyCycle)
 {
     // Check the legitimacy of parameters, e.g. dutyCycle is usually in the range 0 to 255
-    if((dutyCycle < 0) || (dutyCycle > 255)) {
+    if((dutyCycle < 0) || (dutyCycle > 255)) { 
         qWarning("Invalid duty cycle");
         return;
     }

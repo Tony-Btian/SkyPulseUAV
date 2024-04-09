@@ -63,7 +63,7 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 ## 2. Sensors & Actuators
 ### 2.1 Sensors
-The list of used sensors is shown in Table 2.1.
+The list of used sensors is shown in Table 2.1.  
 Table 2.1 Sensors Bill of Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |:----:|----------------|-------------|---------------------------------------------|----------|-------------------|---------------------|
@@ -74,8 +74,9 @@ Table 2.1 Sensors Bill of Materials (BOM)
 |  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
-Datasheet link:
+Datasheet link:  
 The subsequent section provides a comprehensive description of the sensor.
+
 
 
 ## SkyPulseUAV Communication Protocol Overview

@@ -81,7 +81,6 @@ The subsequent section provides a comprehensive description of the sensor.
   This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
 - MPU6050 IMU Module  
   An integrated module with a 3-axis gyroscope and a 3-axis accelerometer, this device can detect the UAV's orientation and acceleration in three-dimensional space. It is critical for the UAV's attitude control and motion tracking.
-
 - Gyroscope and Accelerometer Model GY-521 (MPU6050)  
   Angular velocity (gyroscope), with full-scale range options of ±250, ±500, ±1000, and ±2000 degrees per second.  
   Acceleration (accelerometer), with full-scale range options of ±2g, ±4g, ±8g, and ±16g.  
@@ -89,11 +88,11 @@ The subsequent section provides a comprehensive description of the sensor.
   Angular velocity data can be read from the GYRO_XOUT_H/L, GYRO_YOUT_H/L, and GYRO_ZOUT_H/L registers.  
   GY-271 Compass: A three-axis magnetic field sensor based on the QMC5883L chip, used to measure the intensity of the Earth's magnetic field. It serves as the compass functionality for the UAV, aiding in determining its heading.  
 - Infrared Sensor  
-Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
+  Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
 - Infrared Distance Sensor Model KY-032  
-Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
+  Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
 - Ultrasonic Distance Detection Module HY-SRF05  
-Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
+  Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
 
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
 

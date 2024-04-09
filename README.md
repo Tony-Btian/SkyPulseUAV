@@ -60,7 +60,7 @@ Let's transform the landscape of emergency response and environmental analysis t
 # Guide
 ### System Deployment
 #### 
-![Code Document](https://shilinzhang1.github.io/)
+[Code Document](https://shilinzhang1.github.io/)
 
 ## SkyPulseUAV Communication Protocol Overview
 ### Introduction

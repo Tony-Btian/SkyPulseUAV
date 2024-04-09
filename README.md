@@ -64,7 +64,7 @@ Let's transform the landscape of emergency response and environmental analysis t
 ## 2. Sensors & Actuators
 ### 2.1 Sensors
 The list of used sensors is shown in Table 2.1.  
-Table 2.1 Sensors Bill of Materials (BOM)
+&nbsp;&nbsp;&nbsp;Table 2.1 Sensors Bill of Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |:----:|----------------|-------------|---------------------------------------------|----------|-------------------|---------------------|
 |  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|

@@ -261,11 +261,9 @@ void USART1_IRQHandler(void)
 // Callback function of HAL_SPI_Transmit_DMA.
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 {
-	uint8_t temp[4] = {12, 15, 17, 19};
-
-	if(hspi == &hspi1)
+	if(hspi == &hspi2)
 	{
-		HAL_SPI_Transmit_DMA(&hspi1, &temp[0], 4);
+		HAL_SPI_Transmit_DMA(&hspi2, dataToRasp,4);
 	}
 
 }

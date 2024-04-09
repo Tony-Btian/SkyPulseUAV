@@ -64,7 +64,7 @@ extern uint8_t dataFromRasp;
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-void IRStartDetect(GPIO_TypeDef GPIOPort, uint16_t GPIOPin);
+void IRStartDetect(GPIO_TypeDef* GPIOPort[4], uint16_t GPIOPin[4]);
 void Send_Trig(void);
 void py_f2s4printf(char * stra, float x, uint8_t flen);
 void Delay_us(uint16_t myus);

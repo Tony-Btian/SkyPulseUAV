@@ -54,8 +54,15 @@ uint16_t Distance_Num = 0;
 uint16_t Period_Num = 0;
 uint8_t IRIsEnabled = 0;
 uint8_t prescale10HzCount = 0;
+
+// Here's the data transmitted to master, and:
+// [0] - random, to be dispatched.
+// [1] - represents the status of IR sensors(1/0).
+// [2], [3]
+// 	   - represent the distance between ultrasonic
+// sensor and the obstacle(mm).
 uint8_t dataToRasp[4] = {0};
-uint8_t dataFromRasp = 0;
+//uint8_t dataFromRasp = 0;
 uint8_t IRObjectDetected = 0;
 // uint8_t isCalculatingDistance = 0;
 
@@ -119,7 +126,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_SPI_Transmit_DMA(&hspi1, dataToRasp, 4);
+  HAL_SPI_Transmit_DMA(&hspi2, dataToRasp, 4);
 
   /* USER CODE END 2 */
 
@@ -130,7 +137,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  IRStartDetect(IRGPIOPorts, IRGPIOPin);
+	  IRStartDetect(IRGPIOPorts, IRGPIOPins);
 	  dataToRasp[1] = IRObjectDetected;
   }
   /* USER CODE END 3 */

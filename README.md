@@ -67,12 +67,12 @@ The list of used sensors is shown in Table 2.1.
 Table 2.1 Sensors Bill of Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |------|----------------|-------------|---------------------------------------------|----------|-------------------|---------------------|
-| 1    | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|
-| 2    | IMU Module     | MPU6050     | 3-axis gyroscope + 3-axis accelerometer     | 1 (pcs)  | Module Supplier   | Attitude control    |
-| 3    | Compass        | GY-271      | Three-axis magnetic field sensor            | 1 (pcs)  | Chip Supplier     | Heading determination|
-| 4    | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 1 (pcs)  | Sensor Supplier   | Collision avoidance |
-| 5    | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
-| 6    | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
+|  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|
+|  2   | IMU Module     | MPU6050     | 3-axis gyroscope + 3-axis accelerometer     | 1 (pcs)  | Module Supplier   | Attitude control    |
+|  3   | Compass        | GY-271      | Three-axis magnetic field sensor            | 1 (pcs)  | Chip Supplier     | Heading determination|
+|  4   | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 1 (pcs)  | Sensor Supplier   | Collision avoidance |
+|  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
+|  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 Datasheet link:
 The subsequent section provides a comprehensive description of the sensor.
 

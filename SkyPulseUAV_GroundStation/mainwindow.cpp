@@ -229,3 +229,16 @@ void MainWindow::on_spinBox_MinThrottle_valueChanged(int arg1)
 
 }
 
+void MainWindow::on_verticalSlider_Trust_valueChanged(int trust_value)
+{
+    int basePWM[4] = { ui->horizontalSlider_P12PWM0->value(),
+                       ui->horizontalSlider_P13PWM1->value(),
+                       ui->horizontalSlider_P19PWM2->value(),
+                       ui->horizontalSlider_P18PWM3->value()
+    };
+    float trustFactor = trust_value / 100.0f;
+    for (int i = 0; i < 4; i++){
+
+    }
+}
+

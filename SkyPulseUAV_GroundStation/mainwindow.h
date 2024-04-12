@@ -84,6 +84,9 @@ private slots:
 
     void on_spinBox_MinThrottle_valueChanged(int arg1);
 
+
+    void on_verticalSlider_Trust_valueChanged(int trust_value);
+
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
 

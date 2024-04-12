@@ -1,0 +1,27 @@
+# ninja log v5
+1	12	1712952733764718696	/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/cmake.verify_globs	e35677a5f3fa835c
+12	264	1712952733997122113	build.ninja	9b4286ee6f2fccda
+0	14	0	/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/cmake.verify_globs	e35677a5f3fa835c
+1	2188	1712952736217387726	SkyPulseUAV_GroundStation_autogen/timestamp	dddc15dbc89e5d59
+1	2188	1712952736217387726	SkyPulseUAV_GroundStation_autogen/mocs_compilation.cpp	dddc15dbc89e5d59
+1	2188	1712952736217387726	/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUAV_GroundStation_autogen/timestamp	dddc15dbc89e5d59
+1	2188	1712952736217387726	/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUAV_GroundStation_autogen/mocs_compilation.cpp	dddc15dbc89e5d59
+2188	2218	1712952736253461746	SkyPulseUAV_GroundStation_autogen/EWIEGA46WW/qrc_resource.cpp	cbc7a54492ba42a1
+2188	2218	1712952736253461746	/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUAV_GroundStation_autogen/EWIEGA46WW/qrc_resource.cpp	cbc7a54492ba42a1
+2219	3787	1712952737820743096	CMakeFiles/SkyPulseUAV_GroundStation.dir/SENSOR/MAG_HMC5883L.cpp.o	e204b0f550330a20
+2219	4255	1712952738289763103	CMakeFiles/SkyPulseUAV_GroundStation.dir/TOOLS/decodetask.cpp.o	23bc59571d4f20cd
+2220	4435	1712952738470160365	CMakeFiles/SkyPulseUAV_GroundStation.dir/SYSTEM/pooltask.cpp.o	9215b6eaa6e81dca
+4255	9784	1712952743818674746	CMakeFiles/SkyPulseUAV_GroundStation.dir/COMM/UDP.cpp.o	543909a4b78f361e
+9784	13000	1712952747038712465	CMakeFiles/SkyPulseUAV_GroundStation.dir/SYSTEM/observable.cpp.o	86b3be5cbd5885bd
+2220	16321	1712952750355909939	CMakeFiles/SkyPulseUAV_GroundStation.dir/PLOTING/Mahony_Plot.cpp.o	8d45879f3c104df1
+13000	16453	1712952750491136970	CMakeFiles/SkyPulseUAV_GroundStation.dir/TOOLS/handler_bmp180.cpp.o	924ae471e0724e4c
+2221	17027	1712952751063926270	CMakeFiles/SkyPulseUAV_GroundStation.dir/main.cpp.o	61387f00df4f3c5c
+16453	17055	1712952751091796472	CMakeFiles/SkyPulseUAV_GroundStation.dir/SkyPulseUAV_GroundStation_autogen/EWIEGA46WW/qrc_resource.cpp.o	8290d438c3ace274
+3788	18117	1712952752143029147	CMakeFiles/SkyPulseUAV_GroundStation.dir/mainwindow.cpp.o	93bcba0b012f3b83
+17027	19481	1712952753518311171	CMakeFiles/SkyPulseUAV_GroundStation.dir/TOOLS/datamanager.cpp.o	3ff95e60b9b9169a
+17055	19714	1712952753749634577	CMakeFiles/SkyPulseUAV_GroundStation.dir/COMM/TCP.cpp.o	638e675e0cc77390
+18117	20158	1712952754192472286	CMakeFiles/SkyPulseUAV_GroundStation.dir/COMM/Bluetooth.cpp.o	46dc4d1f330961
+16323	23681	1712952757719581104	CMakeFiles/SkyPulseUAV_GroundStation.dir/TOOLS/concretemediator.cpp.o	b9e53885f8b1a95b
+4435	24499	1712952758523318703	CMakeFiles/SkyPulseUAV_GroundStation.dir/SkyPulseUAV_GroundStation_autogen/mocs_compilation.cpp.o	801a1f9b74abcbb7
+2219	28750	1712952762765444376	CMakeFiles/SkyPulseUAV_GroundStation.dir/PLOTING/qcustomplot.cpp.o	d8b387f836346a1a
+28750	29820	1712952763850719230	SkyPulseUAV_GroundStation	c8d93e23b48adfa7

@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUAV_GroundStation_autogen",
+	"CMAKE_BINARY_DIR" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation",
+	"CMAKE_SOURCE_DIR" : "/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation",
+	"INCLUDE_DIR" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/SkyPulseUAV_GroundStation_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/gyroscope.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/barometer.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/360direction.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/accelerometer.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/compass.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/no.png",
+		"/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/icon/yes.png"
+	],
+	"LOCK_FILE" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/SkyPulseUAV_GroundStation_autogen.dir/AutoRcc_resource_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resource" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resource.cpp",
+	"RCC_EXECUTABLE" : "/home/tony/Qt/6.6.2/gcc_64/./libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/tony/Github/SkyPulseUAV/Desktop_Qt_6_6_2_GCC_64bit-Debug/CMakeFiles/SkyPulseUAV_GroundStation_autogen.dir/AutoRcc_resource_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/tony/Github/SkyPulseUAV/SkyPulseUAV_GroundStation/resource.qrc",
+	"VERBOSITY" : 0
+}

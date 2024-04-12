@@ -4,27 +4,18 @@
 #include <functional>
 
 #include "CppThread.hpp"
-#include "chrono"
-#include <iostream>
-#include <pigpio.h>
-
-#define SPI0_MOSI 10
-#define SPI0_MISO 9
-#define SPI0_SCLK 11
-#define SPI0_CS 8
 
 #define SPI_CHANNEL_0 0
 #define SPI_CHANNEL_1 1
-#define DATA_SIZE 4
+#define DATA_SIZE 8
 
 using namespace std;
-using namespace std::chrono;
 
 class STM32 {
 
 public:
 
-    using CallbackFunction = function<void(uint8_t[3], uint8_t)>;
+    using CallbackFunction = function<void(float[3], float)>;
 
     STM32();
 
@@ -45,9 +36,9 @@ private:
 
     int handle;
 
-    uint8_t IRDistance[3];
+    float IRDistance[3];
 
-    uint16_t USDistance;
+    float USDistance;
 
 };
 

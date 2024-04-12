@@ -1,3 +1,0 @@
-/home/kinsley/project/build/CMakeFiles/attitude.dir
-/home/kinsley/project/build/CMakeFiles/edit_cache.dir
-/home/kinsley/project/build/CMakeFiles/rebuild_cache.dir

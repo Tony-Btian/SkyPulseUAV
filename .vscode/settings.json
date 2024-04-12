@@ -60,6 +60,5 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    },
-    "cmake.sourceDirectory": "/home/kinsley/project/SkyPulseUAV_Device"
+    }
 }

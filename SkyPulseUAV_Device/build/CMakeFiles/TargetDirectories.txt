@@ -1,3 +1,0 @@
-/home/kinsley/project/SkyPulseUAV_Device/build/CMakeFiles/attitude.dir
-/home/kinsley/project/SkyPulseUAV_Device/build/CMakeFiles/edit_cache.dir
-/home/kinsley/project/SkyPulseUAV_Device/build/CMakeFiles/rebuild_cache.dir

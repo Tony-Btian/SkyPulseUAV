@@ -1,6 +1,0 @@
-../Core/Src/tim.c:31:6:MX_TIM3_Init	4
-../Core/Src/tim.c:76:6:MX_TIM4_Init	4
-../Core/Src/tim.c:117:6:HAL_TIM_IC_MspInit	2
-../Core/Src/tim.c:147:6:HAL_TIM_Base_MspInit	2
-../Core/Src/tim.c:167:6:HAL_TIM_IC_MspDeInit	2
-../Core/Src/tim.c:191:6:HAL_TIM_Base_MspDeInit	2

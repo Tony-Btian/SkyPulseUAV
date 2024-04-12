@@ -4,15 +4,28 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QTimer>
+#include <QThread>
 
+/**
+ * @class TCP Server
+ * @brief TCP Server Class
+ *
+ * This TCP Server Class is used for the data and communication
+ * interaction with SkyPulse UAV ground stations. This class
+ * directly inherits QTCPServer.
+ */
 class TCP : public QTcpServer
 {
     Q_OBJECT
 
 public:
     explicit TCP(QObject *parent = nullptr);
-    void startServer(quint16 port);
+    ~TCP();
+
+public slots:
+    void startServer();
     void broadcastMessage(const QByteArray &message);
+    void sendMessage64Bytes(const QByteArray &datapackage_u64);
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;
@@ -23,10 +36,15 @@ private slots:
 
 private:
     QList<QTcpSocket*> clients;
+    QThread *TCPThread;
+    static constexpr quint16 PORT = 12345;
+
     void dataTranslator(const QByteArray &data);
 
 signals:
     void sig_sendPWMSignal(const int &gpio_pin, const int &duty_cycle);
+    void sig_errorOccured_TCP(const QString &error_message);
+
 };
 
 #endif // TCP_H

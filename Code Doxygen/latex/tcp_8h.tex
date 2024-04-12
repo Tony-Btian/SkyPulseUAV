@@ -1,11 +1,33 @@
-\doxysection{/home/tony/\+Github/\+Sky\+Pulse\+UAV/\+Sky\+Pulse\+UAV\+\_\+\+FCS/\+MIDDLEWARES/tcp.h File Reference}
-\hypertarget{tcp_8h}{}\label{tcp_8h}\index{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/MIDDLEWARES/tcp.h@{/home/tony/Github/SkyPulseUAV/SkyPulseUAV\_FCS/MIDDLEWARES/tcp.h}}
-{\ttfamily \#include $<$QTcp\+Server$>$}\newline
-{\ttfamily \#include $<$QTcp\+Socket$>$}\newline
-{\ttfamily \#include $<$QTimer$>$}\newline
+\doxysection{/home/tony/\+Github/\+Sky\+Pulse\+UVA/\+Sky\+Pulse\+UAV\+\_\+\+Ground\+Station/\+COMM/\+TCP.h File Reference}
+\hypertarget{TCP_8h}{}\label{TCP_8h}\index{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_GroundStation/COMM/TCP.h@{/home/tony/Github/SkyPulseUVA/SkyPulseUAV\_GroundStation/COMM/TCP.h}}
 {\ttfamily \#include $<$QThread$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QTcp\+Socket$>$}\newline
+{\ttfamily \#include "{}Mediator\+Interface.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classTCP}{TCP}}
-\begin{DoxyCompactList}\small\item\em \doxylink{classTCP}{TCP} Server Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TCP_8h_aa10f470e996d0f51210d24f442d25e1e}{WRITE}}~0x01
+\item 
+\#define \mbox{\hyperlink{TCP_8h_ada74e7db007a68e763f20c17f2985356}{READ}}~0x00
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{TCP_8h_ada74e7db007a68e763f20c17f2985356}\label{TCP_8h_ada74e7db007a68e763f20c17f2985356} 
+\index{TCP.h@{TCP.h}!READ@{READ}}
+\index{READ@{READ}!TCP.h@{TCP.h}}
+\doxysubsubsection{\texorpdfstring{READ}{READ}}
+{\footnotesize\ttfamily \#define READ~0x00}
+
+\Hypertarget{TCP_8h_aa10f470e996d0f51210d24f442d25e1e}\label{TCP_8h_aa10f470e996d0f51210d24f442d25e1e} 
+\index{TCP.h@{TCP.h}!WRITE@{WRITE}}
+\index{WRITE@{WRITE}!TCP.h@{TCP.h}}
+\doxysubsubsection{\texorpdfstring{WRITE}{WRITE}}
+{\footnotesize\ttfamily \#define WRITE~0x01}
+

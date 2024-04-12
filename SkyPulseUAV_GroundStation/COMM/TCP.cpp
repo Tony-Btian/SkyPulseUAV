@@ -86,11 +86,12 @@ void TCP::readMessage()
 void TCP::PWM_Controler(const int &code, const int &pin, const int &value)
 {
     QByteArray data;
+    data.append(reinterpret_cast<const char*>(&pin),sizeof(pin));
     data.append(reinterpret_cast<const char*>(&code),sizeof(code));
     data.append(reinterpret_cast<const char*>(&value),sizeof(value));
-    qDebug() << "Code: " << code << ", " << "Value: " << value ;
+    qDebug() << "Code: " << code << ", " << "Pin: " << pin << ", " << "Value: " << value ;
     qDebug() << data.constData();
-    sendMessageQByte(data);
+    // sendMessageQByte(data);
 }
 
 /*TCP 控制信息接收器*/

@@ -953,12 +953,12 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>481</width>
+          <width>501</width>
           <height>211</height>
          </rect>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1072,8 +1072,14 @@
               </item>
               <item>
                <widget class="QDoubleSpinBox" name="doubleSpinBox_P12PWM0">
+                <property name="suffix">
+                 <string>%</string>
+                </property>
                 <property name="decimals">
-                 <number>3</number>
+                 <number>2</number>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
                 </property>
                 <property name="singleStep">
                  <double>0.010000000000000</double>
@@ -1109,8 +1115,14 @@
               </item>
               <item>
                <widget class="QDoubleSpinBox" name="doubleSpinBox_P13PWM1">
+                <property name="suffix">
+                 <string>%</string>
+                </property>
                 <property name="decimals">
-                 <number>3</number>
+                 <number>2</number>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
                 </property>
                 <property name="singleStep">
                  <double>0.010000000000000</double>
@@ -1140,8 +1152,14 @@
               </item>
               <item>
                <widget class="QDoubleSpinBox" name="doubleSpinBox_P19PWM2">
+                <property name="suffix">
+                 <string>%</string>
+                </property>
                 <property name="decimals">
-                 <number>3</number>
+                 <number>2</number>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
                 </property>
                 <property name="singleStep">
                  <double>0.010000000000000</double>
@@ -1171,8 +1189,14 @@
               </item>
               <item>
                <widget class="QDoubleSpinBox" name="doubleSpinBox_P18PWM3">
+                <property name="suffix">
+                 <string>%</string>
+                </property>
                 <property name="decimals">
-                 <number>3</number>
+                 <number>2</number>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
                 </property>
                 <property name="singleStep">
                  <double>0.010000000000000</double>
@@ -1182,6 +1206,41 @@
              </layout>
             </item>
            </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>20</y>
+          <width>52</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item>
+          <widget class="QSlider" name="verticalSlider">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_Trust_Control">
+           <property name="text">
+            <string>Trust</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
           </widget>
          </item>
         </layout>

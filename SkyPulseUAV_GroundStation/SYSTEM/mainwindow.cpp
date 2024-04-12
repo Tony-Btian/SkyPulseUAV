@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(this, &MainWindow::sig_StopUDPServer,   UDPServer, &UDP::stopUDPServer);
 
     connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
+    connect(this, &MainWindow::sig_sendPWMControlToTCP, TCPServer, &TCP::PWM_Controler);
 
     connect(TCPServer, &TCP::sig_startSuccessful,   this, &MainWindow::onTCPStartSuccessful);
     connect(TCPServer, &TCP::sig_stopSuccessful,    this, &MainWindow::onTCPStopSuccessful);
@@ -36,8 +37,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     /* UDP Server Connection Signals */
-
-
 
     connect(UDPServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
     connect(UDPServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
@@ -185,26 +184,26 @@ void MainWindow::on_pushButton_REG_READ_ALL_GY271_clicked()
 /* PWM Controler*/
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
-    emit sig_sendMessageToTCP(12, duty_cycle);
+    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 12, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(13, duty_cycle);
+    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 13, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(19, duty_cycle);
+    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 19, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(18, duty_cycle);
+    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 18, duty_cycle);
 }
 
 

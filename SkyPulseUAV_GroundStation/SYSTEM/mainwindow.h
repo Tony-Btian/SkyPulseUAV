@@ -99,7 +99,7 @@ signals:
 
     void sig_sendRequestToFCS(const uint8_t &code);
 
-    void sig_sendMessageToTCP()
+    void sig_sendPWMControlToTCP(const int &code, const int &pin, const int &value);
 
 };
 #endif // MAINWINDOW_H

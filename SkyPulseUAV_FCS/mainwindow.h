@@ -12,6 +12,7 @@
 #include "gpiointerrupthandler.h"
 #include "esc_pwm_driver.h"
 #include "i2c_device.h"
+#include "videocapture.h"
 
 /*Middlewares Head Files*/
 #include "tcp.h"
@@ -73,6 +74,7 @@ private:
     I2C_Device *device;
     ESC_PWM_Driver *PWMDriver;
     GpioInterruptHandler *gpiointerrupt;
+    VideoCapture *videocap;
 
 protected:
     void closeEvent(QCloseEvent *event) override;
@@ -85,6 +87,9 @@ signals:
 
     // Read All Register to Ground Station.
     void sig_readAllRegisters_BMP180();
+
+    // Camera Control Signals
+    void sig_startCameraCap();
 
 };
 #endif // MAINWINDOW_H

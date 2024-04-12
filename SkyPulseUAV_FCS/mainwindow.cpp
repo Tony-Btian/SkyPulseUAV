@@ -31,12 +31,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     GY271 = new Magnetometer_GY271(0x0D, this); // GY271
     mediator = new ConcreteMediator(this);
     TCPServer = new TCP(nullptr, mediator);  // TCP Server
+    videocap = new VideoCapture();
 
 
     connect(this, &MainWindow::sig_TCPBroadCastMessage, TCPServer, &TCP::broadcastMessage);
     connect(this, &MainWindow::sig_readTemperature, BMP180, &Barometer_BMP180::readTemperature);
     connect(this, &MainWindow::sig_readAllRegisters_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
     connect(this, &MainWindow::sig_readDirection, GY271, &Magnetometer_GY271::readRawData);
+
+    connect(this, &MainWindow::sig_startCameraCap, videocap, &VideoCapture::startCamera);
 
     /* TCP Server Signals */
     connect(TCPServer, &TCP::sig_requestReadAllReg_BMP180, BMP180, &Barometer_BMP180::readAllRegisters);
@@ -87,7 +90,8 @@ void MainWindow::on_pushButton_HMC_clicked()
 {
 //    gpioSetMode(18, PI_OUTPUT);
 //    gpioHardwarePWM(18, 100, 300000);
-    emit sig_readAllRegisters_BMP180();
+//    emit sig_readAllRegisters_BMP180();
+    emit sig_startCameraCap();
 }
 
 void MainWindow::on_pushButton_Take_Off_clicked()

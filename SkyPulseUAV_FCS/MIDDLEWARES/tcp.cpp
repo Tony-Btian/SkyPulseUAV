@@ -115,7 +115,7 @@ void TCP::dataTranslator(const QByteArray &data)
         break;
     }
 
-
+void TCP::requestToReadAllReg()
 //    QDataStream stream(data);
 //    stream.setByteOrder(QDataStream::LittleEndian);
 //    int firstInt, secondInt;

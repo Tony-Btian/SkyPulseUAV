@@ -42,6 +42,7 @@ private:
     static constexpr quint16 PORT = 12345;
 
     void dataTranslator(const QByteArray &data);
+    void requestToReadAllReg(const Qstring )
 
 signals:
     void sig_sendPWM0Signal(const int &duty_cycle);

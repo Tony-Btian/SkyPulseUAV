@@ -9,14 +9,16 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent Network Sql)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent Network Sql)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent Network Sql Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent Network Sql Multimedia)
+find_package(OpenCV REQUIRED)
 
 # Try to find pigpio lib
 find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
+    ${OpenCV_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/DRIVER
     ${CMAKE_SOURCE_DIR}/MIDDLEWARES
@@ -36,6 +38,7 @@ set(PROJECT_SOURCES
     DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
     DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
     DRIVER/fligthcontrol.h DRIVER/fligthcontrol.cpp
+    DRIVER/videocapture.h DRIVER/videocapture.cpp
 
     MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
     MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
@@ -46,6 +49,7 @@ set(PROJECT_SOURCES
     SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
     SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
     SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
+    SENSOR/sensormanager.h SENSOR/sensormanager.cpp
 
     TOOLS/threadpool.h TOOLS/threadpool.cpp
     TOOLS/databasemanager.h TOOLS/databasemanager.cpp
@@ -81,6 +85,8 @@ target_link_libraries(SkyPulseUAV_FCS PRIVATE
     Qt${QT_VERSION_MAJOR}::Concurrent
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Sql
+    Qt${QT_VERSION_MAJOR}::Multimedia
+    ${OpenCV_LIBS}
     ${PIGPIO_LIBRARY})
 
 set_target_properties(SkyPulseUAV_FCS PROPERTIES

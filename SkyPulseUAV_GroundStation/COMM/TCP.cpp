@@ -3,113 +3,113 @@
 #include <QThreadPool>
 
 TCP::TCP(QObject *parent, MediatorInterface *mediator)
-    : QObject(parent), TCPSocket(new QTcpSocket(this)), mediator(mediator)
+    : QObject(parent), TCPSocket(new QTcpSocket(this)), mediator(mediator) // Initialize TCP with a parent and a mediator interface
 {
-    TCPThread = new QThread(this);
-    connect(TCPThread, &QThread::started, this, &TCP::tcpInitial);
-    connect(TCPThread, &QThread::finished, TCPThread, &QObject::deleteLater);
-    this->moveToThread(TCPThread);
-    TCPThread->start();
+    TCPThread = new QThread(this); // Create a new thread
+    connect(TCPThread, &QThread::started, this, &TCP::tcpInitial); // Connect thread start to TCP initialization
+    connect(TCPThread, &QThread::finished, TCPThread, &QObject::deleteLater); // Ensure thread is cleaned up after finishing
+    this->moveToThread(TCPThread); // Move this TCP instance to the new thread
+    TCPThread->start(); // Start the thread
 }
 
 TCP::~TCP()
 {
-    if (TCPThread->isRunning()){
-        TCPThread->wait();
-        TCPThread->quit();
+    if (TCPThread->isRunning()){ // Check if the thread is still running
+        TCPThread->wait(); // Wait for thread operations to finish
+        TCPThread->quit(); // Ask the thread to quit
     }
 }
 
-/*TCP服务初始化*/
+/* Initialize TCP services */
 void TCP::tcpInitial()
 {
-    connect(TCPSocket, &QTcpSocket::connected, this, &TCP::onConnected);
-    connect(TCPSocket, &QTcpSocket::disconnected, this, &TCP::onDisconnected);
-    connect(TCPSocket, &QTcpSocket::readyRead, this, &TCP::readMessage);
-    connect(TCPSocket, &QTcpSocket::errorOccurred, this, &TCP::onErrorOccurred);
+    connect(TCPSocket, &QTcpSocket::connected, this, &TCP::onConnected); // Setup signal for successful connection
+    connect(TCPSocket, &QTcpSocket::disconnected, this, &TCP::onDisconnected); // Setup signal for disconnection
+    connect(TCPSocket, &QTcpSocket::readyRead, this, &TCP::readMessage); // Setup signal for reading incoming data
+    connect(TCPSocket, &QTcpSocket::errorOccurred, this, &TCP::onErrorOccurred); // Setup signal for any connection errors
 }
 
-/*TCP服务连接函数*/
+/* TCP service connection function */
 void TCP::connectToServer(const QString &host, quint16 port)
 {
-    TCPSocket->connectToHost(host, port);
+    TCPSocket->connectToHost(host, port); // Initiate connection to server with specified host and port
 }
 
-/*TCP连接成功信号*/
+/* TCP successful connection signal */
 void TCP::onConnected()
 {
-    emit sig_connectionSuccessful(); // 当连接成功时发出信号
+    emit sig_connectionSuccessful(); // Emit signal indicating connection success
 }
 
-/*TCP服务断开连接函数*/
+/* TCP service disconnect function */
 void TCP::disconnectToServer()
 {
-    if(TCPSocket->state() == QTcpSocket::ConnectedState){  // 判断连接状态之后再断开连接
+    if(TCPSocket->state() == QTcpSocket::ConnectedState){ // Only attempt to disconnect if the socket is connected
         TCPSocket->disconnectFromHost();
     }
 }
 
-/*TCP断开成功信号*/
+/* TCP successful disconnection signal */
 void TCP::onDisconnected()
 {
-    emit sig_disconnectionSuccessful(); // 当断开连接成功时发出信号
+    emit sig_disconnectionSuccessful(); // Emit signal indicating successful disconnection
 }
 
-/*TCP连接错误信号*/
+/* TCP connection error signal */
 void TCP::onErrorOccurred()
 {
-    emit sig_connectionError(); // 当连接错误时发出信号
+    emit sig_connectionError(); // Emit signal indicating a connection error occurred
 }
 
-/*TCP数据发送函数*/
+/* TCP data sending function */
 void TCP::sendMessage(const QString &message)
 {
-    if(TCPSocket->state() == QTcpSocket::ConnectedState)
+    if(TCPSocket->state() == QTcpSocket::ConnectedState) // Only send message if the socket is connected
     {
-        TCPSocket->write(message.toUtf8());
+        TCPSocket->write(message.toUtf8()); // Send UTF-8 encoded data
     }
 }
 
-/*TCP数据接收函数*/
+/* TCP data receiving function */
 void TCP::readMessage()
 {
-    QByteArray data = TCPSocket->readAll();
-    qDebug() << "TCP Row Message: " << data;
-    qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
+    QByteArray data = TCPSocket->readAll(); // Read all available data from socket
+    qDebug() << "TCP Row Message: " << data; // Debug print raw data
+    qDebug() << "TCP Thread ID: " << QThread::currentThreadId(); // Debug print the ID of the current thread
 
-    DecodeTask *task = new DecodeTask(data, mediator);
-    task->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(task);
+    DecodeTask *task = new DecodeTask(data, mediator); // Create a new decode task
+    task->setAutoDelete(true); // Set task to delete itself after running
+    QThreadPool::globalInstance()->start(task); // Start the task using the global thread pool
 }
 
 void TCP::PWM_Controler(const int &code, const int &value)
 {
-    QByteArray data;
-    data.append(reinterpret_cast<const char*>(&code),sizeof(code));
-    data.append(reinterpret_cast<const char*>(&value),sizeof(value));
-    qDebug() << "Code: " << code << ", " << "Value: " << value ;
-    qDebug() << data.constData();
-    sendMessageQByte(data);
+    QByteArray data; // Prepare a QByteArray to send
+    data.append(reinterpret_cast<const char*>(&code), sizeof(code)); // Append the integer code
+    data.append(reinterpret_cast<const char*>(&value), sizeof(value)); // Append the integer value
+    qDebug() << "Code: " << code << ", " << "Value: " << value; // Debug print the code and value
+    qDebug() << data.constData(); // Debug print the constructed data
+    sendMessageQByte(data); // Send the constructed QByteArray
 }
 
-/*TCP 控制信息接收器*/
+/* TCP command receiver */
 void TCP::commendToFCS(const uint8_t &command_code)
 {
-    QByteArray message;
-    message.append(command_code);
-    sendMessage(message);
+    QByteArray message; // Prepare a QByteArray for the command
+    message.append(command_code); // Append the command code
+    sendMessage(message); // Send the command
 }
 
-/*TCP数据发送函数*/
+/* TCP data sending function */
 void TCP::sendMessageQByte(const QByteArray &message)
 {
-    if(TCPSocket->state() == QTcpSocket::ConnectedState)
+    if(TCPSocket->state() == QTcpSocket::ConnectedState) // Only send data if the socket is connected
     {
-        TCPSocket->write(message);
+        TCPSocket->write(message); // Write the QByteArray to the socket
     }
 }
 
-/*TCP数据有效性检查*/
+/* TCP data validity check */
 // QString TCP::dataCheckOut(const QByteArray &data)
 // {
 

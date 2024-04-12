@@ -10,29 +10,30 @@ class Bluetooth : public QObject
 {
     Q_OBJECT
 public:
-    explicit Bluetooth(QObject *parent = nullptr);
-    ~Bluetooth();
+    explicit Bluetooth(QObject *parent = nullptr); // Constructor with an optional QObject parent
+    ~Bluetooth(); // Destructor to clean up resources
 
-    void startDeviceDiscovery();
-    void connectToDevice(const QBluetoothDeviceInfo &deviceInfo);
-    void send(const QByteArray &data);
+    void startDeviceDiscovery(); // Initiates discovery of Bluetooth devices
+    void connectToDevice(const QBluetoothDeviceInfo &deviceInfo); // Connects to a specified Bluetooth device
+    void send(const QByteArray &data); // Sends data over a Bluetooth connection
 
 signals:
-    void deviceDiscovered(const QBluetoothDeviceInfo &deviceInfro);
-    void connected();
-    void disconnected();
-    void dataReceived(const QByteArray &data);
+    void deviceDiscovered(const QBluetoothDeviceInfo &deviceInfo); // Emitted when a new device is discovered
+    void connected(); // Emitted when a Bluetooth connection is established
+    void disconnected(); // Emitted when a Bluetooth connection is disconnected
+    void dataReceived(const QByteArray &data); // Emitted when data is received over Bluetooth
 
 private slots:
-    void onDeviceDiscovered(const QBluetoothDeviceInfo &deviceInfo);
-    void onConnected();
-    void onDisconnected();
-    void onReadyRead();
+    void onDeviceDiscovered(const QBluetoothDeviceInfo &deviceInfo); // Slot to handle newly discovered devices
+    void onConnected(); // Slot to handle Bluetooth connection establishment
+    void onDisconnected(); // Slot to handle Bluetooth disconnection
+    void onReadyRead(); // Slot to handle readiness to read data from Bluetooth socket
 
 private:
-    QBluetoothDeviceDiscoveryAgent *discoveryAgent;
-    QBluetoothSocket *socket;
+    QBluetoothDeviceDiscoveryAgent *discoveryAgent; // Manages device discovery
+    QBluetoothSocket *socket; // Manages Bluetooth connections
 
 };
 
 #endif // BLUETOOTH_H
+

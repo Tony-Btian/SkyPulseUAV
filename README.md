@@ -39,7 +39,7 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 gantt
     title Project Management Plan
     dateFormat  YYYY-MM-DD
-    section 项目A
+    section SkyPulseUAV
     Decision on Direction of Project     :done,    des1, 2024-01-10,2024-01-26
     任务2     :active,  des2, 2024-02-05, 2024-0
     任务3     :         des3, after des2, 5d

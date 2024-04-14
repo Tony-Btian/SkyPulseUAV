@@ -9,7 +9,8 @@
 
 extern std::mutex i2cmtx;
 
-class IIC {
+class IIC 
+{
 
 public:
 

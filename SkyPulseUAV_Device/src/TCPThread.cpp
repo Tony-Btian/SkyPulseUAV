@@ -14,7 +14,8 @@
 
 // }
 
-void TCPThread::run() {
+void TCPThread::run() 
+{
 
     MahonyFilterIns.setCallbackA([this](float roll, float pitch, float yaw, float rate[3]){
 
@@ -29,8 +30,10 @@ void TCPThread::run() {
     });
 
     for(;;) {
-
         
+        TCPIns.write(TCPIns.mergeData());
+
+        this_thread::sleep_for(microseconds(1000));
 
     }
 

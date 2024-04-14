@@ -6,7 +6,10 @@
 
 TCP::TCP(string host, in_port_t port) : 
     host(host),
-    port(port) {
+    port(port), 
+    s{0},
+    sret{0}
+{
 
     sockpp::initialize();
 
@@ -18,7 +21,8 @@ TCP::TCP(string host, in_port_t port) :
 
 }
 
-void TCP::connect(seconds timeout) {
+void TCP::connect(seconds timeout) 
+{
 
     if (auto res = conn.connect(host, port, timeout); !res) {
         cerr << "Error connecting to server at: '" << host << "':\n\t" << res.error_message()
@@ -26,14 +30,16 @@ void TCP::connect(seconds timeout) {
     }
 }
 
-void TCP::waitForConnection(seconds timeout) {
+void TCP::waitForConnection(seconds timeout) 
+{
 
     if (auto res = conn.read_timeout(timeout); !res) {
         cerr << "Error setting timeout on TCP stream: " << res.error_message() << endl;
     }
 }
 
-bool TCP::write(string message_sent) {
+bool TCP::write(string message_sent) 
+{
 
     auto sendStringLenght = message_sent.length();
 
@@ -49,7 +55,8 @@ bool TCP::write(string message_sent) {
     return true;
 }
 
-bool TCP::read() {
+bool TCP::read() 
+{
 
     if (sret.size() != receiveStringLength) {
 
@@ -69,7 +76,8 @@ bool TCP::read() {
     return true;
 }
 
-void TCP::readDataFromFilter(float roll, float pitch, float yaw, float rate[3]) {
+void TCP::readDataFromFilter(float roll, float pitch, float yaw, float rate[3]) 
+{
 
     this -> roll = roll;
     this -> pitch = pitch;
@@ -83,15 +91,47 @@ void TCP::readDataFromFilter(float roll, float pitch, float yaw, float rate[3]) 
     
 }
 
-void TCP::readDataFromBMP180(float altitude) {
+void TCP::readDataFromBMP180(float altitude) 
+{
 
     this -> alt = altitude;
 
 }
 
-void TCP::readDataFromMotor(float Motor[4]) {
+void TCP::readDataFromMotor(float Motor[4]) 
+{
 
 
 
+}
+
+string TCP::mergeData()
+{
+     // Flags
+    ss << "isMannedMode: " << isMannedMode << ", isInTheAir: " << isInTheAir << "\n";
+
+    // Eular angles data
+    ss << "roll: " << roll << ", pitch: " << pitch << ", yaw: " << yaw << "\n";
+
+    // Throttle data
+    ss << "throttle: " << thro << "\n";
+
+    // Gyroscope rate data
+    ss << "gyroscope rate: " << rate[0] << ", " << rate[1] << ", " << rate[2] << "\n";
+
+    // Altitude data
+    ss << "altitude: " << alt << "\n";
+
+    // Motor data
+    ss << "motor: " << Motor[0] << ", " << Motor[1] << ", " << Motor[2] << ", " << Motor[3] << "\n";
+
+    // IR distance
+    ss << "IR detected: " << IRDetected << "\n";
+
+    // Ultrasound distance
+    ss << "Ultrasound distance: " << USDistance << "\n";
+
+    return ss.str();
+    
 }
 

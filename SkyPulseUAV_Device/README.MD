@@ -1,6 +1,6 @@
 # Code of Raspberry Pi 
 
-To be noticed that this part of code is Cmake-based and has been merged into _SkyPulseUAV_FCS_ in previous folder. 
+To be noticed that this part of code is Cmake-based and has been merged into _SkyPulseUAV_FCS_ (QT-based) in previous folder. 
 
 ## Requirements:
 
@@ -20,7 +20,7 @@ To be noticed that this part of code is Cmake-based and has been merged into _Sk
     ln -s libsockpp.so.2 libsockpp.so
     ln -s libpigpio.so.1 libpigpio.so
     mkdir ../build && cd ../build
-    cmake -DCMAKE_TOOLCHAIN_FILE=../raspberrypi.cmake ..
+    cmake -DCMAKE_TOOLCHAIN_FILE=../Raspberrypi.cmake ..
     make
 ```
 

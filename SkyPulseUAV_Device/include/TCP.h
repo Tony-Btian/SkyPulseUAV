@@ -1,17 +1,21 @@
 #ifndef __TCP_H__
 #define __TCP_H__
 
+#include <sstream>
+
 // Head file of Sockpp library -> https://github.com/fpagliughi/sockpp.git
 #include "sockpp/tcp_connector.h"
 #include "sockpp/version.h"
 #include "CppThread.hpp"
 #include "MahonyFilter.h"
 #include "BMP180.h"
+#include "STM32.h"
 
 using namespace std;
 using namespace std::chrono;
 
-class TCP {
+class TCP 
+{
 
 public:
 
@@ -41,6 +45,9 @@ private:
     // TCP basic variables.
     string s, sret;
 
+    // Middle variables.
+    stringstream ss;
+
     string host;
     in_port_t port;
 
@@ -53,6 +60,7 @@ private:
     bool isInTheAir;
 
     // Get from other classes.
+
     // Eular angles data.
     float roll;
     float pitch; 
@@ -71,26 +79,23 @@ private:
     float Motor[4];
 
     // IR distance.
-    float IRDistance[3];
+    uint8_t IRDetected;
 
     // Ultrasound distance.
-    float USDistance;
-
-    // Battery status.
-    float vol;
-    float cur;
-
+    int USDistance;
 
 };
 
-class TCPThread : public CppThread {
+class TCPThread : public CppThread 
+{
 
 public:
 
-    TCPThread(MahonyFilter& MahonyFilterIns_, TCP& TCPIns_, BMP180& BMP180Ins_) : 
+    TCPThread(MahonyFilter& MahonyFilterIns_, TCP& TCPIns_, BMP180& BMP180Ins_, STM32& STM32Ins_) : 
     MahonyFilterIns(MahonyFilterIns_),
     TCPIns(TCPIns_),
-    BMP180Ins(BMP180Ins_) {};
+    BMP180Ins(BMP180Ins_),
+    STM32Ins(STM32Ins_) {};
 
 protected:
 
@@ -101,6 +106,7 @@ private:
     MahonyFilter& MahonyFilterIns;
     TCP& TCPIns;
     BMP180& BMP180Ins;
+    STM32& STM32Ins;
 
 };
 

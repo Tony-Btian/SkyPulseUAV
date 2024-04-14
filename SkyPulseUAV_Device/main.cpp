@@ -7,6 +7,7 @@
 #include "TCP.h"
 #include "BMP180.h"
 #include "STM32.h"
+#include "IRAndUS.h"
 
 int main(int argc, const char* argv[]) 
 {
@@ -40,18 +41,22 @@ int main(int argc, const char* argv[])
     TCP tcp(ipAddress, port);
     BMP180 bmp180;
     STM32 stm32;
+    IRSensor ir(nullptr);
+    USSensor us(nullptr, nullptr);
+
 
     // Create threads.
     // Data threads: MPU6050, BMP180.
     MPU6050Thread mpu6050Thread(mpu6050);
     BMP180Thread bmp180Thread(bmp180);
+    IRAndUSThread irandusThread(ir, us);
     
     // Filter thread: Mahony filter.
     MahonyFilterThread filterThread(Mahonyfilter, mpu6050);
     
     // Communication thread: TCP.
     // TCP is used to connect with ground station.
-    TCPThread tcpThread(Mahonyfilter, tcp, bmp180, stm32);
+    TCPThread tcpThread(Mahonyfilter, tcp, bmp180, stm32, ir, us);
 
     cout << "Initialize finished." << endl;
 

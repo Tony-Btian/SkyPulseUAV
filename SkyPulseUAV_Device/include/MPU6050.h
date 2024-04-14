@@ -48,7 +48,7 @@ protected:
 
     void setRangeOfGyro(bool needToExit);
 
-    friend void interruptHandler(int GPIO, int level, unsigned int tick);
+    friend void interruptCallback(int GPIO, int level, unsigned int tick);
 
 private:
 

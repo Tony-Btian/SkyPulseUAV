@@ -105,6 +105,20 @@ void TCP::readDataFromMotor(float Motor[4])
 
 }
 
+void TCP::readDataFromIR(uint8_t IRObstacleDetected) 
+{
+
+    this->IRObstacleDetected = IRObstacleDetected;
+
+}
+
+void TCP::readDataFromUS(int USDistance) 
+{
+
+    this->USDistance = USDistance;
+
+}
+
 string TCP::mergeData()
 {
      // Flags
@@ -126,7 +140,7 @@ string TCP::mergeData()
     ss << "motor: " << Motor[0] << ", " << Motor[1] << ", " << Motor[2] << ", " << Motor[3] << "\n";
 
     // IR distance
-    ss << "IR detected: " << IRDetected << "\n";
+    ss << "IR detected: " << IRObstacleDetected << "\n";
 
     // Ultrasound distance
     ss << "Ultrasound distance: " << USDistance << "\n";

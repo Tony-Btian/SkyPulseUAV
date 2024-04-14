@@ -2,10 +2,13 @@
 
 void BMP180Thread::run() {
 
+    // Varible for debugging.
     float altitude;
 
     for(;;){
 
+        // By calling getData(), callback function in other thread will be called  
+        // to get altitude data.
         altitude = BMP180Ins.getData();
 
         cout << "Altitude:" << altitude << endl;

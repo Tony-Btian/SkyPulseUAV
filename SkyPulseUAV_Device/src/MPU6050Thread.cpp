@@ -18,8 +18,8 @@ void MPU6050Thread::run() {
         // Do Mahonyfilter algorithm and get three Euler's angles
         if(MPU6050Ins.checkNewData()) {
 
-            // When this method is called, callback to Mahony filter thread will be triggered.
-            // Data of IMU will be transmitted to filter.
+            // When this method is called, callback to Mahony filter thread will be triggered,
+            // and data from IMU will be transmitted to filter class.
             MPU6050Ins.getData();
 
         }

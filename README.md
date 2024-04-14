@@ -78,6 +78,7 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 # Guide
 ### System Deployment
+Click the link below to get detailed information about the source code.
 #### 
 [Code Document](https://shilinzhang1.github.io/)
 

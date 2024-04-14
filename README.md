@@ -116,7 +116,7 @@ Click the link below to get detailed information about the source code.
 - 
 ## 2. SkyPulseUAV Motherboard
 
-![SkyPulseUAV Motherboard 3D](SkyPulseUAV/Documents/Images/Motherboard_3D.png)
+![SkyPulseUAV Motherboard 3D](Documents/Images/Motherboard_3D.png)
 
 The SkyPulseUAV Motherboard is the cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
 

@@ -14,7 +14,16 @@ class ESC_PWM_Driver : public QObject, public Observer
     Q_OBJECT
 
 public:
+    /**
+ * @file   MyClass.h
+ * @brief  这个文件包含了 MyClass 类的声明
+ */
     ESC_PWM_Driver(QObject *parent = nullptr);
+
+    /**
+ * @file   MyClass.h
+ * @brief  这个文件包含了 MyClass 类的声明
+ */
     void onUpdate(bool isInitialised) override;
 
 public slots:

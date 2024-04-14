@@ -40,7 +40,7 @@ gantt
     title Project Management Plan
     dateFormat  YYYY-MM-DD
     section SkyPulseUAV
-    Decision on Direction of Project     :done,    des1, 2024-01-10,2024-01-26
+    Decision on Direction of Project     :done,  #0000FF,  des1, 2024-01-10,2024-01-26
     任务2     :active,  des2, 2024-02-05, 2024-0
     任务3     :         des3, after des2, 5d
 ```

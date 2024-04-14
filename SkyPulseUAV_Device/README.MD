@@ -1,6 +1,6 @@
 # Code of Raspberry Pi 
 
-To be noticed that this part of code is 
+To be noticed that this part of code is Cmake-based and has been merged into _SkyPulseUAV_FCS_ in previous folder. 
 
 ## Requirements:
 
@@ -10,9 +10,9 @@ To be noticed that this part of code is
 
 ## Build with the following steps:
 
-If you want to compile from your PC (cross compiling):
+### If you want to build from your PC (cross compiling):
 
-- Make sure you have installed correct _compile toolchain_ on your PC, and edit the path in _raspberrypi.cmake_.
+- Make sure you have installed correct _compile toolchain_ on your PC, and **edit the path in _Raspberrypi.cmake_**.
 
 - Create link with necessary libraries and compile in newly created build folder (for better isolation).
 ```
@@ -23,3 +23,11 @@ If you want to compile from your PC (cross compiling):
     cmake -DCMAKE_TOOLCHAIN_FILE=../raspberrypi.cmake ..
     make
 ```
+
+### If you want to build from Raspberry Pi:
+
+- Make sure you have already installed the following libraries:
+    - Pigpio address: https://abyz.me.uk/rpi/pigpio
+    - Sockpp address: https://github.com/fpagliughi/sockpp
+
+- Check if your Cmake version meets the minimum requirement.

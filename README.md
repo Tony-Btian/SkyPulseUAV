@@ -35,6 +35,7 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 
 
 ### Visual Project Management Plan
+If you can not see the text inside, please switch your brower to light mode.
 ```mermaid
 gantt
     title Project Management Plan

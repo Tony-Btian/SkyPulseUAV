@@ -95,7 +95,7 @@ The list of used sensors is shown in Table 2.1.
 |  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
-Datasheet link:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
+Datasheet:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
 
 The subsequent section provides a comprehensive description of the sensor.
 - BMP180 Barometer  

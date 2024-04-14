@@ -34,6 +34,18 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
 
+### Visual Project Management Plan
+```mermaid
+gantt
+    title Project Management Plan
+    dateFormat  YYYY-MM-DD
+    section 项目A
+    Decision on Direction of Project     :done,    des1, 2024-01-10,2024-01-26
+    任务2     :active,  des2, 2024-02-05, 2024-0
+    任务3     :         des3, after des2, 5d
+```
+
+
 ### Be Part of the Change
 We call on the global community to join us in advancing UAV technology for critical missions. Your expertise and insights are invaluable in evolving SkyPulseUAV to meet the challenges of today and tomorrow.
 

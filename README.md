@@ -21,7 +21,7 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 | ---- | ---- |
 | Binhan Tian |  |
 | Jianliang Wu | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors and deploying PID and Mahonyfilter algorithm. |
-| Jiaxing Wang | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation. |
+| Jiaxing Wang |   Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
 | Zhiyan Tong |  |
 | Shilin Zhang |  |
 

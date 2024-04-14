@@ -61,8 +61,8 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 # Project Development Planning
 ### Global
-- [x] Build up the Github warehouse & README
-- [x] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [x] Build up the GitHub warehouse & README
+- [x] Complete the basic environment development for the project by install the Raspbian OS for Raspberry Pi
 - [x] Design the Hardware and Software
 - [x] Buy electrical components for the project
 
@@ -72,20 +72,60 @@ Let's transform the landscape of emergency response and environmental analysis t
 ### Jianliang Wu
 - [x] Write the C++ code on Raspberry Pi
 - [x] Debugging each sensor to make them work properly
-- [x] Depoly Mahonyfilter algorithm to fuse data from gyroscope and accelerometer
+- [x] Deploy Mahony filter algorithm to fuse data from gyroscope and accelerometer
 - [x] Design the control algorithm and tune the PID parameters
 - [x] Create easy-to-use cross compile environment for users
 
-# Guide
-### System Deployment
+# General Guide
+## 1. System Deployment
 Click the link below to get detailed information about the source code.
-#### 
+### 1.1. Hardware and Software Clarification
+- Raspberry Pi 4B (8GB) with Raspberry OS 64 bit
+- Linux Distribution: Ubuntu Desktop 22.04.03 LTS (64Bit)
+- Kernel Version: 
+- G++: 
+- GCC: 
+
 [Code Document](https://shilinzhang1.github.io/)
+### 1.2. Environment Setup
+
+### 1.3. Connect Raspberry Pi with SSH From Ubuntu
+
+## 2. Sensor Module Preparation
+
+| Sensor Name | Unit | Describtion |
+| ----------- | ---- | ----------- |
+| MPU6050:    |      |             |
+| BMP180:     |      |             |
+| GY271:      |      |             |
+| RF          |      |             |
+|             |      |             |
+
+### 3. SkyPulseUAV Source Code Deployment
+
+
+
+#### 3.1. Get the Source Code of SkyPulseUAV FSC
+
+
+# Hardware Development Guidance
+
+## 1. SkyPulseUAV Hardware Components
+
+- Drone Fuselage
+- 
+## 2. SkyPulseUAV Motherboard
+
+![[SkyPulseUAV Motherboard 3D.png]]
+
+The SkyPulseUAV Motherboard is the cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
+
+Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
 
 ## Sensors & Actuators
 ### Sensors
-The list of used sensors is shown in Table 2.1.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 2.1 Sensors Bill of Materials (BOM)
+
+#### The list of used sensors is shown in Table 2.1.  Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |:----:|:--------------:|:-----------:|:-------------------------------------------:|:--------:|:-----------------:|:-------------------:|
 |  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|

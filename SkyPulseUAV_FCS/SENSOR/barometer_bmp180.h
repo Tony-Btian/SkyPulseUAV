@@ -5,6 +5,7 @@
 #include <QThread>  // Includes the QThread class for managing threads in Qt which allows for operations like thread sleep (used in implementation).
 #include "i2c_device.h"  // Includes the header file for the I2C_Device class, which handles I2C communication specifically designed for this application.
 
+
 /**
  * @class Barometer_BMP180
  * @brief The Barometer_BMP180 class interfaces with the BMP180 sensor to provide temperature and pressure readings.

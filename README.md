@@ -42,8 +42,10 @@ gantt
     section SkyPulseUAV
 	todayMarker off
     Decision on Direction of Project     :done,   des1, 2024-01-10,2024-01-26
-    任务2     :active,    des2, 2024-02-05, 2024-0
-    任务3     :active,    des3, after des2, 5d
+    Configuration of MPU6050 sensor     :done,    des2, 2024-02-05, 2024-02-12
+    Deployment of MahonyFilter algorithm    :done,    des3, after des2, 2024-03-01
+    Code of control class  :done, des4, after des3, 2024-03-20
+
 ```
 
 

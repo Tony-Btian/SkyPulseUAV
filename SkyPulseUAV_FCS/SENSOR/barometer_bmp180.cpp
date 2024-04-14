@@ -68,6 +68,7 @@ void Barometer_BMP180::readTemperature()
     qDebug() << "BMP180 Temperature: " << temperature;  // Log the temperature
 }
 
+
 /**
  * @brief Reads all calibration data from the sensor's registers.
  * @return true If all calibration data is read successfully.

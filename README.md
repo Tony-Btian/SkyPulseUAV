@@ -20,7 +20,7 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 | Name | Role |
 | ---- | ---- |
 | Binhan Tian |  |
-| Jianliang Wu | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors and deploying PID and Mahonyfilter algorithm |
+| Jianliang Wu | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors and deploying PID and Mahonyfilter algorithm. |
 | Jiaxing Wang |  |
 | Zhiyan Tong |  |
 | Shilin Zhang |  |
@@ -45,16 +45,20 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 # Project Development Planning
 ### Global
-- [ ] Build up the Github warehouse & README
-- [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
-- [ ] Design the Hardware and Software
-- [ ] Buy electrical components for the project
+- [x] Build up the Github warehouse & README
+- [x] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [x] Design the Hardware and Software
+- [x] Buy electrical components for the project
 
 ### Binhan Tian
 - [ ] 
 
 ### Jianliang Wu
-- [ ]
+- [x] Write the C++ code on Raspberry Pi
+- [x] Debugging each sensor to make them work properly
+- [x] Depoly Mahonyfilter algorithm to fuse data from gyroscope and accelerometer
+- [x] Design the control algorithm and tune the PID parameters
+- [x] Create easy-to-use cross compile environment for users
 
 # Guide
 ### System Deployment
@@ -132,6 +136,12 @@ The SkyPulseUAV protocol incorporates error handling protocols to address issues
 ### Conclusion
 The communication protocol is a cornerstone of the SkyPulseUAV's operational integrity, facilitating a secure and reliable interface for UAV control and telemetry feedback. This protocol is instrumental in maintaining the UAV's performance and safety standards in various flight conditions.
 
+# Contact
+If you want to talk about technical issues related to this project, please contact one of us:
+
+Jianliang Wu: moxiasgabi@gmail.com
+
+Binhan Tian: 
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian

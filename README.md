@@ -107,7 +107,7 @@ gantt
 Click the link below to get detailed information about the source code.
 [Doxygen Code Document](https://shilinzhang1.github.io/)
 
-# General Guide
+# General Guide[](#general-guide)
 
 ### System Deployment on Raspberry Pi
 

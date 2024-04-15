@@ -67,12 +67,6 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [x] Create easy-to-use cross-compile environment for users
 - [x] STM32 Development
 
-#### Zhiyan Tong
-- [x] Development and implementation of UAV communication protocols
-- [x] C++ coding for SkyPulse GroundStation operations
-- [x] Integrated SkyPulse_FCS and Device functions into a user-friendly UAV control interface
-- [x] Management of social media platforms
-- [x] Authoring and updating comprehensive README documentation
 
 #### Jiaxing Wang
 

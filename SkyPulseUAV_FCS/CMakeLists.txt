@@ -19,6 +19,7 @@ find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
     ${OpenCV_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/ALGORITHM
     ${CMAKE_SOURCE_DIR}/COMM
     ${CMAKE_SOURCE_DIR}/DRIVER
     ${CMAKE_SOURCE_DIR}/SENSOR
@@ -28,6 +29,8 @@ include_directories(
 
 set(PROJECT_SOURCES
     main.cpp
+
+    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
 
     COMM/tcp.h COMM/tcp.cpp
 

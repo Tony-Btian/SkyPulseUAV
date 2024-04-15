@@ -193,26 +193,21 @@ This directory is essential for operators and developers who need to control and
 | GY271       |  1  |  Magnetometer sensor for detecting magnetic fields and determining orientation |
 | KY-032      |  4  |  Obstacle avoidance sensor module |
 | SRF05       |  1  |  Ultrasonic Sensor used for distance measurement |
-> [Click me to the detail of Hardware Module]()
+
 
 ### Sensors Description
 The subsequent section provides a comprehensive description of the sensor.
-- BMP180 Barometer  
-  This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
-- MPU6050 IMU Module  
-  An integrated module with a 3-axis gyroscope and a 3-axis accelerometer, this device can detect the UAV's orientation and acceleration in three-dimensional space. It is critical for the UAV's attitude control and motion tracking.
-- Gyroscope and Accelerometer Model GY-521 (MPU6050)  
-  Angular velocity (gyroscope), with full-scale range options of ±250, ±500, ±1000, and ±2000 degrees per second.  
-  Acceleration (accelerometer), with full-scale range options of ±2g, ±4g, ±8g, and ±16g.  
-  Acceleration data can be read from the ACCEL_XOUT_H/L, ACCEL_YOUT_H/L, and ACCEL_ZOUT_H/L registers.  
-  Angular velocity data can be read from the GYRO_XOUT_H/L, GYRO_YOUT_H/L, and GYRO_ZOUT_H/L registers.  
-  GY-271 Compass: A three-axis magnetic field sensor based on the QMC5883L chip, used to measure the intensity of the Earth's magnetic field. It serves as the compass functionality for the UAV, aiding in determining its heading.  
-- Infrared Sensor  
-  Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
-- Infrared Distance Sensor Model KY-032  
-  Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
-- Ultrasonic Distance Detection Module HY-SRF05  
-  Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
+- BMP180 Barometer : This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
+- MPU6050 IMU Module : An integrated module with a 3-axis gyroscope and a 3-axis accelerometer, this device can detect the UAV's orientation and acceleration in three-dimensional space. It is critical for the UAV's attitude control and motion tracking.
+- Gyroscope and Accelerometer Model GY-521 (MPU6050) : 
+  - Angular velocity (gyroscope), with full-scale range options of ±250, ±500, ±1000, and ±2000 degrees per second.  
+  - Acceleration (accelerometer), with full-scale range options of ±2g, ±4g, ±8g, and ±16g.  
+  - Acceleration data can be read from the ACCEL_XOUT_H/L, ACCEL_YOUT_H/L, and ACCEL_ZOUT_H/L registers.  
+  - Angular velocity data can be read from the GYRO_XOUT_H/L, GYRO_YOUT_H/L, and GYRO_ZOUT_H/L registers.  
+- GY-271 Compass: A three-axis magnetic field sensor based on the QMC5883L chip, used to measure the intensity of the Earth's magnetic field. It serves as the compass functionality for the UAV, aiding in determining its heading.  
+- Infrared Sensor : Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
+- Infrared Distance Sensor Model KY-032 : Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
+- Ultrasonic Distance Detection Module HY-SRF05 : Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
 
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
 
@@ -226,16 +221,19 @@ The construction of UAVs involves the meticulous arrangement of sensors to fulfi
 |  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
-> [Click me to the Download the Datasheet](Documents/Module Datasheet)
+
+>[Click me to the Download the Datasheet](./Documents/ModuleDatasheet/)
+
 
 ## SkyPulseUAV Motherboard
 
+<div align="center">
 <img src="Documents/Images/Motherboard_3D.png" width="500">
+</div>
 
 The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
 
 Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
-
 
 
 ## SkyPulseUAV Communication Protocol Overview

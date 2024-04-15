@@ -216,7 +216,7 @@ void MPU6050 :: calibrateData() {
 	}
 }
 
-void interruptHandler(int GPIO, int level, unsigned int tick) {
+void interruptCallback(int GPIO, int level, unsigned int tick) {
 
 	// std::cout << "Int trigger!" << std::endl;
 	
@@ -270,7 +270,7 @@ void initializeMPUISR() {
     
     gpioSetMode(INT_PIN, PI_INPUT);
 
-	if (gpioSetISRFunc(INT_PIN, RISING_EDGE, 0, interruptHandler) != 0) {
+	if (gpioSetISRFunc(INT_PIN, RISING_EDGE, 0, interruptCallback) != 0) {
 		std::cout << "mpu6050 int failed." << std::endl;
 		return;
 	}

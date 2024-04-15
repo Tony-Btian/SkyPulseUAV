@@ -6,11 +6,17 @@
 #include "MahonyFilter.h"
 #include "TCP.h"
 #include "BMP180.h"
+#include "STM32.h"
+#include "IRAndUS.h"
 
-int main(int argc, const char* argv[]) {
+int main(int argc, const char* argv[]) 
+{
 
     string ipAddress;
     in_port_t port;
+
+    // Toggle comments below if you want to define TCP address and port every time
+    // the program launches. 
 
     // if(argc != 3) {
 
@@ -34,17 +40,23 @@ int main(int argc, const char* argv[]) {
     MPU6050 mpu6050(200, 2000);
     TCP tcp(ipAddress, port);
     BMP180 bmp180;
+    STM32 stm32;
+    IRSensor ir(nullptr);
+    USSensor us(nullptr, nullptr);
+
 
     // Create threads.
     // Data threads: MPU6050, BMP180.
     MPU6050Thread mpu6050Thread(mpu6050);
     BMP180Thread bmp180Thread(bmp180);
+    IRAndUSThread irandusThread(ir, us);
     
     // Filter thread: Mahony filter.
     MahonyFilterThread filterThread(Mahonyfilter, mpu6050);
     
     // Communication thread: TCP.
-    TCPThread tcpThread(Mahonyfilter, tcp, bmp180);
+    // TCP is used to connect with ground station.
+    TCPThread tcpThread(Mahonyfilter, tcp, bmp180, stm32, ir, us);
 
     cout << "Initialize finished." << endl;
 

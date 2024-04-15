@@ -4,9 +4,10 @@
 #include "STM32.h"
 
 STM32::STM32() : 
-IRDistance{0.0f, 0.0f, 0.0f},
-USDistance(0.0f),
-handle(0) {
+IRDetected{0},
+USDistance(0),
+handle(0) 
+{
     
     // Set SPI channel to 0 and baud rate to 1M.
     // Open SPI.
@@ -15,34 +16,46 @@ handle(0) {
 
 }
 
-STM32::~STM32() {
+STM32::~STM32() 
+{
 
-    if(spiClose(handle)) cerr << "Can't close SPi interface!" << endl;
+    if(spiClose(handle)) cerr << "Can't close SPI interface!" << endl;
 
 }
 
-void STM32::getData() {
+void STM32::getData() 
+{
 
-    char buff[8] = {0};
+    char buff[4] = {0};
 
     if(spiRead(handle, buff, DATA_SIZE) == DATA_SIZE) 
     cerr << "Can't read data from STM32!" << endl;
 
-    IRDistance[0] = buff[0] << 8 | buff[1];
-    IRDistance[1] = buff[2] << 8 | buff[3];
-    IRDistance[2] = buff[4] << 8 | buff[5];
-    USDistance = buff[6] << 8 | buff[7];
+    // Dispatch the first byte.
+    
+    // The second byte is IR detection.
+    //      00000001 -- IR 1 sensor detects obstacles.
+    //      00000010 -- IR 2 sensor detects obstacles.
+    //      00000100 -- IR 3 sensor detects obstacles.
+    //      00001000 -- IR 4 sensor detects obstacles.
+    // Of course mixture of them can be derived by yourself.
+    IRDetected = buff[1];
 
+    // Distance from ultrasensor to the nearest obstacle.
+    USDistance = buff[2] << 8 | buff[3];
+
+    // Transmit data to other thread by callback function.
     if(callback_) {
 
-        callback_(IRDistance, USDistance);
+        callback_(IRDetected, USDistance);
 
     }
 
 } 
 
 // Set callback function.
-void STM32::setCallback(CallbackFunction callback) {
+void STM32::setCallback(CallbackFunction callback) 
+{
 
     callback_ = callback;
 

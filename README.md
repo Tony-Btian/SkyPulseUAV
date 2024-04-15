@@ -268,8 +268,11 @@ The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board t
 
 ### Unit Test
 Unit test code has already been in _test_ folder, and you can add code in test.cppp to do testing.
-
-do 
+To do it, link libboost_unit_test_framework.so with libboost_unit_test_framework.so.1.74.0:
+```
+ln -s libboost_unit_test_framework.so.1.74.0 libboost_unit_test_framework.so
+```
+then, do 
 ```
 make test
 ```

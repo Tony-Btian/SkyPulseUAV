@@ -45,11 +45,17 @@ gantt
     section SkyPulseUAV
 	todayMarker off
 	
-    Decision on Direction of Project     :done,   des1, 2024-01-10,2024-01-26
-    Configuration of MPU6050 sensor     :done,    des2, 2024-02-05, 2024-02-12
-    Deployment of MahonyFilter algorithm    :done,    des3, after des2, 2024-03-01
-    Code of control class  :done, des4, after des3, 2024-03-20
-
+    Project Direction Decision     :done,   des1, 2024-01-14,2024-01-20
+    MPU6050 Sensor Setup     :done,    des2, 2024-01-20, 2024-01-27
+    Mahony Filter Implementation    :done,    des3, after des2, 2024-02-10
+    Communication Protocol Development  :done, des4, after des3, 2024-02-17
+    Basic Flight Control Logic  :done, des5, after des4, 2024-02-24
+    Advanced Flight Control Logic  :done, des6, after des5, 2024-03-10
+    Sensor Data Fusion  :done, des6, after des4, 2024-03-12
+    System Integration Testing  :done, des7, after des6, 2024-03-19
+    Flight Control Algorithm Tuning  :done, des8, after des7, 2024-03-25
+    Project Documentation  :done, des9, after des8, 2024-04-02
+    
 ```
 
 

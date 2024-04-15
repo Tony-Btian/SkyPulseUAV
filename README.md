@@ -106,15 +106,62 @@ gantt
 
 # General Guide
 
-### System Deployment on Raspberry Pi
 
-#### Hardware and Software Clarification
+### 1. Source Code Directory Descriptions
+
+- Hardware
+- SkyPulse_Device
+- SKyPulse_FCS
+- SkyPulse_GroundStation
+
+#### 1.1. Hardware
+>Developer: Binhan Tian & Shilin Zhang
+
+Motherboard's hardware design files are stored in the directory. 
+- SkyPulseUAV Motherboard Schematic
+- SkyPulseUAV Motherboard PCB
+- Motherboard BOM List
+- Hardware Design Guide
+
+#### 1.1. SkyPulse_FCS
+
+The SkyPulse_FCS directory contains code customized specifically for the Qt environment. The code base includes the user interface and back-end logic. The focus of this folder is to provide a front-end control system that compiles and runs on a Raspberry Pi, utilizing Qt's graphical and system management capabilities to provide a powerful user experience and system control.
+
+To compile and run the software in this directory, do the following
+- Ensure that Qt is installed on the Raspberry Pi or development machine.
+- Use Qt Creator to open the project file and compile the code.
+- Deploy the application to the Raspberry Pi for testing and production.
+
+#### 1.2. SkyPulse_Device
+
+The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
+
+The steps to compile and run software from this directory include
+- Open the project in Visual Studio.
+- Compile the code to ensure there are no errors.
+- Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
+
+#### 1.3. SkyPulse_GroundStation
+
+The SkyPulse GroundStation directory contains the ground control station software developed for Ubuntu systems. This application acts as a control terminal that integrates functionalities from both the SkyPulse_FCS and SkyPulse_Device programs, providing a comprehensive interface for managing and operating unmanned aerial vehicles (UAVs).
+- Control Interface: Offers a user-friendly graphical interface on Ubuntu for interacting with UAVs.
+- Communication: Utilizes both TCP and UDP protocols to ensure reliable and real-time communication with the UAVs.
+- Integration: Seamlessly combines commands and controls from the FCS and device software, offering a unified operation console for all flight and hardware management tasks.
+
+To get the SkyPulse GroundStation up and running on an Ubuntu system:
+- Ensure all dependencies are installed. This may include libraries and tools specific to network communication and graphical user interface development.
+- Compile the source code using a suitable C++ compiler or an integrated development environment (IDE) that supports C++ projects.
+- Execute the compiled application. Ensure the network settings are configured to match the communication parameters of the UAVs.
+This directory is essential for operators and developers who need to control and monitor UAVs directly from a ground-based station, providing all necessary tools and interfaces for effective mission management.
+
+System Deployment on Ubuntu
+#### 1.1. Hardware and Software Clarification
 - Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
 - Linux Distribution: Ubuntu Desktop 22.04.04 LTS
 - G++ Version: g++ (Debian 12.2.0-14) 12.2.0
 - GCC Version: gcc (Debian 12.2.0-14) 12.2.0
 
-#### Environment Setup
+#### 1.2. Environment Setup
 1. [Raspberry Pi Imager](https://www.raspberrypi.com/software/) : Install Raspberry Pi OS using Raspberry Pi Imager
 2. Use Raspberry Pi Image to burn the image to an SD card
 <img src="https://assets.raspberrypi.com/static/4d26bd8bf3fa72e6c0c424f9aa7c32ea/d1b7c/imager.webp" width="400">
@@ -129,7 +176,7 @@ sudo apt-get upgrade
 sudo apt-get install gcc g++ git
 ```
 
-### System Deployment on Ubuntu
+### 2. System Deployment on Ubuntu
 1. Download the QT software from the [official website](https://qt.io/download).
 2. Install QT by running
 ```
@@ -147,41 +194,19 @@ sudo apt install qtmultimedia5-dev qtwebengine5-dev
 ```
 Cross-compile the Raspberry Pi using QT according to the following [Tutorial](https://wiki.qt.io/Cross-Compile_Qt_6_for_Raspberry_Pi).
 
-### Source Code Directory Descriptions
-#### SkyPulse_FCS
-The SkyPulse_FCS directory contains code customized specifically for the Qt environment. The code base includes the user interface and back-end logic. The focus of this folder is to provide a front-end control system that compiles and runs on a Raspberry Pi, utilizing Qt's graphical and system management capabilities to provide a powerful user experience and system control.
+### 3. Source Code Directory Descriptions
 
-To compile and run the software in this directory, do the following
-- Ensure that Qt is installed on the Raspberry Pi or development machine.
-- Use Qt Creator to open the project file and compile the code.
-- Deploy the application to the Raspberry Pi for testing and production.
-
-#### SkyPulse_Device
-The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
-
-The steps to compile and run software from this directory include
-- Open the project in Visual Studio.
-- Compile the code to ensure there are no errors.
-- Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
-
-#### SkyPulse_GroundStation
-The SkyPulse GroundStation directory contains the ground control station software developed for Ubuntu systems. This application acts as a control terminal that integrates functionalities from both the SkyPulse_FCS and SkyPulse_Device programs, providing a comprehensive interface for managing and operating unmanned aerial vehicles (UAVs).
-- Control Interface: Offers a user-friendly graphical interface on Ubuntu for interacting with UAVs.
-- Communication: Utilizes both TCP and UDP protocols to ensure reliable and real-time communication with the UAVs.
-- Integration: Seamlessly combines commands and controls from the FCS and device software, offering a unified operation console for all flight and hardware management tasks.
-
-To get the SkyPulse GroundStation up and running on an Ubuntu system:
-- Ensure all dependencies are installed. This may include libraries and tools specific to network communication and graphical user interface development.
-- Compile the source code using a suitable C++ compiler or an integrated development environment (IDE) that supports C++ projects.
-- Execute the compiled application. Ensure the network settings are configured to match the communication parameters of the UAVs.
-This directory is essential for operators and developers who need to control and monitor UAVs directly from a ground-based station, providing all necessary tools and interfaces for effective mission management.
 
 # Hardware Development Guidance
 
 ### Hardware Components
 - Drone Fuselage
 - Brushless Motor
-
+- ESC
+- Motherboard
+- Battery
+- Propeller
+#### ESC
 ## Sensors & Actuators
 
 #### The list of used sensors is shown in Table 2.1.  Materials (BOM)

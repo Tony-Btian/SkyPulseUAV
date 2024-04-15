@@ -17,68 +17,87 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 
 ### Project Contributors
 
-| Name | Role |
-| ---- | ---- |
-| Binhan Tian |  |
-| Jianliang Wu | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors and deploying PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |   Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
-| Zhiyan Tong |  |
-| Shilin Zhang |  |
+| Name | ID| Role |
+| ---- | ---- | ---- |
+| Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
+| Jianliang Wu |         | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying PID and Mahonyfilter algorithm. |
+| Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
+| Zhiyan Tong  |  	 | 			|
+| Shilin Zhang | 	 | Hardware Engineer |
 
 
 ### Project Highlights
 - **Versatile Application Spectrum**: Optimized for high-stakes missions like fire detection, earthquake relief efforts, and comprehensive terrain surveys.
 - **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.
-- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and manoeuvrability, even in adverse conditions.
+- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and maneuverability, even in adverse conditions.
 - **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
 - **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
-
-### Visual Project Management Plan
-If you can not see the text inside, please switch your brower to light mode.
-```mermaid
-gantt
-    title Project Management Plan
-    dateFormat  YYYY-MM-DD
-    section SkyPulseUAV
-	todayMarker off
-    Decision on Direction of Project     :done,   des1, 2024-01-10,2024-01-26
-    Configuration of MPU6050 sensor     :done,    des2, 2024-02-05, 2024-02-12
-    Deployment of MahonyFilter algorithm    :done,    des3, after des2, 2024-03-01
-    Code of control class  :done, des4, after des3, 2024-03-20
-
-```
-
-
-### Be Part of the Change
-We call on the global community to join us in advancing UAV technology for critical missions. Your expertise and insights are invaluable in evolving SkyPulseUAV to meet the challenges of today and tomorrow.
-
-
 ### Connect and Collaborate
-Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community.
+Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community. Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
 
-Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
 
 # Project Development Planning
-### Global
+#### Global
 - [x] Build up the GitHub warehouse & README
-- [x] Complete the basic environment development for the project by install the Raspbian OS for Raspberry Pi
+- [x] Complete the basic environment development for the project by installing the Raspbian OS for Raspberry Pi
 - [x] Design the Hardware and Software
 - [x] Buy electrical components for the project
 
-### Binhan Tian
-- [ ] 
+#### Binhan Tian
+- [x] Pitching Day Presentation
+- [x] Motherboard Schematic Design: Power, STM32 Mini System
+- [x] Motherboard PCB Layout
+- [x] FCS I2C Driver Class Coding
+- [x] SkyPulse GroundStation C++ Code Development & UI Design
+- [x] Module Driver Development
 
-### Jianliang Wu
+#### Jianliang Wu
 - [x] Write the C++ code on Raspberry Pi
 - [x] Debugging each sensor to make them work properly
 - [x] Deploy Mahony filter algorithm to fuse data from gyroscope and accelerometer
 - [x] Design the control algorithm and tune the PID parameters
-- [x] Create easy-to-use cross compile environment for users
+- [x] Create easy-to-use cross-compile environment for users
+- [x] STM32 Code Development
+
+#### Jiaxing Wang
+
+
+#### Shilin Zhang
+- [x] Buy Needed Hardware Module: BMP180, MPU6050
+- [x] Motherboard Schemic Design: Port, RF Module
+- [x] Wiki Documentation
+- [x] Update the README Document (Synchronized with the Development Process)
+- [x] Synchronously update the contents of README_ZH.md & README.md (once a week)
+
+#### Zhiyan Tong
+
+
+
+### Visual Project Management Plan
+If you can not see the text inside, please switch your browser to light mode.
+```mermaid
+gantt
+    title SkyPulse Project Management Gantt Chart
+    dateFormat  YYYY-MM-DD
+    section SkyPulseUAV
+    todayMarker off
+    Decision on Direction of Project       :done, des1, 2024-01-10, 2024-01-26
+    Motherboard Schematic Diagram Designing:done, des2, 2024-02-10, 2024-03-10
+    Configuration of MPU6050 sensor        :done, des2, 2024-02-05, 2024-02-12
+    Deployment of MahonyFilter algorithm   :done, des3, after des2, 2024-03-01
+    Code of control class  		   :done, des4, after des3, 2024-03-20
+
+```
+
+Click the link below to get detailed information about the source code.
+[Doxygen Code Document](https://shilinzhang1.github.io/)
+
 
 # General Guide
 ## 1. System Deployment
-Click the link below to get detailed information about the source code.
+
+
 ### 1.1. Hardware and Software Clarification
 - Raspberry Pi 4B (8GB) with Raspberry OS 64 bit
 - Linux Distribution: Ubuntu Desktop 22.04.03 LTS (64Bit)
@@ -86,20 +105,20 @@ Click the link below to get detailed information about the source code.
 - G++: 
 - GCC: 
 
-[Code Document](https://shilinzhang1.github.io/)
+
 ### 1.2. Environment Setup
 
 ### 1.3. Connect Raspberry Pi with SSH From Ubuntu
 
 ## 2. Sensor Module Preparation
 
-| Sensor Name | Unit | Describtion |
-| ----------- | ---- | ----------- |
-| MPU6050:    |      |             |
-| BMP180:     |      |             |
-| GY271:      |      |             |
-| RF          |      |             |
-|             |      |             |
+| Sensor Name | Unit| Describtion |
+| ----------- | ----| ----------- |
+| MPU6050     |  1  |             |
+| BMP180      |  1  |             |
+| GY271       |  1  |             |
+| RF          |  4  |             |
+| SRF05       |  1  |             |
 
 ### 3. SkyPulseUAV Source Code Deployment
 

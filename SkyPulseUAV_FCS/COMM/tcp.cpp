@@ -1,21 +1,21 @@
 #include "tcp.h"
-#include "decodetask.h"
-#include <QHostAddress>
-#include <QThreadPool>
-#include <QDataStream>
 
-TCP::TCP(QObject *parent) : QTcpServer(parent)
+TCP::TCP(QObject *parent)
+    : QTcpServer(parent)
 {
     TCPThread = new QThread(this);
     connect(TCPThread, &QThread::started, this, &TCP::startServer);
     connect(TCPThread, &QThread::finished, TCPThread, &QObject::deleteLater);
     this->moveToThread(TCPThread);
     TCPThread->start();
+
+//    motor_pwm = new MotorPWM();
 }
 
 TCP::~TCP()
 {
     if (TCPThread->isRunning()){
+//        delete motor_pwm;
         TCPThread->wait();
         TCPThread->quit();
     }
@@ -23,12 +23,13 @@ TCP::~TCP()
 
 void TCP::startServer()
 {
+    qDebug() << "TCP Initialized Thread:" << QThread::currentThreadId();
     if(this->listen(QHostAddress::Any, PORT)){
-//        qDebug() << "TCP Server started on port" << PORT << "!";
+        qDebug() << "TCP Server started on port:" << PORT;
     }
     else
     {
-        qDebug() << "TCP Server failed to start: " << this->errorString();
+        qDebug() << "TCP Server failed to start:" << this->errorString();
     }
 }
 
@@ -50,7 +51,7 @@ void TCP::onClientDisconnected()
     if(client){
         clients.removeAll(client);
         client->deleteLater();
-        qDebug() << "Client disconnected";
+        qWarning("Client disconnected");
     }
 }
 
@@ -59,14 +60,13 @@ void TCP::onReadyRead()
     // Any function here
     QTcpSocket *clients = qobject_cast<QTcpSocket*>(sender());
     if(!clients) return;
-
     QByteArray data = clients->readAll();
-//    qDebug() << "Received data from" << clients->peerAddress().toString() << ": " << data;
-    DecodeTask *task = new DecodeTask(data);
-    task->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(task);
 
-    dataTranslator(data);
+//    DecodeTask *task = new DecodeTask(data, mediator);
+//    task->setAutoDelete(true);
+//    QThreadPool::globalInstance()->start(task);
+
+    this->dataTranslator(data);
 }
 
 void TCP::broadcastMessage(const QByteArray &message)
@@ -92,28 +92,27 @@ void TCP::sendMessage64Bytes(const QByteArray &datapackage_u64)
 
 void TCP::dataTranslator(const QByteArray &data)
 {
-    if(data.at(0) == 0x00){
-        qDebug() << "0:" << data.toHex();
-        switch (data.at(1)) {
-        case 0x00:
-
-            break;
-        case 0x01:
-
-            break;
-        case 0x02:
-
-            break;
-        case 0x03:
-            qDebug() << "TCP Thread ID :" << QThread::currentThreadId();
-            break;
-        default:
-            break;
-        }
+    if(data.isEmpty()) return;
+    switch (static_cast<unsigned char>(data[0])) {
+    case 0x00:
+        emit sig_requestReadAllReg_MPU6050();
+        break;
+    case 0x01:
+        emit sig_requestReadAllReg_BMP180();
+        break;
+    case 0x02:
+        emit sig_requestReadAllReg_GY271();
+        break;
+    case 0x03:
+        emit sig_sendPWMSignal(static_cast<unsigned char>(data[1]),
+                               static_cast<unsigned char>(data[2]),
+                               static_cast<unsigned char>(data[3]),
+                               static_cast<unsigned char>(data[4]));
+        break;
+    default:
+        break;
     }
-    else if(data.at(0) == 0x01){
-        qDebug() << "1" << data.toHex();
-    }
+}
 
 //    QDataStream stream(data);
 //    stream.setByteOrder(QDataStream::LittleEndian);
@@ -135,4 +134,4 @@ void TCP::dataTranslator(const QByteArray &data)
 //    qDebug() << "First integer: " << firstInt;
 //    qDebug() << "Second integer: " << secondInt;
 //    emit sig_sendPWMSignal(firstInt, secondInt);
-}
+

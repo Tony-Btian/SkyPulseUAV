@@ -9,41 +9,45 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent Network Sql)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent Network Sql)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Concurrent Network Sql Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Concurrent Network Sql Multimedia)
+find_package(OpenCV REQUIRED)
 
 # Try to find pigpio lib
 find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
+    ${OpenCV_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/ALGORITHM
+    ${CMAKE_SOURCE_DIR}/COMM
     ${CMAKE_SOURCE_DIR}/DRIVER
-    ${CMAKE_SOURCE_DIR}/MIDDLEWARES
-    ${CMAKE_SOURCE_DIR}/TOOLS
-    ${CMAKE_SOURCE_DIR}/SENSOR)
+    ${CMAKE_SOURCE_DIR}/SENSOR
+    ${CMAKE_SOURCE_DIR}/SYSTEM
+    ${CMAKE_SOURCE_DIR}/MIDDLEWARES)
+
 
 set(PROJECT_SOURCES
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
 
-    DRIVER/i2c_device.h DRIVER/i2c_device.cpp
-    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
-    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
+    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
 
-    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
-    MIDDLEWARES/datadecoder.h MIDDLEWARES/datadecoder.cpp
-    MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
+    COMM/tcp.h COMM/tcp.cpp
 
-    SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
-    SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
-    SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
+    DRIVER/i2cdriver.h DRIVER/i2cdriver.cpp
+    DRIVER/motorpwm.h DRIVER/motorpwm.cpp
 
-    TOOLS/threadpool.h TOOLS/threadpool.cpp
-    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
-    TOOLS/observer.h
-    TOOLS/observable.h TOOLS/observable.cpp
+    SENSOR/mpu6050.h SENSOR/mpu6050.cpp
+    SENSOR/bmp180.h SENSOR/bmp180.cpp
+    SENSOR/gy271.h SENSOR/gy271.cpp
+
+    SYSTEM/mainsystem.h SYSTEM/mainsystem.cpp
+    SYSTEM/sensormanager.h SYSTEM/sensormanager.cpp
+
+    MIDDLEWARES/MediatorInterface.h
+    MIDDLEWARES/concretemediator.h MIDDLEWARES/concretemediator.cpp
+    MIDDLEWARES/observable.h MIDDLEWARES/observable.cpp
+    MIDDLEWARES/Observer.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -74,6 +78,8 @@ target_link_libraries(SkyPulseUAV_FCS PRIVATE
     Qt${QT_VERSION_MAJOR}::Concurrent
     Qt${QT_VERSION_MAJOR}::Network
     Qt${QT_VERSION_MAJOR}::Sql
+    Qt${QT_VERSION_MAJOR}::Multimedia
+    ${OpenCV_LIBS}
     ${PIGPIO_LIBRARY})
 
 set_target_properties(SkyPulseUAV_FCS PROPERTIES

@@ -111,8 +111,8 @@ gantt
 #### Hardware and Software Clarification
 - Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
 - Linux Distribution: Ubuntu Desktop 22.04.04 LTS
-- G++ Version: 
-- GCC Version:
+- G++ Version: g++ (Debian 12.2.0-14) 12.2.0
+- GCC Version: gcc (Debian 12.2.0-14) 12.2.0
 
 #### Environment Setup
 1. [Raspberry Pi Imager](https://www.raspberrypi.com/software/) : Install Raspberry Pi OS using Raspberry Pi Imager

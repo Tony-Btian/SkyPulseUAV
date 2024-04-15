@@ -11,11 +11,12 @@
 
 using namespace std;
 
-class STM32 {
+class STM32 
+{
 
 public:
 
-    using CallbackFunction = function<void(float[3], float)>;
+    using CallbackFunction = function<void(uint8_t, int)>;
 
     STM32();
 
@@ -25,24 +26,22 @@ public:
 
     void setCallback(CallbackFunction callback);
 
-protected:
-
-
-
-
 private:
 
     CallbackFunction callback_;
 
     int handle;
 
-    float IRDistance[3];
+    // If IR sensors detect obstacles, 
+    uint8_t IRDetected;
 
-    float USDistance;
+    // Accept distance sampled from ultrasonic sensor.
+    int USDistance;
 
 };
 
-class STM32Thread : public CppThread {
+class STM32Thread : public CppThread 
+{
 
 public:
 

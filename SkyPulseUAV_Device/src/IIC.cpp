@@ -2,7 +2,8 @@
 
 std::mutex IIC::i2cmtx;
 
-IIC::IIC(int address) {
+IIC::IIC(int address) 
+{
 
     {
         std::lock_guard<std::mutex> lock(i2cmtx);
@@ -15,7 +16,8 @@ IIC::IIC(int address) {
     }
 }
 
-IIC::~IIC() {
+IIC::~IIC() 
+{
     {
         std::lock_guard<std::mutex> lock(i2cmtx);
         i2cClose(handle); 
@@ -24,7 +26,8 @@ IIC::~IIC() {
 }
 
 
-int IIC::write(char* dataArray, int arrayLength) {
+int IIC::write(char* dataArray, int arrayLength) 
+{
 
     {
         std::lock_guard<std::mutex> lock(i2cmtx);
@@ -39,7 +42,8 @@ int IIC::write(char* dataArray, int arrayLength) {
     return err;
 }
 
-int IIC::read(char* dataArray, int arrayLength, int regAddr) {
+int IIC::read(char* dataArray, int arrayLength, int regAddr) 
+{
     
     {
         std::lock_guard<std::mutex> lock(i2cmtx);

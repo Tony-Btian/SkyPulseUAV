@@ -58,9 +58,6 @@ void MahonyFilter::readRawData(float a[3], float g[3], float m[3]) {
 	my = -m[0];
 	mz = m[2];
 
-	// mx = 0;
-	// my = 0;
-	// mz = 0;
 }
 
 // Set parameter of filter.

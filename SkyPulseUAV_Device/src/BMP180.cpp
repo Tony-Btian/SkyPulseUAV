@@ -25,7 +25,8 @@ BMP180::BMP180(float localAltitude) :
     
 }
 
-void BMP180::BMP180ReadEEPROM(char* eeprom) {
+void BMP180::BMP180ReadEEPROM(char* eeprom) 
+{
 
     char eepromAddr = 0xAA;
 	
@@ -33,18 +34,21 @@ void BMP180::BMP180ReadEEPROM(char* eeprom) {
 
 }
 
-void BMP180::sealevelPresCorrect(float sealevelPressure) {
+void BMP180::sealevelPresCorrect(float sealevelPressure) 
+{
     
     this -> sealevelPressure = p / std::pow((1.0 - (myLocalAltitude / 44330.0)), 5.255);
 
 }
 
-float BMP180::getData() {
+float BMP180::getData() 
+{
 
     BMP180ReadTempAndPres();
     
     droneAltitude.store(44330.0 * (1.0 - std::pow((p / sealevelPressure), 1.0f / 5.255f)));
 
+	// Trigger callback function.
 	if(callbackA_) {
 
 		callbackA_(droneAltitude.load());
@@ -61,7 +65,8 @@ float BMP180::getData() {
 
 }
 
-void BMP180::BMP180ReadTempAndPres() {
+void BMP180::BMP180ReadTempAndPres() 
+{
 
     char err;
 	char regAddr = 0xF6;  // Multiplex reg for both temperature and pressure.
@@ -140,13 +145,15 @@ void BMP180::BMP180ReadTempAndPres() {
 	cout << "p:" << p << endl;
 }
 
-void BMP180::setCallbackA(CallbackFunction callback) {
+void BMP180::setCallbackA(CallbackFunction callback) 
+{
 
 	callbackA_ = callback;
 
 }
 
-void BMP180::setCallbackB(CallbackFunction callback) {
+void BMP180::setCallbackB(CallbackFunction callback) 
+{
 
 	callbackB_ = callback;
 

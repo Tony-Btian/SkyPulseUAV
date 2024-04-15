@@ -15,7 +15,8 @@
 using namespace std;
 using namespace std::chrono;
 
-class BMP180  {
+class BMP180  
+{
     
 public:
 
@@ -61,7 +62,8 @@ private:
 
 };
 
-class BMP180Thread : public CppThread {
+class BMP180Thread : public CppThread 
+{
 
 public:
 

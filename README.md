@@ -242,14 +242,14 @@ The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board t
 ## Sensor & Actuator Driver Development
 
 
-### MPU6050 Unit Test
+### Unit Test
+Unit test code has already been in _test_ folder, and you can add code in test.cppp to do testing.
 
-
-### BMP180 Unit Test
-
-
-### GY271 Unit Test
-
+do 
+```
+make test
+```
+after _make_. 
 
 ## SkyPulseUAV Communication Protocol
 

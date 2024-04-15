@@ -44,7 +44,6 @@ void FlightControl::updateMotorSpeeds(double pitch, double roll, double yaw, dou
         clampToUint8(thrust - pitch + roll - yaw),
         clampToUint8(thrust - pitch - roll + yaw)
     };
-
     emit sig_sendMotorData(MotorPWM);
 }
 

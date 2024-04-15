@@ -2,6 +2,7 @@
 #define MOTORPWM_H
 
 #include <QObject>
+#include <QVector>
 #include "pigpio.h"
 
 #define PWM0 12
@@ -17,14 +18,7 @@ public:
     explicit MotorPWM(QObject *parent = nullptr);
 
 public slots:
-    void setMotorPWMSignal(const quint8 &motor1_dutycycle,
-                           const quint8 &motor2_dutycycle,
-                           const quint8 &motor3_dutycycle,
-                           const quint8 &motor4_dutycycle);
-//    void setPWM0Signal(const int &dutyCycle);
-//    void setPWM1Signal(const int &dutyCycle);
-//    void setPWM2Signal(const int &dutyCycle);
-//    void setPWM3Signal(const int &dutyCycle);
+    void setMotorPWMSignal(const QVector<quint8> &Motor_PWM);
 
 private:
     void initialPWM();

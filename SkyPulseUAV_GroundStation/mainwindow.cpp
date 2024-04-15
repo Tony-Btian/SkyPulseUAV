@@ -35,6 +35,7 @@ MainWindow::~MainWindow()
     }
     delete UdpThread; // 删除线程对象
 
+
     /*
     // 请求线程结束
     BluetoothThread->quit();  // 等待线程安全结束

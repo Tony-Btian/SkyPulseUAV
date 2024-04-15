@@ -61,12 +61,12 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [x] Module Driver Development
 
 #### Jianliang Wu
-- [x] Write the C++ code on Raspberry Pi
-- [x] Debugging each sensor to make them work properly
+- [x] C++ code on Raspberry Pi
+- [x] Debugging sensors to make them work properly and perfectly
 - [x] Deploy Mahony filter algorithm to fuse data from gyroscope and accelerometer
 - [x] Design the control algorithm and tune the PID parameters
 - [x] Create easy-to-use cross-compile environment for users
-- [x] STM32 Code Development
+- [x] STM32 Development
 
 #### Jiaxing Wang
 
@@ -224,7 +224,7 @@ The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board t
 ## Software Architecture
 
 >[!NOTE]
->Click the link below to get detailed information about the source code.
+>Click the link to get detailed information about the source code.
 >[Doxygen Code Document](https://shilinzhang1.github.io/)
 
 
@@ -297,10 +297,10 @@ change the height and width for each of the contributors from 80 to 50.
 | Name | ID| Role |
 | ---- | ---- | ---- |
 | Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
-| Jianliang Wu |         | Software Engineer. Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
-| Zhiyan Tong  |  	 | 			|
-| Shilin Zhang | 	 | Hardware Engineer |
+| Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
+| Jiaxing Wang |   	     | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
+| Zhiyan Tong  |  	     | 			             |
+| Shilin Zhang | 	       | Hardware Engineer |
 
 ### Contact
 

@@ -123,10 +123,10 @@ Motherboard's hardware design files are stored in the directory.
 #### 1.2. SkyPulse_Device
 >Developer: JianLiang Wu
 
-The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
+The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio Code. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio Code's powerful development tools to ensure high performance and reliability.
 
 The steps to compile and run software from this directory include
-- Open the project in Visual Studio.
+- Open the project in Visual Studio Code.
 - Compile the code to ensure there are no errors.
 - Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
 

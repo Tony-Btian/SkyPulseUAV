@@ -226,7 +226,8 @@ The construction of UAVs involves the meticulous arrangement of sensors to fulfi
 |  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
-Datasheet:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
+> [Click me to the Download the Datasheet](Documents/Module Datasheet)
+
 ## SkyPulseUAV Motherboard
 
 <img src="Documents/Images/Motherboard_3D.png" width="500">
@@ -271,16 +272,35 @@ The sequence of communication over the SkyPulseUAV protocol is as follows:
 The SkyPulseUAV protocol incorporates error-handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
 
 
+# Contributors
 
+<!---
+npx contributor-faces --exclude "*bot*" --limit 70 --repo "https://github.com/amplication/amplication"
 
-# Contact
+change the height and width for each of the contributors from 80 to 50.
+--->
+
+[//]: contributor-faces
+
+<a href="https://github.com/Tony-Btian"><img src="https://avatars.githubusercontent.com/u/139486237?v=4" title="Binhan Tian" width="50" height="50"></a>
+<a href="https://github.com/engineerNg"><img src="https://avatars.githubusercontent.com/u/54659261?v=4" title="iddan" width="50" height="50"></a>
+<a href="https://github.com/Pygmalion0"><img src="https://avatars.githubusercontent.com/u/156678953?v=4" title="tupe12334" width="50" height="50"></a>
+<a href="https://github.com/ShilinZhang1"><img src="https://avatars.githubusercontent.com/u/163417106?v=4" title="abrl91" width="50" height="50"></a>
+<a href="https://github.com/ZhiyanTong"><img src="https://avatars.githubusercontent.com/u/158243670?v=4" title="abrl91" width="50" height="50"></a>
+
+[//]: contributor-faces
+
+### Contact
+
 If you want to talk about technical issues related to this project, please contact one of us:
-Jianliang Wu: moxiasgabi@gmail.com
-Binhan Tian: 
-Jiaxing Wang: ascende_superius@outlook.com
+- Binhan Tian: antonio.btian@outlook.com
+- Jianliang Wu: moxiasgabi@gmail.com
+- Jiaxing Wang: ascende_superius@outlook.com
 
-## License
+# License
 MIT License Copyright (c) 2024 Binhan Tian
+
+---
 
 # Hardware Preparation
 ### Motherboard Schemical

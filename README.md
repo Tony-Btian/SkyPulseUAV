@@ -311,10 +311,3 @@ If you want to talk about technical issues related to this project, please conta
 
 # License
 MIT License Copyright (c) 2024 Binhan Tian
-
----
-
-# Hardware Preparation
-### Motherboard Schemical
-
-

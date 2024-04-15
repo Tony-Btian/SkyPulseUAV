@@ -1,13 +1,29 @@
 #include "UDP.h"
 #include <QNetworkDatagram>
-#include <QThread>
 
 UDP::UDP(QObject *parent) : QObject(parent), udpSocket(new QUdpSocket(this))
+{
+    UDPThread = new QThread(this);
+    connect(UDPThread, &QThread::started, this, &UDP::udpInitial);
+    connect(UDPThread, &QThread::finished, this, &QObject::deleteLater);
+    this->moveToThread(UDPThread);
+    UDPThread->start();
+}
+
+UDP::~UDP()
+{
+    if (UDPThread->isRunning()){
+        UDPThread->wait();
+        UDPThread->quit();
+    }
+}
+
+void UDP::udpInitial()
 {
     connect(udpSocket, &QUdpSocket::readyRead, this, &UDP::readPendingDatagrams);
 }
 
-void UDP::startServer(quint16 port)
+void UDP::startUDPServer(quint16 port)
 {
     bool result = udpSocket->bind(port, QUdpSocket::ShareAddress);
     if(!result){
@@ -18,7 +34,7 @@ void UDP::startServer(quint16 port)
     emit ServerStartSucessful();
 }
 
-void UDP::stopServer()
+void UDP::stopUDPServer()
 {
     udpSocket->close();
     if (udpSocket->state() == QAbstractSocket::UnconnectedState) {

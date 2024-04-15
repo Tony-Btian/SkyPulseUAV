@@ -1,8 +1,10 @@
 #ifndef TCP_H
 #define TCP_H
 
+#include <QThread>
 #include <QObject>
 #include <QTcpSocket>
+#include "MediatorInterface.h"
 
 #define WRITE 0x01
 #define READ  0x00
@@ -11,32 +13,36 @@ class TCP : public QObject {
     Q_OBJECT
 
 public:
-    explicit TCP(QObject *parent = nullptr);
-    void connectToServer(const QString &host, quint16 port);
-    void disconnectToServer();
-    void dataTrasnlate(const QByteArray &data);
+    explicit TCP(QObject *parent = nullptr, MediatorInterface* mediator = nullptr);
+    ~TCP();
+    
+    void startTCPServer(const QString &host_ip, quint16 port);
+    void stopTCPServer();
 
 private:
     QTcpSocket *TCPSocket;
-    void tcpInitial();
+    QThread *TCPThread;
+    MediatorInterface* mediator;
+
     QString dataCheckOut(const QByteArray &data);
 
 public slots:
     void sendMessage(const QString &message);
     void sendMessageQByte(const QByteArray &message);
     void readMessage();
-    void PWM_Controler(const int &code, const int &value);
-    void controlMessageReceiver(const uint8_t &action, const uint8_t &data_length, const uint8_t &value);
+    void PWM_Controler(const int &code, const int &pin, const int &value);
+    void commendToFCS(const uint8_t &command_code);
 
 private slots:
+    void tcpInitial();
+
     void onConnected();
     void onDisconnected();
     void onErrorOccurred();
 
 signals:
-    void sig_receivedMessage(const QString &message);
-    void sig_connectionSuccessful();  // 判断是否连接成功的信号
-    void sig_disconnectionSuccessful();  // 判断是否成功断开的信号
+    void sig_startSuccessful();  // 判断是否连接成功的信号
+    void sig_stopSuccessful();   // 判断是否成功断开的信号
     void sig_connectionError();
 };
 

@@ -107,37 +107,70 @@ gantt
 Click the link below to get detailed information about the source code.
 [Doxygen Code Document](https://shilinzhang1.github.io/)
 
-# General Guide[](#general-guide)
-## 1. System Deployment
+# General Guide
 
+### System Deployment on Raspberry Pi
 
-### 1.1. Hardware and Software Clarification
-- Raspberry Pi 4B (8GB) with Raspberry OS 64 bit
-- Linux Distribution: Ubuntu Desktop 22.04.03 LTS (64Bit)
-- Kernel Version: 
-- G++: 
-- GCC: 
+#### Hardware and Software Clarification
+- Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
+- Linux Distribution: Ubuntu Desktop 22.04.04 LTS
+- G++ Version: 
+- GCC Version:
 
+#### Environment Setup
+1. [Raspberry Pi Imager](https://www.raspberrypi.com/software/) : Install Raspberry Pi OS using Raspberry Pi Imager
+2. Use Raspberry Pi Image to burn the image to an SD card
+<img src="https://assets.raspberrypi.com/static/4d26bd8bf3fa72e6c0c424f9aa7c32ea/d1b7c/imager.webp" width="400">
 
-### 1.2. Environment Setup
+> [!TIP]
+> Set Up the User name, Password, and SSH Connection setting using Raspberry Pi Imager. This eliminates the need to utilize a mouse and keyboard to operate the Raspberry Pi.
 
-### 1.3. Connect Raspberry Pi with SSH From Ubuntu
+3. Run the setup script, which takes care of installing dependencies, building packages
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install gcc g++ git
+```
 
-## 2. Sensor Module Preparation
+### System Deployment on Ubuntu
+1. Download the QT software from the [official website](https://qt.io/download).
+2. Install QT by running
+```
+chmod +x qt-unified-linux-x64-*.run
+```
+Run the installation process
+```
+./qt-unified-linux-x64-*.run
+```
+Installing QT libraries
+```
+sudo apt update
+sudo apt install qt5-default
+sudo apt install qtmultimedia5-dev qtwebengine5-dev
+```
+Cross-compile the Raspberry Pi using QT according to the following [Tutorial](https://wiki.qt.io/Cross-Compile_Qt_6_for_Raspberry_Pi).
+
+### Hardware Preparation
+#### Sensors & Actuators
 
 | Sensor Name | Unit| Describtion |
-| ----------- | ----| ----------- |
-| MPU6050     |  1  |             |
-| BMP180      |  1  |             |
-| GY271       |  1  |             |
-| RF          |  4  |             |
-| SRF05       |  1  |             |
+| ----------- | ----| ----------------------------------------------- |
+| MPU6050     |  1  |  A 3-axis gyroscope and a 3-axis accelerometer  |
+| BMP180      |  1  |  High-precision, low-power digital barometer    |
+| GY271       |  1  |  Magnetometer sensor for detecting magnetic fields and determining orientation |
+| KY-032      |  4  |  Obstacle avoidance sensor module |
+| SRF05       |  1  |  Ultrasonic Sensor used for distance measurement |
+> [Click me to the detail of Hardware Module]()
+
+
 
 ### 3. SkyPulseUAV Source Code Deployment
 
 
 
 #### 3.1. Get the Source Code of SkyPulseUAV FSC
+
+---
 
 
 # Hardware Development Guidance
@@ -150,11 +183,12 @@ Click the link below to get detailed information about the source code.
 
 ![SkyPulseUAV Motherboard 3D](Documents/Images/Motherboard_3D.png)
 
-The SkyPulseUAV Motherboard is the cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
+The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
 
-Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
+Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
 
-## Sensors & Actuators
+
+# Sensors & Actuators
 ### Sensors
 
 #### The list of used sensors is shown in Table 2.1.  Materials (BOM)

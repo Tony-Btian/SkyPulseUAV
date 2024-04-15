@@ -2,11 +2,16 @@
 #include <pigpio.h>
 #include <QDebug>
 
-ESC_PWM_Driver::ESC_PWM_Driver(QObject *parent){}
 
+ESC_PWM_Driver::ESC_PWM_Driver(QObject *parent){} 
+
+/**
+ * @file   MyClass.h
+ * @brief  这个文件包含了 MyClass 类的声明
+ */
 void ESC_PWM_Driver::onUpdate(bool isInitialised)
 {
-    qDebug() << "PWM Driver Working!";
+    qDebug() << "PWM Driver Working!"; // 
     if(isInitialised){
         qWarning("SensorManager: PWM GPIO initialized.");
     }

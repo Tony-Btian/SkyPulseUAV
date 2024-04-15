@@ -36,3 +36,6 @@ History
 *.out
 *.app
 
+# IDE or System Files
+.DS_Store
+.vscode

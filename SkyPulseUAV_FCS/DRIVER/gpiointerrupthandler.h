@@ -16,6 +16,11 @@ public:
     ~GpioInterruptHandler();
 
     void onUpdate(bool isInitialised) override;
+    
+    /**
+    * @file   MyClass.h
+    * @brief  这个文件包含了 MyClass 类的声明
+    */
     bool initializeGpio();  // Initialise GPIOs, register interrupt handlers
     void deinitializeGpio();  // Deinitialise GPIOs
 

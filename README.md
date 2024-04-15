@@ -20,8 +20,8 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 | Name | Role |
 | ---- | ---- |
 | Binhan Tian |  |
-| Jianliang Wu |  Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors  and performing PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |  |
+| Jianliang Wu | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors and deploying PID and Mahonyfilter algorithm. |
+| Jiaxing Wang |   Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
 | Zhiyan Tong |  |
 | Shilin Zhang |  |
 
@@ -32,6 +32,22 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and manoeuvrability, even in adverse conditions.
 - **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
 - **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
+
+
+### Visual Project Management Plan
+If you can not see the text inside, please switch your brower to light mode.
+```mermaid
+gantt
+    title Project Management Plan
+    dateFormat  YYYY-MM-DD
+    section SkyPulseUAV
+	todayMarker off
+    Decision on Direction of Project     :done,   des1, 2024-01-10,2024-01-26
+    Configuration of MPU6050 sensor     :done,    des2, 2024-02-05, 2024-02-12
+    Deployment of MahonyFilter algorithm    :done,    des3, after des2, 2024-03-01
+    Code of control class  :done, des4, after des3, 2024-03-20
+
+```
 
 
 ### Be Part of the Change
@@ -45,36 +61,41 @@ Let's transform the landscape of emergency response and environmental analysis t
 
 # Project Development Planning
 ### Global
-- [ ] Build up the Github warehouse & README
-- [ ] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
-- [ ] Design the Hardware and Software
-- [ ] Buy electrical components for the project
+- [x] Build up the Github warehouse & README
+- [x] Complete the basic environment development for the project by install the Rasbian OS for Raspberry Pi
+- [x] Design the Hardware and Software
+- [x] Buy electrical components for the project
 
 ### Binhan Tian
 - [ ] 
 
 ### Jianliang Wu
-- [ ]
+- [x] Write the C++ code on Raspberry Pi
+- [x] Debugging each sensor to make them work properly
+- [x] Depoly Mahonyfilter algorithm to fuse data from gyroscope and accelerometer
+- [x] Design the control algorithm and tune the PID parameters
+- [x] Create easy-to-use cross compile environment for users
 
 # Guide
 ### System Deployment
+Click the link below to get detailed information about the source code.
 #### 
 [Code Document](https://shilinzhang1.github.io/)
 
-## 2. Sensors & Actuators
-### 2.1 Sensors
+## Sensors & Actuators
+### Sensors
 The list of used sensors is shown in Table 2.1.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 2.1 Sensors Bill of Materials (BOM)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table 2.1 Sensors Bill of Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
 |:----:|:--------------:|:-----------:|:-------------------------------------------:|:--------:|:-----------------:|:-------------------:|
 |  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|
 |  2   | IMU Module     | MPU6050     | 3-axis gyroscope + 3-axis accelerometer     | 1 (pcs)  | Module Supplier   | Attitude control    |
 |  3   | Compass        | GY-271      | Three-axis magnetic field sensor            | 1 (pcs)  | Chip Supplier     | Heading determination|
-|  4   | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 1 (pcs)  | Sensor Supplier   | Collision avoidance |
+|  4   | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 4 (pcs)  | Sensor Supplier   | Collision avoidance |
 |  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
 |  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
 
-Datasheet link:  
+Datasheet:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
 
 The subsequent section provides a comprehensive description of the sensor.
 - BMP180 Barometer  
@@ -95,6 +116,11 @@ The subsequent section provides a comprehensive description of the sensor.
   Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
 
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
+
+## SkyPulseUAV Environment Deployment
+#### 1. Raspberry Pi Software Setup
+
+
 
 ## SkyPulseUAV Communication Protocol Overview
 ### Introduction
@@ -132,6 +158,14 @@ The SkyPulseUAV protocol incorporates error handling protocols to address issues
 ### Conclusion
 The communication protocol is a cornerstone of the SkyPulseUAV's operational integrity, facilitating a secure and reliable interface for UAV control and telemetry feedback. This protocol is instrumental in maintaining the UAV's performance and safety standards in various flight conditions.
 
+# Contact
+If you want to talk about technical issues related to this project, please contact one of us:
+
+Jianliang Wu: moxiasgabi@gmail.com
+
+Binhan Tian: 
+
+Jiaxing Wang: ascende_superius@outlook.com
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian

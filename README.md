@@ -1,22 +1,42 @@
-![SkyPulseUAV Logo](Documents/Images/SkyPulseUAV_Logo.png)
-# SkyPulseUAV
+<div align="center">
+    <img src="Documents/Images/SkyPulseUAV_Logo.png"/>
+    <p>
+      <i align="center">Pioneering UAV Technology for Critical Missions 🚀</i>
+    </p>
+    <div id="badges">
+     <a href="your-youtube-URL"><img src="https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white" alt="Youtube Badge"/></a>
+     <a href="https://twitter.com/Antonio_Btian"><img src="https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white" alt="Twitter Badge"/></a>
+     <a href="GitHub License"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+     <a href="Contributions welcome"><img src="https://img.shields.io/badge/contributions-welcome-orange.svg"/></a>
+     <a href="https://github.com/Tony-Btian/SkyPulseUAV/issues"><img src="https://img.shields.io/github/issues/Tony-Btian/SkyPulseUAV.svg"/></a>
+     <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star"/></a>
+     <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork"/></a>
+    </div>
+</div>
 
-![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)
-![Youtube](https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white)
-![Twitter](https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white)
-![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Starts of SkyPulse UVA](https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star)](https://github.com/Tony-Btian/SkyPulseUAV)
-[![Forks of SkyPulse UVA](https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork)](https://github.com/Tony-Btian/SkyPulseUAV)
 
-> SkyPulseUAV: Pioneering UAV Technology for Critical Missions
-
-
-## Welcome to the SkyPulseUAV Project
+# SkyPulseUAV Introduction
+:star: Star us on GitHub — It motivates us a lot!
 
 SkyPulseUAV is a groundbreaking real-time embedded system project, specifically designed to enhance the capabilities of unmanned aerial vehicles (UAVs) in critical scenarios such as fire detection, earthquake rescue, and terrain exploration. Our mission is to empower UAVs with unparalleled stability and precision, making them indispensable tools in emergency response and environmental analysis.
 
+### Project Highlights
+- **Versatile Application Spectrum**: Optimized for high-stakes missions like fire detection, earthquake relief efforts, and comprehensive terrain surveys.
+- **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.
+- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and maneuverability, even in adverse conditions.
+- **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
+- **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
-### Project Contributors
+## Table of contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#table-of-contents)
+- [General Guide](#general-guide)
+    - [System Deployment](#1-system-deployment)
+    - [Hardware and Software Clarification](#11-hardware-and-software-clarification)
+- [License](#license)
+- [Call to action](#call-to-action)
+- [Thank you all!](#thank-you-all)
+
+
+### Project Main Contributors
 
 | Name | ID| Role |
 | ---- | ---- | ---- |
@@ -25,14 +45,6 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 | Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
 | Zhiyan Tong  |  	 | 			|
 | Shilin Zhang | 	 | Hardware Engineer |
-
-
-### Project Highlights
-- **Versatile Application Spectrum**: Optimized for high-stakes missions like fire detection, earthquake relief efforts, and comprehensive terrain surveys.
-- **Real-Time Decision Making**: Features real-time data processing for immediate and accurate responses in dynamic environments.
-- **Advanced Stability and Control**: Employs sophisticated algorithms to maintain UAV balance and maneuverability, even in adverse conditions.
-- **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
-- **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
 ### Connect and Collaborate
 Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community. Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
@@ -91,11 +103,11 @@ gantt
 
 ```
 
+
 Click the link below to get detailed information about the source code.
 [Doxygen Code Document](https://shilinzhang1.github.io/)
 
-
-# General Guide
+# General Guide[](#general-guide)
 ## 1. System Deployment
 
 

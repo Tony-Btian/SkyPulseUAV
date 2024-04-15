@@ -4,7 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/SkyPulseUAV_Device/include"
+                "${workspaceFolder}/SkyPulseUAV_Device/include",
+                "${workspaceFolder}/SkyPulseUAV_Device/test/**",
+                "/usr/include",
+                "/usr/local/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

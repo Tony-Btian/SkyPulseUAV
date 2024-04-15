@@ -56,5 +56,6 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/kinsley/project/SkyPulseUAV_Device/test/testLib/test"
 }

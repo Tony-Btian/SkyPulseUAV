@@ -44,7 +44,6 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [License](#license)
 - [Thank you all!](#thank-you-all)
 
-
 # Project Development Planning
 #### Global
 - [x] Build up the GitHub warehouse & README
@@ -68,8 +67,14 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [x] Create easy-to-use cross-compile environment for users
 - [x] STM32 Development
 
-#### Jiaxing Wang
+#### Zhiyan Tong
+- [x] Development and implementation of UAV communication protocols
+- [x] C++ coding for SkyPulse GroundStation operations
+- [x] Integrated SkyPulse_FCS and Device functions into a user-friendly UAV control interface
+- [x] Management of social media platforms
+- [x] Authoring and updating comprehensive README documentation
 
+#### Jiaxing Wang
 
 #### Shilin Zhang
 - [x] Buy Needed Hardware Module: BMP180, MPU6050
@@ -77,8 +82,6 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [x] Wiki Documentation
 - [x] Update the README Document (Synchronized with the Development Process)
 - [x] Synchronously update the contents of README_ZH.md & README.md (once a week)
-
-#### Zhiyan Tong
 
 
 ### Visual Project Management Plan
@@ -104,17 +107,67 @@ gantt
     Project Documentation  :done, des9, after des8, 2024-04-02
 ```
 
+# Source Code Directory Descriptions
+
+- Hardware
+- SkyPulse_Device
+- SKyPulse_FCS
+- SkyPulse_GroundStation
+
+#### 1.1. Hardware
+>Developer: Binhan Tian & Shilin Zhang
+
+Motherboard's hardware design files are stored in the directory. 
+- SkyPulseUAV Motherboard Schematic
+- SkyPulseUAV Motherboard PCB
+- Motherboard BOM List
+- Hardware Design Guide
+
+#### 1.2. SkyPulse_Device
+>Developer: JianLiang Wu
+
+The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
+
+The steps to compile and run software from this directory include
+- Open the project in Visual Studio.
+- Compile the code to ensure there are no errors.
+- Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
+
+#### 1.3. SkyPulse_FCS
+>Developer: Binhan Tian
+
+The SkyPulse_FCS directory contains code customized specifically for the Qt environment. The code base includes the user interface and back-end logic. The focus of this folder is to provide a front-end control system that compiles and runs on a Raspberry Pi, utilizing Qt's graphical and system management capabilities to provide a powerful user experience and system control.
+
+To compile and run the software in this directory, do the following
+- Ensure that Qt is installed on the Raspberry Pi or development machine.
+- Use Qt Creator to open the project file and compile the code.
+- Deploy the application to the Raspberry Pi for testing and production.
+
+#### 1.4. SkyPulse_GroundStation
+>Developer: Binhan Tian, Jianliang Wu, Jiaxing Wang, Zhiyan Tong
+
+The SkyPulse GroundStation directory contains the ground control station software developed for Ubuntu systems. This application acts as a control terminal that integrates functionalities from both the SkyPulse_FCS and SkyPulse_Device programs, providing a comprehensive interface for managing and operating unmanned aerial vehicles (UAVs).
+- Control Interface: Offers a user-friendly graphical interface on Ubuntu for interacting with UAVs.
+- Communication: Utilizes both TCP and UDP protocols to ensure reliable and real-time communication with the UAVs.
+- Integration: Seamlessly combines commands and controls from the FCS and device software, offering a unified operation console for all flight and hardware management tasks.
+
+To get the SkyPulse GroundStation up and running on an Ubuntu system:
+- Ensure all dependencies are installed. This may include libraries and tools specific to network communication and graphical user interface development.
+- Compile the source code using a suitable C++ compiler or an integrated development environment (IDE) that supports C++ projects.
+- Execute the compiled application. Ensure the network settings are configured to match the communication parameters of the UAVs.
+This directory is essential for operators and developers who need to control and monitor UAVs directly from a ground-based station, providing all necessary tools and interfaces for effective mission management.
+
 # General Guide
 
-### System Deployment on Raspberry Pi
 
-#### Hardware and Software Clarification
+System Deployment on Ubuntu
+#### 1.1. Hardware and Software Clarification
 - Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
 - Linux Distribution: Ubuntu Desktop 22.04.04 LTS
-- G++ Version: 
-- GCC Version:
+- G++ Version: g++ (Debian 12.2.0-14) 12.2.0
+- GCC Version: gcc (Debian 12.2.0-14) 12.2.0
 
-#### Environment Setup
+#### 1.2. Environment Setup
 1. [Raspberry Pi Imager](https://www.raspberrypi.com/software/) : Install Raspberry Pi OS using Raspberry Pi Imager
 2. Use Raspberry Pi Image to burn the image to an SD card
 <img src="https://assets.raspberrypi.com/static/4d26bd8bf3fa72e6c0c424f9aa7c32ea/d1b7c/imager.webp" width="400">
@@ -129,7 +182,7 @@ sudo apt-get upgrade
 sudo apt-get install gcc g++ git
 ```
 
-### System Deployment on Ubuntu
+### 2. System Deployment on Ubuntu
 1. Download the QT software from the [official website](https://qt.io/download).
 2. Install QT by running
 ```
@@ -147,41 +200,19 @@ sudo apt install qtmultimedia5-dev qtwebengine5-dev
 ```
 Cross-compile the Raspberry Pi using QT according to the following [Tutorial](https://wiki.qt.io/Cross-Compile_Qt_6_for_Raspberry_Pi).
 
-### Source Code Directory Descriptions
-#### SkyPulse_FCS
-The SkyPulse_FCS directory contains code customized specifically for the Qt environment. The code base includes the user interface and back-end logic. The focus of this folder is to provide a front-end control system that compiles and runs on a Raspberry Pi, utilizing Qt's graphical and system management capabilities to provide a powerful user experience and system control.
+### 3. Source Code Directory Descriptions
 
-To compile and run the software in this directory, do the following
-- Ensure that Qt is installed on the Raspberry Pi or development machine.
-- Use Qt Creator to open the project file and compile the code.
-- Deploy the application to the Raspberry Pi for testing and production.
-
-#### SkyPulse_Device
-The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
-
-The steps to compile and run software from this directory include
-- Open the project in Visual Studio.
-- Compile the code to ensure there are no errors.
-- Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
-
-#### SkyPulse_GroundStation
-The SkyPulse GroundStation directory contains the ground control station software developed for Ubuntu systems. This application acts as a control terminal that integrates functionalities from both the SkyPulse_FCS and SkyPulse_Device programs, providing a comprehensive interface for managing and operating unmanned aerial vehicles (UAVs).
-- Control Interface: Offers a user-friendly graphical interface on Ubuntu for interacting with UAVs.
-- Communication: Utilizes both TCP and UDP protocols to ensure reliable and real-time communication with the UAVs.
-- Integration: Seamlessly combines commands and controls from the FCS and device software, offering a unified operation console for all flight and hardware management tasks.
-
-To get the SkyPulse GroundStation up and running on an Ubuntu system:
-- Ensure all dependencies are installed. This may include libraries and tools specific to network communication and graphical user interface development.
-- Compile the source code using a suitable C++ compiler or an integrated development environment (IDE) that supports C++ projects.
-- Execute the compiled application. Ensure the network settings are configured to match the communication parameters of the UAVs.
-This directory is essential for operators and developers who need to control and monitor UAVs directly from a ground-based station, providing all necessary tools and interfaces for effective mission management.
 
 # Hardware Development Guidance
 
 ### Hardware Components
 - Drone Fuselage
 - Brushless Motor
-
+- ESC
+- Motherboard
+- Battery
+- Propeller
+#### ESC
 ## Sensors & Actuators
 
 #### The list of used sensors is shown in Table 2.1.  Materials (BOM)
@@ -215,10 +246,6 @@ The subsequent section provides a comprehensive description of the sensor.
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
 
 
-## SkyPulseUAV Communication Protocol Overview
-### Introduction
-
-
 ## SkyPulseUAV Motherboard
 
 <div align="center">
@@ -227,7 +254,7 @@ The construction of UAVs involves the meticulous arrangement of sensors to fulfi
 
 The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics. Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
 
-
+### 
 
 # Software Development Guidance
 
@@ -242,17 +269,20 @@ The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board t
 ## Sensor & Actuator Driver Development
 
 
-### MPU6050 Unit Test
-
-
-### BMP180 Unit Test
-
-
-### GY271 Unit Test
+### Unit Test
+Unit test code has already been in _test_ folder, and you can add code in test.cppp to do testing.
+To do it, link libboost_unit_test_framework.so with libboost_unit_test_framework.so.1.74.0:
+```
+ln -s libboost_unit_test_framework.so.1.74.0 libboost_unit_test_framework.so
+```
+then, do 
+```
+make test
+```
+after _make_. 
 
 
 ## SkyPulseUAV Communication Protocol
-
 This part provides a detailed overview of the communication protocol implemented in the SkyPulseUAV, an embedded system designed for unmanned aerial vehicle (UAV) control. The protocol governs the interaction between the ground control station and the UAV's onboard control system, ensuring precise maneuvering and real-time telemetry.
 
 ### Protocol Structure
@@ -285,7 +315,6 @@ The sequence of communication over the SkyPulseUAV protocol is as follows:
 The SkyPulseUAV protocol incorporates error-handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
 
 
-
 # Contributors
 
 <!---
@@ -306,13 +335,13 @@ change the height and width for each of the contributors from 80 to 50.
 
 ### Project Main Contributors
 
-| Name | ID| Role |
-| ---- | ---- | ---- |
-| Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
-| Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |   	     | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
-| Zhiyan Tong  |  	     | 			             |
-| Shilin Zhang | 	       | Hardware Engineer |
+| Name         | ID      | Role                                                                                                                              |
+| ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management                                                                        |
+| Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm.  |
+| Jiaxing Wang |         | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.           |
+| Zhiyan Tong  | 2872426 | Developing Communication protocols, C++ coding for SkyPulse GroundStation, integrated UAV controls, and authored README for setup |
+| Shilin Zhang |         | Hardware Engineer                                                                                                                 |
 
 ### Contact
 
@@ -320,97 +349,7 @@ If you want to talk about technical issues related to this project, please conta
 - Binhan Tian: antonio.btian@outlook.com
 - Jianliang Wu: moxiasgabi@gmail.com
 - Jiaxing Wang: ascende_superius@outlook.com
+- Zhiyan Tong: zhiyan.t.career@gmail.com
 
 # License
 MIT License Copyright (c) 2024 Binhan Tian
-
-
-## SkyPulseUAV Environment Deployment
-The Raspberry Pi, developed by the Raspberry Pi Foundation in the United Kingdom, is a high-performance single-board computer. Its small size and low cost have quickly made it a popular embedded device among DIY enthusiasts, makers, electronics enthusiasts, and professional developers.
-#### 1. Raspberry Pi Software Setup
-The Raspberry Pi has become a highly favored device among developers and electronics enthusiasts due to its scalability, functionality, and cost-effectiveness. It is suitable not only for beginners and students but also for professionals.
-##### Raspberry Pi 4B PIN Layout
-![[Pasted image 20240415005309.png]]
-
-#### 2.Writing Raspberry Pi OS System
-##### Preparation
-
-| Hardware       | Software                                              |
-| -------------- | ----------------------------------------------------- |
-| SD Card        | Raspberry Pi system writing tool: Raspberry Pi Imager |
-| SD Card Reader |                                                       |
-##### System Writing
-Connect the SD card to the computer using a card reader, open the Raspberry Pi writing tool, select the appropriate Raspberry Pi model and system, as well as the SD storage card. The system will prioritize selecting the most recently released Raspberry Pi OS, usually with a recommended system. Debian has better hardware support, so here we take Debian as an example.
-![[Pasted image 20240415010201.png]]
-Before burning, you can choose to configure the Raspberry Pi OS system in advance. Alternatively, you can enter the system and make settings after burning is complete.
-![[Pasted image 20240415010231.png]]
-Here, taking early system setup as an example, click on 'Edit Settings'.
-![[Pasted image 20240415010314.png]]
-1. Set Hostname: [Hostname]
-2. Set Username and Password
-3. Configure Wi-Fi: Here, the Wi-Fi list will not be displayed. You need to directly enter the SSID of the Wi-Fi (the name displayed in the Wi-Fi list).
-4. Language and Timezone Settings
-
-After completing the above settings, click on 'SERVICES', check 'Enable SSH service', and choose to log in using a password. The password here is the username and password set earlier.
-![[Pasted image 20240415010430.png]]
-Click 'Save' to begin writing the system.
-![[Pasted image 20240415010454.png]]
-After burning is complete, simply insert the SD card into the Raspberry Pi. Upon powering on, the system will initialize automatically.
-If the system was configured in advance, it will directly enter the desktop.
-If no prior setup was done, a simple system boot configuration will guide you into the desktop.
-External display devices can be connected to the Raspberry Pi via HDMI.
-
-*Note: Each system burning process will format the SD card, so it's important to back up the data on the SD card before burning.
-##### System Upgrade
-Once the system is loaded, enter the desktop. The Raspberry Pi desktop looks like this:"
-![[Pasted image 20240415010608.png]]
-The first thing to do after system installation is to upgrade the system. Open the terminal and type:
-```
-sudo apt-get update
-sudo apt-get upgrade
-```
-*Note: If prompted with (Y/N) during the upgrade process, type Y and press Enter. The initial upgrade may take a considerable amount of time, so please be patient.
-
-#### Remote Connection to Raspberry Pi
-Connecting the Raspberry Pi to a screen via HDMI can be cumbersome, so you can connect to it remotely using remote desktop.
-##### SSH Connection
-SSH is an encrypted remote connection network protocol primarily used for remote management of systems and servers. SSH connections ensure secure and confidential data transmission between two devices through public key encryption. Once established, SSH executes commands via the command line, enabling remote control of the device, particularly when the target device is a Linux system.
-
-There are two methods to enable SSH service on the Raspberry Pi:
-1. Enabling SSH via the graphical interface.
-2. Enabling SSH via the command line.
-##### Enabling SSH via the graphical interface:
-Click on 'Menu' ➡️ 'Preferences' ➡️ 'Raspberry Pi Configuration', as shown in the following figure:
-![[Pasted image 20240415011325.png]]
-Turn on the SSH switch, and it is recommended to turn all switches on.
-![[Pasted image 20240415011349.png]]
-##### configure via the command line
-Enter the following in the terminal
-```
-sudo raspi-config
-```
-Select Interface Options -> SSH to enable SSH, as shown in the following figure:
-![[Pasted image 20240415011706.png]]
-To connect via SSH from another host, taking macOS system as an example (the instructions for Windows are the same), enter the following in the macOS terminal:
-```
-ssh username@ip_address
-```
-![[Pasted image 20240415011744.png]]
-When prompted to establish the connection, type 'yes' and then press Enter. Next, enter the password to establish the SSH connection. The password is the same as the login password for the Raspberry Pi.
-![[Pasted image 20240415011835.png]]
-If the following screen appears during the connection process:
-![[Pasted image 20240415011920.png]]
-Then you need to input
-```
-ssh-keygen -R <Host_IP>
-```
-This is because the key received by the target device for the SSH connection request does not match the key stored on the device. For security reasons, SSH clients do not connect to hosts with mismatched keys by default. The above command is used to reconnect SSH, prompting the host to create a new key.
-
-#### VNC Connection
-VNC connection provides a visual remote desktop connection service, allowing developers to operate the Raspberry Pi directly through a graphical interface. To connect to the Raspberry Pi via VNC, you need to download VNC software: RealVNC.
-
-*We have already enabled the VNC service when setting up the SSH connection. If the connection is unsuccessful, please check if the VNC service is enabled.
-![[Pasted image 20240415012101.png]]
-
-Simply enter the IP address of the Raspberry Pi, fill in the username and password, and you will be able to connect to the Raspberry Pi's remote desktop via VNC.
-![[Pasted image 20240415012136.png]]

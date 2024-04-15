@@ -16,16 +16,18 @@ set(TS_FILES SkyPulseUAV_GroundStation_zh_CN.ts)
 
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/COMM
     ${CMAKE_SOURCE_DIR}/PLOTING
     ${CMAKE_SOURCE_DIR}/SENSOR
     ${CMAKE_SOURCE_DIR}/SYSTEM
+    ${CMAKE_SOURCE_DIR}/TOOLS
 )
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
+        mainwindow.cpp  # Updated path
+        mainwindow.h    # Updated path
         mainwindow.ui
         ${TS_FILES}
 )
@@ -34,14 +36,27 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(SkyPulseUAV_GroundStation
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
+        resource.qrc
+
         COMM/UDP.h COMM/UDP.cpp
         COMM/TCP.h COMM/TCP.cpp
         COMM/Bluetooth.h COMM/Bluetooth.cpp
+
         PLOTING/qcustomplot.h PLOTING/qcustomplot.cpp
         PLOTING/Mahony_Plot.h PLOTING/Mahony_Plot.cpp
+
+        SENSOR/MAG_HMC5883L.h SENSOR/MAG_HMC5883L.cpp
+
         SYSTEM/pooltask.h SYSTEM/pooltask.cpp
-        resource.qrc
+        SYSTEM/observable.h SYSTEM/observable.cpp
+
+        TOOLS/decodetask.h TOOLS/decodetask.cpp
+        TOOLS/DataHandler.h
+        TOOLS/handler_bmp180.h TOOLS/handler_bmp180.cpp
+        TOOLS/DataHandlerFactory.h
+        TOOLS/MediatorInterface.h
+        TOOLS/concretemediator.h TOOLS/concretemediator.cpp
+        TOOLS/datamanager.h TOOLS/datamanager.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

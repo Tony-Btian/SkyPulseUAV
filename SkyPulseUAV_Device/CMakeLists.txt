@@ -3,10 +3,16 @@ project(attitude)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# add test subdirectory
+add_subdirectory(test)
+enable_testing()
+add_test(NAME MyTest COMMAND Test)
+
 # find_package(sockpp REQUIRED)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src CFILE)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(/usr/include)
 include_directories(/usr/local/include)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 

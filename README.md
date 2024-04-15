@@ -4,14 +4,14 @@
       <i align="center">Pioneering UAV Technology for Critical Missions 🚀</i>
     </p>
     <div id="badges">
-     <a href="your-youtube-URL"><img src="https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white" alt="Youtube Badge"/></a>
-     <a href="https://twitter.com/Antonio_Btian"><img src="https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white" alt="Twitter Badge"/></a>
      <a href="GitHub License"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
      <a href="Contributions welcome"><img src="https://img.shields.io/badge/contributions-welcome-orange.svg"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV/issues"><img src="https://img.shields.io/github/issues/Tony-Btian/SkyPulseUAV.svg"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork"/></a>
-    </div>
+    </div> 
+	<br>
+	<a href="https://www.facebook.com/profile.php?id=61551233163443"><img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="Twitter Badge"/></a>
 </div>
 
 
@@ -126,10 +126,10 @@ Motherboard's hardware design files are stored in the directory.
 #### 1.2. SkyPulse_Device
 >Developer: JianLiang Wu
 
-The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
+The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio Code. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio Code's powerful development tools to ensure high performance and reliability.
 
 The steps to compile and run software from this directory include
-- Open the project in Visual Studio.
+- Open the project in Visual Studio Code.
 - Compile the code to ensure there are no errors.
 - Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
 
@@ -340,7 +340,7 @@ change the height and width for each of the contributors from 80 to 50.
 | Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management                                                                        |
 | Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm.  |
 | Jiaxing Wang |         | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.           |
-| Zhiyan Tong  | 2872426 | Developing Communication protocols, C++ coding for SkyPulse GroundStation, integrated UAV controls, and authored README for setup |
+| Zhiyan Tong  | 2872426 | Developing Communication protocols, C++ coding for SkyPulse GroundStation, Integrated UAV controls, and authored README for setup |
 | Shilin Zhang |         | Hardware Engineer                                                                                                                 |
 
 ### Contact

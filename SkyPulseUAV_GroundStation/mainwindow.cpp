@@ -1,102 +1,62 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "concretemediator.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    MahonyPlotObject = new Mahony_Plot();
     qDebug() << "Main Thread ID: " << QThread::currentThreadId();
+
+    mediator = new ConcreteMediator(this);
+    TCPServer = new TCP(nullptr, mediator);
+    UDPServer = new UDP();
+    MahonyPlotObject = new Mahony_Plot();
+
+    // BluetoothThread = new QThread(this);
+    // BluetoothServer = new Bluetooth();
+    // BluetoothServer->moveToThread(BluetoothThread);
+    // BluetoothThread->start();
+
     connect(ui->pushButton_Mahony_Plot_Launch, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::startPlotting);
     connect(ui->pushButton_Mahony_Plot_Stop, &QPushButton::clicked, MahonyPlotObject, &Mahony_Plot::stopPlotting);
 
-    this->initialTCPServer();
-    this->initialUDPServer();
-    // this->initialBluetoothServer();
+
+    /* TCP Server Connection Signals */
+    connect(this, &MainWindow::sig_StartTCPServer,  TCPServer, &TCP::startTCPServer);
+    connect(this, &MainWindow::sig_StopTCPServer,   TCPServer, &TCP::stopTCPServer);
+    connect(this, &MainWindow::sig_StartUDPServer,  UDPServer, &UDP::startUDPServer);
+    connect(this, &MainWindow::sig_StopUDPServer,   UDPServer, &UDP::stopUDPServer);
+
+    connect(this, &MainWindow::sig_sendRequestToFCS, TCPServer, &TCP::commendToFCS);
+    connect(this, &MainWindow::sig_sendPWMControlToTCP, TCPServer, &TCP::PWM_Controler);
+
+    connect(TCPServer, &TCP::sig_startSuccessful,   this, &MainWindow::onTCPStartSuccessful);
+    connect(TCPServer, &TCP::sig_stopSuccessful,    this, &MainWindow::onTCPStopSuccessful);
+    connect(TCPServer, &TCP::sig_connectionError,   this, &MainWindow::onTCPConnectionError);
+
+
+    /* UDP Server Connection Signals */
+
+    connect(UDPServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
+    connect(UDPServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
+
+    /* Bluetooth Server Connection Signals */
+    // connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
+
 }
 
 MainWindow::~MainWindow()
 {
+    delete MahonyPlotObject;
+    delete mediator;  // 如果需要，清理中介者实例
     delete ui;
-
-    // 请求TCP线程结束
-    TcpThread->quit();  // 等待线程安全结束
-    if (!TcpThread->wait(3000)) { // 等待最多3秒
-        TcpThread->terminate();
-        TcpThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete TcpThread; // 删除线程对象
-
-    // 请求UDP线程结束
-    UdpThread->quit();  // 等待线程安全结束
-    if (!UdpThread->wait(3000)) { // 等待最多3秒
-        UdpThread->terminate();
-        UdpThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete UdpThread; // 删除线程对象
-
-
-    /*
-    // 请求线程结束
-    BluetoothThread->quit();  // 等待线程安全结束
-    if (!BluetoothThread->wait(3000)) { // 等待最多3秒
-        BluetoothThread->terminate();
-        BluetoothThread->wait(); // 再次等待确保线程已经结束
-    }
-    delete BluetoothThread; // 删除线程对象
-*/
 }
 
-void MainWindow::initialTCPServer()
+void MainWindow::closeEvent(QCloseEvent *event)
 {
-    TcpThread = new QThread(this);
-    TcpServer = new TCP();  // 实体化TCP服务
-    TcpServer->moveToThread(TcpThread);
-
-    connect(this, &MainWindow::sig_StartTCPServer, TcpServer, &TCP::connectToServer);
-    connect(this, &MainWindow::sig_StopTCPServer, TcpServer, &TCP::disconnectToServer);
-    // connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::PWM_Controler);
-    connect(this, &MainWindow::sig_sendMessageToTCP, TcpServer, &TCP::controlMessageReceiver);
-
-    connect(TcpServer, &TCP::sig_receivedMessage, this, &MainWindow::displayReceivedMessage);
-    connect(TcpServer, &TCP::sig_connectionSuccessful, this, &MainWindow::onTCPConnectionSuccessful);
-    connect(TcpServer, &TCP::sig_connectionError, this, &MainWindow::onTCPConnectionError);
-    connect(TcpServer, &TCP::sig_disconnectionSuccessful, this, &MainWindow::onTCPDisconnectionSuccessful);
-    connect(TcpThread, &QThread::finished, TcpServer, &QObject::deleteLater);
-
-    TcpThread->start();
+    QCoreApplication::quit();
 }
-
-
-void MainWindow::initialUDPServer()
-{
-    UdpThread = new QThread(this);
-    UdpServer = new UDP();  // 实体化UDP服务
-    UdpServer->moveToThread(UdpThread);
-
-    connect(this, &MainWindow::sig_StartUDPServer, UdpServer, &UDP::startServer);
-    connect(this, &MainWindow::sig_StopUDPServer, UdpServer, &UDP::stopServer);
-    connect(UdpServer, &UDP::ServerStartSucessful, this, &MainWindow::onUDPServerStartSuccessful);
-    connect(UdpServer, &UDP::ServerStopSucessful, this, &MainWindow::onUDPServerStopSuccessful);
-    connect(UdpThread, &QThread::finished, UdpServer, &QObject::deleteLater);
-
-    UdpThread->start();
-}
-
-void MainWindow::initialBluetoothServer()
-{
-    BluetoothThread = new QThread(this);
-    BluetoothServer = new Bluetooth();
-    BluetoothServer->moveToThread(BluetoothThread);
-    connect(BluetoothThread, &QThread::finished, BluetoothServer, &QObject::deleteLater);
-    BluetoothThread->start();
-}
-
-void MainWindow::displayReceivedMessage(const QString &message)
-{
-    ui->textBrowser_test->append(message);
-}
-
 
 void MainWindow::on_pushButton_Network_Connect_clicked()
 {
@@ -108,74 +68,68 @@ void MainWindow::on_pushButton_Network_Connect_clicked()
     // 判断端口输入是否有效
     if(ok){
         emit sig_StartTCPServer(NetworkIPAddr, NetworkPort);  // 采用信号的方式进行连接
-        // TcpServer->connectToServer(NetworkIPAddr, NetworkPort);  // 根据IP地址和端口连接服务端
         emit sig_StartUDPServer(NetworkPort);  // 开启UDP服务
     }
     else{
-        qDebug() << "端口输入有误";
+        QMessageBox::critical(this, "Error", "Error Port Input");
+        ui->lineEdit_Network_Port->clear();
     }
 }
 
 void MainWindow::on_pushButton_Network_Disconnect_clicked()
 {
-    TcpServer->disconnectToServer();
+    emit sig_StopTCPServer();
     emit sig_StopUDPServer();
 }
 
-
-
-void MainWindow::onTCPConnectionSuccessful()
+void MainWindow::onTCPStartSuccessful()
 {
-    // 处理连接成功事件，例如更新UI状态
-    qDebug() << "Connection successful!";
+    // 处理连接成功事件，更新UI状态
     ui->pushButton_Network_Connect->setEnabled(false);
     ui->pushButton_Network_Disconnect->setEnabled(true);
-    ui->textBrowser_test->append("TCP连接成功");
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/yes.png"));
+}
+
+void MainWindow::onTCPStopSuccessful()
+{
+    // 处理连接失败事件，更新UI状态
+    ui->pushButton_Network_Connect->setEnabled(true);
+    ui->pushButton_Network_Disconnect->setEnabled(false);
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
 
 void MainWindow::onTCPConnectionError()
 {
     // 处理连接失败事件，例如更新UI状态
-    qDebug() << "Connection Error!";
     ui->pushButton_Network_Connect->setEnabled(true);
     ui->pushButton_Network_Disconnect->setEnabled(false);
-    ui->textBrowser_test->append("TCP连接失败");
+    QMessageBox::critical(this, "Error", "TCP Connection Error. Please check the client device and try again.");
+    ui->icon_TCP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
-
-void MainWindow::onTCPDisconnectionSuccessful()
-{
-    // 处理连接失败事件，例如更新UI状态
-    qDebug() << "Connection Disconnected!";
-    ui->pushButton_Network_Connect->setEnabled(true);
-    ui->pushButton_Network_Disconnect->setEnabled(false);
-    ui->textBrowser_test->append("TCP断开成功");
-}
-
-
 
 void MainWindow::onUDPServerStartSuccessful()
 {
-    qDebug() << "UDP开启成功信号返回";
-    ui->textBrowser_test->append("UDP开启成功");
+    ui->icon_UDP_Connection->setPixmap(QPixmap(":/qrc/icon/yes.png"));
 }
 
 void MainWindow::onUDPServerStopSuccessful()
 {
-    qDebug() << "UDP关闭成功信号返回";
-    ui->textBrowser_test->append("UDP关闭成功");
+    ui->icon_UDP_Connection->setPixmap(QPixmap(":/qrc/icon/no.png"));
 }
 
-QString MainWindow::getLocalIP()
+
+/*========================================================================
+* Fligth Control Panel
+*=========================================================================*/
+void MainWindow::on_pushButton_TAKE_OFF_clicked()
 {
-    const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
-    for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
-        if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
-            return address.toString();
-        }
-    }
-    return NULL;
+
 }
 
+
+/*========================================================================
+* Parameter Setting Panel
+*=========================================================================*/
 void MainWindow::on_pushButton_Mahony_Plot_Launch_clicked()
 {
     emit sig_Mahony_PlottingStart();
@@ -186,40 +140,105 @@ void MainWindow::on_pushButton_Mahony_Plot_Stop_clicked()
     emit sig_Mahony_PlottingStop();
 }
 
-void MainWindow::closeEvent(QCloseEvent *event)
+
+/*========================================================================
+* Sensor Register Setting Panel
+*=========================================================================*/
+/* Navigation Bar*/
+void MainWindow::on_toolButton_MPU6050_REG_CONFIG_clicked()
 {
-    QCoreApplication::quit();
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_BMP180_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(1);
+}
+
+void MainWindow::on_toolButton_GY271_REG_CONFIG_clicked()
+{
+    ui->stackedWidget_REG_CONFIG->setCurrentIndex(2);
+}
+
+/* MPU6050: Gyroscope&Accelerometer Sensor */
+void MainWindow::on_pushButton_REG_READ_ALL_MPU6050_clicked()
+{
+    emit sig_sendRequestToFCS(0x00);
+}
+
+/* BMP180: Barometer&temperature Sensor */
+void MainWindow::on_pushButton_REG_READ_ALL_BMP180_clicked()
+{
+    emit sig_sendRequestToFCS(0x01);
+}
+
+/* GY271: Magnetometer */
+void MainWindow::on_pushButton_REG_READ_ALL_GY271_clicked()
+{
+    emit sig_sendRequestToFCS(0x02);
 }
 
 
-/* GPIO Controler*/
+
+/* PWM Controler*/
 void MainWindow::on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(12, duty_cycle);
+    ui->doubleSpinBox_P12PWM0->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 12, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(13, duty_cycle);
+    ui->doubleSpinBox_P13PWM1->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 13, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(19, duty_cycle);
+    ui->doubleSpinBox_P19PWM2->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 19, duty_cycle);
 }
 
 void MainWindow::on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle)
 {
-    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle/255.0);
-    // emit sig_sendMessageToTCP(18, duty_cycle);
+    ui->doubleSpinBox_P18PWM3->setValue(duty_cycle*100.0/255.0);
+    emit sig_sendPWMControlToTCP(0x03, 18, duty_cycle);
 }
 
-// Read MPU6050 Config Button Slots
-void MainWindow::on_toolButton_REG_READ_ALL_clicked()
+
+void MainWindow::updateUI(const QString &message)
 {
-    emit sig_sendMessageToTCP(READ, 0x03, 0x01);
+    qDebug() << "Update UI:" << message;
+}
+
+
+
+// QString MainWindow::getLocalIP()
+// {
+//     const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+//     for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+//         if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost) {
+//             return address.toString();
+//         }
+//     }
+//     return NULL;
+// }
+
+void MainWindow::on_spinBox_MinThrottle_valueChanged(int arg1)
+{
+
+}
+
+void MainWindow::on_verticalSlider_Trust_valueChanged(int trust_value)
+{
+    int basePWM[4] = { ui->horizontalSlider_P12PWM0->value(),
+                       ui->horizontalSlider_P13PWM1->value(),
+                       ui->horizontalSlider_P19PWM2->value(),
+                       ui->horizontalSlider_P18PWM3->value()
+    };
+    float trustFactor = trust_value / 100.0f;
+    for (int i = 0; i < 4; i++){
+
+    }
 }
 

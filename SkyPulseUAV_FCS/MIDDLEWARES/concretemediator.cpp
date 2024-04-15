@@ -1,9 +1,9 @@
 #include "concretemediator.h"
-#include "mainwindow.h"
+#include "mainsystem.h"
 
-ConcreteMediator::ConcreteMediator(MainWindow *mainWindow)
-    : mainWindow(mainWindow) {}
+ConcreteMediator::ConcreteMediator(MainSystem *mainSystem)
+    : mainSystem(mainSystem) {}
 
 void ConcreteMediator::notify(const QString &message) {
-    QMetaObject::invokeMethod(mainWindow, "updateUI", Q_ARG(QString, message));
+    QMetaObject::invokeMethod(mainSystem, "BroadcastReceiver", Q_ARG(QString, message));
 }

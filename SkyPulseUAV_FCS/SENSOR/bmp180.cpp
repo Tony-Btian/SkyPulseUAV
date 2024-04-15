@@ -1,51 +1,61 @@
-#include "barometer_bmp180.h"
+#include "bmp180.h"
 #include <QDebug>
+#include <QThread>
 
-Barometer_BMP180::Barometer_BMP180(uint8_t i2cAddress, QObject *parent)
-    : QObject(parent), i2cDevice(nullptr)
+BMP180::BMP180(uint8_t i2cAddress, QObject *parent)
+    : QObject(parent), i2cDriver(nullptr)
 {
-    this->i2cDevice = new I2C_Device(i2cAddress, this);  // Create an instance os I2C_Device using the provided I2C address
-    if(!this->i2cDevice){
+    this->i2cDriver = new I2CDriver(i2cAddress, this);  // Create an instance os I2CDriver using the provided I2C address
+    if(!this->i2cDriver){
         qWarning("Failed to create I2C device for BMP180");
         return;
     }
-
-    if(!readCalibrationData()){
-        emit sig_errorOccurred("Failed to read calibration data from BMP180.");
+    if(initializeBMP180()){
+        qWarning("BMP180 Config Successful");
+    }
+    else{
+        qWarning("BMP180 Config Failed");
     }
 }
 
-void Barometer_BMP180::readPressure()
+bool BMP180::initializeBMP180()
 {
-    if (!i2cDevice) {
-        emit sig_errorOccurred("I2C device is not initialized.");
+    if(!readCalibrationData()){
+        return false;
+    }
+    return true;
+}
+
+void BMP180::readPressure(double &pressure)
+{
+    if (!i2cDriver) {
+        qWarning("I2C device is not initialized");
         return;
     }
-
     quint8 reg = 0xF6;
     quint8 count = 3;
-    QByteArray rawData = i2cDevice->readBytes(reg, count);
+    QByteArray rawData = i2cDriver->readBytes(reg, count);
 
     if (rawData.size() == count) {
         int rawPressure = (static_cast<unsigned char>(rawData[0]) << 16 |
                            static_cast<unsigned char>(rawData[1]) << 8 |
                            static_cast<unsigned char>(rawData[2])) >> (8 /* oversampling_setting */);
-        double pressure = calculatePressure(rawPressure);
-        emit sig_pressureRead(pressure);
+        pressure = calculatePressure(rawPressure);
     } else {
-        emit sig_errorOccurred("Failed to read pressure data from BMP180.");
+        qWarning("Failed to read pressure data from BMP180");
+        return;
     }
 }
 
-void Barometer_BMP180::readTemperature()
+void BMP180::readTemperature(double &temperature)
 {
-    if (!i2cDevice) {
-        emit sig_errorOccurred("I2C device is not initialized.");
+    if (!i2cDriver) {
+        qWarning("I2C device is not initialized");
         return;
     }
     // Write temperature measurement commands to the BMP180
-    if(!i2cDevice->writeByte(0xF4, 0x2E)) {
-        emit sig_errorOccurred("Failed to initiate temperature measurement.");
+    if(!i2cDriver->writeByte(0xF4, 0x2E)) {
+        qWarning("Failed to initiate temperature measurement");
         return;
     }
     // Wait for the conversion to complete, the BMP180 datasheet suggests waiting for at least 4.5ms
@@ -53,25 +63,21 @@ void Barometer_BMP180::readTemperature()
     // Read raw temperature data
     short rawTemp;
     if (!readShortFromRegister(0xF6, rawTemp)) {
-        emit sig_errorOccurred("Failed to read temperature data.");
+        qWarning("Failed to read temperature data");
         return;
     }
     // Calculate the actual temperature
     long x1 = ((long)rawTemp - (long)ac6) * (long)ac5 / 32768;
     long x2 = ((long)mc * 2048) / (x1 + md);
     long b5 = x1 + x2;
-    double temperature = (b5 + 8) / 16.0 / 10.0;
-
-    emit sig_temperatureRead(temperature);
-    qDebug() << "BMP180 Temperature: " << temperature;
+    temperature = (b5 + 8) / 16.0 / 10.0;
 }
 
-bool Barometer_BMP180::readCalibrationData()
+bool BMP180::readCalibrationData()
 {
-    if(!i2cDevice){
+    if(!i2cDriver){
         return false;
     }
-
     // Read calibration data
     if (!readShortFromRegister(0xAA, ac1) || !readShortFromRegister(0xAC, ac2) ||
         !readShortFromRegister(0xAE, ac3) || !readShortFromRegister(0xB0, ac4) ||
@@ -79,15 +85,15 @@ bool Barometer_BMP180::readCalibrationData()
         !readShortFromRegister(0xB6, b1)  || !readShortFromRegister(0xB8, b2)  ||
         !readShortFromRegister(0xBA, mb)  || !readShortFromRegister(0xBC, mc)  ||
         !readShortFromRegister(0xBE, md)) {
-        emit sig_errorOccurred("Error reading calibration data from BMP180.");
+        qWarning("Error reading calibration data from BMP180");
         return false;
     }
     return true;
 }
 
-bool Barometer_BMP180::readShortFromRegister(uint8_t registerAddress, short &value)
+bool BMP180::readShortFromRegister(uint8_t registerAddress, short &value)
 {
-    QByteArray data = i2cDevice->readBytes(registerAddress, 2);
+    QByteArray data = i2cDriver->readBytes(registerAddress, 2);
     if (data.size() == 2) {
         value = static_cast<short>((data[0] << 8) | data[1]);
         return true;
@@ -95,25 +101,25 @@ bool Barometer_BMP180::readShortFromRegister(uint8_t registerAddress, short &val
     return false;
 }
 
-double Barometer_BMP180::calculatePressure(int rawPressure) const
+double BMP180::calculatePressure(int rawPressure) const
 {
     return 0.00;
 }
 
-void Barometer_BMP180::readAllRegisters()
+void BMP180::readAllRegisters()
 {
-    if (!i2cDevice) {
+    if (!i2cDriver) {
         emit sig_errorOccurred("I2C device is not initialized.");
         return;
     }
 
     QByteArray data_buffer;
-    data_buffer.append(BMP180_DATAHEAD);
+//    data_buffer.append(BMP180_DATAHEAD);
     // Read calibration coefficient register
     quint8 startReg = 0xAA;
     quint8 endReg = 0xBF;
     quint8 count = endReg - startReg + 1;
-    QByteArray data_c = i2cDevice->readBytes(startReg, count);
+    QByteArray data_c = i2cDriver->readBytes(startReg, count);
     if(!data_c.isEmpty()){
         data_buffer.append(data_c);
     }
@@ -123,7 +129,7 @@ void Barometer_BMP180::readAllRegisters()
     }
 
     // Read pressure and temperature data registers
-    QByteArray data_d = i2cDevice->readBytes(0xF6, 3); // Read 3 consecutive bytes starting at 0xF6
+    QByteArray data_d = i2cDriver->readBytes(0xF6, 3); // Read 3 consecutive bytes starting at 0xF6
     if (!data_d.isEmpty()) {
         data_buffer.append(data_d);
         emit sig_allRegistersData(data_buffer);

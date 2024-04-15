@@ -1,17 +1,15 @@
-#include "gyroacelemeter_gy521.h"
-#include <QDebug>
+#include "mpu6050.h"
 
 MPU6050::MPU6050(uint8_t i2cAddress, QObject *parent)
-    : QObject(parent), i2cDevice(nullptr)
+    : QObject(parent), i2cDriver(nullptr)
 {
-    this->i2cDevice = new I2C_Device(i2cAddress, this);  // Create an instance os I2C_Device using the provided I2C address
-    if(!this->i2cDevice){
-        qDebug() << "Failed to create I2C device for MPU6050";
+    i2cDriver = new I2CDriver(i2cAddress, this);  // Create an instance os I2C_Device using the provided I2C address
+    if(!this->i2cDriver){
+        qWarning("Failed to create I2C device for MPU6050");
         return;
     }
-
-    if(this->initializeMPU6050()){
-//        qWarning("MPU6050 Config Successful");
+    if(initializeMPU6050()){
+        qWarning("MPU6050 Config Successful");
     }
     else{
         qWarning("MPU6050 Config Failed");
@@ -22,29 +20,27 @@ bool MPU6050::initializeMPU6050()
 {
     // Write to registers to initialise the sensor
     if(!writeByte(PWR_MGMT_1, 0x00)){  // Wake up the device by writing 0 to the power management register.
-        qDebug() << "MPU6050 wake up failed.";
+        qWarning("MPU6050 wake up failed");
         return false;
     }
     if(!writeByte(INT_ENABLE, 0x01)){  // Enable Data Ready interrupt
-        qDebug() << "MPU6050 enable interrupt failed";
+        qWarning("MPU6050 enable interrupt failed");
         return false;
     }
     if(!writeByte(INT_PIN_CFG, 0x30)){  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
-        qDebug() << "MPU6050 configure interrupt pin failed";
+        qWarning("MPU6050 configure interrupt pin failed");
         return false;
     }
     return true;
-//    calibrateAccel();
-//    calibrateGyro();
 }
 
 bool MPU6050::writeByte(uint8_t reg, uint8_t value)
 {
-    return i2cDevice->writeByte(reg, value);
+    return i2cDriver->writeByte(reg, value);
 }
 
 bool MPU6050::readBytes(uint8_t reg, uint8_t *buffer, size_t length) {
-    QByteArray data = i2cDevice->readBytes(reg, length);
+    QByteArray data = i2cDriver->readBytes(reg, length);
     if (data.size() == length) {
         memcpy(buffer, data.data(), length);
         return true;
@@ -61,7 +57,6 @@ void MPU6050::readAllSensors(float &ax, float &ay, float &az, float &gx, float &
         gx = (float)((int16_t)(buffer[8]  << 8 | buffer[9]))  / GYRO_FS_SEL_250DEG;
         gy = (float)((int16_t)(buffer[10] << 8 | buffer[11])) / GYRO_FS_SEL_250DEG;
         gz = (float)((int16_t)(buffer[12] << 8 | buffer[13])) / GYRO_FS_SEL_250DEG;
-
         applyCalibration(ax,ay,az,gx,gy,gz);  // Applying calibration offsets
     }
 }
@@ -116,5 +111,5 @@ void MPU6050::applyCalibration(float &ax, float &ay, float &az, float &gx, float
 
 void MPU6050::readAllMPU6050Reg()
 {
-    qDebug() << "Read all reg action!";
+    qWarning("Read all MPU6050 Reg Action");
 }

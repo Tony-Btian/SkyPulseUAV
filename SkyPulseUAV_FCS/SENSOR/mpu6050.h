@@ -1,16 +1,16 @@
-#ifndef GYROACELEMETER_GY521_H
-#define GYROACELEMETER_GY521_H
+#ifndef MPU6050_H
+#define MPU6050_H
 
 #include <QObject>
 #include <QThread>
-#include "i2c_device.h"
+#include "i2cdriver.h"
 
 class MPU6050 : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit MPU6050 (uint8_t i2cAddress = 0x68, QObject *parent = nullptr);
+    explicit MPU6050(uint8_t i2cAddress = 0x68, QObject *parent = nullptr);
     void readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
     void calibrateGyro();
     void calibrateAccel();
@@ -21,7 +21,7 @@ public slots:
     void readAllMPU6050Reg();
 
 private:
-    I2C_Device *i2cDevice;
+    I2CDriver *i2cDriver;
 
     // Calibration offsets
     float gyroOffset[3] = {0, 0, 0};
@@ -39,4 +39,4 @@ private:
     void applyCalibration(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 };
 
-#endif // GYROACELEMETER_GY521_H
+#endif // MPU6050_H

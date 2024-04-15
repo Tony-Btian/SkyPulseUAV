@@ -1,16 +1,19 @@
-#ifndef I2C_DEVICE_H
-#define I2C_DEVICE_H
+#ifndef I2CDRIVER_H
+#define I2CDRIVER_H
 
 #include <QObject>
 #include <QMutex>
+#include <QMutexLocker>
+#include <QByteArray>
+#include <pigpio.h>
 
-class I2C_Device : public QObject
+class I2CDriver : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit I2C_Device(int deviceAddress, QObject *parent = nullptr);
-    ~I2C_Device();
+    explicit I2CDriver(int deviceAddress, QObject *parent = nullptr);
+    ~I2CDriver();
 
     bool initialize();
     QByteArray readBytes(quint8 registerAddress, quint8 count);
@@ -25,7 +28,6 @@ private:
 
 signals:
     void errorOccurred(const QString &message);
-
 };
 
-#endif // I2C_DEVICE_H
+#endif // I2CDRIVER_H

@@ -1,26 +1,24 @@
 #ifndef TCP_H
 #define TCP_H
 
+#include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QTimer>
 #include <QThread>
-#include "Mediatorinterface.h"
+#include <QHostAddress>
+#include <QThreadPool>
+#include <QDataStream>
+#include <QDebug>
 
-/**
- * @class TCP Server
- * @brief TCP Server Class
- *
- * This TCP Server Class is used for the data and communication
- * interaction with SkyPulse UAV ground stations. This class
- * directly inherits QTCPServer.
- */
+#include "motorpwm.h"
+
 class TCP : public QTcpServer
 {
     Q_OBJECT
 
 public:
-    explicit TCP(QObject *parent = nullptr, MediatorInterface *mediator = nullptr);
+    explicit TCP(QObject *parent = nullptr);
     ~TCP();
 
 public slots:
@@ -38,14 +36,13 @@ private slots:
 private:
     QList<QTcpSocket*> clients;
     QThread *TCPThread;
-    MediatorInterface* mediator;
-    static constexpr quint16 PORT = 12345;
+//    MotorPWM *motor_pwm;
 
+    static constexpr quint16 PORT = 12345;
     void dataTranslator(const QByteArray &data);
-    void requestToReadAllReg(const Qstring )
 
 signals:
-    void sig_sendPWM0Signal(const int &duty_cycle);
+    void sig_sendPWMSignal(const quint8 &pwm1, const quint8 &pwm2, const quint8 &pwm3, const quint8 &pwm4);
     void sig_errorOccured_TCP(const QString &error_message);
     void sig_requestReadAllReg_BMP180();
     void sig_requestReadAllReg_MPU6050();

@@ -19,42 +19,32 @@ find_library(PIGPIO_LIBRARY NAMES pigpio REQUIRED)
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
     ${OpenCV_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/COMM
     ${CMAKE_SOURCE_DIR}/DRIVER
-    ${CMAKE_SOURCE_DIR}/MIDDLEWARES
-    ${CMAKE_SOURCE_DIR}/TOOLS
     ${CMAKE_SOURCE_DIR}/SENSOR
-    ${CMAKE_SOURCE_DIR}/ALGORITHM)
+    ${CMAKE_SOURCE_DIR}/SYSTEM
+    ${CMAKE_SOURCE_DIR}/MIDDLEWARES)
+
 
 set(PROJECT_SOURCES
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
 
-    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
+    COMM/tcp.h COMM/tcp.cpp
 
-    DRIVER/i2c_device.h DRIVER/i2c_device.cpp
-    DRIVER/esc_pwm_driver.h DRIVER/esc_pwm_driver.cpp
-    DRIVER/gpiointerrupthandler.h DRIVER/gpiointerrupthandler.cpp
-    DRIVER/fligthcontrol.h DRIVER/fligthcontrol.cpp
-    DRIVER/videocapture.h DRIVER/videocapture.cpp
+    DRIVER/i2cdriver.h DRIVER/i2cdriver.cpp
+    DRIVER/motorpwm.h DRIVER/motorpwm.cpp
 
-    MIDDLEWARES/tcp.h MIDDLEWARES/tcp.cpp
-    MIDDLEWARES/decodetask.h MIDDLEWARES/decodetask.cpp
-    MIDDLEWARES/Mediatorinterface.h MIDDLEWARES/DataHandlerFactory.h MIDDLEWARES/DataHandler.h
-    MIDDLEWARES/handler_bmp180.h MIDDLEWARES/handler_bmp180.cpp
+    SENSOR/mpu6050.h SENSOR/mpu6050.cpp
+    SENSOR/bmp180.h SENSOR/bmp180.cpp
+    SENSOR/gy271.h SENSOR/gy271.cpp
+
+    SYSTEM/mainsystem.h SYSTEM/mainsystem.cpp
+    SYSTEM/sensormanager.h SYSTEM/sensormanager.cpp
+
+    MIDDLEWARES/MediatorInterface.h
     MIDDLEWARES/concretemediator.h MIDDLEWARES/concretemediator.cpp
-
-    SENSOR/barometer_bmp180.h SENSOR/barometer_bmp180.cpp
-    SENSOR/magnetometer_gy271.h SENSOR/magnetometer_gy271.cpp
-    SENSOR/gyroacelemeter_gy521.h SENSOR/gyroacelemeter_gy521.cpp
-    SENSOR/sensormanager.h SENSOR/sensormanager.cpp
-
-    TOOLS/threadpool.h TOOLS/threadpool.cpp
-    TOOLS/databasemanager.h TOOLS/databasemanager.cpp
-    TOOLS/observer.h
-    TOOLS/observable.h TOOLS/observable.cpp
+    MIDDLEWARES/observable.h MIDDLEWARES/observable.cpp
+    MIDDLEWARES/Observer.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

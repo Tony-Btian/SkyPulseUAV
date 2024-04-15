@@ -4,14 +4,14 @@
       <i align="center">Pioneering UAV Technology for Critical Missions 🚀</i>
     </p>
     <div id="badges">
-     <a href="your-youtube-URL"><img src="https://img.shields.io/badge/YouTube-red?style=flat&logo=youtube&logoColor=white" alt="Youtube Badge"/></a>
-     <a href="https://twitter.com/Antonio_Btian"><img src="https://img.shields.io/badge/Twitter-blueviolet?style=flat&logo=twitter&logoColor=white" alt="Twitter Badge"/></a>
      <a href="GitHub License"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
      <a href="Contributions welcome"><img src="https://img.shields.io/badge/contributions-welcome-orange.svg"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV/issues"><img src="https://img.shields.io/github/issues/Tony-Btian/SkyPulseUAV.svg"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/stars/Tony-Btian/SkyPulseUAV.svg?style=social&label=Star"/></a>
      <a href="https://github.com/Tony-Btian/SkyPulseUAV"><img src="https://img.shields.io/github/forks/Tony-Btian/SkyPulseUAV.svg?style=social&label=Fork"/></a>
-    </div>
+    </div> 
+	<br>
+	<a href="https://www.facebook.com/profile.php?id=61551233163443"><img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="Twitter Badge"/></a>
 </div>
 
 

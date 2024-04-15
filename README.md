@@ -180,11 +180,11 @@ This directory is essential for operators and developers who need to control and
 
 # Hardware Development Guidance
 
-## SkyPulseUAV Hardware Components
+### SkyPulseUAV Hardware Components
 
 - Drone Fuselage
 - Brushless Motor
-## Sensors & Actuators
+### Sensors & Actuators
 
 | Sensor Name | Unit| Describtion |
 | ----------- | ----| ----------------------------------------------- |

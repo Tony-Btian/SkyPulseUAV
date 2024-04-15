@@ -36,6 +36,7 @@ set(PROJECT_SOURCES
 
     DRIVER/i2cdriver.h DRIVER/i2cdriver.cpp
     DRIVER/motorpwm.h DRIVER/motorpwm.cpp
+    DRIVER/flightcontrol.h DRIVER/flightcontrol.cpp
 
     SENSOR/mpu6050.h SENSOR/mpu6050.cpp
     SENSOR/bmp180.h SENSOR/bmp180.cpp

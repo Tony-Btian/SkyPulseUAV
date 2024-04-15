@@ -64,11 +64,13 @@ int main(int argc, const char* argv[])
     filterThread.start();
     tcpThread.start();
     bmp180Thread.start();
+    irandusThread.start();
 
     mpu6050Thread.join();
     tcpThread.join();
     filterThread.join();
     bmp180Thread.join();
+    irandusThread.join();
 
     return 0;
 }

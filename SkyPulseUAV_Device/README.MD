@@ -14,11 +14,17 @@ To be noticed that this part of code is Cmake-based and has been merged into _Sk
 
 - Make sure you have installed correct _compile toolchain_ on your PC, and **edit the path in _Raspberrypi.cmake_**.
 
-- Create link with necessary libraries and compile in newly created build folder (for better isolation).
+- **You have to link the library first before using!**
 ```
     cd lib
     ln -s libsockpp.so.2 libsockpp.so
     ln -s libpigpio.so.1 libpigpio.so
+    cd ../test/testLib
+    ln -s libboost_unit_test_framework.so.1.74.0 libboost_unit_test_framework.so
+```
+
+- Create link with necessary libraries and compile in newly created build folder (for better isolation).
+```
     mkdir ../build && cd ../build
     cmake -DCMAKE_TOOLCHAIN_FILE=../Raspberrypi.cmake ..
     make

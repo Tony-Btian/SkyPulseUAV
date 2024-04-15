@@ -29,9 +29,11 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 
 ## Table of contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#table-of-contents)
 - [General Guide](#general-guide)
-    - [System Deployment on Raspberry Pi](#system-deployment-raspberrypi)
-    - [System Deployment on Ubuntu](#system-deployment-ubunt)
+    - [System Deployment on Raspberry Pi](#system-deployment-on-raspberry-pi)
+    - [System Deployment on Ubuntu](#system-deployment-on-ubuntu)
     - [Hardware Preparation](#hardware-preparation)
+- [Hardware Development Guidance](#hardware-development-guidance)
+- 
 - [License](#license)
 - [Call to action](#call-to-action)
 - [Thank you all!](#thank-you-all)
@@ -42,7 +44,7 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 | Name | ID| Role |
 | ---- | ---- | ---- |
 | Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
-| Jianliang Wu |         | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying PID and Mahonyfilter algorithm. |
+| Jianliang Wu |         | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
 | Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
 | Zhiyan Tong  |  	 | 			|
 | Shilin Zhang | 	 | Hardware Engineer |
@@ -104,13 +106,9 @@ gantt
 
 ```
 
+# General Guide
 
-Click the link below to get detailed information about the source code.
-[Doxygen Code Document](https://shilinzhang1.github.io/)
-
-# General Guide[](#general-guide)
-
-### System Deployment on Raspberry Pi[](#system-deployment-raspberrypi)
+### System Deployment on Raspberry Pi
 
 #### Hardware and Software Clarification
 - Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
@@ -133,7 +131,7 @@ sudo apt-get upgrade
 sudo apt-get install gcc g++ git
 ```
 
-### System Deployment on Ubuntu[](#system-deployment-ubunt)
+### System Deployment on Ubuntu
 1. Download the QT software from the [official website](https://qt.io/download).
 2. Install QT by running
 ```
@@ -151,8 +149,42 @@ sudo apt install qtmultimedia5-dev qtwebengine5-dev
 ```
 Cross-compile the Raspberry Pi using QT according to the following [Tutorial](https://wiki.qt.io/Cross-Compile_Qt_6_for_Raspberry_Pi).
 
-### Hardware Preparation[](#hardware-preparation)
-#### Sensors & Actuators
+### Source Code Directory Descriptions
+#### SkyPulse_FCS
+The SkyPulse_FCS directory contains code customized specifically for the Qt environment. The code base includes the user interface and back-end logic. The focus of this folder is to provide a front-end control system that compiles and runs on a Raspberry Pi, utilizing Qt's graphical and system management capabilities to provide a powerful user experience and system control.
+
+To compile and run the software in this directory, do the following
+- Ensure that Qt is installed on the Raspberry Pi or development machine.
+- Use Qt Creator to open the project file and compile the code.
+- Deploy the application to the Raspberry Pi for testing and production.
+
+#### SkyPulse_Device
+The SkyPulse_Device catalog contains code that can be edited and compiled directly using Visual Studio. The code is designed to interact with hardware devices and manage device operations. It is designed to run efficiently on a Raspberry Pi, providing the backend logic needed to control all aspects of device functionality. The code structure in this folder supports easy maintenance and scalability, utilizing Visual Studio's powerful development tools to ensure high performance and reliability.
+
+The steps to compile and run software from this directory include
+- Open the project in Visual Studio.
+- Compile the code to ensure there are no errors.
+- Transferring the executable to the Raspberry Pi and executing it to handle device-specific operations.
+
+#### SkyPulse_GroundStation
+The SkyPulse GroundStation directory contains the ground control station software developed for Ubuntu systems. This application acts as a control terminal that integrates functionalities from both the SkyPulse_FCS and SkyPulse_Device programs, providing a comprehensive interface for managing and operating unmanned aerial vehicles (UAVs).
+- Control Interface: Offers a user-friendly graphical interface on Ubuntu for interacting with UAVs.
+- Communication: Utilizes both TCP and UDP protocols to ensure reliable and real-time communication with the UAVs.
+- Integration: Seamlessly combines commands and controls from the FCS and device software, offering a unified operation console for all flight and hardware management tasks.
+
+To get the SkyPulse GroundStation up and running on an Ubuntu system:
+- Ensure all dependencies are installed. This may include libraries and tools specific to network communication and graphical user interface development.
+- Compile the source code using a suitable C++ compiler or an integrated development environment (IDE) that supports C++ projects.
+- Execute the compiled application. Ensure the network settings are configured to match the communication parameters of the UAVs.
+This directory is essential for operators and developers who need to control and monitor UAVs directly from a ground-based station, providing all necessary tools and interfaces for effective mission management.
+
+# Hardware Development Guidance
+
+## SkyPulseUAV Hardware Components
+
+- Drone Fuselage
+- Brushless Motor
+## Sensors & Actuators
 
 | Sensor Name | Unit| Describtion |
 | ----------- | ----| ----------------------------------------------- |
@@ -163,47 +195,7 @@ Cross-compile the Raspberry Pi using QT according to the following [Tutorial](ht
 | SRF05       |  1  |  Ultrasonic Sensor used for distance measurement |
 > [Click me to the detail of Hardware Module]()
 
-
-
-### 3. SkyPulseUAV Source Code Deployment
-
-
-
-#### 3.1. Get the Source Code of SkyPulseUAV FSC
-
----
-
-
-# Hardware Development Guidance
-
-## 1. SkyPulseUAV Hardware Components
-
-- Drone Fuselage
-- 
-## 2. SkyPulseUAV Motherboard
-
-![SkyPulseUAV Motherboard 3D](Documents/Images/Motherboard_3D.png)
-
-The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
-
-Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
-
-
-# Sensors & Actuators
-### Sensors
-
-#### The list of used sensors is shown in Table 2.1.  Materials (BOM)
-| Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
-|:----:|:--------------:|:-----------:|:-------------------------------------------:|:--------:|:-----------------:|:-------------------:|
-|  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|
-|  2   | IMU Module     | MPU6050     | 3-axis gyroscope + 3-axis accelerometer     | 1 (pcs)  | Module Supplier   | Attitude control    |
-|  3   | Compass        | GY-271      | Three-axis magnetic field sensor            | 1 (pcs)  | Chip Supplier     | Heading determination|
-|  4   | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 4 (pcs)  | Sensor Supplier   | Collision avoidance |
-|  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
-|  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
-
-Datasheet:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
-
+### Sensors Description
 The subsequent section provides a comprehensive description of the sensor.
 - BMP180 Barometer  
   This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
@@ -224,8 +216,24 @@ The subsequent section provides a comprehensive description of the sensor.
 
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
 
-## SkyPulseUAV Environment Deployment
-#### 1. Raspberry Pi Software Setup
+#### The list of used sensors is shown in Table 2.1.  Materials (BOM)
+| Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
+|:----:|:--------------:|:-----------:|:-------------------------------------------:|:--------:|:-----------------:|:-------------------:|
+|  1   | Barometer      | BMP180      | Atmospheric pressure and temperature sensor | 1 (pcs)  | Chip Supplier     | Altitude positioning|
+|  2   | IMU Module     | MPU6050     | 3-axis gyroscope + 3-axis accelerometer     | 1 (pcs)  | Module Supplier   | Attitude control    |
+|  3   | Compass        | GY-271      | Three-axis magnetic field sensor            | 1 (pcs)  | Chip Supplier     | Heading determination|
+|  4   | Infrared Sensor| IR-SEN      | Short-range obstacle detection              | 4 (pcs)  | Sensor Supplier   | Collision avoidance |
+|  5   | Ultrasonic Sensor| US-SEN    | Distance measurement                        | 1 (pcs)  | Sensor Supplier   | Accurate height control|
+|  6   | Camera         | CAM123      | Video and still image capture               | 1 (pcs)  | Electronics Supplier | Visual navigation |
+
+Datasheet:  https://gla.sharepoint.com/:f:/s/RealTimeEmbeddedProgramming/Er75Ts1HyWJLpKlErVzHh8QBf-DxAUDw1SGniYnGCPcKsw?e=b5Uhbl
+## SkyPulseUAV Motherboard
+
+<img src="Documents/Images/Motherboard_3D.png" width="500">
+
+The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
+
+Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
 
 
 
@@ -260,19 +268,22 @@ The sequence of communication over the SkyPulseUAV protocol is as follows:
 - Session Closure: The session can be safely terminated by a specific command sequence, after which the UAV disengages communication.
 
 ### Error Handling
-The SkyPulseUAV protocol incorporates error handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
+The SkyPulseUAV protocol incorporates error-handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
 
-### Conclusion
-The communication protocol is a cornerstone of the SkyPulseUAV's operational integrity, facilitating a secure and reliable interface for UAV control and telemetry feedback. This protocol is instrumental in maintaining the UAV's performance and safety standards in various flight conditions.
+
+
 
 # Contact
 If you want to talk about technical issues related to this project, please contact one of us:
-
 Jianliang Wu: moxiasgabi@gmail.com
-
 Binhan Tian: 
-
 Jiaxing Wang: ascende_superius@outlook.com
 
 ## License
 MIT License Copyright (c) 2024 Binhan Tian
+
+# Hardware Preparation
+### Motherboard Schemical
+
+Click the link below to get detailed information about the source code.
+[Doxygen Code Document](https://shilinzhang1.github.io/)

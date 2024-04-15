@@ -27,30 +27,22 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - **Seamless Hardware Integration**: Designed for compatibility with diverse UAV platforms, enhancing their utility in various field applications.
 - **Open Source Community Driven**: SkyPulseUAV thrives on collaborative innovation, inviting contributions from developers, engineers, and UAV enthusiasts worldwide.
 
-## Table of contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#table-of-contents)
+# Table of contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#table-of-contents)
+- [Project Development Planning](#project-development-planning)
 - [General Guide](#general-guide)
     - [System Deployment on Raspberry Pi](#system-deployment-on-raspberry-pi)
     - [System Deployment on Ubuntu](#system-deployment-on-ubuntu)
+    - [Source Code Directory Descriptions](#source-code-directory-descriptions)
     - [Hardware Preparation](#hardware-preparation)
 - [Hardware Development Guidance](#hardware-development-guidance)
-- 
+    - [Hardware Components](#skypulseuav-hardware-components)
+    - [Sensors & Actuators](#sensors--actuators)
+    - [Motherboard](#skypulseuav-motherboard)
+- [Software Development Guidance](#software-development-guidance)
+    - [SkyPulseUAV Communication Protocol]()
+- [Contributors](#contributors)
 - [License](#license)
-- [Call to action](#call-to-action)
 - [Thank you all!](#thank-you-all)
-
-
-### Project Main Contributors
-
-| Name | ID| Role |
-| ---- | ---- | ---- |
-| Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
-| Jianliang Wu |         | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
-| Zhiyan Tong  |  	 | 			|
-| Shilin Zhang | 	 | Hardware Engineer |
-
-### Connect and Collaborate
-Stay updated with our progress, engage in discussions, and explore collaboration opportunities by following our repository and joining our community. Let's transform the landscape of emergency response and environmental analysis together with SkyPulseUAV!
 
 
 # Project Development Planning
@@ -87,7 +79,6 @@ Stay updated with our progress, engage in discussions, and explore collaboration
 - [x] Synchronously update the contents of README_ZH.md & README.md (once a week)
 
 #### Zhiyan Tong
-
 
 
 ### Visual Project Management Plan
@@ -180,36 +171,11 @@ This directory is essential for operators and developers who need to control and
 
 # Hardware Development Guidance
 
-### SkyPulseUAV Hardware Components
-
+### Hardware Components
 - Drone Fuselage
 - Brushless Motor
-### Sensors & Actuators
 
-| Sensor Name | Unit| Describtion |
-| ----------- | ----| ----------------------------------------------- |
-| MPU6050     |  1  |  A 3-axis gyroscope and a 3-axis accelerometer  |
-| BMP180      |  1  |  High-precision, low-power digital barometer    |
-| GY271       |  1  |  Magnetometer sensor for detecting magnetic fields and determining orientation |
-| KY-032      |  4  |  Obstacle avoidance sensor module |
-| SRF05       |  1  |  Ultrasonic Sensor used for distance measurement |
-
-
-### Sensors Description
-The subsequent section provides a comprehensive description of the sensor.
-- BMP180 Barometer : This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
-- MPU6050 IMU Module : An integrated module with a 3-axis gyroscope and a 3-axis accelerometer, this device can detect the UAV's orientation and acceleration in three-dimensional space. It is critical for the UAV's attitude control and motion tracking.
-- Gyroscope and Accelerometer Model GY-521 (MPU6050) : 
-  - Angular velocity (gyroscope), with full-scale range options of ±250, ±500, ±1000, and ±2000 degrees per second.  
-  - Acceleration (accelerometer), with full-scale range options of ±2g, ±4g, ±8g, and ±16g.  
-  - Acceleration data can be read from the ACCEL_XOUT_H/L, ACCEL_YOUT_H/L, and ACCEL_ZOUT_H/L registers.  
-  - Angular velocity data can be read from the GYRO_XOUT_H/L, GYRO_YOUT_H/L, and GYRO_ZOUT_H/L registers.  
-- GY-271 Compass: A three-axis magnetic field sensor based on the QMC5883L chip, used to measure the intensity of the Earth's magnetic field. It serves as the compass functionality for the UAV, aiding in determining its heading.  
-- Infrared Sensor : Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
-- Infrared Distance Sensor Model KY-032 : Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
-- Ultrasonic Distance Detection Module HY-SRF05 : Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
-
-The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
+## Sensors & Actuators
 
 #### The list of used sensors is shown in Table 2.1.  Materials (BOM)
 | Item | Component Name | Part Number | Description                                 | Quantity | Supplier          | Notes               |
@@ -225,19 +191,43 @@ The construction of UAVs involves the meticulous arrangement of sensors to fulfi
 >[Click me to the Download the Datasheet](./Documents/ModuleDatasheet/)
 
 
+#### Sensors Description
+The subsequent section provides a comprehensive description of the sensor.
+- BMP180 Barometer : This barometric pressure sensor is used to measure atmospheric pressure, which can be translated into altitude measurements. For unmanned aerial vehicles (UAVs), it is a key component for altitude control and positioning.
+- MPU6050 IMU Module : An integrated module with a 3-axis gyroscope and a 3-axis accelerometer, this device can detect the UAV's orientation and acceleration in three-dimensional space. It is critical for the UAV's attitude control and motion tracking.
+- Gyroscope and Accelerometer Model GY-521 (MPU6050) : 
+  - Angular velocity (gyroscope), with full-scale range options of ±250, ±500, ±1000, and ±2000 degrees per second.  
+  - Acceleration (accelerometer), with full-scale range options of ±2g, ±4g, ±8g, and ±16g.  
+  - Acceleration data can be read from the ACCEL_XOUT_H/L, ACCEL_YOUT_H/L, and ACCEL_ZOUT_H/L registers.  
+  - Angular velocity data can be read from the GYRO_XOUT_H/L, GYRO_YOUT_H/L, and GYRO_ZOUT_H/L registers.  
+- GY-271 Compass: A three-axis magnetic field sensor based on the QMC5883L chip, used to measure the intensity of the Earth's magnetic field. It serves as the compass functionality for the UAV, aiding in determining its heading.  
+- Infrared Sensor : Utilized to detect the presence of objects near the UAV, commonly used for obstacle avoidance and altitude maintenance.  
+- Infrared Distance Sensor Model KY-032 : Ultrasonic Sensor: Emits ultrasonic waves and receives their echoes to measure the distance between the UAV and the ground or other objects, used for obstacle avoidance and precise altitude control in low-altitude flight.  
+- Ultrasonic Distance Detection Module HY-SRF05 : Camera: Captures video or still images, which can be used for surveillance, mapping, or image recognition navigation.  
+
+The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
+
+
 ## SkyPulseUAV Motherboard
 
 <div align="center">
 <img src="Documents/Images/Motherboard_3D.png" width="500">
 </div>
 
-The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics.
-
-Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
+The SkyPulseUAV Motherboard is a cutting-edge, open-source drone control board tailored for the Raspberry Pi. The hardware motherboard embodies the team's technical achievements while inspiring creativity and innovation among drone enthusiasts, and provides a versatile and powerful platform for drone enthusiasts to bridge the gap between complex drone technology and easy-to-use DIY electronics. Designed and developed by a team of University of Glasgow students team of the Real-Time course, the control board helps hobbyists deepen their understanding and gain hands-on experience with drone mechanics, control systems, and robotics integration. Whether you're an educator looking to introduce your students to the world of drones, a researcher conducting advanced aerial experiments, or a hobbyist eager to explore drone technology, our team's control board provides the tools and functionality needed to create complex, customized drone solutions.
 
 
-## SkyPulseUAV Communication Protocol Overview
-### Introduction
+
+# Software Development Guidance
+
+
+## Software Architecture
+
+
+## Sensor & Actuator Driver Development
+
+
+## SkyPulseUAV Communication Protocol
 This part provides a detailed overview of the communication protocol implemented in the SkyPulseUAV, an embedded system designed for unmanned aerial vehicle (UAV) control. The protocol governs the interaction between the ground control station and the UAV's onboard control system, ensuring precise maneuvering and real-time telemetry.
 
 ### Protocol Structure
@@ -270,6 +260,7 @@ The sequence of communication over the SkyPulseUAV protocol is as follows:
 The SkyPulseUAV protocol incorporates error-handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
 
 
+
 # Contributors
 
 <!---
@@ -287,6 +278,16 @@ change the height and width for each of the contributors from 80 to 50.
 <a href="https://github.com/ZhiyanTong"><img src="https://avatars.githubusercontent.com/u/158243670?v=4" title="abrl91" width="50" height="50"></a>
 
 [//]: contributor-faces
+
+### Project Main Contributors
+
+| Name | ID| Role |
+| ---- | ---- | ---- |
+| Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
+| Jianliang Wu |         | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
+| Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
+| Zhiyan Tong  |  	 | 			|
+| Shilin Zhang | 	 | Hardware Engineer |
 
 ### Contact
 

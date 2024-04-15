@@ -29,8 +29,9 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 
 ## Table of contents[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#table-of-contents)
 - [General Guide](#general-guide)
-    - [System Deployment](#1-system-deployment)
-    - [Hardware and Software Clarification](#11-hardware-and-software-clarification)
+    - [System Deployment on Raspberry Pi](#system-deployment-raspberrypi)
+    - [System Deployment on Ubuntu](#system-deployment-ubunt)
+    - [Hardware Preparation](#hardware-preparation)
 - [License](#license)
 - [Call to action](#call-to-action)
 - [Thank you all!](#thank-you-all)
@@ -109,7 +110,7 @@ Click the link below to get detailed information about the source code.
 
 # General Guide[](#general-guide)
 
-### System Deployment on Raspberry Pi
+### System Deployment on Raspberry Pi[](#system-deployment-raspberrypi)
 
 #### Hardware and Software Clarification
 - Raspberry Pi: Raspberry Pi 4B (8GB), with Raspberry OS 64 bit
@@ -132,7 +133,7 @@ sudo apt-get upgrade
 sudo apt-get install gcc g++ git
 ```
 
-### System Deployment on Ubuntu
+### System Deployment on Ubuntu[](#system-deployment-ubunt)
 1. Download the QT software from the [official website](https://qt.io/download).
 2. Install QT by running
 ```
@@ -150,7 +151,7 @@ sudo apt install qtmultimedia5-dev qtwebengine5-dev
 ```
 Cross-compile the Raspberry Pi using QT according to the following [Tutorial](https://wiki.qt.io/Cross-Compile_Qt_6_for_Raspberry_Pi).
 
-### Hardware Preparation
+### Hardware Preparation[](#hardware-preparation)
 #### Sensors & Actuators
 
 | Sensor Name | Unit| Describtion |

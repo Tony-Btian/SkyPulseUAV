@@ -297,10 +297,10 @@ change the height and width for each of the contributors from 80 to 50.
 | Name | ID| Role |
 | ---- | ---- | ---- |
 | Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management |
-| Jianliang Wu | 2847947        | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
-| Jiaxing Wang |   	 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
-| Zhiyan Tong  |  	 | 			|
-| Shilin Zhang | 	 | Hardware Engineer |
+| Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm. |
+| Jiaxing Wang |   	     | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.   |
+| Zhiyan Tong  |  	     | 			             |
+| Shilin Zhang | 	       | Hardware Engineer |
 
 ### Contact
 

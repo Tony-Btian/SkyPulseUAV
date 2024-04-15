@@ -240,10 +240,6 @@ The subsequent section provides a comprehensive description of the sensor.
 The construction of UAVs involves the meticulous arrangement of sensors to fulfill functional requirements. The BMP180 barometer is typically placed at the center of the UAV to mitigate the effects of airflow. The MPU6050 is often closely integrated with the flight controller for real-time adjustments of the UAV's flight attitude. The GY-271 compass should be situated in an area with minimal electromagnetic interference to ensure the accuracy of heading indications. Infrared and ultrasonic sensors are usually located on the underside or around the UAV for detecting and avoiding obstacles. The camera, as per necessity, may be mounted at the front, bottom, or other strategic locations to provide optimal viewing angles.
 
 
-## SkyPulseUAV Communication Protocol Overview
-### Introduction
-
-
 ## SkyPulseUAV Motherboard
 
 <div align="center">
@@ -276,8 +272,8 @@ make test
 ```
 after _make_. 
 
-## SkyPulseUAV Communication Protocol
 
+## SkyPulseUAV Communication Protocol
 This part provides a detailed overview of the communication protocol implemented in the SkyPulseUAV, an embedded system designed for unmanned aerial vehicle (UAV) control. The protocol governs the interaction between the ground control station and the UAV's onboard control system, ensuring precise maneuvering and real-time telemetry.
 
 ### Protocol Structure
@@ -308,7 +304,6 @@ The sequence of communication over the SkyPulseUAV protocol is as follows:
 
 ### Error Handling
 The SkyPulseUAV protocol incorporates error-handling protocols to address issues such as signal interference, packet loss, and data corruption. Automatic retransmission and robust security measures are in place to ensure reliable operation.
-
 
 
 # Contributors

@@ -31,7 +31,6 @@ include_directories(
 set(PROJECT_SOURCES
     main.cpp
 
-    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
     ALGORITHM/pidcontroller.h ALGORITHM/pidcontroller.cpp
 
     COMM/tcp.h COMM/tcp.cpp
@@ -39,6 +38,7 @@ set(PROJECT_SOURCES
     DRIVER/i2cdriver.h DRIVER/i2cdriver.cpp
     DRIVER/motorpwm.h DRIVER/motorpwm.cpp
     DRIVER/flightcontrol.h DRIVER/flightcontrol.cpp
+    DRIVER/videostreamer.h DRIVER/videostreamer.cpp
 
     SENSOR/mpu6050.h SENSOR/mpu6050.cpp
     SENSOR/bmp180.h SENSOR/bmp180.cpp

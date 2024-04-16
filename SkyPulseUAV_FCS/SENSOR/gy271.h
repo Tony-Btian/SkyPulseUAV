@@ -2,6 +2,9 @@
 #define GY271_H
 
 #include <QObject>
+#include <QDebug>
+#include <QThread>
+#include <cmath>
 #include "i2cdriver.h"
 
 class GY271 : public QObject
@@ -13,11 +16,12 @@ public:
     bool initializeGY271();
 
 public slots:
-    void readRawData(int &x, int &y, int &z);
+    double readHeading(int x, int y);
+//    void calibrationGY271();
+    void readRawData(int &x, int &y, int &z, double &headingDegree);
 
 private:
     I2CDriver *i2cDriver;
-    bool writeByte(uint8_t reg, uint8_t value);
     int16_t convertToRawData(const QByteArray &bytes, int offset);
 };
 

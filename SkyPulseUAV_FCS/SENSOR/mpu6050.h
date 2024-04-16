@@ -14,7 +14,6 @@ public:
     void readAllSensors(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
     void calibrateGyro();
     void calibrateAccel();
-    bool writeByte(uint8_t reg, uint8_t value);
     bool readBytes(uint8_t reg, uint8_t *buffer, size_t length);
 
 public slots:
@@ -36,6 +35,7 @@ private:
     static constexpr float   GYRO_FS_SEL_250DEG = 131.0;
 
     bool initializeMPU6050();
+    void collectSensorDataForCalibration();
     void applyCalibration(float &ax, float &ay, float &az, float &gx, float &gy, float &gz);
 };
 

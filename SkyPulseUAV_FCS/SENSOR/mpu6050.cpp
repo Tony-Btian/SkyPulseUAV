@@ -1,9 +1,8 @@
 #include "mpu6050.h"
 
 MPU6050::MPU6050(uint8_t i2cAddress, QObject *parent)
-    : QObject(parent), i2cDriver(nullptr)
+    : QObject(parent), i2cDriver(new I2CDriver(i2cAddress, this))
 {
-    i2cDriver = new I2CDriver(i2cAddress, this);  // Create an instance os I2C_Device using the provided I2C address
     if(!this->i2cDriver){
         qWarning("Failed to create I2C device for MPU6050");
         return;
@@ -19,25 +18,46 @@ MPU6050::MPU6050(uint8_t i2cAddress, QObject *parent)
 bool MPU6050::initializeMPU6050()
 {
     // Write to registers to initialise the sensor
-    if(!writeByte(PWR_MGMT_1, 0x00)){  // Wake up the device by writing 0 to the power management register.
+    if(!i2cDriver->writeByte(PWR_MGMT_1, 0x00)){  // Wake up the device by writing 0 to the power management register.
         qWarning("MPU6050 wake up failed");
         return false;
     }
-    if(!writeByte(INT_ENABLE, 0x01)){  // Enable Data Ready interrupt
+    if(!i2cDriver->writeByte(INT_ENABLE, 0x01)){  // Enable Data Ready interrupt
         qWarning("MPU6050 enable interrupt failed");
         return false;
     }
-    if(!writeByte(INT_PIN_CFG, 0x30)){  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
+    if(!i2cDriver->writeByte(INT_PIN_CFG, 0x30)){  // Configure interrupt pin to be active high, push-pull, hold until cleared, clear on read
         qWarning("MPU6050 configure interrupt pin failed");
         return false;
     }
+    collectSensorDataForCalibration();
     return true;
 }
 
-bool MPU6050::writeByte(uint8_t reg, uint8_t value)
+void MPU6050::collectSensorDataForCalibration()
 {
-    return i2cDriver->writeByte(reg, value);
+    const int samples = 1000;
+    float gyroSum[3] = {0, 0, 0};
+    float accelSum[3] = {0, 0, 0};
+
+    for (int i = 0; i < samples; ++i) {
+        float ax=0.0f, ay=0.0f, az=0.0f, gx=0.0f, gy=0.0f, gz=0.0f;
+        readAllSensors(ax, ay, az, gx, gy, gz);
+        gyroSum[0] += gx;
+        gyroSum[1] += gy;
+        gyroSum[2] += gz;
+        accelSum[0] += ax;
+        accelSum[1] += ay;
+        accelSum[2] += az - 1;  // Assuming the sensor is aligned with gravity
+        QThread::msleep(2);
+    }
+
+    for (int i = 0; i < 3; ++i) {
+        gyroOffset[i] = gyroSum[i] / samples;
+        accelOffset[i] = accelSum[i] / samples;
+    }
 }
+
 
 bool MPU6050::readBytes(uint8_t reg, uint8_t *buffer, size_t length) {
     QByteArray data = i2cDriver->readBytes(reg, length);
@@ -54,48 +74,11 @@ void MPU6050::readAllSensors(float &ax, float &ay, float &az, float &gx, float &
         ax = (float)((int16_t)(buffer[0]  << 8 | buffer[1]))  / ACCEL_FS_SEL_2G;
         ay = (float)((int16_t)(buffer[2]  << 8 | buffer[3]))  / ACCEL_FS_SEL_2G;
         az = (float)((int16_t)(buffer[4]  << 8 | buffer[5]))  / ACCEL_FS_SEL_2G;
+
         gx = (float)((int16_t)(buffer[8]  << 8 | buffer[9]))  / GYRO_FS_SEL_250DEG;
         gy = (float)((int16_t)(buffer[10] << 8 | buffer[11])) / GYRO_FS_SEL_250DEG;
         gz = (float)((int16_t)(buffer[12] << 8 | buffer[13])) / GYRO_FS_SEL_250DEG;
         applyCalibration(ax,ay,az,gx,gy,gz);  // Applying calibration offsets
-    }
-}
-
-void MPU6050::calibrateGyro()
-{
-    const int samples = 1000;
-    float sum[3] = {0, 0, 0};
-
-    for (int i = 0; i < samples; ++i) {
-        float ax=0.0f, ay=0.0f, az=0.0f, gx=0.0f, gy=0.0f, gz=0.0f;
-        readAllSensors(ax, ay, az, gx, gy, gz);
-        sum[0] += gx;
-        sum[1] += gy;
-        sum[2] += gz;
-        QThread::msleep(2);
-    }
-
-    for (int i = 0; i < 3; ++i) {
-        gyroOffset[i] = sum[i] / samples;
-    }
-}
-
-void MPU6050::calibrateAccel()
-{
-    const int samples = 1000;
-    float sum[3] = {0, 0, 0};
-
-    for (int i = 0; i < samples; ++i) {
-        float ax=0.0f, ay=0.0f, az=0.0f, gx=0.0f, gy=0.0f, gz=0.0f;
-        readAllSensors(ax, ay, az, gx, gy, gz);
-        sum[0] += ax;
-        sum[1] += ay;
-        sum[2] += az - 1; // Assuming the sensor is aligned with gravity
-        QThread::msleep(2);
-    }
-
-    for (int i = 0; i < 3; ++i) {
-        accelOffset[i] = sum[i] / samples;
     }
 }
 

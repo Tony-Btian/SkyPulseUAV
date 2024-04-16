@@ -1,10 +1,8 @@
 #include "gy271.h"
-#include <QDebug>
 
 GY271::GY271(uint8_t i2cAddress, QObject *parent)
-    : QObject(parent), i2cDriver(nullptr)
+    : QObject(parent), i2cDriver(new I2CDriver(i2cAddress, this))
 {
-    this->i2cDriver = new I2CDriver(i2cAddress, this);
     if (!this->i2cDriver){
         qWarning("Failed to create I2C device for GY271");
         return;
@@ -20,32 +18,41 @@ GY271::GY271(uint8_t i2cAddress, QObject *parent)
 bool GY271::initializeGY271()
 {
     /*Configuration register*/
-    if (!writeByte(0x00, 0x70) // Configure register A for 8 average, 15Hz default, normal measurement
-        || !writeByte(0x01, 0xA0) // Configuration Gain
-        || !writeByte(0x02, 0x00)) { // Continuous measurement mode
+    if (!i2cDriver->writeByte(0x0B, 0x01) // Configure register A for 8 average, 15Hz default, normal measurement
+        || !i2cDriver->writeByte(0x09, 0x1D)) { // Configuration Gain
         qWarning("Failed to write configuration to Magnetometer GY271");
         return false;
     }
     return true;
 }
 
-bool GY271::writeByte(uint8_t reg, uint8_t value)
+double GY271::readHeading(int x, int y)
 {
-    return i2cDriver->writeByte(reg, value);
+    double headingRadians = atan2(double(y), double(x)); // Calculate the angle in radians
+    double headingDegrees = headingRadians * (180.0 / M_PI); // Convert to degrees
+
+    // Normalize to 0-360 degrees
+    if (headingDegrees < 0) {
+        headingDegrees += 360.0;
+    }
+    return headingDegrees;
 }
 
-void GY271::readRawData(int &x, int &y, int &z)
+void GY271::readRawData(int &x, int &y, int &z, double &headingDegree)
 {
-    QByteArray data = i2cDriver->readBytes(0x03, 6);
+    QByteArray data = i2cDriver->readBytes(0x00, 6);
     if (data.size() == 6) {
         x = convertToRawData(data, 0);
         y = convertToRawData(data, 2);
         z = convertToRawData(data, 4);
+        headingDegree = readHeading(x, y);
     }
     else{
         qWarning("Failed to read data from the device");
     }
 }
+
+
 
 int16_t GY271::convertToRawData(const QByteArray& bytes, int offset)
 {

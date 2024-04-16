@@ -10,7 +10,8 @@ MainSystem::MainSystem()
 MainSystem::~MainSystem()
 {
     qWarning("System Quit");
-//    delete motor_pwm;
+    delete motor_pwm;
+    delete readTimer;
     gpioTerminate();
 }
 
@@ -19,6 +20,7 @@ void MainSystem::UI_Initial()
     // Create Pushbutton
     QPushButton *function_button1 = new QPushButton("Function1", this);
     QPushButton *function_button2 = new QPushButton("Function2", this);
+    QPushButton *function_button3 = new QPushButton("Function3", this);
 
     // Create SpinBoxes
     QSpinBox *spinBoxPitch = new QSpinBox(this);
@@ -48,6 +50,7 @@ void MainSystem::UI_Initial()
     // Adding buttons to a layout
     buttonLayout->addWidget(function_button1);
     buttonLayout->addWidget(function_button2);
+    buttonLayout->addWidget(function_button3);
 
     // Add SpinBox to Layout
     inputLayout->addWidget(spinBoxPitch);
@@ -63,7 +66,10 @@ void MainSystem::UI_Initial()
 
     // Connecting signals and slots
     connect(function_button1, &QPushButton::clicked, this, &MainSystem::onButtonClicked_Function1);
-    connect(function_button2, &QPushButton::clicked, this, &MainSystem::onButtonClicked_Function2);
+    connect(function_button2, &QPushButton::clicked, this, &MainSystem::toggleTimer);
+//    connect(function_button2, &QPushButton::clicked, this, &MainSystem::onButtonClicked_Function2);
+    connect(function_button3, &QPushButton::clicked, this, &MainSystem::onButtonClicked_Function3);
+
 
     connect(spinBoxPitch, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
             this, [this, spinBoxPitch]() {
@@ -126,15 +132,26 @@ void MainSystem::Function_Initial()
 {
     /*Sensors*/
     sensor_manager = new SensorManager();
-    connect(this, &MainSystem::sig_readAllSensorDataTest, sensor_manager, &SensorManager::ReadAllSensorData);
-
     tcp_server = new TCP();
     motor_pwm = new MotorPWM(this);
-
     flight_control = new FlightControl(0, 0, 0, 0);
+    readTimer = new QTimer(this);
+    video_streamer = new VideoStreamer();
 
+    connect(this, &MainSystem::sig_readAllSensorDataTest, sensor_manager, &SensorManager::ReadAllSensorData);
     connect(tcp_server, &TCP::sig_sendPWMSignal, motor_pwm, &MotorPWM::setMotorPWMSignal);
     connect(flight_control, &FlightControl::sig_sendMotorData, motor_pwm, &MotorPWM::setMotorPWMSignal);
+    connect(readTimer, &QTimer::timeout, sensor_manager, &SensorManager::ReadAllSensorData);
+    connect(sensor_manager, &SensorManager::sig_sendMessage64Bytes, tcp_server, &TCP::sendMessage64Bytes);
+    connect(sensor_manager, &SensorManager::updateSensorData, this, [](float ax, float ay, float az, float gx, float gy, float gz, double pressure, double temperature, int x, int y, int z, double heading){
+            qDebug() << "Received sensor data in main thread";
+            qDebug() << "Acceleration:" << ax << "," << ay << "," << az;
+            qDebug() << "Gyroscope:" << gx << "," << gy << "," << gz;
+            qDebug() << "Presure:" << pressure;
+            qDebug() << "Temperature:" << temperature;
+            qDebug() << "Direction:" << x << y << z;
+            qDebug() << "Heading Degree:" << heading;
+        });
 }
 
 void MainSystem::onButtonClicked_Function1()
@@ -146,6 +163,11 @@ void MainSystem::onButtonClicked_Function1()
 void MainSystem::onButtonClicked_Function2()
 {
     qWarning("Function Button 2 Click");
+}
+
+void MainSystem::onButtonClicked_Function3()
+{
+
 }
 
 void MainSystem::onSpinBoxPitch_valueChanged(int value)
@@ -168,3 +190,14 @@ void MainSystem::onSpinBoxYaw_valueChanged(int value)
 
 }
 
+void MainSystem::toggleTimer()
+{
+    if (timerRunning) {
+        readTimer->stop();
+        qDebug() << "Timer stopped";
+    } else {
+        readTimer->start(200);
+        qDebug() << "Timer started";
+    }
+    timerRunning = !timerRunning;
+}

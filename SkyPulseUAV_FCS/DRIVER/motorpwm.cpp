@@ -16,7 +16,7 @@ void MotorPWM::initialPWM()
     for(int i = 0; i < 4; i++){
         gpioSetMode(PWM[i], PI_OUTPUT);
         gpioSetPWMfrequency(PWM[i], 200);
-        qDebug() << "PWM:" << PWM[i] << "Set";
+//        qDebug() << "PWM:" << PWM[i] << "Set";
     }
 }
 

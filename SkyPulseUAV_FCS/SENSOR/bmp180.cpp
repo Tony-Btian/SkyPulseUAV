@@ -53,6 +53,7 @@ void BMP180::readTemperature(double &temperature)
         qWarning("I2C device is not initialized");
         return;
     }
+
     // Write temperature measurement commands to the BMP180
     if(!i2cDriver->writeByte(0xF4, 0x2E)) {
         qWarning("Failed to initiate temperature measurement");
@@ -61,14 +62,17 @@ void BMP180::readTemperature(double &temperature)
     // Wait for the conversion to complete, the BMP180 datasheet suggests waiting for at least 4.5ms
     QThread::msleep(5);
     // Read raw temperature data
-    short rawTemp;
-    if (!readShortFromRegister(0xF6, rawTemp)) {
+    short rawTemp_MSB, rawTemp_LSB;
+    long rawTemp;
+    if (!readShortFromRegister(0xF6, rawTemp_MSB) && !readShortFromRegister(0xF7, rawTemp_LSB)) {
         qWarning("Failed to read temperature data");
         return;
     }
+
     // Calculate the actual temperature
-    long x1 = ((long)rawTemp - (long)ac6) * (long)ac5 / 32768;
-    long x2 = ((long)mc * 2048) / (x1 + md);
+    rawTemp = rawTemp_MSB << 8 + rawTemp_LSB;
+    long x1 = (rawTemp - (long)AC6) * (long)AC5 / 32768;
+    long x2 = ((long)MC * 2048) / (x1 + MD);
     long b5 = x1 + x2;
     temperature = (b5 + 8) / 16.0 / 10.0;
 }
@@ -79,17 +83,18 @@ bool BMP180::readCalibrationData()
         return false;
     }
     // Read calibration data
-    if (!readShortFromRegister(0xAA, ac1) || !readShortFromRegister(0xAC, ac2) ||
-        !readShortFromRegister(0xAE, ac3) || !readShortFromRegister(0xB0, ac4) ||
-        !readShortFromRegister(0xB2, ac5) || !readShortFromRegister(0xB4, ac6) ||
-        !readShortFromRegister(0xB6, b1)  || !readShortFromRegister(0xB8, b2)  ||
-        !readShortFromRegister(0xBA, mb)  || !readShortFromRegister(0xBC, mc)  ||
-        !readShortFromRegister(0xBE, md)) {
+    if (!readShortFromRegister(0xAA, AC1) || !readShortFromRegister(0xAC, AC2) ||
+        !readShortFromRegister(0xAE, AC3) || !readShortFromRegister(0xB0, AC4) ||
+        !readShortFromRegister(0xB2, AC5) || !readShortFromRegister(0xB4, AC6) ||
+        !readShortFromRegister(0xB6, B1)  || !readShortFromRegister(0xB8, B2)  ||
+        !readShortFromRegister(0xBA, MB)  || !readShortFromRegister(0xBC, MC)  ||
+        !readShortFromRegister(0xBE, MD)) {
         qWarning("Error reading calibration data from BMP180");
         return false;
     }
     return true;
 }
+
 
 bool BMP180::readShortFromRegister(uint8_t registerAddress, short &value)
 {

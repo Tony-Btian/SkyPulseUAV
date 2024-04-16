@@ -17,8 +17,9 @@ using CallbackFunction = void (*)(MahonyFilter*, float roll, float pitch, float 
 class MahonyFilter : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit MahonyFilter(float sampleFrequency = 256.0f,
+    explicit MahonyFilter(float sampleFrequency = 200.0f,
                  float twoKpDef = 2.0f * 0.5f,
                  float twoKiDef = 2.0f * 0.0f,
                  QObject *parent = nullptr);

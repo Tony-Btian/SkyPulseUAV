@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(SkyPulseUAV_FCS VERSION 0.1 LANGUAGES CXX)
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -31,6 +32,7 @@ set(PROJECT_SOURCES
     main.cpp
 
     ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
+    ALGORITHM/pidcontroller.h ALGORITHM/pidcontroller.cpp
 
     COMM/tcp.h COMM/tcp.cpp
 
@@ -44,6 +46,7 @@ set(PROJECT_SOURCES
 
     SYSTEM/mainsystem.h SYSTEM/mainsystem.cpp
     SYSTEM/sensormanager.h SYSTEM/sensormanager.cpp
+    SYSTEM/droneconfigmanager.h SYSTEM/droneconfigmanager.cpp
 
     MIDDLEWARES/MediatorInterface.h
     MIDDLEWARES/concretemediator.h MIDDLEWARES/concretemediator.cpp

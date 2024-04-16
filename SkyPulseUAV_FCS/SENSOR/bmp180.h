@@ -21,17 +21,17 @@ private:
     I2CDriver* i2cDriver;
 
     // Calibration coefficients
-    short ac1;
-    short ac2;
-    short ac3;
-    short ac4;
-    short ac5;
-    short ac6;
-    short b1;
-    short b2;
-    short mb;
-    short mc;
-    short md;
+    short AC1;
+    short AC2;
+    short AC3;
+    short AC4;
+    short AC5;
+    short AC6;
+    short B1;
+    short B2;
+    short MB;
+    short MC;
+    short MD;
 
     // Utility functions
     bool initializeBMP180();

@@ -11,29 +11,28 @@ FlightControl::~FlightControl()
 
 }
 
-void FlightControl::initialize()
-{
-
-}
-
 void FlightControl::setPitch(int pwmValue)
 {
-
+    Pitch_ = pwmValue;
+    updateMotorSpeeds(Pitch_, Roll_, Yaw_, Thrust_);
 }
 
 void FlightControl::setYaw(int pwmValue)
 {
-
+    Yaw_ = pwmValue;
+    updateMotorSpeeds(Pitch_, Roll_, Yaw_, Thrust_);
 }
 
 void FlightControl::setRoll(int pwmValue)
 {
-
+    Roll_ = pwmValue;
+    updateMotorSpeeds(Pitch_, Roll_, Yaw_, Thrust_);
 }
 
 void FlightControl::setThrust(int pwmValue)
 {
-
+    Thrust_ = pwmValue;
+    updateMotorSpeeds(Pitch_, Roll_, Yaw_, Thrust_);
 }
 
 void FlightControl::updateMotorSpeeds(double pitch, double roll, double yaw, double thrust)

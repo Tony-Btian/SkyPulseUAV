@@ -100,7 +100,7 @@ void MahonyFilter::setCallbackB(CallbackFunction callback) {
 }
 
 // When new angles are ready, triggering callback functions.
-std::array<float, 3> MahonyFilter::getAngleTest() {
+void MahonyFilter::getAngle() {
 
 	float rate[3] = {0};
 
@@ -124,7 +124,6 @@ std::array<float, 3> MahonyFilter::getAngleTest() {
 
 	}
 
-	return{roll.load(), pitch.load(), yaw.load()};
 }
 
 // Do filtering.
@@ -325,27 +324,27 @@ float MahonyFilter::invSqrt(float x) {
 }
 
 // Get data from filter. If dont't want to read angle rate, put NULL there.
-void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float angleRate[3]) {
+// void MahonyFilter::getAngle(float* _roll, float* _pitch, float* _yaw, float angleRate[3]) {
 
-	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
-	*_pitch = asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f;
-	*_yaw = atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
+// 	*_roll = atan2f( 2.0f * (q[2]* q[3] + q[1]*q[0]) , (  1.0f- 2.0f * (q[1]*q[1] + q[2]*q[2]) )) * 57.29578f;
+// 	*_pitch = asinf( 2.0f * (q[1]*q[3] - q[2]*q[0])) * 57.29578f;
+// 	*_yaw = atan2f( 2.0f * (q[1]*q[2] + q[3]*q[0]), ( 1.0f - 2.0f * (q[2]*q[2] + q[3]*q[3]) ) ) * 57.29578f;
 
-	// If angle rate parameter is found.
-	if(angleRate != NULL) {
+// 	// If angle rate parameter is found.
+// 	if(angleRate != NULL) {
 
-		angleRate[0] = gx_out.load();
-		angleRate[1] = gy_out.load();
-		angleRate[2] = gz_out.load();
+// 		angleRate[0] = gx_out.load();
+// 		angleRate[1] = gy_out.load();
+// 		angleRate[2] = gz_out.load();
 
-	}
+// 	}
 	
-	// roll.store(*_roll);
-	// pitch.store(*_pitch);
-	// yaw.store(*_yaw);
+// 	// roll.store(*_roll);
+// 	// pitch.store(*_pitch);
+// 	// yaw.store(*_yaw);
 	
-	filter_ready_A = 0;
-	filter_ready_B = 0;
+// 	filter_ready_A = 0;
+// 	filter_ready_B = 0;
 
-}
+// }
 

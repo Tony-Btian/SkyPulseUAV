@@ -8,7 +8,6 @@ add_subdirectory(test)
 enable_testing()
 add_test(NAME MyTest COMMAND Test)
 
-# find_package(sockpp REQUIRED)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src CFILE)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)

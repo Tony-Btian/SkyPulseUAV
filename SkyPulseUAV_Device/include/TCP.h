@@ -2,6 +2,7 @@
 #define __TCP_H__
 
 #include <sstream>
+#include <functional>
 
 // Head file of Sockpp library -> https://github.com/fpagliughi/sockpp.git
 #include "sockpp/tcp_connector.h"
@@ -20,6 +21,8 @@ class TCP
 
 public:
 
+    using CallbackFunction = function<void(float[3], float)>;
+
     TCP(string host, in_port_t port);
 
     bool write(string message_sent);
@@ -35,6 +38,8 @@ public:
     void readDataFromIR(uint8_t IRObstacleDetected);
 
     void readDataFromUS(int USDistance);
+
+    void setCallback(CallbackFunction callback);
 
     // Merge all the data and flags into a string.
     string mergeData();
@@ -59,6 +64,9 @@ private:
     sockpp::tcp_connector conn;
 
     size_t receiveStringLength;
+
+    // Callback function.
+    CallbackFunction callback_;
 
     // Flags.
     bool isMannedMode;

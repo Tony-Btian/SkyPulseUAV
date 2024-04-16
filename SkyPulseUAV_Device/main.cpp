@@ -8,6 +8,7 @@
 #include "BMP180.h"
 #include "STM32.h"
 #include "IRAndUS.h"
+#include "Control.h"
 
 int main(int argc, const char* argv[]) 
 {
@@ -43,7 +44,7 @@ int main(int argc, const char* argv[])
     STM32 stm32;
     IRSensor ir(nullptr);
     USSensor us(nullptr, nullptr);
-
+    Control control;
 
     // Create threads.
     // Data threads: MPU6050, BMP180.
@@ -51,8 +52,9 @@ int main(int argc, const char* argv[])
     BMP180Thread bmp180Thread(bmp180);
     IRAndUSThread irandusThread(ir, us);
     
-    // Filter thread: Mahony filter.
+    // Algorithm thread: Mahony filter.
     MahonyFilterThread filterThread(Mahonyfilter, mpu6050);
+    ControlThread controlthread(control, Mahonyfilter, bmp180, ir, us, tcp);
     
     // Communication thread: TCP.
     // TCP is used to connect with ground station.

@@ -92,9 +92,14 @@ void IRSensor::getData()
         gpioWrite(IR_EN, 0);
     }
 
-    if(callback_)
+    if(callbackA_)
     {
-        callback_(IRObstacleDetected);
+        callbackA_(IRObstacleDetected);
+    }
+
+    if(callbackB_)
+    {
+        callbackB_(IRObstacleDetected);
     }
 
 }
@@ -106,11 +111,18 @@ void IRSensor::timerInterruptCallback()
     IRIsEnabled = true;
 }
 
-// Set callback function.
-void IRSensor::setCallback(CallbackFunction callback) 
+// Set callback functions.
+void IRSensor::setCallbackA(CallbackFunction callback) 
 {
 
-    callback_ = callback;
+    callbackA_ = callback;
+
+}
+
+void IRSensor::setCallbackB(CallbackFunction callback) 
+{
+
+    callbackB_ = callback;
 
 }
 
@@ -202,19 +214,31 @@ void USSensor::getData()
 
         isReady = false;
 
-        if(callback_)
+        if(callbackA_)
         {
-            callback_(USDistance);
+            callbackA_(USDistance);
+        }
+
+        if(callbackB_)
+        {
+            callbackB_(USDistance);
         }
 
     }
 
 }
 
-void USSensor::setCallback(CallbackFunction callback)
+void USSensor::setCallbackA(CallbackFunction callback)
 {
 
-    callback_ = callback;
+    callbackA_ = callback;
+
+}
+
+void USSensor::setCallbackB(CallbackFunction callback)
+{
+
+    callbackB_ = callback;
 
 }
 

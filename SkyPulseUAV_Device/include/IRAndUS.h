@@ -35,7 +35,9 @@ public:
 
     void getData();
 
-    void setCallback(CallbackFunction callback);
+    void setCallbackA(CallbackFunction callback);
+
+    void setCallbackB(CallbackFunction callback);
 
     static void timerInterruptCallback();
 
@@ -44,7 +46,9 @@ public:
 private:
 
     // Callback functions.
-    CallbackFunction callback_;
+    CallbackFunction callbackA_;
+
+    CallbackFunction callbackB_;
 
     // If IR sensors detect obstacles, 
     //      00000001 -- IR 1 sensor detects obstacles.
@@ -72,7 +76,9 @@ public:
 
     void getData();
 
-    void setCallback(CallbackFunction callback);
+    void setCallbackA(CallbackFunction callback);
+
+    void setCallbackB(CallbackFunction callback);
 
     static gpioISRFunc_t ISRHandler;
 
@@ -84,7 +90,9 @@ private:
 
     static void interruptCallback(int gpio, int level, uint32_t tick);
 
-    CallbackFunction callback_;
+    CallbackFunction callbackA_;
+
+    CallbackFunction callbackB_;
 
     // Accept distance sampled from ultrasonic sensor.
     static int USDistance;

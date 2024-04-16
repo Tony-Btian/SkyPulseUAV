@@ -5,7 +5,7 @@
 
 Control::Control() : Control(defaultSampleFreq) {}
 
-Control::Control(float sampleFreq) :
+Control::Control(float userDefinedFreq) :
     currentAngle{0.0f, 0.0f, 0.0f},
     currentRate{0.0f, 0.0f, 0.0f},
 
@@ -36,16 +36,27 @@ Control::Control(float sampleFreq) :
 
     inputThrottle(0.0f),
     PIDFreq(sampleFreq),
-    motorOutput{0, 0, 0, 0}
-    {}
+    motorOutput{0, 0, 0, 0},
 
-void Control::setMode(bool mode) {
+    IRObstacleDetected(0),
+    USDistance(0)
+    {
+
+        PIDFreqInv = 1000000 / PIDFreq;
+
+        cout << "PID controller initialized successfully!" << endl;
+
+    }
+
+void Control::setMode(bool mode) 
+{
 
     this->mode = mode;
 
 }
 
-void Control::readCur(float rate[3], float angle[3], float alt) {
+void Control::readCur(float rate[3], float angle[3], float alt) 
+{
     
     for(short i = 0;i < 3;i++) {
 
@@ -60,7 +71,8 @@ void Control::readCur(float rate[3], float angle[3], float alt) {
 }
 
 // Reference update (roll, pitch, yaw and altitude).
-void Control::readRef(float refAngle[3], float alt) {
+void Control::readRef(float refAngle[3], float alt) 
+{
 
     for(short i = 0;i < 3;i++) {
     
@@ -72,12 +84,50 @@ void Control::readRef(float refAngle[3], float alt) {
 
 }
 
+// Read current data by callback.
+void Control::readDataFromFilter(float roll, float pitch, float yaw, float rate[3]) 
+{
+
+    desireAngle[0] = roll;
+    desireAngle[1] = pitch;
+    desireAngle[2] = yaw;
+
+    for (short i = 0; i < 3; i++) {
+
+        currentRate[i] = rate[i];
+
+    }
+    
+}
+
+void Control::readDataFromBMP180(float altitude) 
+{
+
+    currentAlt= altitude;
+
+}
+
+void Control::readDataFromIR(uint8_t IRObstacleDetected) 
+{
+
+    this->IRObstacleDetected = IRObstacleDetected;
+
+}
+
+void Control::readDataFromUS(int USDistance) 
+{
+
+    this->USDistance = USDistance;
+
+}
+
 /* 
 PID Control function of altitude.
 Outter loop - altitude control
 Inner loop - altitude rate control 
 */
-void Control::altControl() {
+void Control::altControl() 
+{
 
     errorAlt = desireAlt - currentAlt;
 
@@ -88,7 +138,8 @@ PID double loop control function of three Euler angles.
 Outter loop - angle control
 Inner loop - rate control 
 */
-void Control::doublePIDControl() {
+void Control::doublePIDControl() 
+{
 
     // Limit the roll and pitch angles.
     if (desireAngle[0] > MAX_ROLL_ANGLE || desireAngle[1] > MAX_PITCH_ANGLE) {
@@ -125,15 +176,41 @@ void Control::doublePIDControl() {
     }
 }
 
-void Control::getControlOuput(int motorDutyCycle[4]) {
+void Control::getControlOuput() 
+{
 
     doublePIDControl();
     //pidControlRate();
 
     // + or - depends on your motor rotation and position.
-    motorDutyCycle[0] = inputThrottle + outputRate[ROLL] - outputRate[PITCH] + outputRate[YAW];
-    motorDutyCycle[1] = inputThrottle - outputRate[ROLL] - outputRate[PITCH] - outputRate[YAW];
-    motorDutyCycle[2] = inputThrottle - outputRate[ROLL] + outputRate[PITCH] + outputRate[YAW];
-    motorDutyCycle[3] = inputThrottle + outputRate[ROLL] + outputRate[PITCH] - outputRate[YAW];
+    motorOutput[0] = inputThrottle + outputRate[ROLL] - outputRate[PITCH] + outputRate[YAW];
+    motorOutput[1] = inputThrottle - outputRate[ROLL] - outputRate[PITCH] - outputRate[YAW];
+    motorOutput[2] = inputThrottle - outputRate[ROLL] + outputRate[PITCH] + outputRate[YAW];
+    motorOutput[3] = inputThrottle + outputRate[ROLL] + outputRate[PITCH] - outputRate[YAW];
+
+    if(callback_)
+    {
+
+        callback_(motorOutput);
+
+    }
+
+    // Sleep for several seconds.
+    this_thread::sleep_for(microseconds(PIDFreqInv));
+
 }
+
+void Control::setCallback(CallbackFunction callback)
+{
+
+    callback_ = callback;
+
+}
+
+// int Control::getControlFreqInv()
+// {
+
+//     return (PIDFreqInv);
+
+// }
 

@@ -31,14 +31,14 @@ void TCPThread::run()
 
     });
 
-    IRSensorIns.setCallback([this](uint8_t IRObstacleDetected)
+    IRSensorIns.setCallbackA([this](uint8_t IRObstacleDetected)
     {
 
         TCPIns.readDataFromIR(IRObstacleDetected);
 
     });
 
-     USSensorIns.setCallback([this](int distance)
+     USSensorIns.setCallbackA([this](int distance)
     {
 
         TCPIns.readDataFromIR(distance);

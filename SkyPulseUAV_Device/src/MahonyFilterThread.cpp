@@ -20,6 +20,8 @@ void MahonyFilterThread::run() {
 
             MahonyFilterIns.MahonyAHRSupdate();
 
+            MahonyFilterIns.getAngle();
+
         }   
 
     }

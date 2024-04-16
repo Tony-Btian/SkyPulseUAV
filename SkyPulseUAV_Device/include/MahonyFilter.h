@@ -21,7 +21,7 @@ public:
 
     MahonyFilter(float filterSample, float twoPropGain, float twoInteGain);
 
-    void getAngle(float* roll, float* pitch, float* yaw, float g[3]);
+    //void getAngle(float* roll, float* pitch, float* yaw, float g[3]);
 
     void getAngleRate(float g[3]);
 
@@ -47,7 +47,7 @@ public:
 
     void setCallbackB(CallbackFunction callback);
 
-    std::array<float, 3> getAngleTest();
+    void getAngle();
 
 protected:
 

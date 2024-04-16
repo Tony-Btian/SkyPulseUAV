@@ -119,6 +119,14 @@ void TCP::readDataFromUS(int USDistance)
 
 }
 
+// Set callback function to control thread.
+void TCP::setCallback(CallbackFunction callback)
+{
+
+    callback_ = callback;
+
+}
+
 string TCP::mergeData()
 {
      // Flags

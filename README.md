@@ -75,6 +75,11 @@ SkyPulseUAV is a groundbreaking real-time embedded system project, specifically 
 - [x] Authoring and updating comprehensive README documentation
 
 #### Jiaxing Wang
+- [x] Developing UAV communication protocols
+- [x] C++ coding for communication interface development
+- [x] Writing clear README documentation
+- [x] Implementing data handling and processing algorithms
+- [x] Ensuring system interoperability and protocol compliance
 
 #### Shilin Zhang
 - [x] Buy Needed Hardware Module: BMP180, MPU6050
@@ -339,7 +344,7 @@ change the height and width for each of the contributors from 80 to 50.
 | ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Binhan Tian  | 2840919 | Embedded Engineer & Hardware Engineer & Project Management                                                                        |
 | Jianliang Wu | 2847947 | Designing and writing C++ codes on Raspberry Pi, fusing data from all sensors, and deploying the PID and Mahonyfilter algorithm.  |
-| Jiaxing Wang |         | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.           |
+| Jiaxing Wang | 2840804 | Developing communication protocols for the SkyPulseUAV Ground Station and authoring comprehensive README documentation.           |
 | Zhiyan Tong  | 2872426 | Developing Communication protocols, C++ coding for SkyPulse GroundStation, Integrated UAV controls, and authored README for setup |
 | Shilin Zhang |         | Hardware Engineer                                                                                                                 |
 

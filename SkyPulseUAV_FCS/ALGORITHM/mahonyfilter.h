@@ -7,6 +7,7 @@
 #include <QMutexLocker>
 #include <QMutex>
 #include <atomic>
+#include <cmath>
 
 // Forward declaration
 class MahonyFilter;
@@ -47,8 +48,6 @@ private:
 
     QQuaternion q; // Quaternions used to represent directions
     QVector3D integralFB; // Integral error term, scaled by Ki
-
-    std::atomic<bool> imuDataReady{false}; // IMU data readiness
 
     // Stores acceleration, gyroscope, magnetometer data
     std::atomic<float> ax{0}, ay{0}, az{0};

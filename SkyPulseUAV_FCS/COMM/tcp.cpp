@@ -84,9 +84,6 @@ void TCP::sendMessage64Bytes(const QByteArray &datapackage_u64)
 {
     QByteArray messageToSend = datapackage_u64;
     // Make sure the message is exactly 64 bytes
-    messageToSend.resize(64);  // If the message is shorter than 64 bytes,
-                               // it will be zero-padded; if it is longer
-                               // than 64 bytes, it will be truncated
     broadcastMessage(messageToSend);
 }
 
@@ -110,6 +107,28 @@ void TCP::dataTranslator(const QByteArray &data)
                                static_cast<quint8>(data[3]),
                                static_cast<quint8>(data[4])};
         emit sig_sendPWMSignal(PWM);
+    }
+        break;
+    case 0x04:
+    {
+        QVector<quint8> FlightControl = {static_cast<quint8>(data[1]),
+                                         static_cast<quint8>(data[2]),
+                                         static_cast<quint8>(data[3]),
+                                         static_cast<quint8>(data[4])};
+        emit sig_sendFlightControlSignal(FlightControl);
+    }
+        break;
+    case 0x05:
+        emit sig_takeOffSignal();
+        break;
+    case 0x06:
+        emit sig_landingSignal();
+        break;
+    case 0x07:
+    {
+        QVector<quint8> FlightConfig {static_cast<quint8>(data[1]),
+                                         static_cast<quint8>(data[2])};
+        emit sig_sendFlightControlSignal(FlightConfig);
     }
         break;
     default:

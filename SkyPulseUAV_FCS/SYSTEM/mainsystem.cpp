@@ -140,6 +140,9 @@ void MainSystem::Function_Initial()
 
     connect(this, &MainSystem::sig_readAllSensorDataTest, sensor_manager, &SensorManager::ReadAllSensorData);
     connect(tcp_server, &TCP::sig_sendPWMSignal, motor_pwm, &MotorPWM::setMotorPWMSignal);
+    connect(tcp_server, &TCP::sig_sendFlightControlSignal, this, &MainSystem::SetFlightControl);
+    connect(tcp_server, &TCP::sig_takeOffSignal, this, &MainSystem::startTimer);
+    connect(tcp_server, &TCP::sig_landingSignal, this, &MainSystem::stopTimer);
     connect(flight_control, &FlightControl::sig_sendMotorData, motor_pwm, &MotorPWM::setMotorPWMSignal);
     connect(readTimer, &QTimer::timeout, sensor_manager, &SensorManager::ReadAllSensorData);
     connect(sensor_manager, &SensorManager::sig_sendMessage64Bytes, tcp_server, &TCP::sendMessage64Bytes);
@@ -193,11 +196,34 @@ void MainSystem::onSpinBoxYaw_valueChanged(int value)
 void MainSystem::toggleTimer()
 {
     if (timerRunning) {
-        readTimer->stop();
+        startTimer();
         qDebug() << "Timer stopped";
     } else {
-        readTimer->start(200);
+        startTimer();
         qDebug() << "Timer started";
     }
     timerRunning = !timerRunning;
+}
+
+void MainSystem::startTimer()
+{
+    readTimer->start(100);
+}
+
+void MainSystem::stopTimer()
+{
+    readTimer->stop();
+}
+
+void MainSystem::SetFlightControl(const QVector<uint8_t> &flight_control_data)
+{
+    flight_control->setPitch(flight_control_data.at(0));
+    flight_control->setYaw(flight_control_data.at(1));
+    flight_control->setRoll(flight_control_data.at(2));
+    flight_control->setThrust(flight_control_data.at(3));
+}
+
+void MainSystem::SetFlightConfigData(const QVector<quint8> &FlightCofig)
+{
+    flight_control->setThrust(FlightCofig.at(0));
 }

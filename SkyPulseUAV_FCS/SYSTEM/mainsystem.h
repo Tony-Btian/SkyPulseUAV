@@ -60,6 +60,11 @@ private:
     void GPIO_Initial();
     void Function_Initial();
 
+public slots:
+    void SetFlightControl(const QVector<uint8_t> &flight_control_data);
+    void SetFlightConfigData(const QVector<quint8> &FlightCofig);
+    void startTimer();
+    void stopTimer();
 
 private slots:
     void onButtonClicked_Function1();

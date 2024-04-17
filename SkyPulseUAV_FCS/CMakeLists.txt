@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
     main.cpp
 
     ALGORITHM/pidcontroller.h ALGORITHM/pidcontroller.cpp
+    ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
 
     COMM/tcp.h COMM/tcp.cpp
 

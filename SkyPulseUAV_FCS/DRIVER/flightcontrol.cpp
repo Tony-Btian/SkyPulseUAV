@@ -1,4 +1,5 @@
 #include "flightcontrol.h"
+#include <QDebug>
 
 FlightControl::FlightControl(int pitch, int yaw, int roll, int thrust, QObject *parent)
     : QObject(parent), Pitch_(pitch), Yaw_(yaw), Roll_(roll), Thrust_(thrust)
@@ -13,6 +14,7 @@ FlightControl::~FlightControl()
 
 void FlightControl::setPitch(int pwmValue)
 {
+    qDebug() << pwmValue;
     Pitch_ = pwmValue;
     updateMotorSpeeds(Pitch_, Roll_, Yaw_, Thrust_);
 }

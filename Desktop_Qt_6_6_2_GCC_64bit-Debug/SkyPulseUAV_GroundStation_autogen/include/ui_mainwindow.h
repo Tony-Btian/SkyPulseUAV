@@ -62,18 +62,75 @@ public:
     QLabel *icon_UDP_Connection;
     QTabWidget *tabWidget_PanelMain;
     QWidget *tab1_FlightControl;
-    QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_20;
+    QHBoxLayout *horizontalLayout_28;
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout_AnimationDisplay;
-    QWidget *widget;
-    QGridLayout *gridLayout_4;
-    QWidget *widget_2;
-    QGridLayout *gridLayout_5;
+    QGroupBox *groupBox_ESC_Features;
+    QVBoxLayout *verticalLayout_6;
+    QHBoxLayout *horizontalLayout_25;
+    QSpinBox *spinBox_MinThrottle;
+    QLabel *label_MinThrottle;
+    QSpacerItem *horizontalSpacer_5;
+    QHBoxLayout *horizontalLayout_26;
+    QSpinBox *spinBox_MaxThrottle;
+    QLabel *label_MaxThrottle;
+    QSpacerItem *horizontalSpacer_9;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *label_P12PWM0;
+    QSlider *horizontalSlider_P12PWM0;
+    QDoubleSpinBox *doubleSpinBox_P12PWM0;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *label_P13PWM1;
+    QSlider *horizontalSlider_P13PWM1;
+    QDoubleSpinBox *doubleSpinBox_P13PWM1;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_P19PWM2;
+    QSlider *horizontalSlider_P19PWM2;
+    QDoubleSpinBox *doubleSpinBox_P19PWM2;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_P18PWM3;
+    QSlider *horizontalSlider_P18PWM3;
+    QDoubleSpinBox *doubleSpinBox_P18PWM3;
+    QGroupBox *groupBox_3;
+    QHBoxLayout *horizontalLayout_32;
+    QVBoxLayout *verticalLayout_16;
+    QHBoxLayout *horizontalLayout_27;
+    QSpacerItem *horizontalSpacer_11;
+    QSlider *verticalSlider_Pitch;
+    QSpacerItem *horizontalSpacer_10;
+    QLabel *label_Pitch;
+    QDoubleSpinBox *doubleSpinBox_Pitch;
+    QVBoxLayout *verticalLayout_17;
+    QHBoxLayout *horizontalLayout_29;
+    QSpacerItem *horizontalSpacer_12;
+    QSlider *verticalSlider_Yaw;
+    QSpacerItem *horizontalSpacer_13;
+    QLabel *label_Yaw;
+    QDoubleSpinBox *doubleSpinBox_Yaw;
+    QVBoxLayout *verticalLayout_19;
+    QHBoxLayout *horizontalLayout_31;
+    QSpacerItem *horizontalSpacer_16;
+    QSlider *verticalSlider_Roll;
+    QSpacerItem *horizontalSpacer_17;
+    QLabel *label_Roll;
+    QDoubleSpinBox *doubleSpinBox_Roll;
+    QVBoxLayout *verticalLayout_18;
+    QHBoxLayout *horizontalLayout_30;
+    QSpacerItem *horizontalSpacer_14;
+    QSlider *verticalSlider_Thrust;
+    QSpacerItem *horizontalSpacer_15;
+    QLabel *label_Thrust;
+    QDoubleSpinBox *doubleSpinBox_Thrust;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout;
     QTabWidget *tabWidget_FlightControlInfo;
     QWidget *FlightControlinfo_Status;
+    QGridLayout *gridLayout_2;
     QWidget *FlightControlinfo_Graph;
+    QGridLayout *gridLayout_3;
+    QCustomPlot *widget_3;
     QGroupBox *groupBox_SensorData;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_SensorData_Upper;
@@ -122,7 +179,9 @@ public:
     QLabel *label_Temp;
     QLineEdit *lineEdit_Temp;
     QGroupBox *groupBox_GPS;
+    QVBoxLayout *verticalLayout_21;
     QPushButton *pushButton_TAKE_OFF;
+    QPushButton *pushButton_LANDING;
     QWidget *tab2_ParameterSetting;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *verticalLayout_5;
@@ -192,43 +251,6 @@ public:
     QDoubleSpinBox *doubleSpinBox_YAWSelfStable_I_Value;
     QDoubleSpinBox *doubleSpinBox_YAWSelfStable_D_Value;
     QPushButton *pushButton_YAWSelfStable_Write;
-    QWidget *tab3_ParameterTesting;
-    QPushButton *pushButton_PWMValue_Save;
-    QCustomPlot *widget_3;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_16;
-    QGroupBox *groupBox_ESC_Features;
-    QVBoxLayout *verticalLayout_6;
-    QHBoxLayout *horizontalLayout_25;
-    QSpinBox *spinBox_MinThrottle;
-    QLabel *label_MinThrottle;
-    QSpacerItem *horizontalSpacer_5;
-    QHBoxLayout *horizontalLayout_26;
-    QSpinBox *spinBox_MaxThrottle;
-    QLabel *label_MaxThrottle;
-    QSpacerItem *horizontalSpacer_9;
-    QGroupBox *groupBox;
-    QGridLayout *gridLayout;
-    QHBoxLayout *horizontalLayout_9;
-    QLabel *label_P12PWM0;
-    QSlider *horizontalSlider_P12PWM0;
-    QDoubleSpinBox *doubleSpinBox_P12PWM0;
-    QHBoxLayout *horizontalLayout_8;
-    QLabel *label_P13PWM1;
-    QSlider *horizontalSlider_P13PWM1;
-    QDoubleSpinBox *doubleSpinBox_P13PWM1;
-    QHBoxLayout *horizontalLayout_10;
-    QLabel *label_P19PWM2;
-    QSlider *horizontalSlider_P19PWM2;
-    QDoubleSpinBox *doubleSpinBox_P19PWM2;
-    QHBoxLayout *horizontalLayout_11;
-    QLabel *label_P18PWM3;
-    QSlider *horizontalSlider_P18PWM3;
-    QDoubleSpinBox *doubleSpinBox_P18PWM3;
-    QWidget *widget1;
-    QVBoxLayout *verticalLayout_17;
-    QSlider *verticalSlider;
-    QLabel *label_Trust_Control;
     QWidget *tab4_SensorRegistersSetting;
     QVBoxLayout *verticalLayout_10;
     QHBoxLayout *horizontalLayout_17;
@@ -301,7 +323,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(835, 752);
+        MainWindow->resize(980, 752);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout_7 = new QVBoxLayout(centralwidget);
@@ -434,35 +456,344 @@ public:
         tabWidget_PanelMain->setTabPosition(QTabWidget::North);
         tab1_FlightControl = new QWidget();
         tab1_FlightControl->setObjectName("tab1_FlightControl");
-        gridLayout_2 = new QGridLayout(tab1_FlightControl);
-        gridLayout_2->setObjectName("gridLayout_2");
+        verticalLayout_20 = new QVBoxLayout(tab1_FlightControl);
+        verticalLayout_20->setObjectName("verticalLayout_20");
+        horizontalLayout_28 = new QHBoxLayout();
+        horizontalLayout_28->setObjectName("horizontalLayout_28");
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
-        horizontalLayout_AnimationDisplay = new QHBoxLayout();
-        horizontalLayout_AnimationDisplay->setObjectName("horizontalLayout_AnimationDisplay");
-        widget = new QWidget(tab1_FlightControl);
-        widget->setObjectName("widget");
-        gridLayout_4 = new QGridLayout(widget);
-        gridLayout_4->setObjectName("gridLayout_4");
+        groupBox_ESC_Features = new QGroupBox(tab1_FlightControl);
+        groupBox_ESC_Features->setObjectName("groupBox_ESC_Features");
+        verticalLayout_6 = new QVBoxLayout(groupBox_ESC_Features);
+        verticalLayout_6->setObjectName("verticalLayout_6");
+        horizontalLayout_25 = new QHBoxLayout();
+        horizontalLayout_25->setObjectName("horizontalLayout_25");
+        spinBox_MinThrottle = new QSpinBox(groupBox_ESC_Features);
+        spinBox_MinThrottle->setObjectName("spinBox_MinThrottle");
+        spinBox_MinThrottle->setMinimumSize(QSize(100, 0));
 
-        horizontalLayout_AnimationDisplay->addWidget(widget);
+        horizontalLayout_25->addWidget(spinBox_MinThrottle);
 
-        widget_2 = new QWidget(tab1_FlightControl);
-        widget_2->setObjectName("widget_2");
-        gridLayout_5 = new QGridLayout(widget_2);
-        gridLayout_5->setObjectName("gridLayout_5");
+        label_MinThrottle = new QLabel(groupBox_ESC_Features);
+        label_MinThrottle->setObjectName("label_MinThrottle");
 
-        horizontalLayout_AnimationDisplay->addWidget(widget_2);
+        horizontalLayout_25->addWidget(label_MinThrottle);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_25->addItem(horizontalSpacer_5);
+
+        horizontalLayout_25->setStretch(0, 1);
+        horizontalLayout_25->setStretch(1, 1);
+
+        verticalLayout_6->addLayout(horizontalLayout_25);
+
+        horizontalLayout_26 = new QHBoxLayout();
+        horizontalLayout_26->setObjectName("horizontalLayout_26");
+        spinBox_MaxThrottle = new QSpinBox(groupBox_ESC_Features);
+        spinBox_MaxThrottle->setObjectName("spinBox_MaxThrottle");
+        spinBox_MaxThrottle->setMinimumSize(QSize(100, 0));
+
+        horizontalLayout_26->addWidget(spinBox_MaxThrottle);
+
+        label_MaxThrottle = new QLabel(groupBox_ESC_Features);
+        label_MaxThrottle->setObjectName("label_MaxThrottle");
+
+        horizontalLayout_26->addWidget(label_MaxThrottle);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_26->addItem(horizontalSpacer_9);
+
+        horizontalLayout_26->setStretch(0, 1);
+        horizontalLayout_26->setStretch(1, 1);
+
+        verticalLayout_6->addLayout(horizontalLayout_26);
 
 
-        verticalLayout->addLayout(horizontalLayout_AnimationDisplay);
+        verticalLayout->addWidget(groupBox_ESC_Features);
+
+        groupBox = new QGroupBox(tab1_FlightControl);
+        groupBox->setObjectName("groupBox");
+        gridLayout = new QGridLayout(groupBox);
+        gridLayout->setObjectName("gridLayout");
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+        label_P12PWM0 = new QLabel(groupBox);
+        label_P12PWM0->setObjectName("label_P12PWM0");
+
+        horizontalLayout_9->addWidget(label_P12PWM0);
+
+        horizontalSlider_P12PWM0 = new QSlider(groupBox);
+        horizontalSlider_P12PWM0->setObjectName("horizontalSlider_P12PWM0");
+        horizontalSlider_P12PWM0->setMaximum(255);
+        horizontalSlider_P12PWM0->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_9->addWidget(horizontalSlider_P12PWM0);
+
+        doubleSpinBox_P12PWM0 = new QDoubleSpinBox(groupBox);
+        doubleSpinBox_P12PWM0->setObjectName("doubleSpinBox_P12PWM0");
+        doubleSpinBox_P12PWM0->setDecimals(2);
+        doubleSpinBox_P12PWM0->setMaximum(100.000000000000000);
+        doubleSpinBox_P12PWM0->setSingleStep(0.010000000000000);
+
+        horizontalLayout_9->addWidget(doubleSpinBox_P12PWM0);
+
+
+        gridLayout->addLayout(horizontalLayout_9, 0, 0, 1, 1);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName("horizontalLayout_8");
+        label_P13PWM1 = new QLabel(groupBox);
+        label_P13PWM1->setObjectName("label_P13PWM1");
+
+        horizontalLayout_8->addWidget(label_P13PWM1);
+
+        horizontalSlider_P13PWM1 = new QSlider(groupBox);
+        horizontalSlider_P13PWM1->setObjectName("horizontalSlider_P13PWM1");
+        horizontalSlider_P13PWM1->setMaximum(255);
+        horizontalSlider_P13PWM1->setOrientation(Qt::Horizontal);
+        horizontalSlider_P13PWM1->setInvertedAppearance(false);
+        horizontalSlider_P13PWM1->setInvertedControls(false);
+
+        horizontalLayout_8->addWidget(horizontalSlider_P13PWM1);
+
+        doubleSpinBox_P13PWM1 = new QDoubleSpinBox(groupBox);
+        doubleSpinBox_P13PWM1->setObjectName("doubleSpinBox_P13PWM1");
+        doubleSpinBox_P13PWM1->setDecimals(2);
+        doubleSpinBox_P13PWM1->setMaximum(100.000000000000000);
+        doubleSpinBox_P13PWM1->setSingleStep(0.010000000000000);
+
+        horizontalLayout_8->addWidget(doubleSpinBox_P13PWM1);
+
+
+        gridLayout->addLayout(horizontalLayout_8, 1, 0, 1, 1);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName("horizontalLayout_10");
+        label_P19PWM2 = new QLabel(groupBox);
+        label_P19PWM2->setObjectName("label_P19PWM2");
+
+        horizontalLayout_10->addWidget(label_P19PWM2);
+
+        horizontalSlider_P19PWM2 = new QSlider(groupBox);
+        horizontalSlider_P19PWM2->setObjectName("horizontalSlider_P19PWM2");
+        horizontalSlider_P19PWM2->setMaximum(255);
+        horizontalSlider_P19PWM2->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_10->addWidget(horizontalSlider_P19PWM2);
+
+        doubleSpinBox_P19PWM2 = new QDoubleSpinBox(groupBox);
+        doubleSpinBox_P19PWM2->setObjectName("doubleSpinBox_P19PWM2");
+        doubleSpinBox_P19PWM2->setDecimals(2);
+        doubleSpinBox_P19PWM2->setMaximum(100.000000000000000);
+        doubleSpinBox_P19PWM2->setSingleStep(0.010000000000000);
+
+        horizontalLayout_10->addWidget(doubleSpinBox_P19PWM2);
+
+
+        gridLayout->addLayout(horizontalLayout_10, 2, 0, 1, 1);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName("horizontalLayout_11");
+        label_P18PWM3 = new QLabel(groupBox);
+        label_P18PWM3->setObjectName("label_P18PWM3");
+
+        horizontalLayout_11->addWidget(label_P18PWM3);
+
+        horizontalSlider_P18PWM3 = new QSlider(groupBox);
+        horizontalSlider_P18PWM3->setObjectName("horizontalSlider_P18PWM3");
+        horizontalSlider_P18PWM3->setMaximum(255);
+        horizontalSlider_P18PWM3->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_11->addWidget(horizontalSlider_P18PWM3);
+
+        doubleSpinBox_P18PWM3 = new QDoubleSpinBox(groupBox);
+        doubleSpinBox_P18PWM3->setObjectName("doubleSpinBox_P18PWM3");
+        doubleSpinBox_P18PWM3->setDecimals(2);
+        doubleSpinBox_P18PWM3->setMaximum(100.000000000000000);
+        doubleSpinBox_P18PWM3->setSingleStep(0.010000000000000);
+
+        horizontalLayout_11->addWidget(doubleSpinBox_P18PWM3);
+
+
+        gridLayout->addLayout(horizontalLayout_11, 3, 0, 1, 1);
+
+
+        verticalLayout->addWidget(groupBox);
+
+
+        horizontalLayout_28->addLayout(verticalLayout);
+
+        groupBox_3 = new QGroupBox(tab1_FlightControl);
+        groupBox_3->setObjectName("groupBox_3");
+        horizontalLayout_32 = new QHBoxLayout(groupBox_3);
+        horizontalLayout_32->setObjectName("horizontalLayout_32");
+        verticalLayout_16 = new QVBoxLayout();
+        verticalLayout_16->setObjectName("verticalLayout_16");
+        horizontalLayout_27 = new QHBoxLayout();
+        horizontalLayout_27->setObjectName("horizontalLayout_27");
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_27->addItem(horizontalSpacer_11);
+
+        verticalSlider_Pitch = new QSlider(groupBox_3);
+        verticalSlider_Pitch->setObjectName("verticalSlider_Pitch");
+        verticalSlider_Pitch->setMinimumSize(QSize(0, 0));
+        verticalSlider_Pitch->setMaximum(255);
+        verticalSlider_Pitch->setOrientation(Qt::Vertical);
+        verticalSlider_Pitch->setTickPosition(QSlider::TicksAbove);
+
+        horizontalLayout_27->addWidget(verticalSlider_Pitch);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_27->addItem(horizontalSpacer_10);
+
+
+        verticalLayout_16->addLayout(horizontalLayout_27);
+
+        label_Pitch = new QLabel(groupBox_3);
+        label_Pitch->setObjectName("label_Pitch");
+        label_Pitch->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_16->addWidget(label_Pitch);
+
+        doubleSpinBox_Pitch = new QDoubleSpinBox(groupBox_3);
+        doubleSpinBox_Pitch->setObjectName("doubleSpinBox_Pitch");
+        doubleSpinBox_Pitch->setMaximum(360.000000000000000);
+
+        verticalLayout_16->addWidget(doubleSpinBox_Pitch);
+
+
+        horizontalLayout_32->addLayout(verticalLayout_16);
+
+        verticalLayout_17 = new QVBoxLayout();
+        verticalLayout_17->setObjectName("verticalLayout_17");
+        horizontalLayout_29 = new QHBoxLayout();
+        horizontalLayout_29->setObjectName("horizontalLayout_29");
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_29->addItem(horizontalSpacer_12);
+
+        verticalSlider_Yaw = new QSlider(groupBox_3);
+        verticalSlider_Yaw->setObjectName("verticalSlider_Yaw");
+        verticalSlider_Yaw->setMinimumSize(QSize(0, 0));
+        verticalSlider_Yaw->setMaximum(255);
+        verticalSlider_Yaw->setOrientation(Qt::Vertical);
+        verticalSlider_Yaw->setTickPosition(QSlider::TicksAbove);
+
+        horizontalLayout_29->addWidget(verticalSlider_Yaw);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_29->addItem(horizontalSpacer_13);
+
+
+        verticalLayout_17->addLayout(horizontalLayout_29);
+
+        label_Yaw = new QLabel(groupBox_3);
+        label_Yaw->setObjectName("label_Yaw");
+        label_Yaw->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_17->addWidget(label_Yaw);
+
+        doubleSpinBox_Yaw = new QDoubleSpinBox(groupBox_3);
+        doubleSpinBox_Yaw->setObjectName("doubleSpinBox_Yaw");
+
+        verticalLayout_17->addWidget(doubleSpinBox_Yaw);
+
+
+        horizontalLayout_32->addLayout(verticalLayout_17);
+
+        verticalLayout_19 = new QVBoxLayout();
+        verticalLayout_19->setObjectName("verticalLayout_19");
+        horizontalLayout_31 = new QHBoxLayout();
+        horizontalLayout_31->setObjectName("horizontalLayout_31");
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_31->addItem(horizontalSpacer_16);
+
+        verticalSlider_Roll = new QSlider(groupBox_3);
+        verticalSlider_Roll->setObjectName("verticalSlider_Roll");
+        verticalSlider_Roll->setMinimumSize(QSize(0, 0));
+        verticalSlider_Roll->setMaximum(255);
+        verticalSlider_Roll->setOrientation(Qt::Vertical);
+        verticalSlider_Roll->setTickPosition(QSlider::TicksAbove);
+
+        horizontalLayout_31->addWidget(verticalSlider_Roll);
+
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_31->addItem(horizontalSpacer_17);
+
+
+        verticalLayout_19->addLayout(horizontalLayout_31);
+
+        label_Roll = new QLabel(groupBox_3);
+        label_Roll->setObjectName("label_Roll");
+        label_Roll->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_19->addWidget(label_Roll);
+
+        doubleSpinBox_Roll = new QDoubleSpinBox(groupBox_3);
+        doubleSpinBox_Roll->setObjectName("doubleSpinBox_Roll");
+
+        verticalLayout_19->addWidget(doubleSpinBox_Roll);
+
+
+        horizontalLayout_32->addLayout(verticalLayout_19);
+
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setObjectName("verticalLayout_18");
+        horizontalLayout_30 = new QHBoxLayout();
+        horizontalLayout_30->setObjectName("horizontalLayout_30");
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_30->addItem(horizontalSpacer_14);
+
+        verticalSlider_Thrust = new QSlider(groupBox_3);
+        verticalSlider_Thrust->setObjectName("verticalSlider_Thrust");
+        verticalSlider_Thrust->setMinimumSize(QSize(0, 0));
+        verticalSlider_Thrust->setMaximum(255);
+        verticalSlider_Thrust->setOrientation(Qt::Vertical);
+        verticalSlider_Thrust->setTickPosition(QSlider::TicksAbove);
+
+        horizontalLayout_30->addWidget(verticalSlider_Thrust);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_30->addItem(horizontalSpacer_15);
+
+
+        verticalLayout_18->addLayout(horizontalLayout_30);
+
+        label_Thrust = new QLabel(groupBox_3);
+        label_Thrust->setObjectName("label_Thrust");
+        label_Thrust->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_18->addWidget(label_Thrust);
+
+        doubleSpinBox_Thrust = new QDoubleSpinBox(groupBox_3);
+        doubleSpinBox_Thrust->setObjectName("doubleSpinBox_Thrust");
+
+        verticalLayout_18->addWidget(doubleSpinBox_Thrust);
+
+
+        horizontalLayout_32->addLayout(verticalLayout_18);
+
+
+        horizontalLayout_28->addWidget(groupBox_3);
+
+
+        verticalLayout_20->addLayout(horizontalLayout_28);
 
         line_2 = new QFrame(tab1_FlightControl);
         line_2->setObjectName("line_2");
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addWidget(line_2);
+        verticalLayout_20->addWidget(line_2);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
@@ -470,9 +801,18 @@ public:
         tabWidget_FlightControlInfo->setObjectName("tabWidget_FlightControlInfo");
         FlightControlinfo_Status = new QWidget();
         FlightControlinfo_Status->setObjectName("FlightControlinfo_Status");
+        gridLayout_2 = new QGridLayout(FlightControlinfo_Status);
+        gridLayout_2->setObjectName("gridLayout_2");
         tabWidget_FlightControlInfo->addTab(FlightControlinfo_Status, QString());
         FlightControlinfo_Graph = new QWidget();
         FlightControlinfo_Graph->setObjectName("FlightControlinfo_Graph");
+        gridLayout_3 = new QGridLayout(FlightControlinfo_Graph);
+        gridLayout_3->setObjectName("gridLayout_3");
+        widget_3 = new QCustomPlot(FlightControlinfo_Graph);
+        widget_3->setObjectName("widget_3");
+
+        gridLayout_3->addWidget(widget_3, 0, 0, 1, 1);
+
         tabWidget_FlightControlInfo->addTab(FlightControlinfo_Graph, QString());
 
         horizontalLayout->addWidget(tabWidget_FlightControlInfo);
@@ -739,22 +1079,26 @@ public:
 
         groupBox_GPS = new QGroupBox(tab1_FlightControl);
         groupBox_GPS->setObjectName("groupBox_GPS");
+        verticalLayout_21 = new QVBoxLayout(groupBox_GPS);
+        verticalLayout_21->setObjectName("verticalLayout_21");
         pushButton_TAKE_OFF = new QPushButton(groupBox_GPS);
         pushButton_TAKE_OFF->setObjectName("pushButton_TAKE_OFF");
-        pushButton_TAKE_OFF->setGeometry(QRect(30, 50, 89, 25));
+
+        verticalLayout_21->addWidget(pushButton_TAKE_OFF);
+
+        pushButton_LANDING = new QPushButton(groupBox_GPS);
+        pushButton_LANDING->setObjectName("pushButton_LANDING");
+
+        verticalLayout_21->addWidget(pushButton_LANDING);
+
 
         horizontalLayout->addWidget(groupBox_GPS);
 
-        horizontalLayout->setStretch(0, 2);
+        horizontalLayout->setStretch(0, 3);
         horizontalLayout->setStretch(1, 2);
-        horizontalLayout->setStretch(2, 2);
+        horizontalLayout->setStretch(2, 1);
 
-        verticalLayout->addLayout(horizontalLayout);
-
-        verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(2, 1);
-
-        gridLayout_2->addLayout(verticalLayout, 0, 0, 1, 1);
+        verticalLayout_20->addLayout(horizontalLayout);
 
         tabWidget_PanelMain->addTab(tab1_FlightControl, QString());
         tab2_ParameterSetting = new QWidget();
@@ -1152,200 +1496,6 @@ public:
         horizontalLayout_5->addLayout(verticalLayout_5);
 
         tabWidget_PanelMain->addTab(tab2_ParameterSetting, QString());
-        tab3_ParameterTesting = new QWidget();
-        tab3_ParameterTesting->setObjectName("tab3_ParameterTesting");
-        pushButton_PWMValue_Save = new QPushButton(tab3_ParameterTesting);
-        pushButton_PWMValue_Save->setObjectName("pushButton_PWMValue_Save");
-        pushButton_PWMValue_Save->setGeometry(QRect(10, 530, 89, 25));
-        widget_3 = new QCustomPlot(tab3_ParameterTesting);
-        widget_3->setObjectName("widget_3");
-        widget_3->setGeometry(QRect(10, 10, 501, 211));
-        layoutWidget = new QWidget(tab3_ParameterTesting);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 230, 501, 288));
-        verticalLayout_16 = new QVBoxLayout(layoutWidget);
-        verticalLayout_16->setObjectName("verticalLayout_16");
-        verticalLayout_16->setContentsMargins(0, 0, 0, 0);
-        groupBox_ESC_Features = new QGroupBox(layoutWidget);
-        groupBox_ESC_Features->setObjectName("groupBox_ESC_Features");
-        verticalLayout_6 = new QVBoxLayout(groupBox_ESC_Features);
-        verticalLayout_6->setObjectName("verticalLayout_6");
-        horizontalLayout_25 = new QHBoxLayout();
-        horizontalLayout_25->setObjectName("horizontalLayout_25");
-        spinBox_MinThrottle = new QSpinBox(groupBox_ESC_Features);
-        spinBox_MinThrottle->setObjectName("spinBox_MinThrottle");
-        spinBox_MinThrottle->setMinimumSize(QSize(100, 0));
-
-        horizontalLayout_25->addWidget(spinBox_MinThrottle);
-
-        label_MinThrottle = new QLabel(groupBox_ESC_Features);
-        label_MinThrottle->setObjectName("label_MinThrottle");
-
-        horizontalLayout_25->addWidget(label_MinThrottle);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_25->addItem(horizontalSpacer_5);
-
-        horizontalLayout_25->setStretch(0, 1);
-        horizontalLayout_25->setStretch(1, 1);
-
-        verticalLayout_6->addLayout(horizontalLayout_25);
-
-        horizontalLayout_26 = new QHBoxLayout();
-        horizontalLayout_26->setObjectName("horizontalLayout_26");
-        spinBox_MaxThrottle = new QSpinBox(groupBox_ESC_Features);
-        spinBox_MaxThrottle->setObjectName("spinBox_MaxThrottle");
-        spinBox_MaxThrottle->setMinimumSize(QSize(100, 0));
-
-        horizontalLayout_26->addWidget(spinBox_MaxThrottle);
-
-        label_MaxThrottle = new QLabel(groupBox_ESC_Features);
-        label_MaxThrottle->setObjectName("label_MaxThrottle");
-
-        horizontalLayout_26->addWidget(label_MaxThrottle);
-
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_26->addItem(horizontalSpacer_9);
-
-        horizontalLayout_26->setStretch(0, 1);
-        horizontalLayout_26->setStretch(1, 1);
-
-        verticalLayout_6->addLayout(horizontalLayout_26);
-
-
-        verticalLayout_16->addWidget(groupBox_ESC_Features);
-
-        groupBox = new QGroupBox(layoutWidget);
-        groupBox->setObjectName("groupBox");
-        gridLayout = new QGridLayout(groupBox);
-        gridLayout->setObjectName("gridLayout");
-        horizontalLayout_9 = new QHBoxLayout();
-        horizontalLayout_9->setObjectName("horizontalLayout_9");
-        label_P12PWM0 = new QLabel(groupBox);
-        label_P12PWM0->setObjectName("label_P12PWM0");
-
-        horizontalLayout_9->addWidget(label_P12PWM0);
-
-        horizontalSlider_P12PWM0 = new QSlider(groupBox);
-        horizontalSlider_P12PWM0->setObjectName("horizontalSlider_P12PWM0");
-        horizontalSlider_P12PWM0->setMaximum(255);
-        horizontalSlider_P12PWM0->setOrientation(Qt::Horizontal);
-
-        horizontalLayout_9->addWidget(horizontalSlider_P12PWM0);
-
-        doubleSpinBox_P12PWM0 = new QDoubleSpinBox(groupBox);
-        doubleSpinBox_P12PWM0->setObjectName("doubleSpinBox_P12PWM0");
-        doubleSpinBox_P12PWM0->setDecimals(2);
-        doubleSpinBox_P12PWM0->setMaximum(100.000000000000000);
-        doubleSpinBox_P12PWM0->setSingleStep(0.010000000000000);
-
-        horizontalLayout_9->addWidget(doubleSpinBox_P12PWM0);
-
-
-        gridLayout->addLayout(horizontalLayout_9, 0, 0, 1, 1);
-
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName("horizontalLayout_8");
-        label_P13PWM1 = new QLabel(groupBox);
-        label_P13PWM1->setObjectName("label_P13PWM1");
-
-        horizontalLayout_8->addWidget(label_P13PWM1);
-
-        horizontalSlider_P13PWM1 = new QSlider(groupBox);
-        horizontalSlider_P13PWM1->setObjectName("horizontalSlider_P13PWM1");
-        horizontalSlider_P13PWM1->setMaximum(255);
-        horizontalSlider_P13PWM1->setOrientation(Qt::Horizontal);
-        horizontalSlider_P13PWM1->setInvertedAppearance(false);
-        horizontalSlider_P13PWM1->setInvertedControls(false);
-
-        horizontalLayout_8->addWidget(horizontalSlider_P13PWM1);
-
-        doubleSpinBox_P13PWM1 = new QDoubleSpinBox(groupBox);
-        doubleSpinBox_P13PWM1->setObjectName("doubleSpinBox_P13PWM1");
-        doubleSpinBox_P13PWM1->setDecimals(2);
-        doubleSpinBox_P13PWM1->setMaximum(100.000000000000000);
-        doubleSpinBox_P13PWM1->setSingleStep(0.010000000000000);
-
-        horizontalLayout_8->addWidget(doubleSpinBox_P13PWM1);
-
-
-        gridLayout->addLayout(horizontalLayout_8, 1, 0, 1, 1);
-
-        horizontalLayout_10 = new QHBoxLayout();
-        horizontalLayout_10->setObjectName("horizontalLayout_10");
-        label_P19PWM2 = new QLabel(groupBox);
-        label_P19PWM2->setObjectName("label_P19PWM2");
-
-        horizontalLayout_10->addWidget(label_P19PWM2);
-
-        horizontalSlider_P19PWM2 = new QSlider(groupBox);
-        horizontalSlider_P19PWM2->setObjectName("horizontalSlider_P19PWM2");
-        horizontalSlider_P19PWM2->setMaximum(255);
-        horizontalSlider_P19PWM2->setOrientation(Qt::Horizontal);
-
-        horizontalLayout_10->addWidget(horizontalSlider_P19PWM2);
-
-        doubleSpinBox_P19PWM2 = new QDoubleSpinBox(groupBox);
-        doubleSpinBox_P19PWM2->setObjectName("doubleSpinBox_P19PWM2");
-        doubleSpinBox_P19PWM2->setDecimals(2);
-        doubleSpinBox_P19PWM2->setMaximum(100.000000000000000);
-        doubleSpinBox_P19PWM2->setSingleStep(0.010000000000000);
-
-        horizontalLayout_10->addWidget(doubleSpinBox_P19PWM2);
-
-
-        gridLayout->addLayout(horizontalLayout_10, 2, 0, 1, 1);
-
-        horizontalLayout_11 = new QHBoxLayout();
-        horizontalLayout_11->setObjectName("horizontalLayout_11");
-        label_P18PWM3 = new QLabel(groupBox);
-        label_P18PWM3->setObjectName("label_P18PWM3");
-
-        horizontalLayout_11->addWidget(label_P18PWM3);
-
-        horizontalSlider_P18PWM3 = new QSlider(groupBox);
-        horizontalSlider_P18PWM3->setObjectName("horizontalSlider_P18PWM3");
-        horizontalSlider_P18PWM3->setMaximum(255);
-        horizontalSlider_P18PWM3->setOrientation(Qt::Horizontal);
-
-        horizontalLayout_11->addWidget(horizontalSlider_P18PWM3);
-
-        doubleSpinBox_P18PWM3 = new QDoubleSpinBox(groupBox);
-        doubleSpinBox_P18PWM3->setObjectName("doubleSpinBox_P18PWM3");
-        doubleSpinBox_P18PWM3->setDecimals(2);
-        doubleSpinBox_P18PWM3->setMaximum(100.000000000000000);
-        doubleSpinBox_P18PWM3->setSingleStep(0.010000000000000);
-
-        horizontalLayout_11->addWidget(doubleSpinBox_P18PWM3);
-
-
-        gridLayout->addLayout(horizontalLayout_11, 3, 0, 1, 1);
-
-
-        verticalLayout_16->addWidget(groupBox);
-
-        widget1 = new QWidget(tab3_ParameterTesting);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(540, 20, 52, 181));
-        verticalLayout_17 = new QVBoxLayout(widget1);
-        verticalLayout_17->setObjectName("verticalLayout_17");
-        verticalLayout_17->setContentsMargins(0, 0, 0, 0);
-        verticalSlider = new QSlider(widget1);
-        verticalSlider->setObjectName("verticalSlider");
-        verticalSlider->setMinimumSize(QSize(50, 0));
-        verticalSlider->setOrientation(Qt::Vertical);
-
-        verticalLayout_17->addWidget(verticalSlider);
-
-        label_Trust_Control = new QLabel(widget1);
-        label_Trust_Control->setObjectName("label_Trust_Control");
-        label_Trust_Control->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_17->addWidget(label_Trust_Control);
-
-        tabWidget_PanelMain->addTab(tab3_ParameterTesting, QString());
         tab4_SensorRegistersSetting = new QWidget();
         tab4_SensorRegistersSetting->setObjectName("tab4_SensorRegistersSetting");
         verticalLayout_10 = new QVBoxLayout(tab4_SensorRegistersSetting);
@@ -1700,7 +1850,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 835, 22));
+        menubar->setGeometry(QRect(0, 0, 980, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1708,9 +1858,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget_PanelMain->setCurrentIndex(2);
+        tabWidget_PanelMain->setCurrentIndex(0);
         tabWidget_FlightControlInfo->setCurrentIndex(1);
-        stackedWidget_REG_CONFIG->setCurrentIndex(2);
+        stackedWidget_REG_CONFIG->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1730,6 +1880,23 @@ public:
         icon_TCP_Connection->setText(QString());
         label_UDP_Connection->setText(QCoreApplication::translate("MainWindow", "UDP", nullptr));
         icon_UDP_Connection->setText(QString());
+        groupBox_ESC_Features->setTitle(QCoreApplication::translate("MainWindow", "ESC Features", nullptr));
+        label_MinThrottle->setText(QCoreApplication::translate("MainWindow", "Minimum Throttle (Lowest ESC value when armed)", nullptr));
+        label_MaxThrottle->setText(QCoreApplication::translate("MainWindow", "Maximum Throttle (Highest ESC value when armed)", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "Single Duty Cycle Adjustment", nullptr));
+        label_P12PWM0->setText(QCoreApplication::translate("MainWindow", "GPIO12 PWM0", nullptr));
+        doubleSpinBox_P12PWM0->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
+        label_P13PWM1->setText(QCoreApplication::translate("MainWindow", "GPIO13 PWM1", nullptr));
+        doubleSpinBox_P13PWM1->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
+        label_P19PWM2->setText(QCoreApplication::translate("MainWindow", "GPIO19 PWM2", nullptr));
+        doubleSpinBox_P19PWM2->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
+        label_P18PWM3->setText(QCoreApplication::translate("MainWindow", "GPIO18 PWM3", nullptr));
+        doubleSpinBox_P18PWM3->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "GroupBox", nullptr));
+        label_Pitch->setText(QCoreApplication::translate("MainWindow", "Pitch", nullptr));
+        label_Yaw->setText(QCoreApplication::translate("MainWindow", "Yaw", nullptr));
+        label_Roll->setText(QCoreApplication::translate("MainWindow", "Roll", nullptr));
+        label_Thrust->setText(QCoreApplication::translate("MainWindow", "Thrust", nullptr));
         tabWidget_FlightControlInfo->setTabText(tabWidget_FlightControlInfo->indexOf(FlightControlinfo_Status), QCoreApplication::translate("MainWindow", "Status Info", nullptr));
         tabWidget_FlightControlInfo->setTabText(tabWidget_FlightControlInfo->indexOf(FlightControlinfo_Graph), QCoreApplication::translate("MainWindow", "Attitude Chart", nullptr));
         groupBox_SensorData->setTitle(QCoreApplication::translate("MainWindow", "Sensor Data", nullptr));
@@ -1747,14 +1914,15 @@ public:
         label_Temp->setText(QCoreApplication::translate("MainWindow", "Temp", nullptr));
         groupBox_GPS->setTitle(QCoreApplication::translate("MainWindow", "Flight Control Panel", nullptr));
         pushButton_TAKE_OFF->setText(QCoreApplication::translate("MainWindow", "TAKE OFF", nullptr));
+        pushButton_LANDING->setText(QCoreApplication::translate("MainWindow", "LANDING", nullptr));
         tabWidget_PanelMain->setTabText(tabWidget_PanelMain->indexOf(tab1_FlightControl), QCoreApplication::translate("MainWindow", "Flight Control", nullptr));
-        toolButton_Calib_Gyto->setText(QCoreApplication::translate("MainWindow", "\351\231\200\350\236\272\344\273\252\346\240\241\345\207\206", nullptr));
-        toolButton_Calib_Accelerate->setText(QCoreApplication::translate("MainWindow", "\345\212\240\351\200\237\345\272\246\346\240\241\345\207\206", nullptr));
-        toolButton_Calib_Compass->setText(QCoreApplication::translate("MainWindow", "\347\243\201\347\275\227\347\233\230\346\240\241\345\207\206", nullptr));
-        toolButton_Calib_AirPressure->setText(QCoreApplication::translate("MainWindow", "\346\260\224\345\216\213\350\256\241\346\240\241\345\207\206", nullptr));
-        toolButton_Calib_SixDirection->setText(QCoreApplication::translate("MainWindow", "360\345\272\246\346\240\241\345\207\206", nullptr));
-        groupBox_Mahony_Adjuster->setTitle(QCoreApplication::translate("MainWindow", "Mahony \350\260\203\346\225\264\345\231\250", nullptr));
-        label_Mahony_Parameter->setText(QCoreApplication::translate("MainWindow", "\346\216\247\345\210\266\345\217\202\346\225\260", nullptr));
+        toolButton_Calib_Gyto->setText(QCoreApplication::translate("MainWindow", " GYR Calib", nullptr));
+        toolButton_Calib_Accelerate->setText(QCoreApplication::translate("MainWindow", " ACC Calib", nullptr));
+        toolButton_Calib_Compass->setText(QCoreApplication::translate("MainWindow", " MAG Calib", nullptr));
+        toolButton_Calib_AirPressure->setText(QCoreApplication::translate("MainWindow", " BOR Calib", nullptr));
+        toolButton_Calib_SixDirection->setText(QCoreApplication::translate("MainWindow", " Dirction Calib", nullptr));
+        groupBox_Mahony_Adjuster->setTitle(QCoreApplication::translate("MainWindow", "Mahony Adjustment", nullptr));
+        label_Mahony_Parameter->setText(QCoreApplication::translate("MainWindow", "PID Control", nullptr));
         pushButton_Mahony_Parameter_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
         checkBox_3->setText(QCoreApplication::translate("MainWindow", "Rol", nullptr));
         checkBox_2->setText(QCoreApplication::translate("MainWindow", "Yaw", nullptr));
@@ -1762,34 +1930,19 @@ public:
         pushButton_Mahony_Plot_Launch->setText(QCoreApplication::translate("MainWindow", "Launch", nullptr));
         pushButton_Mahony_Plot_Stop->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         groupBox_PID_Control->setTitle(QCoreApplication::translate("MainWindow", "PID Control", nullptr));
-        label_PITRate->setText(QCoreApplication::translate("MainWindow", "PIT\351\200\237\347\216\207", nullptr));
+        label_PITRate->setText(QCoreApplication::translate("MainWindow", "PIT Rate", nullptr));
         pushButton_PITRate_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
-        label_ROLRate->setText(QCoreApplication::translate("MainWindow", "ROL\351\200\237\347\216\207", nullptr));
+        label_ROLRate->setText(QCoreApplication::translate("MainWindow", "ROL Rate", nullptr));
         pushButton_ROLRate_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
-        label_YAWRate->setText(QCoreApplication::translate("MainWindow", "YAW\351\200\237\347\216\207", nullptr));
+        label_YAWRate->setText(QCoreApplication::translate("MainWindow", "YAW Rate", nullptr));
         pushButton_YAWRate_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
-        label_PITSelfStable->setText(QCoreApplication::translate("MainWindow", "\350\207\252\347\250\263PIT", nullptr));
+        label_PITSelfStable->setText(QCoreApplication::translate("MainWindow", "Self-Stable PIT", nullptr));
         pushButton_PITSelfStable_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
-        label_ROLSelfStable->setText(QCoreApplication::translate("MainWindow", "\350\207\252\347\250\263ROL", nullptr));
+        label_ROLSelfStable->setText(QCoreApplication::translate("MainWindow", "Self-Stable ROL", nullptr));
         pushButton_ROLSelfStable_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
-        label_YAWSelfStable->setText(QCoreApplication::translate("MainWindow", "\350\207\252\347\250\263YAW", nullptr));
+        label_YAWSelfStable->setText(QCoreApplication::translate("MainWindow", "Self-Stable YAW", nullptr));
         pushButton_YAWSelfStable_Write->setText(QCoreApplication::translate("MainWindow", "Write", nullptr));
         tabWidget_PanelMain->setTabText(tabWidget_PanelMain->indexOf(tab2_ParameterSetting), QCoreApplication::translate("MainWindow", "Parameter Setting", nullptr));
-        pushButton_PWMValue_Save->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        groupBox_ESC_Features->setTitle(QCoreApplication::translate("MainWindow", "ESC Features", nullptr));
-        label_MinThrottle->setText(QCoreApplication::translate("MainWindow", "Minimum Throttle (Lowest ESC value when armed)", nullptr));
-        label_MaxThrottle->setText(QCoreApplication::translate("MainWindow", "Maximum Throttle (Highest ESC value when armed)", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("MainWindow", "Duty Cycle Adjustment", nullptr));
-        label_P12PWM0->setText(QCoreApplication::translate("MainWindow", "GPIO12 PWM0", nullptr));
-        doubleSpinBox_P12PWM0->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
-        label_P13PWM1->setText(QCoreApplication::translate("MainWindow", "GPIO13 PWM1", nullptr));
-        doubleSpinBox_P13PWM1->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
-        label_P19PWM2->setText(QCoreApplication::translate("MainWindow", "GPIO19 PWM2", nullptr));
-        doubleSpinBox_P19PWM2->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
-        label_P18PWM3->setText(QCoreApplication::translate("MainWindow", "GPIO18 PWM3", nullptr));
-        doubleSpinBox_P18PWM3->setSuffix(QCoreApplication::translate("MainWindow", "%", nullptr));
-        label_Trust_Control->setText(QCoreApplication::translate("MainWindow", "Trust", nullptr));
-        tabWidget_PanelMain->setTabText(tabWidget_PanelMain->indexOf(tab3_ParameterTesting), QCoreApplication::translate("MainWindow", "Parameter Testing", nullptr));
         toolButton_MPU6050_REG_CONFIG->setText(QCoreApplication::translate("MainWindow", "MPU6050", nullptr));
         toolButton_BMP180_REG_CONFIG->setText(QCoreApplication::translate("MainWindow", "BMP180", nullptr));
         toolButton_GY271_REG_CONFIG->setText(QCoreApplication::translate("MainWindow", "GY271", nullptr));

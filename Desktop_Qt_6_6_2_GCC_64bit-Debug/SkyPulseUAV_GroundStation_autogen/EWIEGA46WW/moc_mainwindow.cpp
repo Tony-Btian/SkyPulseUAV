@@ -10,6 +10,7 @@
 #include <QtGui/qtextcursor.h>
 #include <QtGui/qscreen.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QList>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
 #include <QtCore/qtmochelpers.h>
@@ -53,9 +54,13 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "sig_sendRequestToFCS",
     "uint8_t",
     "code",
-    "sig_sendPWMControlToTCP",
-    "pin",
-    "value",
+    "sig_sendPWMControlToFCS",
+    "QList<uint8_t>",
+    "pwm_value",
+    "sig_sendFlightControlToFCS",
+    "control_data",
+    "sig_sendMinThrottle",
+    "cofig_data",
     "onTCPStartSuccessful",
     "onTCPStopSuccessful",
     "onTCPConnectionError",
@@ -79,12 +84,22 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "on_horizontalSlider_P13PWM1_valueChanged",
     "on_horizontalSlider_P19PWM2_valueChanged",
     "on_horizontalSlider_P18PWM3_valueChanged",
-    "on_spinBox_MinThrottle_valueChanged",
-    "arg1"
+    "on_spinBox_MinThrottle_editingFinished",
+    "on_verticalSlider_Pitch_valueChanged",
+    "value",
+    "on_verticalSlider_Yaw_valueChanged",
+    "on_verticalSlider_Roll_valueChanged",
+    "on_verticalSlider_Thrust_valueChanged",
+    "on_doubleSpinBox_Thrust_valueChanged",
+    "arg1",
+    "on_doubleSpinBox_Pitch_valueChanged",
+    "on_doubleSpinBox_Yaw_valueChanged",
+    "on_doubleSpinBox_Roll_valueChanged",
+    "on_pushButton_LANDING_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[82];
+    uint offsetsAndSizes[110];
     char stringdata0[11];
     char stringdata1[19];
     char stringdata2[1];
@@ -99,33 +114,47 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata11[8];
     char stringdata12[5];
     char stringdata13[24];
-    char stringdata14[4];
-    char stringdata15[6];
-    char stringdata16[21];
-    char stringdata17[20];
-    char stringdata18[21];
-    char stringdata19[27];
-    char stringdata20[26];
-    char stringdata21[9];
-    char stringdata22[8];
-    char stringdata23[38];
-    char stringdata24[41];
-    char stringdata25[31];
-    char stringdata26[41];
-    char stringdata27[39];
+    char stringdata14[15];
+    char stringdata15[10];
+    char stringdata16[27];
+    char stringdata17[13];
+    char stringdata18[20];
+    char stringdata19[11];
+    char stringdata20[21];
+    char stringdata21[20];
+    char stringdata22[21];
+    char stringdata23[27];
+    char stringdata24[26];
+    char stringdata25[9];
+    char stringdata26[8];
+    char stringdata27[38];
     char stringdata28[41];
-    char stringdata29[40];
-    char stringdata30[39];
-    char stringdata31[43];
-    char stringdata32[42];
-    char stringdata33[41];
-    char stringdata34[41];
-    char stringdata35[11];
-    char stringdata36[41];
+    char stringdata29[31];
+    char stringdata30[41];
+    char stringdata31[39];
+    char stringdata32[41];
+    char stringdata33[40];
+    char stringdata34[39];
+    char stringdata35[43];
+    char stringdata36[42];
     char stringdata37[41];
     char stringdata38[41];
-    char stringdata39[36];
-    char stringdata40[5];
+    char stringdata39[11];
+    char stringdata40[41];
+    char stringdata41[41];
+    char stringdata42[41];
+    char stringdata43[39];
+    char stringdata44[37];
+    char stringdata45[6];
+    char stringdata46[35];
+    char stringdata47[36];
+    char stringdata48[38];
+    char stringdata49[37];
+    char stringdata50[5];
+    char stringdata51[36];
+    char stringdata52[34];
+    char stringdata53[35];
+    char stringdata54[30];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -144,34 +173,48 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(151, 20),  // "sig_sendRequestToFCS"
         QT_MOC_LITERAL(172, 7),  // "uint8_t"
         QT_MOC_LITERAL(180, 4),  // "code"
-        QT_MOC_LITERAL(185, 23),  // "sig_sendPWMControlToTCP"
-        QT_MOC_LITERAL(209, 3),  // "pin"
-        QT_MOC_LITERAL(213, 5),  // "value"
-        QT_MOC_LITERAL(219, 20),  // "onTCPStartSuccessful"
-        QT_MOC_LITERAL(240, 19),  // "onTCPStopSuccessful"
-        QT_MOC_LITERAL(260, 20),  // "onTCPConnectionError"
-        QT_MOC_LITERAL(281, 26),  // "onUDPServerStartSuccessful"
-        QT_MOC_LITERAL(308, 25),  // "onUDPServerStopSuccessful"
-        QT_MOC_LITERAL(334, 8),  // "updateUI"
-        QT_MOC_LITERAL(343, 7),  // "message"
-        QT_MOC_LITERAL(351, 37),  // "on_pushButton_Network_Connect..."
-        QT_MOC_LITERAL(389, 40),  // "on_pushButton_Network_Disconn..."
-        QT_MOC_LITERAL(430, 30),  // "on_pushButton_TAKE_OFF_clicked"
-        QT_MOC_LITERAL(461, 40),  // "on_pushButton_Mahony_Plot_Lau..."
-        QT_MOC_LITERAL(502, 38),  // "on_pushButton_Mahony_Plot_Sto..."
-        QT_MOC_LITERAL(541, 40),  // "on_toolButton_MPU6050_REG_CON..."
-        QT_MOC_LITERAL(582, 39),  // "on_toolButton_BMP180_REG_CONF..."
-        QT_MOC_LITERAL(622, 38),  // "on_toolButton_GY271_REG_CONFI..."
-        QT_MOC_LITERAL(661, 42),  // "on_pushButton_REG_READ_ALL_MP..."
-        QT_MOC_LITERAL(704, 41),  // "on_pushButton_REG_READ_ALL_BM..."
-        QT_MOC_LITERAL(746, 40),  // "on_pushButton_REG_READ_ALL_GY..."
-        QT_MOC_LITERAL(787, 40),  // "on_horizontalSlider_P12PWM0_v..."
-        QT_MOC_LITERAL(828, 10),  // "duty_cycle"
-        QT_MOC_LITERAL(839, 40),  // "on_horizontalSlider_P13PWM1_v..."
-        QT_MOC_LITERAL(880, 40),  // "on_horizontalSlider_P19PWM2_v..."
-        QT_MOC_LITERAL(921, 40),  // "on_horizontalSlider_P18PWM3_v..."
-        QT_MOC_LITERAL(962, 35),  // "on_spinBox_MinThrottle_valueC..."
-        QT_MOC_LITERAL(998, 4)   // "arg1"
+        QT_MOC_LITERAL(185, 23),  // "sig_sendPWMControlToFCS"
+        QT_MOC_LITERAL(209, 14),  // "QList<uint8_t>"
+        QT_MOC_LITERAL(224, 9),  // "pwm_value"
+        QT_MOC_LITERAL(234, 26),  // "sig_sendFlightControlToFCS"
+        QT_MOC_LITERAL(261, 12),  // "control_data"
+        QT_MOC_LITERAL(274, 19),  // "sig_sendMinThrottle"
+        QT_MOC_LITERAL(294, 10),  // "cofig_data"
+        QT_MOC_LITERAL(305, 20),  // "onTCPStartSuccessful"
+        QT_MOC_LITERAL(326, 19),  // "onTCPStopSuccessful"
+        QT_MOC_LITERAL(346, 20),  // "onTCPConnectionError"
+        QT_MOC_LITERAL(367, 26),  // "onUDPServerStartSuccessful"
+        QT_MOC_LITERAL(394, 25),  // "onUDPServerStopSuccessful"
+        QT_MOC_LITERAL(420, 8),  // "updateUI"
+        QT_MOC_LITERAL(429, 7),  // "message"
+        QT_MOC_LITERAL(437, 37),  // "on_pushButton_Network_Connect..."
+        QT_MOC_LITERAL(475, 40),  // "on_pushButton_Network_Disconn..."
+        QT_MOC_LITERAL(516, 30),  // "on_pushButton_TAKE_OFF_clicked"
+        QT_MOC_LITERAL(547, 40),  // "on_pushButton_Mahony_Plot_Lau..."
+        QT_MOC_LITERAL(588, 38),  // "on_pushButton_Mahony_Plot_Sto..."
+        QT_MOC_LITERAL(627, 40),  // "on_toolButton_MPU6050_REG_CON..."
+        QT_MOC_LITERAL(668, 39),  // "on_toolButton_BMP180_REG_CONF..."
+        QT_MOC_LITERAL(708, 38),  // "on_toolButton_GY271_REG_CONFI..."
+        QT_MOC_LITERAL(747, 42),  // "on_pushButton_REG_READ_ALL_MP..."
+        QT_MOC_LITERAL(790, 41),  // "on_pushButton_REG_READ_ALL_BM..."
+        QT_MOC_LITERAL(832, 40),  // "on_pushButton_REG_READ_ALL_GY..."
+        QT_MOC_LITERAL(873, 40),  // "on_horizontalSlider_P12PWM0_v..."
+        QT_MOC_LITERAL(914, 10),  // "duty_cycle"
+        QT_MOC_LITERAL(925, 40),  // "on_horizontalSlider_P13PWM1_v..."
+        QT_MOC_LITERAL(966, 40),  // "on_horizontalSlider_P19PWM2_v..."
+        QT_MOC_LITERAL(1007, 40),  // "on_horizontalSlider_P18PWM3_v..."
+        QT_MOC_LITERAL(1048, 38),  // "on_spinBox_MinThrottle_editin..."
+        QT_MOC_LITERAL(1087, 36),  // "on_verticalSlider_Pitch_value..."
+        QT_MOC_LITERAL(1124, 5),  // "value"
+        QT_MOC_LITERAL(1130, 34),  // "on_verticalSlider_Yaw_valueCh..."
+        QT_MOC_LITERAL(1165, 35),  // "on_verticalSlider_Roll_valueC..."
+        QT_MOC_LITERAL(1201, 37),  // "on_verticalSlider_Thrust_valu..."
+        QT_MOC_LITERAL(1239, 36),  // "on_doubleSpinBox_Thrust_value..."
+        QT_MOC_LITERAL(1276, 4),  // "arg1"
+        QT_MOC_LITERAL(1281, 35),  // "on_doubleSpinBox_Pitch_valueC..."
+        QT_MOC_LITERAL(1317, 33),  // "on_doubleSpinBox_Yaw_valueCha..."
+        QT_MOC_LITERAL(1351, 34),  // "on_doubleSpinBox_Roll_valueCh..."
+        QT_MOC_LITERAL(1386, 29)   // "on_pushButton_LANDING_clicked"
     },
     "MainWindow",
     "sig_StartTCPServer",
@@ -186,9 +229,13 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "sig_sendRequestToFCS",
     "uint8_t",
     "code",
-    "sig_sendPWMControlToTCP",
-    "pin",
-    "value",
+    "sig_sendPWMControlToFCS",
+    "QList<uint8_t>",
+    "pwm_value",
+    "sig_sendFlightControlToFCS",
+    "control_data",
+    "sig_sendMinThrottle",
+    "cofig_data",
     "onTCPStartSuccessful",
     "onTCPStopSuccessful",
     "onTCPConnectionError",
@@ -212,8 +259,18 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "on_horizontalSlider_P13PWM1_valueChanged",
     "on_horizontalSlider_P19PWM2_valueChanged",
     "on_horizontalSlider_P18PWM3_valueChanged",
-    "on_spinBox_MinThrottle_valueChanged",
-    "arg1"
+    "on_spinBox_MinThrottle_editingFinished",
+    "on_verticalSlider_Pitch_valueChanged",
+    "value",
+    "on_verticalSlider_Yaw_valueChanged",
+    "on_verticalSlider_Roll_valueChanged",
+    "on_verticalSlider_Thrust_valueChanged",
+    "on_doubleSpinBox_Thrust_valueChanged",
+    "arg1",
+    "on_doubleSpinBox_Pitch_valueChanged",
+    "on_doubleSpinBox_Yaw_valueChanged",
+    "on_doubleSpinBox_Roll_valueChanged",
+    "on_pushButton_LANDING_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -225,46 +282,57 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      30,   14, // methods
+      41,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       8,       // signalCount
+      10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,  194,    2, 0x06,    1 /* Public */,
-       5,    1,  199,    2, 0x06,    4 /* Public */,
-       6,    0,  202,    2, 0x06,    6 /* Public */,
-       7,    0,  203,    2, 0x06,    7 /* Public */,
-       8,    0,  204,    2, 0x06,    8 /* Public */,
-       9,    0,  205,    2, 0x06,    9 /* Public */,
-      10,    1,  206,    2, 0x06,   10 /* Public */,
-      13,    3,  209,    2, 0x06,   12 /* Public */,
+       1,    2,  260,    2, 0x06,    1 /* Public */,
+       5,    1,  265,    2, 0x06,    4 /* Public */,
+       6,    0,  268,    2, 0x06,    6 /* Public */,
+       7,    0,  269,    2, 0x06,    7 /* Public */,
+       8,    0,  270,    2, 0x06,    8 /* Public */,
+       9,    0,  271,    2, 0x06,    9 /* Public */,
+      10,    1,  272,    2, 0x06,   10 /* Public */,
+      13,    1,  275,    2, 0x06,   12 /* Public */,
+      16,    1,  278,    2, 0x06,   14 /* Public */,
+      18,    1,  281,    2, 0x06,   16 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      16,    0,  216,    2, 0x0a,   16 /* Public */,
-      17,    0,  217,    2, 0x0a,   17 /* Public */,
-      18,    0,  218,    2, 0x0a,   18 /* Public */,
-      19,    0,  219,    2, 0x0a,   19 /* Public */,
-      20,    0,  220,    2, 0x0a,   20 /* Public */,
-      21,    1,  221,    2, 0x0a,   21 /* Public */,
-      23,    0,  224,    2, 0x08,   23 /* Private */,
-      24,    0,  225,    2, 0x08,   24 /* Private */,
-      25,    0,  226,    2, 0x08,   25 /* Private */,
-      26,    0,  227,    2, 0x08,   26 /* Private */,
-      27,    0,  228,    2, 0x08,   27 /* Private */,
-      28,    0,  229,    2, 0x08,   28 /* Private */,
-      29,    0,  230,    2, 0x08,   29 /* Private */,
-      30,    0,  231,    2, 0x08,   30 /* Private */,
-      31,    0,  232,    2, 0x08,   31 /* Private */,
-      32,    0,  233,    2, 0x08,   32 /* Private */,
-      33,    0,  234,    2, 0x08,   33 /* Private */,
-      34,    1,  235,    2, 0x08,   34 /* Private */,
-      36,    1,  238,    2, 0x08,   36 /* Private */,
-      37,    1,  241,    2, 0x08,   38 /* Private */,
-      38,    1,  244,    2, 0x08,   40 /* Private */,
-      39,    1,  247,    2, 0x08,   42 /* Private */,
+      20,    0,  284,    2, 0x0a,   18 /* Public */,
+      21,    0,  285,    2, 0x0a,   19 /* Public */,
+      22,    0,  286,    2, 0x0a,   20 /* Public */,
+      23,    0,  287,    2, 0x0a,   21 /* Public */,
+      24,    0,  288,    2, 0x0a,   22 /* Public */,
+      25,    1,  289,    2, 0x0a,   23 /* Public */,
+      27,    0,  292,    2, 0x08,   25 /* Private */,
+      28,    0,  293,    2, 0x08,   26 /* Private */,
+      29,    0,  294,    2, 0x08,   27 /* Private */,
+      30,    0,  295,    2, 0x08,   28 /* Private */,
+      31,    0,  296,    2, 0x08,   29 /* Private */,
+      32,    0,  297,    2, 0x08,   30 /* Private */,
+      33,    0,  298,    2, 0x08,   31 /* Private */,
+      34,    0,  299,    2, 0x08,   32 /* Private */,
+      35,    0,  300,    2, 0x08,   33 /* Private */,
+      36,    0,  301,    2, 0x08,   34 /* Private */,
+      37,    0,  302,    2, 0x08,   35 /* Private */,
+      38,    1,  303,    2, 0x08,   36 /* Private */,
+      40,    1,  306,    2, 0x08,   38 /* Private */,
+      41,    1,  309,    2, 0x08,   40 /* Private */,
+      42,    1,  312,    2, 0x08,   42 /* Private */,
+      43,    0,  315,    2, 0x08,   44 /* Private */,
+      44,    1,  316,    2, 0x08,   45 /* Private */,
+      46,    1,  319,    2, 0x08,   47 /* Private */,
+      47,    1,  322,    2, 0x08,   49 /* Private */,
+      48,    1,  325,    2, 0x08,   51 /* Private */,
+      49,    1,  328,    2, 0x08,   53 /* Private */,
+      51,    1,  331,    2, 0x08,   55 /* Private */,
+      52,    1,  334,    2, 0x08,   57 /* Private */,
+      53,    1,  337,    2, 0x08,   59 /* Private */,
+      54,    0,  340,    2, 0x08,   61 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString, QMetaType::UShort,    3,    4,
@@ -274,7 +342,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 11,   12,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   12,   14,   15,
+    QMetaType::Void, 0x80000000 | 14,   15,
+    QMetaType::Void, 0x80000000 | 14,   17,
+    QMetaType::Void, 0x80000000 | 14,   19,
 
  // slots: parameters
     QMetaType::Void,
@@ -282,7 +352,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   22,
+    QMetaType::Void, QMetaType::QStringList,   26,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -294,11 +364,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   35,
-    QMetaType::Void, QMetaType::Int,   35,
-    QMetaType::Void, QMetaType::Int,   35,
-    QMetaType::Void, QMetaType::Int,   35,
-    QMetaType::Void, QMetaType::Int,   40,
+    QMetaType::Void, QMetaType::Int,   39,
+    QMetaType::Void, QMetaType::Int,   39,
+    QMetaType::Void, QMetaType::Int,   39,
+    QMetaType::Void, QMetaType::Int,   39,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   45,
+    QMetaType::Void, QMetaType::Int,   45,
+    QMetaType::Void, QMetaType::Int,   45,
+    QMetaType::Void, QMetaType::Int,   45,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -330,11 +409,15 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'sig_sendRequestToFCS'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const uint8_t &, std::false_type>,
-        // method 'sig_sendPWMControlToTCP'
+        // method 'sig_sendPWMControlToFCS'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const int &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const int &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const int &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QVector<uint8_t> &, std::false_type>,
+        // method 'sig_sendFlightControlToFCS'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QVector<uint8_t> &, std::false_type>,
+        // method 'sig_sendMinThrottle'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QVector<uint8_t>, std::false_type>,
         // method 'onTCPStartSuccessful'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onTCPStopSuccessful'
@@ -347,7 +430,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateUI'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QStringList &, std::false_type>,
         // method 'on_pushButton_Network_Connect_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_Network_Disconnect_clicked'
@@ -382,9 +465,34 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_horizontalSlider_P18PWM3_valueChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'on_spinBox_MinThrottle_valueChanged'
+        // method 'on_spinBox_MinThrottle_editingFinished'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        // method 'on_verticalSlider_Pitch_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_verticalSlider_Yaw_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_verticalSlider_Roll_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_verticalSlider_Thrust_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_doubleSpinBox_Thrust_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        // method 'on_doubleSpinBox_Pitch_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        // method 'on_doubleSpinBox_Yaw_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        // method 'on_doubleSpinBox_Roll_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        // method 'on_pushButton_LANDING_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -402,29 +510,40 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->sig_Mahony_PlottingStart(); break;
         case 5: _t->sig_Mahony_PlottingStop(); break;
         case 6: _t->sig_sendRequestToFCS((*reinterpret_cast< std::add_pointer_t<uint8_t>>(_a[1]))); break;
-        case 7: _t->sig_sendPWMControlToTCP((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
-        case 8: _t->onTCPStartSuccessful(); break;
-        case 9: _t->onTCPStopSuccessful(); break;
-        case 10: _t->onTCPConnectionError(); break;
-        case 11: _t->onUDPServerStartSuccessful(); break;
-        case 12: _t->onUDPServerStopSuccessful(); break;
-        case 13: _t->updateUI((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 14: _t->on_pushButton_Network_Connect_clicked(); break;
-        case 15: _t->on_pushButton_Network_Disconnect_clicked(); break;
-        case 16: _t->on_pushButton_TAKE_OFF_clicked(); break;
-        case 17: _t->on_pushButton_Mahony_Plot_Launch_clicked(); break;
-        case 18: _t->on_pushButton_Mahony_Plot_Stop_clicked(); break;
-        case 19: _t->on_toolButton_MPU6050_REG_CONFIG_clicked(); break;
-        case 20: _t->on_toolButton_BMP180_REG_CONFIG_clicked(); break;
-        case 21: _t->on_toolButton_GY271_REG_CONFIG_clicked(); break;
-        case 22: _t->on_pushButton_REG_READ_ALL_MPU6050_clicked(); break;
-        case 23: _t->on_pushButton_REG_READ_ALL_BMP180_clicked(); break;
-        case 24: _t->on_pushButton_REG_READ_ALL_GY271_clicked(); break;
-        case 25: _t->on_horizontalSlider_P12PWM0_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 26: _t->on_horizontalSlider_P13PWM1_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 27: _t->on_horizontalSlider_P19PWM2_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 28: _t->on_horizontalSlider_P18PWM3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 29: _t->on_spinBox_MinThrottle_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 7: _t->sig_sendPWMControlToFCS((*reinterpret_cast< std::add_pointer_t<QList<uint8_t>>>(_a[1]))); break;
+        case 8: _t->sig_sendFlightControlToFCS((*reinterpret_cast< std::add_pointer_t<QList<uint8_t>>>(_a[1]))); break;
+        case 9: _t->sig_sendMinThrottle((*reinterpret_cast< std::add_pointer_t<QList<uint8_t>>>(_a[1]))); break;
+        case 10: _t->onTCPStartSuccessful(); break;
+        case 11: _t->onTCPStopSuccessful(); break;
+        case 12: _t->onTCPConnectionError(); break;
+        case 13: _t->onUDPServerStartSuccessful(); break;
+        case 14: _t->onUDPServerStopSuccessful(); break;
+        case 15: _t->updateUI((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
+        case 16: _t->on_pushButton_Network_Connect_clicked(); break;
+        case 17: _t->on_pushButton_Network_Disconnect_clicked(); break;
+        case 18: _t->on_pushButton_TAKE_OFF_clicked(); break;
+        case 19: _t->on_pushButton_Mahony_Plot_Launch_clicked(); break;
+        case 20: _t->on_pushButton_Mahony_Plot_Stop_clicked(); break;
+        case 21: _t->on_toolButton_MPU6050_REG_CONFIG_clicked(); break;
+        case 22: _t->on_toolButton_BMP180_REG_CONFIG_clicked(); break;
+        case 23: _t->on_toolButton_GY271_REG_CONFIG_clicked(); break;
+        case 24: _t->on_pushButton_REG_READ_ALL_MPU6050_clicked(); break;
+        case 25: _t->on_pushButton_REG_READ_ALL_BMP180_clicked(); break;
+        case 26: _t->on_pushButton_REG_READ_ALL_GY271_clicked(); break;
+        case 27: _t->on_horizontalSlider_P12PWM0_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 28: _t->on_horizontalSlider_P13PWM1_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 29: _t->on_horizontalSlider_P19PWM2_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 30: _t->on_horizontalSlider_P18PWM3_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 31: _t->on_spinBox_MinThrottle_editingFinished(); break;
+        case 32: _t->on_verticalSlider_Pitch_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 33: _t->on_verticalSlider_Yaw_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 34: _t->on_verticalSlider_Roll_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 35: _t->on_verticalSlider_Thrust_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 36: _t->on_doubleSpinBox_Thrust_valueChanged((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 37: _t->on_doubleSpinBox_Pitch_valueChanged((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 38: _t->on_doubleSpinBox_Yaw_valueChanged((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 39: _t->on_doubleSpinBox_Roll_valueChanged((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 40: _t->on_pushButton_LANDING_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -479,9 +598,23 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             }
         }
         {
-            using _t = void (MainWindow::*)(const int & , const int & , const int & );
-            if (_t _q_method = &MainWindow::sig_sendPWMControlToTCP; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            using _t = void (MainWindow::*)(const QVector<uint8_t> & );
+            if (_t _q_method = &MainWindow::sig_sendPWMControlToFCS; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 7;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(const QVector<uint8_t> & );
+            if (_t _q_method = &MainWindow::sig_sendFlightControlToFCS; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 8;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(const QVector<uint8_t> );
+            if (_t _q_method = &MainWindow::sig_sendMinThrottle; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 9;
                 return;
             }
         }
@@ -507,13 +640,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 41)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 41;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
+        if (_id < 41)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 30;
+        _id -= 41;
     }
     return _id;
 }
@@ -564,9 +697,23 @@ void MainWindow::sig_sendRequestToFCS(const uint8_t & _t1)
 }
 
 // SIGNAL 7
-void MainWindow::sig_sendPWMControlToTCP(const int & _t1, const int & _t2, const int & _t3)
+void MainWindow::sig_sendPWMControlToFCS(const QVector<uint8_t> & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 7, _a);
+}
+
+// SIGNAL 8
+void MainWindow::sig_sendFlightControlToFCS(const QVector<uint8_t> & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void MainWindow::sig_sendMinThrottle(const QVector<uint8_t> _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 QT_WARNING_POP

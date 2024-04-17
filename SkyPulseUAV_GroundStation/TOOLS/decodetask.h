@@ -2,22 +2,26 @@
 #define DECODETASK_H
 
 #include <QObject>
-#include <QRunnable>
 #include <QByteArray>
+#include <QDataStream>
+#include <QDebug>
+#include <QThreadPool>
+#include <QtConcurrent/QtConcurrent>
+
 #include "MediatorInterface.h"
 
-class DecodeTask : public QObject, public QRunnable
-{
+class DecodeTask : public QObject {
+
     Q_OBJECT
 
 public:
-    explicit DecodeTask(const QByteArray &data, MediatorInterface* mediator);
-    void run() override;
+    explicit DecodeTask();
 
 private:
     QByteArray dataToDecode;
     MediatorInterface* mediator;
     void decodeDataDistribution();
+    void decodeSensorData(QByteArray data_to_decode);
 
 signals:
     void decodeDataReady(const QString &result);

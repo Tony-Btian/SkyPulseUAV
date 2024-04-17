@@ -50,9 +50,30 @@ SkyPulseUAV_GroundStation_autogen/timestamp: \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtBluetooth/qtbluetooth-config.h \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtBluetooth/qtbluetoothexports.h \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtBluetooth/qtbluetoothglobal.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/QtConcurrent \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/QtConcurrentDepends \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtaskbuilder.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrent_global.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentcompilertest.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentexports.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentfilter.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentfilterkernel.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentfunctionwrappers.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentiteratekernel.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentmap.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentmapkernel.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentmedian.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentreducekernel.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentrun.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentrunbase.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentstoredfunctioncall.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrenttask.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentthreadengine.h \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtConcurrent/qtconcurrentversion.h \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QAtomicInt \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QByteArray \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QCache \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QDataStream \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QDateTime \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QDeadlineTimer \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QDebug \
@@ -83,6 +104,7 @@ SkyPulseUAV_GroundStation_autogen/timestamp: \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QStringList \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QTextStream \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QThread \
+	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QThreadPool \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QTimeZone \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QTimer \
 	/home/tony/Qt/6.6.2/gcc_64/include/QtCore/QUuid \

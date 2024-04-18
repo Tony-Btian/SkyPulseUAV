@@ -7,6 +7,7 @@
 #include <QMutexLocker>
 #include <QMutex>
 #include <atomic>
+#include <cmath>
 
 // Forward declaration
 class MahonyFilter;
@@ -17,8 +18,9 @@ using CallbackFunction = void (*)(MahonyFilter*, float roll, float pitch, float 
 class MahonyFilter : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit MahonyFilter(float sampleFrequency = 256.0f,
+    explicit MahonyFilter(float sampleFrequency = 200.0f,
                  float twoKpDef = 2.0f * 0.5f,
                  float twoKiDef = 2.0f * 0.0f,
                  QObject *parent = nullptr);
@@ -46,8 +48,6 @@ private:
 
     QQuaternion q; // Quaternions used to represent directions
     QVector3D integralFB; // Integral error term, scaled by Ki
-
-    std::atomic<bool> imuDataReady{false}; // IMU data readiness
 
     // Stores acceleration, gyroscope, magnetometer data
     std::atomic<float> ax{0}, ay{0}, az{0};

@@ -2,6 +2,7 @@
 #define TCP_H
 
 #include <QObject>
+#include <QVector>
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QTimer>
@@ -42,11 +43,15 @@ private:
     void dataTranslator(const QByteArray &data);
 
 signals:
-    void sig_sendPWMSignal(const quint8 &pwm1, const quint8 &pwm2, const quint8 &pwm3, const quint8 &pwm4);
+    void sig_sendPWMSignal(const QVector<quint8> &MotorPWM);
+    void sig_sendFlightControlSignal(const QVector<quint8> &FlightControl);
+    void sig_sendFlightConfig(const QVector<quint8> &FlightConfig);
     void sig_errorOccured_TCP(const QString &error_message);
     void sig_requestReadAllReg_BMP180();
     void sig_requestReadAllReg_MPU6050();
     void sig_requestReadAllReg_GY271();
+    void sig_takeOffSignal();
+    void sig_landingSignal();
 };
 
 #endif // TCP_H

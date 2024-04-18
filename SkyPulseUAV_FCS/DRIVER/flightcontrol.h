@@ -11,7 +11,6 @@ public:
     explicit FlightControl(int pitch, int yaw, int roll, int thrust, QObject *parent = nullptr);
     ~FlightControl();
 
-    void initialize();
     void setPitch(int pwmValue);
     void setYaw(int pwmValue);
     void setRoll(int pwmValue);

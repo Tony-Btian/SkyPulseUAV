@@ -22,19 +22,27 @@ void SensorManager::SENSOR_Initial()
 
 void SensorManager::ReadAllSensorData()
 {
-    qWarning("Function Button 1 Click");
-    int x, y, z;
-    float ax, ay, az, gx, gy, gz;
-    double pressure, tempreture;
+    QtConcurrent::run([this]() {
+        qDebug() << "Starting sensor read operation in a separate thread" << QThread::currentThreadId();
+        int x, y, z;
+        float ax, ay, az, gx, gy, gz;
+        double pressure, temperature, headingDegree;
 
-    MPU6050_HANDLE->readAllSensors(ax, ay, az, gx, gy, gz);
-    BMP180_HANDLE->readPressure(pressure);
-    BMP180_HANDLE->readTemperature(tempreture);
-    GY271_HANDLE->readRawData(x, y, z);
+        MPU6050_HANDLE->readAllSensors(ax, ay, az, gx, gy, gz);
+        BMP180_HANDLE->readPressure(pressure);
+        BMP180_HANDLE->readTemperature(temperature);
+        GY271_HANDLE->readRawData(x, y, z, headingDegree);
 
-    qDebug() << "Acceleration:" << ax << ay << az;
-    qDebug() << "Gyroscope:" << gx << gy << gz;
-    qDebug() << "Presure:" << pressure;
-    qDebug() << "Temperature:" << tempreture;
-    qDebug() << "Direction: " << x << "," << y << "," << z;
+        emit updateSensorData(ax, ay, az, gx, gy, gz, pressure, temperature, x, y, z, headingDegree);
+        packageAndSendSensorData(ax, ay, az, gx, gy, gz, pressure, temperature, x, y, z, headingDegree);
+    });
+}
+
+void SensorManager::packageAndSendSensorData(float ax, float ay, float az, float gx, float gy, float gz, double pressure, double temperature, int x, int y, int z, double heading)
+{
+    QByteArray buffer;
+    QDataStream stream(&buffer, QIODevice::WriteOnly);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    stream << ax << ay << az << gx << gy << gz << pressure << temperature << x << y << z << heading;
+    emit sig_sendMessage64Bytes(buffer);
 }

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(SkyPulseUAV_FCS VERSION 0.1 LANGUAGES CXX)
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -30,6 +31,7 @@ include_directories(
 set(PROJECT_SOURCES
     main.cpp
 
+    ALGORITHM/pidcontroller.h ALGORITHM/pidcontroller.cpp
     ALGORITHM/mahonyfilter.h ALGORITHM/mahonyfilter.cpp
 
     COMM/tcp.h COMM/tcp.cpp
@@ -37,6 +39,7 @@ set(PROJECT_SOURCES
     DRIVER/i2cdriver.h DRIVER/i2cdriver.cpp
     DRIVER/motorpwm.h DRIVER/motorpwm.cpp
     DRIVER/flightcontrol.h DRIVER/flightcontrol.cpp
+    DRIVER/videostreamer.h DRIVER/videostreamer.cpp
 
     SENSOR/mpu6050.h SENSOR/mpu6050.cpp
     SENSOR/bmp180.h SENSOR/bmp180.cpp
@@ -44,6 +47,7 @@ set(PROJECT_SOURCES
 
     SYSTEM/mainsystem.h SYSTEM/mainsystem.cpp
     SYSTEM/sensormanager.h SYSTEM/sensormanager.cpp
+    SYSTEM/droneconfigmanager.h SYSTEM/droneconfigmanager.cpp
 
     MIDDLEWARES/MediatorInterface.h
     MIDDLEWARES/concretemediator.h MIDDLEWARES/concretemediator.cpp

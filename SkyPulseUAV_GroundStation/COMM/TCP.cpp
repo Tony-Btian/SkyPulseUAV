@@ -1,6 +1,4 @@
 #include "TCP.h"
-#include "decodetask.h"
-#include <QThreadPool>
 
 TCP::TCP(QObject *parent, MediatorInterface *mediator)
     : QObject(parent), TCPSocket(new QTcpSocket(this)), mediator(mediator)
@@ -77,21 +75,7 @@ void TCP::readMessage()
     QByteArray data = TCPSocket->readAll();
     qDebug() << "TCP Row Message: " << data;
     qDebug() << "TCP Thread ID: " << QThread::currentThreadId();
-
-    DecodeTask *task = new DecodeTask(data, mediator);
-    task->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(task);
-}
-
-void TCP::PWM_Controler(const int &code, const int &pin, const int &value)
-{
-    QByteArray data;
-    data.append(reinterpret_cast<const char*>(&pin),sizeof(pin));
-    data.append(reinterpret_cast<const char*>(&code),sizeof(code));
-    data.append(reinterpret_cast<const char*>(&value),sizeof(value));
-    qDebug() << "Code: " << code << ", " << "Pin: " << pin << ", " << "Value: " << value ;
-    qDebug() << data.constData();
-    // sendMessageQByte(data);
+    dataDecoder(data);
 }
 
 /*TCP 控制信息接收器*/
@@ -109,4 +93,52 @@ void TCP::sendMessageQByte(const QByteArray &message)
     {
         TCPSocket->write(message);
     }
+}
+
+/*PWM 控制信息接收器*/
+void TCP::PWM_Controler(const QVector<uint8_t> &pwm_value)
+{
+    sendMessage(QByteArray(reinterpret_cast<const char*>(pwm_value.data()), pwm_value.size()));
+}
+
+/*Flight Control*/
+void TCP::Flight_Controler(const QVector<uint8_t> &control_data)
+{
+    sendMessage(QByteArray(reinterpret_cast<const char*>(control_data.data()), control_data.size()));
+}
+
+/*Flight Config*/
+void TCP::Flight_Config_Setting(const QVector<uint8_t> &config_data)
+{
+
+}
+
+void TCP::dataDecoder(const QByteArray &data_to_decode)
+{
+    QFuture<void> future = QtConcurrent::run([this, data_to_decode](){
+        qDebug() << "Data Decoder Thread: " << QThread::currentThreadId();
+        QDataStream stream(data_to_decode);
+        stream.setByteOrder(QDataStream::LittleEndian);
+
+        float ax, ay, az, gx, gy, gz;
+        double pressure, temperature, heading;
+        int x, y, z;
+
+        stream >> ax >> ay >> az >> gx >> gy >> gz >> pressure >> temperature >> x >> y >> z >> heading;
+
+        if (stream.status() != QDataStream::Ok) {
+            qWarning() << "Failed to decode data from stream";
+            return;
+        }
+
+        QStringList dataList;
+        dataList << QString::number(ax, 'f', 2) << QString::number(ay, 'f', 2) << QString::number(az, 'f', 2)
+                 << QString::number(gx, 'f', 2) << QString::number(gy, 'f', 2) << QString::number(gz, 'f', 2)
+                 << QString::number(pressure) << QString::number(temperature)
+                 << QString::number(x) << QString::number(y) << QString::number(z)
+                 << QString::number(heading);
+
+        emit sig_UIupdate(dataList);
+    });
+    future.waitForFinished();
 }

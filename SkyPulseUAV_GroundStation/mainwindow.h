@@ -40,6 +40,8 @@ private:
     MediatorInterface* mediator;  // 中介者成员变量
 
     void initialBluetoothServer();
+    void SetPWM();
+    void SetFlightControl();
 
     // QString getLocalIP();
 
@@ -50,7 +52,7 @@ public slots:
     void onUDPServerStartSuccessful();
     void onUDPServerStopSuccessful();
 
-    void updateUI(const QString &message);
+    void updateUI(const QStringList &message);
 
 private slots:
     /* Connection & Disconnection Button Slots */
@@ -75,17 +77,34 @@ private slots:
     // GY271: Magnetometer
     void on_pushButton_REG_READ_ALL_GY271_clicked();
 
-
-
     void on_horizontalSlider_P12PWM0_valueChanged(int duty_cycle);
     void on_horizontalSlider_P13PWM1_valueChanged(int duty_cycle);
     void on_horizontalSlider_P19PWM2_valueChanged(int duty_cycle);
     void on_horizontalSlider_P18PWM3_valueChanged(int duty_cycle);
 
-    void on_spinBox_MinThrottle_valueChanged(int arg1);
+    void on_spinBox_MinThrottle_editingFinished();
 
 
-    void on_verticalSlider_Trust_valueChanged(int trust_value);
+    void on_verticalSlider_Pitch_valueChanged(int value);
+
+
+    void on_verticalSlider_Yaw_valueChanged(int value);
+
+    void on_verticalSlider_Roll_valueChanged(int value);
+
+    void on_verticalSlider_Thrust_valueChanged(int value);
+
+    void on_doubleSpinBox_Thrust_valueChanged(double arg1);
+
+    void on_doubleSpinBox_Pitch_valueChanged(double arg1);
+
+    void on_doubleSpinBox_Yaw_valueChanged(double arg1);
+
+    void on_doubleSpinBox_Roll_valueChanged(double arg1);
+
+    void on_pushButton_LANDING_clicked();
+
+
 
 protected:
     void closeEvent(QCloseEvent *event) override; // Rewrite the close event
@@ -101,8 +120,9 @@ signals:
     void sig_Mahony_PlottingStop();
 
     void sig_sendRequestToFCS(const uint8_t &code);
+    void sig_sendPWMControlToFCS(const QVector<uint8_t> &pwm_value);
+    void sig_sendFlightControlToFCS(const QVector<uint8_t> &control_data);
 
-    void sig_sendPWMControlToTCP(const int &code, const int &pin, const int &value);
-
+    void sig_sendMinThrottle(const QVector<uint8_t> cofig_data);
 };
 #endif // MAINWINDOW_H

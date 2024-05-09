@@ -23,7 +23,7 @@ void UDP::udpInitial()
     connect(udpSocket, &QUdpSocket::readyRead, this, &UDP::readPendingDatagrams);
 }
 
-void UDP::startServer(quint16 port)
+void UDP::startUDPServer(quint16 port)
 {
     bool result = udpSocket->bind(port, QUdpSocket::ShareAddress);
     if(!result){
@@ -34,7 +34,7 @@ void UDP::startServer(quint16 port)
     emit ServerStartSucessful();
 }
 
-void UDP::stopServer()
+void UDP::stopUDPServer()
 {
     udpSocket->close();
     if (udpSocket->state() == QAbstractSocket::UnconnectedState) {

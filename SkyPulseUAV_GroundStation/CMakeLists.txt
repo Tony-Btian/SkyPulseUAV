@@ -16,6 +16,7 @@ set(TS_FILES SkyPulseUAV_GroundStation_zh_CN.ts)
 
 # Add the DRIVER and SENSOR directories to the include path.
 include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/COMM
     ${CMAKE_SOURCE_DIR}/PLOTING
     ${CMAKE_SOURCE_DIR}/SENSOR
@@ -25,9 +26,9 @@ include_directories(
 
 set(PROJECT_SOURCES
         main.cpp
-        SYSTEM/mainwindow.cpp  # Updated path
-        SYSTEM/mainwindow.h    # Updated path
-        SYSTEM/mainwindow.ui
+        mainwindow.cpp  # Updated path
+        mainwindow.h    # Updated path
+        mainwindow.ui
         ${TS_FILES}
 )
 
@@ -48,7 +49,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         SYSTEM/pooltask.h SYSTEM/pooltask.cpp
         SYSTEM/observable.h SYSTEM/observable.cpp
-        SYSTEM/mainwindow.cpp SYSTEM/mainwindow.h SYSTEM/mainwindow.ui
 
         TOOLS/decodetask.h TOOLS/decodetask.cpp
         TOOLS/DataHandler.h
@@ -56,6 +56,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         TOOLS/DataHandlerFactory.h
         TOOLS/MediatorInterface.h
         TOOLS/concretemediator.h TOOLS/concretemediator.cpp
+        TOOLS/datamanager.h TOOLS/datamanager.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SkyPulseUAV_GroundStation APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

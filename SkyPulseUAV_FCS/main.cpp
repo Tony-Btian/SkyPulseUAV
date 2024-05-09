@@ -1,16 +1,13 @@
-#include "mainwindow.h"
 #include <QApplication>
+#include <QVector>
+#include "mainsystem.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.setWindowTitle("SkyPulse UAV Flight Control System");
-    w.show();
-
-//    QObject::connect(&a, &QApplication::aboutToQuit, [&w]() {
-//        w.prepareForQuit();
-//    });
-
+    qRegisterMetaType<QVector<quint8>>("QVector<quint8>");
+    MainSystem mainSystem;
+    mainSystem.resize(200, 60);
+    mainSystem.show();
     return a.exec();
 }

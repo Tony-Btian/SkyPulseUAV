@@ -1,0 +1,6 @@
+../Core/Src/main.c:86:5:main	1
+../Core/Src/main.c:150:6:SystemClock_Config	3
+../Core/Src/main.c:187:6:IRStartDetect	5
+../Core/Src/main.c:221:6:Delay_us	2
+../Core/Src/main.c:234:6:Send_Trig	1
+../Core/Src/main.c:247:6:Error_Handler	1
